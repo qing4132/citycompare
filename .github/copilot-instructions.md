@@ -15,8 +15,10 @@
 ## Key Data
 
 - 134 cities, 26 professions, 10 currencies, 4 locales (zh/en/ja/es)
-- Responsive breakpoint: `md:` (768px) for nav collapse and compare 2/3 col switch
+- Nav breakpoint: `min-[1080px]:` for nav collapse across all 5 page components
+- Compare layout breakpoint: `md:` (768px) for 2/3 column switch
 - Content-level breakpoint: `sm:` (640px) for grids, text sizing
+- Ranking page: accordion buttons (climate filter + tab selection), single/multi select mode, localStorage persistence
 
 ## Dev Commands
 

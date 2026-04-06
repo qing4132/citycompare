@@ -274,9 +274,12 @@ export default function MethodologyContent() {
 
       <H2 id="ranking">🏅 排名系统</H2>
       <P>排名页提供 5 大类共 16 项指标的全球城市排行，用户可切换职业和消费档位。</P>
+      <P><strong>单选 / 多选模式</strong>：默认为单选模式，按单项指标排名。切换到多选模式后，可同时选择多项指标，系统对各项百分位排名取平均计算综合得分，按综合得分排行。</P>
+      <P><strong>气候筛选</strong>：可按气候类型（热带、温带、大陆性、干旱、地中海、海洋性）和 5 项气候维度（年均温、冬夏温差、年降水、年均湿度、日照）筛选城市范围。维度按三分位阈值（p33/p66）划分为三档。气候筛选独立于排名指标，不影响得分计算。</P>
       <P><strong>排名规则</strong>：使用密集排名（Dense Ranking）——并列排名相同，后续跳跃。例如：若两城并列第 1，下一名为第 3。</P>
       <P><strong>排序方向</strong>：高优型（收入、储蓄、安全等）按降序排列；低优型（支出、AQI、工时等）按升序排列。缺失数据排在最后。</P>
       <P><strong>配色规则</strong>：每项指标的第 1 名获得金色🥇标记。综合指数（生活压力、安全等）使用可展开的子指标详情。</P>
+      <P><strong>状态记忆</strong>：排名页的指标选择、单选/多选模式和气候筛选条件会保存到浏览器本地存储，下次访问时自动恢复。</P>
 
       <H2 id="compare">⚖️ 城市对比</H2>
       <P>对比页支持同时对比 2–3 座城市（窄屏为 2 座）。对比覆盖 16 项数据指标 + 6 项气候指标。</P>
@@ -462,7 +465,11 @@ export default function MethodologyContent() {
       <Warn>Tax calculations are simplified estimates. Not considered: personal allowance variations, family status, investment income, employer-side contributions, time limits on expat schemes. Consult a qualified tax advisor for personal advice.</Warn>
 
       <H2 id="ranking">🏅 Ranking System</H2>
-      <P>16 metrics across 5 categories. Dense ranking with ties (e.g., 1,1,3). Higher-is-better metrics sorted descending; lower-is-better sorted ascending. Missing values sorted last.</P>
+      <P>16 metrics across 5 categories. Users can switch profession and cost tier.</P>
+      <P><strong>Single / Multi mode</strong>: Default is single-select mode, ranking by one metric. In multi-select mode, multiple metrics can be chosen; the system averages their percentile ranks to compute a composite score.</P>
+      <P><strong>Climate filter</strong>: Filter cities by climate type (tropical, temperate, continental, arid, Mediterranean, oceanic) and 5 climate dimensions (avg temp, seasonal diff, rainfall, humidity, sunshine). Dimensions are split into 3 tiers at p33/p66 percentile thresholds. Climate filtering is independent of ranking metrics and does not affect score calculation.</P>
+      <P><strong>Ranking rules</strong>: Dense ranking with ties (e.g., 1,1,3). Higher-is-better metrics sorted descending; lower-is-better sorted ascending. Missing values sorted last.</P>
+      <P><strong>State persistence</strong>: Metric selection, single/multi mode, and climate filter settings are saved to browser local storage and restored on next visit.</P>
 
       <H2 id="compare">⚖️ City Comparison</H2>
       <P>Compare 2–3 cities across 16 data metrics + 6 climate metrics. Winner = best value per row (max for higher-is-better, min for lower-is-better). Ties: all matching cities win. "Leading" count excludes climate metrics. Winner values shown in green.</P>
@@ -658,9 +665,12 @@ export default function MethodologyContent() {
 
       <H2 id="ranking">🏅 ランキング</H2>
       <P>5カテゴリ16指標のグローバル都市ランキング。職業・消費レベル切替可能。</P>
+      <P><strong>単一選択 / 複数選択モード</strong>：デフォルトは単一選択モードで、1つの指標でランキング。複数選択モードでは複数指標を選択でき、各指標のパーセンタイル順位の平均で総合スコアを算出。</P>
+      <P><strong>気候フィルター</strong>：気候タイプ（熱帯、温帯、大陸性、乾燥、地中海性、海洋性）と5つの気候次元（年平均気温、季節差、年降水量、湿度、日照）で都市を絞り込み可能。次元はp33/p66パーセンタイル閾値で3段階に分割。気候フィルターはランキング指標と独立し、スコア計算に影響しない。</P>
       <P><strong>ランキングルール</strong>：密集ランキング（Dense Ranking）— 同点は同順位、次はジャンプ。例：2都市が1位の場合、次は3位。</P>
       <P><strong>ソート方向</strong>：高い方が良い指標（収入、貯蓄、安全等）は降順。低い方が良い指標（支出、AQI、労働時間等）は昇順。欠損データは最後尾。</P>
       <P><strong>色分け</strong>：各指標の1位は金色🥇マーク。総合指数（生活プレッシャー、安全等）は展開可能なサブ指標詳細付き。</P>
+      <P><strong>状態保存</strong>：指標選択、単一/複数モード、気候フィルター設定はブラウザのローカルストレージに保存され、次回訪問時に自動復元。</P>
 
       <H2 id="compare">⚖️ 都市比較</H2>
       <P>2–3都市の同時比較（狭画面は2都市）。16データ指標 + 6気候指標。</P>
@@ -860,9 +870,12 @@ export default function MethodologyContent() {
 
       <H2 id="ranking">🏅 Sistema de ranking</H2>
       <P>16 indicadores en 5 categorías. Se puede cambiar profesión y nivel de consumo.</P>
+      <P><strong>Modo único / múltiple</strong>: Por defecto, modo de selección única, clasificando por un indicador. En modo de selección múltiple, se pueden elegir varios indicadores; el sistema promedia sus rangos percentiles para calcular una puntuación compuesta.</P>
+      <P><strong>Filtro climático</strong>: Filtra ciudades por tipo de clima (tropical, templado, continental, árido, mediterráneo, oceánico) y 5 dimensiones climáticas (temp. media, diferencia estacional, lluvia, humedad, sol). Las dimensiones se dividen en 3 niveles en los umbrales p33/p66. El filtro climático es independiente de los indicadores de ranking y no afecta el cálculo de puntuación.</P>
       <P><strong>Reglas</strong>: Ranking denso (Dense Ranking) — empates comparten posición, el siguiente salta. Ejemplo: si dos ciudades empatan en el 1°, la siguiente es 3°.</P>
       <P><strong>Dirección de ordenación</strong>: Mayor-es-mejor (ingresos, ahorros, seguridad) en orden descendente; menor-es-mejor (gastos, AQI, horas) en orden ascendente. Datos faltantes al final.</P>
       <P><strong>Colores</strong>: El 1° de cada indicador recibe marca dorada 🥇. Los índices compuestos tienen sub-indicadores expandibles.</P>
+      <P><strong>Persistencia</strong>: La selección de indicadores, el modo único/múltiple y los filtros climáticos se guardan en el almacenamiento local del navegador y se restauran en la próxima visita.</P>
 
       <H2 id="compare">⚖️ Comparación de ciudades</H2>
       <P>2–3 ciudades simultáneas (2 en pantalla estrecha). 16 datos + 6 clima.</P>

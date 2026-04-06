@@ -171,15 +171,67 @@ export default function RankingContent({ cities }: Props) {
   });
   const [subSort, setSubSort] = useState<SubSort>(null);
   const [navOpen, setNavOpen] = useState(false);
-  const [composite, setComposite] = useState(false);
+  const [composite, setCompositeState] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return localStorage.getItem("rankingComposite") === "1";
+  });
   const deferredComposite = useDeferredValue(composite);
-  const [customTabs, setCustomTabs] = useState<Set<Tab>>(new Set());
+  const [customTabs, setCustomTabsState] = useState<Set<Tab>>(() => {
+    if (typeof window === "undefined") return new Set();
+    const saved = localStorage.getItem("rankingCustomTabs");
+    if (!saved) return new Set();
+    const arr = JSON.parse(saved) as string[];
+    return new Set(arr.filter(t => Object.keys(TAB_I18N).includes(t)) as Tab[]);
+  });
   const deferredCustomTabs = useDeferredValue(customTabs);
-  const [climTypeFilter, setClimTypeFilter] = useState<Set<ClimateType>>(new Set());
-  const [climDimFilter, setClimDimFilter] = useState<Record<string, Set<ClimTier>>>({});
+  const [climTypeFilter, setClimTypeFilterState] = useState<Set<ClimateType>>(() => {
+    if (typeof window === "undefined") return new Set();
+    const saved = localStorage.getItem("rankingClimTypes");
+    if (!saved) return new Set();
+    return new Set(JSON.parse(saved) as ClimateType[]);
+  });
+  const [climDimFilter, setClimDimFilterState] = useState<Record<string, Set<ClimTier>>>(() => {
+    if (typeof window === "undefined") return {};
+    const saved = localStorage.getItem("rankingClimDims");
+    if (!saved) return {};
+    const obj = JSON.parse(saved) as Record<string, number[]>;
+    const result: Record<string, Set<ClimTier>> = {};
+    for (const [k, v] of Object.entries(obj)) result[k] = new Set(v as ClimTier[]);
+    return result;
+  });
   const [climOpen, setClimOpen] = useState(false);
   const [tabsExpanded, setTabsExpanded] = useState(false);
   const setTab = (t: Tab) => { setTabState(t); localStorage.setItem("rankingTab", t); };
+  const setComposite: typeof setCompositeState = (v) => {
+    setCompositeState(prev => {
+      const next = typeof v === "function" ? v(prev) : v;
+      localStorage.setItem("rankingComposite", next ? "1" : "0");
+      return next;
+    });
+  };
+  const setCustomTabs: typeof setCustomTabsState = (v) => {
+    setCustomTabsState(prev => {
+      const next = typeof v === "function" ? v(prev) : v;
+      localStorage.setItem("rankingCustomTabs", JSON.stringify([...next]));
+      return next;
+    });
+  };
+  const setClimTypeFilter: typeof setClimTypeFilterState = (v) => {
+    setClimTypeFilterState(prev => {
+      const next = typeof v === "function" ? v(prev) : v;
+      localStorage.setItem("rankingClimTypes", JSON.stringify([...next]));
+      return next;
+    });
+  };
+  const setClimDimFilter: typeof setClimDimFilterState = (v) => {
+    setClimDimFilterState(prev => {
+      const next = typeof v === "function" ? v(prev) : v;
+      const obj: Record<string, number[]> = {};
+      for (const [k, s] of Object.entries(next)) obj[k] = [...s];
+      localStorage.setItem("rankingClimDims", JSON.stringify(obj));
+      return next;
+    });
+  };
 
   const professions = cities[0]?.professions ? Object.keys(cities[0].professions) : [];
   const activeProfession = profession && professions.includes(profession) ? profession : professions[0] || "";
@@ -795,65 +847,44 @@ export default function RankingContent({ cities }: Props) {
         </div>
 
         {/* Grouped tab selector */}
-        <div className="mb-4 space-y-1.5">
-          {/* === Two-button row: climate filter + tab selection === */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <button onClick={() => { setClimOpen(v => !v); setTabsExpanded(false); }}
-              className={`py-2 px-3 rounded-lg text-xs font-medium transition-colors truncate ${
-                climOpen
-                  ? (darkMode ? "bg-emerald-900/40 text-emerald-300 ring-1 ring-emerald-500/50" : "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200")
-                  : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500")
-              }`}>
-              {hasClimFilter
-                ? (() => {
-                    const parts: React.ReactNode[] = [];
-                    if (climTypeFilter.size > 0) {
-                      const suffix = t("climSuffix");
-                      const typeNames = CLIMATE_TYPES.filter(ct => climTypeFilter.has(ct)).map(ct => t(CLIMATE_TYPE_I18N[ct]));
-                      parts.push(<span key="types" className="font-bold text-emerald-500">{typeNames.join("/") + suffix}</span>);
-                    }
-                    CLIM_DIMS.forEach(dim => {
-                      const sel = climDimFilter[dim.key];
-                      if (!sel || sel.size === 0) return;
-                      const prefix = t(dim.labelKey);
-                      const tierNames = dim.tiers.filter((_, ti) => sel.has(ti as ClimTier)).map(tier => t(tier.labelKey));
-                      parts.push(<span key={dim.key} className="font-bold text-emerald-500">{prefix + tierNames.join("/")}</span>);
-                    });
-                    return parts.map((p, i) => <span key={i}>{i > 0 && <span className="opacity-40"> · </span>}{p}</span>);
-                  })()
-                : <span className="text-emerald-500">{t("allClimates")}</span>}
-            </button>
-            <button onClick={() => { setTabsExpanded(v => !v); setClimOpen(false); }}
-              className={`py-2 px-3 rounded-lg text-xs font-medium transition-colors truncate ${
-                tabsExpanded
-                  ? (composite
-                      ? (darkMode ? "bg-amber-900/40 text-amber-300 ring-1 ring-amber-500/50" : "bg-amber-50 text-amber-700 ring-1 ring-amber-200")
-                      : (darkMode ? "bg-blue-900/40 text-blue-300 ring-1 ring-blue-500/50" : "bg-blue-50 text-blue-700 ring-1 ring-blue-200"))
-                  : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500")
-              }`}>
-              {composite
-                ? (customTabs.size > 0
-                    ? GROUPS.flatMap(g => g.tabs).filter(ct => customTabs.has(ct)).map((ct, i) => (
-                        <span key={ct}>
-                          {i > 0 && <span className="opacity-40"> · </span>}
-                          <span className="font-bold text-amber-500">{t(TAB_I18N[ct])}</span>
-                        </span>
-                      ))
-                    : t("customModeBtn"))
-                : INDEX_TABS.has(tab)
-                  ? <span className="font-bold text-blue-500">{t(TAB_I18N[tab])}</span>
-                  : GROUPS[tabGroupIdx(tab)].tabs.map((gt, i) => (
-                      <span key={gt}>
-                        {i > 0 && <span className="opacity-40">/</span>}
-                        <span className={gt === tab ? "font-bold text-blue-500" : "opacity-60"}>{t(TAB_I18N[gt])}</span>
-                      </span>
-                    ))}
-            </button>
-          </div>
+        <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-x-2">
+          {/* Climate filter button */}
+          <button onClick={() => { setClimOpen(v => !v); setTabsExpanded(false); }}
+            className={`order-1 py-2 px-3 rounded-lg text-xs font-medium transition-colors flex items-center ${
+              climOpen
+                ? (darkMode ? "bg-emerald-900/40 text-emerald-300 ring-1 ring-emerald-500/50" : "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200")
+                : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500")
+            }`}>
+            <span className="w-4 shrink-0" />
+            <span className="flex-1 min-w-0 truncate text-center">
+            {hasClimFilter
+              ? (() => {
+                  const parts: React.ReactNode[] = [];
+                  if (climTypeFilter.size > 0) {
+                    const suffix = t("climSuffix");
+                    const typeNames = CLIMATE_TYPES.filter(ct => climTypeFilter.has(ct)).map(ct => t(CLIMATE_TYPE_I18N[ct]));
+                    parts.push(<span key="types" className="font-bold text-emerald-500">{typeNames.join("/") + suffix}</span>);
+                  }
+                  CLIM_DIMS.forEach(dim => {
+                    const sel = climDimFilter[dim.key];
+                    if (!sel || sel.size === 0) return;
+                    const prefix = t(dim.labelKey);
+                    const tierNames = dim.tiers.filter((_, ti) => sel.has(ti as ClimTier)).map(tier => t(tier.labelKey));
+                    parts.push(<span key={dim.key} className="font-bold text-emerald-500">{prefix + tierNames.join("/")}</span>);
+                  });
+                  return parts.map((p, i) => <span key={i}>{i > 0 && <span className="opacity-40"> · </span>}{p}</span>);
+                })()
+              : <span className="text-emerald-500">{t("allClimates")}</span>}
+            </span>
+            <svg className="w-4 h-4 shrink-0 opacity-40 transition-transform" style={{ transform: climOpen ? "rotate(180deg)" : "" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
 
-          {/* Climate filter dropdown */}
-          {climOpen && (
-            <div className="space-y-2">
+          {/* Climate filter dropdown – between buttons on narrow, below both on wide */}
+          <div className="order-2 sm:order-3 sm:col-span-2 grid transition-[grid-template-rows] duration-300 ease-in-out" style={{ gridTemplateRows: climOpen ? "1fr" : "0fr" }}>
+            <div className="overflow-hidden">
+              <div className="space-y-2 pt-1.5">
               <div className="flex justify-end gap-0.5 text-xs">
                 <button onClick={clearClimFilter}
                   className={`px-2 py-0.5 transition-colors ${
@@ -865,7 +896,7 @@ export default function RankingContent({ cities }: Props) {
                 </button>
               </div>
               <div className="flex items-center gap-2">
-                <div className={`text-xs font-medium shrink-0 w-16 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t("climType")}</div>
+                <div className={`text-xs font-medium shrink-0 w-16 ml-1 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t("climType")}</div>
                 <div className="grid grid-cols-3 sm:grid-cols-6 gap-1 flex-1">
                   {CLIMATE_TYPES.map(ct => {
                     const sel = climTypeFilter.has(ct);
@@ -874,7 +905,7 @@ export default function RankingContent({ cities }: Props) {
                         className={`py-1.5 rounded-lg font-medium text-xs transition text-center truncate ${
                           sel
                             ? "bg-emerald-500 text-white shadow-sm"
-                            : (darkMode ? "bg-slate-700 text-slate-400 hover:bg-slate-600" : "bg-slate-100 text-slate-600 hover:bg-slate-200")
+                            : (darkMode ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600")
                         }`}>
                         {t(CLIMATE_TYPE_I18N[ct])}
                       </button>
@@ -884,7 +915,7 @@ export default function RankingContent({ cities }: Props) {
               </div>
               {CLIM_DIMS.map(dim => (
                 <div key={dim.key} className="flex items-center gap-2">
-                  <div className={`text-xs font-medium shrink-0 w-16 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t(dim.labelKey)}</div>
+                  <div className={`text-xs font-medium shrink-0 w-16 ml-1 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t(dim.labelKey)}</div>
                   <div className="grid grid-cols-3 gap-1 flex-1">
                     {dim.tiers.map((tier, ti) => {
                       const sel = climDimFilter[dim.key]?.has(ti as ClimTier);
@@ -893,7 +924,7 @@ export default function RankingContent({ cities }: Props) {
                           className={`py-1.5 rounded-lg font-medium text-xs transition text-center truncate ${
                             sel
                               ? "bg-emerald-500 text-white shadow-sm"
-                              : (darkMode ? "bg-slate-700 text-slate-400 hover:bg-slate-600" : "bg-slate-100 text-slate-600 hover:bg-slate-200")
+                              : (darkMode ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600")
                           }`}>
                           {t(tier.labelKey)}
                         </button>
@@ -903,11 +934,47 @@ export default function RankingContent({ cities }: Props) {
                 </div>
               ))}
             </div>
-          )}
+            </div>
+          </div>
+
+          {/* Tab selection button */}
+          <button onClick={() => { setTabsExpanded(v => !v); setClimOpen(false); }}
+            className={`order-3 sm:order-2 mt-2 sm:mt-0 py-2 px-3 rounded-lg text-xs font-medium transition-colors flex items-center ${
+              tabsExpanded
+                ? (composite
+                    ? (darkMode ? "bg-amber-900/40 text-amber-300 ring-1 ring-amber-500/50" : "bg-amber-50 text-amber-700 ring-1 ring-amber-200")
+                    : (darkMode ? "bg-blue-900/40 text-blue-300 ring-1 ring-blue-500/50" : "bg-blue-50 text-blue-700 ring-1 ring-blue-200"))
+                : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500")
+            }`}>
+            <span className="w-4 shrink-0" />
+            <span className="flex-1 min-w-0 truncate text-center">
+            {composite
+              ? (customTabs.size > 0
+                  ? GROUPS.flatMap(g => g.tabs).filter(ct => customTabs.has(ct)).map((ct, i) => (
+                      <span key={ct}>
+                        {i > 0 && <span className="opacity-40"> · </span>}
+                        <span className="font-bold text-amber-500">{t(TAB_I18N[ct])}</span>
+                      </span>
+                    ))
+                  : t("customModeBtn"))
+              : INDEX_TABS.has(tab)
+                ? <span className="font-bold text-blue-500">{t(TAB_I18N[tab])}</span>
+                : GROUPS[tabGroupIdx(tab)].tabs.map((gt, i) => (
+                    <span key={gt}>
+                      {i > 0 && <span className="opacity-40">/</span>}
+                      <span className={gt === tab ? "font-bold text-blue-500" : "opacity-60"}>{t(TAB_I18N[gt])}</span>
+                    </span>
+                  ))}
+            </span>
+            <svg className="w-4 h-4 shrink-0 opacity-40 transition-transform" style={{ transform: tabsExpanded ? "rotate(180deg)" : "" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
 
           {/* Tab selection dropdown */}
-          {tabsExpanded && (
-            <div className="space-y-1.5">
+          <div className="order-4 sm:col-span-2 grid transition-[grid-template-rows] duration-300 ease-in-out" style={{ gridTemplateRows: tabsExpanded ? "1fr" : "0fr" }}>
+            <div className="overflow-hidden">
+              <div className="space-y-1.5 pt-1.5">
               {/* Single/Multi toggle – top right */}
               <div className="flex justify-end gap-0.5 text-xs">
                 <button onClick={() => { if (composite) toggleComposite(); }}
@@ -941,12 +1008,12 @@ export default function RankingContent({ cities }: Props) {
                               composite
                                 ? (selected
                                     ? "bg-amber-500 text-white shadow-sm"
-                                    : (darkMode ? "bg-slate-800 text-slate-400 hover:bg-slate-700 opacity-50" : "bg-slate-100/70 text-slate-500 hover:bg-slate-200 opacity-50"))
+                                    : (darkMode ? "bg-slate-800 text-slate-400 opacity-50" : "bg-slate-100/70 text-slate-500 opacity-50"))
                                 : (selected
                                     ? "bg-blue-600 text-white shadow-sm"
                                     : gi === activeGroup
-                                      ? (darkMode ? "bg-slate-700 text-slate-200 hover:bg-slate-600" : "bg-blue-50 text-blue-700 hover:bg-blue-100")
-                                      : (darkMode ? "bg-slate-800 text-slate-400 hover:bg-slate-700" : "bg-slate-100/70 text-slate-600 hover:bg-slate-200"))
+                                      ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
+                                      : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600"))
                             }`}>
                             {t(TAB_I18N[gTab])}
                           </button>
@@ -966,20 +1033,21 @@ export default function RankingContent({ cities }: Props) {
                         composite
                           ? (selected
                               ? "bg-amber-500 text-white shadow-sm"
-                              : (darkMode ? "bg-slate-800 text-slate-400 hover:bg-slate-700 opacity-50" : "bg-slate-100/70 text-slate-500 hover:bg-slate-200 opacity-50"))
+                              : (darkMode ? "bg-slate-800 text-slate-400 opacity-50" : "bg-slate-100/70 text-slate-500 opacity-50"))
                           : (selected
                               ? "bg-blue-600 text-white shadow-sm"
                               : activeGroup === 4
-                                ? (darkMode ? "bg-slate-700 text-slate-200 hover:bg-slate-600" : "bg-blue-50 text-blue-700 hover:bg-blue-100")
-                                : (darkMode ? "bg-slate-800 text-slate-400 hover:bg-slate-700" : "bg-slate-100/70 text-slate-600 hover:bg-slate-200"))
+                                ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
+                                : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600"))
                       }`}>
                       {t(TAB_I18N[gTab])}
                     </button>
                   );
                 })}
               </div>
+              </div>
             </div>
-          )}
+          </div>
         </div>
 
 

@@ -23,7 +23,7 @@ export default function MethodologyContent() {
   const bg = darkMode ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900";
   const navBg = darkMode ? "bg-slate-900 border-slate-700" : "bg-white border-slate-200";
   const selectCls = `text-xs rounded px-1.5 py-1 border ${darkMode ? "bg-slate-800 border-slate-600 text-slate-200" : "bg-white border-slate-300 text-slate-700"}`;
-  const cardBg = darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100";
+  const cardBg = darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100";
   const subCls = darkMode ? "text-slate-400" : "text-slate-500";
   const headCls = darkMode ? "text-white" : "text-slate-900";
   const linkCls = darkMode ? "text-blue-400 hover:text-blue-300" : "text-blue-600 hover:text-blue-500";
@@ -1026,7 +1026,7 @@ export default function MethodologyContent() {
         <h1 className={`text-2xl font-bold mb-6 ${headCls}`}>{title}</h1>
 
         {/* Table of Contents */}
-        <nav className={`rounded-xl border p-4 mb-8 ${cardBg}`}>
+        <nav className={`rounded-xl border shadow-sm p-4 mb-8 ${cardBg}`}>
           <p className={`text-xs font-semibold mb-2 ${subCls}`}>{locale === "zh" ? "目录" : locale === "ja" ? "目次" : locale === "es" ? "Índice" : "Contents"}</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
             {toc.map(({ id, label }) => (

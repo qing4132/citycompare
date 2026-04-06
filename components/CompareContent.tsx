@@ -362,7 +362,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities 
         <div className="max-w-6xl mx-auto px-4 relative">
           {/* Gradient cover: opaque at top (hides content behind top corners), transparent at bottom (lets content peek through bottom corners) */}
           <div className={`absolute inset-0 bg-gradient-to-b ${darkMode ? "from-slate-950" : "from-slate-50"} to-transparent`} />
-          <div className={`relative rounded-xl shadow-md border px-4 py-3 flex items-center gap-2 ${darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100"}`}>
+          <div className={`relative rounded-xl shadow-md border px-4 py-3 flex items-center gap-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
           {visibleSlots.map((c, i) => {
             const isOpen = openSlot === i;
             return (
@@ -454,7 +454,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities 
 
       <div className="max-w-6xl mx-auto px-4">
       {/* ── Wins summary (standalone card) ── */}
-      <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100"}`}>
+      <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
         <div className="grid px-4 py-2" style={{ gridTemplateColumns: `repeat(${visibleSlots.length}, minmax(0, 1fr))` }}>
           {visibleSlots.map((c, i) => {
             const winDivider = i < visibleSlots.length - 1 ? `border-r ${darkMode ? "border-slate-700" : "border-slate-200"} pr-4` : "";
@@ -484,7 +484,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities 
           const groupBg = darkMode ? "bg-slate-700/30" : "bg-slate-50";
           const dividerCls = darkMode ? "border-slate-700" : "border-slate-200";
           return (
-            <div key={gk} className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100"}`}>
+            <div key={gk} className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
               {/* Group header */}
               <div className={groupBg}>
                 <p className={`px-4 py-2 text-xs font-bold tracking-wider uppercase ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
@@ -560,7 +560,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities 
           const sharedRainCeil = allRainFlat.length ? (Math.ceil(Math.max(...allRainFlat) / 50) * 50 || 50) : undefined;
 
           return (
-          <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100"}`}>
+          <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
             {/* Section header */}
             <div className={groupBg}>
               <p className={`px-4 py-2 text-xs font-bold tracking-wider uppercase ${darkMode ? "text-slate-400" : "text-slate-500"}`}>

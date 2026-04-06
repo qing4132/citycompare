@@ -338,7 +338,7 @@ export default function CityDetailContent({ city, slug, allCities }: Props) {
     if (tier === "bad") return darkMode ? "text-rose-400" : "text-rose-500";
     return headingCls;
   };
-  const baseCard = "rounded-xl border p-4 text-center " + (darkMode ? "bg-slate-800" : "bg-white");
+  const baseCard = "rounded-xl border shadow-sm p-4 text-center " + (darkMode ? "bg-slate-800" : "bg-white");
 
   return (
     <div className={`min-h-screen transition-colors ${darkMode ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"}`}>
@@ -492,7 +492,7 @@ export default function CityDetailContent({ city, slug, allCities }: Props) {
 
       {/* Row 1: 收支 + 住房 (2 grouped cards, 3 data each) */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
-        <div className={`rounded-xl border p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { label: `${t("avgIncome")} (${s.getProfessionLabel(activeProfession)})`, value: income !== null ? formatCurrency(income) : "—", sub: income !== null ? `#${rankHigher(allIncomes, income)} / ${n}` : `#${n} / ${n}`, tier: income !== null ? tierHigh(allIncomes, income) : "mid" as Tier },
@@ -507,7 +507,7 @@ export default function CityDetailContent({ city, slug, allCities }: Props) {
             ))}
           </div>
         </div>
-        <div className={`rounded-xl border p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { label: t("housePrice"), value: city.housePrice !== null ? `${formatCurrency(city.housePrice)}/m\u00b2` : "\u2014", sub: city.housePrice !== null ? `#${rankLower(allHouse, city.housePrice)} / ${n}` : `#${n} / ${n}`, tier: city.housePrice !== null ? tierLow(allHouse, city.housePrice) : "mid" as Tier },
@@ -526,7 +526,7 @@ export default function CityDetailContent({ city, slug, allCities }: Props) {
 
       {/* Row 2: 工作 + 环境与连接 (2 grouped cards, 3 data each) */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
-        <div className={`rounded-xl border p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { label: t("annualWorkHours"), value: city.annualWorkHours !== null ? `${city.annualWorkHours} ${t("unitH")}` : "—", sub: city.annualWorkHours !== null ? `#${rankLower(allWorkHours, city.annualWorkHours)} / ${n}` : `#${n} / ${n}`, tier: city.annualWorkHours !== null ? tierLow(allWorkHours, city.annualWorkHours) : "mid" as Tier },
@@ -541,7 +541,7 @@ export default function CityDetailContent({ city, slug, allCities }: Props) {
             ))}
           </div>
         </div>
-        <div className={`rounded-xl border p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { label: t("airQuality"), value: city.airQuality !== null ? `${city.country === "中国" ? "AQI (CN)" : "AQI"} ${city.airQuality}` : "—", sub: city.airQuality !== null ? `#${rankLower(allAqi, city.airQuality)} / ${n}` : `#${n} / ${n}`, tier: city.airQuality !== null ? tierLow(allAqi, city.airQuality) : "mid" as Tier },
@@ -597,7 +597,7 @@ export default function CityDetailContent({ city, slug, allCities }: Props) {
       {/* Climate */}
       {climate && (
       <section className="mb-10">
-        <div className={`rounded-xl border p-6 ${sectionBg}`}>
+        <div className={`rounded-xl border shadow-sm p-6 ${sectionBg}`}>
           <h2 className={`text-xl font-bold mb-4 ${headingCls}`}>{t("climateEnv")}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
@@ -681,7 +681,7 @@ export default function CityDetailContent({ city, slug, allCities }: Props) {
             const highlights = [...top2Adv, ...top1Dis];
 
             return (
-              <div key={otherId} className={`rounded-xl border p-3 text-center ${sectionBg}`}>
+              <div key={otherId} className={`rounded-xl border shadow-sm p-3 text-center ${sectionBg}`}>
                 <span className="text-2xl">{CITY_FLAG_EMOJIS[otherId] || "🏙️"}</span>
                 <Link href={`/city/${otherSlug}`} className={`block text-sm font-semibold mt-1 ${headingCls} hover:underline`}>{otherName}</Link>
                 <div className="min-h-[3.5rem] flex flex-col items-center justify-center mt-1">

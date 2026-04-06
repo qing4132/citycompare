@@ -1054,11 +1054,11 @@ export default function RankingContent({ cities }: Props) {
 
         {/* Table */}
         {deferredComposite && deferredCustomTabs.size === 0 ? (
-          <div className={`rounded-xl py-16 text-center ${darkMode ? "bg-gray-800 border border-gray-700 text-slate-400" : "bg-white border border-gray-100 text-slate-400"}`}>
+          <div className={`rounded-xl py-16 text-center ${darkMode ? "bg-slate-800 border border-slate-700 text-slate-400" : "bg-white border border-slate-100 text-slate-400"}`}>
             <p className="text-lg">{t("customModeHint")}</p>
           </div>
         ) : (
-        <div className={`rounded-xl shadow-md overflow-hidden ${darkMode ? "bg-gray-800 border border-gray-700" : "bg-white border border-gray-100"}`}>
+        <div className={`rounded-xl shadow-md overflow-hidden ${darkMode ? "bg-slate-800 border border-slate-700" : "bg-white border border-slate-100"}`}>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -1079,7 +1079,7 @@ export default function RankingContent({ cities }: Props) {
                     <tr key={r.city.id}
                       className={`${
                         idx < filtered.length - 1 ? (darkMode ? "border-b border-slate-700/50" : "border-b border-slate-100") : ""
-                      } ${isTop3 ? (darkMode ? "bg-blue-900/10" : "bg-blue-50/50") : ""
+                      } ${isTop3 ? (darkMode ? "bg-blue-900/10" : "bg-blue-50/50") : idx % 2 === 1 ? (darkMode ? "bg-slate-700/20" : "bg-slate-50/60") : ""
                       } hover:${darkMode ? "bg-slate-700/30" : "bg-slate-50"} transition`}>
                       <td className={`${tdBase} font-bold text-center ${darkMode ? "text-slate-300" : "text-slate-600"}`}>{badge}</td>
                       <td className={tdBase}>

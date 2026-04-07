@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { loadCities } from "@/lib/dataLoader";
 import { LOCALES } from "@/lib/i18nRouting";
 import { TRANSLATIONS } from "@/lib/i18n";
@@ -28,5 +29,5 @@ interface Props {
 export default async function RankingPage({ params }: Props) {
   const { locale } = await params;
   const cities = loadCities();
-  return <RankingContent cities={cities} locale={locale} />;
+  return <Suspense><RankingContent cities={cities} locale={locale} /></Suspense>;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useDeferredValue, useMemo, useState } from "react";
+import { useEffect, useDeferredValue, useMemo, useRef, useState } from "react";
 import type { City, CostTier, IncomeMode, ClimateType } from "@/lib/types";
 import { COUNTRY_TRANSLATIONS, CITY_NAME_TRANSLATIONS, LANGUAGE_LABELS } from "@/lib/i18n";
 import { POPULAR_CURRENCIES, CITY_FLAG_EMOJIS, CITY_CLIMATE } from "@/lib/constants";
@@ -10,7 +10,7 @@ import { computeAllNetIncomes } from "@/lib/taxUtils";
 import { useSettings } from "@/hooks/useSettings";
 import { trackEvent } from "@/lib/analytics";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 /* ── Types ── */
 
@@ -173,21 +173,46 @@ interface Props { cities: City[]; locale: string; }
 
 export default function RankingContent({ cities, locale: urlLocale }: Props) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const s = useSettings(urlLocale);
   const { locale, darkMode, themeMode, t, formatCurrency, costTier, profession, incomeMode, salaryMultiplier } = s;
+
+  /* ── URL ↔ State sync ── */
+  const validTab = (v: string | null): v is Tab => v !== null && Object.keys(TAB_I18N).includes(v);
+  const validClimType = (v: string): v is ClimateType => CLIMATE_TYPES.includes(v as ClimateType);
+  const validDimKey = (k: string) => CLIM_DIMS.some(d => d.key === k);
+  const urlTab = searchParams.get("tab");
+  const urlMode = searchParams.get("mode");
+  const urlTabs = searchParams.get("tabs");
+  const urlSub = searchParams.get("sub");
+  const urlClimate = searchParams.get("climate");
+  const urlCdim = searchParams.get("cdim");
+
+  /* ── Read initial state: URL params > localStorage > defaults ── */
+
   const [tab, setTabState] = useState<Tab>(() => {
+    if (validTab(urlTab)) return urlTab;
     if (typeof window === "undefined") return "income";
     const saved = localStorage.getItem("rankingTab");
-    return saved && Object.keys(TAB_I18N).includes(saved) ? (saved as Tab) : "income";
+    return saved && validTab(saved) ? saved : "income";
   });
-  const [subSort, setSubSort] = useState<SubSort>(null);
+  const [subSort, setSubSort] = useState<SubSort>(() => {
+    if (urlSub && ["savingsRate", "bigMacPower", "subWorkHours", "yearsToHome", "numbeo", "homicide", "gpi", "gallup", "doctors", "beds", "uhc", "lifeExp", "press", "democracy", "cpi"].includes(urlSub)) return urlSub as SubSort;
+    return null;
+  });
   const [navOpen, setNavOpen] = useState(false);
   const [composite, setCompositeState] = useState(() => {
+    if (urlMode === "multi") return true;
+    if (urlMode === "single") return false;
     if (typeof window === "undefined") return false;
     return localStorage.getItem("rankingComposite") === "1";
   });
   const deferredComposite = useDeferredValue(composite);
   const [customTabs, setCustomTabsState] = useState<Set<Tab>>(() => {
+    if (urlTabs) {
+      const arr = urlTabs.split(",").filter(validTab) as Tab[];
+      if (arr.length > 0) return new Set(arr);
+    }
     if (typeof window === "undefined") return new Set();
     const saved = localStorage.getItem("rankingCustomTabs");
     if (!saved) return new Set();
@@ -196,12 +221,27 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   });
   const deferredCustomTabs = useDeferredValue(customTabs);
   const [climTypeFilter, setClimTypeFilterState] = useState<Set<ClimateType>>(() => {
+    if (urlClimate) {
+      const arr = urlClimate.split(",").filter(validClimType) as ClimateType[];
+      if (arr.length > 0) return new Set(arr);
+    }
     if (typeof window === "undefined") return new Set();
     const saved = localStorage.getItem("rankingClimTypes");
     if (!saved) return new Set();
     return new Set(JSON.parse(saved) as ClimateType[]);
   });
   const [climDimFilter, setClimDimFilterState] = useState<Record<string, Set<ClimTier>>>(() => {
+    if (urlCdim) {
+      const result: Record<string, Set<ClimTier>> = {};
+      for (const part of urlCdim.split(",")) {
+        const [k, vs] = part.split(":");
+        if (validDimKey(k) && vs) {
+          const tiers = vs.split(".").map(Number).filter(n => n >= 0 && n <= 2) as ClimTier[];
+          if (tiers.length > 0) result[k] = new Set(tiers);
+        }
+      }
+      if (Object.keys(result).length > 0) return result;
+    }
     if (typeof window === "undefined") return {};
     const saved = localStorage.getItem("rankingClimDims");
     if (!saved) return {};
@@ -212,7 +252,10 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   });
   const [climOpen, setClimOpen] = useState(false);
   const [tabsExpanded, setTabsExpanded] = useState(false);
-  const setTab = (t: Tab) => { setTabState(t); localStorage.setItem("rankingTab", t); };
+  const setTab = (t: Tab) => {
+    setTabState(t);
+    localStorage.setItem("rankingTab", t);
+  };
   const setComposite: typeof setCompositeState = (v) => {
     setCompositeState(prev => {
       const next = typeof v === "function" ? v(prev) : v;
@@ -247,6 +290,27 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   const professions = cities[0]?.professions ? Object.keys(cities[0].professions) : [];
   const activeProfession = profession && professions.includes(profession) ? profession : professions[0] || "";
   const costField = `cost${costTier.charAt(0).toUpperCase()}${costTier.slice(1)}` as keyof City;
+
+  /* ── Sync state → URL (skip first render to preserve incoming URL params) ── */
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) { isFirstRender.current = false; return; }
+    const params = new URLSearchParams();
+    // Climate filters first (narrow scope), then tab/sort (view)
+    if (climTypeFilter.size > 0) params.set("climate", [...climTypeFilter].join(","));
+    const cdimParts: string[] = [];
+    for (const [k, s] of Object.entries(climDimFilter)) { if (s.size > 0) cdimParts.push(`${k}:${[...s].join(".")}`); }
+    if (cdimParts.length > 0) params.set("cdim", cdimParts.join(","));
+    if (composite) {
+      params.set("mode", "multi");
+      if (customTabs.size > 0) params.set("tabs", [...customTabs].join(","));
+    } else {
+      if (tab !== "income") params.set("tab", tab);
+      if (subSort) params.set("sub", subSort);
+    }
+    const qs = params.toString();
+    router.replace(`/${locale}/ranking${qs ? `?${qs}` : ""}`, { scroll: false });
+  }, [tab, subSort, composite, customTabs, climTypeFilter, climDimFilter, locale, router]);
 
   const selectCls = `text-xs rounded px-1.5 py-1 h-7 border ${darkMode ? "bg-slate-800 border-slate-600 text-slate-200" : "bg-white border-slate-300 text-slate-700"}`;
   const navBg = darkMode ? "bg-slate-900 border-slate-700" : "bg-white border-slate-200";
@@ -476,7 +540,9 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
       setTab(newTab); setSubSort(null);
     }
   };
-  const handleSubSort = (ss: SubSort) => setSubSort(prev => prev === ss ? null : ss);
+  const handleSubSort = (ss: SubSort) => {
+    setSubSort(prev => prev === ss ? null : ss);
+  };
   const toggleComposite = () => {
     setComposite(prev => {
       if (!prev) {

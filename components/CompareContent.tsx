@@ -42,28 +42,28 @@ type Metric = {
 
 /* ── 16 metrics (12 data + 4 indexes), grouped ── */
 const METRICS: Metric[] = [
-  { key: "income",   group: "income",      label: (t, x) => x ? `${t("avgIncome")} (${x.profession})` : t("avgIncome"),              get: (c, x) => x.allIncomes.get(c.id) ?? null, fmt: (v, x) => v != null ? x.fc(v) : "—" },
-  { key: "expense",  group: "income",      label: (t, x) => { const tier = x?.costField === "costBudget" ? "budget" : "moderate"; return `${t("monthlyCost")} (${t(`costTier${tier.charAt(0).toUpperCase()}${tier.slice(1)}`)})`; },            get: (c, x) => c[x.costField] as number | null, fmt: (v, x) => v != null ? x.fc(v) : "—", lower: true },
-  { key: "savings",  group: "income",      label: t => t("yearlySavings"),          get: (c, x) => { const inc = x.allIncomes.get(c.id); const cost = c[x.costField] as number; return inc != null ? inc - cost * 12 : null; }, fmt: (v, x) => v != null ? x.fc(v) : "—" },
-  { key: "house",    group: "housing",     label: t => t("housePrice"),             get: c => c.housePrice,                          fmt: (v, x) => v != null ? `${x.fc(v)}/m²` : "—", lower: true },
-  { key: "rent",     group: "housing",     label: t => t("monthlyRent"),            get: c => c.monthlyRent,                         fmt: (v, x) => v != null ? x.fc(v) : "—", lower: true },
-  { key: "years",    group: "housing",     label: t => t("yearsToBuy"),             get: (c, x) => { const inc = x.allIncomes.get(c.id); const cost = c[x.costField] as number; const sav = inc != null ? inc - cost * 12 : 0; return c.housePrice != null && sav > 0 ? (c.housePrice * 70) / sav : null; }, fmt: (v, x) => v != null ? `${v.toFixed(1)} ${x.t("insightYears")}` : "—", lower: true },
-  { key: "work",     group: "work",        label: t => t("annualWorkHours"),        get: c => c.annualWorkHours,                     fmt: (v, x) => v != null ? `${v} ${x.t("unitH")}` : "—", lower: true },
-  { key: "wage",     group: "work",        label: t => t("hourlyWage"),             get: (c, x) => { const inc = x.allIncomes.get(c.id); return inc != null && c.annualWorkHours != null && c.annualWorkHours > 0 ? inc / c.annualWorkHours : null; }, fmt: (v, x) => v != null ? x.fc(Math.round(v * 100) / 100) : "—" },
-  { key: "vacation", group: "work",        label: t => t("paidLeaveDays"),          get: c => c.paidLeaveDays,                       fmt: (v, x) => v != null ? `${v} ${x.t("paidLeaveDaysUnit")}` : "—" },
-  { key: "air",      group: "environment", label: t => t("airQuality"),              get: c => c.airQuality,                          fmt: (v, _x, c) => v != null ? `${c?.country === "中国" ? "AQI (CN)" : "AQI"} ${v}` : "—", lower: true },
-  { key: "internet", group: "environment", label: t => t("internetSpeed"),           get: c => c.internetSpeedMbps,                   fmt: (v, x) => v != null ? `${v} ${x.t("internetSpeedUnit")}` : "—" },
-  { key: "flights",  group: "environment", label: t => t("directFlights"),           get: c => c.directFlightCities,                  fmt: v => v != null ? `${v}` : "—" },
-  { key: "lp",       group: "index",       label: t => t("lifePressureIndex"),       get: (c, x) => { const inc = x.allIncomes.get(c.id) ?? 0; const allInc = x.allCities.map(cc => x.allIncomes.get(cc.id) ?? 0); return computeLifePressure(c, x.allCities, inc, allInc, x.costField).value; }, fmt: v => v != null ? v.toFixed(1) : "—", lower: true },
-  { key: "safety",   group: "index",       label: t => t("safetyIndex"),             get: c => c.safetyIndex,                         fmt: v => v != null ? v.toFixed(1) : "—" },
-  { key: "health",   group: "index",       label: t => t("healthcareIndex"),         get: c => c.healthcareIndex,                     fmt: v => v != null ? v.toFixed(1) : "—" },
-  { key: "freedom",  group: "index",       label: t => t("institutionalFreedom"),    get: c => c.freedomIndex,                        fmt: v => v != null ? v.toFixed(1) : "—" },
-  { key: "climateType", group: "climate", label: t => t("climateType"),             get: c => getCityClimate(c.id) ? 1 : null,       fmt: () => "—" },
-  { key: "avgTemp",  group: "climate",    label: t => t("avgTemp"),                 get: c => getCityClimate(c.id)?.avgTempC ?? null, fmt: v => v != null ? `${v.toFixed(1)}°C` : "—" },
-  { key: "tempRange",group: "climate",    label: t => t("tempRange"),               get: c => { const cl = getCityClimate(c.id); return cl ? cl.summerAvgC - cl.winterAvgC : null; }, fmt: v => v != null ? `${v.toFixed(1)}°C` : "—", lower: true },
-  { key: "rain",     group: "climate",    label: t => t("annualRain"),              get: c => getCityClimate(c.id)?.annualRainMm ?? null, fmt: v => v != null ? `${Math.round(v)} mm` : "—" },
-  { key: "humidity", group: "climate",    label: t => t("humidity"),                get: c => getCityClimate(c.id)?.humidityPct ?? null, fmt: v => v != null ? `${v}%` : "—", lower: true },
-  { key: "sunshine", group: "climate",    label: t => t("sunshine"),                get: c => getCityClimate(c.id)?.sunshineHours ?? null, fmt: (v, x) => v != null ? `${Math.round(v)} ${x.t("unitH")}` : "—" },
+  { key: "income", group: "income", label: (t, x) => x ? `${t("avgIncome")} (${x.profession})` : t("avgIncome"), get: (c, x) => x.allIncomes.get(c.id) ?? null, fmt: (v, x) => v != null ? x.fc(v) : "—" },
+  { key: "expense", group: "income", label: (t, x) => { const tier = x?.costField === "costBudget" ? "budget" : "moderate"; return `${t("monthlyCost")} (${t(`costTier${tier.charAt(0).toUpperCase()}${tier.slice(1)}`)})`; }, get: (c, x) => c[x.costField] as number | null, fmt: (v, x) => v != null ? x.fc(v) : "—", lower: true },
+  { key: "savings", group: "income", label: t => t("yearlySavings"), get: (c, x) => { const inc = x.allIncomes.get(c.id); const cost = c[x.costField] as number; return inc != null ? inc - cost * 12 : null; }, fmt: (v, x) => v != null ? x.fc(v) : "—" },
+  { key: "house", group: "housing", label: t => t("housePrice"), get: c => c.housePrice, fmt: (v, x) => v != null ? `${x.fc(v)}/m²` : "—", lower: true },
+  { key: "rent", group: "housing", label: t => t("monthlyRent"), get: c => c.monthlyRent, fmt: (v, x) => v != null ? x.fc(v) : "—", lower: true },
+  { key: "years", group: "housing", label: t => t("yearsToBuy"), get: (c, x) => { const inc = x.allIncomes.get(c.id); const cost = c[x.costField] as number; const sav = inc != null ? inc - cost * 12 : 0; return c.housePrice != null && sav > 0 ? (c.housePrice * 70) / sav : null; }, fmt: (v, x) => v != null ? `${v.toFixed(1)} ${x.t("insightYears")}` : "—", lower: true },
+  { key: "work", group: "work", label: t => t("annualWorkHours"), get: c => c.annualWorkHours, fmt: (v, x) => v != null ? `${v} ${x.t("unitH")}` : "—", lower: true },
+  { key: "wage", group: "work", label: t => t("hourlyWage"), get: (c, x) => { const inc = x.allIncomes.get(c.id); return inc != null && c.annualWorkHours != null && c.annualWorkHours > 0 ? inc / c.annualWorkHours : null; }, fmt: (v, x) => v != null ? x.fc(Math.round(v * 100) / 100) : "—" },
+  { key: "vacation", group: "work", label: t => t("paidLeaveDays"), get: c => c.paidLeaveDays, fmt: (v, x) => v != null ? `${v} ${x.t("paidLeaveDaysUnit")}` : "—" },
+  { key: "air", group: "environment", label: t => t("airQuality"), get: c => c.airQuality, fmt: (v, _x, c) => v != null ? `${c?.country === "中国" ? "AQI (CN)" : "AQI"} ${v}` : "—", lower: true },
+  { key: "internet", group: "environment", label: t => t("internetSpeed"), get: c => c.internetSpeedMbps, fmt: (v, x) => v != null ? `${v} ${x.t("internetSpeedUnit")}` : "—" },
+  { key: "flights", group: "environment", label: t => t("directFlights"), get: c => c.directFlightCities, fmt: v => v != null ? `${v}` : "—" },
+  { key: "lp", group: "index", label: t => t("lifePressureIndex"), get: (c, x) => { const inc = x.allIncomes.get(c.id) ?? 0; const allInc = x.allCities.map(cc => x.allIncomes.get(cc.id) ?? 0); return computeLifePressure(c, x.allCities, inc, allInc, x.costField).value; }, fmt: v => v != null ? v.toFixed(1) : "—", lower: true },
+  { key: "safety", group: "index", label: t => t("safetyIndex"), get: c => c.safetyIndex, fmt: v => v != null ? v.toFixed(1) : "—" },
+  { key: "health", group: "index", label: t => t("healthcareIndex"), get: c => c.healthcareIndex, fmt: v => v != null ? v.toFixed(1) : "—" },
+  { key: "freedom", group: "index", label: t => t("institutionalFreedom"), get: c => c.freedomIndex, fmt: v => v != null ? v.toFixed(1) : "—" },
+  { key: "climateType", group: "climate", label: t => t("climateType"), get: c => getCityClimate(c.id) ? 1 : null, fmt: () => "—" },
+  { key: "avgTemp", group: "climate", label: t => t("avgTemp"), get: c => getCityClimate(c.id)?.avgTempC ?? null, fmt: v => v != null ? `${v.toFixed(1)}°C` : "—" },
+  { key: "tempRange", group: "climate", label: t => t("tempRange"), get: c => { const cl = getCityClimate(c.id); return cl ? cl.summerAvgC - cl.winterAvgC : null; }, fmt: v => v != null ? `${v.toFixed(1)}°C` : "—", lower: true },
+  { key: "rain", group: "climate", label: t => t("annualRain"), get: c => getCityClimate(c.id)?.annualRainMm ?? null, fmt: v => v != null ? `${Math.round(v)} mm` : "—" },
+  { key: "humidity", group: "climate", label: t => t("humidity"), get: c => getCityClimate(c.id)?.humidityPct ?? null, fmt: v => v != null ? `${v}%` : "—", lower: true },
+  { key: "sunshine", group: "climate", label: t => t("sunshine"), get: c => getCityClimate(c.id)?.sunshineHours ?? null, fmt: (v, x) => v != null ? `${Math.round(v)} ${x.t("unitH")}` : "—" },
 ];
 
 const GROUP_KEYS = ["income", "housing", "work", "environment", "index"] as const;
@@ -213,7 +213,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
     });
     setHlIdx(-1);
     return q ? filtered.slice(0, 8) : filtered.slice(0, 20);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [openSlot, slotSearch, slots, allCities]);
 
   /* ── Switch city in a slot ── */
@@ -320,7 +320,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
                 <select value={s.currency} onChange={e => s.setCurrency(e.target.value)} className={selectCls}>
                   {POPULAR_CURRENCIES.map(cur => <option key={cur} value={cur}>{cur}</option>)}
                 </select>
-                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto"|"light"|"dark")} className={selectCls}>
+                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto" | "light" | "dark")} className={selectCls}>
                   <option value="auto">{t("themeAuto")}</option>
                   <option value="light">{t("dayMode")}</option>
                   <option value="dark">{t("nightMode")}</option>
@@ -353,7 +353,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
                 <select value={s.currency} onChange={e => s.setCurrency(e.target.value)} className={selectCls}>
                   {POPULAR_CURRENCIES.map(cur => <option key={cur} value={cur}>{cur}</option>)}
                 </select>
-                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto"|"light"|"dark")} className={selectCls}>
+                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto" | "light" | "dark")} className={selectCls}>
                   <option value="auto">{t("themeAuto")}</option>
                   <option value="light">{t("dayMode")}</option>
                   <option value="dark">{t("nightMode")}</option>
@@ -372,115 +372,110 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
           {/* Gradient cover: opaque at top (hides content behind top corners), transparent at bottom (lets content peek through bottom corners) */}
           <div className={`absolute inset-0 bg-gradient-to-b ${darkMode ? "from-slate-950" : "from-slate-50"} to-transparent`} />
           <div className={`relative rounded-xl shadow-md border px-4 py-3 flex items-center gap-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
-          {visibleSlots.map((c, i) => {
-            const isOpen = openSlot === i;
-            return (
-              <div key={`sel-${i}`} className="flex-1 min-w-0 flex justify-center relative" ref={el => { slotRefs.current[i] = el as HTMLDivElement | null; }}>
-                {c ? (
-                  /* ── Filled selector ── */
-                  <div
-                    role="combobox" aria-expanded={isOpen} aria-haspopup="listbox" aria-controls={`slot-list-${i}`} aria-label={getName(c)}
-                    tabIndex={0}
-                    onClick={() => { if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } }}
-                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } } }}
-                    className={`inline-flex items-center gap-1 px-2 py-2 rounded-lg border cursor-pointer transition w-full ${
-                      isOpen
-                        ? (darkMode ? "border-blue-500 bg-slate-700" : "border-blue-400 bg-blue-50")
-                        : (darkMode ? "border-slate-600 bg-slate-800 hover:border-slate-500" : "border-slate-200 bg-white hover:border-slate-400")
-                    }`}
-                  >
-                    <button onClick={e => { e.stopPropagation(); clearSlot(i); }} aria-label={t("remove")}
-                      className={`shrink-0 w-5 h-5 rounded-full text-sm flex items-center justify-center ${darkMode ? "text-slate-400 hover:text-red-400" : "text-slate-400 hover:text-red-500"}`}>
-                      ×
-                    </button>
-                    <span className="flex-1 flex items-center justify-center gap-1.5 min-w-0">
-                      <span className="text-sm shrink-0">{getFlag(c)}</span>
-                      <span className={`text-sm font-medium truncate ${headCls}`}>{getName(c)}</span>
-                    </span>
-                    <svg className={`shrink-0 w-5 h-5 ${darkMode ? "text-slate-400" : "text-slate-400"}`} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd"/></svg>
-                  </div>
-                ) : (
-                  /* ── Empty selector ── */
-                  <div
-                    role="combobox" aria-expanded={isOpen} aria-haspopup="listbox" aria-controls={`slot-list-${i}`} aria-label={t("chooseCity")}
-                    tabIndex={0}
-                    onClick={() => { if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } }}
-                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } } }}
-                    className={`inline-flex items-center gap-1 px-2 py-2 rounded-lg border border-dashed cursor-pointer transition w-full ${
-                      isOpen
-                        ? (darkMode ? "border-blue-500" : "border-blue-400")
-                        : (darkMode ? "border-slate-600 hover:border-slate-500" : "border-slate-300 hover:border-slate-400")
-                    }`}
-                  >
-                    <span className="shrink-0 w-5" />
-                    <span className={`flex-1 text-sm text-center ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{t("chooseCity").replace(":", "")}</span>
-                    <svg className={`shrink-0 w-5 h-5 ${darkMode ? "text-slate-400" : "text-slate-400"}`} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd"/></svg>
-                  </div>
-                )}
-                {/* ── Dropdown ── */}
-                {isOpen && (
-                  <div className={`absolute z-50 mt-1 left-0 right-0 rounded-xl shadow-lg border overflow-hidden ${
-                    darkMode ? "bg-slate-800 border-slate-600" : "bg-white border-slate-200"
-                  }`} style={{ top: "100%" }}>
-                    <input autoFocus value={slotSearch} onChange={e => setSlotSearch(e.target.value)}
-                      onKeyDown={e => {
-                        if (!slotResults.length) return;
-                        if (e.key === "ArrowDown") { e.preventDefault(); setHlIdx(j => (j + 1) % slotResults.length); }
-                        else if (e.key === "ArrowUp") { e.preventDefault(); setHlIdx(j => (j - 1 + slotResults.length) % slotResults.length); }
-                        else if (e.key === "Enter" && hlIdx >= 0 && hlIdx < slotResults.length) { e.preventDefault(); switchCity(i, slotResults[hlIdx]); }
-                        else if (e.key === "Escape") { setOpenSlot(null); setSlotSearch(""); setHlIdx(-1); }
-                      }}
-                      placeholder={t("homeSearchPlaceholder")}
-                      className={`w-full px-3 py-2 text-sm border-b focus:outline-none ${
-                        darkMode ? "bg-slate-800 border-slate-600 text-white placeholder-slate-500"
-                                 : "bg-white border-slate-200 text-slate-900 placeholder-slate-400"
-                      }`} />
-                    <div className="max-h-52 overflow-y-auto" role="listbox" id={`slot-list-${i}`}>
-                      {slotResults.map((rc, ri) => (
-                        <button key={rc.id} onClick={() => switchCity(i, rc)} onMouseEnter={() => setHlIdx(ri)} role="option" aria-selected={ri === hlIdx}
-                          className={`w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition ${
-                            ri === hlIdx
-                              ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-slate-700")
-                              : (darkMode ? "hover:bg-slate-700 text-slate-200" : "hover:bg-blue-50 text-slate-700")
-                          }`}>
-                          <span>{CITY_FLAG_EMOJIS[rc.id] || "🏙️"}</span>
-                          <span className="font-medium truncate">{getName(rc)}</span>
-                          <span className={`text-xs ml-auto shrink-0 hidden min-[1080px]:inline ${subCls}`}>{getCountry(rc)}</span>
-                        </button>
-                      ))}
-                      {slotSearch.trim() && slotResults.length === 0 && (
-                        <p className={`px-3 py-2 text-xs ${subCls}`}>{t("homeNoResults")}</p>
-                      )}
+            {visibleSlots.map((c, i) => {
+              const isOpen = openSlot === i;
+              return (
+                <div key={`sel-${i}`} className="flex-1 min-w-0 flex justify-center relative" ref={el => { slotRefs.current[i] = el as HTMLDivElement | null; }}>
+                  {c ? (
+                    /* ── Filled selector ── */
+                    <div
+                      role="combobox" aria-expanded={isOpen} aria-haspopup="listbox" aria-controls={`slot-list-${i}`} aria-label={getName(c)}
+                      tabIndex={0}
+                      onClick={() => { if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } }}
+                      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } } }}
+                      className={`inline-flex items-center gap-1 px-2 py-2 rounded-lg border cursor-pointer transition w-full ${isOpen
+                          ? (darkMode ? "border-blue-500 bg-slate-700" : "border-blue-400 bg-blue-50")
+                          : (darkMode ? "border-slate-600 bg-slate-800 hover:border-slate-500" : "border-slate-200 bg-white hover:border-slate-400")
+                        }`}
+                    >
+                      <button onClick={e => { e.stopPropagation(); clearSlot(i); }} aria-label={t("remove")}
+                        className={`shrink-0 w-5 h-5 rounded-full text-sm flex items-center justify-center ${darkMode ? "text-slate-400 hover:text-red-400" : "text-slate-400 hover:text-red-500"}`}>
+                        ×
+                      </button>
+                      <span className="flex-1 flex items-center justify-center gap-1.5 min-w-0">
+                        <span className="text-sm shrink-0">{getFlag(c)}</span>
+                        <span className={`text-sm font-medium truncate ${headCls}`}>{getName(c)}</span>
+                      </span>
+                      <svg className={`shrink-0 w-5 h-5 ${darkMode ? "text-slate-400" : "text-slate-400"}`} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
                     </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                  ) : (
+                    /* ── Empty selector ── */
+                    <div
+                      role="combobox" aria-expanded={isOpen} aria-haspopup="listbox" aria-controls={`slot-list-${i}`} aria-label={t("chooseCity")}
+                      tabIndex={0}
+                      onClick={() => { if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } }}
+                      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (isOpen) { setOpenSlot(null); setSlotSearch(""); } else { setOpenSlot(i); setSlotSearch(""); } } }}
+                      className={`inline-flex items-center gap-1 px-2 py-2 rounded-lg border border-dashed cursor-pointer transition w-full ${isOpen
+                          ? (darkMode ? "border-blue-500" : "border-blue-400")
+                          : (darkMode ? "border-slate-600 hover:border-slate-500" : "border-slate-300 hover:border-slate-400")
+                        }`}
+                    >
+                      <span className="shrink-0 w-5" />
+                      <span className={`flex-1 text-sm text-center ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{t("chooseCity").replace(":", "")}</span>
+                      <svg className={`shrink-0 w-5 h-5 ${darkMode ? "text-slate-400" : "text-slate-400"}`} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
+                    </div>
+                  )}
+                  {/* ── Dropdown ── */}
+                  {isOpen && (
+                    <div className={`absolute z-50 mt-1 left-0 right-0 rounded-xl shadow-lg border overflow-hidden ${darkMode ? "bg-slate-800 border-slate-600" : "bg-white border-slate-200"
+                      }`} style={{ top: "100%" }}>
+                      <input autoFocus value={slotSearch} onChange={e => setSlotSearch(e.target.value)}
+                        onKeyDown={e => {
+                          if (!slotResults.length) return;
+                          if (e.key === "ArrowDown") { e.preventDefault(); setHlIdx(j => (j + 1) % slotResults.length); }
+                          else if (e.key === "ArrowUp") { e.preventDefault(); setHlIdx(j => (j - 1 + slotResults.length) % slotResults.length); }
+                          else if (e.key === "Enter" && hlIdx >= 0 && hlIdx < slotResults.length) { e.preventDefault(); switchCity(i, slotResults[hlIdx]); }
+                          else if (e.key === "Escape") { setOpenSlot(null); setSlotSearch(""); setHlIdx(-1); }
+                        }}
+                        placeholder={t("homeSearchPlaceholder")}
+                        className={`w-full px-3 py-2 text-sm border-b focus:outline-none ${darkMode ? "bg-slate-800 border-slate-600 text-white placeholder-slate-500"
+                            : "bg-white border-slate-200 text-slate-900 placeholder-slate-400"
+                          }`} />
+                      <div className="max-h-52 overflow-y-auto" role="listbox" id={`slot-list-${i}`}>
+                        {slotResults.map((rc, ri) => (
+                          <button key={rc.id} onClick={() => switchCity(i, rc)} onMouseEnter={() => setHlIdx(ri)} role="option" aria-selected={ri === hlIdx}
+                            className={`w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition ${ri === hlIdx
+                                ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-slate-700")
+                                : (darkMode ? "hover:bg-slate-700 text-slate-200" : "hover:bg-blue-50 text-slate-700")
+                              }`}>
+                            <span>{CITY_FLAG_EMOJIS[rc.id] || "🏙️"}</span>
+                            <span className="font-medium truncate">{getName(rc)}</span>
+                            <span className={`text-xs ml-auto shrink-0 hidden min-[1080px]:inline ${subCls}`}>{getCountry(rc)}</span>
+                          </button>
+                        ))}
+                        {slotSearch.trim() && slotResults.length === 0 && (
+                          <p className={`px-3 py-2 text-xs ${subCls}`}>{t("homeNoResults")}</p>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4">
-      {/* ── Wins summary (standalone card) ── */}
-      <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
-        <div className="grid px-4 py-2" style={{ gridTemplateColumns: `repeat(${visibleSlots.length}, minmax(0, 1fr))` }}>
-          {visibleSlots.map((c, i) => {
-            const winDivider = i < visibleSlots.length - 1 ? `border-r ${darkMode ? "border-slate-700" : "border-slate-200"} pr-4` : "";
-            const winValC = c && winCounts[i] > 0
-              ? (darkMode ? "text-emerald-400" : "text-emerald-600")
-              : (darkMode ? "text-slate-600" : "text-slate-300");
-            return (
-              <div key={`wins-${i}`} className={`flex flex-col items-center text-center py-2 ${winDivider}`}>
-                <p className={`text-xs mb-0.5 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{t("compareLeading")}</p>
-                <p className={`text-lg font-bold ${winValC}`}>
-                  {c ? t("winsIn", { name: "", count: winCounts[i] }).replace(/^\s*/, "") : "—"}
-                </p>
-              </div>
-            );
-          })}
+        {/* ── Wins summary (standalone card) ── */}
+        <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
+          <div className="grid px-4 py-2" style={{ gridTemplateColumns: `repeat(${visibleSlots.length}, minmax(0, 1fr))` }}>
+            {visibleSlots.map((c, i) => {
+              const winDivider = i < visibleSlots.length - 1 ? `border-r ${darkMode ? "border-slate-700" : "border-slate-200"} pr-4` : "";
+              const winValC = c && winCounts[i] > 0
+                ? (darkMode ? "text-emerald-400" : "text-emerald-600")
+                : (darkMode ? "text-slate-600" : "text-slate-300");
+              return (
+                <div key={`wins-${i}`} className={`flex flex-col items-center text-center py-2 ${winDivider}`}>
+                  <p className={`text-xs mb-0.5 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{t("compareLeading")}</p>
+                  <p className={`text-lg font-bold ${winValC}`}>
+                    {c ? t("winsIn", { name: "", count: winCounts[i] }).replace(/^\s*/, "") : "—"}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
         {/* ──── Per-group cards ──── */}
         {GROUP_KEYS.map(gk => {
@@ -569,93 +564,93 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
           const sharedRainCeil = allRainFlat.length ? (Math.ceil(Math.max(...allRainFlat) / 50) * 50 || 50) : undefined;
 
           return (
-          <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
-            {/* Section header */}
-            <div className={groupBg}>
-              <p className={`px-4 py-2 text-xs font-bold tracking-wider uppercase ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                {t(GROUP_I18N[CLIMATE_GROUP_KEY])}
-              </p>
-            </div>
+            <div className={`rounded-xl shadow-md overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
+              {/* Section header */}
+              <div className={groupBg}>
+                <p className={`px-4 py-2 text-xs font-bold tracking-wider uppercase ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+                  {t(GROUP_I18N[CLIMATE_GROUP_KEY])}
+                </p>
+              </div>
 
-            {/* Per-city columns: data + chart in same column for alignment */}
-            <div className="p-4">
-              <div className="grid gap-4" style={{ gridTemplateColumns: climateCols >= 2 ? `repeat(${visibleSlots.length}, minmax(0, 1fr))` : '1fr' }}>
-                {visibleSlots.map((slot, ci) => {
-                  const c = slot;
-                  const items = c ? climateItems(c) : null;
-                  const cl = c ? getCityClimate(c.id) : null;
-                  if (!c || !items) return (
-                    <div key={`clim-empty-${ci}`} className="flex flex-col items-center justify-center">
-                      <p className={`text-lg font-bold ${darkMode ? "text-slate-600" : "text-slate-300"}`}>—</p>
-                    </div>
-                  );
-                  return (
-                    <div key={c.id} className={ci < visibleSlots.length - 1 && climateCols >= 2 ? `border-r ${dividerCls} pr-4` : ""}>
-                      {/* City name label (stacked mode) */}
-                      {climateCols === 1 && (
-                        <>
-                          {ci > 0 && <hr className={`my-3 ${dividerCls}`} />}
-                          <p className={`text-sm font-bold text-center mb-2 ${headCls}`}>{getFlag(c)} {getName(c)}</p>
-                        </>
-                      )}
-                      <div className="grid grid-cols-2 gap-1">
-                        {items.map(([label, val]) => (
-                          <div key={label} className="flex flex-col items-center text-center p-2">
-                            <p className={`text-[10px] font-semibold tracking-wide mb-0.5 ${subCls}`}>{label}</p>
-                            <p className={`text-sm font-extrabold ${headCls}`}>{val}</p>
-                          </div>
-                        ))}
+              {/* Per-city columns: data + chart in same column for alignment */}
+              <div className="p-4">
+                <div className="grid gap-4" style={{ gridTemplateColumns: climateCols >= 2 ? `repeat(${visibleSlots.length}, minmax(0, 1fr))` : '1fr' }}>
+                  {visibleSlots.map((slot, ci) => {
+                    const c = slot;
+                    const items = c ? climateItems(c) : null;
+                    const cl = c ? getCityClimate(c.id) : null;
+                    if (!c || !items) return (
+                      <div key={`clim-empty-${ci}`} className="flex flex-col items-center justify-center">
+                        <p className={`text-lg font-bold ${darkMode ? "text-slate-600" : "text-slate-300"}`}>—</p>
                       </div>
-                      {/* Chart */}
-                      {cl?.monthlyHighC && (
-                        <div className="mt-3">
-                          <ClimateChart climate={cl} locale={locale} darkMode={darkMode} t={t} hideTitle hideLegend
-                            sharedTempMin={sharedTempMin} sharedTempMax={sharedTempMax} sharedRainCeil={sharedRainCeil} />
+                    );
+                    return (
+                      <div key={c.id} className={ci < visibleSlots.length - 1 && climateCols >= 2 ? `border-r ${dividerCls} pr-4` : ""}>
+                        {/* City name label (stacked mode) */}
+                        {climateCols === 1 && (
+                          <>
+                            {ci > 0 && <hr className={`my-3 ${dividerCls}`} />}
+                            <p className={`text-sm font-bold text-center mb-2 ${headCls}`}>{getFlag(c)} {getName(c)}</p>
+                          </>
+                        )}
+                        <div className="grid grid-cols-2 gap-1">
+                          {items.map(([label, val]) => (
+                            <div key={label} className="flex flex-col items-center text-center p-2">
+                              <p className={`text-[10px] font-semibold tracking-wide mb-0.5 ${subCls}`}>{label}</p>
+                              <p className={`text-sm font-extrabold ${headCls}`}>{val}</p>
+                            </div>
+                          ))}
                         </div>
-                      )}
-                    </div>
-                  );
-                })}
+                        {/* Chart */}
+                        {cl?.monthlyHighC && (
+                          <div className="mt-3">
+                            <ClimateChart climate={cl} locale={locale} darkMode={darkMode} t={t} hideTitle hideLegend
+                              sharedTempMin={sharedTempMin} sharedTempMax={sharedTempMax} sharedRainCeil={sharedRainCeil} />
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                {/* Shared legend */}
+                {hasCharts && (
+                  <div className={`flex items-center justify-center gap-4 mt-3 text-[10px] ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+                    <span className="flex items-center gap-1">
+                      <span className="inline-block w-3 h-2 rounded-sm" style={{ background: darkMode ? "#fbbf24" : "#f59e0b" }} />
+                      {t("chartTempLegend")}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span className="inline-block w-3 h-2 rounded-sm" style={{ background: darkMode ? "#38bdf8" : "#0ea5e9" }} />
+                      {t("chartRainLegend")}
+                    </span>
+                  </div>
+                )}
               </div>
-              {/* Shared legend */}
-              {hasCharts && (
-              <div className={`flex items-center justify-center gap-4 mt-3 text-[10px] ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                <span className="flex items-center gap-1">
-                  <span className="inline-block w-3 h-2 rounded-sm" style={{ background: darkMode ? "#fbbf24" : "#f59e0b" }} />
-                  {t("chartTempLegend")}
-                </span>
-                <span className="flex items-center gap-1">
-                  <span className="inline-block w-3 h-2 rounded-sm" style={{ background: darkMode ? "#38bdf8" : "#0ea5e9" }} />
-                  {t("chartRainLegend")}
-                </span>
-              </div>
-              )}
             </div>
-          </div>
           );
         })()}
 
         {/* ──── City guide links ──── */}
         {filledCities.length > 0 && (
-        <div className="grid gap-3 mt-4" style={{ gridTemplateColumns: `repeat(${visibleSlots.length}, minmax(0, 1fr))` }}>
-          {visibleSlots.map((c, i) => c ? (
-            <Link key={c.id} href={`/${locale}/city/${CITY_SLUGS[c.id]}`}
-              className={`rounded-xl border p-4 transition ${sectionBg} hover:border-blue-400 hover:shadow`}>
-              <p className="text-2xl mb-1">{getFlag(c)}</p>
-              <p className={`font-bold ${headCls}`}>{getName(c)}</p>
-              <p className={`text-xs mt-0.5 ${subCls}`}>{getCountry(c)} · {t("cityGuideDesc")}</p>
-            </Link>
-          ) : <div key={`guide-empty-${i}`} />)}
-        </div>
+          <div className="grid gap-3 mt-4" style={{ gridTemplateColumns: `repeat(${visibleSlots.length}, minmax(0, 1fr))` }}>
+            {visibleSlots.map((c, i) => c ? (
+              <Link key={c.id} href={`/${locale}/city/${CITY_SLUGS[c.id]}`}
+                className={`rounded-xl border p-4 transition ${sectionBg} hover:border-blue-400 hover:shadow`}>
+                <p className="text-2xl mb-1">{getFlag(c)}</p>
+                <p className={`font-bold ${headCls}`}>{getName(c)}</p>
+                <p className={`text-xs mt-0.5 ${subCls}`}>{getCountry(c)} · {t("cityGuideDesc")}</p>
+              </Link>
+            ) : <div key={`guide-empty-${i}`} />)}
+          </div>
         )}
 
-        </div>
+      </div>
 
       {/* Footer */}
       <footer className={`px-4 py-5 text-center text-xs ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
         <div className={`max-w-5xl mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
-        <p>{t("dataSourcesDisclaimer")}</p>
-        <p className="mt-1"><a href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</a> · <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">GitHub</a> · <a href="mailto:qing4132@users.noreply.github.com" className="underline hover:text-blue-500">{t("footerFeedback")}</a></p>
+          <p>{t("dataSourcesDisclaimer")}</p>
+          <p className="mt-1"><a href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</a> · <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">GitHub</a> · <a href="mailto:qing4132@users.noreply.github.com" className="underline hover:text-blue-500">{t("footerFeedback")}</a></p>
         </div>
       </footer>
     </div>

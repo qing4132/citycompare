@@ -395,7 +395,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                 <select value={s.currency} onChange={e => s.setCurrency(e.target.value)} className={selectCls}>
                   {POPULAR_CURRENCIES.map(cur => <option key={cur} value={cur}>{cur}</option>)}
                 </select>
-                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto"|"light"|"dark")} className={selectCls}>
+                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto" | "light" | "dark")} className={selectCls}>
                   <option value="auto">{t("themeAuto")}</option>
                   <option value="light">{t("dayMode")}</option>
                   <option value="dark">{t("nightMode")}</option>
@@ -430,7 +430,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                 <select value={s.currency} onChange={e => s.setCurrency(e.target.value)} className={selectCls}>
                   {POPULAR_CURRENCIES.map(cur => <option key={cur} value={cur}>{cur}</option>)}
                 </select>
-                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto"|"light"|"dark")} className={selectCls}>
+                <select value={themeMode} onChange={e => s.setThemeMode(e.target.value as "auto" | "light" | "dark")} className={selectCls}>
                   <option value="auto">{t("themeAuto")}</option>
                   <option value="light">{t("dayMode")}</option>
                   <option value="dark">{t("nightMode")}</option>
@@ -443,279 +443,278 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
 
       <div className="max-w-6xl mx-auto px-4 pt-8">
 
-      {/* Safety warning banner (full-width, above hero) */}
-      {city.safetyWarning && (
-        <div className={`rounded-lg px-4 py-2.5 mb-6 text-sm flex items-start gap-2 ${
-          city.safetyWarning === "active_conflict"
-            ? (darkMode ? "bg-red-900/40 text-red-300 border border-red-500/50" : "bg-red-50 text-red-700 border border-red-300")
-            : city.safetyWarning === "extreme_instability"
-              ? (darkMode ? "bg-orange-900/40 text-orange-300 border border-orange-500/50" : "bg-orange-50 text-orange-700 border border-orange-300")
-              : (darkMode ? "bg-amber-900/40 text-amber-300 border border-amber-500/50" : "bg-amber-50 text-amber-700 border border-amber-300")
-        }`}>
-          <span className="font-bold shrink-0">{t("safetyWarningTitle")}</span>
-          <span>{
-            city.safetyWarning === "active_conflict" ? t("safetyWarningConflict")
-              : city.safetyWarning === "extreme_instability" ? t("safetyWarningInstability")
-              : t("safetyWarningBlocked")
-          }</span>
-        </div>
-      )}
-
-      {/* Hero */}
-      <header className="mb-10">
-        <div className="flex flex-wrap items-center gap-3 mb-2">
-          <div className="flex items-center gap-3 flex-1 min-w-0">
-            <span className="text-4xl shrink-0">{flag}</span>
-            <div className="min-w-0">
-              <h1 className={`text-3xl sm:text-4xl font-extrabold ${headingCls}`}>{cityName}</h1>
-              <p className={`text-lg ${subCls}`}>{countryName}</p>
-            </div>
+        {/* Safety warning banner (full-width, above hero) */}
+        {city.safetyWarning && (
+          <div className={`rounded-lg px-4 py-2.5 mb-6 text-sm flex items-start gap-2 ${city.safetyWarning === "active_conflict"
+              ? (darkMode ? "bg-red-900/40 text-red-300 border border-red-500/50" : "bg-red-50 text-red-700 border border-red-300")
+              : city.safetyWarning === "extreme_instability"
+                ? (darkMode ? "bg-orange-900/40 text-orange-300 border border-orange-500/50" : "bg-orange-50 text-orange-700 border border-orange-300")
+                : (darkMode ? "bg-amber-900/40 text-amber-300 border border-amber-500/50" : "bg-amber-50 text-amber-700 border border-amber-300")
+            }`}>
+            <span className="font-bold shrink-0">{t("safetyWarningTitle")}</span>
+            <span>{
+              city.safetyWarning === "active_conflict" ? t("safetyWarningConflict")
+                : city.safetyWarning === "extreme_instability" ? t("safetyWarningInstability")
+                  : t("safetyWarningBlocked")
+            }</span>
           </div>
-          {incomeMode !== "gross" && taxResult !== null && (
-            <div className={`rounded-xl border px-4 py-3 text-sm w-full sm:w-auto sm:max-w-xs ${darkMode ? "border-slate-600 bg-slate-800/80" : "border-slate-200 bg-slate-50"}`}>
-              <p className={`font-bold text-xs mb-1 ${subCls}`}>{t("effectiveTaxRate")}</p>
-              <p className={`leading-snug font-medium ${headingCls}`}>
-                ~{(taxResult.effectiveRate * 100).toFixed(1)}%{taxResult.hasExpatScheme && ` · ${t("expatSchemeNote", { scheme: t(getExpatSchemeName(city.country)) })}`}
-              </p>
+        )}
+
+        {/* Hero */}
+        <header className="mb-10">
+          <div className="flex flex-wrap items-center gap-3 mb-2">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              <span className="text-4xl shrink-0">{flag}</span>
+              <div className="min-w-0">
+                <h1 className={`text-3xl sm:text-4xl font-extrabold ${headingCls}`}>{cityName}</h1>
+                <p className={`text-lg ${subCls}`}>{countryName}</p>
+              </div>
             </div>
-          )}
-          {(() => {
-            const langs = CITY_LANGUAGES[id] || [];
-            const localized = langs.map(l => LANGUAGE_NAME_TRANSLATIONS[l]?.[locale] || l);
-            const show = localized.slice(0, 3);
-            const more = localized.length - show.length;
-            return langs.length > 0 ? (
+            {incomeMode !== "gross" && taxResult !== null && (
               <div className={`rounded-xl border px-4 py-3 text-sm w-full sm:w-auto sm:max-w-xs ${darkMode ? "border-slate-600 bg-slate-800/80" : "border-slate-200 bg-slate-50"}`}>
-                <p className={`font-bold text-xs mb-1 ${subCls}`}>{t("officialLanguages")}</p>
+                <p className={`font-bold text-xs mb-1 ${subCls}`}>{t("effectiveTaxRate")}</p>
                 <p className={`leading-snug font-medium ${headingCls}`}>
-                  {show.join(" · ")}{more > 0 && <span className={`ml-1 ${subCls}`}>+{more}</span>}
+                  ~{(taxResult.effectiveRate * 100).toFixed(1)}%{taxResult.hasExpatScheme && ` · ${t("expatSchemeNote", { scheme: t(getExpatSchemeName(city.country)) })}`}
                 </p>
               </div>
-            ) : null;
-          })()}
-        </div>
-        {CITY_INTROS[id] && (
-          <p className={`mt-4 leading-relaxed text-sm sm:text-base ${subCls}`}>{CITY_INTROS[id][locale] || CITY_INTROS[id].zh}</p>
-        )}
-      </header>
-
-      {/* Row 1: 收支 + 住房 (2 grouped cards, 3 data each) */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
-        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { label: `${t("avgIncome")} (${s.getProfessionLabel(activeProfession)})`, value: income !== null ? formatCurrency(income) : "—", sub: income !== null ? `#${rankHigher(allIncomes, income)} / ${n}` : `#${n} / ${n}`, tier: income !== null ? tierHigh(allIncomes, income) : "mid" as Tier },
-              { label: `${t("monthlyCost")} (${t(`costTier${costTier.charAt(0).toUpperCase()}${costTier.slice(1)}`)})`, value: formatCurrency(tierCost), sub: `#${rankLower(allCosts, tierCost)} / ${n}`, tier: tierLow(allCosts, tierCost) },
-              { label: t("yearlySavings"), value: savings !== null ? formatCurrency(savings) : "—", sub: savings !== null ? `#${rankHigher(allSavings, savings)} / ${n}` : `#${n} / ${n}`, tier: savings !== null ? tierHigh(allSavings, savings) : "mid" as Tier },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
-                <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
-                <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
-                <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { label: t("housePrice"), value: city.housePrice !== null ? `${formatCurrency(city.housePrice)}/m\u00b2` : "\u2014", sub: city.housePrice !== null ? `#${rankLower(allHouse, city.housePrice)} / ${n}` : `#${n} / ${n}`, tier: city.housePrice !== null ? tierLow(allHouse, city.housePrice) : "mid" as Tier },
-              { label: t("yearsToBuy"), value: isFinite(yearsVal) ? `${yearsVal.toFixed(1)} ${t("insightYears")}` : "N/A", sub: `#${rankYearsToHome(yearsVal)} / ${n}`, tier: isFinite(yearsVal) ? tierLow(allYearsToHome.filter(isFinite), yearsVal) : "bad" as Tier },
-              { label: t("monthlyRent"), value: city.monthlyRent !== null ? formatCurrency(city.monthlyRent) : "\u2014", sub: city.monthlyRent !== null ? `#${rankLower(allRent, city.monthlyRent)} / ${n}` : `#${n} / ${n}`, tier: city.monthlyRent !== null ? tierLow(allRent, city.monthlyRent) : "mid" as Tier },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
-                <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
-                <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
-                <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Row 2: 工作 + 环境与连接 (2 grouped cards, 3 data each) */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
-        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { label: t("annualWorkHours"), value: city.annualWorkHours !== null ? `${city.annualWorkHours} ${t("unitH")}` : "—", sub: city.annualWorkHours !== null ? `#${rankLower(allWorkHours, city.annualWorkHours)} / ${n}` : `#${n} / ${n}`, tier: city.annualWorkHours !== null ? tierLow(allWorkHours, city.annualWorkHours) : "mid" as Tier },
-              { label: t("hourlyWage"), value: hourlyWage > 0 ? formatCurrency(Math.round(hourlyWage * 100) / 100) : "—", sub: hourlyWage > 0 ? `#${rankHigher(allHourly.filter(v => v > 0), hourlyWage)} / ${n}` : `#${n} / ${n}`, tier: hourlyWage > 0 ? tierHigh(allHourly.filter(v => v > 0), hourlyWage) : "mid" as Tier },
-              { label: t("paidLeaveDays"), value: city.paidLeaveDays !== null ? `${city.paidLeaveDays} ${t("paidLeaveDaysUnit")}` : "—", sub: city.paidLeaveDays !== null ? `#${rankHigher(allLeave, city.paidLeaveDays)} / ${n}` : `#${n} / ${n}`, tier: city.paidLeaveDays !== null ? tierHigh(allLeave, city.paidLeaveDays) : "mid" as Tier },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
-                <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
-                <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
-                <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { label: t("airQuality"), value: city.airQuality !== null ? `${city.country === "中国" ? "AQI (CN)" : "AQI"} ${city.airQuality}` : "—", sub: city.airQuality !== null ? `#${rankLower(allAqi, city.airQuality)} / ${n}` : `#${n} / ${n}`, tier: city.airQuality !== null ? tierLow(allAqi, city.airQuality) : "mid" as Tier },
-              { label: t("internetSpeed"), value: city.internetSpeedMbps !== null ? `${city.internetSpeedMbps} ${t("internetSpeedUnit")}` : "—", sub: city.internetSpeedMbps !== null ? `#${rankHigher(allSpeed, city.internetSpeedMbps)} / ${n}` : `#${n} / ${n}`, tier: city.internetSpeedMbps !== null ? tierHigh(allSpeed, city.internetSpeedMbps) : "mid" as Tier },
-              { label: t("directFlights"), value: city.directFlightCities !== null ? String(city.directFlightCities) : "—", sub: city.directFlightCities !== null ? `#${rankHigher(allFlights, city.directFlightCities)} / ${n}` : `#${n} / ${n}`, tier: city.directFlightCities !== null ? tierHigh(allFlights, city.directFlightCities) : "mid" as Tier },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
-                <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
-                <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
-                <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Row 3: 4 index cards (expandable) */}
-      <IndexCardRow
-        darkMode={darkMode}
-        headingCls={headingCls}
-        subCls={subCls}
-        baseCard={baseCard}
-        cardBorder={cardBorder}
-        cardValCls={cardValCls}
-        t={t}
-        n={n}
-        rankHigher={rankHigher}
-        rankLower={rankLower}
-        formatCurrency={formatCurrency}
-        city={city}
-        income={income}
-        tierCost={tierCost}
-        savings={savings}
-        yearsVal={yearsVal}
-        hourlyWage={hourlyWage}
-        lifePressure={lifePressure}
-        lifePressureConfidence={lifePressureResult.confidence}
-        allLifePressure={allLifePressure}
-        healthcareIdx={healthcareIdx}
-        allHealthcare={allHealthcare}
-        freedomIdx={freedomIdx}
-        allFreedom={allFreedom}
-        safetyIndex={city.safetyIndex}
-        allSafety={allSafety}
-        tierHigh={tierHigh}
-        tierLow={tierLow}
-        allCities={allCities}
-        allIncomes={allIncomes}
-        costTierField={costTierField}
-      />
-      
-
-      {/* Climate */}
-      {climate && (
-      <section className="mb-10">
-        <div className={`rounded-xl border shadow-sm p-6 ${sectionBg}`}>
-          <h2 className={`text-xl font-bold mb-4 ${headingCls}`}>{t("climateEnv")}</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              [t("climateType"), getClimateLabel(climate.type, locale)],
-              [t("avgTemp"), `${climate.avgTempC.toFixed(1)}°C`],
-              [t("tempRange"), `${(climate.summerAvgC - climate.winterAvgC).toFixed(1)}°C`],
-              [t("annualRain"), `${Math.round(climate.annualRainMm)} mm`],
-              [t("humidity"), `${climate.humidityPct}%`],
-              [t("sunshine"), `${Math.round(climate.sunshineHours)} ${t("unitH")}`],
-            ].map(([label, val]) => (
-              <div key={label} className="flex flex-col items-center justify-between text-center p-3">
-                <p className={`text-xs font-semibold tracking-wide mb-1 ${subCls}`}>{label}</p>
-                <p className={`text-xl font-extrabold my-1 ${headingCls}`}>{val}</p>
-              </div>
-            ))}
-          </div>
-          <ClimateChart climate={climate} locale={locale} darkMode={darkMode} t={t} />
-        </div>
-      </section>
-      )}
-
-      {/* Similar Cities */}
-      <section>
-        <h2 className={`text-2xl font-bold mb-4 ${headingCls}`}>{t("similarCities")}</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          {similarIds.map((otherId) => {
-            const other = allCities.find((c) => c.id === otherId);
-            if (!other) return null;
-            const otherSlug = CITY_SLUGS[otherId];
-            if (!otherSlug) return null;
-            const otherName = CITY_NAME_TRANSLATIONS[otherId]?.[locale] || getCityEnName(otherId);
-            const pair = [slug, otherSlug].sort().join("-vs-");
-
-            // Find the dimension where the other city beats this one by the largest margin
-            const otherGross = activeProfession && other.professions[activeProfession] != null ? other.professions[activeProfession] * salaryMultiplier : null;
-            const otherIncome = otherGross !== null ? computeNetIncome(otherGross, other.country, other.id, incomeMode, s.rates?.rates).netUSD : null;
-            const otherHourly = other.annualWorkHours !== null && other.annualWorkHours > 0 && otherIncome !== null ? otherIncome / other.annualWorkHours : 0;
-            const otherLP = computeLifePressure(other, allCities, otherIncome ?? 0, allIncomes, costTierField).value;
-            const curCl = getCityClimate(city.id);
-            const othCl = getCityClimate(otherId);
-            const dims: { key: string; cur: number; oth: number; higher: boolean }[] = [
-              { key: "avgIncome", cur: income ?? 0, oth: otherIncome ?? 0, higher: true },
-              { key: "monthlyCost", cur: tierCost, oth: other[TIER_KEYS.find(tk => tk.key === costTier)!.field], higher: false },
-              { key: "yearlySavings", cur: savings ?? 0, oth: (otherIncome ?? 0) - other[TIER_KEYS.find(tk => tk.key === costTier)!.field] * 12, higher: true },
-              ...(city.monthlyRent !== null && other.monthlyRent !== null ? [{ key: "monthlyRent", cur: city.monthlyRent, oth: other.monthlyRent, higher: false }] : []),
-              ...(city.annualWorkHours !== null && other.annualWorkHours !== null ? [{ key: "annualWorkHours", cur: city.annualWorkHours, oth: other.annualWorkHours, higher: false }] : []),
-              ...(hourlyWage > 0 && otherHourly > 0 ? [{ key: "hourlyWage", cur: hourlyWage, oth: otherHourly, higher: true }] : []),
-              ...(city.paidLeaveDays !== null && other.paidLeaveDays !== null ? [{ key: "paidLeaveDays", cur: city.paidLeaveDays, oth: other.paidLeaveDays, higher: true }] : []),
-              ...(city.housePrice !== null && other.housePrice !== null ? [{ key: "housePrice", cur: city.housePrice, oth: other.housePrice, higher: false }] : []),
-              ...(city.airQuality !== null && other.airQuality !== null ? [{ key: "airQuality", cur: city.airQuality, oth: other.airQuality, higher: false }] : []),
-              ...(city.internetSpeedMbps !== null && other.internetSpeedMbps !== null ? [{ key: "internetSpeed", cur: city.internetSpeedMbps, oth: other.internetSpeedMbps, higher: true }] : []),
-              ...(city.directFlightCities !== null && other.directFlightCities !== null ? [{ key: "directFlights", cur: city.directFlightCities, oth: other.directFlightCities, higher: true }] : []),
-              { key: "lifePressureIndex", cur: lifePressure, oth: otherLP, higher: false },
-              { key: "healthcareIndex", cur: city.healthcareIndex, oth: other.healthcareIndex, higher: true },
-              { key: "institutionalFreedom", cur: city.freedomIndex, oth: other.freedomIndex, higher: true },
-              { key: "safetyIndex", cur: city.safetyIndex, oth: other.safetyIndex, higher: true },
-              ...(city.doctorsPerThousand !== null && other.doctorsPerThousand !== null ? [{ key: "doctorsPerThousand", cur: city.doctorsPerThousand, oth: other.doctorsPerThousand, higher: true }] : []),
-              ...(curCl && othCl ? [
-                { key: "avgTemp", cur: curCl.avgTempC, oth: othCl.avgTempC, higher: true },
-                { key: "tempRange", cur: curCl.summerAvgC - curCl.winterAvgC, oth: othCl.summerAvgC - othCl.winterAvgC, higher: false },
-                { key: "annualRain", cur: curCl.annualRainMm, oth: othCl.annualRainMm, higher: false },
-                { key: "humidity", cur: curCl.humidityPct, oth: othCl.humidityPct, higher: false },
-                { key: "sunshine", cur: curCl.sunshineHours, oth: othCl.sunshineHours, higher: true },
-              ] : []),
-            ];
-            // Compute % difference for each dimension, split into advantages & disadvantages
-            const scored: { key: string; pct: number; adv: boolean; sign: string }[] = [];
-            for (const d of dims) {
-              if (d.cur === 0) continue;
-              const pct = Math.round(Math.abs(d.oth - d.cur) / Math.abs(d.cur) * 100);
-              if (pct === 0) continue;
-              const better = d.higher ? d.oth > d.cur : d.oth < d.cur;
-              const sign = d.oth > d.cur ? "+" : "-";
-              scored.push({ key: d.key, pct, adv: better, sign });
-            }
-            const climateKeys = new Set(["avgTemp", "tempRange", "annualRain", "humidity", "sunshine"]);
-            scored.sort((a, b) => b.pct - a.pct);
-            const nonClimate = scored.filter(s => !climateKeys.has(s.key));
-            const top2Adv = nonClimate.filter(s => s.adv).slice(0, 2);
-            const top1Dis = nonClimate.filter(s => !s.adv).slice(0, 1);
-            const highlights = [...top2Adv, ...top1Dis];
-
-            return (
-              <div key={otherId} className={`rounded-xl border shadow-sm p-3 text-center ${sectionBg}`}>
-                <span className="text-2xl">{CITY_FLAG_EMOJIS[otherId] || "🏙️"}</span>
-                <Link href={`/${locale}/city/${otherSlug}`} className={`block text-sm font-semibold mt-1 ${headingCls} hover:underline`}>{otherName}</Link>
-                <div className="min-h-[3.5rem] flex flex-col items-center justify-center mt-1">
-                  {highlights.map((h, idx) => (
-                    <p key={idx} className={`text-[11px] leading-snug ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-400" : "text-rose-500")}`}>
-                      {t(h.key)} {h.sign}{h.pct}%
-                    </p>
-                  ))}
+            )}
+            {(() => {
+              const langs = CITY_LANGUAGES[id] || [];
+              const localized = langs.map(l => LANGUAGE_NAME_TRANSLATIONS[l]?.[locale] || l);
+              const show = localized.slice(0, 3);
+              const more = localized.length - show.length;
+              return langs.length > 0 ? (
+                <div className={`rounded-xl border px-4 py-3 text-sm w-full sm:w-auto sm:max-w-xs ${darkMode ? "border-slate-600 bg-slate-800/80" : "border-slate-200 bg-slate-50"}`}>
+                  <p className={`font-bold text-xs mb-1 ${subCls}`}>{t("officialLanguages")}</p>
+                  <p className={`leading-snug font-medium ${headingCls}`}>
+                    {show.join(" · ")}{more > 0 && <span className={`ml-1 ${subCls}`}>+{more}</span>}
+                  </p>
                 </div>
-                <Link href={`/${locale}/compare/${pair}`} className={`inline-block text-xs px-3 py-1 mt-1 rounded border transition ${darkMode ? "border-violet-500/50 text-violet-300 hover:bg-violet-900/30" : "border-violet-300 text-violet-600 hover:bg-violet-50"}`}>
-                  {t("compareCity")}
-                </Link>
+              ) : null;
+            })()}
+          </div>
+          {CITY_INTROS[id] && (
+            <p className={`mt-4 leading-relaxed text-sm sm:text-base ${subCls}`}>{CITY_INTROS[id][locale] || CITY_INTROS[id].zh}</p>
+          )}
+        </header>
+
+        {/* Row 1: 收支 + 住房 (2 grouped cards, 3 data each) */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
+          <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { label: `${t("avgIncome")} (${s.getProfessionLabel(activeProfession)})`, value: income !== null ? formatCurrency(income) : "—", sub: income !== null ? `#${rankHigher(allIncomes, income)} / ${n}` : `#${n} / ${n}`, tier: income !== null ? tierHigh(allIncomes, income) : "mid" as Tier },
+                { label: `${t("monthlyCost")} (${t(`costTier${costTier.charAt(0).toUpperCase()}${costTier.slice(1)}`)})`, value: formatCurrency(tierCost), sub: `#${rankLower(allCosts, tierCost)} / ${n}`, tier: tierLow(allCosts, tierCost) },
+                { label: t("yearlySavings"), value: savings !== null ? formatCurrency(savings) : "—", sub: savings !== null ? `#${rankHigher(allSavings, savings)} / ${n}` : `#${n} / ${n}`, tier: savings !== null ? tierHigh(allSavings, savings) : "mid" as Tier },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
+                  <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
+                  <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
+                  <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { label: t("housePrice"), value: city.housePrice !== null ? `${formatCurrency(city.housePrice)}/m\u00b2` : "\u2014", sub: city.housePrice !== null ? `#${rankLower(allHouse, city.housePrice)} / ${n}` : `#${n} / ${n}`, tier: city.housePrice !== null ? tierLow(allHouse, city.housePrice) : "mid" as Tier },
+                { label: t("yearsToBuy"), value: isFinite(yearsVal) ? `${yearsVal.toFixed(1)} ${t("insightYears")}` : "N/A", sub: `#${rankYearsToHome(yearsVal)} / ${n}`, tier: isFinite(yearsVal) ? tierLow(allYearsToHome.filter(isFinite), yearsVal) : "bad" as Tier },
+                { label: t("monthlyRent"), value: city.monthlyRent !== null ? formatCurrency(city.monthlyRent) : "\u2014", sub: city.monthlyRent !== null ? `#${rankLower(allRent, city.monthlyRent)} / ${n}` : `#${n} / ${n}`, tier: city.monthlyRent !== null ? tierLow(allRent, city.monthlyRent) : "mid" as Tier },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
+                  <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
+                  <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
+                  <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Row 2: 工作 + 环境与连接 (2 grouped cards, 3 data each) */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
+          <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { label: t("annualWorkHours"), value: city.annualWorkHours !== null ? `${city.annualWorkHours} ${t("unitH")}` : "—", sub: city.annualWorkHours !== null ? `#${rankLower(allWorkHours, city.annualWorkHours)} / ${n}` : `#${n} / ${n}`, tier: city.annualWorkHours !== null ? tierLow(allWorkHours, city.annualWorkHours) : "mid" as Tier },
+                { label: t("hourlyWage"), value: hourlyWage > 0 ? formatCurrency(Math.round(hourlyWage * 100) / 100) : "—", sub: hourlyWage > 0 ? `#${rankHigher(allHourly.filter(v => v > 0), hourlyWage)} / ${n}` : `#${n} / ${n}`, tier: hourlyWage > 0 ? tierHigh(allHourly.filter(v => v > 0), hourlyWage) : "mid" as Tier },
+                { label: t("paidLeaveDays"), value: city.paidLeaveDays !== null ? `${city.paidLeaveDays} ${t("paidLeaveDaysUnit")}` : "—", sub: city.paidLeaveDays !== null ? `#${rankHigher(allLeave, city.paidLeaveDays)} / ${n}` : `#${n} / ${n}`, tier: city.paidLeaveDays !== null ? tierHigh(allLeave, city.paidLeaveDays) : "mid" as Tier },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
+                  <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
+                  <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
+                  <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={`rounded-xl border shadow-sm p-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { label: t("airQuality"), value: city.airQuality !== null ? `${city.country === "中国" ? "AQI (CN)" : "AQI"} ${city.airQuality}` : "—", sub: city.airQuality !== null ? `#${rankLower(allAqi, city.airQuality)} / ${n}` : `#${n} / ${n}`, tier: city.airQuality !== null ? tierLow(allAqi, city.airQuality) : "mid" as Tier },
+                { label: t("internetSpeed"), value: city.internetSpeedMbps !== null ? `${city.internetSpeedMbps} ${t("internetSpeedUnit")}` : "—", sub: city.internetSpeedMbps !== null ? `#${rankHigher(allSpeed, city.internetSpeedMbps)} / ${n}` : `#${n} / ${n}`, tier: city.internetSpeedMbps !== null ? tierHigh(allSpeed, city.internetSpeedMbps) : "mid" as Tier },
+                { label: t("directFlights"), value: city.directFlightCities !== null ? String(city.directFlightCities) : "—", sub: city.directFlightCities !== null ? `#${rankHigher(allFlights, city.directFlightCities)} / ${n}` : `#${n} / ${n}`, tier: city.directFlightCities !== null ? tierHigh(allFlights, city.directFlightCities) : "mid" as Tier },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center justify-between text-center p-3">
+                  <p className={`text-xs font-semibold tracking-wide h-8 flex items-center justify-center text-center leading-tight ${subCls}`}>{stat.label}</p>
+                  <p className={`text-xl font-extrabold my-1 ${cardValCls(stat.tier)}`}>{stat.value}</p>
+                  <p className={`text-xs h-8 flex items-center justify-center text-center ${subCls}`}>{stat.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Row 3: 4 index cards (expandable) */}
+        <IndexCardRow
+          darkMode={darkMode}
+          headingCls={headingCls}
+          subCls={subCls}
+          baseCard={baseCard}
+          cardBorder={cardBorder}
+          cardValCls={cardValCls}
+          t={t}
+          n={n}
+          rankHigher={rankHigher}
+          rankLower={rankLower}
+          formatCurrency={formatCurrency}
+          city={city}
+          income={income}
+          tierCost={tierCost}
+          savings={savings}
+          yearsVal={yearsVal}
+          hourlyWage={hourlyWage}
+          lifePressure={lifePressure}
+          lifePressureConfidence={lifePressureResult.confidence}
+          allLifePressure={allLifePressure}
+          healthcareIdx={healthcareIdx}
+          allHealthcare={allHealthcare}
+          freedomIdx={freedomIdx}
+          allFreedom={allFreedom}
+          safetyIndex={city.safetyIndex}
+          allSafety={allSafety}
+          tierHigh={tierHigh}
+          tierLow={tierLow}
+          allCities={allCities}
+          allIncomes={allIncomes}
+          costTierField={costTierField}
+        />
+
+
+        {/* Climate */}
+        {climate && (
+          <section className="mb-10">
+            <div className={`rounded-xl border shadow-sm p-6 ${sectionBg}`}>
+              <h2 className={`text-xl font-bold mb-4 ${headingCls}`}>{t("climateEnv")}</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                {[
+                  [t("climateType"), getClimateLabel(climate.type, locale)],
+                  [t("avgTemp"), `${climate.avgTempC.toFixed(1)}°C`],
+                  [t("tempRange"), `${(climate.summerAvgC - climate.winterAvgC).toFixed(1)}°C`],
+                  [t("annualRain"), `${Math.round(climate.annualRainMm)} mm`],
+                  [t("humidity"), `${climate.humidityPct}%`],
+                  [t("sunshine"), `${Math.round(climate.sunshineHours)} ${t("unitH")}`],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex flex-col items-center justify-between text-center p-3">
+                    <p className={`text-xs font-semibold tracking-wide mb-1 ${subCls}`}>{label}</p>
+                    <p className={`text-xl font-extrabold my-1 ${headingCls}`}>{val}</p>
+                  </div>
+                ))}
               </div>
-            );
-          })}
-        </div>
-      </section>
+              <ClimateChart climate={climate} locale={locale} darkMode={darkMode} t={t} />
+            </div>
+          </section>
+        )}
+
+        {/* Similar Cities */}
+        <section>
+          <h2 className={`text-2xl font-bold mb-4 ${headingCls}`}>{t("similarCities")}</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {similarIds.map((otherId) => {
+              const other = allCities.find((c) => c.id === otherId);
+              if (!other) return null;
+              const otherSlug = CITY_SLUGS[otherId];
+              if (!otherSlug) return null;
+              const otherName = CITY_NAME_TRANSLATIONS[otherId]?.[locale] || getCityEnName(otherId);
+              const pair = [slug, otherSlug].sort().join("-vs-");
+
+              // Find the dimension where the other city beats this one by the largest margin
+              const otherGross = activeProfession && other.professions[activeProfession] != null ? other.professions[activeProfession] * salaryMultiplier : null;
+              const otherIncome = otherGross !== null ? computeNetIncome(otherGross, other.country, other.id, incomeMode, s.rates?.rates).netUSD : null;
+              const otherHourly = other.annualWorkHours !== null && other.annualWorkHours > 0 && otherIncome !== null ? otherIncome / other.annualWorkHours : 0;
+              const otherLP = computeLifePressure(other, allCities, otherIncome ?? 0, allIncomes, costTierField).value;
+              const curCl = getCityClimate(city.id);
+              const othCl = getCityClimate(otherId);
+              const dims: { key: string; cur: number; oth: number; higher: boolean }[] = [
+                { key: "avgIncome", cur: income ?? 0, oth: otherIncome ?? 0, higher: true },
+                { key: "monthlyCost", cur: tierCost, oth: other[TIER_KEYS.find(tk => tk.key === costTier)!.field], higher: false },
+                { key: "yearlySavings", cur: savings ?? 0, oth: (otherIncome ?? 0) - other[TIER_KEYS.find(tk => tk.key === costTier)!.field] * 12, higher: true },
+                ...(city.monthlyRent !== null && other.monthlyRent !== null ? [{ key: "monthlyRent", cur: city.monthlyRent, oth: other.monthlyRent, higher: false }] : []),
+                ...(city.annualWorkHours !== null && other.annualWorkHours !== null ? [{ key: "annualWorkHours", cur: city.annualWorkHours, oth: other.annualWorkHours, higher: false }] : []),
+                ...(hourlyWage > 0 && otherHourly > 0 ? [{ key: "hourlyWage", cur: hourlyWage, oth: otherHourly, higher: true }] : []),
+                ...(city.paidLeaveDays !== null && other.paidLeaveDays !== null ? [{ key: "paidLeaveDays", cur: city.paidLeaveDays, oth: other.paidLeaveDays, higher: true }] : []),
+                ...(city.housePrice !== null && other.housePrice !== null ? [{ key: "housePrice", cur: city.housePrice, oth: other.housePrice, higher: false }] : []),
+                ...(city.airQuality !== null && other.airQuality !== null ? [{ key: "airQuality", cur: city.airQuality, oth: other.airQuality, higher: false }] : []),
+                ...(city.internetSpeedMbps !== null && other.internetSpeedMbps !== null ? [{ key: "internetSpeed", cur: city.internetSpeedMbps, oth: other.internetSpeedMbps, higher: true }] : []),
+                ...(city.directFlightCities !== null && other.directFlightCities !== null ? [{ key: "directFlights", cur: city.directFlightCities, oth: other.directFlightCities, higher: true }] : []),
+                { key: "lifePressureIndex", cur: lifePressure, oth: otherLP, higher: false },
+                { key: "healthcareIndex", cur: city.healthcareIndex, oth: other.healthcareIndex, higher: true },
+                { key: "institutionalFreedom", cur: city.freedomIndex, oth: other.freedomIndex, higher: true },
+                { key: "safetyIndex", cur: city.safetyIndex, oth: other.safetyIndex, higher: true },
+                ...(city.doctorsPerThousand !== null && other.doctorsPerThousand !== null ? [{ key: "doctorsPerThousand", cur: city.doctorsPerThousand, oth: other.doctorsPerThousand, higher: true }] : []),
+                ...(curCl && othCl ? [
+                  { key: "avgTemp", cur: curCl.avgTempC, oth: othCl.avgTempC, higher: true },
+                  { key: "tempRange", cur: curCl.summerAvgC - curCl.winterAvgC, oth: othCl.summerAvgC - othCl.winterAvgC, higher: false },
+                  { key: "annualRain", cur: curCl.annualRainMm, oth: othCl.annualRainMm, higher: false },
+                  { key: "humidity", cur: curCl.humidityPct, oth: othCl.humidityPct, higher: false },
+                  { key: "sunshine", cur: curCl.sunshineHours, oth: othCl.sunshineHours, higher: true },
+                ] : []),
+              ];
+              // Compute % difference for each dimension, split into advantages & disadvantages
+              const scored: { key: string; pct: number; adv: boolean; sign: string }[] = [];
+              for (const d of dims) {
+                if (d.cur === 0) continue;
+                const pct = Math.round(Math.abs(d.oth - d.cur) / Math.abs(d.cur) * 100);
+                if (pct === 0) continue;
+                const better = d.higher ? d.oth > d.cur : d.oth < d.cur;
+                const sign = d.oth > d.cur ? "+" : "-";
+                scored.push({ key: d.key, pct, adv: better, sign });
+              }
+              const climateKeys = new Set(["avgTemp", "tempRange", "annualRain", "humidity", "sunshine"]);
+              scored.sort((a, b) => b.pct - a.pct);
+              const nonClimate = scored.filter(s => !climateKeys.has(s.key));
+              const top2Adv = nonClimate.filter(s => s.adv).slice(0, 2);
+              const top1Dis = nonClimate.filter(s => !s.adv).slice(0, 1);
+              const highlights = [...top2Adv, ...top1Dis];
+
+              return (
+                <div key={otherId} className={`rounded-xl border shadow-sm p-3 text-center ${sectionBg}`}>
+                  <span className="text-2xl">{CITY_FLAG_EMOJIS[otherId] || "🏙️"}</span>
+                  <Link href={`/${locale}/city/${otherSlug}`} className={`block text-sm font-semibold mt-1 ${headingCls} hover:underline`}>{otherName}</Link>
+                  <div className="min-h-[3.5rem] flex flex-col items-center justify-center mt-1">
+                    {highlights.map((h, idx) => (
+                      <p key={idx} className={`text-[11px] leading-snug ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-400" : "text-rose-500")}`}>
+                        {t(h.key)} {h.sign}{h.pct}%
+                      </p>
+                    ))}
+                  </div>
+                  <Link href={`/${locale}/compare/${pair}`} className={`inline-block text-xs px-3 py-1 mt-1 rounded border transition ${darkMode ? "border-violet-500/50 text-violet-300 hover:bg-violet-900/30" : "border-violet-300 text-violet-600 hover:bg-violet-50"}`}>
+                    {t("compareCity")}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
       </div>
 
       {/* Footer */}
       <footer className={`px-4 py-5 text-center text-xs ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
         <div className={`max-w-5xl mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
-        <p>{t("dataSourcesDisclaimer")}</p>
-        <p className="mt-1"><a href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</a> · <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">GitHub</a> · <a href="mailto:qing4132@users.noreply.github.com" className="underline hover:text-blue-500">{t("footerFeedback")}</a></p>
+          <p>{t("dataSourcesDisclaimer")}</p>
+          <p className="mt-1"><a href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</a> · <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">GitHub</a> · <a href="mailto:qing4132@users.noreply.github.com" className="underline hover:text-blue-500">{t("footerFeedback")}</a></p>
         </div>
       </footer>
     </div>

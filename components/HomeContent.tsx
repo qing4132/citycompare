@@ -221,8 +221,8 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
             }}
             placeholder={t("homeSearchPlaceholder")}
             className={`w-full px-4 py-3 rounded-xl text-sm border-2 transition focus:outline-none ${darkMode
-                ? "bg-slate-800 border-slate-600 text-white placeholder-slate-500 focus:border-blue-500"
-                : "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              ? "bg-slate-800 border-slate-600 text-white placeholder-slate-500 focus:border-blue-500"
+              : "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               }`}
           />
           <svg className={`absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 ${darkMode ? "text-slate-500" : "text-slate-400"}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
@@ -238,8 +238,8 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
                   onClick={() => { trackEvent("search_city", { city_slug: c.slug }); setSearch(""); setFocused(false); }}
                   onMouseEnter={() => setHlIdx(i)}
                   className={`flex items-center gap-2 px-4 py-2.5 text-sm transition ${i === hlIdx
-                      ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-slate-700")
-                      : (darkMode ? "hover:bg-slate-700 text-slate-200" : "hover:bg-blue-50 text-slate-700")
+                    ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-slate-700")
+                    : (darkMode ? "hover:bg-slate-700 text-slate-200" : "hover:bg-blue-50 text-slate-700")
                     }`}>
                   <span>{c.flag}</span>
                   <span className="font-medium">{getCityName(c.id)}</span>

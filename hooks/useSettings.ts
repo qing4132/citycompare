@@ -35,6 +35,7 @@ export function useSettings(urlLocale?: string) {
   const [costTier, setCostTierState] = useState<CostTier>("moderate");
   const [profession, setProfessionState] = useState("软件工程师");
   const [incomeMode, setIncomeModeState] = useState<IncomeMode>("net");
+  const [salaryMultiplier, setSalaryMultiplierState] = useState(1.0);
   const [rates, setRates] = useState<ExchangeRates | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -76,6 +77,8 @@ export function useSettings(urlLocale?: string) {
     if (prof) setProfessionState(prof);
     const im = localStorage.getItem("incomeMode");
     if (im && ["gross", "net", "expatNet"].includes(im)) setIncomeModeState(im as IncomeMode);
+    const sm = localStorage.getItem("salaryMultiplier");
+    if (sm) { const n = parseFloat(sm); if (n >= 0.5 && n <= 3.0) setSalaryMultiplierState(n); }
 
     fetch("/data/exchange-rates.json")
       .then((r) => r.json())
@@ -138,6 +141,11 @@ export function useSettings(urlLocale?: string) {
     localStorage.setItem("incomeMode", m);
   }, []);
 
+  const setSalaryMultiplier = useCallback((m: number) => {
+    setSalaryMultiplierState(m);
+    localStorage.setItem("salaryMultiplier", String(m));
+  }, []);
+
   const getProfessionLabel = useCallback(
     (p: string): string => PROFESSION_TRANSLATIONS[p]?.[locale] || p,
     [locale],
@@ -191,6 +199,8 @@ export function useSettings(urlLocale?: string) {
     setProfession,
     incomeMode,
     setIncomeMode,
+    salaryMultiplier,
+    setSalaryMultiplier,
     getProfessionLabel,
     t,
     formatCurrency,

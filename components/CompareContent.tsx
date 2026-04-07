@@ -76,7 +76,7 @@ const GROUP_I18N: Record<string, string> = {
 export default function CompareContent({ initialCities, initialSlugs, allCities, locale: urlLocale }: Props) {
   const router = useRouter();
   const s = useSettings(urlLocale);
-  const { locale, darkMode, themeMode, t, formatCurrency, costTier, profession, incomeMode } = s;
+  const { locale, darkMode, themeMode, t, formatCurrency, costTier, profession, incomeMode, salaryMultiplier } = s;
 
   /* ── Fixed 3 slots (2 on narrow), allow empty ── */
   const [slots, setSlots] = useState<(City | null)[]>(() => {
@@ -151,12 +151,12 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
   const allIncomesMap = useMemo(() => {
     const map = new Map<number, number>();
     allCities.forEach(c => {
-      const gross = activeProfession && c.professions[activeProfession] != null ? c.professions[activeProfession] : 0;
+      const gross = activeProfession && c.professions[activeProfession] != null ? c.professions[activeProfession] * salaryMultiplier : 0;
       const net = computeNetIncome(gross, c.country, c.id, incomeMode, s.rates?.rates).netUSD;
       map.set(c.id, net);
     });
     return map;
-  }, [allCities, activeProfession, incomeMode, s.rates]);
+  }, [allCities, activeProfession, incomeMode, s.rates, salaryMultiplier]);
 
   const rowCtx: RowCtx = useMemo(() => ({
     fc: formatCurrency, t, costField, profession: s.getProfessionLabel(activeProfession), incomeMode, allCities, allIncomes: allIncomesMap,
@@ -260,7 +260,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
   }, [slugs, locale]);
 
   /* ── Style tokens ── */
-  const selectCls = `text-xs rounded px-1.5 py-1 border ${darkMode ? "bg-slate-800 border-slate-600 text-slate-200" : "bg-white border-slate-300 text-slate-700"}`;
+  const selectCls = `text-xs rounded px-1.5 py-1 h-7 border ${darkMode ? "bg-slate-800 border-slate-600 text-slate-200" : "bg-white border-slate-300 text-slate-700"}`;
   const navBg = darkMode ? "bg-slate-900 border-slate-700" : "bg-white border-slate-200";
   const sectionBg = darkMode ? "bg-slate-800/50 border-slate-700" : "bg-white border-slate-200";
   const headCls = darkMode ? "text-white" : "text-slate-900";
@@ -275,29 +275,32 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <Link href={`/${locale}`} className={`text-xs px-2 py-1 rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-blue-300 hover:bg-slate-700" : "bg-white border-slate-300 text-blue-700 hover:bg-blue-50"}`}>
+              <Link href={`/${locale}`} className={`text-xs px-2 h-7 inline-flex items-center rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-blue-300 hover:bg-slate-700" : "bg-white border-slate-300 text-blue-700 hover:bg-blue-50"}`}>
                 {t("navHome")}
               </Link>
-              <Link href={`/${locale}/ranking`} className={`text-xs px-2 py-1 rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-amber-300 hover:bg-slate-700" : "bg-white border-slate-300 text-amber-700 hover:bg-amber-50"}`}>
+              <Link href={`/${locale}/ranking`} className={`text-xs px-2 h-7 inline-flex items-center rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-amber-300 hover:bg-slate-700" : "bg-white border-slate-300 text-amber-700 hover:bg-amber-50"}`}>
                 {t("navRanking")}
               </Link>
               <button onClick={() => { const allSlugs = Object.values(CITY_SLUGS); router.push(`/${locale}/city/${allSlugs[Math.floor(Math.random() * allSlugs.length)]}`); }}
-                className={`text-xs px-2 py-1 rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-emerald-300 hover:bg-slate-700" : "bg-white border-slate-300 text-emerald-700 hover:bg-emerald-50"}`}>
+                className={`text-xs px-2 h-7 inline-flex items-center rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-emerald-300 hover:bg-slate-700" : "bg-white border-slate-300 text-emerald-700 hover:bg-emerald-50"}`}>
                 {t("navRandomCity")}
               </button>
               <Link href={`/${locale}/compare`} onClick={e => e.preventDefault()}
-                className={`text-xs px-2 py-1 rounded border ${darkMode ? "bg-violet-900/40 border-violet-500/50 text-violet-300" : "bg-violet-50 border-violet-300 text-violet-700"}`}>
+                className={`text-xs px-2 h-7 inline-flex items-center rounded border ${darkMode ? "bg-violet-900/40 border-violet-500/50 text-violet-300" : "bg-violet-50 border-violet-300 text-violet-700"}`}>
                 {t("navCompare")}
               </Link>
             </div>
             <div className="flex items-center gap-2">
               <button onClick={() => setNavOpen(v => !v)}
-                className={`min-[1080px]:hidden text-xs px-2 py-1 rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-slate-300" : "bg-white border-slate-300 text-slate-500"}`}>
+                className={`min-[1080px]:hidden text-xs px-2 h-7 inline-flex items-center rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-slate-300" : "bg-white border-slate-300 text-slate-500"}`}>
                 <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${navOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
               </button>
               <div className="hidden min-[1080px]:flex items-center gap-2">
                 <select value={activeProfession} onChange={e => s.setProfession(e.target.value)} className={selectCls}>
                   {professions.map(p => <option key={p} value={p}>{s.getProfessionLabel(p)}</option>)}
+                </select>
+                <select value={s.salaryMultiplier} onChange={e => s.setSalaryMultiplier(parseFloat(e.target.value))} className={selectCls} title={t("salaryMultiplier")}>
+                  {[0.5, 0.7, 0.8, 1.0, 1.2, 1.5, 2.0, 2.5, 3.0].map(m => <option key={m} value={m}>×{m.toFixed(1)}</option>)}
                 </select>
                 <select value={costTier} onChange={e => s.setCostTier(e.target.value as CostTier)} className={selectCls}>
                   {(["moderate", "budget"] as const).map(tier => (
@@ -328,6 +331,9 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
               <div className="flex items-center gap-2 flex-wrap pt-2">
                 <select value={activeProfession} onChange={e => s.setProfession(e.target.value)} className={selectCls}>
                   {professions.map(p => <option key={p} value={p}>{s.getProfessionLabel(p)}</option>)}
+                </select>
+                <select value={s.salaryMultiplier} onChange={e => s.setSalaryMultiplier(parseFloat(e.target.value))} className={selectCls} title={t("salaryMultiplier")}>
+                  {[0.5, 0.7, 0.8, 1.0, 1.2, 1.5, 2.0, 2.5, 3.0].map(m => <option key={m} value={m}>×{m.toFixed(1)}</option>)}
                 </select>
                 <select value={costTier} onChange={e => s.setCostTier(e.target.value as CostTier)} className={selectCls}>
                   {(["moderate", "budget"] as const).map(tier => (

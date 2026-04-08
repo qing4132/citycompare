@@ -2,27 +2,33 @@
 
 全球城市对比工具（whichcity.run）— Next.js 15 + TypeScript + Tailwind CSS + Recharts
 
+> 详细架构、数据模型、技术债、TODO → 见 [HANDOFF.md](../HANDOFF.md)
+> 数据更新流程 → 见 [DATA_OPS.md](../DATA_OPS.md)
+
 ## Architecture
 
-- `app/` — Next.js App Router pages (thin wrappers calling components)
-- `app/[locale]/*/opengraph-image.tsx` — dynamic OG images for home, city, compare, ranking (Satori + next/og)
-- `public/fonts/NotoSansSC-Bold.ttf` — CJK font used by OG image generation
-- `components/` — 5 page components + NavBar + ClimateChart
+- `app/[locale]/` — Next.js App Router pages (thin wrappers calling components)
+- `app/[locale]/*/opengraph-image.tsx` — dynamic OG images (Satori + next/og)
+- `components/` — 5 page components + NavBar + ClimateChart + WebVitals
 - `hooks/useSettings.ts` — global settings (profession, locale, theme, currency, etc.)
-- `lib/` — data, i18n, tax computation, types, constants
-- `lib/analytics.ts` — GA4 event tracking helper (`trackEvent`)
+- `lib/` — data loading, i18n, tax computation (79 countries), types, constants
 - `public/data/` — cities.json (134 cities), exchange-rates.json (auto-updated daily)
-- `scripts/` — active maintenance scripts
-- `_archive/` — historical scripts, old components, reports (do not delete)
+- `scripts/` — active maintenance scripts (3 files)
+- `_archive/` — historical scripts, old components, data sources, reports (do not delete)
 
 ## Key Data
 
 - 134 cities, 26 professions, 10 currencies, 4 locales (zh/en/ja/es)
-- Nav breakpoint: `min-[1080px]:` for hamburger menu collapse (NavBar component)
-- Nav text breakpoint: `min-[420px]:` for responsive nav button labels (en/es shorter text on small screens)
-- Compare layout breakpoint: `md:` (768px) for 2/3 column switch
-- Content-level breakpoint: `sm:` (640px) for grids, text sizing
-- Ranking page: accordion buttons (climate filter + tab selection), single/multi select mode, localStorage persistence
+- City type: ~50 fields (income, costs, housing, safety, healthcare, freedom, climate, etc.)
+- Tax engine: 79 country tax tables + city overrides + expat schemes
+- Composite indices: Life Pressure (client-computed), Safety/Healthcare/Freedom (pre-computed in JSON)
+
+## Breakpoints
+
+- `min-[1080px]:` — nav hamburger collapse; compare 3-column
+- `min-[420px]:` — responsive nav button labels (en/es shorter text)
+- `md:` (768px) — compare 2-column fallback
+- `sm:` (640px) — grids, text sizing
 
 ## Dev Commands
 
@@ -35,6 +41,6 @@ npm run build                # production build
 ## Rules
 
 - See RULES.md for coding conventions
-- See DATA_OPS.md for data update procedures
+- Simplicity > flexibility > performance; files < 300 lines; functions < 50 lines
 - Do NOT introduce new frameworks or libraries
-- Prefer simplicity over abstraction
+- Prefer deleting code over adding layers

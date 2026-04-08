@@ -139,7 +139,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
   function renderZh() {
     return (<>
       <H2 id="data-overview">📊 数据总览</H2>
-      <P>本站覆盖全球 134 座城市，涵盖 23 类原始数据和 4 项综合指数。所有薪资和费用均以美元 (USD) 为基准存储和计算，用户可在界面上选择 10 种主流货币显示。</P>
+      <P>本站覆盖全球 100+ 座城市，涵盖 23 类原始数据和 4 项综合指数。所有薪资和费用均以美元 (USD) 为基准存储和计算，用户可在界面上选择 10 种主流货币显示。</P>
       <Table headers={["数据类别", "来源", "粒度", "数据年份"]} rows={[
         ["薪资（26 种职业）", "ERI / SalaryExpert、BLS (美)、PayScale、OECD、Robert Half、Hays、智联招聘、JobStreet", "城市 × 职业", "2024–2025"],
         ["生活成本（标准/节俭）", "Numbeo、Expatistan、各国统计局", "城市", "2024–2025"],
@@ -332,7 +332,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
       <H3>法律</H3>
       <P>本站不承担因使用本站数据做出的任何决策所导致的直接或间接损失。使用本站即表示您同意上述免责条款。</P>
 
-      <P>最后更新：2026 年 3 月</P>
+      <P>最后更新：2026 年 4 月</P>
 
       <H2 id="feedback">💬 反馈源码</H2>
       <P>本站开源于 <a href="https://github.com/qing4132/whichcity" target="_blank" rel="noopener noreferrer" className={linkCls}>GitHub</a>。如有数据纠错或功能建议，欢迎 <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className={linkCls}>提交 Issue</a> 或发送邮件至 <a href="mailto:qing4132@users.noreply.github.com" className={linkCls}>qing4132@users.noreply.github.com</a>。</P>
@@ -345,7 +345,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
   function renderEn() {
     return (<>
       <H2 id="data-overview">📊 Data Overview</H2>
-      <P>This site covers 134 cities worldwide with 23 data categories and 4 composite indices. All salaries and costs are stored and computed in USD. Users can display values in 10 major currencies.</P>
+      <P>This site covers 100+ cities worldwide with 23 data categories and 4 composite indices. All salaries and costs are stored and computed in USD. Users can display values in 10 major currencies.</P>
       <Table headers={["Category", "Source", "Granularity", "Data Year"]} rows={[
         ["Salaries (26 professions)", "ERI / SalaryExpert, BLS (US), PayScale, OECD, Robert Half, Hays, Zhilian, JobStreet", "City × Profession", "2024–2025"],
         ["Cost of Living (Standard/Budget)", "Numbeo, Expatistan, National Statistics Offices", "City", "2024–2025"],
@@ -518,7 +518,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
       <H3>Legal</H3>
       <P>This site assumes no liability for direct or indirect losses resulting from decisions made based on this data. By using this site, you agree to these terms.</P>
 
-      <P>Last updated: March 2026</P>
+      <P>Last updated: April 2026</P>
 
       <H2 id="feedback">💬 Feedback & Source Code</H2>
       <P>This site is open-source on <a href="https://github.com/qing4132/whichcity" target="_blank" rel="noopener noreferrer" className={linkCls}>GitHub</a>. For data corrections or feature suggestions, please <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className={linkCls}>open an issue</a> or email <a href="mailto:qing4132@users.noreply.github.com" className={linkCls}>qing4132@users.noreply.github.com</a>.</P>
@@ -531,7 +531,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
   function renderJa() {
     return (<>
       <H2 id="data-overview">📊 データ概要</H2>
-      <P>本サイトは世界134都市をカバーし、23カテゴリのデータと4つの総合指数を提供します。すべての給与とコストはUSD基準で保存・計算され、10種の主要通貨で表示可能です。</P>
+      <P>本サイトは世界100+都市をカバーし、23カテゴリのデータと4つの総合指数を提供します。すべての給与とコストはUSD基準で保存・計算され、10種の主要通貨で表示可能です。</P>
       <Table headers={["カテゴリ", "ソース", "粒度", "データ年"]} rows={[
         ["給与（26職種）", "ERI/SalaryExpert, BLS, PayScale, OECD, Robert Half, Hays, 智联招聘, JobStreet", "都市×職種", "2024–2025"],
         ["生活費（標準/節約）", "Numbeo, Expatistan, 各国統計局", "都市", "2024–2025"],
@@ -723,7 +723,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
       <H3>法的事項</H3>
       <P>本サイトのデータに基づく決定から生じる直接的・間接的損失について一切の責任を負いません。本サイトの利用により上記の免責条項に同意したものとみなされます。</P>
 
-      <P>最終更新：2026年3月</P>
+      <P>最終更新：2026年4月</P>
 
       <H2 id="feedback">💬 フィードバックとソースコード</H2>
       <P>本サイトは <a href="https://github.com/qing4132/whichcity" target="_blank" rel="noopener noreferrer" className={linkCls}>GitHub</a> でオープンソースです。データの訂正や機能の提案は <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className={linkCls}>Issue</a> または <a href="mailto:qing4132@users.noreply.github.com" className={linkCls}>メール</a>でお願いします。</P>
@@ -736,7 +736,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
   function renderEs() {
     return (<>
       <H2 id="data-overview">📊 Visión general de datos</H2>
-      <P>Este sitio cubre 134 ciudades con 23 categorías de datos y 4 índices compuestos. Todos los salarios se almacenan en USD. Se pueden mostrar en 10 monedas principales.</P>
+      <P>Este sitio cubre 100+ ciudades con 23 categorías de datos y 4 índices compuestos. Todos los salarios se almacenan en USD. Se pueden mostrar en 10 monedas principales.</P>
       <Table headers={["Categoría", "Fuente", "Granularidad", "Año"]} rows={[
         ["Salarios (26 profesiones)", "ERI/SalaryExpert, BLS, PayScale, OECD, Robert Half, Hays, Zhilian, JobStreet", "Ciudad × Profesión", "2024–2025"],
         ["Coste de vida (Estándar/Económico)", "Numbeo, Expatistan, Oficinas Nacionales de Estadística", "Ciudad", "2024–2025"],
@@ -928,7 +928,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
       <H3>Legal</H3>
       <P>Este sitio no asume responsabilidad por pérdidas directas o indirectas resultantes de decisiones basadas en estos datos. El uso de este sitio implica la aceptación de estos términos.</P>
 
-      <P>Última actualización: marzo 2026</P>
+      <P>Última actualización: abril 2026</P>
 
       <H2 id="feedback">💬 Comentarios y código fuente</H2>
       <P>Este sitio es de código abierto en <a href="https://github.com/qing4132/whichcity" target="_blank" rel="noopener noreferrer" className={linkCls}>GitHub</a>. Para correcciones o sugerencias, <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className={linkCls}>abre un issue</a> o envía un correo a <a href="mailto:qing4132@users.noreply.github.com" className={linkCls}>qing4132@users.noreply.github.com</a>.</P>

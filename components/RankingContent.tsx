@@ -830,7 +830,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
           <h1 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mb-2 ${darkMode ? "text-white" : "text-slate-900"}`}>
             {t("rankingTitle")}
           </h1>
-          <p className={`text-base max-w-xl mx-auto ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+          <p className={`text-sm max-w-xl mx-auto ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
             {t("rankingSubtitle")}
           </p>
         </div>

@@ -87,7 +87,7 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
         <h1 className={`text-4xl sm:text-5xl font-extrabold tracking-tight text-center mb-3 ${darkMode ? "text-white" : "text-slate-900"}`}>
           {t("appTitle")}
         </h1>
-        <p className={`text-base sm:text-lg text-center max-w-lg mb-6 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+        <p className={`text-sm sm:text-base text-center max-w-lg mb-6 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
           {t("appSubtitle")}
         </p>
 

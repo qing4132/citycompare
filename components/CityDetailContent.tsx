@@ -177,6 +177,8 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   const cityName = CITY_NAME_TRANSLATIONS[city.id]?.[locale] || city.name;
   useEffect(() => { document.title = `${cityName} | WhichCity`; }, [locale, cityName]);
   useEffect(() => { trackEvent("city_view", { city_slug: slug }); }, [slug]);
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => { const id = setInterval(() => setNow(new Date()), 60_000); return () => clearInterval(id); }, []);
 
   if (!s.ready) return null;
 
@@ -384,7 +386,6 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               </div>
             )}
             {city.timezone && (() => {
-              const now = new Date();
               const fmt = new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : locale === "ja" ? "ja-JP" : locale === "es" ? "es-ES" : "en-US", { timeZone: city.timezone, hour: "2-digit", minute: "2-digit", hour12: false });
               const offsetMin = (() => { const parts = new Intl.DateTimeFormat("en-US", { timeZone: city.timezone, timeZoneName: "shortOffset" }).formatToParts(now); const o = parts.find(p => p.type === "timeZoneName")?.value || ""; const m = o.match(/GMT([+-]?)(\d{1,2})(?::(\d{2}))?/); if (!m) return 0; const sign = m[1] === "-" ? -1 : 1; return sign * (parseInt(m[2]) * 60 + parseInt(m[3] || "0")); })();
               const h = Math.floor(Math.abs(offsetMin) / 60);

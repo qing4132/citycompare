@@ -20,7 +20,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = (key: string) => TRANSLATIONS[locale as Locale]?.[key] || TRANSLATIONS.en[key] || key;
+  const t = (key: string) => TRANSLATIONS[locale as Locale]?.[key] ?? TRANSLATIONS.en[key] ?? key;
   return {
     title: {
       default: t("metaSiteTitle"),

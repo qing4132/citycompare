@@ -23,7 +23,7 @@ function parsePair(pair: string): string[] {
 export default async function OgImage({ params }: { params: Promise<{ locale: string; pair: string }> }) {
     const { locale, pair } = await params;
     const loc = locale as Locale;
-    const t = (key: string) => TRANSLATIONS[loc]?.[key] || TRANSLATIONS.en[key] || key;
+    const t = (key: string) => TRANSLATIONS[loc]?.[key] ?? TRANSLATIONS.en[key] ?? key;
     const slugs = parsePair(pair);
     if (slugs.length < 2) return new Response("Not found", { status: 404 });
 

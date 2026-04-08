@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const loc = locale as Locale;
   const slugs = parsePair(pair);
   if (!slugs) return { title: "Comparison Not Found" };
-  const t = (key: string) => TRANSLATIONS[loc]?.[key] || TRANSLATIONS.en[key] || key;
+  const t = (key: string) => TRANSLATIONS[loc]?.[key] ?? TRANSLATIONS.en[key] ?? key;
   const names = slugs.map(s => getCityLocaleName(SLUG_TO_ID[s], loc));
   const title = t("metaCompareTitle").replace("{cities}", names.join(" vs "));
   const description = t("metaCompareDesc").replace("{cities}", names.join(loc === "zh" || loc === "ja" ? "、" : ", "));

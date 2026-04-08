@@ -17,7 +17,7 @@ const fontData = readFileSync(join(process.cwd(), "public/fonts/NotoSansSC-Bold.
 export default async function OgImage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
     const { locale, slug } = await params;
     const loc = locale as Locale;
-    const t = (key: string) => TRANSLATIONS[loc]?.[key] || TRANSLATIONS.en[key] || key;
+    const t = (key: string) => TRANSLATIONS[loc]?.[key] ?? TRANSLATIONS.en[key] ?? key;
     const id = SLUG_TO_ID[slug];
     if (!id) return new Response("Not found", { status: 404 });
     const city = getCityById(id);

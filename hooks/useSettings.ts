@@ -170,7 +170,7 @@ export function useSettings(urlLocale?: string) {
 
   const t = useCallback(
     (key: string, params?: Record<string, string | number>) => {
-      const template = TRANSLATIONS[locale]?.[key] || TRANSLATIONS.zh[key] || key;
+      const template = TRANSLATIONS[locale]?.[key] ?? TRANSLATIONS.zh[key] ?? key;
       if (!params) return template;
       return Object.entries(params).reduce(
         (acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)),

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return { title: "City Not Found" };
   const cityName = getCityLocaleName(id, loc);
   const country = getCountryLocaleName(city.country, loc);
-  const t = (key: string) => TRANSLATIONS[loc]?.[key] || TRANSLATIONS.en[key] || key;
+  const t = (key: string) => TRANSLATIONS[loc]?.[key] ?? TRANSLATIONS.en[key] ?? key;
   const title = t("metaCityTitle").replace("{city}", cityName);
   const description = t("metaCityDesc")
     .replace("{city}", cityName)

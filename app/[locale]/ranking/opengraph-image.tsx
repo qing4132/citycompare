@@ -16,7 +16,7 @@ const fontData = readFileSync(join(process.cwd(), "public/fonts/NotoSansSC-Bold.
 export default async function OgImage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const loc = locale as Locale;
-    const t = (key: string) => TRANSLATIONS[loc]?.[key] || TRANSLATIONS.en[key] || key;
+    const t = (key: string) => TRANSLATIONS[loc]?.[key] ?? TRANSLATIONS.en[key] ?? key;
 
     const allCities = loadCities();
     const allIncomes = allCities.map(c => c.averageIncome);

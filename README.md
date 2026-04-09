@@ -8,9 +8,9 @@
 
 ## 中文
 
-从收入、生活成本、房价、安全、医疗、自由、气候等多维度比较全球 134 座城市，支持 79 国税制计算，为移居、求职、留学等决策提供数据参考。
+从收入、生活成本、房价、安全、医疗、自由、气候等多维度比较全球 154 座城市，支持 81 国税制计算，为移居、求职、留学等决策提供数据参考。
 
-**功能亮点**：134 城市 · 26 职业 · 79 国税制 · 10 币种（每日更新） · 4 语言 · 最多 3 城对比 · 22+ 排名指标 · 气候筛选 · 深色模式
+**功能亮点**：154 城市 · 26 职业 · 81 国税制 · 10 币种（每日更新） · 4 语言 · 最多 3 城对比 · 22+ 排名指标 · 气候筛选 · 深色模式
 
 ### 快速开始
 
@@ -33,7 +33,7 @@ app/                  Next.js App Router 页面 + OG 图片
 components/           页面组件 (Home, Ranking, Compare, CityDetail, Methodology, NavBar, ClimateChart)
 hooks/                useSettings — 全局设置 (职业/币种/语言/主题等)
 lib/                  数据加载、i18n、税制计算、类型定义、常量
-public/data/          cities.json (134 城市)、exchange-rates.json (每日自动更新)
+public/data/          cities.json (154 城市)、exchange-rates.json (每日自动更新)
 scripts/              活跃维护脚本 (汇率更新、气候数据、时区)
 _archive/             历史脚本、旧组件、数据源、报告 (勿删)
 ```
@@ -55,9 +55,9 @@ Next.js 15 · React 18 · TypeScript 5 · Tailwind CSS 3 · Recharts · Framer M
 
 ## English
 
-Compare 134 cities worldwide across income, living costs, housing, safety, healthcare, freedom, climate, and more — with tax calculations for 79 countries.
+Compare 154 cities worldwide across income, living costs, housing, safety, healthcare, freedom, climate, and more — with tax calculations for 81 countries.
 
-**Highlights**: 134 cities · 26 professions · 79 country tax systems · 10 currencies (daily updates) · 4 languages · up to 3-city comparison · 22+ ranking metrics · climate filtering · dark mode
+**Highlights**: 154 cities · 26 professions · 81 country tax systems · 10 currencies (daily updates) · 4 languages · up to 3-city comparison · 22+ ranking metrics · climate filtering · dark mode
 
 ### Quick Start
 
@@ -75,9 +75,9 @@ Next.js 15 · React 18 · TypeScript 5 · Tailwind CSS 3 · Recharts · Framer M
 
 ## 日本語
 
-収入・生活費・住宅・安全・医療・自由・気候など多角的に世界134都市を比較。79カ国の税制計算に対応。
+収入・生活費・住宅・安全・医療・自由・気候など多角的に世界154都市を比較。81カ国の税制計算に対応。
 
-**主な機能**：134都市 · 26職種 · 79カ国税制 · 10通貨（毎日更新） · 4言語 · 最大3都市比較 · 22+ランキング指標 · 気候フィルター · ダークモード
+**主な機能**：154都市 · 26職種 · 81カ国税制 · 10通貨（毎日更新） · 4言語 · 最大3都市比較 · 22+ランキング指標 · 気候フィルター · ダークモード
 
 ### クイックスタート
 
@@ -91,9 +91,9 @@ npm install && npm run dev   # http://localhost:3000
 
 ## Español
 
-Compara 134 ciudades del mundo por ingresos, costos, vivienda, seguridad, salud, libertad, clima y más — con cálculos fiscales para 79 países.
+Compara 154 ciudades del mundo por ingresos, costos, vivienda, seguridad, salud, libertad, clima y más — con cálculos fiscales para 81 países.
 
-**Características**: 134 ciudades · 26 profesiones · 79 sistemas fiscales · 10 monedas (actualización diaria) · 4 idiomas · comparación de hasta 3 ciudades · 22+ métricas de ranking · filtro climático · modo oscuro
+**Características**: 154 ciudades · 26 profesiones · 81 sistemas fiscales · 10 monedas (actualización diaria) · 4 idiomas · comparación de hasta 3 ciudades · 22+ métricas de ranking · filtro climático · modo oscuro
 
 ### Inicio Rápido
 

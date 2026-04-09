@@ -17,6 +17,7 @@ export interface NetIncomeResult {
   effectiveRate: number;   // 0–1 combined tax+social rate
   confidence: "high" | "medium" | "low";
   hasExpatScheme: boolean;
+  dataIsLikelyNet?: boolean;  // true when salary data is already post-tax
 }
 
 /* ── Progressive tax calculation ─────────────────────── */
@@ -78,7 +79,7 @@ export function computeNetIncome(
 
   // If data is likely already net, don't double-deduct
   if (tax.dataIsLikelyNet) {
-    return { netUSD: grossUSD, effectiveRate: 0, confidence: "low", hasExpatScheme };
+    return { netUSD: grossUSD, effectiveRate: 0, confidence: "low", hasExpatScheme, dataIsLikelyNet: true };
   }
 
   // Resolve exchange rate: prefer daily rate, fall back to taxData static rate
@@ -141,7 +142,7 @@ export function computeNetIncome(
     if (scheme.type === "flat_rate" || scheme.type === "flat_rate_no_social") {
       if (scheme.incomeThreshold && taxableLocal > scheme.incomeThreshold) {
         incomeTax = scheme.incomeThreshold * (scheme.flatRate || 0)
-                  + (taxableLocal - scheme.incomeThreshold) * (scheme.rateAboveThreshold || scheme.flatRate || 0);
+          + (taxableLocal - scheme.incomeThreshold) * (scheme.rateAboveThreshold || scheme.flatRate || 0);
       } else {
         incomeTax = taxableLocal * (scheme.flatRate || 0);
       }

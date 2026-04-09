@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "bySeverity": {
+      "HIGH": 2,
+      "MEDIUM": 23
+    },
+    "byCategory": {
+      "RATE_STALENESS": 1,
+      "DUPLICATE_NAME": 1,
+      "IDENTICAL_VALUES": 23
+    },
+    "total": 25
+  },
+  "findings": [
+    {
+      "category": "RATE_STALENESS",
+      "severity": "HIGH",
+      "city": "GLOBAL",
+      "message": "exchange-rates.json has NO timestamp field - impossible to detect stale data"
+    },
+    {
+      "category": "DUPLICATE_NAME",
+      "severity": "HIGH",
+      "city": "圣地亚哥",
+      "message": "city name appears 2 times"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "美国(20 cities)",
+      "message": "All cities share identical annualWorkHours=1811 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "美国(20 cities)",
+      "message": "All cities share identical paidLeaveDays=0 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "日本(6 cities)",
+      "message": "All cities share identical annualWorkHours=1607 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "日本(6 cities)",
+      "message": "All cities share identical paidLeaveDays=10 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "中国(7 cities)",
+      "message": "All cities share identical annualWorkHours=2170 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "中国(7 cities)",
+      "message": "All cities share identical paidLeaveDays=5 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "澳大利亚(4 cities)",
+      "message": "All cities share identical annualWorkHours=1694 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "澳大利亚(4 cities)",
+      "message": "All cities share identical paidLeaveDays=20 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "加拿大(5 cities)",
+      "message": "All cities share identical paidLeaveDays=10 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "西班牙(4 cities)",
+      "message": "All cities share identical annualWorkHours=1644 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "西班牙(4 cities)",
+      "message": "All cities share identical paidLeaveDays=22 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "墨西哥(5 cities)",
+      "message": "All cities share identical annualWorkHours=2128 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "墨西哥(5 cities)",
+      "message": "All cities share identical paidLeaveDays=12 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "巴西(3 cities)",
+      "message": "All cities share identical annualWorkHours=1776 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "巴西(3 cities)",
+      "message": "All cities share identical paidLeaveDays=30 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "泰国(5 cities)",
+      "message": "All cities share identical annualWorkHours=2024 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "泰国(5 cities)",
+      "message": "All cities share identical paidLeaveDays=6 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "越南(3 cities)",
+      "message": "All cities share identical annualWorkHours=2060 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "越南(3 cities)",
+      "message": "All cities share identical paidLeaveDays=12 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "印度(5 cities)",
+      "message": "All cities share identical annualWorkHours=2117 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "印度(5 cities)",
+      "message": "All cities share identical paidLeaveDays=15 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "韩国(3 cities)",
+      "message": "All cities share identical annualWorkHours=1901 - likely country-level data applied to all cities"
+    },
+    {
+      "category": "IDENTICAL_VALUES",
+      "severity": "MEDIUM",
+      "city": "韩国(3 cities)",
+      "message": "All cities share identical paidLeaveDays=15 - likely country-level data applied to all cities"
+    }
+  ]
+}

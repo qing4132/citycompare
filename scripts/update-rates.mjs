@@ -53,6 +53,7 @@ for (const code of currencies) {
 const output = {
   rates: newRates,
   symbols: existing.symbols,
+  updatedAt: new Date().toISOString(),
 };
 
 writeFileSync(JSON_PATH, JSON.stringify(output, null, 2) + "\n");

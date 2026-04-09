@@ -24,9 +24,9 @@ export default async function OgImage({ params }: { params: Promise<{ locale: st
     const green = "#34d399";
 
     const stats = [
-        { num: "100+", label: t("homeCities") },
-        { num: "20+", label: t("homeProfessions") },
-        { num: "79", label: loc === "zh" ? "国税制" : loc === "ja" ? "か国の税制" : loc === "es" ? "países" : "tax systems" },
+        { num: "150+", label: t("homeCities") },
+        { num: "26", label: t("homeProfessions") },
+        { num: "81", label: loc === "zh" ? "国税制" : loc === "ja" ? "か国の税制" : loc === "es" ? "países" : "tax systems" },
         { num: "4", label: loc === "zh" ? "种语言" : loc === "ja" ? "言語" : loc === "es" ? "idiomas" : "languages" },
     ];
 

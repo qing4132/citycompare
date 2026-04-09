@@ -1,0 +1,955 @@
+{
+  "summary": {
+    "bySeverity": {
+      "HIGH": 4,
+      "MEDIUM": 140,
+      "INFO": 12
+    },
+    "byCategory": {
+      "FIELD_NULL": 12,
+      "COST_RATIO": 135,
+      "INCOME_MISMATCH": 5,
+      "CLIMATE_RAIN": 3,
+      "SALARY_DUPLICATE": 1
+    },
+    "total": 156
+  },
+  "findings": [
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "德黑兰(54)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "金边(109)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "仰光(110)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "仰光(110)",
+      "message": "numbeoSafetyIndex is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "达卡(114)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "加德满都(116)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "乌兰巴托(120)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "班斯科(145)",
+      "message": "directFlightCities is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "马拉喀什(151)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "帕岸岛(153)",
+      "message": "directFlightCities is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "暹粒(155)",
+      "message": "bigMacPrice is null"
+    },
+    {
+      "category": "FIELD_NULL",
+      "severity": "INFO",
+      "city": "京都(159)",
+      "message": "directFlightCities is null"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "纽约(1)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "伦敦(2)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "东京(3)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "北京(4)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "上海(5)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "悉尼(6)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "新加坡(7)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "巴黎(8)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "多伦多(9)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "香港(10)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "洛杉矶(11)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "旧金山(12)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "芝加哥(13)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "迪拜(14)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "阿姆斯特丹(15)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "苏黎世(16)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "日内瓦(17)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "慕尼黑(18)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "柏林(19)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "巴塞罗那(20)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "马德里(21)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "米兰(22)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "罗马(23)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "布鲁塞尔(24)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "维也纳(25)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "布拉格(26)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "华沙(27)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "里斯本(28)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "雅典(29)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "伊斯坦布尔(30)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "墨西哥城(31)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "圣保罗(32)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "里约热内卢(33)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "迈阿密(34)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "华盛顿(35)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "波士顿(36)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "西雅图(37)",
+      "message": "budget/moderate = 48.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "丹佛(38)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "奥斯汀(39)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "温哥华(40)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "蒙特利尔(41)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "墨尔本(42)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "布里斯班(43)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "奥克兰(44)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "曼谷(45)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "吉隆坡(46)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "胡志明市(47)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "河内(48)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "班加罗尔(49)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "孟买(50)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "新德里(51)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "内罗毕(52)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "开罗(53)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "德黑兰(54)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "卡拉奇(55)",
+      "message": "budget/moderate = 38.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "伊斯兰堡(56)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "雅加达(57)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "马尼拉(58)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "首尔(59)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "釜山(60)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "台北(61)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "布宜诺斯艾利斯(62)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "圣地亚哥(63)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "波哥大(64)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "利马(65)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "约翰内斯堡(67)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "开普敦(68)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "瓜达拉哈拉(69)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "圣何塞(哥斯达黎加)(70)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "巴拿马城(71)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "圣胡安(73)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "阿布扎比(75)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "多哈(76)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "麦纳麦(77)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "利雅得(78)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "马斯喀特(79)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "贝鲁特(80)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "安曼(81)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "特拉维夫(82)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "海得拉巴(83)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "浦那(84)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "基辅(85)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "布加勒斯特(86)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "索非亚(87)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "萨格勒布(88)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "贝尔格莱德(89)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "布达佩斯(90)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "布拉迪斯拉发(91)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "卢布尔雅那(92)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "都柏林(93)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "贝尔法斯特(94)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "亚特兰大(95)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "凤凰城(96)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "波特兰(97)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "圣地亚哥(98)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "拉斯维加斯(99)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "坦帕(100)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "广州(101)",
+      "message": "budget/moderate = 41.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "深圳(102)",
+      "message": "budget/moderate = 43.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "成都(103)",
+      "message": "budget/moderate = 39.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "杭州(104)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "重庆(105)",
+      "message": "budget/moderate = 39.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "大阪(106)",
+      "message": "budget/moderate = 44.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "名古屋(107)",
+      "message": "budget/moderate = 43.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "仁川(108)",
+      "message": "budget/moderate = 42.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "金边(109)",
+      "message": "budget/moderate = 38.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "仰光(110)",
+      "message": "budget/moderate = 37.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "清迈(112)",
+      "message": "budget/moderate = 39.1%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "达卡(114)",
+      "message": "budget/moderate = 38.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "科伦坡(115)",
+      "message": "budget/moderate = 39.1%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "加德满都(116)",
+      "message": "budget/moderate = 38.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "阿拉木图(117)",
+      "message": "budget/moderate = 41.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "塔什干(118)",
+      "message": "budget/moderate = 39.1%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "巴库(119)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "乌兰巴托(120)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "斯德哥尔摩(121)",
+      "message": "budget/moderate = 43.9%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "哥本哈根(122)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "赫尔辛基(123)",
+      "message": "budget/moderate = 44.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "奥斯陆(124)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "休斯顿(125)",
+      "message": "budget/moderate = 46.1%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "费城(126)",
+      "message": "budget/moderate = 45.2%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "卡尔加里(127)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "珀斯(128)",
+      "message": "budget/moderate = 44.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "麦德林(129)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "第比利斯(130)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "拉各斯(131)",
+      "message": "budget/moderate = 40.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "莫斯科(132)",
+      "message": "budget/moderate = 44.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "圣何塞(美国)(133)",
+      "message": "budget/moderate = 46.1%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "尔湾(134)",
+      "message": "budget/moderate = 46.1%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "渥太华(135)",
+      "message": "budget/moderate = 44.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "卢森堡市(136)",
+      "message": "budget/moderate = 45.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "塔林(137)",
+      "message": "budget/moderate = 43.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "福冈(138)",
+      "message": "budget/moderate = 44.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "横滨(139)",
+      "message": "budget/moderate = 44.0%"
+    },
+    {
+      "category": "COST_RATIO",
+      "severity": "MEDIUM",
+      "city": "京都(159)",
+      "message": "budget/moderate = 38.9%"
+    },
+    {
+      "category": "INCOME_MISMATCH",
+      "severity": "MEDIUM",
+      "city": "东京(3)",
+      "message": "avg=23349, profMedian=55000, ratio=0.42"
+    },
+    {
+      "category": "INCOME_MISMATCH",
+      "severity": "MEDIUM",
+      "city": "大阪(106)",
+      "message": "avg=20343, profMedian=50000, ratio=0.41"
+    },
+    {
+      "category": "INCOME_MISMATCH",
+      "severity": "MEDIUM",
+      "city": "名古屋(107)",
+      "message": "avg=20769, profMedian=42000, ratio=0.49"
+    },
+    {
+      "category": "INCOME_MISMATCH",
+      "severity": "MEDIUM",
+      "city": "横滨(139)",
+      "message": "avg=22442, profMedian=52000, ratio=0.43"
+    },
+    {
+      "category": "INCOME_MISMATCH",
+      "severity": "MEDIUM",
+      "city": "京都(159)",
+      "message": "avg=20011, profMedian=49100, ratio=0.41"
+    },
+    {
+      "category": "CLIMATE_RAIN",
+      "severity": "HIGH",
+      "city": "利马(65)",
+      "message": "monthlySum=13 vs annual=10 (diff=3)"
+    },
+    {
+      "category": "CLIMATE_RAIN",
+      "severity": "HIGH",
+      "city": "阿布扎比(75)",
+      "message": "monthlySum=74 vs annual=56 (diff=18)"
+    },
+    {
+      "category": "CLIMATE_RAIN",
+      "severity": "HIGH",
+      "city": "拉斯维加斯(99)",
+      "message": "monthlySum=90 vs annual=106 (diff=16)"
+    },
+    {
+      "category": "SALARY_DUPLICATE",
+      "severity": "HIGH",
+      "city": "普吉岛(147), 帕岸岛(153), 苏梅岛(154)",
+      "message": "identical salary profiles (3 cities share exact same values)"
+    }
+  ]
+}

@@ -79,6 +79,7 @@ export function computeLifePressure(
     ? (income / city.annualWorkHours) / city.bigMacPrice
     : null;
 
+  // 70 = assumed home size in m² (a modest 1-bedroom apartment in global context)
   const yearsToHome = savings > 0 && city.housePrice !== null
     ? (city.housePrice * 70) / savings : null;
 

@@ -1,4 +1,4 @@
-/** URL-safe slug ↔ city ID mapping for all 134 cities */
+/** URL-safe slug ↔ city ID mapping for all 154 cities */
 export const CITY_SLUGS: Record<number, string> = {
   1: "new-york", 2: "london", 3: "tokyo", 4: "beijing", 5: "shanghai",
   6: "sydney", 7: "singapore", 8: "paris", 9: "toronto", 10: "hong-kong",

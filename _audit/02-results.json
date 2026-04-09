@@ -1,0 +1,2409 @@
+{
+  "summary": {
+    "bySeverity": {
+      "HIGH": 397,
+      "MEDIUM": 2
+    },
+    "byCategory": {
+      "MISSING_IN_STORE": 397,
+      "ORPHAN_ENTRY": 2
+    },
+    "total": 399
+  },
+  "findings": [
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "纽约(1)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "伦敦(2)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "伦敦(2)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "伦敦(2)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "东京(3)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "东京(3)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "东京(3)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "北京(4)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "北京(4)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "北京(4)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "上海(5)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "上海(5)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "上海(5)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "悉尼(6)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "新加坡(7)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "新加坡(7)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "新加坡(7)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴黎(8)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴黎(8)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴黎(8)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "多伦多(9)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "多伦多(9)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "多伦多(9)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "香港(10)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "香港(10)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "香港(10)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "洛杉矶(11)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "旧金山(12)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "旧金山(12)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "旧金山(12)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "芝加哥(13)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "芝加哥(13)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "芝加哥(13)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "迪拜(14)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "迪拜(14)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "迪拜(14)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿姆斯特丹(15)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿姆斯特丹(15)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿姆斯特丹(15)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "苏黎世(16)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "日内瓦(17)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "日内瓦(17)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "日内瓦(17)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "慕尼黑(18)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "慕尼黑(18)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "慕尼黑(18)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "柏林(19)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "柏林(19)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "柏林(19)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴塞罗那(20)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴塞罗那(20)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴塞罗那(20)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马德里(21)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "米兰(22)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "米兰(22)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "米兰(22)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "罗马(23)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "罗马(23)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "罗马(23)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布鲁塞尔(24)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布鲁塞尔(24)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布鲁塞尔(24)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "维也纳(25)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "维也纳(25)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "维也纳(25)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布拉格(26)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "华沙(27)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "华沙(27)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "华沙(27)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "里斯本(28)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "里斯本(28)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "里斯本(28)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "雅典(29)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "雅典(29)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "雅典(29)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "伊斯坦布尔(30)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "伊斯坦布尔(30)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "伊斯坦布尔(30)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "墨西哥城(31)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣保罗(32)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣保罗(32)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣保罗(32)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "里约热内卢(33)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "里约热内卢(33)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "里约热内卢(33)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "迈阿密(34)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "迈阿密(34)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "迈阿密(34)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "华盛顿(35)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "华盛顿(35)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "华盛顿(35)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波士顿(36)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "西雅图(37)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "西雅图(37)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "西雅图(37)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "丹佛(38)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "丹佛(38)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "丹佛(38)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥斯汀(39)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥斯汀(39)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥斯汀(39)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "温哥华(40)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "温哥华(40)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "温哥华(40)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "蒙特利尔(41)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "墨尔本(42)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "墨尔本(42)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "墨尔本(42)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布里斯班(43)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布里斯班(43)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布里斯班(43)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥克兰(44)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥克兰(44)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥克兰(44)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "曼谷(45)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "曼谷(45)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "曼谷(45)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "吉隆坡(46)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "胡志明市(47)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "胡志明市(47)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "胡志明市(47)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "河内(48)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "河内(48)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "河内(48)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "班加罗尔(49)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "班加罗尔(49)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "班加罗尔(49)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "孟买(50)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "孟买(50)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "孟买(50)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "新德里(51)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "内罗毕(52)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "内罗毕(52)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "内罗毕(52)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "开罗(53)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "开罗(53)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "开罗(53)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "德黑兰(54)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "德黑兰(54)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "德黑兰(54)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卡拉奇(55)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卡拉奇(55)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卡拉奇(55)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "伊斯兰堡(56)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "雅加达(57)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "雅加达(57)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "雅加达(57)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马尼拉(58)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马尼拉(58)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马尼拉(58)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "首尔(59)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "首尔(59)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "首尔(59)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "釜山(60)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "釜山(60)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "釜山(60)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "台北(61)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布宜诺斯艾利斯(62)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布宜诺斯艾利斯(62)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布宜诺斯艾利斯(62)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣地亚哥(63)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣地亚哥(63)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣地亚哥(63)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波哥大(64)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波哥大(64)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波哥大(64)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "利马(65)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "利马(65)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "利马(65)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "约翰内斯堡(67)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "约翰内斯堡(67)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "开普敦(68)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "开普敦(68)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "开普敦(68)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "瓜达拉哈拉(69)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "瓜达拉哈拉(69)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "瓜达拉哈拉(69)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣何塞(70)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣何塞(70)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣何塞(70)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴拿马城(71)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣胡安(73)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣胡安(73)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣胡安(73)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿布扎比(75)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿布扎比(75)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿布扎比(75)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "多哈(76)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "麦纳麦(77)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "麦纳麦(77)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "麦纳麦(77)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "利雅得(78)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "利雅得(78)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "利雅得(78)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马斯喀特(79)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马斯喀特(79)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马斯喀特(79)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝鲁特(80)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝鲁特(80)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝鲁特(80)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "安曼(81)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "特拉维夫(82)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "特拉维夫(82)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "特拉维夫(82)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "海得拉巴(83)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "海得拉巴(83)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "海得拉巴(83)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "浦那(84)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "浦那(84)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "浦那(84)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "基辅(85)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "基辅(85)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "基辅(85)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布加勒斯特(86)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "索非亚(87)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "索非亚(87)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "索非亚(87)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "萨格勒布(88)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "萨格勒布(88)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "萨格勒布(88)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝尔格莱德(89)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝尔格莱德(89)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝尔格莱德(89)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布达佩斯(90)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布达佩斯(90)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布达佩斯(90)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "布拉迪斯拉发(91)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卢布尔雅那(92)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卢布尔雅那(92)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卢布尔雅那(92)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "都柏林(93)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "都柏林(93)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "都柏林(93)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝尔法斯特(94)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝尔法斯特(94)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "贝尔法斯特(94)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "亚特兰大(95)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "亚特兰大(95)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "亚特兰大(95)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "凤凰城(96)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波特兰(97)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波特兰(97)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波特兰(97)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣地亚哥(98)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣地亚哥(98)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣地亚哥(98)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "拉斯维加斯(99)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "拉斯维加斯(99)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "拉斯维加斯(99)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "坦帕(100)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "坦帕(100)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "坦帕(100)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "广州(101)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "深圳(102)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "深圳(102)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "深圳(102)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "成都(103)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "成都(103)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "成都(103)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "杭州(104)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "杭州(104)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "杭州(104)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "重庆(105)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "重庆(105)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "重庆(105)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "大阪(106)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "名古屋(107)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "名古屋(107)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "名古屋(107)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "仁川(108)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "仁川(108)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "仁川(108)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "金边(109)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "金边(109)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "金边(109)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "仰光(110)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "仰光(110)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "仰光(110)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "清迈(112)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "达卡(114)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "达卡(114)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "达卡(114)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "科伦坡(115)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "科伦坡(115)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "科伦坡(115)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "加德满都(116)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿拉木图(117)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿拉木图(117)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "阿拉木图(117)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "塔什干(118)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "塔什干(118)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "塔什干(118)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴库(119)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴库(119)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴库(119)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "乌兰巴托(120)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "乌兰巴托(120)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "乌兰巴托(120)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "斯德哥尔摩(121)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "哥本哈根(122)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "哥本哈根(122)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "哥本哈根(122)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "赫尔辛基(123)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "赫尔辛基(123)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "赫尔辛基(123)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥斯陆(124)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥斯陆(124)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "奥斯陆(124)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "休斯顿(125)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "休斯顿(125)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "休斯顿(125)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "费城(126)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卡尔加里(127)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卡尔加里(127)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卡尔加里(127)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "珀斯(128)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "珀斯(128)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "珀斯(128)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "麦德林(129)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "麦德林(129)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "麦德林(129)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "第比利斯(130)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "第比利斯(130)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "第比利斯(130)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "拉各斯(131)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "莫斯科(132)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "莫斯科(132)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "莫斯科(132)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣何塞(133)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣何塞(133)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "圣何塞(133)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "尔湾(134)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "尔湾(134)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "尔湾(134)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "渥太华(135)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "渥太华(135)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "渥太华(135)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "卢森堡市(136)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "塔林(137)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "塔林(137)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "塔林(137)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "福冈(138)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "福冈(138)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "福冈(138)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "横滨(139)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "横滨(139)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "横滨(139)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴厘岛(140)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "岘港(141)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "岘港(141)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "岘港(141)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "普拉亚德尔卡门(142)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "普拉亚德尔卡门(142)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "普拉亚德尔卡门(142)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波尔图(143)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波尔图(143)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "波尔图(143)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "瓦伦西亚(144)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "瓦伦西亚(144)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "班斯科(145)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "班斯科(145)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "斯普利特(146)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "斯普利特(146)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "斯普利特(146)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "普吉岛(147)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "普吉岛(147)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "普吉岛(147)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "蒙得维的亚(148)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "蒙得维的亚(148)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "拉斯帕尔马斯(149)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "拉斯帕尔马斯(149)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "拉斯帕尔马斯(149)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "槟城(150)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "槟城(150)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马拉喀什(151)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马拉喀什(151)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "马拉喀什(151)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "弗洛里亚诺波利斯(152)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "弗洛里亚诺波利斯(152)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "帕岸岛(153)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "帕岸岛(153)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "帕岸岛(153)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "苏梅岛(154)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "苏梅岛(154)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "暹粒(155)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "暹粒(155)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "暹粒(155)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "库斯科(156)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "库斯科(156)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "坎昆(157)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "坎昆(157)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "坎昆(157)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴亚尔塔港(158)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "巴亚尔塔港(158)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "京都(159)",
+      "message": "Missing from CITY_SLUGS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "京都(159)",
+      "message": "Missing from CITY_FLAG_EMOJIS"
+    },
+    {
+      "category": "MISSING_IN_STORE",
+      "severity": "HIGH",
+      "city": "京都(159)",
+      "message": "Missing from CITY_COUNTRY"
+    },
+    {
+      "category": "ORPHAN_ENTRY",
+      "severity": "MEDIUM",
+      "city": "ID:74",
+      "message": "In CITY_INTROS but not in cities.json"
+    },
+    {
+      "category": "ORPHAN_ENTRY",
+      "severity": "MEDIUM",
+      "city": "ID:66",
+      "message": "In CITY_FLAG_EMOJIS but not in cities.json"
+    }
+  ]
+}

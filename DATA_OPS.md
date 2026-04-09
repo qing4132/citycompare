@@ -6,15 +6,15 @@
 
 ```
 public/data/
-  cities.json          ← 134 cities (runtime, fetched by browser)
+  cities.json          ← 154 cities (runtime, fetched by browser)
   exchange-rates.json  ← 30 currencies stored, 10 selectable in UI (auto-updated daily)
 
 lib/
-  constants.ts         ← CITY_CLIMATE (134 entries), REGIONS, CITY_FLAG_EMOJIS, CITY_COUNTRY, POPULAR_CURRENCIES
-  cityIntros.ts        ← 134 cities × 4 locales (zh/en/ja/es)
+  constants.ts         ← CITY_CLIMATE (154 entries), REGIONS, CITY_FLAG_EMOJIS, CITY_COUNTRY, POPULAR_CURRENCIES
+  cityIntros.ts        ← 154 cities × 4 locales (zh/en/ja/es)
   cityLanguages.ts     ← official languages per city
   citySlug.ts          ← ID↔slug mappings, POPULAR_PAIRS (79 compare pairs)
-  taxData.ts           ← tax brackets for 79 countries, city overrides, expat schemes
+  taxData.ts           ← tax brackets for 81 countries, city overrides, expat schemes
   taxUtils.ts          ← tax computation engine (computeNetIncome)
   clientUtils.ts       ← lifePressure calc, climate helpers
   i18n.ts              ← 4 locales, all UI strings
@@ -25,7 +25,7 @@ lib/
 
 **Location**: `public/data/cities.json`
 **Structure**: `{ "cities": [ { id, name, country, continent, averageIncome, professions: {...}, costModerate, costBudget, ... } ] }`
-**134 cities** (see lib/types.ts for full schema).
+**154 cities** (see lib/types.ts for full schema).
 
 ### How to Update Salary Data
 
@@ -39,7 +39,7 @@ lib/
 ### How to Update Cost of Living
 
 1. Edit `costModerate` and `costBudget` in `cities.json`.
-2. Budget is typically 60–75% of moderate.
+2. Budget is typically 39–55% of moderate (varies by region; lower-cost cities have larger gaps).
 
 **Historical script**: `_archive/scripts/update_cost_tiers.py`
 
@@ -109,7 +109,7 @@ id: {
 ```
 
 **Scripts**:
-- `scripts/add-monthly-climate.mjs` — batch add monthly temp/rain data (134 cities)
+- `scripts/add-monthly-climate.mjs` — batch add monthly temp/rain data (154 cities)
 - `_archive/scripts/add-climate-detail.mjs` — add summary fields (avgTemp, summer/winter, humidity, sunshine)
 
 **Data sources**: WMO Climate Normals 1991–2020, NOAA NCEI, national met agencies.
@@ -188,7 +188,7 @@ npm run build             # Full build validation
 
 ## Data Update Checklist (Annual)
 
-1. [ ] Update salary data in cities.json (26 professions × 134 cities)
+1. [ ] Update salary data in cities.json (26 professions × 154 cities)
 2. [ ] Update costModerate / costBudget in cities.json
 3. [ ] Update house prices and rents in cities.json
 4. [ ] Update AQI values (IQAir annual report)

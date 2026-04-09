@@ -260,15 +260,29 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   // Real-time similar cities: 21-dim normalised Euclidean distance
   const similarIds = (() => {
     const cityIdx = allCities.findIndex(c => c.id === city.id);
+    // Compute medians for nullable fields (use as fallback instead of 0)
+    const median = (vals: (number | null)[]) => {
+      const nums = vals.filter((v): v is number => v !== null).sort((a, b) => a - b);
+      if (nums.length === 0) return 0;
+      const mid = Math.floor(nums.length / 2);
+      return nums.length % 2 === 0 ? (nums[mid - 1] + nums[mid]) / 2 : nums[mid];
+    };
+    const medHP = median(allCities.map(c => c.housePrice));
+    const medRent = median(allCities.map(c => c.monthlyRent));
+    const medWH = median(allCities.map(c => c.annualWorkHours));
+    const medPL = median(allCities.map(c => c.paidLeaveDays));
+    const medAQI = median(allCities.map(c => c.airQuality));
+    const medNet = median(allCities.map(c => c.internetSpeedMbps));
+    const medFlights = median(allCities.map(c => c.directFlightCities));
     const vec = (i: number): number[] => {
       const c = allCities[i];
       const ytb = allYearsToHome[i];
       const cl = c.climate ?? null;
       return [
         allIncomes[i], allCosts[i], allSavings[i],
-        c.housePrice ?? 0, isFinite(ytb) ? ytb : 999, c.monthlyRent ?? 0,
-        c.annualWorkHours ?? 0, allHourly[i], c.paidLeaveDays ?? 0,
-        c.airQuality ?? 0, c.internetSpeedMbps ?? 0, c.directFlightCities ?? 0,
+        c.housePrice ?? medHP, isFinite(ytb) ? ytb : 999, c.monthlyRent ?? medRent,
+        c.annualWorkHours ?? medWH, allHourly[i], c.paidLeaveDays ?? medPL,
+        c.airQuality ?? medAQI, c.internetSpeedMbps ?? medNet, c.directFlightCities ?? medFlights,
         allLifePressure[i], c.healthcareIndex, c.freedomIndex, c.safetyIndex,
         cl?.avgTempC ?? 15,
         cl ? cl.summerAvgC - cl.winterAvgC : 15,
@@ -387,7 +401,10 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               <div className={`rounded-xl border px-4 py-3 text-sm w-full sm:w-auto sm:max-w-xs ${darkMode ? "border-slate-600 bg-slate-800/80" : "border-slate-200 bg-slate-50"}`}>
                 <p className={`font-bold text-xs mb-1 ${subCls}`}>{t("effectiveTaxRate")}</p>
                 <p className={`leading-snug font-medium ${headingCls}`}>
-                  ~{(taxResult.effectiveRate * 100).toFixed(1)}%{taxResult.hasExpatScheme && ` · ${t("expatSchemeNote", { scheme: t(getExpatSchemeName(city.country)) })}`}
+                  {taxResult.dataIsLikelyNet
+                    ? <span className={`text-xs ${darkMode ? "text-amber-400" : "text-amber-600"}`}>{t("dataLikelyNet")}</span>
+                    : <>~{(taxResult.effectiveRate * 100).toFixed(1)}%{taxResult.hasExpatScheme && ` · ${t("expatSchemeNote", { scheme: t(getExpatSchemeName(city.country)) })}`}</>
+                  }
                 </p>
               </div>
             )}

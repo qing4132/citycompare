@@ -1,0 +1,1542 @@
+{
+  "1": {
+    "name": "纽约",
+    "timezone": "America/New_York",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "2": {
+    "name": "伦敦",
+    "timezone": "Europe/London",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "3": {
+    "name": "东京",
+    "timezone": "Asia/Tokyo",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "4": {
+    "name": "北京",
+    "timezone": "Asia/Shanghai",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "5": {
+    "name": "上海",
+    "timezone": "Asia/Shanghai",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "6": {
+    "name": "悉尼",
+    "timezone": "Australia/Sydney",
+    "utcOffsetMin": 600,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 3
+    }
+  },
+  "7": {
+    "name": "新加坡",
+    "timezone": "Asia/Singapore",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "8": {
+    "name": "巴黎",
+    "timezone": "Europe/Paris",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "9": {
+    "name": "多伦多",
+    "timezone": "America/Toronto",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "10": {
+    "name": "香港",
+    "timezone": "Asia/Hong_Kong",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "11": {
+    "name": "洛杉矶",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "12": {
+    "name": "旧金山",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "13": {
+    "name": "芝加哥",
+    "timezone": "America/Chicago",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "14": {
+    "name": "迪拜",
+    "timezone": "Asia/Dubai",
+    "utcOffsetMin": 240,
+    "overlapHours": {
+      "US-East": 4,
+      "US-West": 1,
+      "London": 9
+    }
+  },
+  "15": {
+    "name": "阿姆斯特丹",
+    "timezone": "Europe/Amsterdam",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "16": {
+    "name": "苏黎世",
+    "timezone": "Europe/Zurich",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "17": {
+    "name": "日内瓦",
+    "timezone": "Europe/Zurich",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "18": {
+    "name": "慕尼黑",
+    "timezone": "Europe/Berlin",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "19": {
+    "name": "柏林",
+    "timezone": "Europe/Berlin",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "20": {
+    "name": "巴塞罗那",
+    "timezone": "Europe/Madrid",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "21": {
+    "name": "马德里",
+    "timezone": "Europe/Madrid",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "22": {
+    "name": "米兰",
+    "timezone": "Europe/Rome",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "23": {
+    "name": "罗马",
+    "timezone": "Europe/Rome",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "24": {
+    "name": "布鲁塞尔",
+    "timezone": "Europe/Brussels",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "25": {
+    "name": "维也纳",
+    "timezone": "Europe/Vienna",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "26": {
+    "name": "布拉格",
+    "timezone": "Europe/Prague",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "27": {
+    "name": "华沙",
+    "timezone": "Europe/Warsaw",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "28": {
+    "name": "里斯本",
+    "timezone": "Europe/Lisbon",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "29": {
+    "name": "雅典",
+    "timezone": "Europe/Athens",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "30": {
+    "name": "伊斯坦布尔",
+    "timezone": "Europe/Istanbul",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "31": {
+    "name": "墨西哥城",
+    "timezone": "America/Mexico_City",
+    "utcOffsetMin": -360,
+    "overlapHours": {
+      "US-East": 10,
+      "US-West": 11,
+      "London": 5
+    }
+  },
+  "32": {
+    "name": "圣保罗",
+    "timezone": "America/Sao_Paulo",
+    "utcOffsetMin": -180,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 8,
+      "London": 8
+    }
+  },
+  "33": {
+    "name": "里约热内卢",
+    "timezone": "America/Sao_Paulo",
+    "utcOffsetMin": -180,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 8,
+      "London": 8
+    }
+  },
+  "34": {
+    "name": "迈阿密",
+    "timezone": "America/New_York",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "35": {
+    "name": "华盛顿",
+    "timezone": "America/New_York",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "36": {
+    "name": "波士顿",
+    "timezone": "America/New_York",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "37": {
+    "name": "西雅图",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "38": {
+    "name": "丹佛",
+    "timezone": "America/Denver",
+    "utcOffsetMin": -360,
+    "overlapHours": {
+      "US-East": 10,
+      "US-West": 11,
+      "London": 5
+    }
+  },
+  "39": {
+    "name": "奥斯汀",
+    "timezone": "America/Chicago",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "40": {
+    "name": "温哥华",
+    "timezone": "America/Vancouver",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "41": {
+    "name": "蒙特利尔",
+    "timezone": "America/Montreal",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "42": {
+    "name": "墨尔本",
+    "timezone": "Australia/Melbourne",
+    "utcOffsetMin": 600,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 3
+    }
+  },
+  "43": {
+    "name": "布里斯班",
+    "timezone": "Australia/Brisbane",
+    "utcOffsetMin": 600,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 3
+    }
+  },
+  "44": {
+    "name": "奥克兰",
+    "timezone": "Pacific/Auckland",
+    "utcOffsetMin": 720,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 1
+    }
+  },
+  "45": {
+    "name": "曼谷",
+    "timezone": "Asia/Bangkok",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "46": {
+    "name": "吉隆坡",
+    "timezone": "Asia/Kuala_Lumpur",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "47": {
+    "name": "胡志明市",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "48": {
+    "name": "河内",
+    "timezone": "Asia/Bangkok",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "49": {
+    "name": "班加罗尔",
+    "timezone": "Asia/Kolkata",
+    "utcOffsetMin": 330,
+    "overlapHours": {
+      "US-East": 2.5,
+      "US-West": 0,
+      "London": 7.5
+    }
+  },
+  "50": {
+    "name": "孟买",
+    "timezone": "Asia/Kolkata",
+    "utcOffsetMin": 330,
+    "overlapHours": {
+      "US-East": 2.5,
+      "US-West": 0,
+      "London": 7.5
+    }
+  },
+  "51": {
+    "name": "新德里",
+    "timezone": "Asia/Kolkata",
+    "utcOffsetMin": 330,
+    "overlapHours": {
+      "US-East": 2.5,
+      "US-West": 0,
+      "London": 7.5
+    }
+  },
+  "52": {
+    "name": "内罗毕",
+    "timezone": "Africa/Nairobi",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "53": {
+    "name": "开罗",
+    "timezone": "Africa/Cairo",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "54": {
+    "name": "德黑兰",
+    "timezone": "Asia/Tehran",
+    "utcOffsetMin": 210,
+    "overlapHours": {
+      "US-East": 4.5,
+      "US-West": 1.5,
+      "London": 9.5
+    }
+  },
+  "55": {
+    "name": "卡拉奇",
+    "timezone": "Asia/Karachi",
+    "utcOffsetMin": 300,
+    "overlapHours": {
+      "US-East": 3,
+      "US-West": 0,
+      "London": 8
+    }
+  },
+  "56": {
+    "name": "伊斯兰堡",
+    "timezone": "Asia/Karachi",
+    "utcOffsetMin": 300,
+    "overlapHours": {
+      "US-East": 3,
+      "US-West": 0,
+      "London": 8
+    }
+  },
+  "57": {
+    "name": "雅加达",
+    "timezone": "Asia/Jakarta",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "58": {
+    "name": "马尼拉",
+    "timezone": "Asia/Manila",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "59": {
+    "name": "首尔",
+    "timezone": "Asia/Seoul",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "60": {
+    "name": "釜山",
+    "timezone": "Asia/Seoul",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "61": {
+    "name": "台北",
+    "timezone": "Asia/Taipei",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "62": {
+    "name": "布宜诺斯艾利斯",
+    "timezone": "America/Argentina/Buenos_Aires",
+    "utcOffsetMin": -180,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 8,
+      "London": 8
+    }
+  },
+  "63": {
+    "name": "圣地亚哥",
+    "timezone": "America/Santiago",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "64": {
+    "name": "波哥大",
+    "timezone": "America/Bogota",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "65": {
+    "name": "利马",
+    "timezone": "America/Lima",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "67": {
+    "name": "约翰内斯堡",
+    "timezone": "Africa/Johannesburg",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "68": {
+    "name": "开普敦",
+    "timezone": "Africa/Johannesburg",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "69": {
+    "name": "瓜达拉哈拉",
+    "timezone": "America/Mexico_City",
+    "utcOffsetMin": -360,
+    "overlapHours": {
+      "US-East": 10,
+      "US-West": 11,
+      "London": 5
+    }
+  },
+  "70": {
+    "name": "圣何塞(哥斯达黎加)",
+    "timezone": "America/Costa_Rica",
+    "utcOffsetMin": -360,
+    "overlapHours": {
+      "US-East": 10,
+      "US-West": 11,
+      "London": 5
+    }
+  },
+  "71": {
+    "name": "巴拿马城",
+    "timezone": "America/Panama",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "73": {
+    "name": "圣胡安",
+    "timezone": "America/Puerto_Rico",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "75": {
+    "name": "阿布扎比",
+    "timezone": "Asia/Dubai",
+    "utcOffsetMin": 240,
+    "overlapHours": {
+      "US-East": 4,
+      "US-West": 1,
+      "London": 9
+    }
+  },
+  "76": {
+    "name": "多哈",
+    "timezone": "Asia/Qatar",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "77": {
+    "name": "麦纳麦",
+    "timezone": "Asia/Bahrain",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "78": {
+    "name": "利雅得",
+    "timezone": "Asia/Riyadh",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "79": {
+    "name": "马斯喀特",
+    "timezone": "Asia/Muscat",
+    "utcOffsetMin": 240,
+    "overlapHours": {
+      "US-East": 4,
+      "US-West": 1,
+      "London": 9
+    }
+  },
+  "80": {
+    "name": "贝鲁特",
+    "timezone": "Asia/Beirut",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "81": {
+    "name": "安曼",
+    "timezone": "Asia/Amman",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "82": {
+    "name": "特拉维夫",
+    "timezone": "Asia/Jerusalem",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "83": {
+    "name": "海得拉巴",
+    "timezone": "Asia/Kolkata",
+    "utcOffsetMin": 330,
+    "overlapHours": {
+      "US-East": 2.5,
+      "US-West": 0,
+      "London": 7.5
+    }
+  },
+  "84": {
+    "name": "浦那",
+    "timezone": "Asia/Kolkata",
+    "utcOffsetMin": 330,
+    "overlapHours": {
+      "US-East": 2.5,
+      "US-West": 0,
+      "London": 7.5
+    }
+  },
+  "85": {
+    "name": "基辅",
+    "timezone": "Europe/Kyiv",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "86": {
+    "name": "布加勒斯特",
+    "timezone": "Europe/Bucharest",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "87": {
+    "name": "索非亚",
+    "timezone": "Europe/Sofia",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "88": {
+    "name": "萨格勒布",
+    "timezone": "Europe/Zagreb",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "89": {
+    "name": "贝尔格莱德",
+    "timezone": "Europe/Belgrade",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "90": {
+    "name": "布达佩斯",
+    "timezone": "Europe/Budapest",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "91": {
+    "name": "布拉迪斯拉发",
+    "timezone": "Europe/Bratislava",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "92": {
+    "name": "卢布尔雅那",
+    "timezone": "Europe/Ljubljana",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "93": {
+    "name": "都柏林",
+    "timezone": "Europe/Dublin",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "94": {
+    "name": "贝尔法斯特",
+    "timezone": "Europe/London",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "95": {
+    "name": "亚特兰大",
+    "timezone": "America/New_York",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "96": {
+    "name": "凤凰城",
+    "timezone": "America/Phoenix",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "97": {
+    "name": "波特兰",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "98": {
+    "name": "圣地亚哥",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "99": {
+    "name": "拉斯维加斯",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "100": {
+    "name": "坦帕",
+    "timezone": "America/New_York",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "101": {
+    "name": "广州",
+    "timezone": "Asia/Shanghai",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "102": {
+    "name": "深圳",
+    "timezone": "Asia/Shanghai",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "103": {
+    "name": "成都",
+    "timezone": "Asia/Shanghai",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "104": {
+    "name": "杭州",
+    "timezone": "Asia/Shanghai",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "105": {
+    "name": "重庆",
+    "timezone": "Asia/Shanghai",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "106": {
+    "name": "大阪",
+    "timezone": "Asia/Tokyo",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "107": {
+    "name": "名古屋",
+    "timezone": "Asia/Tokyo",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "108": {
+    "name": "仁川",
+    "timezone": "Asia/Seoul",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "109": {
+    "name": "金边",
+    "timezone": "Asia/Phnom_Penh",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "110": {
+    "name": "仰光",
+    "timezone": "Asia/Yangon",
+    "utcOffsetMin": 390,
+    "overlapHours": {
+      "US-East": 1.5,
+      "US-West": 0,
+      "London": 6.5
+    }
+  },
+  "112": {
+    "name": "清迈",
+    "timezone": "Asia/Bangkok",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "114": {
+    "name": "达卡",
+    "timezone": "Asia/Dhaka",
+    "utcOffsetMin": 360,
+    "overlapHours": {
+      "US-East": 2,
+      "US-West": 0,
+      "London": 7
+    }
+  },
+  "115": {
+    "name": "科伦坡",
+    "timezone": "Asia/Colombo",
+    "utcOffsetMin": 330,
+    "overlapHours": {
+      "US-East": 2.5,
+      "US-West": 0,
+      "London": 7.5
+    }
+  },
+  "116": {
+    "name": "加德满都",
+    "timezone": "Asia/Kathmandu",
+    "utcOffsetMin": 345,
+    "overlapHours": {
+      "US-East": 2.3,
+      "US-West": 0,
+      "London": 7.3
+    }
+  },
+  "117": {
+    "name": "阿拉木图",
+    "timezone": "Asia/Almaty",
+    "utcOffsetMin": 300,
+    "overlapHours": {
+      "US-East": 3,
+      "US-West": 0,
+      "London": 8
+    }
+  },
+  "118": {
+    "name": "塔什干",
+    "timezone": "Asia/Tashkent",
+    "utcOffsetMin": 300,
+    "overlapHours": {
+      "US-East": 3,
+      "US-West": 0,
+      "London": 8
+    }
+  },
+  "119": {
+    "name": "巴库",
+    "timezone": "Asia/Baku",
+    "utcOffsetMin": 240,
+    "overlapHours": {
+      "US-East": 4,
+      "US-West": 1,
+      "London": 9
+    }
+  },
+  "120": {
+    "name": "乌兰巴托",
+    "timezone": "Asia/Ulaanbaatar",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "121": {
+    "name": "斯德哥尔摩",
+    "timezone": "Europe/Stockholm",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "122": {
+    "name": "哥本哈根",
+    "timezone": "Europe/Copenhagen",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "123": {
+    "name": "赫尔辛基",
+    "timezone": "Europe/Helsinki",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "124": {
+    "name": "奥斯陆",
+    "timezone": "Europe/Oslo",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "125": {
+    "name": "休斯顿",
+    "timezone": "America/Chicago",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "126": {
+    "name": "费城",
+    "timezone": "America/New_York",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "127": {
+    "name": "卡尔加里",
+    "timezone": "America/Edmonton",
+    "utcOffsetMin": -360,
+    "overlapHours": {
+      "US-East": 10,
+      "US-West": 11,
+      "London": 5
+    }
+  },
+  "128": {
+    "name": "珀斯",
+    "timezone": "Australia/Perth",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "129": {
+    "name": "麦德林",
+    "timezone": "America/Bogota",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "130": {
+    "name": "第比利斯",
+    "timezone": "Asia/Tbilisi",
+    "utcOffsetMin": 240,
+    "overlapHours": {
+      "US-East": 4,
+      "US-West": 1,
+      "London": 9
+    }
+  },
+  "131": {
+    "name": "拉各斯",
+    "timezone": "Africa/Lagos",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "132": {
+    "name": "莫斯科",
+    "timezone": "Europe/Moscow",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "133": {
+    "name": "圣何塞(美国)",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "134": {
+    "name": "尔湾",
+    "timezone": "America/Los_Angeles",
+    "utcOffsetMin": -420,
+    "overlapHours": {
+      "US-East": 9,
+      "US-West": 12,
+      "London": 4
+    }
+  },
+  "135": {
+    "name": "渥太华",
+    "timezone": "America/Toronto",
+    "utcOffsetMin": -240,
+    "overlapHours": {
+      "US-East": 12,
+      "US-West": 9,
+      "London": 7
+    }
+  },
+  "136": {
+    "name": "卢森堡市",
+    "timezone": "Europe/Luxembourg",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "137": {
+    "name": "塔林",
+    "timezone": "Europe/Tallinn",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "138": {
+    "name": "福冈",
+    "timezone": "Asia/Tokyo",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "139": {
+    "name": "横滨",
+    "timezone": "Asia/Tokyo",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  },
+  "140": {
+    "name": "巴厘岛",
+    "timezone": "Asia/Makassar",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "141": {
+    "name": "岘港",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "142": {
+    "name": "普拉亚德尔卡门",
+    "timezone": "America/Cancun",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "143": {
+    "name": "波尔图",
+    "timezone": "Europe/Lisbon",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "144": {
+    "name": "瓦伦西亚",
+    "timezone": "Europe/Madrid",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "145": {
+    "name": "班斯科",
+    "timezone": "Europe/Sofia",
+    "utcOffsetMin": 180,
+    "overlapHours": {
+      "US-East": 5,
+      "US-West": 2,
+      "London": 10
+    }
+  },
+  "146": {
+    "name": "斯普利特",
+    "timezone": "Europe/Zagreb",
+    "utcOffsetMin": 120,
+    "overlapHours": {
+      "US-East": 6,
+      "US-West": 3,
+      "London": 11
+    }
+  },
+  "147": {
+    "name": "普吉岛",
+    "timezone": "Asia/Bangkok",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "148": {
+    "name": "蒙得维的亚",
+    "timezone": "America/Montevideo",
+    "utcOffsetMin": -180,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 8,
+      "London": 8
+    }
+  },
+  "149": {
+    "name": "拉斯帕尔马斯",
+    "timezone": "Atlantic/Canary",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "150": {
+    "name": "槟城",
+    "timezone": "Asia/Kuala_Lumpur",
+    "utcOffsetMin": 480,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 5
+    }
+  },
+  "151": {
+    "name": "马拉喀什",
+    "timezone": "Africa/Casablanca",
+    "utcOffsetMin": 60,
+    "overlapHours": {
+      "US-East": 7,
+      "US-West": 4,
+      "London": 12
+    }
+  },
+  "152": {
+    "name": "弗洛里亚诺波利斯",
+    "timezone": "America/Sao_Paulo",
+    "utcOffsetMin": -180,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 8,
+      "London": 8
+    }
+  },
+  "153": {
+    "name": "帕岸岛",
+    "timezone": "Asia/Bangkok",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "154": {
+    "name": "苏梅岛",
+    "timezone": "Asia/Bangkok",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "155": {
+    "name": "暹粒",
+    "timezone": "Asia/Phnom_Penh",
+    "utcOffsetMin": 420,
+    "overlapHours": {
+      "US-East": 1,
+      "US-West": 0,
+      "London": 6
+    }
+  },
+  "156": {
+    "name": "库斯科",
+    "timezone": "America/Lima",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "157": {
+    "name": "坎昆",
+    "timezone": "America/Cancun",
+    "utcOffsetMin": -300,
+    "overlapHours": {
+      "US-East": 11,
+      "US-West": 10,
+      "London": 6
+    }
+  },
+  "158": {
+    "name": "巴亚尔塔港",
+    "timezone": "America/Mexico_City",
+    "utcOffsetMin": -360,
+    "overlapHours": {
+      "US-East": 10,
+      "US-West": 11,
+      "London": 5
+    }
+  },
+  "159": {
+    "name": "京都",
+    "timezone": "Asia/Tokyo",
+    "utcOffsetMin": 540,
+    "overlapHours": {
+      "US-East": 0,
+      "US-West": 0,
+      "London": 4
+    }
+  }
+}

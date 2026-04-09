@@ -1,0 +1,1234 @@
+{
+  "1": {
+    "name": "纽约",
+    "shortTermRentUsd": 3007,
+    "method": "nomads.com total ($7159) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 3200,
+    "nomadTotalCost": 7159
+  },
+  "2": {
+    "name": "伦敦",
+    "shortTermRentUsd": 2435,
+    "method": "nomads.com total ($5798) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2100,
+    "nomadTotalCost": 5798
+  },
+  "3": {
+    "name": "东京",
+    "shortTermRentUsd": 1298,
+    "method": "nomads.com total ($3090) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1400,
+    "nomadTotalCost": 3090
+  },
+  "4": {
+    "name": "北京",
+    "shortTermRentUsd": 1077,
+    "method": "nomads.com total ($2565) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 1100,
+    "nomadTotalCost": 2565
+  },
+  "5": {
+    "name": "上海",
+    "shortTermRentUsd": 851,
+    "method": "nomads.com total ($2027) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 1300,
+    "nomadTotalCost": 2027
+  },
+  "6": {
+    "name": "悉尼",
+    "shortTermRentUsd": 1799,
+    "method": "nomads.com total ($4284) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2200,
+    "nomadTotalCost": 4284
+  },
+  "7": {
+    "name": "新加坡",
+    "shortTermRentUsd": 1946,
+    "method": "nomads.com total ($4633) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2400,
+    "nomadTotalCost": 4633
+  },
+  "8": {
+    "name": "巴黎",
+    "shortTermRentUsd": 2324,
+    "method": "nomads.com total ($5533) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1500,
+    "nomadTotalCost": 5533
+  },
+  "9": {
+    "name": "多伦多",
+    "shortTermRentUsd": 1792,
+    "method": "nomads.com total ($4266) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1800,
+    "nomadTotalCost": 4266
+  },
+  "10": {
+    "name": "香港",
+    "shortTermRentUsd": 1158,
+    "method": "nomads.com total ($2757) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1900,
+    "nomadTotalCost": 2757
+  },
+  "11": {
+    "name": "洛杉矶",
+    "shortTermRentUsd": 2128,
+    "method": "nomads.com total ($5067) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2500,
+    "nomadTotalCost": 5067
+  },
+  "12": {
+    "name": "旧金山",
+    "shortTermRentUsd": 2424,
+    "method": "nomads.com total ($5771) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2800,
+    "nomadTotalCost": 5771
+  },
+  "13": {
+    "name": "芝加哥",
+    "shortTermRentUsd": 2328,
+    "method": "nomads.com total ($5544) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1600,
+    "nomadTotalCost": 5544
+  },
+  "14": {
+    "name": "迪拜",
+    "shortTermRentUsd": 1528,
+    "method": "nomads.com total ($3638) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1800,
+    "nomadTotalCost": 3638
+  },
+  "15": {
+    "name": "阿姆斯特丹",
+    "shortTermRentUsd": 3095,
+    "method": "nomads.com total ($7370) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1700,
+    "nomadTotalCost": 7370
+  },
+  "16": {
+    "name": "苏黎世",
+    "shortTermRentUsd": 3122,
+    "method": "nomads.com total ($7433) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2200,
+    "nomadTotalCost": 7433
+  },
+  "17": {
+    "name": "日内瓦",
+    "shortTermRentUsd": 2827,
+    "method": "nomads.com total ($6732) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1900,
+    "nomadTotalCost": 6732
+  },
+  "18": {
+    "name": "慕尼黑",
+    "shortTermRentUsd": 1883,
+    "method": "nomads.com total ($4484) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1200,
+    "nomadTotalCost": 4484
+  },
+  "19": {
+    "name": "柏林",
+    "shortTermRentUsd": 1761,
+    "method": "nomads.com total ($4194) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1100,
+    "nomadTotalCost": 4194
+  },
+  "20": {
+    "name": "巴塞罗那",
+    "shortTermRentUsd": 1885,
+    "method": "nomads.com total ($4487) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1100,
+    "nomadTotalCost": 4487
+  },
+  "21": {
+    "name": "马德里",
+    "shortTermRentUsd": 1919,
+    "method": "nomads.com total ($4569) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1000,
+    "nomadTotalCost": 4569
+  },
+  "22": {
+    "name": "米兰",
+    "shortTermRentUsd": 2135,
+    "method": "nomads.com total ($5084) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1200,
+    "nomadTotalCost": 5084
+  },
+  "23": {
+    "name": "罗马",
+    "shortTermRentUsd": 2289,
+    "method": "nomads.com total ($5451) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 950,
+    "nomadTotalCost": 5451
+  },
+  "24": {
+    "name": "布鲁塞尔",
+    "shortTermRentUsd": 1857,
+    "method": "nomads.com total ($4421) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1100,
+    "nomadTotalCost": 4421
+  },
+  "25": {
+    "name": "维也纳",
+    "shortTermRentUsd": 1660,
+    "method": "nomads.com total ($3953) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1000,
+    "nomadTotalCost": 3953
+  },
+  "26": {
+    "name": "布拉格",
+    "shortTermRentUsd": 1626,
+    "method": "nomads.com total ($3871) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 700,
+    "nomadTotalCost": 3871
+  },
+  "27": {
+    "name": "华沙",
+    "shortTermRentUsd": 1344,
+    "method": "nomads.com total ($3199) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 650,
+    "nomadTotalCost": 3199
+  },
+  "28": {
+    "name": "里斯本",
+    "shortTermRentUsd": 1706,
+    "method": "nomads.com total ($4061) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 900,
+    "nomadTotalCost": 4061
+  },
+  "29": {
+    "name": "雅典",
+    "shortTermRentUsd": 1398,
+    "method": "nomads.com total ($3328) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 3328
+  },
+  "30": {
+    "name": "伊斯坦布尔",
+    "shortTermRentUsd": 708,
+    "method": "nomads.com total ($1686) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 1686
+  },
+  "31": {
+    "name": "墨西哥城",
+    "shortTermRentUsd": 941,
+    "method": "nomads.com total ($2241) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 2241
+  },
+  "32": {
+    "name": "圣保罗",
+    "shortTermRentUsd": 835,
+    "method": "nomads.com total ($1988) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 1988
+  },
+  "33": {
+    "name": "里约热内卢",
+    "shortTermRentUsd": 1012,
+    "method": "nomads.com total ($2409) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 650,
+    "nomadTotalCost": 2409
+  },
+  "34": {
+    "name": "迈阿密",
+    "shortTermRentUsd": 2418,
+    "method": "nomads.com total ($5756) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2000,
+    "nomadTotalCost": 5756
+  },
+  "35": {
+    "name": "华盛顿",
+    "shortTermRentUsd": 1890,
+    "method": "nomads.com total ($4500) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1700,
+    "nomadTotalCost": 4500
+  },
+  "36": {
+    "name": "波士顿",
+    "shortTermRentUsd": 2708,
+    "method": "nomads.com total ($6448) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1500,
+    "nomadTotalCost": 6448
+  },
+  "37": {
+    "name": "西雅图",
+    "shortTermRentUsd": 2347,
+    "method": "nomads.com total ($5587) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1800,
+    "nomadTotalCost": 5587
+  },
+  "38": {
+    "name": "丹佛",
+    "shortTermRentUsd": 1761,
+    "method": "nomads.com total ($4193) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1400,
+    "nomadTotalCost": 4193
+  },
+  "39": {
+    "name": "奥斯汀",
+    "shortTermRentUsd": 1585,
+    "method": "nomads.com total ($3774) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1600,
+    "nomadTotalCost": 3774
+  },
+  "40": {
+    "name": "温哥华",
+    "shortTermRentUsd": 2075,
+    "method": "nomads.com total ($4940) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1600,
+    "nomadTotalCost": 4940
+  },
+  "41": {
+    "name": "蒙特利尔",
+    "shortTermRentUsd": 1583,
+    "method": "nomads.com total ($3770) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1400,
+    "nomadTotalCost": 3770
+  },
+  "42": {
+    "name": "墨尔本",
+    "shortTermRentUsd": 1588,
+    "method": "nomads.com total ($3781) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1800,
+    "nomadTotalCost": 3781
+  },
+  "43": {
+    "name": "布里斯班",
+    "shortTermRentUsd": 1920,
+    "method": "nomads.com total ($4571) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1400,
+    "nomadTotalCost": 4571
+  },
+  "44": {
+    "name": "奥克兰",
+    "shortTermRentUsd": 1379,
+    "method": "nomads.com total ($3284) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1300,
+    "nomadTotalCost": 3284
+  },
+  "45": {
+    "name": "曼谷",
+    "shortTermRentUsd": 665,
+    "method": "nomads.com total ($1584) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 1584
+  },
+  "46": {
+    "name": "吉隆坡",
+    "shortTermRentUsd": 675,
+    "method": "nomads.com total ($1608) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 1608
+  },
+  "47": {
+    "name": "胡志明市",
+    "shortTermRentUsd": 439,
+    "method": "nomads.com total ($1046) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 400,
+    "nomadTotalCost": 1046
+  },
+  "48": {
+    "name": "河内",
+    "shortTermRentUsd": 456,
+    "method": "nomads.com total ($1086) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 450,
+    "nomadTotalCost": 1086
+  },
+  "49": {
+    "name": "班加罗尔",
+    "shortTermRentUsd": 546,
+    "method": "nomads.com total ($1300) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 250,
+    "nomadTotalCost": 1300
+  },
+  "50": {
+    "name": "孟买",
+    "shortTermRentUsd": 541,
+    "method": "nomads.com total ($1289) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 200,
+    "nomadTotalCost": 1289
+  },
+  "51": {
+    "name": "新德里",
+    "shortTermRentUsd": 475,
+    "method": "nomads.com total ($1130) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 250,
+    "nomadTotalCost": 1130
+  },
+  "52": {
+    "name": "内罗毕",
+    "shortTermRentUsd": 711,
+    "method": "nomads.com total ($1693) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1693
+  },
+  "53": {
+    "name": "开罗",
+    "shortTermRentUsd": 361,
+    "method": "nomads.com total ($860) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 300,
+    "nomadTotalCost": 860
+  },
+  "54": {
+    "name": "德黑兰",
+    "shortTermRentUsd": 25,
+    "method": "nomads.com total ($60) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 200,
+    "nomadTotalCost": 60
+  },
+  "55": {
+    "name": "卡拉奇",
+    "shortTermRentUsd": 475,
+    "method": "nomads.com total ($1130) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 150,
+    "nomadTotalCost": 1130
+  },
+  "56": {
+    "name": "伊斯兰堡",
+    "shortTermRentUsd": 591,
+    "method": "nomads.com total ($1407) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 180,
+    "nomadTotalCost": 1407
+  },
+  "57": {
+    "name": "雅加达",
+    "shortTermRentUsd": 512,
+    "method": "nomads.com total ($1219) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1219
+  },
+  "58": {
+    "name": "马尼拉",
+    "shortTermRentUsd": 648,
+    "method": "nomads.com total ($1542) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1542
+  },
+  "59": {
+    "name": "首尔",
+    "shortTermRentUsd": 1049,
+    "method": "nomads.com total ($2498) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 900,
+    "nomadTotalCost": 2498
+  },
+  "60": {
+    "name": "釜山",
+    "shortTermRentUsd": 842,
+    "method": "nomads.com total ($2004) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 600,
+    "nomadTotalCost": 2004
+  },
+  "61": {
+    "name": "台北",
+    "shortTermRentUsd": 922,
+    "method": "nomads.com total ($2196) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 800,
+    "nomadTotalCost": 2196
+  },
+  "62": {
+    "name": "布宜诺斯艾利斯",
+    "shortTermRentUsd": 711,
+    "method": "nomads.com total ($1694) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1694
+  },
+  "63": {
+    "name": "圣地亚哥",
+    "shortTermRentUsd": 861,
+    "method": "nomads.com total ($2049) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 2049
+  },
+  "64": {
+    "name": "波哥大",
+    "shortTermRentUsd": 552,
+    "method": "nomads.com total ($1314) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1314
+  },
+  "65": {
+    "name": "利马",
+    "shortTermRentUsd": 594,
+    "method": "nomads.com total ($1414) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 300,
+    "nomadTotalCost": 1414
+  },
+  "67": {
+    "name": "约翰内斯堡",
+    "shortTermRentUsd": 1088,
+    "method": "nomads.com total ($2590) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 2590
+  },
+  "68": {
+    "name": "开普敦",
+    "shortTermRentUsd": 1111,
+    "method": "nomads.com total ($2645) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 600,
+    "nomadTotalCost": 2645
+  },
+  "69": {
+    "name": "瓜达拉哈拉",
+    "shortTermRentUsd": 858,
+    "method": "nomads.com total ($2043) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 450,
+    "nomadTotalCost": 2043
+  },
+  "70": {
+    "name": "圣何塞(哥斯达黎加)",
+    "shortTermRentUsd": 756,
+    "method": "nomads.com total ($1800) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 1800
+  },
+  "71": {
+    "name": "巴拿马城",
+    "shortTermRentUsd": 1076,
+    "method": "nomads.com total ($2561) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 800,
+    "nomadTotalCost": 2561
+  },
+  "73": {
+    "name": "圣胡安",
+    "shortTermRentUsd": 1781,
+    "method": "nomads.com total ($4241) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 750,
+    "nomadTotalCost": 4241
+  },
+  "75": {
+    "name": "阿布扎比",
+    "shortTermRentUsd": 1742,
+    "method": "nomads.com total ($4147) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1500,
+    "nomadTotalCost": 4147
+  },
+  "76": {
+    "name": "多哈",
+    "shortTermRentUsd": 2388,
+    "method": "nomads.com total ($5685) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1600,
+    "nomadTotalCost": 5685
+  },
+  "77": {
+    "name": "麦纳麦",
+    "shortTermRentUsd": 1033,
+    "method": "nomads.com total ($2460) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 700,
+    "nomadTotalCost": 2460
+  },
+  "78": {
+    "name": "利雅得",
+    "shortTermRentUsd": 1140,
+    "method": "nomads.com total ($2715) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 800,
+    "nomadTotalCost": 2715
+  },
+  "79": {
+    "name": "马斯喀特",
+    "shortTermRentUsd": 789,
+    "method": "nomads.com total ($1878) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 650,
+    "nomadTotalCost": 1878
+  },
+  "80": {
+    "name": "贝鲁特",
+    "shortTermRentUsd": 534,
+    "method": "nomads.com total ($1272) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 1272
+  },
+  "81": {
+    "name": "安曼",
+    "shortTermRentUsd": 778,
+    "method": "nomads.com total ($1852) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 400,
+    "nomadTotalCost": 1852
+  },
+  "82": {
+    "name": "特拉维夫",
+    "shortTermRentUsd": 2542,
+    "method": "nomads.com total ($6053) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1500,
+    "nomadTotalCost": 6053
+  },
+  "83": {
+    "name": "海得拉巴",
+    "shortTermRentUsd": 420,
+    "method": "nomads.com total ($999) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 200,
+    "nomadTotalCost": 999
+  },
+  "84": {
+    "name": "浦那",
+    "shortTermRentUsd": 377,
+    "method": "nomads.com total ($898) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 200,
+    "nomadTotalCost": 898
+  },
+  "85": {
+    "name": "基辅",
+    "shortTermRentUsd": 443,
+    "method": "nomads.com total ($1055) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1055
+  },
+  "86": {
+    "name": "布加勒斯特",
+    "shortTermRentUsd": 980,
+    "method": "nomads.com total ($2334) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 400,
+    "nomadTotalCost": 2334
+  },
+  "87": {
+    "name": "索非亚",
+    "shortTermRentUsd": 1069,
+    "method": "nomads.com total ($2545) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 2545
+  },
+  "88": {
+    "name": "萨格勒布",
+    "shortTermRentUsd": 914,
+    "method": "nomads.com total ($2177) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 2177
+  },
+  "89": {
+    "name": "贝尔格莱德",
+    "shortTermRentUsd": 1245,
+    "method": "nomads.com total ($2964) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 2964
+  },
+  "90": {
+    "name": "布达佩斯",
+    "shortTermRentUsd": 1164,
+    "method": "nomads.com total ($2772) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 2772
+  },
+  "91": {
+    "name": "布拉迪斯拉发",
+    "shortTermRentUsd": 1186,
+    "method": "nomads.com total ($2824) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 2824
+  },
+  "92": {
+    "name": "卢布尔雅那",
+    "shortTermRentUsd": 1404,
+    "method": "nomads.com total ($3344) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 600,
+    "nomadTotalCost": 3344
+  },
+  "93": {
+    "name": "都柏林",
+    "shortTermRentUsd": 2399,
+    "method": "nomads.com total ($5711) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1800,
+    "nomadTotalCost": 5711
+  },
+  "94": {
+    "name": "贝尔法斯特",
+    "shortTermRentUsd": 1950,
+    "method": "nomads.com total ($4644) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1200,
+    "nomadTotalCost": 4644
+  },
+  "95": {
+    "name": "亚特兰大",
+    "shortTermRentUsd": 1685,
+    "method": "nomads.com total ($4011) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1500,
+    "nomadTotalCost": 4011
+  },
+  "96": {
+    "name": "凤凰城",
+    "shortTermRentUsd": 1712,
+    "method": "nomads.com total ($4076) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1400,
+    "nomadTotalCost": 4076
+  },
+  "97": {
+    "name": "波特兰",
+    "shortTermRentUsd": 1877,
+    "method": "nomads.com total ($4468) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1300,
+    "nomadTotalCost": 4468
+  },
+  "98": {
+    "name": "圣地亚哥",
+    "shortTermRentUsd": 2058,
+    "method": "nomads.com total ($4899) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1100,
+    "nomadTotalCost": 4899
+  },
+  "99": {
+    "name": "拉斯维加斯",
+    "shortTermRentUsd": 1836,
+    "method": "nomads.com total ($4371) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1200,
+    "nomadTotalCost": 4371
+  },
+  "100": {
+    "name": "坦帕",
+    "shortTermRentUsd": 1906,
+    "method": "nomads.com total ($4537) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1100,
+    "nomadTotalCost": 4537
+  },
+  "101": {
+    "name": "广州",
+    "shortTermRentUsd": 613,
+    "method": "nomads.com total ($1460) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 700,
+    "nomadTotalCost": 1460
+  },
+  "102": {
+    "name": "深圳",
+    "shortTermRentUsd": 898,
+    "method": "nomads.com total ($2138) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 2138
+  },
+  "103": {
+    "name": "成都",
+    "shortTermRentUsd": 612,
+    "method": "nomads.com total ($1456) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 450,
+    "nomadTotalCost": 1456
+  },
+  "104": {
+    "name": "杭州",
+    "shortTermRentUsd": 644,
+    "method": "nomads.com total ($1534) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 400,
+    "nomadTotalCost": 1534
+  },
+  "105": {
+    "name": "重庆",
+    "shortTermRentUsd": 625,
+    "method": "nomads.com total ($1487) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 1487
+  },
+  "106": {
+    "name": "大阪",
+    "shortTermRentUsd": 1003,
+    "method": "nomads.com total ($2388) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1000,
+    "nomadTotalCost": 2388
+  },
+  "107": {
+    "name": "名古屋",
+    "shortTermRentUsd": 1015,
+    "method": "nomads.com total ($2417) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 550,
+    "nomadTotalCost": 2417
+  },
+  "108": {
+    "name": "仁川",
+    "shortTermRentUsd": 1049,
+    "method": "nomads.com total ($2498) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 450,
+    "nomadTotalCost": 2498
+  },
+  "109": {
+    "name": "金边",
+    "shortTermRentUsd": 500,
+    "method": "nomads.com total ($1190) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 250,
+    "nomadTotalCost": 1190
+  },
+  "110": {
+    "name": "仰光",
+    "shortTermRentUsd": 479,
+    "method": "nomads.com total ($1140) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 200,
+    "nomadTotalCost": 1140
+  },
+  "112": {
+    "name": "清迈",
+    "shortTermRentUsd": 525,
+    "method": "nomads.com total ($1251) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1251
+  },
+  "114": {
+    "name": "达卡",
+    "shortTermRentUsd": 465,
+    "method": "nomads.com total ($1107) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 200,
+    "nomadTotalCost": 1107
+  },
+  "115": {
+    "name": "科伦坡",
+    "shortTermRentUsd": 545,
+    "method": "nomads.com total ($1298) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 200,
+    "nomadTotalCost": 1298
+  },
+  "116": {
+    "name": "加德满都",
+    "shortTermRentUsd": 383,
+    "method": "nomads.com total ($913) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 150,
+    "nomadTotalCost": 913
+  },
+  "117": {
+    "name": "阿拉木图",
+    "shortTermRentUsd": 715,
+    "method": "nomads.com total ($1703) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 1703
+  },
+  "118": {
+    "name": "塔什干",
+    "shortTermRentUsd": 407,
+    "method": "nomads.com total ($969) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 250,
+    "nomadTotalCost": 969
+  },
+  "119": {
+    "name": "巴库",
+    "shortTermRentUsd": 782,
+    "method": "nomads.com total ($1863) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 400,
+    "nomadTotalCost": 1863
+  },
+  "120": {
+    "name": "乌兰巴托",
+    "shortTermRentUsd": 807,
+    "method": "nomads.com total ($1921) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 250,
+    "nomadTotalCost": 1921
+  },
+  "121": {
+    "name": "斯德哥尔摩",
+    "shortTermRentUsd": 1698,
+    "method": "nomads.com total ($4043) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1400,
+    "nomadTotalCost": 4043
+  },
+  "122": {
+    "name": "哥本哈根",
+    "shortTermRentUsd": 2325,
+    "method": "nomads.com total ($5535) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1500,
+    "nomadTotalCost": 5535
+  },
+  "123": {
+    "name": "赫尔辛基",
+    "shortTermRentUsd": 1505,
+    "method": "nomads.com total ($3583) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1200,
+    "nomadTotalCost": 3583
+  },
+  "124": {
+    "name": "奥斯陆",
+    "shortTermRentUsd": 2350,
+    "method": "nomads.com total ($5595) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1600,
+    "nomadTotalCost": 5595
+  },
+  "125": {
+    "name": "休斯顿",
+    "shortTermRentUsd": 1611,
+    "method": "nomads.com total ($3835) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1350,
+    "nomadTotalCost": 3835
+  },
+  "126": {
+    "name": "费城",
+    "shortTermRentUsd": 2392,
+    "method": "nomads.com total ($5696) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1500,
+    "nomadTotalCost": 5696
+  },
+  "127": {
+    "name": "卡尔加里",
+    "shortTermRentUsd": 1528,
+    "method": "nomads.com total ($3637) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1100,
+    "nomadTotalCost": 3637
+  },
+  "128": {
+    "name": "珀斯",
+    "shortTermRentUsd": 1976,
+    "method": "nomads.com total ($4704) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1250,
+    "nomadTotalCost": 4704
+  },
+  "129": {
+    "name": "麦德林",
+    "shortTermRentUsd": 655,
+    "method": "nomads.com total ($1559) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 450,
+    "nomadTotalCost": 1559
+  },
+  "130": {
+    "name": "第比利斯",
+    "shortTermRentUsd": 920,
+    "method": "nomads.com total ($2190) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 350,
+    "nomadTotalCost": 2190
+  },
+  "131": {
+    "name": "拉各斯",
+    "shortTermRentUsd": 538,
+    "method": "nomads.com total ($1282) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 1282
+  },
+  "132": {
+    "name": "莫斯科",
+    "shortTermRentUsd": 1032,
+    "method": "nomads.com total ($2458) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 800,
+    "nomadTotalCost": 2458
+  },
+  "133": {
+    "name": "圣何塞(美国)",
+    "shortTermRentUsd": 1585,
+    "method": "nomads.com total ($3774) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2800,
+    "nomadTotalCost": 3774
+  },
+  "134": {
+    "name": "尔湾",
+    "shortTermRentUsd": 1764,
+    "method": "nomads.com total ($4200) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 2500,
+    "nomadTotalCost": 4200
+  },
+  "135": {
+    "name": "渥太华",
+    "shortTermRentUsd": 1496,
+    "method": "nomads.com total ($3562) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1150,
+    "nomadTotalCost": 3562
+  },
+  "136": {
+    "name": "卢森堡市",
+    "shortTermRentUsd": 2100,
+    "method": "nomads.com total ($5000) × 42%",
+    "tier": "high_airbnb",
+    "longTermRentUsd": 1800,
+    "nomadTotalCost": 5000
+  },
+  "137": {
+    "name": "塔林",
+    "shortTermRentUsd": 1227,
+    "method": "nomads.com total ($2922) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 700,
+    "nomadTotalCost": 2922
+  },
+  "138": {
+    "name": "福冈",
+    "shortTermRentUsd": 1273,
+    "method": "nomads.com total ($3030) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 500,
+    "nomadTotalCost": 3030
+  },
+  "139": {
+    "name": "横滨",
+    "shortTermRentUsd": 1087,
+    "method": "nomads.com total ($2589) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 800,
+    "nomadTotalCost": 2589
+  },
+  "140": {
+    "name": "巴厘岛",
+    "shortTermRentUsd": 879,
+    "method": "nomads.com total ($2094) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 1130,
+    "nomadTotalCost": 2094
+  },
+  "141": {
+    "name": "岘港",
+    "shortTermRentUsd": 494,
+    "method": "nomads.com total ($1175) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 487,
+    "nomadTotalCost": 1175
+  },
+  "142": {
+    "name": "普拉亚德尔卡门",
+    "shortTermRentUsd": 1052,
+    "method": "nomads.com total ($2504) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 750,
+    "nomadTotalCost": 2504
+  },
+  "143": {
+    "name": "波尔图",
+    "shortTermRentUsd": 1289,
+    "method": "nomads.com total ($3069) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1187,
+    "nomadTotalCost": 3069
+  },
+  "144": {
+    "name": "瓦伦西亚",
+    "shortTermRentUsd": 1558,
+    "method": "nomads.com total ($3710) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 1294,
+    "nomadTotalCost": 3710
+  },
+  "145": {
+    "name": "班斯科",
+    "shortTermRentUsd": 1144,
+    "method": "nomads.com total ($2724) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 498,
+    "nomadTotalCost": 2724
+  },
+  "146": {
+    "name": "斯普利特",
+    "shortTermRentUsd": 1162,
+    "method": "nomads.com total ($2766) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 985,
+    "nomadTotalCost": 2766
+  },
+  "147": {
+    "name": "普吉岛",
+    "shortTermRentUsd": 667,
+    "method": "nomads.com total ($1588) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 657,
+    "nomadTotalCost": 1588
+  },
+  "148": {
+    "name": "蒙得维的亚",
+    "shortTermRentUsd": 1195,
+    "method": "nomads.com total ($2845) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 622,
+    "nomadTotalCost": 2845
+  },
+  "149": {
+    "name": "拉斯帕尔马斯",
+    "shortTermRentUsd": 840,
+    "method": "nomads.com total ($2000) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 962,
+    "nomadTotalCost": 2000
+  },
+  "150": {
+    "name": "槟城",
+    "shortTermRentUsd": 491,
+    "method": "nomads.com total ($1168) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 383,
+    "nomadTotalCost": 1168
+  },
+  "151": {
+    "name": "马拉喀什",
+    "shortTermRentUsd": 630,
+    "method": "nomads.com total ($1500) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 458,
+    "nomadTotalCost": 1500
+  },
+  "152": {
+    "name": "弗洛里亚诺波利斯",
+    "shortTermRentUsd": 740,
+    "method": "nomads.com total ($1761) × 42%",
+    "tier": "low_airbnb",
+    "longTermRentUsd": 540,
+    "nomadTotalCost": 1761
+  },
+  "153": {
+    "name": "帕岸岛",
+    "shortTermRentUsd": 865,
+    "method": "nomads.com total ($2060) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 603,
+    "nomadTotalCost": 2060
+  },
+  "154": {
+    "name": "苏梅岛",
+    "shortTermRentUsd": 814,
+    "method": "nomads.com total ($1939) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 807,
+    "nomadTotalCost": 1939
+  },
+  "155": {
+    "name": "暹粒",
+    "shortTermRentUsd": 511,
+    "method": "nomads.com total ($1216) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 341,
+    "nomadTotalCost": 1216
+  },
+  "156": {
+    "name": "库斯科",
+    "shortTermRentUsd": 987,
+    "method": "nomads.com total ($2351) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 293,
+    "nomadTotalCost": 2351
+  },
+  "157": {
+    "name": "坎昆",
+    "shortTermRentUsd": 1009,
+    "method": "nomads.com total ($2402) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 652,
+    "nomadTotalCost": 2402
+  },
+  "158": {
+    "name": "巴亚尔塔港",
+    "shortTermRentUsd": 924,
+    "method": "nomads.com total ($2200) × 42%",
+    "tier": "tourist_premium",
+    "longTermRentUsd": 1253,
+    "nomadTotalCost": 2200
+  },
+  "159": {
+    "name": "京都",
+    "shortTermRentUsd": 1295,
+    "method": "nomads.com total ($3083) × 42%",
+    "tier": "med_airbnb",
+    "longTermRentUsd": 447,
+    "nomadTotalCost": 3083
+  }
+}

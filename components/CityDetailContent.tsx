@@ -219,7 +219,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   const borderRow = darkMode ? "border-slate-700" : "border-slate-100";
   const simDetailBg = darkMode ? "bg-slate-900/50" : "bg-slate-50";
   const simDetailBorder = darkMode ? "border-slate-700" : "border-slate-200";
-  const simBaseCard = "rounded-xl border shadow-sm p-4 text-center " + (darkMode ? "bg-slate-800" : "bg-white");
+  const simBaseCard = "rounded-xl border shadow-sm p-4 text-center " + (darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200");
 
 
   // Percentile ranking: compute where this city stands for each metric
@@ -804,45 +804,67 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               return { otherId, otherSlug, otherName, pair, highlights };
             }).filter(Boolean) as { otherId: number; otherSlug: string; otherName: string; pair: string; highlights: ({ key: string; pct: number; adv: boolean; sign: string } | null)[] }[];
 
-            const cols = simCities.length;
-            const gridCls = cols <= 2 ? "grid-cols-2" : cols <= 3 ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6";
-
             return (
               <>
-                {/* Top row: city headers */}
-                <div className={`grid ${gridCls} gap-x-3`}>
+                {/* Small screens: independent cards per city */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:hidden">
                   {simCities.map((sc) => (
-                    <div key={sc.otherId} className={`${simBaseCard} rounded-b-none flex flex-col items-center justify-between`}>
-                      <span className="text-2xl">{CITY_FLAG_EMOJIS[sc.otherId] || "🏙️"}</span>
-                      <Link href={`/${locale}/city/${sc.otherSlug}`} className={`text-sm font-bold mt-1 hover:underline ${headingCls}`}>{sc.otherName}</Link>
-                      <Link href={`/${locale}/compare/${sc.pair}`} className={`text-xs px-3 py-1 mt-2 rounded-full border transition ${darkMode ? "border-slate-600 text-slate-300 hover:bg-slate-700" : "border-slate-300 text-slate-500 hover:bg-slate-100"}`}>
-                        {t("compareCity")}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                {/* Bottom rows: highlights, row-by-row across all cities */}
-                {[0, 1, 2].map((rowIdx) => (
-                  <div key={rowIdx} className={`grid ${gridCls} gap-x-3`}>
-                    {simCities.map((sc) => {
-                      const h = sc.highlights[rowIdx];
-                      const isFirst = rowIdx === 0;
-                      const isLast = rowIdx === 2;
-                      return (
-                        <div key={sc.otherId} className={`border-x px-3 py-0.5 text-xs flex items-center ${isFirst ? "pt-1.5" : ""} ${isLast ? "pb-1.5 rounded-b-xl border-b" : ""} ${simDetailBg} ${simDetailBorder}`}>
-                          {h ? (
-                            <div className="flex justify-between items-center gap-1 min-h-[1.25rem] w-full">
+                    <div key={sc.otherId}>
+                      <div className={`${simBaseCard} rounded-b-none flex flex-col items-center justify-between`}>
+                        <span className="text-2xl">{CITY_FLAG_EMOJIS[sc.otherId] || "🏙️"}</span>
+                        <Link href={`/${locale}/city/${sc.otherSlug}`} className={`text-sm font-bold mt-1 hover:underline ${headingCls}`}>{sc.otherName}</Link>
+                        <Link href={`/${locale}/compare/${sc.pair}`} className={`text-xs px-3 py-1 mt-2 rounded-full border transition ${darkMode ? "border-slate-600 text-slate-300 hover:bg-slate-700" : "border-slate-300 text-slate-500 hover:bg-slate-100"}`}>
+                          {t("compareCity")}
+                        </Link>
+                      </div>
+                      <div className={`rounded-b-xl border border-t-0 px-3 py-1.5 text-xs ${simDetailBg} ${simDetailBorder}`}>
+                        <div className="space-y-0.5">
+                          {sc.highlights.map((h, idx) => h ? (
+                            <div key={idx} className="flex justify-between items-center gap-1">
                               <span className={`${subCls} leading-tight`}>{t(h.key)}</span>
                               <span className={`font-semibold shrink-0 ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-300" : "text-rose-500")}`}>{h.sign}{h.pct}%</span>
                             </div>
-                          ) : (
-                            <div className="min-h-[1.25rem] w-full" />
-                          )}
+                          ) : null)}
                         </div>
-                      );
-                    })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Large screens: row-aligned grids for cross-card equal height */}
+                <div className="hidden lg:block">
+                  <div className="grid grid-cols-6 gap-x-3">
+                    {simCities.map((sc) => (
+                      <div key={sc.otherId} className={`${simBaseCard} rounded-b-none flex flex-col items-center justify-between`}>
+                        <span className="text-2xl">{CITY_FLAG_EMOJIS[sc.otherId] || "🏙️"}</span>
+                        <Link href={`/${locale}/city/${sc.otherSlug}`} className={`text-sm font-bold mt-1 hover:underline ${headingCls}`}>{sc.otherName}</Link>
+                        <Link href={`/${locale}/compare/${sc.pair}`} className={`text-xs px-3 py-1 mt-2 rounded-full border transition ${darkMode ? "border-slate-600 text-slate-300 hover:bg-slate-700" : "border-slate-300 text-slate-500 hover:bg-slate-100"}`}>
+                          {t("compareCity")}
+                        </Link>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                  {[0, 1, 2].map((rowIdx) => (
+                    <div key={rowIdx} className="grid grid-cols-6 gap-x-3">
+                      {simCities.map((sc) => {
+                        const h = sc.highlights[rowIdx];
+                        const isFirst = rowIdx === 0;
+                        const isLast = rowIdx === 2;
+                        return (
+                          <div key={sc.otherId} className={`border-x px-3 py-0.5 text-xs flex items-center ${isFirst ? "pt-1.5" : ""} ${isLast ? "pb-1.5 rounded-b-xl border-b" : ""} ${simDetailBg} ${simDetailBorder}`}>
+                            {h ? (
+                              <div className="flex justify-between items-center gap-1 min-h-[1.25rem] w-full">
+                                <span className={`${subCls} leading-tight`}>{t(h.key)}</span>
+                                <span className={`font-semibold shrink-0 ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-300" : "text-rose-500")}`}>{h.sign}{h.pct}%</span>
+                              </div>
+                            ) : (
+                              <div className="min-h-[1.25rem] w-full" />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
               </>
             );
           })()}

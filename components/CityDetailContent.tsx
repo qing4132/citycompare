@@ -217,6 +217,9 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   const subCls = darkMode ? "text-slate-400" : "text-slate-500";
   const sectionBg = darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200";
   const borderRow = darkMode ? "border-slate-700" : "border-slate-100";
+  const simDetailBg = darkMode ? "bg-slate-900/50" : "bg-slate-50";
+  const simDetailBorder = darkMode ? "border-slate-700" : "border-slate-200";
+  const simBaseCard = "rounded-xl border shadow-sm p-4 text-center " + (darkMode ? "bg-slate-800" : "bg-white");
 
 
   // Percentile ranking: compute where this city stands for each metric
@@ -683,13 +686,13 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                   </div>
                 )}
 
-                {/* Dashed divider */}
-                <hr className={`my-5 border-dashed ${darkMode ? "border-slate-600" : "border-slate-300"}`} />
+                {/* Divider */}
+                <hr className={`my-5 ${darkMode ? "border-slate-700" : "border-slate-200"}`} />
 
                 {/* Bottom: Visa-free + Timezone */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="flex flex-col lg:flex-row gap-6">
                   {/* Visa-free */}
-                  <div>
+                  <div className="flex-1">
                     <h3 className={`text-sm font-bold mb-3 ${headingCls}`}>{t("nomadVisaFreeDays").replace("{city}", cityName)}</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                       {(Object.entries(passportLabels) as [keyof typeof passportLabels, string][]).map(([code, flag]) => {
@@ -708,8 +711,11 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                       })}
                     </div>
                   </div>
+                  {/* Divider: horizontal on small screens, vertical on lg */}
+                  <hr className={`lg:hidden ${darkMode ? "border-slate-700" : "border-slate-200"}`} />
+                  <div className={`hidden lg:block border-l ${darkMode ? "border-slate-700" : "border-slate-200"}`} />
                   {/* Timezone overlap */}
-                  <div>
+                  <div className="flex-1">
                     <h3 className={`text-sm font-bold mb-3 ${headingCls}`}>{t("nomadTimezone")}</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                       {[
@@ -736,8 +742,9 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
         {/* Similar Cities */}
         <section>
           <h2 className={`text-2xl font-bold mb-4 ${headingCls}`}>{t("similarCities")}</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {similarIds.map((otherId) => {
+          {(() => {
+            // Pre-compute all similar city data so we can render row-aligned grids
+            const simCities = similarIds.map((otherId) => {
               const other = allCities.find((c) => c.id === otherId);
               if (!other) return null;
               const otherSlug = CITY_SLUGS[otherId];
@@ -745,7 +752,6 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               const otherName = CITY_NAME_TRANSLATIONS[otherId]?.[locale] || getCityEnName(otherId);
               const pair = [slug, otherSlug].sort().join("-vs-");
 
-              // Find the dimension where the other city beats this one by the largest margin
               const otherGross = activeProfession && other.professions[activeProfession] != null ? other.professions[activeProfession] * salaryMultiplier : null;
               const otherIncome = otherGross !== null ? computeNetIncome(otherGross, other.country, other.id, incomeMode, s.rates?.rates).netUSD : null;
               const otherHourly = other.annualWorkHours !== null && other.annualWorkHours > 0 && otherIncome !== null ? otherIncome / other.annualWorkHours : 0;
@@ -777,7 +783,6 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                   { key: "sunshine", cur: curCl.sunshineHours, oth: othCl.sunshineHours, higher: true },
                 ] : []),
               ];
-              // Compute % difference for each dimension, split into advantages & disadvantages
               const scored: { key: string; pct: number; adv: boolean; sign: string }[] = [];
               for (const d of dims) {
                 if (d.cur === 0) continue;
@@ -793,25 +798,54 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               const top2Adv = nonClimate.filter(s => s.adv).slice(0, 2);
               const top1Dis = nonClimate.filter(s => !s.adv).slice(0, 1);
               const highlights = [...top2Adv, ...top1Dis];
+              // Pad to exactly 3 so grid rows stay aligned
+              while (highlights.length < 3) highlights.push(null as any);
 
-              return (
-                <div key={otherId} className={`rounded-xl border shadow-sm p-3 text-center ${sectionBg}`}>
-                  <span className="text-2xl">{CITY_FLAG_EMOJIS[otherId] || "🏙️"}</span>
-                  <Link href={`/${locale}/city/${otherSlug}`} className={`block text-sm font-semibold mt-1 ${headingCls} hover:underline`}>{otherName}</Link>
-                  <div className="min-h-[3.5rem] flex flex-col items-center justify-center mt-1">
-                    {highlights.map((h, idx) => (
-                      <p key={idx} className={`text-[11px] leading-snug ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-400" : "text-rose-500")}`}>
-                        {t(h.key)} {h.sign}{h.pct}%
-                      </p>
-                    ))}
-                  </div>
-                  <Link href={`/${locale}/compare/${pair}`} className={`inline-block text-xs px-3 py-1 mt-1 rounded border transition ${darkMode ? "border-violet-500/50 text-violet-300 hover:bg-violet-900/30" : "border-violet-300 text-violet-600 hover:bg-violet-50"}`}>
-                    {t("compareCity")}
-                  </Link>
+              return { otherId, otherSlug, otherName, pair, highlights };
+            }).filter(Boolean) as { otherId: number; otherSlug: string; otherName: string; pair: string; highlights: ({ key: string; pct: number; adv: boolean; sign: string } | null)[] }[];
+
+            const cols = simCities.length;
+            const gridCls = cols <= 2 ? "grid-cols-2" : cols <= 3 ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6";
+
+            return (
+              <>
+                {/* Top row: city headers */}
+                <div className={`grid ${gridCls} gap-x-3`}>
+                  {simCities.map((sc) => (
+                    <div key={sc.otherId} className={`${simBaseCard} rounded-b-none flex flex-col items-center justify-between`}>
+                      <span className="text-2xl">{CITY_FLAG_EMOJIS[sc.otherId] || "🏙️"}</span>
+                      <Link href={`/${locale}/city/${sc.otherSlug}`} className={`text-sm font-bold mt-1 hover:underline ${headingCls}`}>{sc.otherName}</Link>
+                      <Link href={`/${locale}/compare/${sc.pair}`} className={`text-xs px-3 py-1 mt-2 rounded-full border transition ${darkMode ? "border-slate-600 text-slate-300 hover:bg-slate-700" : "border-slate-300 text-slate-500 hover:bg-slate-100"}`}>
+                        {t("compareCity")}
+                      </Link>
+                    </div>
+                  ))}
                 </div>
-              );
-            })}
-          </div>
+                {/* Bottom rows: highlights, row-by-row across all cities */}
+                {[0, 1, 2].map((rowIdx) => (
+                  <div key={rowIdx} className={`grid ${gridCls} gap-x-3`}>
+                    {simCities.map((sc) => {
+                      const h = sc.highlights[rowIdx];
+                      const isFirst = rowIdx === 0;
+                      const isLast = rowIdx === 2;
+                      return (
+                        <div key={sc.otherId} className={`border-x px-3 py-0.5 text-xs flex items-center ${isFirst ? "pt-1.5" : ""} ${isLast ? "pb-1.5 rounded-b-xl border-b" : ""} ${simDetailBg} ${simDetailBorder}`}>
+                          {h ? (
+                            <div className="flex justify-between items-center gap-1 min-h-[1.25rem] w-full">
+                              <span className={`${subCls} leading-tight`}>{t(h.key)}</span>
+                              <span className={`font-semibold shrink-0 ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-400" : "text-rose-500")}`}>{h.sign}{h.pct}%</span>
+                            </div>
+                          ) : (
+                            <div className="min-h-[1.25rem] w-full" />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </>
+            );
+          })()}
         </section>
 
       </div>

@@ -23,6 +23,7 @@
 - [16. Recent Changes (2026-04-08 → 04-09)](#16-recent-changes-2026-04-08--04-09)
 - [17. Digital Nomad Section (2026-04-09)](#17-digital-nomad-section-2026-04-09)
 - [18. Changes (2026-04-10)](#18-changes-2026-04-10)
+- [19. Changes (2026-04-10 afternoon)](#19-changes-2026-04-10-afternoon)
 
 ---
 
@@ -482,7 +483,7 @@ npm run lint         # ESLint
 
 **CI/CD**:
 - GitHub Actions: daily exchange rate update (commit + push by bot)
-- No CI test/build pipeline (manual `npm run build` before push)
+- GitHub Actions CI: on push/PR → `tsc --noEmit` → `validate-data.mjs` → `npm test` (Vitest) → `npm run build`
 
 ---
 
@@ -552,8 +553,6 @@ doda.jp source data (2025):
 ### Misc
 
 - `getCityClimate()` in clientUtils.ts is deprecated but not removed (use `city.climate` directly)
-- No automated tests
-- No CI build pipeline
 
 ---
 
@@ -563,6 +562,7 @@ doda.jp source data (2025):
 
 - [x] Add more cities (target: 150+) — done: 154 cities (2026-04-09)
 - [x] Digital nomad section: visa info, VPN status, English level, visa-free matrix, timezone overlap (done 04-09)
+- [x] CI pipeline + unit tests for tax engine & composite index (done 04-10)
 - [ ] Annual data refresh cycle (salaries, costs, indices)
 - [ ] Add mobile-optimized share cards
 - [ ] Consider pagination or virtualization for ranking page with many cities
@@ -629,7 +629,7 @@ Quick reference for "where is X?"
 | Nomad translations           | `lib/nomadI18n.ts` |
 | Nomad data types + loader    | `lib/nomadData.ts` |
 | Visa-free matrix             | `_audit/nomad-visafree-4passport.json` |
-| AI coding context | `.github/copilot-instructions.md` |
+| AI coding context | `.github/copilot-instructions.md` |\n| CI pipeline                    | `.github/workflows/ci.yml` |\n| Unit tests (tax engine)        | `__tests__/taxUtils.test.ts` |\n| Unit tests (composite index)   | `__tests__/compositeIndex.test.ts` |\n| Vitest config                  | `vitest.config.ts` |
 
 ---
 
@@ -803,6 +803,38 @@ Automated via Python script (deleted after use). Only zh values modified; en/ja/
 
 - **nomadSection label shortened**: zh "数字游民"、en "Digital Nomad"、ja "デジタルノマド"、es "Nómadas Digitales" (was "...信息/Info/情報/Info para...")
 - **ClimateChart breathing room**: Added `py-2` to chart relative container — current-month highlight strip extends 8px above/below chart content
+
+---
+
+## 19. Changes (2026-04-10 afternoon)
+
+### CI Pipeline + Unit Tests
+
+- **CI workflow** (`.github/workflows/ci.yml`): on push/PR → `tsc` → `validate-data` → `npm test` → `build`
+- **Vitest 3.x** added as devDependency, config in `vitest.config.ts`, `npm test` runs all tests
+- **35 unit tests** across 2 files:
+  - `__tests__/taxUtils.test.ts` (22 tests): zero-tax, flat-tax, US state tax, Japan/Korea special deductions, Denmark AM-bidrag, Singapore CPF, expat schemes (NL 30%, Spain Beckham, Korea 19%), edge cases, FX rate override
+  - `__tests__/compositeIndex.test.ts` (13 tests): Life Pressure basic computation, cost tier switching, missing data confidence levels, edge cases, sub-indicator weight behavior
+- **RULES.md** updated: "no new frameworks" → "unless clearly necessary (e.g. test runner)"
+
+### City Detail: Similar Cities Card Redesign
+
+Redesigned similar cities section to match the index card pattern (Life Pressure / Safety / Healthcare / Freedom):
+
+- **Structure**: top card (flag + city name + compare button, `rounded-b-none`) + bottom detail panel (highlights, `rounded-b-xl border-t-0`, `detailBg`)
+- **Row-aligned grid**: highlights rendered row-by-row across all 6 cities (not per-card), ensuring equal row height when text wraps. Padded to 3 rows. Uses `flex items-center` for vertical centering
+- **Compare button**: rounded-full pill with neutral border, replacing previous violet accent
+
+### City Detail: Nomad Card Dividers
+
+- Dividers between top 6 cells / notes and visa-free/timezone sections changed from **dashed** to **solid** (`border-slate-700/200`), matching card border style
+- Visa-free ↔ Timezone divider: horizontal `<hr>` on small screens, vertical `border-l` on lg (flex layout with `flex-1`)
+
+### i18n: Spanish Label Shortening
+
+- `annualWorkHours`: "Horas de trabajo anuales" (27 chars) → "Jornada anual" (13 chars)
+- `rankTab_workhours`: "⏰ Horas de trabajo" → "⏰ Jornada anual"
+- Fixes text overflow in Life Pressure sub-indicator card on Spanish locale
 
 ---
 

@@ -80,7 +80,7 @@ whichcity/
 ├── components/                 Page components (no shared UI library)
 │   ├── HomeContent.tsx         ~175 lines — search, popular cities
 │   ├── RankingContent.tsx      ~1100 lines — 22+ metrics, climate filter
-│   ├── CompareContent.tsx      ~570 lines — 3-city comparison
+│   ├── CompareContent.tsx      ~800 lines — 3-city comparison + nomad + info cards
 │   ├── CityDetailContent.tsx   ~830 lines — single city detail + nomad section
 │   ├── MethodologyContent.tsx  ~150 lines — data sources
 │   ├── NavBar.tsx              ~310 lines — nav, settings, share
@@ -175,6 +175,8 @@ whichcity/
 
 - Up to 3 cities side-by-side (URL format: `slug-vs-slug[-vs-slug]`)
 - 16 metrics across 5 groups (Income, Housing, Work, Environment, Index) + Climate section
+- Info card (no header): effective tax rate (participates in win count, hidden in gross mode, shows expat scheme), timezone (UTC offset + live local time), official languages
+- Digital nomad card: visa status, VPN restriction, English level — all participate in win count
 - Win-count badges (green highlight for best value per metric)
 - City switcher with dropdown search
 - Climate charts with shared Y-axis across compared cities
@@ -777,6 +779,30 @@ Applied [中文文案排版指北](https://github.com/mzlogin/chinese-copywritin
 | No space after full-width punct | `基准城市： {city}` → `基准城市：{city}` | i18n |
 
 Automated via Python script (deleted after use). Only zh values modified; en/ja/es untouched.
+
+### Compare Page: Nomad & Info Cards
+
+**New cards added to CompareContent** (inserted between wins summary and per-group metric cards, and after climate section):
+
+1. **Info card** (no group header, between wins and income group):
+   - Effective tax rate: matches city detail display — shows `~X.X%` with expat scheme note, amber warning for dataIsLikelyNet, hidden entirely in gross income mode. Participates in win count (lower is better).
+   - Timezone: shows `UTC±X · HH:MM` (live local time), matching city detail format. Does not participate in win count.
+   - Official languages: shows up to 3 languages with `+N` for overflow. Does not participate in win count.
+
+2. **Digital nomad card** (after climate section):
+   - Relevant visa: shows localized visa name or "None". Win: has visa > no visa.
+   - VPN restriction: Unrestricted > Partial > Restricted.
+   - English level: Great > Good > Okay > Bad.
+   - All 3 metrics participate in win count.
+
+**Layout**: Both cards use row-based flat grid (`flatMap` over rows × columns) ensuring cross-city equal row heights. Labels aligned at top (`shrink-0`), values vertically centered (`flex-1 items-center`). Adaptive font sizing: `text-lg` (≤8 chars) → `text-base` (≤16) → `text-sm` (longer).
+
+**Data flow**: `loadNomadData()` called in both compare page server components, passed as `nomadDataMap` prop. `taxResultsMap` stores full `NetIncomeResult` per city (not just rate) to access `hasExpatScheme`, `dataIsLikelyNet`.
+
+### UI Polish
+
+- **nomadSection label shortened**: zh "数字游民"、en "Digital Nomad"、ja "デジタルノマド"、es "Nómadas Digitales" (was "...信息/Info/情報/Info para...")
+- **ClimateChart breathing room**: Added `py-2` to chart relative container — current-month highlight strip extends 8px above/below chart content
 
 ---
 

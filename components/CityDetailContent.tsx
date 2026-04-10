@@ -372,7 +372,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   };
   const cardValCls = (tier: Tier) => {
     if (tier === "good") return darkMode ? "text-emerald-400" : "text-emerald-600";
-    if (tier === "bad") return darkMode ? "text-rose-400" : "text-rose-500";
+    if (tier === "bad") return darkMode ? "text-rose-300" : "text-rose-500";
     return headingCls;
   };
   const baseCard = "rounded-xl border shadow-sm p-4 text-center " + (darkMode ? "bg-slate-800" : "bg-white");
@@ -654,11 +654,11 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                     const incVal = getLegalIncome(city.id, locale as Locale) ?? "—";
                     const taxVal = visa?.taxOnForeignIncome ? (localizeTax(visa.taxOnForeignIncome, locale as Locale) ?? "—") : "—";
                     const vpnVal = inet?.vpnRestricted === true ? t("nomadVPN") : inet?.vpnRestricted === "partial" ? t("nomadVPNPartial") : t("nomadVPNFree");
-                    const vpnColor = inet?.vpnRestricted === true || inet?.vpnRestricted === "partial" ? (darkMode ? "text-rose-400" : "text-rose-500") : undefined;
+                    const vpnColor = inet?.vpnRestricted === true || inet?.vpnRestricted === "partial" ? (darkMode ? "text-rose-300" : "text-rose-500") : undefined;
                     const engVal = eng?.cityRating ? t(`nomadEnglish${eng.cityRating}`) : "—";
                     const engColor = eng?.cityRating === "Great" || eng?.cityRating === "Good"
                       ? (darkMode ? "text-emerald-400" : "text-emerald-600")
-                      : eng?.cityRating === "Bad" ? (darkMode ? "text-rose-400" : "text-rose-500") : undefined;
+                      : eng?.cityRating === "Bad" ? (darkMode ? "text-rose-300" : "text-rose-500") : undefined;
                     const cells: { label: string; val: string; color?: string }[] = [
                       { label: t("nomadVisa"), val: visaVal },
                       { label: t("nomadDuration"), val: durVal },
@@ -699,7 +699,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                         const own = isOwnCountry(code);
                         const days = vfmResolved?.[code] ?? null;
                         const val = own ? "—" : days !== null ? t("nomadDays").replace("{d}", String(days)) : t("nomadNeedVisa");
-                        const color = own ? subCls : days !== null ? undefined : (darkMode ? "text-red-400" : "text-red-500");
+                        const color = own ? subCls : days !== null ? undefined : (darkMode ? "text-red-300" : "text-red-500");
                         return (
                           <div key={code} className={dataCellCls}>
                             <p className={dataLabelCls}>{flag}</p>
@@ -833,7 +833,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                           {h ? (
                             <div className="flex justify-between items-center gap-1 min-h-[1.25rem] w-full">
                               <span className={`${subCls} leading-tight`}>{t(h.key)}</span>
-                              <span className={`font-semibold shrink-0 ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-400" : "text-rose-500")}`}>{h.sign}{h.pct}%</span>
+                              <span className={`font-semibold shrink-0 ${h.adv ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-rose-300" : "text-rose-500")}`}>{h.sign}{h.pct}%</span>
                             </div>
                           ) : (
                             <div className="min-h-[1.25rem] w-full" />

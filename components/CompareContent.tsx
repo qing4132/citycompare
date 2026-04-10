@@ -724,7 +724,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
                 if (!nd?.internet) return null;
                 return nd.internet.vpnRestricted === true ? t("nomadVPN")
                   : nd.internet.vpnRestricted === "partial" ? t("nomadVPNPartial")
-                  : t("nomadVPNFree");
+                    : t("nomadVPNFree");
               }),
               scores: vpnScores, best: bestOf(vpnScores),
             },

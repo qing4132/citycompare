@@ -305,7 +305,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
   const tierCls = (tier: Tier) =>
     tier === "good" ? (darkMode ? "text-emerald-400" : "text-emerald-600")
-      : tier === "bad" ? (darkMode ? "text-rose-400" : "text-rose-500")
+      : tier === "bad" ? (darkMode ? "text-rose-300" : "text-rose-500")
         : (darkMode ? "text-slate-300" : "text-slate-700");
 
   /* ── Compute data ── */

@@ -20,7 +20,9 @@ export interface City {
   safetyConfidence: "high" | "medium" | "low";
   numbeoSafetyIndex: number | null;    // Numbeo Safety Index (0-100)
   homicideRateInv: number | null;      // UNODC homicide rate inverted (0-100)
+  homicideRate?: number | null;        // UNODC homicide rate per 100k (raw)
   gpiScoreInv: number | null;          // GPI score inverted (0-100)
+  gpiScore?: number | null;            // GPI overall score (1-5, lower = more peaceful)
   gallupLawOrder: number | null;       // Gallup Law & Order Index (0-100)
   safetyWarning?: "active_conflict" | "extreme_instability" | "data_blocked";
   // Healthcare Index (pre-computed)

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useDeferredValue, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { City, CostTier, IncomeMode, ClimateType } from "@/lib/types";
 import { COUNTRY_TRANSLATIONS, CITY_NAME_TRANSLATIONS } from "@/lib/i18n";
 import { CITY_FLAG_EMOJIS } from "@/lib/constants";
@@ -48,15 +48,6 @@ const TAB_I18N: Record<Tab, string> = {
   air: "rankTab_air", internet: "rankTab_internet", flights: "rankTab_flights",
   lifePressure: "rankTab_lifePressure", safety: "rankTab_safety",
   healthcare: "rankTab_healthcare", freedom: "rankTab_freedom",
-};
-
-/* ── Tab "higher is better" map (true = higher is better, false = lower is better) ── */
-const TAB_HIGHER: Record<Tab, boolean> = {
-  income: true, expense: false, savings: true,
-  housePrice: false, housing: false, rent: false,
-  workhours: false, hourlyWage: true, vacation: true,
-  air: false, internet: true, flights: true,
-  lifePressure: false, safety: true, healthcare: true, freedom: true,
 };
 
 const tabGroupIdx = (tab: Tab) => GROUPS.findIndex(g => g.tabs.includes(tab));
@@ -172,8 +163,6 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   const validClimType = (v: string): v is ClimateType => CLIMATE_TYPES.includes(v as ClimateType);
   const validDimKey = (k: string) => CLIM_DIMS.some(d => d.key === k);
   const urlTab = searchParams.get("tab");
-  const urlMode = searchParams.get("mode");
-  const urlTabs = searchParams.get("tabs");
   const urlSub = searchParams.get("sub");
   const urlClimate = searchParams.get("climate");
   const urlCdim = searchParams.get("cdim");
@@ -190,25 +179,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     if (urlSub && ["savingsRate", "bigMacPower", "subWorkHours", "yearsToHome", "numbeo", "homicide", "gpi", "gallup", "doctors", "beds", "uhc", "lifeExp", "press", "democracy", "cpi"].includes(urlSub)) return urlSub as SubSort;
     return null;
   });
-  const [composite, setCompositeState] = useState(() => {
-    if (urlMode === "multi") return true;
-    if (urlMode === "single") return false;
-    if (typeof window === "undefined") return false;
-    return localStorage.getItem("rankingComposite") === "1";
-  });
-  const deferredComposite = useDeferredValue(composite);
-  const [customTabs, setCustomTabsState] = useState<Set<Tab>>(() => {
-    if (urlTabs) {
-      const arr = urlTabs.split(",").filter(validTab) as Tab[];
-      if (arr.length > 0) return new Set(arr);
-    }
-    if (typeof window === "undefined") return new Set();
-    const saved = localStorage.getItem("rankingCustomTabs");
-    if (!saved) return new Set();
-    const arr = JSON.parse(saved) as string[];
-    return new Set(arr.filter(t => Object.keys(TAB_I18N).includes(t)) as Tab[]);
-  });
-  const deferredCustomTabs = useDeferredValue(customTabs);
+
   const [climTypeFilter, setClimTypeFilterState] = useState<Set<ClimateType>>(() => {
     if (urlClimate) {
       const arr = urlClimate.split(",").filter(validClimType) as ClimateType[];
@@ -245,20 +216,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     setTabState(t);
     localStorage.setItem("rankingTab", t);
   };
-  const setComposite: typeof setCompositeState = (v) => {
-    setCompositeState(prev => {
-      const next = typeof v === "function" ? v(prev) : v;
-      localStorage.setItem("rankingComposite", next ? "1" : "0");
-      return next;
-    });
-  };
-  const setCustomTabs: typeof setCustomTabsState = (v) => {
-    setCustomTabsState(prev => {
-      const next = typeof v === "function" ? v(prev) : v;
-      localStorage.setItem("rankingCustomTabs", JSON.stringify([...next]));
-      return next;
-    });
-  };
+
   const setClimTypeFilter: typeof setClimTypeFilterState = (v) => {
     setClimTypeFilterState(prev => {
       const next = typeof v === "function" ? v(prev) : v;
@@ -290,16 +248,11 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     const cdimParts: string[] = [];
     for (const [k, s] of Object.entries(climDimFilter)) { if (s.size > 0) cdimParts.push(`${k}:${[...s].join(".")}`); }
     if (cdimParts.length > 0) params.set("cdim", cdimParts.join(","));
-    if (composite) {
-      params.set("mode", "multi");
-      if (customTabs.size > 0) params.set("tabs", [...customTabs].join(","));
-    } else {
-      if (tab !== "income") params.set("tab", tab);
-      if (subSort) params.set("sub", subSort);
-    }
+    if (tab !== "income") params.set("tab", tab);
+    if (subSort) params.set("sub", subSort);
     const qs = params.toString();
     router.replace(`/${locale}/ranking${qs ? `?${qs}` : ""}`, { scroll: false });
-  }, [tab, subSort, composite, customTabs, climTypeFilter, climDimFilter, locale, router]);
+  }, [tab, subSort, climTypeFilter, climDimFilter, locale, router]);
 
   const selectCls = `text-xs rounded px-1.5 py-1 h-7 border ${darkMode ? "bg-slate-800 border-slate-600 text-slate-200" : "bg-white border-slate-300 text-slate-700"}`;
 
@@ -378,58 +331,8 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     cpi: nn(rows.map(r => r.cpi)),
   }), [rows]);
 
-  /* ── Composite scoring ── */
-  /* ── Tab value accessor for composite scoring ── */
-  const tabVal = (r: typeof rows[0], tb: Tab): number | null => {
-    switch (tb) {
-      case "income": return r.income;
-      case "expense": return r.monthlyCost;
-      case "savings": return r.savings;
-      case "housePrice": return r.housePrice;
-      case "housing": return isFinite(r.yearsToHome) ? r.yearsToHome : null;
-      case "rent": return r.monthlyRent;
-      case "workhours": return r.annualWorkHours;
-      case "hourlyWage": return r.hourlyWage > 0 ? r.hourlyWage : null;
-      case "vacation": return r.paidLeaveDays;
-      case "air": return r.airQuality;
-      case "internet": return r.internetSpeedMbps;
-      case "flights": return r.directFlightCities;
-      case "lifePressure": return r.lifePressure;
-      case "safety": return r.safetyIndex;
-      case "healthcare": return r.healthcareIndex;
-      case "freedom": return r.freedomIndex;
-    }
-  };
-
-  const compositeScores = useMemo(() => {
-    if (!deferredComposite || deferredCustomTabs.size === 0) return null;
-    const active = [...deferredCustomTabs];
-    const ranges = active.map(tb => {
-      const vals = rows.map(r => tabVal(r, tb)).filter((v): v is number => v !== null && isFinite(v));
-      return { min: Math.min(...vals), max: Math.max(...vals), higher: TAB_HIGHER[tb] };
-    });
-    return rows.map(r => {
-      let sum = 0, count = 0;
-      active.forEach((tb, ti) => {
-        const v = tabVal(r, tb);
-        if (v === null || !isFinite(v)) return;
-        const { min, max, higher } = ranges[ti];
-        if (max === min) { sum += 50; count++; return; }
-        const norm = ((v - min) / (max - min)) * 100;
-        sum += higher ? norm : (100 - norm);
-        count++;
-      });
-      return count > 0 ? sum / count : -1;
-    });
-  }, [deferredComposite, deferredCustomTabs, rows]);
-
   /* ── Sort ── */
   const sorted = useMemo(() => {
-    if (deferredComposite && compositeScores) {
-      const indexed = rows.map((r, i) => ({ r, s: compositeScores[i] }));
-      indexed.sort((a, b) => b.s - a.s);
-      return indexed.map(x => x.r);
-    }
     const key = subSort || tab;
     return [...rows].sort((a, b) => {
       switch (key) {
@@ -475,7 +378,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
         default: return 0;
       }
     });
-  }, [rows, tab, subSort, deferredComposite, compositeScores]);
+  }, [rows, tab, subSort]);
 
   /* ── Climate filtering ── */
   const hasClimFilter = climTypeFilter.size > 0 || Object.values(climDimFilter).some(s => s.size > 0);
@@ -517,34 +420,10 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   /* ── Tab handlers ── */
   const handleTab = (newTab: Tab) => {
     trackEvent("ranking_tab", { tab: newTab });
-    if (composite) {
-      setCustomTabs(prev => {
-        const next = new Set(prev);
-        if (next.has(newTab)) { if (next.size > 1) next.delete(newTab); }
-        else next.add(newTab);
-        return next;
-      });
-    } else {
-      setTab(newTab); setSubSort(null);
-    }
+    setTab(newTab); setSubSort(null);
   };
   const handleSubSort = (ss: SubSort) => {
     setSubSort(prev => prev === ss ? null : ss);
-  };
-  const toggleComposite = () => {
-    setComposite(prev => {
-      if (!prev) {
-        // Entering composite: pre-select the current normal-mode tab
-        setCustomTabs(new Set([tab]));
-      } else {
-        // Leaving composite: pick the first selected tab in GROUPS order, or fallback to first tab
-        const allTabs = GROUPS.flatMap(g => g.tabs);
-        const first = allTabs.find(t => customTabs.has(t));
-        setTab(first || allTabs[0]);
-      }
-      return !prev;
-    });
-    setSubSort(null);
   };
 
   const activeGroup = tabGroupIdx(tab);
@@ -557,14 +436,6 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     if (filtered.length === 0) return ranks;
     ranks[0] = 1;
     for (let i = 1; i < filtered.length; i++) {
-      if (deferredComposite && compositeScores) {
-        const ai = rows.indexOf(filtered[i - 1]);
-        const bi = rows.indexOf(filtered[i]);
-        const va = ai >= 0 ? Math.round(compositeScores[ai] * 10) : null;
-        const vb = bi >= 0 ? Math.round(compositeScores[bi] * 10) : null;
-        ranks[i] = (va !== null && vb !== null && va === vb) ? ranks[i - 1] : i + 1;
-        continue;
-      }
       // Compare the sort-determining values of adjacent rows
       const a = filtered[i - 1];
       const b = filtered[i];
@@ -612,7 +483,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
       ranks[i] = same ? ranks[i - 1] : i + 1;
     }
     return ranks;
-  }, [filtered, tab, subSort, deferredComposite, compositeScores, rows]);
+  }, [filtered, tab, subSort, rows]);
 
   /* ── Rendering helpers ── */
   const getCityLabel = (c: City) => CITY_NAME_TRANSLATIONS[c.id]?.[locale] || c.name;
@@ -655,15 +526,6 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
   /* ── Column headers ── */
   const renderHeaders = () => {
-    if (deferredComposite) {
-      const activeTabs = GROUPS.flatMap(g => g.tabs).filter(t => deferredCustomTabs.has(t));
-      return (<>
-        <th className={`${thBase} ${sortColBg}`}>{t("compositeScore")}</th>
-        {activeTabs.map(ct => (
-          <th key={ct} className={thBase}>{t(TAB_I18N[ct]).replace(/^[^\s]+\s/, "")}</th>
-        ))}
-      </>);
-    }
     if (isIndex) {
       switch (tab) {
         case "lifePressure": return (<>
@@ -705,49 +567,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   };
 
   /* ── Row cells ── */
-  const tabValsMap: Record<Tab, number[]> = {
-    income: V.income, expense: V.monthlyCost, savings: V.savings,
-    housePrice: V.housePrice, housing: V.yearsToHome, rent: V.monthlyRent,
-    workhours: V.workHours, hourlyWage: V.hourlyWage, vacation: V.paidLeave,
-    air: V.air, internet: V.internet, flights: V.flights,
-    lifePressure: V.lp, safety: V.safety, healthcare: V.hc, freedom: V.freedom,
-  };
-
-  const fmtTabVal = (r: typeof rows[0], tb: Tab): string => {
-    switch (tb) {
-      case "income": return formatCurrency(r.income);
-      case "expense": return formatCurrency(r.monthlyCost);
-      case "savings": return formatCurrency(r.savings);
-      case "housePrice": return r.housePrice !== null ? `${formatCurrency(r.housePrice)}/m\u00b2` : "\u2014";
-      case "housing": return isFinite(r.yearsToHome) ? `${r.yearsToHome.toFixed(1)} ${t("insightYears")}` : "\u2014";
-      case "rent": return r.monthlyRent !== null ? formatCurrency(r.monthlyRent) : "\u2014";
-      case "workhours": return r.annualWorkHours !== null ? `${r.annualWorkHours} ${t("unitH")}` : "\u2014";
-      case "hourlyWage": return r.hourlyWage > 0 ? formatCurrency(Math.round(r.hourlyWage * 100) / 100) : "\u2014";
-      case "vacation": return r.paidLeaveDays !== null ? `${r.paidLeaveDays} ${t("paidLeaveDaysUnit")}` : "\u2014";
-      case "air": return r.airQuality !== null ? `AQI ${r.airQuality}` : "\u2014";
-      case "internet": return r.internetSpeedMbps !== null ? `${r.internetSpeedMbps} Mbps` : "\u2014";
-      case "flights": return r.directFlightCities !== null ? `${r.directFlightCities}` : "\u2014";
-      case "lifePressure": return r.lifePressure.toFixed(1);
-      case "safety": return r.safetyIndex.toFixed(1);
-      case "healthcare": return r.healthcareIndex.toFixed(1);
-      case "freedom": return r.freedomIndex.toFixed(1);
-    }
-  };
-
   const renderCells = (r: typeof rows[0]) => {
-    if (deferredComposite && compositeScores) {
-      const idx = rows.indexOf(r);
-      const score = idx >= 0 ? compositeScores[idx] : -1;
-      const allScores = compositeScores.filter(s => s >= 0);
-      const activeTabs = GROUPS.flatMap(g => g.tabs).filter(ct => deferredCustomTabs.has(ct));
-      return (<>
-        <TC val={score >= 0 ? score : null} formatted={score >= 0 ? score.toFixed(1) : "\u2014"} vals={allScores} higher={true} active />
-        {activeTabs.map(ct => {
-          const v = tabVal(r, ct);
-          return <TC key={ct} val={v} formatted={fmtTabVal(r, ct)} vals={tabValsMap[ct]} higher={TAB_HIGHER[ct]} />;
-        })}
-      </>);
-    }
     if (isIndex) {
       switch (tab) {
         case "lifePressure": return (<>
@@ -816,14 +636,14 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
       <NavBar s={s} activePage="ranking" professionValue={activeProfession} professions={professions} showShare />
 
-      <div className="max-w-6xl mx-auto px-4 pt-4 sm:pt-8">
+      <div className="max-w-6xl mx-auto px-4 pt-4 sm:pt-6">
 
         {/* Header */}
-        <div className="text-center mb-6">
-          <h1 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mb-2 ${darkMode ? "text-white" : "text-slate-900"}`}>
+        <div className="text-center mb-4">
+          <h1 className={`text-2xl sm:text-3xl font-black tracking-tight mb-1 ${darkMode ? "text-white" : "text-slate-900"}`}>
             {t("rankingTitle")}
           </h1>
-          <p className={`text-sm max-w-xl mx-auto ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+          <p className={`text-xs max-w-xl mx-auto ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
             {t("rankingSubtitle")}
           </p>
         </div>
@@ -918,30 +738,19 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
           {/* Tab selection button */}
           <button onClick={() => { setTabsExpanded(v => !v); setClimOpen(false); }}
             className={`order-3 sm:order-2 mt-2 sm:mt-0 py-2 px-3 rounded-lg text-xs font-medium transition-colors flex items-center ${tabsExpanded
-              ? (composite
-                ? (darkMode ? "bg-amber-900/40 text-amber-300 ring-1 ring-amber-500/50" : "bg-amber-50 text-amber-700 ring-1 ring-amber-200")
-                : (darkMode ? "bg-blue-900/40 text-blue-300 ring-1 ring-blue-500/50" : "bg-blue-50 text-blue-700 ring-1 ring-blue-200"))
+              ? (darkMode ? "bg-blue-900/40 text-blue-300 ring-1 ring-blue-500/50" : "bg-blue-50 text-blue-700 ring-1 ring-blue-200")
               : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500")
               }`}>
             <span className="w-4 shrink-0" />
             <span className="flex-1 min-w-0 truncate text-center">
-              {composite
-                ? (customTabs.size > 0
-                  ? GROUPS.flatMap(g => g.tabs).filter(ct => customTabs.has(ct)).map((ct, i) => (
-                    <span key={ct}>
-                      {i > 0 && <span className="opacity-40"> · </span>}
-                      <span className="font-bold text-amber-500">{t(TAB_I18N[ct])}</span>
-                    </span>
-                  ))
-                  : t("customModeBtn"))
-                : INDEX_TABS.has(tab)
-                  ? <span className="font-bold text-blue-500">{t(TAB_I18N[tab])}</span>
-                  : GROUPS[tabGroupIdx(tab)].tabs.map((gt, i) => (
-                    <span key={gt}>
-                      {i > 0 && <span className="opacity-40">/</span>}
-                      <span className={gt === tab ? "font-bold text-blue-500" : "opacity-60"}>{t(TAB_I18N[gt])}</span>
-                    </span>
-                  ))}
+              {INDEX_TABS.has(tab)
+                ? <span className="font-bold text-blue-500">{t(TAB_I18N[tab])}</span>
+                : GROUPS[tabGroupIdx(tab)].tabs.map((gt, i) => (
+                  <span key={gt}>
+                    {i > 0 && <span className="opacity-40">/</span>}
+                    <span className={gt === tab ? "font-bold text-blue-500" : "opacity-60"}>{t(TAB_I18N[gt])}</span>
+                  </span>
+                ))}
             </span>
             <svg className="w-4 h-4 shrink-0 opacity-40 transition-transform" style={{ transform: tabsExpanded ? "rotate(180deg)" : "" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -952,42 +761,20 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
           <div className="order-4 sm:col-span-2 grid transition-[grid-template-rows] duration-300 ease-in-out" style={{ gridTemplateRows: tabsExpanded ? "1fr" : "0fr" }}>
             <div className="overflow-hidden">
               <div className="space-y-1.5 pt-1.5">
-                {/* Single/Multi toggle – top right */}
-                <div className="flex justify-end gap-0.5 text-xs">
-                  <button onClick={() => { if (composite) toggleComposite(); }}
-                    className={`px-2 py-0.5 rounded-l transition-colors ${!composite
-                      ? (darkMode ? "text-blue-400 font-semibold" : "text-blue-600 font-semibold")
-                      : (darkMode ? "text-slate-600" : "text-slate-400")
-                      }`}>
-                    {t("singleSelect")}
-                  </button>
-                  <span className={darkMode ? "text-slate-700" : "text-slate-300"}>|</span>
-                  <button onClick={() => { if (!composite) toggleComposite(); }}
-                    className={`px-2 py-0.5 rounded-r transition-colors ${composite
-                      ? (darkMode ? "text-amber-400 font-semibold" : "text-amber-600 font-semibold")
-                      : (darkMode ? "text-slate-600" : "text-slate-400")
-                      }`}>
-                    {t("multiSelect")}
-                  </button>
-                </div>
                 {/* Tab grids */}
                 {[[0, 1], [2, 3]].map((pair, ri) => (
                   <div key={ri} className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {pair.map(gi => (
                       <div key={GROUPS[gi].labelKey} className="grid grid-cols-3 gap-1">
                         {GROUPS[gi].tabs.map(gTab => {
-                          const selected = composite ? customTabs.has(gTab) : tab === gTab;
+                          const selected = tab === gTab;
                           return (
                             <button key={gTab} onClick={() => handleTab(gTab)}
-                              className={`py-2 rounded-lg font-medium text-xs transition text-center truncate ${composite
-                                ? (selected
-                                  ? "bg-amber-500 text-white shadow-sm"
-                                  : (darkMode ? "bg-slate-800 text-slate-400 opacity-50" : "bg-slate-100/70 text-slate-500 opacity-50"))
-                                : (selected
-                                  ? "bg-blue-600 text-white shadow-sm"
-                                  : gi === activeGroup
-                                    ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
-                                    : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600"))
+                              className={`py-2 rounded-lg font-medium text-xs transition text-center truncate ${selected
+                                ? "bg-blue-600 text-white shadow-sm"
+                                : gi === activeGroup
+                                  ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
+                                  : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600")
                                 }`}>
                               {t(TAB_I18N[gTab])}
                             </button>
@@ -1000,18 +787,14 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
                 {/* Row 3: Indexes */}
                 <div className="grid grid-cols-4 gap-1">
                   {GROUPS[4].tabs.map(gTab => {
-                    const selected = composite ? customTabs.has(gTab) : tab === gTab;
+                    const selected = tab === gTab;
                     return (
                       <button key={gTab} onClick={() => handleTab(gTab)}
-                        className={`py-2 rounded-lg font-medium text-xs transition text-center truncate ${composite
-                          ? (selected
-                            ? "bg-amber-500 text-white shadow-sm"
-                            : (darkMode ? "bg-slate-800 text-slate-400 opacity-50" : "bg-slate-100/70 text-slate-500 opacity-50"))
-                          : (selected
-                            ? "bg-blue-600 text-white shadow-sm"
-                            : activeGroup === 4
-                              ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
-                              : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600"))
+                        className={`py-2 rounded-lg font-medium text-xs transition text-center truncate ${selected
+                          ? "bg-blue-600 text-white shadow-sm"
+                          : activeGroup === 4
+                            ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
+                            : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600")
                           }`}>
                         {t(TAB_I18N[gTab])}
                       </button>
@@ -1026,54 +809,48 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
 
         {/* Table */}
-        {deferredComposite && deferredCustomTabs.size === 0 ? (
-          <div className={`rounded-xl py-16 text-center ${darkMode ? "bg-slate-800 border border-slate-700 text-slate-400" : "bg-white border border-slate-100 text-slate-400"}`}>
-            <p className="text-lg">{t("customModeHint")}</p>
+        <div className={`rounded-lg overflow-hidden ${darkMode ? "bg-slate-800/50 border border-slate-800" : "bg-white border border-slate-100"}`}>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className={headerBg}>
+                  <th className={`${thBase} w-[52px] text-center`}>{t("rankCol_rank")}</th>
+                  <th className={`${thBase} min-w-[120px]`}>{t("rankCol_city")}</th>
+                  <th className={`${thBase} hidden sm:table-cell min-w-[80px]`}>{t("rankCol_country")}</th>
+                  {renderHeaders()}
+                </tr>
+              </thead>
+              <tbody>
+                {filtered.map((r, idx) => {
+                  const slug = CITY_SLUGS[r.city.id];
+                  const rank = displayRanks[idx];
+                  const isTop3 = rank <= 3;
+                  const badge = rank === 1 ? "\ud83e\udd47" : rank === 2 ? "\ud83e\udd48" : rank === 3 ? "\ud83e\udd49" : `${rank}`;
+                  return (
+                    <tr key={r.city.id}
+                      className={`${idx < filtered.length - 1 ? (darkMode ? "border-b border-slate-700/50" : "border-b border-slate-100") : ""
+                        } ${isTop3 ? (darkMode ? "bg-blue-900/10" : "bg-blue-50/50") : idx % 2 === 1 ? (darkMode ? "bg-slate-700/20" : "bg-slate-50/60") : ""
+                        } hover:${darkMode ? "bg-slate-700/30" : "bg-slate-50"} transition`}>
+                      <td className={`${tdBase} font-bold text-center ${darkMode ? "text-slate-300" : "text-slate-600"}`}>{badge}</td>
+                      <td className={tdBase}>
+                        <span className="mr-1.5">{CITY_FLAG_EMOJIS[r.city.id] || "\ud83c\udfd9\ufe0f"}</span>
+                        {slug ? (
+                          <Link href={`/${locale}/city/${slug}`} className={`font-semibold hover:underline ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
+                            {getCityLabel(r.city)}
+                          </Link>
+                        ) : (
+                          <span className="font-semibold">{getCityLabel(r.city)}</span>
+                        )}
+                      </td>
+                      <td className={`${tdBase} hidden sm:table-cell ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{getCountryLabel(r.city.country)}</td>
+                      {renderCells(r)}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
-        ) : (
-          <div className={`rounded-xl shadow-md overflow-hidden ${darkMode ? "bg-slate-800 border border-slate-700" : "bg-white border border-slate-100"}`}>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className={headerBg}>
-                    <th className={`${thBase} w-[52px] text-center`}>{t("rankCol_rank")}</th>
-                    <th className={`${thBase} min-w-[120px]`}>{t("rankCol_city")}</th>
-                    <th className={`${thBase} hidden sm:table-cell min-w-[80px]`}>{t("rankCol_country")}</th>
-                    {renderHeaders()}
-                  </tr>
-                </thead>
-                <tbody>
-                  {filtered.map((r, idx) => {
-                    const slug = CITY_SLUGS[r.city.id];
-                    const rank = displayRanks[idx];
-                    const isTop3 = rank <= 3;
-                    const badge = rank === 1 ? "\ud83e\udd47" : rank === 2 ? "\ud83e\udd48" : rank === 3 ? "\ud83e\udd49" : `${rank}`;
-                    return (
-                      <tr key={r.city.id}
-                        className={`${idx < filtered.length - 1 ? (darkMode ? "border-b border-slate-700/50" : "border-b border-slate-100") : ""
-                          } ${isTop3 ? (darkMode ? "bg-blue-900/10" : "bg-blue-50/50") : idx % 2 === 1 ? (darkMode ? "bg-slate-700/20" : "bg-slate-50/60") : ""
-                          } hover:${darkMode ? "bg-slate-700/30" : "bg-slate-50"} transition`}>
-                        <td className={`${tdBase} font-bold text-center ${darkMode ? "text-slate-300" : "text-slate-600"}`}>{badge}</td>
-                        <td className={tdBase}>
-                          <span className="mr-1.5">{CITY_FLAG_EMOJIS[r.city.id] || "\ud83c\udfd9\ufe0f"}</span>
-                          {slug ? (
-                            <Link href={`/${locale}/city/${slug}`} className={`font-semibold hover:underline ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
-                              {getCityLabel(r.city)}
-                            </Link>
-                          ) : (
-                            <span className="font-semibold">{getCityLabel(r.city)}</span>
-                          )}
-                        </td>
-                        <td className={`${tdBase} hidden sm:table-cell ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{getCountryLabel(r.city.country)}</td>
-                        {renderCells(r)}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
+        </div>
 
       </div>
       <footer className={`px-4 py-5 text-center text-xs ${darkMode ? "text-slate-500" : "text-slate-400"}`}>

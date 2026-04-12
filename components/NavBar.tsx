@@ -43,9 +43,9 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
     const profVal = professionValue ?? s.profession;
     const compareTo = compareHref || `/${locale}/compare`;
 
-    const navBg = darkMode ? "bg-slate-900 border-slate-700" : "bg-white border-slate-200";
+    const navBg = darkMode ? "bg-slate-900 border-slate-800" : "bg-white border-slate-100";
     const selectCls = `text-xs rounded px-1.5 py-1 h-7 border w-full ${darkMode ? "bg-slate-800 border-slate-600 text-slate-200" : "bg-white border-slate-300 text-slate-700"}`;
-    const iconBtn = `h-7 w-7 inline-flex items-center justify-center rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-slate-300 [@media(hover:hover)]:hover:bg-slate-700" : "bg-white border-slate-300 text-slate-500 [@media(hover:hover)]:hover:bg-slate-50"}`;
+    const iconBtn = `h-6 w-6 inline-flex items-center justify-center rounded transition ${darkMode ? "text-slate-400 [@media(hover:hover)]:hover:text-slate-200" : "text-slate-400 [@media(hover:hover)]:hover:text-slate-600"}`;
     const labelCls = `text-[10px] font-medium ${darkMode ? "text-slate-500" : "text-slate-400"}`;
     const shareBtnCls = `text-xs h-7 px-2.5 inline-flex items-center gap-1.5 rounded border transition ${darkMode ? "bg-slate-800 border-slate-600 text-slate-200 [@media(hover:hover)]:hover:bg-slate-700" : "bg-white border-slate-300 text-slate-700 [@media(hover:hover)]:hover:bg-slate-50"}`;
 
@@ -123,50 +123,27 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
     };
 
     /* ── Nav link colors ── */
-    const linkCls = (page: string, color: "blue" | "amber" | "emerald" | "violet") => {
+    const linkCls = (page: string, _color: "blue" | "amber" | "emerald" | "violet") => {
         const isActive = activePage === page;
-        const map = {
-            blue: {
-                a: darkMode ? "bg-blue-900/40 border-blue-500/50 text-blue-300" : "bg-blue-50 border-blue-300 text-blue-700",
-                i: darkMode ? "bg-slate-800 border-slate-600 text-blue-300 [@media(hover:hover)]:hover:bg-slate-700" : "bg-white border-slate-300 text-blue-700 [@media(hover:hover)]:hover:bg-blue-50"
-            },
-            amber: {
-                a: darkMode ? "bg-amber-900/40 border-amber-500/50 text-amber-300" : "bg-amber-50 border-amber-300 text-amber-700",
-                i: darkMode ? "bg-slate-800 border-slate-600 text-amber-300 [@media(hover:hover)]:hover:bg-slate-700" : "bg-white border-slate-300 text-amber-700 [@media(hover:hover)]:hover:bg-amber-50"
-            },
-            emerald: { a: "", i: darkMode ? "bg-slate-800 border-slate-600 text-emerald-300 [@media(hover:hover)]:hover:bg-slate-700" : "bg-white border-slate-300 text-emerald-700 [@media(hover:hover)]:hover:bg-emerald-50" },
-            violet: {
-                a: darkMode ? "bg-violet-900/40 border-violet-500/50 text-violet-300" : "bg-violet-50 border-violet-300 text-violet-700",
-                i: darkMode ? "bg-slate-800 border-slate-600 text-violet-300 [@media(hover:hover)]:hover:bg-slate-700" : "bg-white border-slate-300 text-violet-700 [@media(hover:hover)]:hover:bg-violet-50"
-            },
-        };
-        const c = map[color];
-        return `text-xs px-2 h-7 inline-flex items-center rounded border ${isActive ? c.a : `transition ${c.i}`}`;
+        if (isActive) return `text-[10px] font-semibold ${darkMode ? "text-slate-100" : "text-slate-900"}`;
+        return `text-[10px] transition ${darkMode ? "text-slate-400 [@media(hover:hover)]:hover:text-slate-200" : "text-slate-400 [@media(hover:hover)]:hover:text-slate-700"}`;
     };
 
     /* ── Mobile nav link colors ── */
-    const mobileLinkCls = (page: string, color: string) => {
+    const mobileLinkCls = (page: string, _color: string) => {
         const isActive = activePage === page;
-        if (isActive) {
-            const activeMap: Record<string, string> = {
-                blue: darkMode ? "bg-blue-900/30 text-blue-300" : "bg-blue-50 text-blue-700",
-                amber: darkMode ? "bg-amber-900/30 text-amber-300" : "bg-amber-50 text-amber-700",
-                emerald: darkMode ? "bg-emerald-900/30 text-emerald-300" : "bg-emerald-50 text-emerald-700",
-                violet: darkMode ? "bg-violet-900/30 text-violet-300" : "bg-violet-50 text-violet-700",
-            };
-            return `text-sm px-3 py-2 rounded ${activeMap[color] ?? ""}`;
-        }
-        return `text-sm px-3 py-2 rounded ${darkMode ? "text-slate-300 [@media(hover:hover)]:hover:bg-slate-800" : "text-slate-700 [@media(hover:hover)]:hover:bg-slate-50"}`;
+        if (isActive) return `text-sm px-3 py-2 rounded font-semibold ${darkMode ? "text-slate-100" : "text-slate-900"}`;
+        return `text-sm px-3 py-2 rounded ${darkMode ? "text-slate-400 [@media(hover:hover)]:hover:text-slate-200" : "text-slate-500 [@media(hover:hover)]:hover:text-slate-700"}`;
     };
 
 
     return (
-        <div ref={ref} className={`sticky top-0 z-50 border-b py-2.5 ${navBg}`}>
-            <div className="max-w-6xl mx-auto px-4">
+        <div ref={ref} className={`sticky top-0 z-50 border-b py-2 ${navBg}`}>
+            <div className="max-w-2xl mx-auto px-4">
                 <div className="flex items-center justify-between gap-2">
-                    {/* Left: 4 nav buttons */}
-                    <div className="flex items-center gap-1.5 min-w-0">
-                        <Link href={`/${locale}`} className={linkCls("home", "blue")}>{t("navHome")}</Link>
+                    {/* Left: brand + nav links */}
+                    <div className="flex items-center gap-3 min-w-0">
+                        <Link href={`/${locale}`} className={`text-sm font-black tracking-tight ${darkMode ? "text-white" : "text-slate-900"}`}>WhichCity</Link>
                         <Link href={`/${locale}/ranking`} className={linkCls("ranking", "amber")}>{t("navRanking")}</Link>
                         <button onClick={randomCity} className={linkCls("", "emerald")}>
                             <span className="min-[420px]:hidden">{t("navRandomCityShort")}</span>
@@ -179,11 +156,11 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
                     </div>
 
                     {/* Right: Share + Settings */}
-                    <div className="flex items-center gap-1.5 shrink-0">
+                    <div className="flex items-center gap-2 shrink-0">
                         {showShare && (
                             <button
                                 onClick={() => { setShareOpen(v => !v); setSettingsOpen(false); }}
-                                className={`${iconBtn} ${shareOpen ? (darkMode ? "!border-blue-500/50 !bg-slate-700" : "!border-blue-300 !bg-blue-50") : ""}`}
+                                className={`${iconBtn} ${shareOpen ? (darkMode ? "!text-slate-100" : "!text-slate-900") : ""}`}
                                 title={t("shareLink")}
                             >
                                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
@@ -191,7 +168,7 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
                         )}
                         <button
                             onClick={() => { setSettingsOpen(v => !v); setShareOpen(false); }}
-                            className={`${iconBtn} ${settingsOpen ? (darkMode ? "!border-blue-500/50 !bg-slate-700" : "!border-blue-300 !bg-blue-50") : ""}`}
+                            className={`${iconBtn} ${settingsOpen ? (darkMode ? "!text-slate-100" : "!text-slate-900") : ""}`}
                             title={t("settingsLabel")}
                         >
                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" /></svg>

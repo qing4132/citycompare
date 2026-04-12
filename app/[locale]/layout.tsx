@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_SC } from "next/font/google";
 import { LOCALES } from "@/lib/i18nRouting";
 import type { Locale } from "@/lib/types";
 import { TRANSLATIONS } from "@/lib/i18n";
@@ -8,6 +8,7 @@ import "../globals.css";
 import WebVitals from "@/components/WebVitals";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
+const notoSC = Noto_Sans_SC({ weight: "900", subsets: ["latin"], display: "swap", variable: "--font-cjk" });
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -67,7 +68,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
       </head>
-      <body className={inter.className} suppressHydrationWarning>
+        <body className={`${inter.className} ${notoSC.variable}`} suppressHydrationWarning>
         {/* Theme bootstrap — sets .dark/.light on <html> before content paints */}
         <script
           dangerouslySetInnerHTML={{

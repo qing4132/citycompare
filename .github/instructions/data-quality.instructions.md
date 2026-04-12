@@ -14,7 +14,7 @@ applyTo: "public/data/cities.json,lib/taxData.ts,lib/constants.ts,lib/citySlug.t
 - `safetyConfidence`: 4个子指标全有=high, 缺1=medium, 缺2+=low（healthcare/freedom同理）
 - `climate.annualRainMm` 应等于 `monthlyRainMm` 之和
 - `monthlyHighC[m]` 必须 >= `monthlyLowC[m]`
-- 每个城市必须恰好有 26 个 profession 键
+- 每个城市必须恰好有 24 个 profession 键
 
 ## 跨文件一致性
 - 新增城市必须**同时**更新：cities.json, CITY_FLAG_EMOJIS, CITY_COUNTRY, REGIONS, CITY_SLUGS, CITY_NAME_TRANSLATIONS, CITY_INTROS, CITY_LANGUAGES

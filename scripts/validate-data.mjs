@@ -25,7 +25,7 @@ console.log(`Validating ${cities.length} cities…\n`);
 // 1. Each city has 26 professions
 for (const c of cities) {
   const n = Object.keys(c.professions).length;
-  if (n !== 26) fail(`${c.name}(${c.id}): has ${n} professions, expected 26`);
+  if (n !== 24) fail(`${c.name}(${c.id}): has ${n} professions, expected 24`);
 }
 
 // 2. averageIncome should be within 0.2x–5x of profession median

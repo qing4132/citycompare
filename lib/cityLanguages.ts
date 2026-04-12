@@ -215,8 +215,6 @@ export const CITY_LANGUAGES: Record<number, string[]> = {
   45:  ["Thai"],         // Bangkok — Thai is national language (Constitution)
   112: ["Thai"],         // Chiang Mai
   147: ["Thai"],         // Phuket
-  153: ["Thai"],         // Koh Phangan
-  154: ["Thai"],         // Koh Samui
   46:  ["Malay"],        // Kuala Lumpur — Bahasa Malaysia is official (Constitution Art. 152)
   150: ["Malay"],        // Penang
   47:  ["Vietnamese"],   // Ho Chi Minh City
@@ -226,7 +224,6 @@ export const CITY_LANGUAGES: Record<number, string[]> = {
   140: ["Indonesian"],   // Bali
   58:  ["Filipino", "English"],  // Manila — both official (Constitution Art. XIV Sec. 7)
   109: ["Khmer"],        // Phnom Penh — Khmer is official (Constitution Art. 5)
-  155: ["Khmer"],        // Siem Reap
   110: ["Burmese"],      // Yangon — Myanmar language is official (Constitution Art. 450)
 
   /* ────────────────────── Central Asia (4) ────────────────────── */
@@ -245,7 +242,6 @@ export const CITY_LANGUAGES: Record<number, string[]> = {
   80:  ["Arabic"],   // Beirut — Arabic is official (Lebanon Constitution Art. 11)
   81:  ["Arabic"],   // Amman — Arabic is official (Jordan Constitution Art. 2)
   53:  ["Arabic"],   // Cairo — Arabic is official (Egypt Constitution Art. 2)
-  151: ["Arabic"],   // Marrakech — Arabic is official (Morocco Constitution Art. 5)
   54:  ["Persian"],  // Tehran — Persian/Farsi is official (Iran Constitution Art. 15)
   82:  ["Hebrew"],   // Tel Aviv — Hebrew is official (Basic Law 2018); Arabic has "special status"
 
@@ -274,7 +270,6 @@ export const CITY_LANGUAGES: Record<number, string[]> = {
   85:  ["Ukrainian"],   // Kyiv — Ukrainian is state lang (Constitution Art. 10)
   86:  ["Romanian"],    // Bucharest
   87:  ["Bulgarian"],   // Sofia
-  145: ["Bulgarian"],   // Bansko
   88:  ["Croatian"],    // Zagreb
   146: ["Croatian"],    // Split
   89:  ["Serbian"],     // Belgrade
@@ -338,7 +333,6 @@ export const CITY_LANGUAGES: Record<number, string[]> = {
 
   /* Peru (2) — Spanish, Quechua, Aymara are all official (Constitution Art. 48). */
   65:  ["Spanish", "Quechua", "Aymara"],  // Lima
-  156: ["Spanish", "Quechua"],             // Cusco — Quechua widely spoken locally
 
   /* Puerto Rico (1) — Spanish + English are co-official (Language Act 1993). */
   73:  ["Spanish", "English"],  // San Juan — Spanish dominant

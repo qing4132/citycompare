@@ -1,4 +1,4 @@
-/** URL-safe slug ↔ city ID mapping for all 154 cities */
+/** URL-safe slug ↔ city ID mapping for all 148 cities */
 export const CITY_SLUGS: Record<number, string> = {
   1: "new-york", 2: "london", 3: "tokyo", 4: "beijing", 5: "shanghai",
   6: "sydney", 7: "singapore", 8: "paris", 9: "toronto", 10: "hong-kong",
@@ -29,9 +29,9 @@ export const CITY_SLUGS: Record<number, string> = {
   131: "lagos", 132: "moscow", 133: "san-jose-us", 134: "irvine", 135: "ottawa",
   136: "luxembourg-city", 137: "tallinn", 138: "fukuoka", 139: "yokohama",
   140: "bali", 141: "da-nang", 142: "playa-del-carmen", 143: "porto", 144: "valencia",
-  145: "bansko", 146: "split", 147: "phuket", 148: "montevideo", 149: "las-palmas",
-  150: "penang", 151: "marrakech", 152: "florianopolis", 153: "koh-phangan",
-  154: "koh-samui", 155: "siem-reap", 156: "cusco", 157: "cancun",
+  146: "split", 147: "phuket", 148: "montevideo", 149: "las-palmas",
+  150: "penang", 152: "florianopolis",
+  157: "cancun",
   158: "puerto-vallarta", 159: "kyoto",
 };
 

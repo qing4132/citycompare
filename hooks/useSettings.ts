@@ -215,6 +215,24 @@ export function useSettings(urlLocale?: string) {
     [rates, currency, convertAmount],
   );
 
+  const formatCompact = useCallback(
+    (amount: number): { num: string; unit: string } => {
+      if (!rates) return { num: `$${Math.round(amount).toLocaleString()}`, unit: "" };
+      const symbol = rates.symbols[currency] || currency;
+      const val = convertAmount(amount);
+      const cjk = locale === "zh" || locale === "ja";
+      if (cjk) {
+        if (Math.abs(val) >= 100_000_000) return { num: `${symbol}${(val / 100_000_000).toFixed(1)}`, unit: "亿" };
+        if (Math.abs(val) >= 10_000) return { num: `${symbol}${Math.round(val / 10_000)}`, unit: "万" };
+      } else {
+        if (Math.abs(val) >= 1_000_000) return { num: `${symbol}${(val / 1_000_000).toFixed(1)}`, unit: "M" };
+        if (Math.abs(val) >= 1_000) return { num: `${symbol}${Math.round(val / 1_000)}`, unit: "k" };
+      }
+      return { num: `${symbol}${Math.round(val).toLocaleString()}`, unit: "" };
+    },
+    [rates, currency, locale, convertAmount],
+  );
+
   return {
     locale,
     setLocale,
@@ -234,6 +252,7 @@ export function useSettings(urlLocale?: string) {
     getProfessionLabel,
     t,
     formatCurrency,
+    formatCompact,
     convertAmount,
     currencySymbol,
     rates,

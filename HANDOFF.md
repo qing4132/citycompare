@@ -1,6 +1,6 @@
 # WhichCity — Project Handoff
 
-> **Version 2.0** — Phase 2 ready (2026-04-11)
+> **Version 2.1** — Phase 2 in progress (2026-04-12)
 > Phase 1 changelog: `_archive/reports/changelog-v1.md`
 > Phase 2 strategy: `_archive/reports/phase2-strategy.md`
 
@@ -12,8 +12,8 @@
 
 | Dimension | Value |
 |-----------|-------|
-| Cities | 154 (148 displayed, 6 hidden nomad-only destinations) |
-| Professions | 26 (→ 23 in Phase 2) |
+| Cities | 148 displayed (6 hidden nomad-only) |
+| Professions | 23 (was 26; removed 公务员/家政服务人员/摄影师) |
 | Tax Systems | 81 countries + city overrides + expat schemes |
 | Currencies | 10 selectable (30 stored) |
 | Languages | zh / en / ja / es |
@@ -43,39 +43,42 @@
 ```
 whichcity/
 ├── app/[locale]/              Pages (thin SSR wrappers)
-│   ├── city/[slug]/           City detail (154 slugs)
+│   ├── city/[slug]/           City detail (148 slugs)
 │   ├── ranking/               Rankings (22+ metrics)
 │   ├── compare/[pair]/        Compare (slug-vs-slug[-vs-slug])
 │   └── methodology/           Data sources
 │
 ├── components/                Page components
-│   ├── CityDetailContent.tsx  ~830 lines (Phase 2: split into sub-components)
-│   ├── RankingContent.tsx     ~1100 lines (Phase 2: simplify)
+│   ├── CityDetailContent.tsx  ~300 lines (refactored: feed-style layout)
+│   ├── city-detail/           Sub-components extracted from CityDetailContent
+│   │   ├── HeroSection.tsx    City header (flag, name, compare button)
+│   │   ├── FeedPost.tsx       Reusable feed post card component
+│   │   ├── NomadSection.tsx   Nomad visa/VPN/English info
+│   │   └── SimilarCities.tsx  Similar cities recommendations
+│   ├── RankingContent.tsx     ~680 lines (simplified from ~1100)
 │   ├── CompareContent.tsx     ~800 lines
 │   ├── HomeContent.tsx        ~175 lines
-│   ├── NavBar.tsx             ~310 lines
+│   ├── NavBar.tsx             ~260 lines (streamlined)
 │   ├── ClimateChart.tsx       ~160 lines
 │   └── MethodologyContent.tsx ~150 lines
 │
-├── hooks/useSettings.ts       Global settings (localStorage-backed)
+├── hooks/useSettings.ts       Global settings + formatCompact (万/亿 for CJK, k/M for latin)
 │
 ├── lib/
-│   ├── types.ts               City interface (~50 fields)
+│   ├── types.ts               City interface (~50 fields + homicideRate, gpiScore)
 │   ├── taxData.ts             81 country tax tables + expat schemes
 │   ├── taxUtils.ts            Tax computation engine
-│   ├── i18n.ts                ~1960 lines (4 locales, 350+ keys)
-│   ├── nomadI18n.ts           Nomad translations
+│   ├── i18n.ts                ~2000 lines (4 locales, 360+ keys)
 │   ├── constants.ts           Regions, flags, currencies, climate
 │   ├── dataLoader.ts          Server-side data loading
 │   ├── clientUtils.ts         Life Pressure formula, helpers
 │   ├── citySlug.ts            ID↔slug mappings
-│   ├── cityIntros.ts          154 cities × 4 locales
-│   ├── cityLanguages.ts       Official languages
+│   ├── cityIntros.ts          148 cities × 4 locales
 │   └── analytics.ts           GA4 events
 │
 ├── public/data/
-│   ├── cities.json            154 cities runtime data
-│   ├── exchange-rates.json    Daily auto-updated
+│   ├── cities.json            148 cities runtime data
+│   ├── exchange-rates.json    Daily auto-updated (JPY→JP¥)
 │   ├── nomad-data-compiled.json
 │   └── nomad-visafree-4passport.json
 │
@@ -148,16 +151,25 @@ npm run build                # production build
 
 ## 7. Phase 2 Status
 
-See [REDESIGN.md](REDESIGN.md) for full plan. Key pending work:
+See [REDESIGN.md](REDESIGN.md) for full plan. Key progress:
 
-- [ ] City detail page info architecture rewrite
+- [x] City detail page rewrite — feed-style "竖向信息流" layout
+- [x] CityDetailContent split into sub-components (HeroSection, FeedPost, NomadSection, SimilarCities)
+- [x] Row 1: Income + Savings + Cost + Rent (formatCompact with 万/亿 for CJK)
+- [x] Row 2: Safety + Healthcare + Freedom merged with collapsible sub-indicators
+- [x] Dark mode symmetric color palette (slate-950, green-400, rose-400)
+- [x] NavBar streamlined (max-w-2xl, simplified layout)
+- [x] Profession cleanup (26→23, removed 公务员/家政服务人员/摄影师)
+- [x] JPY symbol → JP¥ (disambiguate from CNY ¥)
+- [x] Raw safety fields (homicideRate, gpiScore) added to types + cities.json
+- [x] Ranking page simplified (multi-sort removed)
+- [x] All page emojis removed (except flags)
+
+Pending:
 - [ ] Tax calculator visualization
-- [ ] Sub-indicators default collapsed
-- [ ] Nomad section collapsed
-- [ ] Delete Multi sort mode
-- [ ] Profession cleanup (26→23)
 - [ ] SEO meta optimization
 - [ ] GA4 key event configuration
+- [ ] Compare page Phase 2 restyling
 # WhichCity — Project Handoff Document
 
 > **Version 1.0** — Phase 1 complete (2026-04-10)

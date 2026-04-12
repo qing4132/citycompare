@@ -114,7 +114,7 @@ const CN: Record<number, string> = {
     // Japan
     3: "jp_2024", 106: "jp_2024", 107: "jp_2024", 138: "jp_2024", 139: "jp_2024", 159: "jp_2024",
     // Thailand
-    45: "th_dtv", 112: "th_dtv", 147: "th_dtv", 153: "th_dtv", 154: "th_dtv",
+    45: "th_dtv", 112: "th_dtv", 147: "th_dtv",
     // Spain
     20: "es_beckham", 21: "es_beckham", 144: "es_beckham", 149: "es_beckham",
     // Brazil
@@ -138,9 +138,9 @@ const CN: Record<number, string> = {
     // Germany
     18: "de_freelancer", 19: "de_freelancer",
     // Cambodia
-    109: "kh_biz", 155: "kh_biz",
+    109: "kh_biz",
     // Peru
-    65: "pe_tourist", 156: "pe_tourist",
+    65: "pe_tourist",
     // Malaysia
     46: "my_pass", 150: "my_pass",
     // UK
@@ -148,7 +148,7 @@ const CN: Record<number, string> = {
     // Indonesia
     57: "id_b211a", 140: "id_b211a",
     // Bulgaria
-    87: "bg_bansko", 145: "bg_bansko",
+    87: "bg_bansko",
     // Croatia
     88: "hr_exempt", 146: "hr_exempt",
     // EU small
@@ -160,7 +160,7 @@ const CN: Record<number, string> = {
     30: "tr_guide", 58: "ph_announced", 61: "tw_2025", 62: "ar_6mo", 70: "cr_1yr",
     71: "pa_guide", 73: "pr_act60", 77: "bh_notfound", 82: "il_discussed", 85: "ua_conflict",
     86: "ro_6mo", 89: "rs_90day", 90: "hu_1yr", 117: "kz_30day", 123: "fi_considered",
-    124: "no_svalbard", 130: "ge_suspended", 137: "ee_reapply", 148: "uy_90day", 151: "ma_90day",
+    124: "no_svalbard", 130: "ge_suspended", 137: "ee_reapply", 148: "uy_90day",
     // Plain "No dedicated nomad visa."
     6: "no_visa", 10: "no_visa", 16: "no_visa", 17: "no_visa", 24: "no_visa", 25: "no_visa",
     27: "no_visa", 42: "no_visa", 43: "no_visa", 44: "no_visa", 52: "no_visa", 53: "no_visa",

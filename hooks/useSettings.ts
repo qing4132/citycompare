@@ -91,10 +91,9 @@ export function useSettings(urlLocale?: string) {
     else setCostTierState("moderate");
     const prof = localStorage.getItem("selectedProfession");
     if (prof) setProfessionState(prof);
-    const im = localStorage.getItem("incomeMode");
-    if (im && ["gross", "net", "expatNet"].includes(im)) setIncomeModeState(im as IncomeMode);
+    // incomeMode is now always "net" (after-tax); ignore saved value
     const sm = localStorage.getItem("salaryMultiplier");
-    if (sm) { const n = parseFloat(sm); if (n >= 0.5 && n <= 3.0) setSalaryMultiplierState(n); }
+    if (sm) { const n = parseFloat(sm); if ([0.6, 0.8, 1, 1.5, 2, 3, 5].includes(n)) setSalaryMultiplierState(n); }
 
     // Mark as mounted — the next render will have correct darkMode.
     // Also set theme-ready so client-side navigations skip this path.
@@ -208,11 +207,12 @@ export function useSettings(urlLocale?: string) {
       if (!rates) return `$${Math.round(amount).toLocaleString()}`;
       const symbol = rates.symbols[currency] || currency;
       const rounded = Math.round(convertAmount(amount));
+      const cjk = locale === "zh" || locale === "ja";
       if (currency === "INR" || currency === "PKR")
         return `${symbol}${rounded.toLocaleString("en-IN")}`;
-      return `${symbol}${rounded.toLocaleString()}`;
+      return `${symbol}${cjk ? String(rounded) : rounded.toLocaleString()}`;
     },
-    [rates, currency, convertAmount],
+    [rates, currency, locale, convertAmount],
   );
 
   const formatCompact = useCallback(
@@ -228,7 +228,7 @@ export function useSettings(urlLocale?: string) {
         if (Math.abs(val) >= 1_000_000) return { num: `${symbol}${(val / 1_000_000).toFixed(1)}`, unit: "M" };
         if (Math.abs(val) >= 1_000) return { num: `${symbol}${Math.round(val / 1_000)}`, unit: "k" };
       }
-      return { num: `${symbol}${Math.round(val).toLocaleString()}`, unit: "" };
+      return { num: `${symbol}${cjk ? String(Math.round(val)) : Math.round(val).toLocaleString()}`, unit: "" };
     },
     [rates, currency, locale, convertAmount],
   );

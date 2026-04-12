@@ -20,6 +20,32 @@ export interface NetIncomeResult {
   dataIsLikelyNet?: boolean;  // true when salary data is already post-tax
 }
 
+export interface TaxBreakdownDetail {
+  label: string;
+  amount: number;  // positive
+  rate?: string;   // e.g. "8.00%" — social component rate, displayed after translated label
+  capped?: boolean; // true when annualBaseCap or annualAbsCap was applied
+}
+
+export interface TaxBreakdownSection {
+  label: string;          // i18n key
+  total: number;          // negative = deduction from gross
+  details?: TaxBreakdownDetail[];
+  isResult?: boolean;     // subtotal line (e.g. taxable income)
+  isInfo?: boolean;       // informational, not a real deduction (e.g. tax-free allowance)
+}
+
+export interface TaxBreakdown {
+  currencyCode: string;
+  fxRate: number;
+  grossLocal: number;
+  grossUSD: number;
+  sections: TaxBreakdownSection[];
+  netLocal: number;
+  netUSD: number;
+  expatSchemeName?: string; // i18n key, e.g. "expatScheme30Ruling"
+}
+
 /* ── Progressive tax calculation ─────────────────────── */
 
 function calcProgressive(taxable: number, brackets: TaxBracket[]): number {
@@ -208,4 +234,123 @@ export function computeAllNetIncomes(
 
 export function getExpatSchemeName(country: string): string {
   return COUNTRY_TAX[country]?.expatScheme?.name || "";
+}
+
+/* ── Step-by-step tax breakdown (exhaustive) ─────────── */
+
+function bracketDetailList(taxable: number, brackets: TaxBracket[]): TaxBreakdownDetail[] {
+  if (taxable <= 0) return [];
+  const out: TaxBreakdownDetail[] = [];
+  let prev = 0;
+  for (const b of brackets) {
+    if (taxable <= prev) break;
+    const sliceTop = Math.min(taxable, b.upTo);
+    const tax = (sliceTop - prev) * b.rate;
+    const lo = prev === 0 ? "0" : Math.round(prev).toLocaleString();
+    const hi = b.upTo === Infinity ? "∞" : Math.round(b.upTo).toLocaleString();
+    out.push({ label: `${lo}–${hi} × ${(b.rate * 100).toFixed(1)}%`, amount: tax });
+    prev = b.upTo;
+  }
+  return out;
+}
+
+export function computeTaxBreakdown(
+  grossUSD: number,
+  country: string,
+  cityId: number,
+  dailyRates?: Record<string, number>,
+): TaxBreakdown | null {
+  const tax = COUNTRY_TAX[country];
+  if (!tax || tax.dataIsLikelyNet) return null;
+
+  const currencyCode = COUNTRY_CURRENCY_CODE[country] || "USD";
+  const fxRate = (currencyCode && dailyRates?.[currencyCode]) || tax.usdToLocal;
+  const grossLocal = grossUSD * fxRate;
+  const sections: TaxBreakdownSection[] = [];
+
+  // ① Social deductions
+  const socialLocal = calcSocial(grossLocal, tax.social, CITY_TAX_OVERRIDES[cityId]?.socialOverrides);
+  if (socialLocal > 0) {
+    const details: TaxBreakdownDetail[] = [];
+    for (const comp of tax.social) {
+      const override = CITY_TAX_OVERRIDES[cityId]?.socialOverrides?.[comp.name];
+      const rate = override?.rate ?? comp.rate;
+      const baseCap = override?.annualBaseCap ?? comp.annualBaseCap;
+      const absCap = override?.annualAbsCap ?? comp.annualAbsCap;
+      let base = grossLocal;
+      let capped = false;
+      if (baseCap !== undefined && base > baseCap) { base = baseCap; capped = true; }
+      let amt = base * rate;
+      if (absCap !== undefined && amt > absCap) { amt = absCap; capped = true; }
+      if (amt > 0) details.push({ label: comp.name, amount: amt, rate: `${(rate * 100).toFixed(2)}%`, capped });
+    }
+    sections.push({ label: "taxBkSocial", total: -socialLocal, details });
+  }
+
+  // ②③ Standard deduction & employee deduction (computed for taxable base)
+  let empDeduction = 0;
+  if (country === "日本") {
+    empDeduction = japanEmploymentDeduction(grossLocal);
+  } else if (country === "韩国") {
+    empDeduction = koreanEmploymentDeduction(grossLocal);
+  } else if (tax.employeeDeduction) {
+    const ed = tax.employeeDeduction;
+    const base = ed.afterSocial ? grossLocal - socialLocal : grossLocal;
+    empDeduction = base * ed.rate;
+    if (ed.min !== undefined) empDeduction = Math.max(empDeduction, ed.min);
+    if (ed.max !== undefined) empDeduction = Math.min(empDeduction, ed.max);
+  }
+
+  // ④ Taxable income
+  let taxableLocal = grossLocal - socialLocal - tax.standardDeduction - empDeduction;
+  if (taxableLocal < 0) taxableLocal = 0;
+  if (tax.standardDeduction > 0) {
+    sections.push({ label: "taxBkStdDeduction", total: tax.standardDeduction, isInfo: true });
+  }
+  if (empDeduction > 0) {
+    sections.push({ label: "taxBkEmpDeduction", total: empDeduction, isInfo: true });
+  }
+  sections.push({ label: "taxBkTaxable", total: taxableLocal, isResult: true });
+
+  // ⑤ Income tax (progressive brackets)
+  const incomeTaxLocal = calcProgressive(taxableLocal, tax.brackets);
+  if (incomeTaxLocal > 0) {
+    sections.push({ label: "taxBkIncomeTax", total: -incomeTaxLocal, details: bracketDetailList(taxableLocal, tax.brackets) });
+  }
+
+  // ⑥ Resident tax (Japan)
+  let residentTax = 0;
+  if (country === "日本") {
+    residentTax = Math.max(0, taxableLocal) * 0.10;
+    if (residentTax > 0) {
+      sections.push({ label: "taxBkResidentTax", total: -residentTax, details: [{ label: "10%", amount: residentTax }] });
+    }
+  }
+
+  // ⑦ Local/state tax
+  const cityOverride = CITY_TAX_OVERRIDES[cityId];
+  let localTaxLocal = 0;
+  if (cityOverride) {
+    if (cityOverride.localBrackets) {
+      localTaxLocal = calcProgressive(Math.max(0, taxableLocal), cityOverride.localBrackets);
+      sections.push({ label: "taxBkLocalTax", total: -localTaxLocal, details: bracketDetailList(Math.max(0, taxableLocal), cityOverride.localBrackets) });
+    } else if (cityOverride.localFlatRate !== undefined) {
+      localTaxLocal = Math.max(0, taxableLocal) * cityOverride.localFlatRate;
+      if (localTaxLocal > 0) {
+        sections.push({ label: "taxBkLocalTax", total: -localTaxLocal, details: [{ label: `${(cityOverride.localFlatRate * 100).toFixed(1)}%`, amount: localTaxLocal }] });
+      }
+    }
+  }
+
+  const netLocal = grossLocal - socialLocal - incomeTaxLocal - localTaxLocal - residentTax;
+  return {
+    currencyCode,
+    fxRate,
+    grossLocal,
+    grossUSD,
+    sections,
+    netLocal,
+    netUSD: Math.round(netLocal / fxRate),
+    expatSchemeName: tax.expatScheme?.name,
+  };
 }

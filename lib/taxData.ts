@@ -836,6 +836,9 @@ export const COUNTRY_TAX: Record<string, CountryTax> = {
     usdToLocal: 32,
     confidence: "high",
   },
+  // 五险一金中，工伤和生育由企业承担（个人 0%），个人缴纳三险一金。
+  // 缴费基数上限 = 当地社平工资 × 3，各城市不同，由城市级 CITY_TAX_OVERRIDES 单独配置。
+  // 住房公积金比例 5%–12%，一线大厂普遍顶格 12%，也由城市 override 指定。
   "中国": {
     brackets: [
       { upTo: 36000, rate: 0.03 },
@@ -1317,21 +1320,37 @@ export const CITY_TAX_OVERRIDES: Record<number, CityTaxOverride> = {
   // Geneva — GE ~33-35%
   17: { localFlatRate: 0.34 },
 
-  // ── China housing fund variations ──
-  // Beijing: 12%
-  4: { socialOverrides: { "housing_fund": { rate: 0.12, annualBaseCap: 35283 * 12 } } },
-  // Shanghai: 7%
-  5: { socialOverrides: { "housing_fund": { rate: 0.07, annualBaseCap: 36549 * 12 } } },
-  // Guangzhou: 12%
-  101: { socialOverrides: { "housing_fund": { rate: 0.12, annualBaseCap: 33786 * 12 } } },
-  // Shenzhen: 5%
-  102: { socialOverrides: { "housing_fund": { rate: 0.05, annualBaseCap: 38892 * 12 } } },
-  // Chengdu: 12%
-  103: { socialOverrides: { "housing_fund": { rate: 0.12, annualBaseCap: 27912 * 12 } } },
-  // Hangzhou: 12%
-  104: { socialOverrides: { "housing_fund": { rate: 0.12, annualBaseCap: 36675 * 12 } } },
-  // Chongqing: 12%
-  105: { socialOverrides: { "housing_fund": { rate: 0.12, annualBaseCap: 25434 * 12 } } },
+  // ── China: 三险一金城市级覆盖 ──
+  // annualBaseCap = 当地社平工资 × 3 × 12 (各险种 & 公积金共用同一基数上限)
+  // 公积金比例: 北京 12%, 上海 7%, 深圳 5%, 其余 12%
+  4: { socialOverrides: {
+    pension: { annualBaseCap: 35283 * 12 }, medical: { annualBaseCap: 35283 * 12 },
+    unemployment: { annualBaseCap: 35283 * 12 }, housing_fund: { rate: 0.12, annualBaseCap: 35283 * 12 },
+  }},
+  5: { socialOverrides: {
+    pension: { annualBaseCap: 36549 * 12 }, medical: { annualBaseCap: 36549 * 12 },
+    unemployment: { annualBaseCap: 36549 * 12 }, housing_fund: { rate: 0.07, annualBaseCap: 36549 * 12 },
+  }},
+  101: { socialOverrides: {
+    pension: { annualBaseCap: 33786 * 12 }, medical: { annualBaseCap: 33786 * 12 },
+    unemployment: { annualBaseCap: 33786 * 12 }, housing_fund: { rate: 0.12, annualBaseCap: 33786 * 12 },
+  }},
+  102: { socialOverrides: {
+    pension: { annualBaseCap: 38892 * 12 }, medical: { annualBaseCap: 38892 * 12 },
+    unemployment: { annualBaseCap: 38892 * 12 }, housing_fund: { rate: 0.05, annualBaseCap: 38892 * 12 },
+  }},
+  103: { socialOverrides: {
+    pension: { annualBaseCap: 27912 * 12 }, medical: { annualBaseCap: 27912 * 12 },
+    unemployment: { annualBaseCap: 27912 * 12 }, housing_fund: { rate: 0.12, annualBaseCap: 27912 * 12 },
+  }},
+  104: { socialOverrides: {
+    pension: { annualBaseCap: 36675 * 12 }, medical: { annualBaseCap: 36675 * 12 },
+    unemployment: { annualBaseCap: 36675 * 12 }, housing_fund: { rate: 0.12, annualBaseCap: 36675 * 12 },
+  }},
+  105: { socialOverrides: {
+    pension: { annualBaseCap: 25434 * 12 }, medical: { annualBaseCap: 25434 * 12 },
+    unemployment: { annualBaseCap: 25434 * 12 }, housing_fund: { rate: 0.12, annualBaseCap: 25434 * 12 },
+  }},
 
   // NYC city tax (added on top of NY state via localBrackets above — combined)
   // Note: NYC city tax is already included in the NY state bracket approximation above for simplicity

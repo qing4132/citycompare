@@ -4,13 +4,13 @@ import { useState, useEffect, useMemo } from "react";
 import type { City, CostTier } from "@/lib/types";
 import type { NomadCityData, VisaFreeMatrix } from "@/lib/nomadData";
 import { CITY_FLAG_EMOJIS } from "@/lib/constants";
-import { CITY_NAME_TRANSLATIONS, COUNTRY_TRANSLATIONS } from "@/lib/i18n";
+import { CITY_NAME_TRANSLATIONS, COUNTRY_TRANSLATIONS, socialCompLabel } from "@/lib/i18n";
 import { CITY_LANGUAGES, LANGUAGE_NAME_TRANSLATIONS } from "@/lib/cityLanguages";
 import NavBar from "./NavBar";
 import { computeLifePressure, getClimateLabel } from "@/lib/clientUtils";
 import { trackEvent } from "@/lib/analytics";
 import { useSettings } from "@/hooks/useSettings";
-import { computeNetIncome, computeAllNetIncomes, getExpatSchemeName } from "@/lib/taxUtils";
+import { computeNetIncome, computeAllNetIncomes, getExpatSchemeName, computeTaxBreakdown } from "@/lib/taxUtils";
 import ClimateChart from "./ClimateChart";
 import HeroSection from "./city-detail/HeroSection";
 import FeedPost from "./city-detail/FeedPost";
@@ -42,6 +42,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   useEffect(() => { document.title = `${cityName} | WhichCity`; }, [locale, cityName]);
   useEffect(() => { trackEvent("city_view", { city_slug: slug }); }, [slug]);
   const [shfOpen, setShfOpen] = useState(false);
+  const [incomeOpen, setIncomeOpen] = useState(false);
 
   if (!s.mounted) return null;
   if (!s.ready) return (
@@ -124,45 +125,107 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
         {/* Profile header */}
         <HeroSection city={city} cityName={cityName} countryName={countryName} flag={flag} slug={slug} locale={locale} darkMode={darkMode} t={t} />
 
-        {/* Row 1: Income + Cost + Rent + Savings (大) */}
-        <FeedPost title={t("avgIncome")} darkMode={darkMode} cardValCls={cardValCls}>
+        {/* Row 1: Income (大) */}
+        <div className={`py-3.5 border-b ${divider} cursor-pointer select-none`} onClick={() => setIncomeOpen(!incomeOpen)}>
+          <div className="flex items-center gap-1.5 mb-1.5">
+            <span className={`text-xs font-extrabold ${headCls}`}>{t("incomeExpenseTitle")}</span>
+            <span className={`ml-auto text-xs ${subCls} transition-transform duration-200 ${incomeOpen ? "rotate-180" : ""}`}>▼</span>
+          </div>
           <div className="flex gap-4 mb-1 flex-wrap">
             <div>
               <div className={`text-4xl font-black leading-none ${income !== null ? cardValCls(tierHigh(allIncomes, income)) : headCls}`}>
                 {income !== null ? compactVal(income) : "—"}
               </div>
-              <div className={`text-[9px] ${labelCls}`}>{t("avgIncome")}</div>
-            </div>
-            <div>
-              <div className={`text-4xl font-black leading-none ${savings !== null ? cardValCls(tierHigh(allSavings, savings)) : headCls}`}>
-                {savings !== null ? compactVal(savings) : "—"}
-              </div>
-              <div className={`text-[9px] ${labelCls}`}>{t("yearlySavings")}</div>
-            </div>
-            <div>
-              <div className={`text-4xl font-black leading-none ${cardValCls(tierLow(allCosts, tierCost))}`}>
-                {compactVal(tierCost)}
-              </div>
-              <div className={`text-[9px] ${labelCls}`}>{t("monthlyCost")}</div>
-            </div>
-            <div>
-              <div className={`text-4xl font-black leading-none ${headCls}`}>
-                {city.monthlyRent != null ? compactVal(city.monthlyRent) : "—"}
-              </div>
-              <div className={`text-[9px] ${labelCls}`}>{t("monthlyRent")}</div>
+              <div className={`text-[9px] ${labelCls}`}>{s.getProfessionLabel(activeProfession)} · {t(`salaryTier_${salaryMultiplier}`)}</div>
             </div>
           </div>
-          <div className={`text-[10px] ${subCls}`}>
-            {t("savingsRateLabel")} {savingsRate}%
-            {incomeMode !== "gross" && taxResult !== null && !taxResult.dataIsLikelyNet && ` · ${t("effectiveTaxRate")} ~${(taxResult.effectiveRate * 100).toFixed(1)}%`}
+          <div className={`text-[10px] ${subCls}`}>{t(incomeOpen ? "tapToCollapse" : "tapForDetails")}</div>
+          <div className={`overflow-hidden transition-all duration-300 ease-in-out ${incomeOpen ? "max-h-[600px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+            {(() => {
+              const bd = grossIncome !== null ? computeTaxBreakdown(grossIncome, city.country, city.id, s.rates?.rates) : null;
+              if (!bd) return null;
+              const fmt = (v: number) => `${bd.currencyCode} ${Math.round(Math.abs(v)).toLocaleString()}`;
+              const fmtUser = (usd: number) => { const r = s.rates?.rates; const val = r && s.currency !== "USD" ? usd * (r[s.currency] ?? 1) : usd; return `${s.currency} ${Math.round(val).toLocaleString()}`; };
+              const redCls = darkMode ? "text-rose-400" : "text-rose-500";
+              const greenCls = darkMode ? "text-green-400" : "text-green-600";
+              return (
+                <div className={`text-[10px] ${subCls} space-y-0.5`}>
+                  {/* Gross */}
+                  <div className="flex justify-between font-bold"><span>{t("taxBkGross")}</span><span className={headCls}>{fmt(bd.grossLocal)}</span></div>
+                  {/* Sections */}
+                  {bd.sections.map((sec, i) => {
+                    const prev = i > 0 ? bd.sections[i - 1] : null;
+                    const needDivider = (sec.isInfo && (!prev || !prev.isInfo)) || (sec.isResult && prev?.isInfo);
+                    return (
+                    <div key={i}>
+                      {needDivider && <div className={`border-t ${divider} mt-0.5`} />}
+                      {sec.isResult ? (
+                        <div className="flex justify-between font-semibold pt-0.5">
+                          <span>{t(sec.label)}</span><span className={headCls}>{fmt(sec.total)}</span>
+                        </div>
+                      ) : sec.isInfo ? (
+                        <div className="flex justify-between pt-0.5">
+                          <span>{t(sec.label)}</span><span>{fmt(sec.total)}</span>
+                        </div>
+                      ) : (
+                        <div className={`flex justify-between font-semibold ${sec.total < 0 ? redCls : ""}`}>
+                          <span>{sec.total < 0 ? "−" : ""} {t(sec.label)}</span><span>{fmt(sec.total)}</span>
+                        </div>
+                      )}
+                      {sec.details && sec.details.map((d, j) => (
+                        <div key={j} className="flex justify-between pl-3 opacity-60">
+                          <span>{d.rate ? `${socialCompLabel(d.label, locale)} ${d.rate}` : d.label}</span><span>{d.capped ? "* " : ""}{fmt(d.amount)}</span>
+                        </div>
+                      ))}
+                      {sec.details?.some(d => d.capped) && (
+                        <div className="pl-3 opacity-40 text-[9px] mt-0.5">* {t("taxBkCapped")}</div>
+                      )}
+                    </div>
+                    );
+                  })}
+                  {/* Net */}
+                  <div className={`flex justify-between border-t pt-1 font-bold ${divider}`}><span>{t("taxBkNet")}</span><span className={greenCls}>{fmt(bd.netLocal)}</span></div>
+                  {incomeMode !== "gross" && taxResult !== null && !taxResult.dataIsLikelyNet && (
+                    <div className="flex justify-between mt-1"><span>{t("effectiveTaxRate")}</span><span>~{(taxResult.effectiveRate * 100).toFixed(1)}%</span></div>
+                  )}
+                  {bd.currencyCode !== s.currency && (
+                      <div className="flex justify-between">
+                        <span>→ {s.currency} <span className="opacity-60">(× {(s.currency === "USD" ? (1 / bd.fxRate) : (s.rates?.rates[s.currency] ?? 1) / bd.fxRate).toFixed(4)})</span></span>
+                        <span className={greenCls}>{fmtUser(bd.netUSD)}</span>
+                      </div>
+                  )}
+                  {bd.expatSchemeName && (() => {
+                    const expatResult = computeNetIncome(grossIncome!, city.country, city.id, "expatNet", s.rates?.rates);
+                    if (!expatResult.hasExpatScheme || expatResult.netUSD <= bd.netUSD) return null;
+                    const expatNetLocal = expatResult.netUSD * bd.fxRate;
+                    const expatRate = (expatResult.effectiveRate * 100).toFixed(1);
+                    const condKey: Record<string, string> = {
+                      expatScheme30Ruling: "expatCond30Ruling", expatSchemeBeckham: "expatCondBeckham",
+                      expatSchemeImpatriati: "expatCondImpatriati", expatSchemeNHR: "expatCondNHR",
+                      expatScheme19Flat: "expatCond19Flat", expatSchemeCPF: "expatCondCPF",
+                    };
+                    const tipKey = bd.expatSchemeName === "expatSchemeCPF" ? "expatTipCPF" : "expatTip";
+                    const converted = bd.currencyCode !== s.currency ? `（${fmtUser(expatResult.netUSD)}）` : "";
+                    return (
+                      <>
+                        <div className={`border-t ${divider} mt-1.5`} />
+                        <div className="mt-1 opacity-60">
+                          {t(tipKey, { scheme: t(bd.expatSchemeName!), cond: t(condKey[bd.expatSchemeName!] || ""), net: fmt(expatNetLocal), converted, rate: expatRate })}
+                        </div>
+                      </>
+                    );
+                  })()}
+                </div>
+              );
+            })()}
           </div>
-        </FeedPost>
+        </div>
 
         {/* Row 2: Safety + Healthcare + Freedom (大) */}
-        <div className={`py-3.5 border-b ${divider}`}>
+        <div className={`py-3.5 border-b ${divider} cursor-pointer select-none`} onClick={() => setShfOpen(!shfOpen)}>
           <div className="flex items-center gap-1.5 mb-1.5">
-            <span className={`text-xs font-extrabold ${headCls}`}>{t("safetyHealthFreedomTitle")}</span>
-            <button onClick={() => setShfOpen(!shfOpen)} className={`ml-auto text-xs ${subCls} transition-transform duration-200 ${shfOpen ? "rotate-180" : ""}`}>▼</button>
+            <span className={`text-xs font-extrabold ${headCls}`}>{t("basicSecurityTitle")}</span>
+            <span className={`ml-auto text-xs ${subCls} transition-transform duration-200 ${shfOpen ? "rotate-180" : ""}`}>▼</span>
           </div>
           <div className="flex gap-4 mb-1 flex-wrap">
             <div>
@@ -221,7 +284,34 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
           </div>
         </FeedPost>
 
-        {/* Row 5: Work (小) */}
+        {/* Row 5: Living Cost (中) */}
+        <FeedPost title={t("monthlyCost")} darkMode={darkMode} cardValCls={cardValCls}>
+          <div className="flex gap-4 mb-1 flex-wrap">
+            <div>
+              <div className={`text-2xl font-black ${cardValCls(tierLow(allCosts, tierCost))}`}>
+                {compactVal(tierCost)}
+              </div>
+              <div className={`text-[9px] ${labelCls}`}>{t("monthlyCostWithTier")}</div>
+            </div>
+            <div>
+              <div className={`text-2xl font-black ${headCls}`}>
+                {city.monthlyRent != null ? compactVal(city.monthlyRent) : "—"}
+              </div>
+              <div className={`text-[9px] ${labelCls}`}>{t("avgMonthlyRent1BR")}</div>
+            </div>
+            <div>
+              <div className={`text-2xl font-black ${savings !== null ? cardValCls(tierHigh(allSavings, savings)) : headCls}`}>
+                {savings !== null ? compactVal(savings) : "—"}
+              </div>
+              <div className={`text-[9px] ${labelCls}`}>{t("yearlySavings")}</div>
+            </div>
+          </div>
+          <div className={`text-[10px] ${subCls}`}>
+            {t("savingsRateLabel")} {savingsRate}%
+          </div>
+        </FeedPost>
+
+        {/* Row 6: Work (小) */}
         <FeedPost title={t("annualWorkHours")} darkMode={darkMode} cardValCls={cardValCls}>
           <div className="flex gap-4 mb-1 flex-wrap">
             <div>

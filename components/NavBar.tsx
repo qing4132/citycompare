@@ -3,7 +3,7 @@
 import { useState, useEffect, forwardRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { CostTier, IncomeMode } from "@/lib/types";
+import type { CostTier } from "@/lib/types";
 import { LANGUAGE_LABELS, PROFESSION_TRANSLATIONS } from "@/lib/i18n";
 import { POPULAR_CURRENCIES } from "@/lib/constants";
 import { CITY_SLUGS } from "@/lib/citySlug";
@@ -235,7 +235,7 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
                             <label className="flex flex-col gap-0.5">
                                 <span className={labelCls}>{t("salaryMultiplier")}</span>
                                 <select value={s.salaryMultiplier} onChange={e => s.setSalaryMultiplier(parseFloat(e.target.value))} className={selectCls}>
-                                    {[0.5, 0.7, 0.8, 1.0, 1.2, 1.5, 2.0, 2.5, 3.0].map(m => <option key={m} value={m}>×{m.toFixed(1)}</option>)}
+                                    {[0.6, 0.8, 1, 1.5, 2, 3, 5].map(m => <option key={m} value={m}>{t(`salaryTier_${m}`)}</option>)}
                                 </select>
                             </label>
                             <label className="flex flex-col gap-0.5">
@@ -244,14 +244,7 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
                                     {(["moderate", "budget"] as const).map(tier => <option key={tier} value={tier}>{t(`costTier${tier.charAt(0).toUpperCase()}${tier.slice(1)}`)}</option>)}
                                 </select>
                             </label>
-                            <label className="flex flex-col gap-0.5">
-                                <span className={labelCls}>{t("settingIncomeMode")}</span>
-                                <select value={s.incomeMode} onChange={e => s.setIncomeMode(e.target.value as IncomeMode)} className={selectCls}>
-                                    <option value="gross">{t("incomeModeGross")}</option>
-                                    <option value="net">{t("incomeModeNet")}</option>
-                                    <option value="expatNet">{t("incomeModeExpatNet")}</option>
-                                </select>
-                            </label>
+
                             <label className="flex flex-col gap-0.5">
                                 <span className={labelCls}>{t("settingLanguage")}</span>
                                 <select value={locale} onChange={e => { sessionStorage.setItem("_settingsOpen", "1"); s.setLocale(e.target.value as any); }} className={selectCls}>

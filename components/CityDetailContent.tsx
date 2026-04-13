@@ -265,15 +265,15 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
           <div className="flex gap-4 mb-1 flex-wrap">
             <div>
               <div className={`text-[45px] font-black leading-none ${cardValCls(tierHigh(allSafety, city.safetyIndex))}`}>{city.safetyIndex.toFixed(1)}</div>
-              <div className={`text-[12px] ${labelCls}`}>{t("safetyShort")}</div>
+              <div className={`text-[12px] ${labelCls}`}>{t("safetyShort")} <span className={`font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>#{rankHigher(allSafety, city.safetyIndex)}/{n}</span></div>
             </div>
             <div>
               <div className={`text-[45px] font-black leading-none ${cardValCls(tierHigh(allHealth, city.healthcareIndex))}`}>{city.healthcareIndex.toFixed(1)}</div>
-              <div className={`text-[12px] ${labelCls}`}>{t("healthcareShort")}</div>
+              <div className={`text-[12px] ${labelCls}`}>{t("healthcareShort")} <span className={`font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>#{rankHigher(allHealth, city.healthcareIndex)}/{n}</span></div>
             </div>
             <div>
               <div className={`text-[45px] font-black leading-none ${cardValCls(tierHigh(allGovernance, city.governanceIndex))}`}>{city.governanceIndex.toFixed(1)}</div>
-              <div className={`text-[12px] ${labelCls}`}>{t("governanceShort")}</div>
+              <div className={`text-[12px] ${labelCls}`}>{t("governanceShort")} <span className={`font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>#{rankHigher(allGovernance, city.governanceIndex)}/{n}</span></div>
             </div>
           </div>
           <div className={`text-[14px] ${subCls}`}>{t(shfOpen ? "shfTapToCollapse" : "shfTapForDetails")}</div>
@@ -283,7 +283,6 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               const greenCls = darkMode ? "text-green-400" : "text-green-600";
               const redCls = darkMode ? "text-rose-400" : "text-rose-500";
               const rowBdr = darkMode ? "border-slate-800" : "border-slate-50";
-              const dashBdr = darkMode ? "border-amber-600" : "border-amber-400";
 
               // Cache sorted values for percentile computation
               const cache: Record<string, number[]> = {};
@@ -310,7 +309,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                   { label: `${t("safetyHomicide")} (25%)`, val: city.homicideRate, range: "0.2–41", field: "homicideRate", inv: true, fmt: v => v.toFixed(1) },
                   { label: `${t("safetyGpi")} (20%)`, val: city.gpiScore, range: "1.2–3.7", field: "gpiScore", inv: true, fmt: v => v.toFixed(2) },
                   { label: `${t("safetyGallup")} (15%)`, val: city.gallupLawOrder, range: "45–97", field: "gallupLawOrder", fmt: v => String(Math.round(v)) },
-                  { label: `WPS (10%)`, val: city.wpsIndex, range: "0.4–0.9", field: "wpsIndex", fmt: v => v.toFixed(2) },
+                  { label: `${t("wpsIndex")} (10%)`, val: city.wpsIndex, range: "0.4–0.9", field: "wpsIndex", fmt: v => v.toFixed(2) },
                 ]},
                 { name: t("healthcareShort"), score: city.healthcareIndex, subs: [
                   { label: `${t("doctorsPerThousand")} (25%)`, val: city.doctorsPerThousand, range: "0.2–7.0", field: "doctorsPerThousand", fmt: v => v.toFixed(1) },
@@ -324,7 +323,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                   { label: `${t("govEffect")} (25%)`, val: city.govEffectiveness, range: "21–96", field: "govEffectiveness", fmt: v => v.toFixed(1) },
                   { label: `${t("ruleLaw")} (20%)`, val: city.wjpRuleLaw, range: "0.3–0.9", field: "wjpRuleLaw", fmt: v => v.toFixed(2) },
                   { label: `${t("pressFreedom")} (15%)`, val: city.pressFreedomScore, range: "8–92", field: "pressFreedomScore", fmt: v => String(Math.round(v)) },
-                  { label: `MIPEX (15%)`, val: city.mipexScore, range: "10–86", field: "mipexScore", fmt: v => String(Math.round(v)) },
+                  { label: `${t("mipexIndex")} (15%)`, val: city.mipexScore, range: "10–86", field: "mipexScore", fmt: v => String(Math.round(v)) },
                 ]},
               ];
 
@@ -349,7 +348,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                           const missing = s.val == null;
                           const j = judge(s.val, s.field, !s.inv);
                           return (
-                            <div key={s.field} className={`flex items-center py-0.5 pl-2 ${missing ? `border-l-2 border-dashed ${dashBdr} opacity-50` : `border-b ${rowBdr}`}`}>
+                            <div key={s.field} className={`flex items-center py-0.5 pl-2 border-b ${rowBdr} ${missing ? "opacity-40" : ""}`}>
                               <span className="flex-1 min-w-0 truncate">{s.label}</span>
                               <span className={`w-11 text-right font-semibold shrink-0 ${missing ? "" : headCls}`}>{missing ? "—" : s.fmt(s.val!)}</span>
                               <span className="w-[50px] text-right text-[11px] shrink-0">{s.range}</span>

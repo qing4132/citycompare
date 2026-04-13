@@ -265,7 +265,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               <span className={cardValCls(tierHigh(allSafety, city.safetyIndex))}>#{rankHigher(allSafety, city.safetyIndex)}</span>
               {"\u2003"}<span className={cardValCls(tierHigh(allHealth, city.healthcareIndex))}>#{rankHigher(allHealth, city.healthcareIndex)}</span>
               {"\u2003"}<span className={cardValCls(tierHigh(allGovernance, city.governanceIndex))}>#{rankHigher(allGovernance, city.governanceIndex)}</span>
-              <span className={subCls}> / {n}</span>
+              {" "}/ {n}
             </span>
           </div>
           <div className="flex gap-4 mb-1 flex-wrap">

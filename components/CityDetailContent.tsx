@@ -261,11 +261,11 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
           role="button" aria-expanded={shfOpen} tabIndex={0} onKeyDown={e => e.key === "Enter" && setShfOpen(!shfOpen)}>
           <div className="flex items-center gap-1.5 mb-1.5">
             <span className={`text-[15px] font-extrabold ${headCls}`}>{t("basicSecurityTitle")}</span>
-            <span className={`ml-auto text-[13px] font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>
+            <span className="ml-auto text-[13px] font-semibold">
               <span className={cardValCls(tierHigh(allSafety, city.safetyIndex))}>#{rankHigher(allSafety, city.safetyIndex)}</span>
               {"\u2003"}<span className={cardValCls(tierHigh(allHealth, city.healthcareIndex))}>#{rankHigher(allHealth, city.healthcareIndex)}</span>
               {"\u2003"}<span className={cardValCls(tierHigh(allGovernance, city.governanceIndex))}>#{rankHigher(allGovernance, city.governanceIndex)}</span>
-              {" "}/ {n}
+              <span className={headCls}> / {n}</span>
             </span>
           </div>
           <div className="flex gap-4 mb-1 flex-wrap">

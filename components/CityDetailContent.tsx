@@ -339,11 +339,13 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                     const total = g.subs.length;
                     return (
                       <div key={gi}>
-                        {gi > 0 && <div className={`border-t ${divider} mt-0.5`} />}
+                        {gi > 0 && <div className={`border-t ${divider} my-1`} />}
                         <div className="flex justify-between font-bold">
                           <span className={headCls}>
                             {g.name}
-                            {present < total && <span className={`ml-2 font-normal ${warnCls}`}>{present}/{total}</span>}
+                            <span className={`ml-2 text-[11px] font-normal ${present < total ? warnCls : subCls}`}>
+                              {present}/{total}{present < total && ` · ${t("confidenceMedium")}`}
+                            </span>
                           </span>
                           <span className={headCls}>{g.score.toFixed(1)}</span>
                         </div>
@@ -353,7 +355,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                           return (
                             <div key={s.field} className={`flex justify-between pl-3 ${missing ? "opacity-40" : "opacity-60"}`}>
                               <span>{s.label}</span>
-                              <span>{missing ? "—" : <>{s.fmt(s.val!)} <span className="text-[11px]">{s.range}</span> {sym(j)}</>}</span>
+                              <span>{missing ? "—" : s.fmt(s.val!)} <span className="text-[11px]">{s.range}</span> {sym(j)}</span>
                             </div>
                           );
                         })}

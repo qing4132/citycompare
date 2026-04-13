@@ -135,8 +135,10 @@ City overrides for US state tax, Canadian provincial tax, HK foreign worker rule
 Missing sub-indicator weights redistributed proportionally. Confidence: weighted % (0–100). Thresholds: ≥90 high, 70–89 medium, <70 low.
 
 **Color thresholds** (intentionally different by context):
-- Big numbers (45px): **top/bottom 20%** → green/red. Glanceable; color is scarce signal for extremes only.
-- Sub-indicator arrows (⬆︎/⬇︎): **top/bottom 30%** → green/red. Per-row reading aid; wider band so ~60% of rows get directional guidance instead of all "—".
+- Big numbers (45px): **top/bottom 20%** → green/rose. Glanceable; color is scarce signal for extremes only.
+- Sub-indicator arrows (⬆︎/⬇︎): **top/bottom 30%** → green/rose. Per-row reading aid; wider band so ~60% of rows get directional guidance instead of all "—".
+- Warning/confidence: **amber** (amber-400 dark / amber-600 light) for confidence issues; **rose** for safety warnings (active_conflict etc.). Safety warning overrides confidence warning.
+- Footnote symbols: `*` = social insurance cap reached; `†` = expat scheme advisory / weight redistribution note.
 
 ### Settings (`hooks/useSettings.ts`)
 
@@ -215,6 +217,16 @@ See [REDESIGN.md](REDESIGN.md) for full plan. Key progress:
 - [x] 基本保障 header shows 3 ranks (#S #H #G / 150) with per-index tier colors
 - [x] 税後年薪 rank color follows tier (green/red/neutral), "/ 150" uses body color
 - [x] Expandable sub-indicator style unified with tax breakdown: font-bold group headers, opacity-60 sub-rows, 4-column layout (label | value | range | arrow)
+- [x] Safety warnings unified into 基本保障 section (red `*` prefix, overrides confidence warning)
+- [x] Safety warning moved from HeroSection banner to 基本保障 grade area (same `* grade` + one-line note format)
+- [x] Safety warning text rewritten for broader scope (safety + healthcare + governance → "多项数据")
+- [x] governanceShort renamed: 治理→制度 / Governance→Institutions / ガバナンス→制度 / Gobernanza→Instituciones
+- [x] Missing sub-indicators: amber line-through on label, value/range/arrow left blank
+- [x] `† shfWeightNote` footnote in 基本保障 (conditional: only when any of 15 subs missing)
+- [x] `†` footnote added to expat tax scheme advisory (moved outside space-y container for correct spacing)
+- [x] Expand/collapse label delay: text switches immediately on open, delays 200ms on close (income + 基本保障)
+- [x] Sub-indicator row dividers removed in 基本保障 expanded view
+- [x] Confidence `*` grade display changed from `*B` to `* B` (space after asterisk)
 
 Pending:
 - [ ] SEO meta optimization

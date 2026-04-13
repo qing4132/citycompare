@@ -66,6 +66,11 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   const [shfOpen, setShfOpen] = useState(false);
   const [incomeOpen, setIncomeOpen] = useState(false);
   const [costOpen, setCostOpen] = useState(false);
+  // Delayed label: text switches immediately on open, delays 200ms on close
+  const [incomeLabel, setIncomeLabel] = useState(false);
+  const [shfLabel, setShfLabel] = useState(false);
+  useEffect(() => { if (incomeOpen) { setIncomeLabel(true); } else { const t = setTimeout(() => setIncomeLabel(false), 200); return () => clearTimeout(t); } }, [incomeOpen]);
+  useEffect(() => { if (shfOpen) { setShfLabel(true); } else { const t = setTimeout(() => setShfLabel(false), 200); return () => clearTimeout(t); } }, [shfOpen]);
   const [showCityInNav, setShowCityInNav] = useState(false);
   const [heroEl, setHeroEl] = useState<HTMLDivElement | null>(null);
   const heroRef = useCallback((node: HTMLDivElement | null) => setHeroEl(node), []);
@@ -165,7 +170,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
           role="button" aria-expanded={incomeOpen} tabIndex={0} onKeyDown={e => e.key === "Enter" && setIncomeOpen(!incomeOpen)}>
           <div className="flex items-center gap-1.5 mb-1.5">
             <span className={`text-[15px] font-extrabold ${headCls}`}>{t("incomeExpenseTitle")}</span>
-            <span className={`ml-auto text-[14px] ${subCls}`}>{t(incomeOpen ? "tapToCollapse" : "tapForDetails")}</span>
+            <span className={`ml-auto text-[14px] ${subCls}`}>{t(incomeLabel ? "tapToCollapse" : "tapForDetails")}</span>
           </div>
           <div className="flex gap-4 mb-1 flex-wrap">
             <div>
@@ -184,6 +189,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               const redCls = darkMode ? "text-rose-400" : "text-rose-500";
               const greenCls = darkMode ? "text-green-400" : "text-green-600";
               return (
+                <>
                 <div className={`text-[13px] ${subCls} space-y-0.5`}>
                   {/* Gross */}
                   <div className="flex justify-between font-bold"><span>{t("taxBkGross")}</span><span className={headCls}>{fmt(bd.grossLocal)}</span></div>
@@ -229,7 +235,8 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                       <span className={greenCls}>{fmtUser(bd.netUSD)}</span>
                     </div>
                   )}
-                  {bd.expatSchemeName && (() => {
+                </div>
+                {bd.expatSchemeName && (() => {
                     const expatResult = computeNetIncome(grossIncome!, city.country, city.id, "expatNet", s.rates?.rates);
                     if (!expatResult.hasExpatScheme || expatResult.netUSD <= bd.netUSD) return null;
                     const expatNetLocal = expatResult.netUSD * bd.fxRate;
@@ -243,14 +250,14 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                     const converted = bd.currencyCode !== s.currency ? `（${fmtUser(expatResult.netUSD)}）` : "";
                     return (
                       <>
-                        <div className={`border-t ${divider} mt-1.5`} />
-                        <div className="mt-1 opacity-60">
-                          {t(tipKey, { scheme: t(bd.expatSchemeName!), cond: t(condKey[bd.expatSchemeName!] || ""), net: fmt(expatNetLocal), converted, rate: expatRate })}
+                        <div className={`border-t ${divider} mt-2`} />
+                        <div className={`text-[13px] ${subCls} mt-1.5 opacity-60`}>
+                          † {t(tipKey, { scheme: t(bd.expatSchemeName!), cond: t(condKey[bd.expatSchemeName!] || ""), net: fmt(expatNetLocal), converted, rate: expatRate })}
                         </div>
                       </>
                     );
                   })()}
-                </div>
+                </>
               );
             })()}
           </div>
@@ -265,21 +272,27 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
           const allGreen = tierHigh(allSafety, city.safetyIndex) === "good" && tierHigh(allHealth, city.healthcareIndex) === "good" && tierHigh(allGovernance, city.governanceIndex) === "good";
           const grade = baseGrade === "A" && allGreen ? "S" : baseGrade;
           const confLevel = city.securityConfidence >= 90 ? "high" : city.securityConfidence >= 70 ? "medium" : "low";
-          const warnCls0 = darkMode ? "text-amber-400" : "text-amber-600";
-          const gradeDisplay = confLevel !== "high" ? `*${grade}` : grade;
-          const gradeCls = confLevel !== "high" ? warnCls0 : grade === "S" || grade === "A" ? (darkMode ? "text-green-400" : "text-green-600") : grade === "D" ? (darkMode ? "text-rose-400" : "text-rose-500") : headCls;
+          const hasSafetyWarn = !!city.safetyWarning;
+          const hasConfWarn = confLevel !== "high";
+          const hasWarn = hasSafetyWarn || hasConfWarn;
+          const warnAmber = darkMode ? "text-amber-400" : "text-amber-600";
+          const warnRed = darkMode ? "text-rose-400" : "text-rose-500";
+          const warnCls0 = hasSafetyWarn ? warnRed : warnAmber;
+          const gradeDisplay = hasWarn ? `* ${grade}` : grade;
+          const gradeCls = hasWarn ? warnCls0 : grade === "S" || grade === "A" ? (darkMode ? "text-green-400" : "text-green-600") : grade === "D" ? (darkMode ? "text-rose-400" : "text-rose-500") : headCls;
           return (
         <div className={`py-3.5 border-b ${divider} cursor-pointer select-none active:${darkMode ? "bg-slate-900" : "bg-slate-50"}`} onClick={() => setShfOpen(!shfOpen)}
           role="button" aria-expanded={shfOpen} tabIndex={0} onKeyDown={e => e.key === "Enter" && setShfOpen(!shfOpen)}>
           <div className="flex items-center gap-1.5 mb-1.5">
             <span className={`text-[15px] font-extrabold ${headCls}`}>{t("basicSecurityTitle")}</span>
-            <span className={`ml-auto text-[14px] ${subCls}`}>{t(shfOpen ? "shfTapToCollapse" : "shfTapForDetails")}</span>
+            <span className={`ml-auto text-[14px] ${subCls}`}>{t(shfLabel ? "shfTapToCollapse" : "shfTapForDetails")}</span>
           </div>
           <div className="flex gap-4 mb-1">
             <div>
               <div className={`text-[45px] font-black leading-none ${gradeCls}`}>{gradeDisplay}</div>
-              {confLevel === "medium" && <div className={`text-[12px] mt-0.5 ${warnCls0}`}>{t("confMedium")}</div>}
-              {confLevel === "low" && <div className={`text-[12px] mt-0.5 ${warnCls0}`}>{t("confLow")}</div>}
+              {hasSafetyWarn && <div className={`text-[12px] mt-0.5 ${warnRed}`}>* {city.safetyWarning === "active_conflict" ? t("safetyWarningConflict") : city.safetyWarning === "extreme_instability" ? t("safetyWarningInstability") : t("safetyWarningBlocked")}</div>}
+              {!hasSafetyWarn && confLevel === "medium" && <div className={`text-[12px] mt-0.5 ${warnAmber}`}>* {t("confMedium")}</div>}
+              {!hasSafetyWarn && confLevel === "low" && <div className={`text-[12px] mt-0.5 ${warnAmber}`}>* {t("confLow")}</div>}
             </div>
           </div>
           <div className={`overflow-hidden transition-all duration-300 ease-in-out ${shfOpen ? "max-h-[800px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
@@ -350,11 +363,11 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                           const missing = s.val == null;
                           const j = judge(s.val, s.field, !s.inv);
                           return (
-                            <div key={s.field} className={`flex items-center py-0.5 pl-3 border-b ${rowBdr} ${missing ? "opacity-40" : "opacity-60"}`}>
-                              <span className="flex-1 min-w-0 truncate">{s.label}</span>
-                              <span className="w-11 text-right shrink-0">{missing ? "—" : s.fmt(s.val!)}</span>
-                              <span className="w-[50px] text-right text-[11px] shrink-0">{s.range}</span>
-                              <span className="w-6 text-right shrink-0">{sym(j)}</span>
+                            <div key={s.field} className={`flex items-center py-0.5 pl-3 ${missing ? `opacity-40 ${warnCls}` : "opacity-60"}`}>
+                              <span className={`flex-1 min-w-0 truncate ${missing ? "line-through" : ""}`}>{s.label}</span>
+                              <span className="w-11 text-right shrink-0">{missing ? "" : s.fmt(s.val!)}</span>
+                              <span className="w-[50px] text-right text-[11px] shrink-0">{missing ? "" : s.range}</span>
+                              <span className="w-6 text-right shrink-0">{missing ? "" : sym(j)}</span>
                             </div>
                           );
                         })}
@@ -364,6 +377,15 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                 </div>
               );
             })()}
+            {[city.numbeoSafetyIndex, city.homicideRate, city.gpiScore, city.gallupLawOrder, city.wpsIndex,
+              city.doctorsPerThousand, city.hospitalBedsPerThousand, city.uhcCoverageIndex, city.lifeExpectancy, city.outOfPocketPct,
+              city.corruptionPerceptionIndex, city.govEffectiveness, city.wjpRuleLaw, city.pressFreedomScore, city.mipexScore,
+            ].some(v => v == null) && (
+              <>
+                <div className={`border-t ${divider} mt-2`} />
+                <div className={`text-[13px] ${subCls} mt-1.5 opacity-60`}>† {t("shfWeightNote")}</div>
+              </>
+            )}
           </div>
         </div>
           );

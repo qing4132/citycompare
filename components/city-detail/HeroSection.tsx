@@ -44,17 +44,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection({ cit
 
     return (
         <div className={`pb-4 border-b ${divider}`}>
-            {city.safetyWarning && (
-                <div className={`rounded-lg px-4 py-2 mb-4 text-[15px] flex items-start gap-2 ${city.safetyWarning === "active_conflict"
-                    ? (darkMode ? "bg-red-900/40 text-red-300 border border-red-500/50" : "bg-red-50 text-red-700 border border-red-300")
-                    : city.safetyWarning === "extreme_instability"
-                        ? (darkMode ? "bg-orange-900/40 text-orange-300 border border-orange-500/50" : "bg-orange-50 text-orange-700 border border-orange-300")
-                        : (darkMode ? "bg-amber-900/40 text-amber-300 border border-amber-500/50" : "bg-amber-50 text-amber-700 border border-amber-300")
-                    }`}>
-                    <span className="font-bold shrink-0">{t("safetyWarningTitle")}</span>
-                    <span>{city.safetyWarning === "active_conflict" ? t("safetyWarningConflict") : city.safetyWarning === "extreme_instability" ? t("safetyWarningInstability") : t("safetyWarningBlocked")}</span>
-                </div>
-            )}
+
             <div ref={ref}>
                 <div className="flex items-baseline justify-between">
                     <h1 className={`text-[24px] font-black ${headCls}`}>{flag} {cityName}</h1>

@@ -342,7 +342,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                       <div key={gi}>
                         {gi > 0 && <div className={`border-t ${divider} my-1`} />}
                         <div className="flex justify-between font-bold">
-                          <span className={headCls}>
+                          <span>
                             {g.name}
                             <span className={`ml-2 text-[11px] font-normal ${present < total ? warnCls : subCls}`}>
                               {present}/{total}{present < total && ` · ${t("confidenceMedium")}`}

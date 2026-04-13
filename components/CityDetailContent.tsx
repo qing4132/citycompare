@@ -354,7 +354,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
                           const missing = s.val == null;
                           const j = judge(s.val, s.field, !s.inv);
                           return (
-                            <div key={s.field} className={`flex items-center py-0.5 pl-3 border-b ${rowBdr} ${missing ? "opacity-40" : ""}`}>
+                            <div key={s.field} className={`flex items-center py-0.5 pl-3 border-b ${rowBdr} ${missing ? "opacity-40" : "opacity-60"}`}>
                               <span className="flex-1 min-w-0 truncate">{s.label}</span>
                               <span className="w-11 text-right shrink-0">{missing ? "—" : s.fmt(s.val!)}</span>
                               <span className="w-[50px] text-right text-[11px] shrink-0">{s.range}</span>

@@ -261,19 +261,25 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
           role="button" aria-expanded={shfOpen} tabIndex={0} onKeyDown={e => e.key === "Enter" && setShfOpen(!shfOpen)}>
           <div className="flex items-center gap-1.5 mb-1.5">
             <span className={`text-[15px] font-extrabold ${headCls}`}>{t("basicSecurityTitle")}</span>
+            <span className={`ml-auto text-[13px] font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>
+              <span className={cardValCls(tierHigh(allSafety, city.safetyIndex))}>#{rankHigher(allSafety, city.safetyIndex)}</span>
+              {" "}<span className={cardValCls(tierHigh(allHealth, city.healthcareIndex))}>#{rankHigher(allHealth, city.healthcareIndex)}</span>
+              {" "}<span className={cardValCls(tierHigh(allGovernance, city.governanceIndex))}>#{rankHigher(allGovernance, city.governanceIndex)}</span>
+              <span className={subCls}> / {n}</span>
+            </span>
           </div>
           <div className="flex gap-4 mb-1 flex-wrap">
             <div>
               <div className={`text-[45px] font-black leading-none ${cardValCls(tierHigh(allSafety, city.safetyIndex))}`}>{city.safetyIndex.toFixed(1)}</div>
-              <div className={`text-[12px] ${labelCls}`}>{t("safetyShort")} <span className={`font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>#{rankHigher(allSafety, city.safetyIndex)}/{n}</span></div>
+              <div className={`text-[12px] ${labelCls}`}>{t("safetyShort")}</div>
             </div>
             <div>
               <div className={`text-[45px] font-black leading-none ${cardValCls(tierHigh(allHealth, city.healthcareIndex))}`}>{city.healthcareIndex.toFixed(1)}</div>
-              <div className={`text-[12px] ${labelCls}`}>{t("healthcareShort")} <span className={`font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>#{rankHigher(allHealth, city.healthcareIndex)}/{n}</span></div>
+              <div className={`text-[12px] ${labelCls}`}>{t("healthcareShort")}</div>
             </div>
             <div>
               <div className={`text-[45px] font-black leading-none ${cardValCls(tierHigh(allGovernance, city.governanceIndex))}`}>{city.governanceIndex.toFixed(1)}</div>
-              <div className={`text-[12px] ${labelCls}`}>{t("governanceShort")} <span className={`font-semibold ${darkMode ? "text-green-400" : "text-green-600"}`}>#{rankHigher(allGovernance, city.governanceIndex)}/{n}</span></div>
+              <div className={`text-[12px] ${labelCls}`}>{t("governanceShort")}</div>
             </div>
           </div>
           <div className={`text-[14px] ${subCls}`}>{t(shfOpen ? "shfTapToCollapse" : "shfTapForDetails")}</div>

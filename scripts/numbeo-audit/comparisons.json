@@ -1,0 +1,7812 @@
+[
+  {
+    "id": 1,
+    "slug": "new-york",
+    "name": "纽约",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 45,
+        "new": 49.1,
+        "diff": 9.111111111111114,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 4500,
+        "new": 5942,
+        "diff": 32.044444444444444,
+        "source": "city-page",
+        "detail": "singlePerson=1661.4 + rent1BR=4280.72"
+      },
+      "monthlyRent": {
+        "old": 3200,
+        "new": 4281,
+        "diff": 33.78125,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 14889,
+        "new": 19711,
+        "diff": 32.38632547518302,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 2160,
+        "new": 4024,
+        "diff": 86.29629629629629,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1163 + rentOutside=2861"
+      },
+      "_colIndex": {
+        "value": 100,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 100,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 62.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 58.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "slug": "london",
+    "name": "伦敦",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 46,
+        "new": 46.2,
+        "diff": 0.4347826086956583,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3800,
+        "new": 4479,
+        "diff": 17.86842105263158,
+        "source": "city-page",
+        "detail": "singlePerson=1491.4 + rent1BR=2987.64"
+      },
+      "monthlyRent": {
+        "old": 2100,
+        "new": 2988,
+        "diff": 42.285714285714285,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 10185,
+        "new": 19409,
+        "diff": 90.5645557191949,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1710,
+        "new": 3367,
+        "diff": 96.90058479532165,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1044 + rentOutside=2323.1"
+      },
+      "_colIndex": {
+        "value": 61.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 28.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 67.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 57.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "slug": "tokyo",
+    "name": "东京",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 80,
+        "new": 75.8,
+        "diff": -5.2500000000000036,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 2243,
+        "diff": -29.90625,
+        "source": "city-page",
+        "detail": "singlePerson=980 + rent1BR=1262.84"
+      },
+      "monthlyRent": {
+        "old": 1400,
+        "new": 1263,
+        "diff": -9.785714285714285,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5465,
+        "new": 13268,
+        "diff": 142.78133577310155,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 1393,
+        "diff": -3.2638888888888893,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=686 + rentOutside=706.67"
+      },
+      "_colIndex": {
+        "value": 56.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 25.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 77.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 42.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "slug": "beijing",
+    "name": "北京",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 71,
+        "new": 74.7,
+        "diff": 5.211267605633807,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2200,
+        "new": 1681,
+        "diff": -23.59090909090909,
+        "source": "city-page",
+        "detail": "singlePerson=583.7 + rent1BR=1097.11"
+      },
+      "monthlyRent": {
+        "old": 1100,
+        "new": 1097,
+        "diff": -0.27272727272727276,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 6230,
+        "new": 12244,
+        "diff": 96.53290529695025,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 924,
+        "new": 984,
+        "diff": 6.493506493506493,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=409 + rentOutside=575.09"
+      },
+      "_colIndex": {
+        "value": 37.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 23.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 70.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 77,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 5,
+    "slug": "shanghai",
+    "name": "上海",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 74,
+        "new": 73.6,
+        "diff": -0.5405405405405482,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2600,
+        "new": 1472,
+        "diff": -43.38461538461538,
+        "source": "city-page",
+        "detail": "singlePerson=594.4 + rent1BR=877.34"
+      },
+      "monthlyRent": {
+        "old": 1300,
+        "new": 877,
+        "diff": -32.53846153846154,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7050,
+        "new": 14061,
+        "diff": 99.44680851063829,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1170,
+        "new": 962,
+        "diff": -17.77777777777778,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=416 + rentOutside=546.38"
+      },
+      "_colIndex": {
+        "value": 39,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 21.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 67.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 68,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "slug": "sydney",
+    "name": "悉尼",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 62,
+        "new": 66.1,
+        "diff": 6.612903225806442,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3800,
+        "new": 3737,
+        "diff": -1.6578947368421053,
+        "source": "city-page",
+        "detail": "singlePerson=1258 + rent1BR=2479.27"
+      },
+      "monthlyRent": {
+        "old": 2200,
+        "new": 2479,
+        "diff": 12.681818181818183,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7202,
+        "new": 12396,
+        "diff": 72.1188558733685,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1710,
+        "new": 2582,
+        "diff": 50.994152046783626,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=881 + rentOutside=1701.78"
+      },
+      "_colIndex": {
+        "value": 79.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 53.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 74.6,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 28.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 7,
+    "slug": "singapore",
+    "name": "新加坡",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 80,
+        "new": 77.7,
+        "diff": -2.8749999999999964,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3500,
+        "new": 3838,
+        "diff": 9.657142857142857,
+        "source": "city-page",
+        "detail": "singlePerson=1143.2 + rent1BR=2694.88"
+      },
+      "monthlyRent": {
+        "old": 2400,
+        "new": 2695,
+        "diff": 12.291666666666666,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 15340,
+        "new": 23622,
+        "diff": 53.98956975228162,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1575,
+        "new": 2876,
+        "diff": 82.6031746031746,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=800 + rentOutside=2075.97"
+      },
+      "_colIndex": {
+        "value": 88.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 64.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 71.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 32.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 8,
+    "slug": "paris",
+    "name": "巴黎",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 45,
+        "new": 42,
+        "diff": -6.666666666666667,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 2801,
+        "diff": -12.46875,
+        "source": "city-page",
+        "detail": "singlePerson=1238.7 + rent1BR=1562.02"
+      },
+      "monthlyRent": {
+        "old": 1500,
+        "new": 1562,
+        "diff": 4.133333333333333,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 9091,
+        "new": 14510,
+        "diff": 59.60840391596084,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 2059,
+        "diff": 42.986111111111114,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=867 + rentOutside=1192.03"
+      },
+      "_colIndex": {
+        "value": 79.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 39.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 77,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 63.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 9,
+    "slug": "toronto",
+    "name": "多伦多",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 56,
+        "new": 56.4,
+        "diff": 0.7142857142857117,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 2762,
+        "diff": -13.6875,
+        "source": "city-page",
+        "detail": "singlePerson=1100.9 + rent1BR=1661.35"
+      },
+      "monthlyRent": {
+        "old": 1800,
+        "new": 1661,
+        "diff": -7.722222222222222,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 6948,
+        "new": 8471,
+        "diff": 21.91997697179044,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 2221,
+        "diff": 54.23611111111111,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=771 + rentOutside=1450.06"
+      },
+      "_colIndex": {
+        "value": 66.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 36.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 74,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 37.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 10,
+    "slug": "hong-kong",
+    "name": "香港",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 73,
+        "new": 78.3,
+        "diff": 7.260273972602736,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 4000,
+        "new": 3254,
+        "diff": -18.65,
+        "source": "city-page",
+        "detail": "singlePerson=1078.5 + rent1BR=2175.71"
+      },
+      "monthlyRent": {
+        "old": 1900,
+        "new": 2176,
+        "diff": 14.526315789473685,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 16091,
+        "new": 25291,
+        "diff": 57.17481822136599,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1920,
+        "new": 2415,
+        "diff": 25.78125,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=755 + rentOutside=1660.02"
+      },
+      "_colIndex": {
+        "value": 73.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 54.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 66.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 11,
+    "slug": "los-angeles",
+    "name": "洛杉矶",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 37,
+        "new": 46.1,
+        "diff": 24.5945945945946,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 4200,
+        "new": 4199,
+        "diff": -0.023809523809523808,
+        "source": "city-page",
+        "detail": "singlePerson=1389.7 + rent1BR=2809.42"
+      },
+      "monthlyRent": {
+        "old": 2500,
+        "new": 2809,
+        "diff": 12.36,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5049,
+        "new": 8582,
+        "diff": 69.97425232719351,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 2016,
+        "new": 3608,
+        "diff": 78.96825396825396,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=973 + rentOutside=2634.71"
+      },
+      "_colIndex": {
+        "value": 81.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 71.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 61.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 68.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 12,
+    "slug": "san-francisco",
+    "name": "旧金山",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 31,
+        "new": 39.5,
+        "diff": 27.419354838709676,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 4800,
+        "new": 5029,
+        "diff": 4.770833333333333,
+        "source": "city-page",
+        "detail": "singlePerson=1615.5 + rent1BR=3413.44"
+      },
+      "monthlyRent": {
+        "old": 2800,
+        "new": 3413,
+        "diff": 21.892857142857142,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 6669,
+        "new": 10924,
+        "diff": 63.802669065826954,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 2304,
+        "new": 3902,
+        "diff": 69.35763888888889,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1131 + rentOutside=2770.83"
+      },
+      "_colIndex": {
+        "value": 96.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 75.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 49,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 13,
+    "slug": "chicago",
+    "name": "芝加哥",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 33,
+        "new": 34.5,
+        "diff": 4.545454545454546,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3600,
+        "new": 3661,
+        "diff": 1.6944444444444446,
+        "source": "city-page",
+        "detail": "singlePerson=1273 + rent1BR=2388.16"
+      },
+      "monthlyRent": {
+        "old": 1600,
+        "new": 2388,
+        "diff": 49.25,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1805,
+        "new": 3842,
+        "diff": 112.85318559556788,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1620,
+        "new": 2622,
+        "diff": 61.85185185185185,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=891 + rentOutside=1731.24"
+      },
+      "_colIndex": {
+        "value": 75.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 53.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 50.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 14,
+    "slug": "dubai",
+    "name": "迪拜",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 85,
+        "new": 83.9,
+        "diff": -1.2941176470588167,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3500,
+        "new": 3428,
+        "diff": -2.057142857142857,
+        "source": "city-page",
+        "detail": "singlePerson=1140 + rent1BR=2287.61"
+      },
+      "monthlyRent": {
+        "old": 1800,
+        "new": 2288,
+        "diff": 27.111111111111114,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4030,
+        "new": 7244,
+        "diff": 79.75186104218362,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1575,
+        "new": 2248,
+        "diff": 42.73015873015873,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=798 + rentOutside=1449.71"
+      },
+      "_colIndex": {
+        "value": 62.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 50.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 69.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 49.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 15,
+    "slug": "amsterdam",
+    "name": "阿姆斯特丹",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 57,
+        "new": 69.9,
+        "diff": 22.631578947368432,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3100,
+        "new": 3917,
+        "diff": 26.35483870967742,
+        "source": "city-page",
+        "detail": "singlePerson=1323.3 + rent1BR=2593.38"
+      },
+      "monthlyRent": {
+        "old": 1700,
+        "new": 2593,
+        "diff": 52.52941176470588,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 6821,
+        "new": 10957,
+        "diff": 60.636270341592144,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1395,
+        "new": 2869,
+        "diff": 105.66308243727597,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=926 + rentOutside=1942.3"
+      },
+      "_colIndex": {
+        "value": 81.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 53,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 75.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 27,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 16,
+    "slug": "zurich",
+    "name": "苏黎世",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 80,
+        "new": 76.7,
+        "diff": -4.1249999999999964,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 5200,
+        "new": 4963,
+        "diff": -4.5576923076923075,
+        "source": "city-page",
+        "detail": "singlePerson=1920 + rent1BR=3042.88"
+      },
+      "monthlyRent": {
+        "old": 2200,
+        "new": 3043,
+        "diff": 38.31818181818182,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 13977,
+        "new": 25071,
+        "diff": 79.37325606353295,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 2496,
+        "new": 3591,
+        "diff": 43.87019230769231,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1344 + rentOutside=2246.91"
+      },
+      "_colIndex": {
+        "value": 123.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 70.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 70.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 25.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 17,
+    "slug": "geneva",
+    "name": "日内瓦",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 76,
+        "new": 70.5,
+        "diff": -7.236842105263158,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 4900,
+        "new": 4721,
+        "diff": -3.653061224489796,
+        "source": "city-page",
+        "detail": "singlePerson=1833.5 + rent1BR=2887.34"
+      },
+      "monthlyRent": {
+        "old": 1900,
+        "new": 2887,
+        "diff": 51.94736842105263,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 15110,
+        "new": 23023,
+        "diff": 52.369291859695565,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 2352,
+        "new": 3502,
+        "diff": 48.894557823129254,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1283 + rentOutside=2218.97"
+      },
+      "_colIndex": {
+        "value": 118.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 63.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 69.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 24.2,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 18,
+    "slug": "munich",
+    "name": "慕尼黑",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 75,
+        "new": 78.3,
+        "diff": 4.399999999999996,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 2938,
+        "diff": -8.1875,
+        "source": "city-page",
+        "detail": "singlePerson=1265.6 + rent1BR=1672.53"
+      },
+      "monthlyRent": {
+        "old": 1200,
+        "new": 1673,
+        "diff": 39.416666666666664,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 8141,
+        "new": 13291,
+        "diff": 63.26004176391107,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 2265,
+        "diff": 57.291666666666664,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=886 + rentOutside=1379.17"
+      },
+      "_colIndex": {
+        "value": 77.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 40,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 77,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 24.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 19,
+    "slug": "berlin",
+    "name": "柏林",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 53,
+        "new": 55.3,
+        "diff": 4.339622641509429,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2600,
+        "new": 2735,
+        "diff": 5.1923076923076925,
+        "source": "city-page",
+        "detail": "singlePerson=1190.5 + rent1BR=1544.37"
+      },
+      "monthlyRent": {
+        "old": 1100,
+        "new": 1544,
+        "diff": 40.36363636363636,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5447,
+        "new": 8420,
+        "diff": 54.580503029190375,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1170,
+        "new": 1920,
+        "diff": 64.1025641025641,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=833 + rentOutside=1087.08"
+      },
+      "_colIndex": {
+        "value": 71,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 34.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 38,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 20,
+    "slug": "barcelona",
+    "name": "巴塞罗那",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 44,
+        "new": 47.8,
+        "diff": 8.63636363636363,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2200,
+        "new": 2644,
+        "diff": 20.18181818181818,
+        "source": "city-page",
+        "detail": "singlePerson=938.5 + rent1BR=1705.72"
+      },
+      "monthlyRent": {
+        "old": 1100,
+        "new": 1706,
+        "diff": 55.09090909090909,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4539,
+        "new": 7122,
+        "diff": 56.906807666886984,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 924,
+        "new": 1961,
+        "diff": 112.22943722943724,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=657 + rentOutside=1303.78"
+      },
+      "_colIndex": {
+        "value": 59.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 35,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 76.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 62.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 21,
+    "slug": "madrid",
+    "name": "马德里",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 54,
+        "new": 70.9,
+        "diff": 31.296296296296305,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2200,
+        "new": 2446,
+        "diff": 11.181818181818182,
+        "source": "city-page",
+        "detail": "singlePerson=963.5 + rent1BR=1482.72"
+      },
+      "monthlyRent": {
+        "old": 1000,
+        "new": 1483,
+        "diff": 48.3,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 8300,
+        "new": 9361,
+        "diff": 12.783132530120481,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 924,
+        "new": 1843,
+        "diff": 99.45887445887446,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=674 + rentOutside=1168.72"
+      },
+      "_colIndex": {
+        "value": 60.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 33.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 79.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 38.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 22,
+    "slug": "milan",
+    "name": "米兰",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 49,
+        "new": 46.2,
+        "diff": -5.714285714285708,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2600,
+        "new": 2962,
+        "diff": 13.923076923076923,
+        "source": "city-page",
+        "detail": "singlePerson=1231.1 + rent1BR=1730.67"
+      },
+      "monthlyRent": {
+        "old": 1200,
+        "new": 1731,
+        "diff": 44.25,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 10150,
+        "new": 10985,
+        "diff": 8.226600985221674,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1170,
+        "new": 2076,
+        "diff": 77.43589743589745,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=862 + rentOutside=1214.65"
+      },
+      "_colIndex": {
+        "value": 76.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 39.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 70.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 67.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 23,
+    "slug": "rome",
+    "name": "罗马",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 47,
+        "new": 53.1,
+        "diff": 12.978723404255321,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2300,
+        "new": 2356,
+        "diff": 2.4347826086956523,
+        "source": "city-page",
+        "detail": "singlePerson=1005.9 + rent1BR=1349.83"
+      },
+      "monthlyRent": {
+        "old": 950,
+        "new": 1350,
+        "diff": 42.10526315789473,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 11870,
+        "new": 9062,
+        "diff": -23.656276326874472,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 966,
+        "new": 1658,
+        "diff": 71.63561076604555,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=704 + rentOutside=954.15"
+      },
+      "_colIndex": {
+        "value": 61.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 31,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 47.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 24,
+    "slug": "brussels",
+    "name": "布鲁塞尔",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 42,
+        "new": 44.3,
+        "diff": 5.476190476190469,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2800,
+        "new": 2492,
+        "diff": -11,
+        "source": "city-page",
+        "detail": "singlePerson=1170.8 + rent1BR=1321.46"
+      },
+      "monthlyRent": {
+        "old": 1100,
+        "new": 1321,
+        "diff": 20.09090909090909,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 10610,
+        "new": 5023,
+        "diff": -52.657869934024504,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1260,
+        "new": 1937,
+        "diff": 53.73015873015873,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=820 + rentOutside=1116.94"
+      },
+      "_colIndex": {
+        "value": 71.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 31.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 73.6,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 62.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 25,
+    "slug": "vienna",
+    "name": "维也纳",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 73,
+        "new": 70.5,
+        "diff": -3.4246575342465753,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2900,
+        "new": 2545,
+        "diff": -12.241379310344827,
+        "source": "city-page",
+        "detail": "singlePerson=1246 + rent1BR=1298.64"
+      },
+      "monthlyRent": {
+        "old": 1000,
+        "new": 1299,
+        "diff": 29.9,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 9830,
+        "new": 13622,
+        "diff": 38.575788402848424,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1305,
+        "new": 1812,
+        "diff": 38.85057471264368,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=872 + rentOutside=940.05"
+      },
+      "_colIndex": {
+        "value": 75.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 28.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 79.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 15.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 26,
+    "slug": "prague",
+    "name": "布拉格",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 71,
+        "new": 75.3,
+        "diff": 6.0563380281690105,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1800,
+        "new": 2215,
+        "diff": 23.055555555555557,
+        "source": "city-page",
+        "detail": "singlePerson=992 + rent1BR=1222.93"
+      },
+      "monthlyRent": {
+        "old": 700,
+        "new": 1223,
+        "diff": 74.71428571428571,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 9685,
+        "new": 10120,
+        "diff": 4.491481672689726,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 756,
+        "new": 1744,
+        "diff": 130.68783068783068,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=694 + rentOutside=1049.87"
+      },
+      "_colIndex": {
+        "value": 59.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 29.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 74.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 33,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 27,
+    "slug": "warsaw",
+    "name": "华沙",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 68,
+        "new": 74.6,
+        "diff": 9.705882352941169,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1900,
+        "new": 2148,
+        "diff": 13.052631578947368,
+        "source": "city-page",
+        "detail": "singlePerson=931.5 + rent1BR=1216.67"
+      },
+      "monthlyRent": {
+        "old": 650,
+        "new": 1217,
+        "diff": 87.23076923076924,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 9005,
+        "new": 6347,
+        "diff": -29.516935036091063,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 798,
+        "new": 1612,
+        "diff": 102.00501253132832,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=652 + rentOutside=960.11"
+      },
+      "_colIndex": {
+        "value": 53.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 26.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 58.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 59.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 28,
+    "slug": "lisbon",
+    "name": "里斯本",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 58,
+        "new": 66.8,
+        "diff": 15.172413793103443,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1900,
+        "new": 2480,
+        "diff": 30.526315789473685,
+        "source": "city-page",
+        "detail": "singlePerson=868.8 + rent1BR=1610.75"
+      },
+      "monthlyRent": {
+        "old": 900,
+        "new": 1611,
+        "diff": 79,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 9340,
+        "new": 7832,
+        "diff": -16.14561027837259,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 798,
+        "new": 1836,
+        "diff": 130.0751879699248,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=608 + rentOutside=1227.98"
+      },
+      "_colIndex": {
+        "value": 54.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 35.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 72.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 37.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 29,
+    "slug": "athens",
+    "name": "雅典",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 52,
+        "new": 44.9,
+        "diff": -13.653846153846155,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1700,
+        "new": 1690,
+        "diff": -0.5882352941176471,
+        "source": "city-page",
+        "detail": "singlePerson=954.8 + rent1BR=735.32"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 735,
+        "diff": 33.63636363636363,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5763,
+        "new": 4175,
+        "diff": -27.555092833593616,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 714,
+        "new": 1280,
+        "diff": 79.27170868347339,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=668 + rentOutside=611.75"
+      },
+      "_colIndex": {
+        "value": 57,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 58.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 55.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 30,
+    "slug": "istanbul",
+    "name": "伊斯坦布尔",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 53,
+        "new": 51.9,
+        "diff": -2.07547169811321,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1300,
+        "new": 1836,
+        "diff": 41.23076923076923,
+        "source": "city-page",
+        "detail": "singlePerson=764.5 + rent1BR=1071.68"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 1072,
+        "diff": 114.39999999999999,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5155,
+        "new": 3265,
+        "diff": -36.66343355965083,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 520,
+        "new": 1176,
+        "diff": 126.15384615384615,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=535 + rentOutside=640.89"
+      },
+      "_colIndex": {
+        "value": 45.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 22.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 70.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 67.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 31,
+    "slug": "mexico-city",
+    "name": "墨西哥城",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 27,
+        "new": 33.5,
+        "diff": 24.074074074074073,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1800,
+        "new": 1975,
+        "diff": 9.722222222222223,
+        "source": "city-page",
+        "detail": "singlePerson=806.1 + rent1BR=1169"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 1169,
+        "diff": 112.54545454545455,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7148,
+        "new": 3796,
+        "diff": -46.894236149972016,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 756,
+        "new": 1336,
+        "diff": 76.71957671957672,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=564 + rentOutside=771.26"
+      },
+      "_colIndex": {
+        "value": 48.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 27.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 80.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 32,
+    "slug": "sao-paulo",
+    "name": "圣保罗",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 25,
+        "new": 30.2,
+        "diff": 20.799999999999997,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2000,
+        "new": 1421,
+        "diff": -28.95,
+        "source": "city-page",
+        "detail": "singlePerson=716 + rent1BR=705.49"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 705,
+        "diff": 28.18181818181818,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 8718,
+        "new": 2905,
+        "diff": -66.6781371874283,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 840,
+        "new": 964,
+        "diff": 14.761904761904763,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=501 + rentOutside=462.52"
+      },
+      "_colIndex": {
+        "value": 41.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 16.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 60.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 79.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 33,
+    "slug": "rio-de-janeiro",
+    "name": "里约热内卢",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 22,
+        "new": 24.7,
+        "diff": 12.27272727272727,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1700,
+        "new": 1302,
+        "diff": -23.411764705882355,
+        "source": "city-page",
+        "detail": "singlePerson=642.9 + rent1BR=659.24"
+      },
+      "monthlyRent": {
+        "old": 650,
+        "new": 659,
+        "diff": 1.3846153846153846,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3858,
+        "new": 2911,
+        "diff": -24.54639709694142,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 714,
+        "new": 808,
+        "diff": 13.165266106442578,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=450 + rentOutside=358.08"
+      },
+      "_colIndex": {
+        "value": 36.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 12.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 46.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 67.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 34,
+    "slug": "miami",
+    "name": "迈阿密",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 49,
+        "new": 46.7,
+        "diff": -4.693877551020402,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3800,
+        "new": 4448,
+        "diff": 17.05263157894737,
+        "source": "city-page",
+        "detail": "singlePerson=1437.7 + rent1BR=3010.43"
+      },
+      "monthlyRent": {
+        "old": 2000,
+        "new": 3010,
+        "diff": 50.5,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4396,
+        "new": 7081,
+        "diff": 61.07825295723385,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1710,
+        "new": 3097,
+        "diff": 81.11111111111111,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1006 + rentOutside=2090.91"
+      },
+      "_colIndex": {
+        "value": 83.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 65.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 63,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 39.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 35,
+    "slug": "washington",
+    "name": "华盛顿",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 51,
+        "new": 40.1,
+        "diff": -21.37254901960784,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 4000,
+        "new": 4245,
+        "diff": 6.125,
+        "source": "city-page",
+        "detail": "singlePerson=1558.1 + rent1BR=2687.39"
+      },
+      "monthlyRent": {
+        "old": 1700,
+        "new": 2687,
+        "diff": 58.05882352941176,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 10024,
+        "new": 8616,
+        "diff": -14.046288906624103,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1920,
+        "new": 3190,
+        "diff": 66.14583333333334,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1091 + rentOutside=2099.12"
+      },
+      "_colIndex": {
+        "value": 89.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 66,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 71,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 42.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 36,
+    "slug": "boston",
+    "name": "波士顿",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 58,
+        "new": 60,
+        "diff": 3.4482758620689653,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3900,
+        "new": 4912,
+        "diff": 25.94871794871795,
+        "source": "city-page",
+        "detail": "singlePerson=1433.9 + rent1BR=3477.64"
+      },
+      "monthlyRent": {
+        "old": 1500,
+        "new": 3478,
+        "diff": 131.86666666666667,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3820,
+        "new": 12896,
+        "diff": 237.59162303664922,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1755,
+        "new": 3543,
+        "diff": 101.88034188034187,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1004 + rentOutside=2538.93"
+      },
+      "_colIndex": {
+        "value": 85.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 72.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 69,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 32.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 37,
+    "slug": "seattle",
+    "name": "西雅图",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 40,
+        "new": 44.8,
+        "diff": 11.999999999999993,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 4200,
+        "new": 4019,
+        "diff": -4.309523809523809,
+        "source": "city-page",
+        "detail": "singlePerson=1576.7 + rent1BR=2442.06"
+      },
+      "monthlyRent": {
+        "old": 1800,
+        "new": 2442,
+        "diff": 35.66666666666667,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 22160,
+        "new": 7706,
+        "diff": -65.22563176895308,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 2016,
+        "new": 3062,
+        "diff": 51.88492063492064,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1104 + rentOutside=1958.56"
+      },
+      "_colIndex": {
+        "value": 90.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 57.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 38.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 38,
+    "slug": "denver",
+    "name": "丹佛",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 52,
+        "new": 52,
+        "diff": 0,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3400,
+        "new": 3377,
+        "diff": -0.676470588235294,
+        "source": "city-page",
+        "detail": "singlePerson=1295.3 + rent1BR=2081.59"
+      },
+      "monthlyRent": {
+        "old": 1400,
+        "new": 2082,
+        "diff": 48.714285714285715,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 13785,
+        "new": 5566,
+        "diff": -59.6227783822996,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1530,
+        "new": 2573,
+        "diff": 68.16993464052288,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=907 + rentOutside=1666.46"
+      },
+      "_colIndex": {
+        "value": 75.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 45.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 68.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 44.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 39,
+    "slug": "austin",
+    "name": "奥斯汀",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 53,
+        "new": 56,
+        "diff": 5.660377358490567,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3500,
+        "new": 3199,
+        "diff": -8.6,
+        "source": "city-page",
+        "detail": "singlePerson=1145.7 + rent1BR=2053.65"
+      },
+      "monthlyRent": {
+        "old": 1600,
+        "new": 2054,
+        "diff": 28.375,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5569,
+        "new": 7259,
+        "diff": 30.346561321601722,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1575,
+        "new": 2228,
+        "diff": 41.460317460317455,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=802 + rentOutside=1425.94"
+      },
+      "_colIndex": {
+        "value": 68.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 45.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 42.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 40,
+    "slug": "vancouver",
+    "name": "温哥华",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 58,
+        "new": 57.1,
+        "diff": -1.551724137931032,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3100,
+        "new": 2985,
+        "diff": -3.7096774193548385,
+        "source": "city-page",
+        "detail": "singlePerson=1068.1 + rent1BR=1917.27"
+      },
+      "monthlyRent": {
+        "old": 1600,
+        "new": 1917,
+        "diff": 19.8125,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3307,
+        "new": 9098,
+        "diff": 175.11339582703357,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1395,
+        "new": 2356,
+        "diff": 68.88888888888889,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=748 + rentOutside=1608.66"
+      },
+      "_colIndex": {
+        "value": 67.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 35.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 71.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 25.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 41,
+    "slug": "montreal",
+    "name": "蒙特利尔",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 57,
+        "new": 67.2,
+        "diff": 17.894736842105267,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2500,
+        "new": 2272,
+        "diff": -9.120000000000001,
+        "source": "city-page",
+        "detail": "singlePerson=968.1 + rent1BR=1303.85"
+      },
+      "monthlyRent": {
+        "old": 1400,
+        "new": 1304,
+        "diff": -6.857142857142858,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2500,
+        "new": 5333,
+        "diff": 113.32,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1125,
+        "new": 1649,
+        "diff": 46.577777777777776,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=678 + rentOutside=971.69"
+      },
+      "_colIndex": {
+        "value": 60.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 27.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 61.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 33.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 42,
+    "slug": "melbourne",
+    "name": "墨尔本",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 62,
+        "new": 55.7,
+        "diff": -10.16129032258064,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3500,
+        "new": 2967,
+        "diff": -15.228571428571428,
+        "source": "city-page",
+        "detail": "singlePerson=1225.2 + rent1BR=1741.6"
+      },
+      "monthlyRent": {
+        "old": 1800,
+        "new": 1742,
+        "diff": -3.2222222222222223,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7466,
+        "new": 7512,
+        "diff": 0.6161264398607018,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1575,
+        "new": 2165,
+        "diff": 37.46031746031746,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=858 + rentOutside=1307.15"
+      },
+      "_colIndex": {
+        "value": 76.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 40.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 72.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 28.2,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 43,
+    "slug": "brisbane",
+    "name": "布里斯班",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 64,
+        "new": 61.9,
+        "diff": -3.281250000000002,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3100,
+        "new": 2922,
+        "diff": -5.741935483870968,
+        "source": "city-page",
+        "detail": "singlePerson=1053.5 + rent1BR=1868.49"
+      },
+      "monthlyRent": {
+        "old": 1400,
+        "new": 1868,
+        "diff": 33.42857142857143,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2051,
+        "new": 8039,
+        "diff": 291.9551438322769,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1395,
+        "new": 2093,
+        "diff": 50.03584229390681,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=737 + rentOutside=1355.86"
+      },
+      "_colIndex": {
+        "value": 70.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 39.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 71.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 32.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 44,
+    "slug": "auckland",
+    "name": "奥克兰",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 53,
+        "new": 49.4,
+        "diff": -6.792452830188682,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2800,
+        "new": 2349,
+        "diff": -16.107142857142858,
+        "source": "city-page",
+        "detail": "singlePerson=1043.7 + rent1BR=1304.96"
+      },
+      "monthlyRent": {
+        "old": 1300,
+        "new": 1305,
+        "diff": 0.38461538461538464,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3759,
+        "new": 7694,
+        "diff": 104.68209630220804,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1260,
+        "new": 1881,
+        "diff": 49.28571428571429,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=731 + rentOutside=1150.59"
+      },
+      "_colIndex": {
+        "value": 64.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 30.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 69.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 30.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 45,
+    "slug": "bangkok",
+    "name": "曼谷",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 56,
+        "new": 61.8,
+        "diff": 10.357142857142852,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1300,
+        "new": 1396,
+        "diff": 7.384615384615385,
+        "source": "city-page",
+        "detail": "singlePerson=693.6 + rent1BR=702.46"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 702,
+        "diff": 40.400000000000006,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2980,
+        "new": 6063,
+        "diff": 103.45637583892618,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 520,
+        "new": 814,
+        "diff": 56.53846153846154,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=486 + rentOutside=328.97"
+      },
+      "_colIndex": {
+        "value": 42.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 77.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 77.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 46,
+    "slug": "kuala-lumpur",
+    "name": "吉隆坡",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 53,
+        "new": 40.8,
+        "diff": -23.01886792452831,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1300,
+        "diff": 8.333333333333332,
+        "source": "city-page",
+        "detail": "singlePerson=613.7 + rent1BR=686.56"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 687,
+        "diff": 24.90909090909091,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2500,
+        "new": 3964,
+        "diff": 58.56,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 810,
+        "diff": 68.75,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=430 + rentOutside=380.46"
+      },
+      "_colIndex": {
+        "value": 38.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 14,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 69.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 64.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 47,
+    "slug": "ho-chi-minh-city",
+    "name": "胡志明市",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 58,
+        "new": 50,
+        "diff": -13.793103448275861,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 950,
+        "new": 1013,
+        "diff": 6.631578947368421,
+        "source": "city-page",
+        "detail": "singlePerson=461.4 + rent1BR=551.95"
+      },
+      "monthlyRent": {
+        "old": 400,
+        "new": 552,
+        "diff": 38,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2716,
+        "new": 4191,
+        "diff": 54.307805596465386,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 380,
+        "new": 611,
+        "diff": 60.78947368421053,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=323 + rentOutside=287.89"
+      },
+      "_colIndex": {
+        "value": 28.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 11.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 62.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 92.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 48,
+    "slug": "hanoi",
+    "name": "河内",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 63,
+        "new": 66.2,
+        "diff": 5.079365079365084,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 850,
+        "new": 910,
+        "diff": 7.0588235294117645,
+        "source": "city-page",
+        "detail": "singlePerson=463.3 + rent1BR=446.68"
+      },
+      "monthlyRent": {
+        "old": 450,
+        "new": 447,
+        "diff": -0.6666666666666667,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2042,
+        "new": 4302,
+        "diff": 110.67580803134183,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 340,
+        "new": 616,
+        "diff": 81.17647058823529,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=324 + rentOutside=292.06"
+      },
+      "_colIndex": {
+        "value": 28.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 9.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 56.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 89.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 49,
+    "slug": "bengaluru",
+    "name": "班加罗尔",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 50,
+        "new": 46.2,
+        "diff": -7.599999999999994,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1000,
+        "new": 662,
+        "diff": -33.800000000000004,
+        "source": "city-page",
+        "detail": "singlePerson=344.2 + rent1BR=317.66"
+      },
+      "monthlyRent": {
+        "old": 250,
+        "new": 318,
+        "diff": 27.200000000000003,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2675,
+        "new": 1804,
+        "diff": -32.5607476635514,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 400,
+        "new": 424,
+        "diff": 6,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=241 + rentOutside=183.38"
+      },
+      "_colIndex": {
+        "value": 21.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 8.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 82.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 50,
+    "slug": "mumbai",
+    "name": "孟买",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 46,
+        "new": 56.1,
+        "diff": 21.956521739130437,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1035,
+        "diff": -13.750000000000002,
+        "source": "city-page",
+        "detail": "singlePerson=388.2 + rent1BR=646.71"
+      },
+      "monthlyRent": {
+        "old": 200,
+        "new": 647,
+        "diff": 223.5,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2001,
+        "new": 6486,
+        "diff": 224.13793103448273,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 636,
+        "diff": 32.5,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=272 + rentOutside=363.88"
+      },
+      "_colIndex": {
+        "value": 25.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 18,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 83.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 51,
+    "slug": "new-delhi",
+    "name": "新德里",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 40,
+        "new": 41,
+        "diff": 2.5,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1000,
+        "new": 629,
+        "diff": -37.1,
+        "source": "city-page",
+        "detail": "singlePerson=369.9 + rent1BR=259.18"
+      },
+      "monthlyRent": {
+        "old": 250,
+        "new": 259,
+        "diff": 3.5999999999999996,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 933,
+        "new": 2540,
+        "diff": 172.2400857449089,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 400,
+        "new": 420,
+        "diff": 5,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=259 + rentOutside=160.6"
+      },
+      "_colIndex": {
+        "value": 22.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 7.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 90.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 52,
+    "slug": "nairobi",
+    "name": "内罗毕",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 29,
+        "new": 40.9,
+        "diff": 41.03448275862068,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 966,
+        "diff": -19.5,
+        "source": "city-page",
+        "detail": "singlePerson=537.6 + rent1BR=428.12"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 428,
+        "diff": 22.285714285714285,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2500,
+        "new": 1541,
+        "diff": -38.36,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 588,
+        "diff": 22.5,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=376 + rentOutside=211.39"
+      },
+      "_colIndex": {
+        "value": 31.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 10.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 63.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 79.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 53,
+    "slug": "cairo",
+    "name": "开罗",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 49,
+        "new": 50.2,
+        "diff": 2.4489795918367405,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 800,
+        "new": 570,
+        "diff": -28.749999999999996,
+        "source": "city-page",
+        "detail": "singlePerson=360 + rent1BR=209.96"
+      },
+      "monthlyRent": {
+        "old": 300,
+        "new": 210,
+        "diff": -30,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 750,
+        "new": 888,
+        "diff": 18.4,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 320,
+        "new": 419,
+        "diff": 30.9375,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=252 + rentOutside=166.86"
+      },
+      "_colIndex": {
+        "value": 21.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 5.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 46.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 90.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 54,
+    "slug": "tehran",
+    "name": "德黑兰",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 51,
+        "new": 42.8,
+        "diff": -16.078431372549026,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 800,
+        "new": 750,
+        "diff": -6.25,
+        "source": "city-page",
+        "detail": "singlePerson=323.4 + rent1BR=426.94"
+      },
+      "monthlyRent": {
+        "old": 200,
+        "new": 427,
+        "diff": 113.5,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 750,
+        "new": 1418,
+        "diff": 89.06666666666668,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 320,
+        "new": 488,
+        "diff": 52.5,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=226 + rentOutside=261.25"
+      },
+      "_colIndex": {
+        "value": 22.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 9.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 53.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 80.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 55,
+    "slug": "karachi",
+    "name": "卡拉奇",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 26,
+        "new": 42.6,
+        "diff": 63.846153846153854,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 750,
+        "new": 521,
+        "diff": -30.533333333333335,
+        "source": "city-page",
+        "detail": "singlePerson=378 + rent1BR=143.37"
+      },
+      "monthlyRent": {
+        "old": 150,
+        "new": 143,
+        "diff": -4.666666666666667,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1250,
+        "new": 738,
+        "diff": -40.96,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 285,
+        "new": 345,
+        "diff": 21.052631578947366,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=265 + rentOutside=80.65"
+      },
+      "_colIndex": {
+        "value": 21.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 3.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 57.6,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 89.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 56,
+    "slug": "islamabad",
+    "name": "伊斯兰堡",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 42,
+        "new": 69.3,
+        "diff": 64.99999999999999,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 800,
+        "new": 631,
+        "diff": -21.125,
+        "source": "city-page",
+        "detail": "singlePerson=396.4 + rent1BR=234.68"
+      },
+      "monthlyRent": {
+        "old": 180,
+        "new": 235,
+        "diff": 30.555555555555557,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4030,
+        "new": 1538,
+        "diff": -61.83622828784119,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 320,
+        "new": 403,
+        "diff": 25.937500000000004,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=277 + rentOutside=125.64"
+      },
+      "_colIndex": {
+        "value": 23.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 5.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 63.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 41.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 57,
+    "slug": "jakarta",
+    "name": "雅加达",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 50,
+        "new": 47.3,
+        "diff": -5.400000000000006,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1050,
+        "new": 861,
+        "diff": -18,
+        "source": "city-page",
+        "detail": "singlePerson=487.1 + rent1BR=373.59"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 374,
+        "diff": 6.857142857142858,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4000,
+        "new": 2850,
+        "diff": -28.749999999999996,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 420,
+        "new": 557,
+        "diff": 32.61904761904762,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=341 + rentOutside=216.19"
+      },
+      "_colIndex": {
+        "value": 29.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 11,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 57.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 84.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 58,
+    "slug": "manila",
+    "name": "马尼拉",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 41,
+        "new": 35.4,
+        "diff": -13.658536585365857,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 950,
+        "new": 1160,
+        "diff": 22.105263157894736,
+        "source": "city-page",
+        "detail": "singlePerson=593.8 + rent1BR=566.49"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 566,
+        "diff": 61.71428571428571,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1500,
+        "new": 4438,
+        "diff": 195.86666666666665,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 380,
+        "new": 685,
+        "diff": 80.26315789473685,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=416 + rentOutside=269.01"
+      },
+      "_colIndex": {
+        "value": 34.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 16,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 62.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 89.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 59,
+    "slug": "seoul",
+    "name": "首尔",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 75,
+        "new": 74.8,
+        "diff": -0.2666666666666705,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2600,
+        "new": 1912,
+        "diff": -26.461538461538463,
+        "source": "city-page",
+        "detail": "singlePerson=1043.3 + rent1BR=868.89"
+      },
+      "monthlyRent": {
+        "old": 900,
+        "new": 869,
+        "diff": -3.4444444444444446,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4000,
+        "new": 18309,
+        "diff": 357.72499999999997,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1170,
+        "new": 1309,
+        "diff": 11.880341880341879,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=730 + rentOutside=578.29"
+      },
+      "_colIndex": {
+        "value": 65.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 21.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 82.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 48.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 60,
+    "slug": "busan",
+    "name": "釜山",
+    "fields": {
+      "costModerate": {
+        "old": 1800,
+        "new": 1729,
+        "diff": -3.944444444444444,
+        "source": "city-page",
+        "detail": "singlePerson=1045.3 + rent1BR=683.22"
+      },
+      "monthlyRent": {
+        "old": 600,
+        "new": 683,
+        "diff": 13.833333333333334,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5000,
+        "new": 9712,
+        "diff": 94.24,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 756,
+        "new": 1063,
+        "diff": 40.60846560846561,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=732 + rentOutside=331.3"
+      }
+    }
+  },
+  {
+    "id": 61,
+    "slug": "taipei",
+    "name": "台北",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 85,
+        "new": 83.4,
+        "diff": -1.882352941176464,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1800,
+        "new": 1565,
+        "diff": -13.055555555555557,
+        "source": "city-page",
+        "detail": "singlePerson=840.7 + rent1BR=723.81"
+      },
+      "monthlyRent": {
+        "old": 800,
+        "new": 724,
+        "diff": -9.5,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1200,
+        "new": 14331,
+        "diff": 1094.25,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 756,
+        "new": 1070,
+        "diff": 41.53439153439153,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=588 + rentOutside=481.67"
+      },
+      "_colIndex": {
+        "value": 54,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 87.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 48.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 62,
+    "slug": "buenos-aires",
+    "name": "布宜诺斯艾利斯",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 29,
+        "new": 37,
+        "diff": 27.586206896551722,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1300,
+        "new": 1628,
+        "diff": 25.23076923076923,
+        "source": "city-page",
+        "detail": "singlePerson=876.2 + rent1BR=752.19"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 752,
+        "diff": 114.85714285714286,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1800,
+        "new": 2716,
+        "diff": 50.888888888888886,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 520,
+        "new": 1129,
+        "diff": 117.11538461538463,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=613 + rentOutside=516.03"
+      },
+      "_colIndex": {
+        "value": 50.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 68,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 51.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 63,
+    "slug": "santiago",
+    "name": "圣地亚哥",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 35,
+        "new": 35.9,
+        "diff": 2.571428571428567,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1800,
+        "new": 1343,
+        "diff": -25.38888888888889,
+        "source": "city-page",
+        "detail": "singlePerson=748.6 + rent1BR=594.58"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 595,
+        "diff": 19,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2500,
+        "new": 2814,
+        "diff": 12.559999999999999,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 756,
+        "new": 966,
+        "diff": 27.77777777777778,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=524 + rentOutside=441.77"
+      },
+      "_colIndex": {
+        "value": 43.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 13.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 70.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 64,
+    "slug": "bogota",
+    "name": "波哥大",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 26,
+        "new": 33.3,
+        "diff": 28.076923076923066,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1158,
+        "diff": -3.5000000000000004,
+        "source": "city-page",
+        "detail": "singlePerson=596.3 + rent1BR=561.6"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 562,
+        "diff": 60.57142857142858,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1800,
+        "new": 2223,
+        "diff": 23.5,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 832,
+        "diff": 73.33333333333333,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=417 + rentOutside=414.18"
+      },
+      "_colIndex": {
+        "value": 34.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 12.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 69.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 65,
+    "slug": "lima",
+    "name": "利马",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 21,
+        "new": 29.9,
+        "diff": 42.38095238095237,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1293,
+        "diff": 7.75,
+        "source": "city-page",
+        "detail": "singlePerson=575.4 + rent1BR=717.52"
+      },
+      "monthlyRent": {
+        "old": 300,
+        "new": 718,
+        "diff": 139.33333333333334,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7050,
+        "new": 2232,
+        "diff": -68.34042553191489,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 775,
+        "diff": 61.458333333333336,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=403 + rentOutside=372.45"
+      },
+      "_colIndex": {
+        "value": 35.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 13.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 58.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 84.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 67,
+    "slug": "johannesburg",
+    "name": "约翰内斯堡",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 19,
+        "new": 19.2,
+        "diff": 1.0526315789473648,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1600,
+        "new": 1239,
+        "diff": -22.5625,
+        "source": "city-page",
+        "detail": "singlePerson=746.2 + rent1BR=492.98"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 493,
+        "diff": -1.4000000000000001,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7000,
+        "new": 1049,
+        "diff": -85.0142857142857,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 672,
+        "new": 934,
+        "diff": 38.98809523809524,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=522 + rentOutside=411.53"
+      },
+      "_colIndex": {
+        "value": 41,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 13.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 60.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 62.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 68,
+    "slug": "cape-town",
+    "name": "开普敦",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 23,
+        "new": 26.5,
+        "diff": 15.217391304347828,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1500,
+        "new": 1760,
+        "diff": 17.333333333333336,
+        "source": "city-page",
+        "detail": "singlePerson=732.3 + rent1BR=1027.51"
+      },
+      "monthlyRent": {
+        "old": 600,
+        "new": 1028,
+        "diff": 71.33333333333334,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4500,
+        "new": 2204,
+        "diff": -51.022222222222226,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 630,
+        "new": 1160,
+        "diff": 84.12698412698413,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=513 + rentOutside=646.91"
+      },
+      "_colIndex": {
+        "value": 41.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 20.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 68.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 38.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 69,
+    "slug": "guadalajara",
+    "name": "瓜达拉哈拉",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 31,
+        "new": 37.6,
+        "diff": 21.290322580645167,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1400,
+        "new": 1608,
+        "diff": 14.857142857142858,
+        "source": "city-page",
+        "detail": "singlePerson=703 + rent1BR=905.12"
+      },
+      "monthlyRent": {
+        "old": 450,
+        "new": 905,
+        "diff": 101.11111111111111,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3500,
+        "new": 3254,
+        "diff": -7.0285714285714285,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 560,
+        "new": 1045,
+        "diff": 86.60714285714286,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=492 + rentOutside=552.56"
+      },
+      "_colIndex": {
+        "value": 43.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 19.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 78.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 59.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 70,
+    "slug": "san-jose",
+    "name": "圣何塞(哥斯达黎加)",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 42,
+        "new": 52,
+        "diff": 23.809523809523807,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1600,
+        "new": 4699,
+        "diff": 193.6875,
+        "source": "city-page",
+        "detail": "singlePerson=1522.1 + rent1BR=3176.67"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 3177,
+        "diff": 477.6363636363636,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3000,
+        "new": 9246,
+        "diff": 208.2,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 672,
+        "new": 3817,
+        "diff": 468.00595238095235,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1065 + rentOutside=2751.11"
+      },
+      "_colIndex": {
+        "value": 56.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 20.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 62.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 48.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 71,
+    "slug": "panama-city",
+    "name": "巴拿马城",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 43,
+        "new": 53.5,
+        "diff": 24.418604651162788,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1900,
+        "new": 2167,
+        "diff": 14.05263157894737,
+        "source": "city-page",
+        "detail": "singlePerson=821.8 + rent1BR=1344.71"
+      },
+      "monthlyRent": {
+        "old": 800,
+        "new": 1345,
+        "diff": 68.125,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5000,
+        "new": 3128,
+        "diff": -37.44,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 798,
+        "new": 1623,
+        "diff": 103.38345864661653,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=575 + rentOutside=1047.57"
+      },
+      "_colIndex": {
+        "value": 47.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 28.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 60.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 61.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 73,
+    "slug": "san-juan",
+    "name": "圣胡安",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 34,
+        "new": 33.2,
+        "diff": -2.35294117647058,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2300,
+        "new": 2910,
+        "diff": 26.521739130434785,
+        "source": "city-page",
+        "detail": "singlePerson=1206.1 + rent1BR=1703.75"
+      },
+      "monthlyRent": {
+        "old": 750,
+        "new": 1704,
+        "diff": 127.2,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4000,
+        "new": 7408,
+        "diff": 85.2,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 966,
+        "new": 1678,
+        "diff": 73.70600414078675,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=844 + rentOutside=834"
+      },
+      "_colIndex": {
+        "value": 70,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 31.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 63.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 75,
+    "slug": "abu-dhabi",
+    "name": "阿布扎比",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 89,
+        "new": 88.9,
+        "diff": -0.11235955056179137,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3300,
+        "new": 2843,
+        "diff": -13.84848484848485,
+        "source": "city-page",
+        "detail": "singlePerson=929.4 + rent1BR=1913.17"
+      },
+      "monthlyRent": {
+        "old": 1500,
+        "new": 1913,
+        "diff": 27.53333333333333,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2500,
+        "new": 4713,
+        "diff": 88.52,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1485,
+        "new": 1988,
+        "diff": 33.87205387205387,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=651 + rentOutside=1337.52"
+      },
+      "_colIndex": {
+        "value": 52.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 44.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 72.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 45.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 76,
+    "slug": "doha",
+    "name": "多哈",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 85,
+        "new": 84.5,
+        "diff": -0.5882352941176471,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 2909,
+        "diff": -9.09375,
+        "source": "city-page",
+        "detail": "singlePerson=936 + rent1BR=1973.22"
+      },
+      "monthlyRent": {
+        "old": 1600,
+        "new": 1973,
+        "diff": 23.3125,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2000,
+        "new": 4475,
+        "diff": 123.75,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 1960,
+        "diff": 36.11111111111111,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=655 + rentOutside=1304.62"
+      },
+      "_colIndex": {
+        "value": 52,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 43.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 73.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 59.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 77,
+    "slug": "manama",
+    "name": "麦纳麦",
+    "fields": {
+      "costModerate": {
+        "old": 2200,
+        "new": 1675,
+        "diff": -23.863636363636363,
+        "source": "city-page",
+        "detail": "singlePerson=788.3 + rent1BR=886.28"
+      },
+      "monthlyRent": {
+        "old": 700,
+        "new": 886,
+        "diff": 26.571428571428573,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2000,
+        "new": 2617,
+        "diff": 30.85,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 924,
+        "new": 1171,
+        "diff": 26.731601731601735,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=552 + rentOutside=619.63"
+      },
+      "_colIndex": {
+        "value": 44.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 21.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 67.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 62.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 78,
+    "slug": "riyadh",
+    "name": "利雅得",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 74,
+        "new": 75.4,
+        "diff": 1.8918918918918997,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2400,
+        "new": 2007,
+        "diff": -16.375,
+        "source": "city-page",
+        "detail": "singlePerson=869.3 + rent1BR=1137.23"
+      },
+      "monthlyRent": {
+        "old": 800,
+        "new": 1137,
+        "diff": 42.125,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3000,
+        "new": 2903,
+        "diff": -3.2333333333333334,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1008,
+        "new": 1483,
+        "diff": 47.12301587301587,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=609 + rentOutside=874.72"
+      },
+      "_colIndex": {
+        "value": 48.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 24.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 63.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 79,
+    "slug": "muscat",
+    "name": "马斯喀特",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 83,
+        "new": 81.4,
+        "diff": -1.9277108433734873,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2000,
+        "new": 1442,
+        "diff": -27.900000000000002,
+        "source": "city-page",
+        "detail": "singlePerson=804.6 + rent1BR=636.94"
+      },
+      "monthlyRent": {
+        "old": 650,
+        "new": 637,
+        "diff": -2,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3000,
+        "new": 2661,
+        "diff": -11.3,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 840,
+        "new": 982,
+        "diff": 16.904761904761905,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=563 + rentOutside=419.27"
+      },
+      "_colIndex": {
+        "value": 45.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 14.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 63.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 35.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 80,
+    "slug": "beirut",
+    "name": "贝鲁特",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 41,
+        "new": 53.3,
+        "diff": 29.999999999999993,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1710,
+        "diff": 42.5,
+        "source": "city-page",
+        "detail": "singlePerson=914.7 + rent1BR=794.83"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 795,
+        "diff": 59,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3500,
+        "new": 3828,
+        "diff": 9.37142857142857,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 1089,
+        "diff": 126.875,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=640 + rentOutside=449.2"
+      },
+      "_colIndex": {
+        "value": 51.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 19.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 93.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 81,
+    "slug": "amman",
+    "name": "安曼",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 58,
+        "new": 62.7,
+        "diff": 8.103448275862075,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1400,
+        "new": 1200,
+        "diff": -14.285714285714285,
+        "source": "city-page",
+        "detail": "singlePerson=756.6 + rent1BR=443.22"
+      },
+      "monthlyRent": {
+        "old": 400,
+        "new": 443,
+        "diff": 10.75,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2800,
+        "new": 1510,
+        "diff": -46.07142857142857,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 560,
+        "new": 813,
+        "diff": 45.17857142857143,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=530 + rentOutside=283.77"
+      },
+      "_colIndex": {
+        "value": 42.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 8.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.6,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 76.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 82,
+    "slug": "tel-aviv",
+    "name": "特拉维夫",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 63,
+        "new": 73.8,
+        "diff": 17.14285714285714,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 3630,
+        "diff": 13.4375,
+        "source": "city-page",
+        "detail": "singlePerson=1470 + rent1BR=2160.02"
+      },
+      "monthlyRent": {
+        "old": 1500,
+        "new": 2160,
+        "diff": 44,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1700,
+        "new": 21975,
+        "diff": 1192.6470588235293,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 2536,
+        "diff": 76.11111111111111,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1029 + rentOutside=1507.05"
+      },
+      "_colIndex": {
+        "value": 96.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 45.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 73.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 46.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 83,
+    "slug": "hyderabad",
+    "name": "海得拉巴",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 54,
+        "new": 57.4,
+        "diff": 6.296296296296294,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 850,
+        "new": 554,
+        "diff": -34.8235294117647,
+        "source": "city-page",
+        "detail": "singlePerson=334.4 + rent1BR=219.11"
+      },
+      "monthlyRent": {
+        "old": 200,
+        "new": 219,
+        "diff": 9.5,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1700,
+        "new": 1338,
+        "diff": -21.294117647058826,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 340,
+        "new": 358,
+        "diff": 5.294117647058823,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=234 + rentOutside=124.28"
+      },
+      "_colIndex": {
+        "value": 20.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 5.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 76,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 84,
+    "slug": "pune",
+    "name": "浦那",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 55,
+        "new": 58.7,
+        "diff": 6.727272727272733,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 800,
+        "new": 620,
+        "diff": -22.5,
+        "source": "city-page",
+        "detail": "singlePerson=354 + rent1BR=265.59"
+      },
+      "monthlyRent": {
+        "old": 200,
+        "new": 266,
+        "diff": 33,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2100,
+        "new": 2236,
+        "diff": 6.476190476190475,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 320,
+        "new": 425,
+        "diff": 32.8125,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=248 + rentOutside=177.22"
+      },
+      "_colIndex": {
+        "value": 22.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 6.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 71.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 85,
+    "slug": "kyiv",
+    "name": "基辅",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 55,
+        "new": 54.5,
+        "diff": -0.9090909090909091,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1100,
+        "new": 1217,
+        "diff": 10.636363636363637,
+        "source": "city-page",
+        "detail": "singlePerson=537.2 + rent1BR=680.12"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 680,
+        "diff": 94.28571428571428,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1400,
+        "new": 2723,
+        "diff": 94.5,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 440,
+        "new": 765,
+        "diff": 73.86363636363636,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=376 + rentOutside=388.97"
+      },
+      "_colIndex": {
+        "value": 32.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 13.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 58.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 64.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 86,
+    "slug": "bucharest",
+    "name": "布加勒斯特",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 60,
+        "new": 71.6,
+        "diff": 19.333333333333325,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1500,
+        "new": 1461,
+        "diff": -2.6,
+        "source": "city-page",
+        "detail": "singlePerson=789.2 + rent1BR=671.31"
+      },
+      "monthlyRent": {
+        "old": 400,
+        "new": 671,
+        "diff": 67.75,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1000,
+        "new": 4105,
+        "diff": 310.5,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 630,
+        "new": 997,
+        "diff": 58.25396825396826,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=552 + rentOutside=444.59"
+      },
+      "_colIndex": {
+        "value": 46.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 14.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 55.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 74.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 87,
+    "slug": "sofia",
+    "name": "索非亚",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 64,
+        "new": 61.4,
+        "diff": -4.062500000000002,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1602,
+        "diff": 33.5,
+        "source": "city-page",
+        "detail": "singlePerson=812.4 + rent1BR=789.55"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 790,
+        "diff": 125.71428571428571,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 850,
+        "new": 4355,
+        "diff": 412.35294117647055,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 1176,
+        "diff": 145,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=569 + rentOutside=607.08"
+      },
+      "_colIndex": {
+        "value": 48.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 58.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 67.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 88,
+    "slug": "zagreb",
+    "name": "萨格勒布",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 72,
+        "new": 78.7,
+        "diff": 9.30555555555556,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1600,
+        "new": 1821,
+        "diff": 13.8125,
+        "source": "city-page",
+        "detail": "singlePerson=936.1 + rent1BR=884.89"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 885,
+        "diff": 77,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1000,
+        "new": 5474,
+        "diff": 447.40000000000003,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 672,
+        "new": 1328,
+        "diff": 97.61904761904762,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=655 + rentOutside=672.52"
+      },
+      "_colIndex": {
+        "value": 53.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 19,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 35.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 89,
+    "slug": "belgrade",
+    "name": "贝尔格莱德",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 61,
+        "new": 62.3,
+        "diff": 2.131147540983602,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1719,
+        "diff": 43.25,
+        "source": "city-page",
+        "detail": "singlePerson=815.8 + rent1BR=903.27"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 903,
+        "diff": 158,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1400,
+        "new": 5225,
+        "diff": 273.2142857142857,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 480,
+        "new": 1182,
+        "diff": 146.25,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=571 + rentOutside=611.43"
+      },
+      "_colIndex": {
+        "value": 48.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 19.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 53.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 68.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 90,
+    "slug": "budapest",
+    "name": "布达佩斯",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 63,
+        "new": 66.3,
+        "diff": 5.238095238095234,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1600,
+        "new": 1804,
+        "diff": 12.75,
+        "source": "city-page",
+        "detail": "singlePerson=887.8 + rent1BR=916.61"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 917,
+        "diff": 83.39999999999999,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1700,
+        "new": 6021,
+        "diff": 254.1764705882353,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 672,
+        "new": 1315,
+        "diff": 95.68452380952381,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=621 + rentOutside=693.44"
+      },
+      "_colIndex": {
+        "value": 54.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 20.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 52.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 52.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 91,
+    "slug": "bratislava",
+    "name": "布拉迪斯拉发",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 68,
+        "new": 69.7,
+        "diff": 2.5000000000000044,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1700,
+        "new": 2000,
+        "diff": 17.647058823529413,
+        "source": "city-page",
+        "detail": "singlePerson=957.5 + rent1BR=1042.33"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 1042,
+        "diff": 89.45454545454545,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1400,
+        "new": 6227,
+        "diff": 344.7857142857143,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 714,
+        "new": 1452,
+        "diff": 103.36134453781514,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=670 + rentOutside=781.86"
+      },
+      "_colIndex": {
+        "value": 56.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 21.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 55.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 35.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 92,
+    "slug": "ljubljana",
+    "name": "卢布尔雅那",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 78,
+        "new": 78.2,
+        "diff": 0.25641025641026005,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1800,
+        "new": 2122,
+        "diff": 17.888888888888886,
+        "source": "city-page",
+        "detail": "singlePerson=1023 + rent1BR=1098.82"
+      },
+      "monthlyRent": {
+        "old": 600,
+        "new": 1099,
+        "diff": 83.16666666666667,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3500,
+        "new": 6588,
+        "diff": 88.22857142857143,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 756,
+        "new": 1601,
+        "diff": 111.77248677248677,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=716 + rentOutside=885.1"
+      },
+      "_colIndex": {
+        "value": 58.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 25.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66.6,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 23.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 93,
+    "slug": "dublin",
+    "name": "都柏林",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 49,
+        "new": 45.9,
+        "diff": -6.3265306122449,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3400,
+        "new": 3726,
+        "diff": 9.588235294117647,
+        "source": "city-page",
+        "detail": "singlePerson=1219.3 + rent1BR=2506.82"
+      },
+      "monthlyRent": {
+        "old": 1800,
+        "new": 2507,
+        "diff": 39.27777777777778,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2100,
+        "new": 7963,
+        "diff": 279.1904761904762,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1530,
+        "new": 3007,
+        "diff": 96.5359477124183,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=854 + rentOutside=2153.05"
+      },
+      "_colIndex": {
+        "value": 75.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 57.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 51.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 41.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 94,
+    "slug": "belfast",
+    "name": "贝尔法斯特",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 55,
+        "new": 51.8,
+        "diff": -5.818181818181823,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2200,
+        "new": 2309,
+        "diff": 4.954545454545454,
+        "source": "city-page",
+        "detail": "singlePerson=1105.1 + rent1BR=1203.47"
+      },
+      "monthlyRent": {
+        "old": 1200,
+        "new": 1203,
+        "diff": 0.25,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3500,
+        "new": 4217,
+        "diff": 20.485714285714284,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 924,
+        "new": 1739,
+        "diff": 88.2034632034632,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=774 + rentOutside=965.72"
+      },
+      "_colIndex": {
+        "value": 68.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 25.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 70.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 26.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 95,
+    "slug": "atlanta",
+    "name": "亚特兰大",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 34,
+        "new": 35.9,
+        "diff": 5.588235294117643,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 3256,
+        "diff": 1.7500000000000002,
+        "source": "city-page",
+        "detail": "singlePerson=1307.1 + rent1BR=1949.05"
+      },
+      "monthlyRent": {
+        "old": 1500,
+        "new": 1949,
+        "diff": 29.933333333333334,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2800,
+        "new": 3857,
+        "diff": 37.75,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 2412,
+        "diff": 67.5,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=915 + rentOutside=1496.67"
+      },
+      "_colIndex": {
+        "value": 75.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 41.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 45.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 96,
+    "slug": "phoenix",
+    "name": "凤凰城",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 45,
+        "new": 46.7,
+        "diff": 3.777777777777784,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3000,
+        "new": 3079,
+        "diff": 2.6333333333333333,
+        "source": "city-page",
+        "detail": "singlePerson=1279.4 + rent1BR=1799.23"
+      },
+      "monthlyRent": {
+        "old": 1400,
+        "new": 1799,
+        "diff": 28.499999999999996,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2100,
+        "new": 4776,
+        "diff": 127.42857142857143,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1350,
+        "new": 2306,
+        "diff": 70.81481481481482,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=896 + rentOutside=1410.84"
+      },
+      "_colIndex": {
+        "value": 73.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 38.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 58,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 97,
+    "slug": "portland",
+    "name": "波特兰",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 33,
+        "new": 42,
+        "diff": 27.27272727272727,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3400,
+        "new": 3407,
+        "diff": 0.2058823529411765,
+        "source": "city-page",
+        "detail": "singlePerson=1373.5 + rent1BR=2033.04"
+      },
+      "monthlyRent": {
+        "old": 1300,
+        "new": 2033,
+        "diff": 56.38461538461539,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1700,
+        "new": 4009,
+        "diff": 135.8235294117647,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1530,
+        "new": 2614,
+        "diff": 70.84967320261438,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=961 + rentOutside=1652.05"
+      },
+      "_colIndex": {
+        "value": 78.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 46.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 35.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 98,
+    "slug": "san-diego",
+    "name": "圣地亚哥",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 59,
+        "new": 59.7,
+        "diff": 1.1864406779661065,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3800,
+        "new": 4561,
+        "diff": 20.026315789473685,
+        "source": "city-page",
+        "detail": "singlePerson=1342.4 + rent1BR=3218.24"
+      },
+      "monthlyRent": {
+        "old": 1100,
+        "new": 3218,
+        "diff": 192.54545454545456,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1700,
+        "new": 8694,
+        "diff": 411.4117647058824,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1710,
+        "new": 3658,
+        "diff": 113.91812865497076,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=940 + rentOutside=2718.12"
+      },
+      "_colIndex": {
+        "value": 80.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 70.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 67.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 39.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 99,
+    "slug": "las-vegas",
+    "name": "拉斯维加斯",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 44,
+        "new": 44.7,
+        "diff": 1.5909090909090973,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2800,
+        "new": 2780,
+        "diff": -0.7142857142857143,
+        "source": "city-page",
+        "detail": "singlePerson=1193.3 + rent1BR=1587.04"
+      },
+      "monthlyRent": {
+        "old": 1200,
+        "new": 1587,
+        "diff": 32.25,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1700,
+        "new": 5048,
+        "diff": 196.94117647058823,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1260,
+        "new": 2201,
+        "diff": 74.68253968253968,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=835 + rentOutside=1365.46"
+      },
+      "_colIndex": {
+        "value": 70.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 35.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 53.6,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 51.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 100,
+    "slug": "tampa",
+    "name": "坦帕",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 49,
+        "new": 55.2,
+        "diff": 12.6530612244898,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2700,
+        "new": 3423,
+        "diff": 26.77777777777778,
+        "source": "city-page",
+        "detail": "singlePerson=1186.5 + rent1BR=2236.1"
+      },
+      "monthlyRent": {
+        "old": 1100,
+        "new": 2236,
+        "diff": 103.27272727272727,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1700,
+        "new": 5079,
+        "diff": 198.76470588235293,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1215,
+        "new": 2456,
+        "diff": 102.13991769547326,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=831 + rentOutside=1625.41"
+      },
+      "_colIndex": {
+        "value": 69.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 48.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 66.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 34.2,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 101,
+    "slug": "guangzhou",
+    "name": "广州",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 69,
+        "new": 71.6,
+        "diff": 3.7681159420289774,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1600,
+        "new": 1188,
+        "diff": -25.75,
+        "source": "city-page",
+        "detail": "singlePerson=590.2 + rent1BR=598.06"
+      },
+      "monthlyRent": {
+        "old": 700,
+        "new": 598,
+        "diff": -14.571428571428571,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5200,
+        "new": 8892,
+        "diff": 71,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 656,
+        "new": 685,
+        "diff": 4.420731707317073,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=413 + rentOutside=271.53"
+      },
+      "_colIndex": {
+        "value": 36.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 12.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 67.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 67.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 102,
+    "slug": "shenzhen",
+    "name": "深圳",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 72,
+        "new": 75.4,
+        "diff": 4.72222222222223,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1800,
+        "new": 1295,
+        "diff": -28.055555555555557,
+        "source": "city-page",
+        "detail": "singlePerson=578.6 + rent1BR=716.2"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 716,
+        "diff": 30.181818181818183,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7800,
+        "new": 13164,
+        "diff": 68.76923076923077,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 774,
+        "new": 860,
+        "diff": 11.11111111111111,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=405 + rentOutside=454.54"
+      },
+      "_colIndex": {
+        "value": 37.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 55.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 103,
+    "slug": "chengdu",
+    "name": "成都",
+    "fields": {
+      "costModerate": {
+        "old": 1200,
+        "new": 894,
+        "diff": -25.5,
+        "source": "city-page",
+        "detail": "singlePerson=467.8 + rent1BR=426.35"
+      },
+      "monthlyRent": {
+        "old": 450,
+        "new": 426,
+        "diff": -5.333333333333334,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2800,
+        "new": 3996,
+        "diff": 42.714285714285715,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 468,
+        "new": 564,
+        "diff": 20.51282051282051,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=327 + rentOutside=236.69"
+      },
+      "_colIndex": {
+        "value": 28.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 71,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 104,
+    "slug": "hangzhou",
+    "name": "杭州",
+    "fields": {
+      "costModerate": {
+        "old": 1650,
+        "new": 1134,
+        "diff": -31.272727272727273,
+        "source": "city-page",
+        "detail": "singlePerson=571 + rent1BR=562.8"
+      },
+      "monthlyRent": {
+        "old": 400,
+        "new": 563,
+        "diff": 40.75,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5500,
+        "new": 8000,
+        "diff": 45.45454545454545,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 693,
+        "new": 736,
+        "diff": 6.204906204906205,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=400 + rentOutside=335.84"
+      },
+      "_colIndex": {
+        "value": 35.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 12.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 63.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 105,
+    "slug": "chongqing",
+    "name": "重庆",
+    "fields": {
+      "costModerate": {
+        "old": 1100,
+        "new": 849,
+        "diff": -22.818181818181817,
+        "source": "city-page",
+        "detail": "singlePerson=478.9 + rent1BR=370.1"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 370,
+        "diff": -26,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2200,
+        "new": 2581,
+        "diff": 17.31818181818182,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 429,
+        "new": 527,
+        "diff": 22.843822843822846,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=335 + rentOutside=191.75"
+      },
+      "_colIndex": {
+        "value": 27.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 7.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 106,
+    "slug": "osaka",
+    "name": "大阪",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 77,
+        "new": 67,
+        "diff": -12.987012987012985,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2200,
+        "new": 1504,
+        "diff": -31.636363636363633,
+        "source": "city-page",
+        "detail": "singlePerson=745.8 + rent1BR=757.74"
+      },
+      "monthlyRent": {
+        "old": 1000,
+        "new": 758,
+        "diff": -24.2,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4800,
+        "new": 6064,
+        "diff": 26.333333333333332,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 968,
+        "new": 1071,
+        "diff": 10.640495867768596,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=522 + rentOutside=548.64"
+      },
+      "_colIndex": {
+        "value": 43,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 46.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 107,
+    "slug": "nagoya",
+    "name": "名古屋",
+    "fields": {
+      "costModerate": {
+        "old": 1900,
+        "new": 1445,
+        "diff": -23.94736842105263,
+        "source": "city-page",
+        "detail": "singlePerson=925.1 + rent1BR=520.35"
+      },
+      "monthlyRent": {
+        "old": 550,
+        "new": 520,
+        "diff": -5.454545454545454,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3200,
+        "new": 1632,
+        "diff": -49,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 817,
+        "new": 998,
+        "diff": 22.15422276621787,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=648 + rentOutside=350.16"
+      }
+    }
+  },
+  {
+    "id": 108,
+    "slug": "incheon",
+    "name": "仁川",
+    "fields": {
+      "monthlyRent": {
+        "old": 450,
+        "new": 556,
+        "diff": 23.555555555555554,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3800,
+        "new": 6205,
+        "diff": 63.28947368421053,
+        "source": "city-page"
+      }
+    }
+  },
+  {
+    "id": 109,
+    "slug": "phnom-penh",
+    "name": "金边",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 51,
+        "new": 49.1,
+        "diff": -3.7254901960784284,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 650,
+        "new": 1245,
+        "diff": 91.53846153846153,
+        "source": "city-page",
+        "detail": "singlePerson=628.4 + rent1BR=616.31"
+      },
+      "monthlyRent": {
+        "old": 250,
+        "new": 616,
+        "diff": 146.4,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1800,
+        "new": 2875,
+        "diff": 59.72222222222222,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 247,
+        "new": 784,
+        "diff": 217.4089068825911,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=440 + rentOutside=344.54"
+      },
+      "_colIndex": {
+        "value": 37.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 13.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 52,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 77.2,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 110,
+    "slug": "yangon",
+    "name": "仰光",
+    "fields": {
+      "costModerate": {
+        "old": 500,
+        "new": 842,
+        "diff": 68.4,
+        "source": "city-page",
+        "detail": "singlePerson=477.8 + rent1BR=363.8"
+      },
+      "monthlyRent": {
+        "old": 200,
+        "new": 364,
+        "diff": 82,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 800,
+        "new": 2150,
+        "diff": 168.75,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 185,
+        "new": 516,
+        "diff": 178.9189189189189,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=334 + rentOutside=181.75"
+      },
+      "_pollutionIndex": {
+        "value": 90.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 112,
+    "slug": "chiang-mai",
+    "name": "清迈",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 70,
+        "new": 78,
+        "diff": 11.428571428571429,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 750,
+        "new": 1040,
+        "diff": 38.666666666666664,
+        "source": "city-page",
+        "detail": "singlePerson=577.4 + rent1BR=462.35"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 462,
+        "diff": 32,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1500,
+        "new": 2029,
+        "diff": 35.266666666666666,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 293,
+        "new": 677,
+        "diff": 131.0580204778157,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=404 + rentOutside=273.31"
+      },
+      "_colIndex": {
+        "value": 34,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 10.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 85.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 77.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 114,
+    "slug": "dhaka",
+    "name": "达卡",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 39,
+        "new": 37.6,
+        "diff": -3.589743589743586,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 500,
+        "new": 557,
+        "diff": 11.4,
+        "source": "city-page",
+        "detail": "singlePerson=408.6 + rent1BR=148.63"
+      },
+      "monthlyRent": {
+        "old": 200,
+        "new": 149,
+        "diff": -25.5,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1200,
+        "new": 1303,
+        "diff": 8.583333333333334,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 190,
+        "new": 359,
+        "diff": 88.94736842105263,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=286 + rentOutside=72.7"
+      },
+      "_colIndex": {
+        "value": 25.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 3.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 40,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 94,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 115,
+    "slug": "colombo",
+    "name": "科伦坡",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 58,
+        "new": 56.9,
+        "diff": -1.8965517241379335,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 650,
+        "new": 974,
+        "diff": 49.84615384615385,
+        "source": "city-page",
+        "detail": "singlePerson=504.2 + rent1BR=470.01"
+      },
+      "monthlyRent": {
+        "old": 200,
+        "new": 470,
+        "diff": 135,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1400,
+        "new": 3662,
+        "diff": 161.57142857142856,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 254,
+        "new": 580,
+        "diff": 128.3464566929134,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=353 + rentOutside=227.39"
+      },
+      "_colIndex": {
+        "value": 34.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 10.2,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 70.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 59.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 116,
+    "slug": "kathmandu",
+    "name": "加德满都",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 55,
+        "new": 63.6,
+        "diff": 15.63636363636364,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 450,
+        "new": 516,
+        "diff": 14.666666666666666,
+        "source": "city-page",
+        "detail": "singlePerson=336 + rent1BR=179.63"
+      },
+      "monthlyRent": {
+        "old": 150,
+        "new": 180,
+        "diff": 20,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 700,
+        "new": 2362,
+        "diff": 237.42857142857142,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 171,
+        "new": 323,
+        "diff": 88.88888888888889,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=235 + rentOutside=87.54"
+      },
+      "_colIndex": {
+        "value": 23.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 55.6,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 95.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 117,
+    "slug": "almaty",
+    "name": "阿拉木图",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 56,
+        "new": 47.1,
+        "diff": -15.892857142857139,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 900,
+        "new": 1416,
+        "diff": 57.333333333333336,
+        "source": "city-page",
+        "detail": "singlePerson=660 + rent1BR=755.74"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 756,
+        "diff": 115.99999999999999,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1600,
+        "new": 2092,
+        "diff": 30.75,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 369,
+        "new": 953,
+        "diff": 158.26558265582656,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=462 + rentOutside=490.74"
+      },
+      "_colIndex": {
+        "value": 37.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 16,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 50.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 78.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 118,
+    "slug": "tashkent",
+    "name": "塔什干",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 64,
+        "new": 73.9,
+        "diff": 15.468750000000009,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 550,
+        "new": 1155,
+        "diff": 110.00000000000001,
+        "source": "city-page",
+        "detail": "singlePerson=521.2 + rent1BR=634.07"
+      },
+      "monthlyRent": {
+        "old": 250,
+        "new": 634,
+        "diff": 153.6,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 800,
+        "new": 1893,
+        "diff": 136.625,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 215,
+        "new": 736,
+        "diff": 242.32558139534882,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=365 + rentOutside=371.4"
+      },
+      "_colIndex": {
+        "value": 29.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 12.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 60.2,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 119,
+    "slug": "baku",
+    "name": "巴库",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 63,
+        "new": 69.9,
+        "diff": 10.952380952380961,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 750,
+        "new": 1108,
+        "diff": 47.733333333333334,
+        "source": "city-page",
+        "detail": "singlePerson=580.1 + rent1BR=527.57"
+      },
+      "monthlyRent": {
+        "old": 400,
+        "new": 528,
+        "diff": 32,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1500,
+        "new": 2280,
+        "diff": 52,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 300,
+        "new": 721,
+        "diff": 140.33333333333334,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=406 + rentOutside=315.07"
+      },
+      "_colIndex": {
+        "value": 33.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 11.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 48.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 74.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 120,
+    "slug": "ulaanbaatar",
+    "name": "乌兰巴托",
+    "fields": {
+      "costModerate": {
+        "old": 700,
+        "new": 1175,
+        "diff": 67.85714285714286,
+        "source": "city-page",
+        "detail": "singlePerson=604.9 + rent1BR=569.81"
+      },
+      "monthlyRent": {
+        "old": 250,
+        "new": 570,
+        "diff": 128,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1000,
+        "new": 1947,
+        "diff": 94.69999999999999,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 280,
+        "new": 869,
+        "diff": 210.35714285714286,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=423 + rentOutside=445.3"
+      },
+      "_colIndex": {
+        "value": 34.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 16.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 94.4,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 121,
+    "slug": "stockholm",
+    "name": "斯德哥尔摩",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 53,
+        "new": 53.8,
+        "diff": 1.5094339622641455,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2800,
+        "new": 3183,
+        "diff": 13.678571428571429,
+        "source": "city-page",
+        "detail": "singlePerson=1370.9 + rent1BR=1811.63"
+      },
+      "monthlyRent": {
+        "old": 1400,
+        "new": 1812,
+        "diff": 29.428571428571427,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 8500,
+        "new": 12128,
+        "diff": 42.68235294117647,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1230,
+        "new": 2086,
+        "diff": 69.59349593495935,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=960 + rentOutside=1125.92"
+      },
+      "_colIndex": {
+        "value": 81.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 35.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 65.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 18,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 122,
+    "slug": "copenhagen",
+    "name": "哥本哈根",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 69,
+        "new": 73.8,
+        "diff": 6.956521739130431,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3000,
+        "new": 3331,
+        "diff": 11.033333333333333,
+        "source": "city-page",
+        "detail": "singlePerson=1367.3 + rent1BR=1963.95"
+      },
+      "monthlyRent": {
+        "old": 1500,
+        "new": 1964,
+        "diff": 30.933333333333334,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 7500,
+        "new": 10750,
+        "diff": 43.333333333333336,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1350,
+        "new": 2349,
+        "diff": 74,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=957 + rentOutside=1392.1"
+      },
+      "_colIndex": {
+        "value": 85.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 42.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 76.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 22.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 123,
+    "slug": "helsinki",
+    "name": "赫尔辛基",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 73,
+        "new": 74.8,
+        "diff": 2.4657534246575303,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2600,
+        "new": 2427,
+        "diff": -6.653846153846153,
+        "source": "city-page",
+        "detail": "singlePerson=1159.8 + rent1BR=1267.01"
+      },
+      "monthlyRent": {
+        "old": 1200,
+        "new": 1267,
+        "diff": 5.583333333333333,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 6200,
+        "new": 9759,
+        "diff": 57.40322580645161,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1145,
+        "new": 1731,
+        "diff": 51.17903930131005,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=812 + rentOutside=919.42"
+      },
+      "_colIndex": {
+        "value": 75,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 27.6,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 80.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 12.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 124,
+    "slug": "oslo",
+    "name": "奥斯陆",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 63,
+        "new": 65.8,
+        "diff": 4.444444444444439,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 3486,
+        "diff": 8.9375,
+        "source": "city-page",
+        "detail": "singlePerson=1536.2 + rent1BR=1950.03"
+      },
+      "monthlyRent": {
+        "old": 1600,
+        "new": 1950,
+        "diff": 21.875,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 9200,
+        "new": 11205,
+        "diff": 21.793478260869563,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 2626,
+        "diff": 82.36111111111111,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=1075 + rentOutside=1550.66"
+      },
+      "_colIndex": {
+        "value": 96.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 39.3,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 77.7,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 21.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 125,
+    "slug": "houston",
+    "name": "休斯顿",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 42,
+        "new": 36.9,
+        "diff": -12.142857142857148,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2800,
+        "new": 2841,
+        "diff": 1.4642857142857144,
+        "source": "city-page",
+        "detail": "singlePerson=1145.1 + rent1BR=1695.53"
+      },
+      "monthlyRent": {
+        "old": 1350,
+        "new": 1696,
+        "diff": 25.62962962962963,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3200,
+        "new": 2574,
+        "diff": -19.5625,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1290,
+        "new": 2150,
+        "diff": 66.66666666666666,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=802 + rentOutside=1348"
+      },
+      "_colIndex": {
+        "value": 64.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 39.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 69.3,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 56.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 126,
+    "slug": "philadelphia",
+    "name": "费城",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 35,
+        "new": 34.6,
+        "diff": -1.1428571428571388,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2900,
+        "new": 3308,
+        "diff": 14.06896551724138,
+        "source": "city-page",
+        "detail": "singlePerson=1386 + rent1BR=1922.27"
+      },
+      "monthlyRent": {
+        "old": 1500,
+        "new": 1922,
+        "diff": 28.133333333333333,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3500,
+        "new": 4086,
+        "diff": 16.742857142857144,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1310,
+        "new": 2304,
+        "diff": 75.87786259541984,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=970 + rentOutside=1333.5"
+      },
+      "_colIndex": {
+        "value": 78.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 42,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 71.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 47.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 127,
+    "slug": "calgary",
+    "name": "卡尔加里",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 61,
+        "new": 62.1,
+        "diff": 1.8032786885245924,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2400,
+        "new": 2459,
+        "diff": 2.458333333333333,
+        "source": "city-page",
+        "detail": "singlePerson=1080.7 + rent1BR=1378.01"
+      },
+      "monthlyRent": {
+        "old": 1100,
+        "new": 1378,
+        "diff": 25.272727272727273,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4200,
+        "new": 3741,
+        "diff": -10.928571428571429,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1080,
+        "new": 1863,
+        "diff": 72.5,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=756 + rentOutside=1106.88"
+      },
+      "_colIndex": {
+        "value": 63.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 28.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 73.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 23.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 128,
+    "slug": "perth",
+    "name": "珀斯",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 65,
+        "new": 57.8,
+        "diff": -11.076923076923082,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2600,
+        "new": 2932,
+        "diff": 12.769230769230768,
+        "source": "city-page",
+        "detail": "singlePerson=1130 + rent1BR=1801.75"
+      },
+      "monthlyRent": {
+        "old": 1250,
+        "new": 1802,
+        "diff": 44.16,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5800,
+        "new": 6427,
+        "diff": 10.810344827586208,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1145,
+        "new": 2257,
+        "diff": 97.117903930131,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=791 + rentOutside=1465.86"
+      },
+      "_colIndex": {
+        "value": 72.3,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 38.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 72,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 28.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 129,
+    "slug": "medellin",
+    "name": "麦德林",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 39,
+        "new": 46.1,
+        "diff": 18.20512820512821,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 800,
+        "new": 1348,
+        "diff": 68.5,
+        "source": "city-page",
+        "detail": "singlePerson=654 + rent1BR=694.46"
+      },
+      "monthlyRent": {
+        "old": 450,
+        "new": 694,
+        "diff": 54.22222222222223,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1500,
+        "new": 2897,
+        "diff": 93.13333333333334,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 320,
+        "new": 930,
+        "diff": 190.625,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=458 + rentOutside=471.84"
+      },
+      "_colIndex": {
+        "value": 37.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 15.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 78.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 62.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 130,
+    "slug": "tbilisi",
+    "name": "第比利斯",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 72,
+        "new": 74.1,
+        "diff": 2.9166666666666585,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 700,
+        "new": 1311,
+        "diff": 87.28571428571429,
+        "source": "city-page",
+        "detail": "singlePerson=629.4 + rent1BR=681.34"
+      },
+      "monthlyRent": {
+        "old": 350,
+        "new": 681,
+        "diff": 94.57142857142857,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1200,
+        "new": 2477,
+        "diff": 106.41666666666667,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 280,
+        "new": 869,
+        "diff": 210.35714285714286,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=441 + rentOutside=428.88"
+      },
+      "_colIndex": {
+        "value": 36.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 14.9,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 55.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 71.9,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 131,
+    "slug": "lagos",
+    "name": "拉各斯",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 29,
+        "new": 31,
+        "diff": 6.896551724137931,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 650,
+        "new": 1213,
+        "diff": 86.61538461538461,
+        "source": "city-page",
+        "detail": "singlePerson=594.5 + rent1BR=618.11"
+      },
+      "monthlyRent": {
+        "old": 500,
+        "new": 618,
+        "diff": 23.599999999999998,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2500,
+        "new": 3343,
+        "diff": 33.72,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 260,
+        "new": 779,
+        "diff": 199.6153846153846,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=416 + rentOutside=363.23"
+      },
+      "_colIndex": {
+        "value": 32.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 19,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 46.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 88.7,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 132,
+    "slug": "moscow",
+    "name": "莫斯科",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 65,
+        "new": 64.9,
+        "diff": -0.1538461538461451,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1500,
+        "new": 2352,
+        "diff": 56.8,
+        "source": "city-page",
+        "detail": "singlePerson=858.8 + rent1BR=1493.24"
+      },
+      "monthlyRent": {
+        "old": 800,
+        "new": 1493,
+        "diff": 86.625,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5500,
+        "new": 11672,
+        "diff": 112.21818181818182,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 660,
+        "new": 1411,
+        "diff": 113.7878787878788,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=601 + rentOutside=810.1"
+      },
+      "_colIndex": {
+        "value": 52.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 32.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 67.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 54.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 133,
+    "slug": "san-jose-us",
+    "name": "圣何塞(美国)",
+    "fields": {}
+  },
+  {
+    "id": 134,
+    "slug": "irvine",
+    "name": "尔湾",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 73,
+        "new": 63.3,
+        "diff": -13.287671232876717,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3800,
+        "new": 4193,
+        "diff": 10.342105263157894,
+        "source": "city-page",
+        "detail": "singlePerson=1303.4 + rent1BR=2890"
+      },
+      "monthlyRent": {
+        "old": 2500,
+        "new": 2890,
+        "diff": 15.6,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 10800,
+        "new": 8238,
+        "diff": -23.72222222222222,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1750,
+        "new": 3345,
+        "diff": 91.14285714285715,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=912 + rentOutside=2432.5"
+      },
+      "_colIndex": {
+        "value": 79.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 65.2,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 135,
+    "slug": "ottawa",
+    "name": "渥太华",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 63,
+        "new": 68.8,
+        "diff": 9.206349206349202,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2200,
+        "new": 2549,
+        "diff": 15.863636363636363,
+        "source": "city-page",
+        "detail": "singlePerson=1055.8 + rent1BR=1493.3"
+      },
+      "monthlyRent": {
+        "old": 1150,
+        "new": 1493,
+        "diff": 29.826086956521742,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4800,
+        "new": 4316,
+        "diff": -10.083333333333332,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 968,
+        "new": 1979,
+        "diff": 104.44214876033058,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=739 + rentOutside=1239.8"
+      },
+      "_colIndex": {
+        "value": 62.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 31.8,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 68.2,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 24.3,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 136,
+    "slug": "luxembourg-city",
+    "name": "卢森堡市",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 72,
+        "new": 71.8,
+        "diff": -0.27777777777778173,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 3200,
+        "new": 3537,
+        "diff": 10.53125,
+        "source": "city-page",
+        "detail": "singlePerson=1286.3 + rent1BR=2250.47"
+      },
+      "monthlyRent": {
+        "old": 1800,
+        "new": 2250,
+        "diff": 25,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 12000,
+        "new": 13053,
+        "diff": 8.774999999999999,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1440,
+        "new": 2902,
+        "diff": 101.52777777777777,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=900 + rentOutside=2001.09"
+      },
+      "_colIndex": {
+        "value": 80.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 51.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 72.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 21.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 137,
+    "slug": "tallinn",
+    "name": "塔林",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 68,
+        "new": 78.4,
+        "diff": 15.294117647058833,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1400,
+        "new": 1949,
+        "diff": 39.214285714285715,
+        "source": "city-page",
+        "detail": "singlePerson=1133.2 + rent1BR=815.75"
+      },
+      "monthlyRent": {
+        "old": 700,
+        "new": 816,
+        "diff": 16.57142857142857,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3500,
+        "new": 5392,
+        "diff": 54.05714285714286,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 602,
+        "new": 1387,
+        "diff": 130.3986710963455,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=793 + rentOutside=594.11"
+      },
+      "_colIndex": {
+        "value": 64.9,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 18.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 73.9,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 18.2,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 138,
+    "slug": "fukuoka",
+    "name": "福冈",
+    "fields": {
+      "monthlyRent": {
+        "old": 500,
+        "new": 484,
+        "diff": -3.2,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3200,
+        "new": 6362,
+        "diff": 98.8125,
+        "source": "city-page"
+      }
+    }
+  },
+  {
+    "id": 139,
+    "slug": "yokohama",
+    "name": "横滨",
+    "fields": {
+      "costModerate": {
+        "old": 2000,
+        "new": 2050,
+        "diff": 2.5,
+        "source": "city-page",
+        "detail": "singlePerson=803.1 + rent1BR=1247.22"
+      },
+      "monthlyRent": {
+        "old": 800,
+        "new": 1247,
+        "diff": 55.875,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5200,
+        "new": 6066,
+        "diff": 16.653846153846157,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 880,
+        "new": 1003,
+        "diff": 13.977272727272727,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=562 + rentOutside=441.15"
+      }
+    }
+  },
+  {
+    "id": 140,
+    "slug": "bali",
+    "name": "巴厘岛",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 49,
+        "new": 49,
+        "diff": 0,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1770,
+        "new": 1679,
+        "diff": -5.141242937853107,
+        "source": "city-page",
+        "detail": "singlePerson=597.1 + rent1BR=1081.59"
+      },
+      "monthlyRent": {
+        "old": 1130,
+        "new": 1082,
+        "diff": -4.2477876106194685,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2750,
+        "new": 2623,
+        "diff": -4.618181818181818,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1060,
+        "new": 1103,
+        "diff": 4.056603773584905,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=418 + rentOutside=684.98"
+      },
+      "_colIndex": {
+        "value": 35.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 30.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 79,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 141,
+    "slug": "da-nang",
+    "name": "岘港",
+    "fields": {
+      "costModerate": {
+        "old": 920,
+        "new": 901,
+        "diff": -2.0652173913043477,
+        "source": "city-page",
+        "detail": "singlePerson=426.1 + rent1BR=474.68"
+      },
+      "monthlyRent": {
+        "old": 487,
+        "new": 475,
+        "diff": -2.4640657084188913,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3900,
+        "new": 3813,
+        "diff": -2.230769230769231,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 550,
+        "new": 600,
+        "diff": 9.090909090909092,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=298 + rentOutside=302.21"
+      },
+      "_colIndex": {
+        "value": 26.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 11.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 142,
+    "slug": "playa-del-carmen",
+    "name": "普拉亚德尔卡门",
+    "fields": {}
+  },
+  {
+    "id": 143,
+    "slug": "porto",
+    "name": "波尔图",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 66,
+        "new": 66.4,
+        "diff": 0.6060606060606146,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1930,
+        "new": 2103,
+        "diff": 8.963730569948186,
+        "source": "city-page",
+        "detail": "singlePerson=810.9 + rent1BR=1292.57"
+      },
+      "monthlyRent": {
+        "old": 1187,
+        "new": 1293,
+        "diff": 8.930075821398484,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4967,
+        "new": 5407,
+        "diff": 8.858465874773506,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1160,
+        "new": 1520,
+        "diff": 31.03448275862069,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=568 + rentOutside=952.34"
+      },
+      "_colIndex": {
+        "value": 50.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 28,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 78.8,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 24.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 144,
+    "slug": "valencia",
+    "name": "瓦伦西亚",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 63,
+        "new": 62.7,
+        "diff": -0.4761904761904716,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2060,
+        "new": 2246,
+        "diff": 9.029126213592233,
+        "source": "city-page",
+        "detail": "singlePerson=831.9 + rent1BR=1413.7"
+      },
+      "monthlyRent": {
+        "old": 1294,
+        "new": 1414,
+        "diff": 9.273570324574962,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5265,
+        "new": 5755,
+        "diff": 9.306742640075974,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1235,
+        "new": 1620,
+        "diff": 31.17408906882591,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=582 + rentOutside=1037.82"
+      },
+      "_colIndex": {
+        "value": 52.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 28.7,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 77,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 27.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 146,
+    "slug": "split",
+    "name": "斯普利特",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 70,
+        "new": 69.8,
+        "diff": -0.2857142857142898,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1885,
+        "new": 2051,
+        "diff": 8.806366047745358,
+        "source": "city-page",
+        "detail": "singlePerson=978.3 + rent1BR=1072.82"
+      },
+      "monthlyRent": {
+        "old": 985,
+        "new": 1073,
+        "diff": 8.934010152284264,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 6524,
+        "new": 7103,
+        "diff": 8.874923359901901,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1130,
+        "new": 1463,
+        "diff": 29.469026548672566,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=685 + rentOutside=778.02"
+      },
+      "_colIndex": {
+        "value": 58.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 24.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 68.4,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 27.6,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 147,
+    "slug": "phuket",
+    "name": "普吉岛",
+    "fields": {
+      "costModerate": {
+        "old": 1310,
+        "new": 1413,
+        "diff": 7.862595419847327,
+        "source": "city-page",
+        "detail": "singlePerson=705.8 + rent1BR=706.87"
+      },
+      "monthlyRent": {
+        "old": 657,
+        "new": 707,
+        "diff": 7.610350076103501,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3478,
+        "new": 3739,
+        "diff": 7.504312823461759,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 790,
+        "new": 975,
+        "diff": 23.417721518987342,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=494 + rentOutside=481.15"
+      },
+      "_colIndex": {
+        "value": 42.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 20.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 148,
+    "slug": "montevideo",
+    "name": "蒙得维的亚",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 43,
+        "new": 43.2,
+        "diff": 0.46511627906977404,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1400,
+        "new": 1632,
+        "diff": 16.57142857142857,
+        "source": "city-page",
+        "detail": "singlePerson=985 + rent1BR=647.1"
+      },
+      "monthlyRent": {
+        "old": 622,
+        "new": 647,
+        "diff": 4.019292604501608,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 3403,
+        "new": 3524,
+        "diff": 3.555686159271231,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 840,
+        "new": 1207,
+        "diff": 43.69047619047619,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=690 + rentOutside=517.08"
+      },
+      "_colIndex": {
+        "value": 56.7,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 14.5,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 68.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 46.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 149,
+    "slug": "las-palmas",
+    "name": "拉斯帕尔马斯",
+    "fields": {
+      "costModerate": {
+        "old": 1715,
+        "new": 1868,
+        "diff": 8.92128279883382,
+        "source": "city-page",
+        "detail": "singlePerson=820.3 + rent1BR=1047.25"
+      },
+      "monthlyRent": {
+        "old": 962,
+        "new": 1047,
+        "diff": 8.835758835758837,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2829,
+        "new": 3080,
+        "diff": 8.872393071756804,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1030,
+        "new": 1430,
+        "diff": 38.83495145631068,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=574 + rentOutside=855.67"
+      },
+      "_colIndex": {
+        "value": 50.5,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 21.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 150,
+    "slug": "penang",
+    "name": "槟城",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 71,
+        "new": 70.6,
+        "diff": -0.5633802816901489,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 860,
+        "new": 969,
+        "diff": 12.674418604651164,
+        "source": "city-page",
+        "detail": "singlePerson=535.3 + rent1BR=434.09"
+      },
+      "monthlyRent": {
+        "old": 383,
+        "new": 434,
+        "diff": 13.315926892950392,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2030,
+        "new": 2297,
+        "diff": 13.152709359605911,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 515,
+        "new": 623,
+        "diff": 20.97087378640777,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=375 + rentOutside=248.31"
+      },
+      "_colIndex": {
+        "value": 34.1,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 8.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 152,
+    "slug": "florianopolis",
+    "name": "弗洛里亚诺波利斯",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 55,
+        "new": 54.6,
+        "diff": -0.7272727272727246,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1200,
+        "new": 1275,
+        "diff": 6.25,
+        "source": "city-page",
+        "detail": "singlePerson=648.1 + rent1BR=626.62"
+      },
+      "monthlyRent": {
+        "old": 540,
+        "new": 627,
+        "diff": 16.11111111111111,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 2463,
+        "new": 2859,
+        "diff": 16.07795371498173,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 720,
+        "new": 905,
+        "diff": 25.694444444444443,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=454 + rentOutside=451.1"
+      },
+      "_colIndex": {
+        "value": 37.4,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 15.1,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 60.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 157,
+    "slug": "cancun",
+    "name": "坎昆",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 45,
+        "new": 45.5,
+        "diff": 1.1111111111111112,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1250,
+        "new": 1576,
+        "diff": 26.08,
+        "source": "city-page",
+        "detail": "singlePerson=841.1 + rent1BR=734.7"
+      },
+      "monthlyRent": {
+        "old": 652,
+        "new": 735,
+        "diff": 12.73006134969325,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 1970,
+        "new": 2219,
+        "diff": 12.639593908629443,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 750,
+        "new": 1078,
+        "diff": 43.733333333333334,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=589 + rentOutside=489.34"
+      },
+      "_colIndex": {
+        "value": 48.6,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 17.8,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 158,
+    "slug": "puerto-vallarta",
+    "name": "巴亚尔塔港",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 66,
+        "new": 65.8,
+        "diff": -0.3030303030303073,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 1850,
+        "new": 2275,
+        "diff": 22.972972972972975,
+        "source": "city-page",
+        "detail": "singlePerson=864.5 + rent1BR=1410.77"
+      },
+      "monthlyRent": {
+        "old": 1253,
+        "new": 1411,
+        "diff": 12.609736632083003,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 4844,
+        "new": 5358,
+        "diff": 10.611065235342693,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1110,
+        "new": 1457,
+        "diff": 31.261261261261264,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=605 + rentOutside=851.54"
+      },
+      "_pollutionIndex": {
+        "value": 56.5,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 159,
+    "slug": "kyoto",
+    "name": "京都",
+    "fields": {
+      "monthlyRent": {
+        "old": 447,
+        "new": 561,
+        "diff": 25.503355704697988,
+        "source": "city-page"
+      }
+    }
+  },
+  {
+    "id": 160,
+    "slug": "casablanca",
+    "name": "卡萨布兰卡",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 44.44,
+        "new": 44.6,
+        "diff": 0.36003600360036836,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 850,
+        "new": 1129,
+        "diff": 32.82352941176471,
+        "source": "city-page",
+        "detail": "singlePerson=565.1 + rent1BR=564.29"
+      },
+      "monthlyRent": {
+        "old": 400,
+        "new": 564,
+        "diff": 41,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 750,
+        "new": 2124,
+        "diff": 183.20000000000002,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 450,
+        "new": 734,
+        "diff": 63.11111111111111,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=396 + rentOutside=338.49"
+      },
+      "_colIndex": {
+        "value": 34.8,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 11.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 44.5,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 82.1,
+        "source": "ranking (reference)"
+      }
+    }
+  },
+  {
+    "id": 161,
+    "slug": "wellington",
+    "name": "惠灵顿",
+    "fields": {
+      "numbeoSafetyIndex": {
+        "old": 66.52,
+        "new": 66.5,
+        "diff": -0.03006614552013834,
+        "source": "ranking"
+      },
+      "costModerate": {
+        "old": 2600,
+        "new": 2274,
+        "diff": -12.538461538461537,
+        "source": "city-page",
+        "detail": "singlePerson=1028.4 + rent1BR=1245.29"
+      },
+      "monthlyRent": {
+        "old": 1200,
+        "new": 1245,
+        "diff": 3.75,
+        "source": "city-page"
+      },
+      "housePrice": {
+        "old": 5200,
+        "new": 6756,
+        "diff": 29.923076923076923,
+        "source": "city-page"
+      },
+      "costBudget": {
+        "old": 1200,
+        "new": 1923,
+        "diff": 60.25,
+        "source": "city-page (estimated)",
+        "detail": "singlePerson×0.7=720 + rentOutside=1202.73"
+      },
+      "_colIndex": {
+        "value": 64.2,
+        "source": "ranking (reference)"
+      },
+      "_rentIndex": {
+        "value": 29.4,
+        "source": "ranking (reference)"
+      },
+      "_healthcareIndex": {
+        "value": 64.1,
+        "source": "ranking (reference)"
+      },
+      "_pollutionIndex": {
+        "value": 24.8,
+        "source": "ranking (reference)"
+      }
+    }
+  }
+]

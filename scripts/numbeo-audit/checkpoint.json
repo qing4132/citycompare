@@ -8,268 +8,604 @@
   },
   "cities": {
     "1": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "2": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "3": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "4": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "5": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "6": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "7": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "8": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "9": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "10": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "11": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "12": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "13": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "14": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "15": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "16": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "17": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "18": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "19": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "20": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "21": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "22": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "23": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "24": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "25": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "26": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "27": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "28": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "29": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "30": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "31": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "32": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "33": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "34": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "35": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "36": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "37": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "38": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "39": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "40": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "41": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "42": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "43": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "44": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "45": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "46": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "47": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "48": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "49": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "50": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "51": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "52": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "53": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "54": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "55": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "56": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "57": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "58": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "59": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "60": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "61": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "62": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "63": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "64": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "65": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "67": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "68": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "69": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "70": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "71": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "73": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "75": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "76": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "77": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "78": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "79": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "80": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "81": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "82": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "83": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "84": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "85": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "86": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "87": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "88": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "89": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "90": {
-      "cost": true
+      "cost": true,
+      "property": true
     },
     "91": {
-      "cost": true
+      "cost": true,
+      "property": true
+    },
+    "92": {
+      "cost": true,
+      "property": true
+    },
+    "93": {
+      "cost": true,
+      "property": true
+    },
+    "94": {
+      "cost": true,
+      "property": true
+    },
+    "95": {
+      "cost": true,
+      "property": true
+    },
+    "96": {
+      "cost": true,
+      "property": true
+    },
+    "97": {
+      "cost": true,
+      "property": true
+    },
+    "98": {
+      "cost": true,
+      "property": true
+    },
+    "99": {
+      "cost": true,
+      "property": true
+    },
+    "100": {
+      "cost": true,
+      "property": true
+    },
+    "101": {
+      "cost": true,
+      "property": true
+    },
+    "102": {
+      "cost": true,
+      "property": true
+    },
+    "103": {
+      "cost": true,
+      "property": true
+    },
+    "104": {
+      "cost": true,
+      "property": true
+    },
+    "105": {
+      "cost": true,
+      "property": true
+    },
+    "106": {
+      "cost": true,
+      "property": true
+    },
+    "107": {
+      "cost": true,
+      "property": true
+    },
+    "108": {
+      "cost": true,
+      "property": true
+    },
+    "109": {
+      "cost": true,
+      "property": true
+    },
+    "110": {
+      "cost": true,
+      "property": true
+    },
+    "112": {
+      "cost": true,
+      "property": true
+    },
+    "114": {
+      "cost": true,
+      "property": true
+    },
+    "115": {
+      "cost": true,
+      "property": true
+    },
+    "116": {
+      "cost": true,
+      "property": true
+    },
+    "117": {
+      "cost": true,
+      "property": true
+    },
+    "118": {
+      "cost": true,
+      "property": true
+    },
+    "119": {
+      "cost": true,
+      "property": true
+    },
+    "120": {
+      "cost": true,
+      "property": true
+    },
+    "121": {
+      "cost": true,
+      "property": true
+    },
+    "122": {
+      "cost": true,
+      "property": true
+    },
+    "123": {
+      "cost": true,
+      "property": true
+    },
+    "124": {
+      "cost": true,
+      "property": true
+    },
+    "125": {
+      "cost": true,
+      "property": true
+    },
+    "126": {
+      "cost": true,
+      "property": true
+    },
+    "127": {
+      "cost": true,
+      "property": true
+    },
+    "128": {
+      "cost": true,
+      "property": true
+    },
+    "129": {
+      "cost": true,
+      "property": true
+    },
+    "130": {
+      "cost": true,
+      "property": true
+    },
+    "131": {
+      "cost": true,
+      "property": true
+    },
+    "132": {
+      "cost": true,
+      "property": true
+    },
+    "133": {
+      "cost": true,
+      "property": true
+    },
+    "134": {
+      "cost": true,
+      "property": true
+    },
+    "135": {
+      "cost": true,
+      "property": true
+    },
+    "136": {
+      "cost": true,
+      "property": true
+    },
+    "137": {
+      "cost": true,
+      "property": true
+    },
+    "138": {
+      "cost": true,
+      "property": true
+    },
+    "139": {
+      "cost": true,
+      "property": true
+    },
+    "140": {
+      "cost": true,
+      "property": true
+    },
+    "141": {
+      "cost": true,
+      "property": true
+    },
+    "142": {
+      "cost": true,
+      "property": true
+    },
+    "143": {
+      "cost": true,
+      "property": true
+    },
+    "144": {
+      "cost": true,
+      "property": true
+    },
+    "146": {
+      "cost": true,
+      "property": true
+    },
+    "147": {
+      "cost": true,
+      "property": true
+    },
+    "148": {
+      "cost": true,
+      "property": true
+    },
+    "149": {
+      "cost": true,
+      "property": true
+    },
+    "150": {
+      "cost": true,
+      "property": true
+    },
+    "152": {
+      "cost": true,
+      "property": true
+    },
+    "157": {
+      "cost": true,
+      "property": true
+    },
+    "158": {
+      "cost": true,
+      "property": true
+    },
+    "159": {
+      "cost": true,
+      "property": true
+    },
+    "160": {
+      "cost": true,
+      "property": true
+    },
+    "161": {
+      "cost": true,
+      "property": true
     }
   }
 }

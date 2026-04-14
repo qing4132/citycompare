@@ -33,7 +33,7 @@
  *   scripts/numbeo-audit/report.md       — 人类可读对比报告
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, createWriteStream } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -53,6 +53,197 @@ const DELAY_ARG = args.find(a => a.startsWith("--delay="));
 const REQUEST_DELAY_MS = DELAY_ARG ? parseInt(DELAY_ARG.split("=")[1]) * 1000 : 2000;
 const MAX_RETRIES = 3;
 const FETCH_TIMEOUT_MS = 30000;
+const NODE_SWITCH_MAX = 10;       // 单次请求最多切换节点次数
+const NODE_VERIFY_URL = "http://ip-api.com/json/"; // 节点连通性验证（顺带记录出口 IP）
+const NODE_VERIFY_TIMEOUT = 8000;
+const LOG_PATH = join(dirname(fileURLToPath(import.meta.url)), "numbeo-audit", "run.log");
+
+// ═══════════════════════════════════════════════════════════════
+// Section 0.4: 文件日志
+// ═══════════════════════════════════════════════════════════════
+let logStream = null;
+
+function initLog() {
+  mkdirSync(dirname(LOG_PATH), { recursive: true });
+  // 追加模式，多次运行的日志都保留
+  logStream = createWriteStream(LOG_PATH, { flags: "a" });
+  const sep = "\n" + "═".repeat(60) + "\n";
+  logStream.write(sep + `[${new Date().toISOString()}] 脚本启动\n`);
+}
+
+/** 同时写 console 和日志文件 */
+function log(msg) {
+  console.log(msg);
+  if (logStream) logStream.write(`[${ts()}] ${msg}\n`);
+}
+function logWarn(msg) {
+  console.warn(msg);
+  if (logStream) logStream.write(`[${ts()}] WARN ${msg}\n`);
+}
+function logError(msg) {
+  console.error(msg);
+  if (logStream) logStream.write(`[${ts()}] ERROR ${msg}\n`);
+}
+function closeLog() {
+  if (logStream) {
+    logStream.write(`[${ts()}] 脚本结束\n`);
+    logStream.end();
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Section 0.5: Clash API 自动节点切换
+// ═══════════════════════════════════════════════════════════════
+const CLASH_API = "http://192.168.2.1:9090";
+const CLASH_SECRET = "123456";
+const CLASH_PROXY_GROUP = "🔰 手动选择";
+const CLASH_GROUP_ENCODED = encodeURIComponent(CLASH_PROXY_GROUP);
+
+/** 节点切换状态 */
+const nodeState = {
+  allNodes: [],        // 可用代理节点（排除 Direct/自动选择/REJECT 等）
+  currentIndex: -1,    // 当前节点在 allNodes 中的 index
+  switchCount: 0,      // 本次运行累计切换次数
+  initialNode: null,   // 脚本启动时的节点（结束后恢复）
+  deadNodes: new Set(), // 验证不通的节点（跳过）
+};
+
+async function clashGet(path) {
+  const r = await fetch(`${CLASH_API}${path}`, {
+    headers: { Authorization: `Bearer ${CLASH_SECRET}` },
+    signal: AbortSignal.timeout(5000),
+  });
+  if (!r.ok) throw new Error(`Clash API ${r.status}: ${path}`);
+  return r.json();
+}
+
+async function clashPut(path, body) {
+  const r = await fetch(`${CLASH_API}${path}`, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${CLASH_SECRET}`, "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(5000),
+  });
+  if (!r.ok) throw new Error(`Clash API PUT ${r.status}: ${path}`);
+}
+
+/**
+ * 初始化节点列表。策略：跨国家交叉排列，避免连续使用同一地区节点。
+ */
+async function initNodePool() {
+  try {
+    const data = await clashGet(`/proxies/${CLASH_GROUP_ENCODED}`);
+    nodeState.initialNode = data.now;
+
+    // 过滤掉非代理节点
+    const skipNames = new Set(["♻️ 自动选择", "🎯 Direct", "DIRECT", "REJECT", "🛑 Block"]);
+    const raw = (data.all || []).filter(n => !skipNames.has(n));
+
+    // 按地区分组
+    const groups = {};
+    for (const n of raw) {
+      const region = n.replace(/\s*[A-Z]?\d+$/, "").trim(); // "台湾 A06" → "台湾"
+      if (!groups[region]) groups[region] = [];
+      groups[region].push(n);
+    }
+
+    // 交叉排列：每轮从每个地区取一个，确保连续请求使用不同地区 IP
+    const regionKeys = Object.keys(groups);
+    const maxLen = Math.max(...regionKeys.map(k => groups[k].length));
+    const interleaved = [];
+    for (let i = 0; i < maxLen; i++) {
+      for (const region of regionKeys) {
+        if (i < groups[region].length) {
+          interleaved.push(groups[region][i]);
+        }
+      }
+    }
+
+    nodeState.allNodes = interleaved;
+
+    // 找到当前节点的位置
+    const curIdx = interleaved.indexOf(data.now);
+    nodeState.currentIndex = curIdx >= 0 ? curIdx : 0;
+
+    log(`🔀 节点池初始化: ${interleaved.length} 个节点, ${regionKeys.length} 个地区 (${regionKeys.join(", ")})`);
+    log(`   当前节点: ${data.now}`);
+  } catch (err) {
+    logWarn(`⚠ Clash API 不可用 (${err.message})，禁用自动节点切换`);
+    nodeState.allNodes = [];
+  }
+}
+
+/**
+ * 验证当前节点是否能上网，返回出口 IP 或 null。
+ */
+async function verifyNode() {
+  try {
+    const r = await fetch(NODE_VERIFY_URL, {
+      signal: AbortSignal.timeout(NODE_VERIFY_TIMEOUT),
+    });
+    if (!r.ok) return null;
+    const data = await r.json();
+    return data.query || data.ip || "unknown";
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 切换到下一个可用节点。自动跳过 dead 节点，验证连通性。
+ * 返回 { node, ip } 或 null。
+ */
+async function switchToNextNode() {
+  if (nodeState.allNodes.length === 0) return null;
+
+  const totalNodes = nodeState.allNodes.length;
+  let tried = 0;
+
+  while (tried < totalNodes) {
+    nodeState.currentIndex = (nodeState.currentIndex + 1) % totalNodes;
+    const candidate = nodeState.allNodes[nodeState.currentIndex];
+    tried++;
+
+    // 跳过已知不通的节点
+    if (nodeState.deadNodes.has(candidate)) continue;
+
+    try {
+      await clashPut(`/proxies/${CLASH_GROUP_ENCODED}`, { name: candidate });
+      // 等待路由生效
+      await new Promise(r => setTimeout(r, 2000));
+
+      // 验证连通性
+      const ip = await verifyNode();
+      if (ip) {
+        nodeState.switchCount++;
+        log(`  🔀 节点切换成功: ${candidate} → 出口 IP: ${ip}`);
+        return { node: candidate, ip };
+      } else {
+        logWarn(`  ⚠ 节点 ${candidate} 不通，标记跳过`);
+        nodeState.deadNodes.add(candidate);
+        continue;
+      }
+    } catch (err) {
+      logWarn(`  ⚠ 节点切换失败 (${candidate}): ${err.message}`);
+      nodeState.deadNodes.add(candidate);
+      continue;
+    }
+  }
+
+  logWarn(`  ⚠ 所有 ${totalNodes} 个节点均不可用`);
+  return null;
+}
+
+/**
+ * 脚本结束时恢复初始节点。
+ */
+async function restoreInitialNode() {
+  if (!nodeState.initialNode || nodeState.allNodes.length === 0) return;
+  try {
+    await clashPut(`/proxies/${CLASH_GROUP_ENCODED}`, { name: nodeState.initialNode });
+    log(`🔙 已恢复初始节点: ${nodeState.initialNode}`);
+  } catch { /* ignore */ }
+}
 
 // ═══════════════════════════════════════════════════════════════
 // Section 1: 中文国家 → Numbeo 英文国名映射
@@ -217,6 +408,8 @@ const USER_AGENTS = [
 let requestCount = 0;
 
 async function fetchWithRetry(url, retries = MAX_RETRIES) {
+  let nodeSwitches = 0;
+
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const controller = new AbortController();
@@ -237,15 +430,20 @@ async function fetchWithRetry(url, retries = MAX_RETRIES) {
       });
       clearTimeout(timer);
 
-      if (resp.status === 429) {
-        const waitSec = attempt === 1 ? 60 : 120 * attempt;
-        console.warn(`  ⚠ 429 Too Many Requests → 等待 ${waitSec}s 后重试 (${attempt}/${retries})`);
-        await sleep(waitSec * 1000);
-        continue;
-      }
-      if (resp.status === 403) {
-        const waitSec = 120 * attempt;
-        console.warn(`  ⚠ 403 Forbidden → 等待 ${waitSec}s 后重试 (${attempt}/${retries})`);
+      if (resp.status === 429 || resp.status === 403) {
+        // 先尝试切换节点（比干等更有效）
+        if (nodeSwitches < NODE_SWITCH_MAX && nodeState.allNodes.length > 0) {
+          const result = await switchToNextNode();
+          if (result) {
+            nodeSwitches++;
+            logWarn(`  ⚠ HTTP ${resp.status} → 已切换节点: ${result.node} (IP: ${result.ip}, 第${nodeSwitches}次) → 立即重试`);
+            attempt--; // 不消耗重试次数
+            continue;
+          }
+        }
+        // 节点切换不可用或已耗尽，退避等待
+        const waitSec = resp.status === 429 ? (attempt === 1 ? 60 : 120 * attempt) : 120 * attempt;
+        logWarn(`  ⚠ HTTP ${resp.status} → 等待 ${waitSec}s 后重试 (${attempt}/${retries})`);
         await sleep(waitSec * 1000);
         continue;
       }
@@ -253,7 +451,7 @@ async function fetchWithRetry(url, retries = MAX_RETRIES) {
         return { ok: false, status: 404, html: "" };
       }
       if (resp.status >= 500) {
-        console.warn(`  ⚠ HTTP ${resp.status} → 等待 10s 后重试 (${attempt}/${retries})`);
+        logWarn(`  ⚠ HTTP ${resp.status} → 等待 10s 后重试 (${attempt}/${retries})`);
         await sleep(10000);
         continue;
       }
@@ -265,9 +463,9 @@ async function fetchWithRetry(url, retries = MAX_RETRIES) {
       return { ok: true, status: resp.status, html };
     } catch (err) {
       if (err.name === "AbortError") {
-        console.warn(`  ⚠ 超时 → 重试 (${attempt}/${retries})`);
+        logWarn(`  ⚠ 超时 → 重试 (${attempt}/${retries})`);
       } else {
-        console.warn(`  ⚠ 网络错误: ${err.message} → 重试 (${attempt}/${retries})`);
+        logWarn(`  ⚠ 网络错误: ${err.message} → 重试 (${attempt}/${retries})`);
       }
       if (attempt < retries) {
         const backoff = 5000 * Math.pow(2, attempt - 1);
@@ -351,7 +549,7 @@ function matchToOurCity(urlName, displayText) {
 /** 从一串含数字的 HTML 片段中提取价格 */
 function parsePrice(str) {
   if (!str) return null;
-  const cleaned = str.replace(/[$€£¥₹₩,\s]|&nbsp;/g, "").trim();
+  const cleaned = str.replace(/[$€£¥₹₩,\s]|&nbsp;|&#\d+;/g, "").trim();
   const num = parseFloat(cleaned);
   return isNaN(num) ? null : num;
 }
@@ -370,12 +568,16 @@ function parseCostPage(html) {
   const result = {};
 
   // === 月度成本摘要 ===
-  // Pattern: "A single person estimated monthly costs are 1,234.56$ (without rent)"
-  // 或 "A single person estimated monthly costs are $1,234.56 without rent"
+  // Numbeo 格式: "single person ... are <span class="emp_number">980.0&#36;
+  //   <span class="in_other_currency">(156,171.9&#165;)</span></span>"
+  // displayCurrency=USD 时主数值为 USD (&#36;=$), 副数值为本地币种
   const costPatterns = [
-    /single\s+person\s+estimated\s+monthly\s+costs\s+are\s+(?:\$|USD\s*)?([\d,]+(?:\.\d+)?)/i,
-    /single\s+person\s+estimated\s+monthly\s+costs\s+are\s+([\d,]+(?:\.\d+)?)\s*(?:\$|USD)/i,
-    /single\s+person[^.]*?([\d,]+(?:\.\d+)?)\s*(?:\$|USD)/i,
+    // 主数值为 USD (&#36;=$): 数字后跟 &#36; 或 $
+    /single\s+person[\s\S]{0,400}?emp_number[^>]*>\s*(\d[\d,]*(?:\.\d+)?)\s*(?:&#36;|\$)/i,
+    // 主数值非 USD 时, in_other_currency 里有 &#36;
+    /single\s+person[\s\S]{0,500}?in_other_currency[^>]*>\(?\s*(\d[\d,]*(?:\.\d+)?)\s*(?:&#36;|\$)/i,
+    // 宽松兜底: emp_number 里第一个数字
+    /single\s+person[\s\S]{0,300}?emp_number[^>]*>\s*(\d[\d,]*(?:\.\d+)?)/i,
   ];
   for (const pat of costPatterns) {
     const m = html.match(pat);
@@ -384,8 +586,9 @@ function parseCostPage(html) {
 
   // === 家庭月度成本 ===
   const familyPatterns = [
-    /family\s+of\s+four\s+estimated\s+monthly\s+costs\s+are\s+(?:\$|USD\s*)?([\d,]+(?:\.\d+)?)/i,
-    /family\s+of\s+four\s+estimated\s+monthly\s+costs\s+are\s+([\d,]+(?:\.\d+)?)\s*(?:\$|USD)/i,
+    /family\s+of\s+four[\s\S]{0,400}?emp_number[^>]*>\s*(\d[\d,]*(?:\.\d+)?)\s*(?:&#36;|\$)/i,
+    /family\s+of\s+four[\s\S]{0,500}?in_other_currency[^>]*>\(?\s*(\d[\d,]*(?:\.\d+)?)\s*(?:&#36;|\$)/i,
+    /family\s+of\s+four[\s\S]{0,300}?emp_number[^>]*>\s*(\d[\d,]*(?:\.\d+)?)/i,
   ];
   for (const pat of familyPatterns) {
     const m = html.match(pat);
@@ -393,35 +596,35 @@ function parseCostPage(html) {
   }
 
   // === 具体价格项（通用提取器）===
-  // Numbeo 表格行: <td>Label</td> <td class="priceValue"> 1,234.56 $ </td>
+  // Numbeo 表格行: <td>Label</td> <td class="priceValue"> <span class="first_currency">1,234.56&nbsp;&#36;</span></td>
   function extractItem(label) {
     const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    // Pattern 1: label 后跟 priceValue class
-    const p1 = new RegExp(escaped + "[\\s\\S]{0,300}?class=\"priceValue\"[^>]*>\\s*([\\d,.\\s$€£¥]+)", "i");
+    // Pattern 1: label → priceValue → 跳过可能的 <span> → 抓数字
+    const p1 = new RegExp(escaped + "[\\s\\S]{0,300}?class=\"priceValue[^\"]*\"[^>]*>[\\s\\S]{0,100}?(\\d[\\d,.]+)", "i");
     const m1 = html.match(p1);
     if (m1) return parsePrice(m1[1]);
     // Pattern 2: label 后跟 <td> 中的数字
-    const p2 = new RegExp(escaped + "[\\s\\S]{0,200}?<td[^>]*>\\s*([\\d,.]+)", "i");
+    const p2 = new RegExp(escaped + "[\\s\\S]{0,200}?<td[^>]*>[\\s\\S]{0,80}?(\\d[\\d,.]+)", "i");
     const m2 = html.match(p2);
     if (m2) return parsePrice(m2[1]);
     return null;
   }
 
   // 租金
-  result.rent1BRCenter = extractItem("Apartment \\(1 bedroom\\) in City Centre");
-  result.rent1BROutside = extractItem("Apartment \\(1 bedroom\\) Outside of Centre");
-  result.rent3BRCenter = extractItem("Apartment \\(3 bedrooms\\) in City Centre");
+  result.rent1BRCenter = extractItem("1 Bedroom Apartment in City Centre");
+  result.rent1BROutside = extractItem("1 Bedroom Apartment Outside of City Centre");
+  result.rent3BRCenter = extractItem("3 Bedroom Apartment in City Centre");
 
   // 房价（可能在同一页面也可能不在）
   result.pricePerSqmCenter = extractItem("Price per Square Meter to Buy Apartment in City Centre");
   result.pricePerSqmOutside = extractItem("Price per Square Meter to Buy Apartment Outside of Centre");
 
   // 常用参考价格
-  result.mealInexpensive = extractItem("Meal, Inexpensive Restaurant");
-  result.cappuccino = extractItem("Cappuccino \\(regular\\)");
-  result.localTransport = extractItem("One-way Ticket \\(Local Transport\\)");
-  result.utilities = extractItem("Basic \\(Electricity, Heating, Cooling, Water, Garbage\\)");
-  result.internetMonthly = extractItem("Internet \\(60 Mbps");
+  result.mealInexpensive = extractItem("Meal at an Inexpensive Restaurant");
+  result.cappuccino = extractItem("Cappuccino \\(Regular Size\\)");
+  result.localTransport = extractItem("One-Way Ticket \\(Local Transport\\)");
+  result.utilities = extractItem("Basic Utilities for");
+  result.internetMonthly = extractItem("Broadband Internet");
 
   // 薪资
   result.avgMonthlyNetSalary = extractItem("Average Monthly Net Salary \\(After Tax\\)");
@@ -436,10 +639,10 @@ function parsePropertyPage(html) {
   const result = {};
   function extractItem(label) {
     const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const p1 = new RegExp(escaped + "[\\s\\S]{0,300}?class=\"priceValue\"[^>]*>\\s*([\\d,.\\s$€£¥]+)", "i");
+    const p1 = new RegExp(escaped + "[\\s\\S]{0,300}?class=\"priceValue[^\"]*\"[^>]*>[\\s\\S]{0,100}?(\\d[\\d,.]+)", "i");
     const m1 = html.match(p1);
     if (m1) return parsePrice(m1[1]);
-    const p2 = new RegExp(escaped + "[\\s\\S]{0,200}?<td[^>]*>\\s*([\\d,.]+)", "i");
+    const p2 = new RegExp(escaped + "[\\s\\S]{0,200}?<td[^>]*>[\\s\\S]{0,80}?(\\d[\\d,.]+)", "i");
     const m2 = html.match(p2);
     if (m2) return parsePrice(m2[1]);
     return null;
@@ -1016,7 +1219,8 @@ function generateReport(comparisons) {
 
 async function main() {
   console.log("╔══════════════════════════════════════════════╗");
-  console.log("║  WhichCity Numbeo 数据验证 v1.0             ║");
+  console.log("║  WhichCity Numbeo 数据验证 v1.1             ║");
+  console.log("║  + 自动节点切换 (Clash API)                 ║");
   console.log("╚══════════════════════════════════════════════╝");
   console.log(`模式: ${PARSE_ONLY ? "仅解析" : RANKINGS_ONLY ? "仅排名页" : "完整采集"}`);
   console.log(`请求间隔: ${REQUEST_DELAY_MS / 1000}s | 最大重试: ${MAX_RETRIES} | 超时: ${FETCH_TIMEOUT_MS / 1000}s`);
@@ -1025,6 +1229,21 @@ async function main() {
   // 创建目录
   ensureDir(AUDIT_DIR);
   ensureDir(RAW_DIR);
+
+  // 初始化日志
+  initLog();
+  log(`模式: ${PARSE_ONLY ? "仅解析" : RANKINGS_ONLY ? "仅排名页" : "完整采集"}`);
+  log(`请求间隔: ${REQUEST_DELAY_MS / 1000}s | 最大重试: ${MAX_RETRIES} | 节点切换上限: ${NODE_SWITCH_MAX}`);
+
+  // 初始化节点池
+  if (!PARSE_ONLY) {
+    await initNodePool();
+  }
+
+  // 注册退出时恢复节点
+  const cleanup = async () => { await restoreInitialNode(); };
+  process.on("SIGINT", async () => { await cleanup(); process.exit(0); });
+  process.on("SIGTERM", async () => { await cleanup(); process.exit(0); });
 
   // 加载源数据
   const citiesJson = JSON.parse(readFileSync(CITIES_PATH, "utf-8"));
@@ -1100,6 +1319,10 @@ async function main() {
   console.log(`\n完整报告: scripts/numbeo-audit/report.md`);
   console.log(`结构化数据: scripts/numbeo-audit/fetched-data.json`);
   console.log(`原始 HTML: scripts/numbeo-audit/raw/`);
+  if (nodeState.switchCount > 0) {
+    log(`🔀 本次运行共切换节点 ${nodeState.switchCount} 次 (${nodeState.deadNodes.size} 个不可用节点被跳过)`);
+  }
+  log(`📝 日志已保存: scripts/numbeo-audit/run.log`);
 
   // 如果有严重偏离，列出前 5 个
   const allMajors = [];
@@ -1120,8 +1343,12 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error(`\n💥 致命错误: ${err.message}`);
-  console.error(err.stack);
+main().then(async () => {
+  await restoreInitialNode();
+  closeLog();
+}).catch(async (err) => {
+  logError(`💥 致命错误: ${err.message}\n${err.stack}`);
+  await restoreInitialNode();
+  closeLog();
   process.exit(1);
 });

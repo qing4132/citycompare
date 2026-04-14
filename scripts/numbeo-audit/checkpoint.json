@@ -1,0 +1,275 @@
+{
+  "rankings": {
+    "crime": true,
+    "cost": true,
+    "property": true,
+    "healthcare": true,
+    "pollution": true
+  },
+  "cities": {
+    "1": {
+      "cost": true
+    },
+    "2": {
+      "cost": true
+    },
+    "3": {
+      "cost": true
+    },
+    "4": {
+      "cost": true
+    },
+    "5": {
+      "cost": true
+    },
+    "6": {
+      "cost": true
+    },
+    "7": {
+      "cost": true
+    },
+    "8": {
+      "cost": true
+    },
+    "9": {
+      "cost": true
+    },
+    "10": {
+      "cost": true
+    },
+    "11": {
+      "cost": true
+    },
+    "12": {
+      "cost": true
+    },
+    "13": {
+      "cost": true
+    },
+    "14": {
+      "cost": true
+    },
+    "15": {
+      "cost": true
+    },
+    "16": {
+      "cost": true
+    },
+    "17": {
+      "cost": true
+    },
+    "18": {
+      "cost": true
+    },
+    "19": {
+      "cost": true
+    },
+    "20": {
+      "cost": true
+    },
+    "21": {
+      "cost": true
+    },
+    "22": {
+      "cost": true
+    },
+    "23": {
+      "cost": true
+    },
+    "24": {
+      "cost": true
+    },
+    "25": {
+      "cost": true
+    },
+    "26": {
+      "cost": true
+    },
+    "27": {
+      "cost": true
+    },
+    "28": {
+      "cost": true
+    },
+    "29": {
+      "cost": true
+    },
+    "30": {
+      "cost": true
+    },
+    "31": {
+      "cost": true
+    },
+    "32": {
+      "cost": true
+    },
+    "33": {
+      "cost": true
+    },
+    "34": {
+      "cost": true
+    },
+    "35": {
+      "cost": true
+    },
+    "36": {
+      "cost": true
+    },
+    "37": {
+      "cost": true
+    },
+    "38": {
+      "cost": true
+    },
+    "39": {
+      "cost": true
+    },
+    "40": {
+      "cost": true
+    },
+    "41": {
+      "cost": true
+    },
+    "42": {
+      "cost": true
+    },
+    "43": {
+      "cost": true
+    },
+    "44": {
+      "cost": true
+    },
+    "45": {
+      "cost": true
+    },
+    "46": {
+      "cost": true
+    },
+    "47": {
+      "cost": true
+    },
+    "48": {
+      "cost": true
+    },
+    "49": {
+      "cost": true
+    },
+    "50": {
+      "cost": true
+    },
+    "51": {
+      "cost": true
+    },
+    "52": {
+      "cost": true
+    },
+    "53": {
+      "cost": true
+    },
+    "54": {
+      "cost": true
+    },
+    "55": {
+      "cost": true
+    },
+    "56": {
+      "cost": true
+    },
+    "57": {
+      "cost": true
+    },
+    "58": {
+      "cost": true
+    },
+    "59": {
+      "cost": true
+    },
+    "60": {
+      "cost": true
+    },
+    "61": {
+      "cost": true
+    },
+    "62": {
+      "cost": true
+    },
+    "63": {
+      "cost": true
+    },
+    "64": {
+      "cost": true
+    },
+    "65": {
+      "cost": true
+    },
+    "67": {
+      "cost": true
+    },
+    "68": {
+      "cost": true
+    },
+    "69": {
+      "cost": true
+    },
+    "70": {
+      "cost": true
+    },
+    "71": {
+      "cost": true
+    },
+    "73": {
+      "cost": true
+    },
+    "75": {
+      "cost": true
+    },
+    "76": {
+      "cost": true
+    },
+    "77": {
+      "cost": true
+    },
+    "78": {
+      "cost": true
+    },
+    "79": {
+      "cost": true
+    },
+    "80": {
+      "cost": true
+    },
+    "81": {
+      "cost": true
+    },
+    "82": {
+      "cost": true
+    },
+    "83": {
+      "cost": true
+    },
+    "84": {
+      "cost": true
+    },
+    "85": {
+      "cost": true
+    },
+    "86": {
+      "cost": true
+    },
+    "87": {
+      "cost": true
+    },
+    "88": {
+      "cost": true
+    },
+    "89": {
+      "cost": true
+    },
+    "90": {
+      "cost": true
+    },
+    "91": {
+      "cost": true
+    }
+  }
+}

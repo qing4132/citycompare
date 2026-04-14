@@ -1,6 +1,6 @@
 # WhichCity — Project Handoff
 
-> **Version 2.2** — Phase 2 in progress (2026-04-13)
+> **Version 2.3** — Phase 2 in progress (2026-04-14)
 > Phase 1 changelog: `_archive/reports/changelog-v1.md`
 > Phase 2 strategy: `_archive/reports/phase2-strategy.md`
 > New indicators report: `_archive/reports/new-indicators-2025-04.md`
@@ -238,21 +238,30 @@ See [REDESIGN.md](REDESIGN.md) for full plan. Key progress:
   - Output: `scripts/numbeo-audit/report.md` (human report), `fetched-data.json`, `comparisons.json`, `raw/` (HTML)
   - Usage: `node scripts/verify-numbeo-data.mjs` (full) / `--rankings-only` / `--parse-only` / `--delay=5`
 - [x] Phase A done: 5/5 ranking pages fetched and cached
-- [ ] Phase B in progress: 88/150 city cost pages fetched (up to id=91 bratislava), interrupted by network switch
-  - **To resume**: run `node scripts/verify-numbeo-data.mjs` again — checkpoint auto-continues from city 92
-- [ ] Phase C (property pages), Phase D (comparison report) pending
+- [x] Phase B done: 150/150 city cost pages fetched
+- [x] Phase C done: property pages fetched
+- [x] Phase D done: comparison report generated (`scripts/numbeo-audit/comparisons.json`)
+- [x] Numbeo audit applied: 149 cities updated (safety/cost/rent/housePrice) via `scripts/apply-numbeo-update.mjs`
 
-**Data quality findings so far** (from earlier manual audit):
-- `costModerate`, `costBudget`, `monthlyRent`, `housePrice` are all hardcoded values with no verified Numbeo sourcing
+**Data quality findings** (from Numbeo audit):
+- `costModerate`, `costBudget`, `monthlyRent`, `housePrice` were all hardcoded — now sourced from Numbeo
 - `costModerate` vs `costBudget`: Spearman ρ=0.986 → nearly identical ranking, `costBudget ≈ costModerate × 0.48`
 - `monthlyRent` vs `costModerate`: ρ=0.943, rent ratio 17%-77% → rent cannot substitute for total cost
-- Only `numbeoSafetyIndex` has a real source script (static 2024-2025 snapshot)
+- `numbeoSafetyIndex` updated to 2025 values; 15 cities lost Numbeo coverage → confidence dropped to 70
 - Numbeo API: $260/month minimum (Basic tier, 200K queries). One-month subscription sufficient for full re-source.
 - Teleport API: confirmed dead (HTTP timeout)
 
+**Data governance system** (2026-04-14):
+- [x] `data/cities-source.json`: Single Source of Truth (150 cities × 39 raw fields, no computed values)
+- [x] `data/registry.json`: field metadata registry (source, formula, coverage, frequency)
+- [x] `data/scripts/export.mjs`: export pipeline (compute 11 derived fields → validate → write `public/data/cities.json`)
+- [x] `data/scripts/validate.mjs`: enhanced validation (all old rules + 10 new checks)
+- [x] `data/scripts/audit-i18n.mjs`: i18n coverage matrix (464 keys × 4 locales)
+- [x] 299 confidence fields fixed from string ('high'/'medium'/'low') to numeric (0–100)
+- [x] Documentation: `data/README.md`, `data/SOURCES.md`, `data/SCRIPTS.md`, `data/HOWTO.md`
+- [x] Verification: tsc ✓ | 35 tests ✓ | validate 0 errors ✓ | export --check ✓
+
 Pending:
-- [ ] Complete Numbeo data verification (resume script on accessible network)
-- [ ] Apply verified data corrections to cities.json based on audit report
 - [ ] SEO meta optimization
 - [ ] GA4 key event configuration
 - [ ] Compare page Phase 2 restyling

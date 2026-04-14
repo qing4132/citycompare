@@ -5,9 +5,16 @@ applyTo: "public/data/cities.json,lib/taxData.ts,lib/constants.ts,lib/citySlug.t
 
 # 数据质量守则
 
+> 完整的数据治理文档见 [`data/README.md`](../../data/README.md)
+> 操作指南见 [`data/HOWTO.md`](../../data/HOWTO.md)
+
 编辑上述数据文件时，必须遵循以下规则：
 
-## cities.json
+## 核心规则
+
+**单一事实源**: 城市数据只编辑 `data/cities-source.json`，然后运行 `node data/scripts/export.mjs` 导出到前端。禁止直接编辑 `public/data/cities.json`。
+
+## cities-source.json (SOT)
 - `professions` 的值必须是**年薪 USD**（不是月薪、不是本地货币）
 - `averageIncome` 应为 professions 中位数
 - 安全指数 `safetyIndex` 必须等于 5 项子指标按 30/25/20/15/10 加权平均（numbeo/homicide/gpi/gallup/wps，缺失权重重分配）
@@ -22,5 +29,7 @@ applyTo: "public/data/cities.json,lib/taxData.ts,lib/constants.ts,lib/citySlug.t
 - cities.json 中的 `country`（中文）必须与 taxData.ts 的 COUNTRY_TAX 键严格匹配
 
 ## 验证
-- 完成数据编辑后运行：`node scripts/validate-data.mjs`
+- 完成数据编辑后运行：`node data/scripts/export.mjs` (导出到前端)
+- 运行验证：`node data/scripts/validate.mjs`
 - 完成代码编辑后运行：`npx tsc --noEmit`
+- 新增城市后运行：`node data/scripts/audit-i18n.mjs`

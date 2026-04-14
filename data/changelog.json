@@ -1,0 +1,28 @@
+{
+  "$schema": "WhichCity data version changelog",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "date": "2026-04-14",
+      "description": "Baseline — data governance system established",
+      "changes": [
+        "Established data/cities-source.json as single source of truth (150 cities × 39 raw fields)",
+        "Created export pipeline (data/scripts/export.mjs) to compute 11 derived fields",
+        "Fixed confidence fields: safetyConfidence, freedomConfidence converted from string to numeric (0-100)",
+        "Created field registry (data/registry.json) with complete metadata for all 49+ fields",
+        "Moved raw source data from _archive/data_sources/ to data/sources/",
+        "Created enhanced validation script",
+        "Composite indices verified: safety, healthcare, governance, freedom all recomputed from raw data"
+      ],
+      "dataSnapshot": {
+        "cities": 150,
+        "rawFields": 39,
+        "computedFields": 11,
+        "professions": 25,
+        "taxSystems": 81,
+        "currencies": 10,
+        "locales": 4
+      }
+    }
+  ]
+}

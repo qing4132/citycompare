@@ -1,6 +1,17 @@
 # Data Operations Guide
 
-> Where data lives, how to update it, and what scripts are available.
+> ⚠️ **此文档已迁移** → 请查看 [`data/README.md`](data/README.md)
+>
+> 新的数据治理文档:
+> - [data/README.md](data/README.md) — 数据架构总览
+> - [data/SOURCES.md](data/SOURCES.md) — 数据源详细说明
+> - [data/SCRIPTS.md](data/SCRIPTS.md) — 脚本使用手册
+> - [data/HOWTO.md](data/HOWTO.md) — 操作指南
+> - [data/automation/UPDATE_PLAN.md](data/automation/UPDATE_PLAN.md) — 自动更新设计方案
+
+以下为历史内容，仅保留作参考。
+
+---
 
 ## Data Files
 

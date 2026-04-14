@@ -4,7 +4,8 @@
 
 > 产品方向与约束 → [REDESIGN.md](../REDESIGN.md)
 > 技术架构 → [HANDOFF.md](../HANDOFF.md)
-> 数据操作 → [DATA_OPS.md](../DATA_OPS.md)
+> 数据治理 → [data/README.md](../data/README.md)
+> 数据操作 → [data/HOWTO.md](../data/HOWTO.md)
 > 战略报告 → `_archive/reports/phase2-strategy.md`
 
 ## Product Positioning
@@ -19,9 +20,10 @@ Core competitive advantage: profession × 81-country tax engine × comprehensive
 - `components/` — Page components + NavBar + ClimateChart
 - `hooks/useSettings.ts` — global settings (profession, locale, theme, currency, etc.)
 - `lib/` — data loading, i18n, tax engine (81 countries), nomad i18n, types, constants
-- `public/data/` — cities.json, exchange-rates.json, nomad-data-compiled.json
+- `data/` — **Single source of truth**: cities-source.json, field registry, export pipeline
+- `public/data/` — Auto-generated frontend JSON (cities.json, exchange-rates.json, nomad data)
 - `__tests__/` — unit tests (Vitest): tax engine, composite index
-- `scripts/` — 8 active maintenance scripts
+- `scripts/` — active maintenance scripts (rates, Numbeo, climate, timezone)
 - `_archive/` — historical scripts, data sources, reports (reference only)
 
 ## Key Data

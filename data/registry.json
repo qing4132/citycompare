@@ -1,0 +1,754 @@
+{
+  "$schema": "WhichCity Field Registry — metadata for every data field",
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-14",
+  "fields": {
+    "id": {
+      "type": "identifier",
+      "dataType": "number",
+      "nullable": false,
+      "description": "Unique city identifier (non-contiguous: 1-161)",
+      "frontendUsage": ["all pages"]
+    },
+    "name": {
+      "type": "identifier",
+      "dataType": "string",
+      "nullable": false,
+      "description": "City name in Chinese",
+      "frontendUsage": ["all pages"]
+    },
+    "country": {
+      "type": "identifier",
+      "dataType": "string",
+      "nullable": false,
+      "description": "Country name in Chinese. Must match taxData.ts COUNTRY_TAX keys.",
+      "frontendUsage": ["all pages"]
+    },
+    "continent": {
+      "type": "identifier",
+      "dataType": "string",
+      "nullable": false,
+      "description": "Continent name in Chinese (北美洲/欧洲/亚洲/大洋洲/非洲/拉丁美洲)",
+      "frontendUsage": ["RankingContent", "CompareContent"]
+    },
+    "currency": {
+      "type": "identifier",
+      "dataType": "string",
+      "nullable": false,
+      "description": "Local currency code (ISO 4217)",
+      "frontendUsage": ["CityDetailContent"]
+    },
+    "description": {
+      "type": "raw",
+      "dataType": "string",
+      "nullable": false,
+      "description": "Short Chinese city description (used as fallback; main intros in cityIntros.ts)",
+      "source": { "name": "AI-generated", "method": "manual" },
+      "frontendUsage": ["SEO metadata"]
+    },
+    "averageIncome": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": false,
+      "unit": "USD/year (gross)",
+      "range": [2581, 122000],
+      "description": "City average gross annual income in USD. Independently sourced, should approximate profession median.",
+      "source": {
+        "name": "Multiple (BLS, Eurostat, doda, Glassdoor, etc.)",
+        "method": "manual_research",
+        "publishDate": "2024-2025"
+      },
+      "coverage": "150/150",
+      "automatable": false,
+      "updateFrequency": "annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "professions": {
+      "type": "raw",
+      "dataType": "Record<string, number>",
+      "nullable": false,
+      "description": "25 profession gross annual salaries in USD. Keys are Chinese profession names.",
+      "constraints": "Exactly 25 keys per city. 数字游民 is fixed at $85000.",
+      "source": {
+        "name": "BLS OEWS, Eurostat, doda, Glassdoor, SalaryExpert, PayScale, etc.",
+        "method": "manual_research",
+        "publishDate": "2024-2025"
+      },
+      "coverage": "150/150",
+      "automatable": false,
+      "updateFrequency": "annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "costModerate": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": false,
+      "unit": "USD/month (single person)",
+      "range": [500, 5200],
+      "description": "Moderate monthly living cost. Includes rent, food, transport, basic entertainment.",
+      "source": {
+        "name": "Numbeo Cost of Living, Expatistan, Mercer",
+        "url": "https://www.numbeo.com/cost-of-living/",
+        "method": "web_scraping + manual_cross_reference",
+        "publishDate": "2024-2025"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "semi-annual",
+      "antiScraping": { "rateLimit": true, "proxyNeeded": true },
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent", "clientUtils (Life Pressure)"]
+    },
+    "costBudget": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": false,
+      "unit": "USD/month (single person)",
+      "range": [185, 2496],
+      "description": "Budget monthly living cost. Shared rent, cook at home, minimal entertainment.",
+      "source": { "name": "Numbeo + city-specific coefficient", "method": "manual_research" },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "semi-annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent", "clientUtils (Life Pressure)"]
+    },
+    "bigMacPrice": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "USD",
+      "description": "Big Mac price. National-level data. Null for 6 countries without McDonald's.",
+      "source": {
+        "name": "The Economist Big Mac Index",
+        "url": "https://github.com/TheEconomist/big-mac-data",
+        "method": "public_dataset",
+        "publishDate": "2025-01"
+      },
+      "coverage": "144/150 (6 null: Iran, Cambodia, Myanmar, Bangladesh, Nepal, Mongolia)",
+      "automatable": true,
+      "updateFrequency": "semi-annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent (Big Mac mode)", "clientUtils (Life Pressure)"]
+    },
+    "housePrice": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "USD/m²",
+      "range": [400, 30000],
+      "description": "City center residential housing price per square meter",
+      "source": {
+        "name": "Global Property Guide, Numbeo Property",
+        "method": "web_scraping + manual",
+        "publishDate": "2024-2025"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "semi-annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent", "clientUtils (years to buy)"]
+    },
+    "monthlyRent": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "USD/month",
+      "range": [30, 3200],
+      "description": "1BR city center apartment monthly rent",
+      "source": {
+        "name": "Numbeo Rent Index",
+        "url": "https://www.numbeo.com/cost-of-living/",
+        "method": "web_scraping",
+        "publishDate": "2024-2025"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "semi-annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "annualWorkHours": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "hours/year",
+      "range": [1341, 2238],
+      "description": "Average annual working hours per employed person. Country-level.",
+      "source": {
+        "name": "OECD Employment Outlook / ILO ILOSTAT",
+        "url": "https://data.oecd.org/emp/hours-worked.htm",
+        "method": "public_api",
+        "publishDate": "2024"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent", "clientUtils (Life Pressure)"]
+    },
+    "paidLeaveDays": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "days/year",
+      "range": [0, 30],
+      "description": "Statutory minimum annual paid leave days. Country-level.",
+      "source": { "name": "OECD, ILO, national labor law", "method": "manual_research" },
+      "coverage": "150/150",
+      "automatable": false,
+      "updateFrequency": "annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "internetSpeedMbps": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "Mbps",
+      "range": [20, 250],
+      "description": "Fixed broadband download speed. City-level.",
+      "source": {
+        "name": "Ookla Speedtest Global Index",
+        "url": "https://www.speedtest.net/global-index",
+        "method": "public_dataset",
+        "publishDate": "2025"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "quarterly",
+      "frontendUsage": ["CityDetailContent", "CompareContent"]
+    },
+    "airQuality": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "US EPA AQI",
+      "range": [22, 175],
+      "description": "Annual average Air Quality Index (US EPA standard)",
+      "source": {
+        "name": "US EPA AirNow (126 cities) / IQAir (8 Chinese cities)",
+        "method": "public_api + manual",
+        "publishDate": "2023-2025"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "aqiSource": {
+      "type": "metadata",
+      "dataType": "string",
+      "nullable": true,
+      "description": "AQI data source identifier: 'EPA' or 'AQICN'",
+      "frontendUsage": ["CityDetailContent (source label)"]
+    },
+    "doctorsPerThousand": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "physicians per 1000 population",
+      "range": [0.2, 7.0],
+      "description": "Physicians per 1000 people. National baseline with city-level adjustment.",
+      "source": {
+        "name": "WHO / World Bank SH.MED.PHYS.ZS",
+        "url": "https://data.worldbank.org/indicator/SH.MED.PHYS.ZS",
+        "method": "public_api",
+        "publishDate": "2020-2023"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "healthcareIndex (weight 25%)",
+      "frontendUsage": ["CityDetailContent (healthcare sub-indicator)"]
+    },
+    "hospitalBedsPerThousand": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "beds per 1000 population",
+      "range": [0, 13],
+      "description": "Hospital beds per 1000 people. Country-level.",
+      "source": {
+        "name": "World Bank SH.MED.BEDS.ZS",
+        "url": "https://data.worldbank.org/indicator/SH.MED.BEDS.ZS",
+        "method": "public_api",
+        "publishDate": "2019-2023"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "healthcareIndex (weight 20%)",
+      "frontendUsage": ["CityDetailContent (healthcare sub-indicator)"]
+    },
+    "uhcCoverageIndex": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "range": [0, 100],
+      "description": "UHC Service Coverage Index. Country-level.",
+      "source": {
+        "name": "WHO Global Health Observatory",
+        "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/uhc-index-of-service-coverage",
+        "method": "public_api",
+        "publishDate": "2021"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "biennial",
+      "usedInComposite": "healthcareIndex (weight 25%)",
+      "frontendUsage": ["CityDetailContent (healthcare sub-indicator)"]
+    },
+    "lifeExpectancy": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "years",
+      "range": [53.9, 85.3],
+      "description": "Life expectancy at birth. Country-level.",
+      "source": {
+        "name": "World Bank SP.DYN.LE00.IN",
+        "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
+        "method": "public_api",
+        "publishDate": "2022"
+      },
+      "coverage": "150/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "healthcareIndex (weight 15%)",
+      "frontendUsage": ["CityDetailContent (healthcare sub-indicator)"]
+    },
+    "outOfPocketPct": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "% of health spending",
+      "range": [6.65, 70.59],
+      "description": "Out-of-pocket health expenditure as % of current health expenditure. Country-level. Lower = better.",
+      "source": {
+        "name": "World Bank SH.XPD.OOPC.CH.ZS",
+        "url": "https://data.worldbank.org/indicator/SH.XPD.OOPC.CH.ZS",
+        "method": "public_api",
+        "publishDate": "2021"
+      },
+      "coverage": "148/150 (HK, PR null)",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "healthcareIndex (weight 15%, inverted)",
+      "frontendUsage": ["CityDetailContent (healthcare sub-indicator)"]
+    },
+    "numbeoSafetyIndex": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "range": [0, 100],
+      "description": "Numbeo Safety Index. City-level survey data.",
+      "source": {
+        "name": "Numbeo",
+        "url": "https://www.numbeo.com/crime/rankings",
+        "method": "web_scraping",
+        "fetchScript": "scripts/fetch-numbeo-safety.mjs",
+        "publishDate": "2024-2025",
+        "fetchDate": "2026-03"
+      },
+      "coverage": "149/150 (仰光 null)",
+      "automatable": true,
+      "updateFrequency": "semi-annual",
+      "antiScraping": {
+        "rateLimit": true,
+        "proxyNeeded": true,
+        "notes": "Use verify-numbeo-data.mjs with Clash proxy rotation. Rate limit: 1 req/2s."
+      },
+      "usedInComposite": "safetyIndex (weight 30%)",
+      "frontendUsage": ["CityDetailContent (safety sub-indicator)"]
+    },
+    "homicideRate": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "per 100,000 population",
+      "range": [0.2, 41],
+      "description": "Intentional homicide rate. Country-level.",
+      "source": {
+        "name": "UNODC",
+        "url": "https://dataunodc.un.org",
+        "method": "public_dataset",
+        "publishDate": "2024"
+      },
+      "coverage": "149/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "safetyIndex (weight 25%, via homicideRateInv)",
+      "frontendUsage": ["CityDetailContent (safety sub-indicator raw value)"]
+    },
+    "gpiScore": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (1-5, lower = more peaceful)",
+      "range": [1, 5],
+      "description": "Global Peace Index overall score. Country-level.",
+      "source": {
+        "name": "IEP / Vision of Humanity",
+        "url": "https://www.visionofhumanity.org/maps/",
+        "method": "public_dataset",
+        "publishDate": "2025"
+      },
+      "coverage": "148/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "safetyIndex (weight 20%, via gpiScoreInv)",
+      "frontendUsage": ["CityDetailContent (safety sub-indicator raw value)"]
+    },
+    "gallupLawOrder": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "range": [0, 100],
+      "description": "Gallup Global Law & Order Index. Country-level.",
+      "source": {
+        "name": "Gallup",
+        "url": "https://www.gallup.com/analytics/356963/gallup-global-law-order-report.aspx",
+        "method": "public_report (manual extraction)",
+        "publishDate": "2024"
+      },
+      "coverage": "148/150",
+      "automatable": false,
+      "updateFrequency": "annual",
+      "usedInComposite": "safetyIndex (weight 15%)",
+      "frontendUsage": ["CityDetailContent (safety sub-indicator)"]
+    },
+    "wpsIndex": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-1)",
+      "range": [0, 1],
+      "description": "Georgetown WPS Index (Women, Peace & Security). Country-level.",
+      "source": {
+        "name": "Georgetown Institute for Women, Peace and Security",
+        "url": "https://giwps.georgetown.edu/the-index/",
+        "method": "public_dataset (Excel)",
+        "publishDate": "2025/26"
+      },
+      "coverage": "148/150 (Taiwan null, +1 null)",
+      "automatable": true,
+      "updateFrequency": "biennial",
+      "usedInComposite": "safetyIndex (weight 10%, ×100 for normalization)",
+      "frontendUsage": ["CityDetailContent (safety sub-indicator)"]
+    },
+    "safetyWarning": {
+      "type": "metadata",
+      "dataType": "string",
+      "nullable": true,
+      "description": "Manual safety warning flag: active_conflict | extreme_instability | data_blocked",
+      "frontendUsage": ["CityDetailContent (red warning display)"]
+    },
+    "pressFreedomScore": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "range": [0, 100],
+      "description": "RSF World Press Freedom Index score. Country-level.",
+      "source": {
+        "name": "Reporters Without Borders (RSF)",
+        "url": "https://rsf.org/en/index",
+        "method": "public_dataset",
+        "publishDate": "2024"
+      },
+      "coverage": "148/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "governanceIndex (weight 15%), freedomIndex (weight 35%)",
+      "frontendUsage": ["CityDetailContent (governance sub-indicator)"]
+    },
+    "democracyIndex": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-10)",
+      "range": [0, 10],
+      "description": "EIU Democracy Index. Country-level.",
+      "source": {
+        "name": "The Economist Intelligence Unit",
+        "url": "https://www.eiu.com/n/campaigns/democracy-index-2024/",
+        "method": "public_report (manual extraction)",
+        "publishDate": "2024"
+      },
+      "coverage": "148/150",
+      "automatable": false,
+      "updateFrequency": "annual",
+      "usedInComposite": "freedomIndex (weight 35%, ×10 for normalization)",
+      "frontendUsage": ["CityDetailContent (governance section)"]
+    },
+    "corruptionPerceptionIndex": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "range": [0, 100],
+      "description": "Transparency International CPI. Country-level.",
+      "source": {
+        "name": "Transparency International",
+        "url": "https://www.transparency.org/cpi",
+        "method": "public_dataset",
+        "publishDate": "2024"
+      },
+      "coverage": "149/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "governanceIndex (weight 25%), freedomIndex (weight 30%)",
+      "frontendUsage": ["CityDetailContent (governance sub-indicator)"]
+    },
+    "govEffectiveness": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "percentile (0-100)",
+      "range": [0, 100],
+      "description": "WGI Government Effectiveness percentile rank. Country-level.",
+      "source": {
+        "name": "World Bank Worldwide Governance Indicators",
+        "url": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+        "method": "public_dataset (Excel)",
+        "publishDate": "2024"
+      },
+      "coverage": "149/150 (Taiwan null)",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "governanceIndex (weight 25%)",
+      "frontendUsage": ["CityDetailContent (governance sub-indicator)"]
+    },
+    "wjpRuleLaw": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-1)",
+      "range": [0, 1],
+      "description": "WJP Rule of Law Index overall score. Country-level.",
+      "source": {
+        "name": "World Justice Project",
+        "url": "https://worldjusticeproject.org/rule-of-law-index/global/2025",
+        "method": "public_dataset (CSV)",
+        "publishDate": "2025"
+      },
+      "coverage": "137/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "usedInComposite": "governanceIndex (weight 20%, ×100 for normalization)",
+      "frontendUsage": ["CityDetailContent (governance sub-indicator)"]
+    },
+    "internetFreedomScore": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100, higher = more free)",
+      "range": [0, 100],
+      "description": "Freedom House Freedom on the Net score. Country-level. Many countries not assessed.",
+      "source": {
+        "name": "Freedom House",
+        "url": "https://freedomhouse.org/countries/freedom-net/scores",
+        "method": "public_dataset",
+        "publishDate": "2024"
+      },
+      "coverage": "~90/150",
+      "automatable": true,
+      "updateFrequency": "annual",
+      "frontendUsage": ["CityDetailContent (governance section, not in composite)"]
+    },
+    "mipexScore": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "range": [0, 100],
+      "description": "MIPEX Migrant Integration Policy Index. Country-level. Many countries not covered.",
+      "source": {
+        "name": "MIPEX",
+        "url": "https://www.mipex.eu/play/",
+        "method": "public_dataset",
+        "publishDate": "2019 (latest edition)"
+      },
+      "coverage": "~100/150",
+      "automatable": false,
+      "updateFrequency": "irregular (every 3-5 years)",
+      "usedInComposite": "governanceIndex (weight 15%)",
+      "frontendUsage": ["CityDetailContent (governance sub-indicator)"]
+    },
+    "directFlightCities": {
+      "type": "raw",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "count",
+      "range": [0, 390],
+      "description": "Number of unique direct-flight destination cities from all airports in the metro area.",
+      "source": {
+        "name": "OAG, FlightConnections.com, Wikipedia",
+        "method": "manual_research",
+        "publishDate": "2025"
+      },
+      "coverage": "150/150",
+      "automatable": false,
+      "updateFrequency": "annual",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "climate": {
+      "type": "raw",
+      "dataType": "ClimateInfo",
+      "nullable": true,
+      "description": "Climate data object: type, avgTempC, annualRainMm, sunshineHours, summerAvgC, winterAvgC, humidityPct, monthly arrays",
+      "source": {
+        "name": "NOAA, national meteorological agencies, Climate-Data.org",
+        "method": "manual_research",
+        "publishDate": "30-year normals"
+      },
+      "coverage": "150/150",
+      "automatable": false,
+      "updateFrequency": "rarely (climatological normals)",
+      "frontendUsage": ["CityDetailContent", "ClimateChart", "CompareContent", "RankingContent"]
+    },
+    "timezone": {
+      "type": "raw",
+      "dataType": "string",
+      "nullable": true,
+      "description": "IANA timezone identifier (e.g. 'America/New_York')",
+      "source": { "name": "IANA Time Zone Database", "method": "script: add-timezone.mjs" },
+      "coverage": "150/150",
+      "frontendUsage": ["nomadData (timezone overlap)"]
+    },
+    "homicideRateInv": {
+      "type": "computed",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "formula": "100 - minMaxNorm(homicideRate, globalMin, globalMax)",
+      "dependencies": ["homicideRate"],
+      "computeScript": "data/scripts/export.mjs",
+      "description": "Inverted homicide rate normalized to 0-100. Higher = safer.",
+      "frontendUsage": ["CityDetailContent (safety sub-indicator)"]
+    },
+    "gpiScoreInv": {
+      "type": "computed",
+      "dataType": "number",
+      "nullable": true,
+      "unit": "score (0-100)",
+      "formula": "round((5 - gpiScore) / 4 × 100)",
+      "dependencies": ["gpiScore"],
+      "computeScript": "data/scripts/export.mjs",
+      "description": "GPI score converted to 0-100 (higher = more peaceful).",
+      "frontendUsage": ["CityDetailContent (safety sub-indicator)"]
+    },
+    "safetyIndex": {
+      "type": "computed",
+      "dataType": "number",
+      "nullable": false,
+      "unit": "score (0-100)",
+      "formula": "weightedAvg(numbeo*30 + homicideInv*25 + gpiInv*20 + gallup*15 + wps*100*10, missing weights redistributed)",
+      "dependencies": ["numbeoSafetyIndex", "homicideRateInv", "gpiScoreInv", "gallupLawOrder", "wpsIndex"],
+      "computeScript": "data/scripts/export.mjs",
+      "description": "Composite safety index. Pre-computed weighted average of 5 sub-indicators.",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "safetyConfidence": {
+      "type": "computed",
+      "dataType": "number",
+      "unit": "weighted % (0-100)",
+      "formula": "sum(available sub-indicator weights). Weights: numbeo=30, homicideRate=25, gpiScore=20, gallup=15, wps=10",
+      "computeScript": "data/scripts/export.mjs",
+      "description": "Weighted data coverage for safety composite. 100 = all 5 subs present.",
+      "frontendUsage": ["CityDetailContent (confidence badge)", "RankingContent"]
+    },
+    "healthcareIndex": {
+      "type": "computed",
+      "dataType": "number",
+      "nullable": false,
+      "unit": "score (0-100)",
+      "formula": "weightedAvg(doctorsNorm*25 + uhc*25 + bedsNorm*20 + lifeNorm*15 + oopInvNorm*15, missing reweighted)",
+      "dependencies": ["doctorsPerThousand", "uhcCoverageIndex", "hospitalBedsPerThousand", "lifeExpectancy", "outOfPocketPct"],
+      "computeScript": "data/scripts/export.mjs",
+      "description": "Composite healthcare index. Normalized + weighted average of 5 sub-indicators.",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "healthcareConfidence": {
+      "type": "computed",
+      "dataType": "number",
+      "unit": "weighted % (0-100)",
+      "formula": "sum(available weights). Weights: doctors=25, beds=20, uhc=25, life=15, oop=15",
+      "computeScript": "data/scripts/export.mjs",
+      "frontendUsage": ["CityDetailContent", "RankingContent"]
+    },
+    "governanceIndex": {
+      "type": "computed",
+      "dataType": "number",
+      "nullable": false,
+      "unit": "score (0-100)",
+      "formula": "weightedAvg(CPI*25 + govEff*25 + wjp*100*20 + pressFreedom*15 + mipex*15, missing reweighted)",
+      "dependencies": ["corruptionPerceptionIndex", "govEffectiveness", "wjpRuleLaw", "pressFreedomScore", "mipexScore"],
+      "computeScript": "data/scripts/export.mjs",
+      "description": "Composite governance/institutions index. Replaces old freedomIndex.",
+      "frontendUsage": ["CityDetailContent", "CompareContent", "RankingContent"]
+    },
+    "governanceConfidence": {
+      "type": "computed",
+      "dataType": "number",
+      "unit": "weighted % (0-100)",
+      "formula": "sum(available weights). Weights: CPI=25, govEff=25, wjp=20, press=15, mipex=15",
+      "computeScript": "data/scripts/export.mjs",
+      "frontendUsage": ["CityDetailContent", "RankingContent"]
+    },
+    "freedomIndex": {
+      "type": "computed",
+      "dataType": "number",
+      "nullable": false,
+      "unit": "score (0-100)",
+      "formula": "weightedAvg(pressFreedom*35 + democracy*10*35 + CPI*30, missing reweighted)",
+      "dependencies": ["pressFreedomScore", "democracyIndex", "corruptionPerceptionIndex"],
+      "computeScript": "data/scripts/export.mjs",
+      "description": "Legacy composite freedom index. Kept for backward compatibility.",
+      "frontendUsage": ["RankingContent (legacy)"]
+    },
+    "freedomConfidence": {
+      "type": "computed",
+      "dataType": "number",
+      "unit": "weighted % (0-100)",
+      "formula": "sum(available weights). Weights: press=35, democracy=35, CPI=30",
+      "computeScript": "data/scripts/export.mjs",
+      "frontendUsage": ["RankingContent (legacy)"]
+    },
+    "securityConfidence": {
+      "type": "computed",
+      "dataType": "number",
+      "unit": "weighted % (0-100)",
+      "formula": "round((safetyConfidence + healthcareConfidence + governanceConfidence) / 3)",
+      "dependencies": ["safetyConfidence", "healthcareConfidence", "governanceConfidence"],
+      "computeScript": "data/scripts/export.mjs",
+      "description": "Combined confidence across safety + healthcare + governance. Used for SABCD grade display.",
+      "frontendUsage": ["CityDetailContent (confidence badge, grade asterisk)"]
+    }
+  },
+  "compositeWeights": {
+    "safety": {
+      "numbeoSafetyIndex": 30,
+      "homicideRate→Inv": 25,
+      "gpiScore→Inv": 20,
+      "gallupLawOrder": 15,
+      "wpsIndex×100": 10
+    },
+    "healthcare": {
+      "doctorsPerThousand→norm": 25,
+      "uhcCoverageIndex": 25,
+      "hospitalBedsPerThousand→norm": 20,
+      "lifeExpectancy→norm": 15,
+      "outOfPocketPct→invNorm": 15
+    },
+    "governance": {
+      "corruptionPerceptionIndex": 25,
+      "govEffectiveness": 25,
+      "wjpRuleLaw×100": 20,
+      "pressFreedomScore": 15,
+      "mipexScore": 15
+    },
+    "freedom_legacy": {
+      "pressFreedomScore": 35,
+      "democracyIndex×10": 35,
+      "corruptionPerceptionIndex": 30
+    }
+  }
+}

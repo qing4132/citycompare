@@ -1,4 +1,7 @@
 {
+  "$schema": "Source of Truth for WhichCity city data. Computed fields are derived by data/scripts/export.mjs.",
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-14",
   "cities": [
     {
       "id": 1,
@@ -114,18 +117,7 @@
           102
         ]
       },
-      "timezone": "America/New_York",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 68.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 65.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/New_York"
     },
     {
       "id": 2,
@@ -241,18 +233,7 @@
           55
         ]
       },
-      "timezone": "Europe/London",
-      "homicideRateInv": 98,
-      "gpiScoreInv": 84,
-      "safetyIndex": 75.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 64.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 70.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 75.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/London"
     },
     {
       "id": 3,
@@ -368,18 +349,7 @@
           51
         ]
       },
-      "timezone": "Asia/Tokyo",
-      "homicideRateInv": 100,
-      "gpiScoreInv": 92,
-      "safetyIndex": 88.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 78.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 73.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 73.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Tokyo"
     },
     {
       "id": 4,
@@ -495,18 +465,7 @@
           2
         ]
       },
-      "timezone": "Asia/Shanghai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 78,
-      "safetyIndex": 83.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 64.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Shanghai"
     },
     {
       "id": 5,
@@ -622,18 +581,7 @@
           34
         ]
       },
-      "timezone": "Asia/Shanghai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 78,
-      "safetyIndex": 82.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Shanghai"
     },
     {
       "id": 6,
@@ -749,18 +697,7 @@
           69
         ]
       },
-      "timezone": "Australia/Sydney",
-      "homicideRateInv": 98.3,
-      "gpiScoreInv": 87,
-      "safetyIndex": 83.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 69.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 75.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 75.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Australia/Sydney"
     },
     {
       "id": 7,
@@ -876,18 +813,7 @@
           287
         ]
       },
-      "timezone": "Asia/Singapore",
-      "homicideRateInv": 100,
-      "gpiScoreInv": 92,
-      "safetyIndex": 90.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 59.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 78,
-      "governanceConfidence": 85,
-      "freedomIndex": 60,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Singapore"
     },
     {
       "id": 8,
@@ -1003,18 +929,7 @@
           57
         ]
       },
-      "timezone": "Europe/Paris",
-      "homicideRateInv": 97.3,
-      "gpiScoreInv": 76,
-      "safetyIndex": 71.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 71.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 73.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Paris"
     },
     {
       "id": 9,
@@ -1130,18 +1045,7 @@
           68
         ]
       },
-      "timezone": "America/Toronto",
-      "homicideRateInv": 95.6,
-      "gpiScoreInv": 91,
-      "safetyIndex": 79.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 78.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 79.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Toronto"
     },
     {
       "id": 10,
@@ -1257,18 +1161,7 @@
           27
         ]
       },
-      "timezone": "Asia/Hong_Kong",
-      "homicideRateInv": 99.8,
-      "gpiScoreInv": 78,
-      "safetyIndex": 85,
-      "safetyConfidence": 100,
-      "healthcareIndex": 60.9,
-      "healthcareConfidence": 85,
-      "governanceIndex": 66.3,
-      "governanceConfidence": 85,
-      "freedomIndex": 40.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Hong_Kong"
     },
     {
       "id": 11,
@@ -1384,18 +1277,7 @@
           59
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 67.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 60.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 12,
@@ -1511,18 +1393,7 @@
           111
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 66,
-      "safetyConfidence": 100,
-      "healthcareIndex": 63.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 13,
@@ -1638,18 +1509,7 @@
           58
         ]
       },
-      "timezone": "America/Chicago",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 64.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Chicago"
     },
     {
       "id": 14,
@@ -1765,18 +1625,7 @@
           16
         ]
       },
-      "timezone": "Asia/Dubai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 87,
-      "safetyIndex": 90.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 58.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 57,
-      "governanceConfidence": 100,
-      "freedomIndex": 39.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Dubai"
     },
     {
       "id": 15,
@@ -1892,18 +1741,7 @@
           78
         ]
       },
-      "timezone": "Europe/Amsterdam",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 87,
-      "safetyIndex": 84,
-      "safetyConfidence": 100,
-      "healthcareIndex": 67.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 77.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 81.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Amsterdam"
     },
     {
       "id": 16,
@@ -2019,18 +1857,7 @@
           69
         ]
       },
-      "timezone": "Europe/Zurich",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 92,
-      "safetyIndex": 88.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 70.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 77.6,
-      "governanceConfidence": 80,
-      "freedomIndex": 85.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 93
+      "timezone": "Europe/Zurich"
     },
     {
       "id": 17,
@@ -2146,18 +1973,7 @@
           72
         ]
       },
-      "timezone": "Europe/Zurich",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 92,
-      "safetyIndex": 86.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 70.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 77.6,
-      "governanceConfidence": 80,
-      "freedomIndex": 85.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 93
+      "timezone": "Europe/Zurich"
     },
     {
       "id": 18,
@@ -2273,18 +2089,7 @@
           53
         ]
       },
-      "timezone": "Europe/Berlin",
-      "homicideRateInv": 98.5,
-      "gpiScoreInv": 83,
-      "safetyIndex": 85.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 77.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 76,
-      "governanceConfidence": 100,
-      "freedomIndex": 79.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Berlin"
     },
     {
       "id": 19,
@@ -2400,18 +2205,7 @@
           46
         ]
       },
-      "timezone": "Europe/Berlin",
-      "homicideRateInv": 98.5,
-      "gpiScoreInv": 83,
-      "safetyIndex": 78.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 75.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 76,
-      "governanceConfidence": 100,
-      "freedomIndex": 79.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Berlin"
     },
     {
       "id": 20,
@@ -2527,18 +2321,7 @@
           47
         ]
       },
-      "timezone": "Europe/Madrid",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 85,
-      "safetyIndex": 75.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 67.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 66.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 69.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Madrid"
     },
     {
       "id": 21,
@@ -2654,18 +2437,7 @@
           52
         ]
       },
-      "timezone": "Europe/Madrid",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 85,
-      "safetyIndex": 82.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 67.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 66.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 69.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Madrid"
     },
     {
       "id": 22,
@@ -2781,18 +2553,7 @@
           58
         ]
       },
-      "timezone": "Europe/Rome",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 84,
-      "safetyIndex": 74.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 66.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 61,
-      "governanceConfidence": 100,
-      "freedomIndex": 63.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Rome"
     },
     {
       "id": 23,
@@ -2908,18 +2669,7 @@
           81
         ]
       },
-      "timezone": "Europe/Rome",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 84,
-      "safetyIndex": 76.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 66.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 61,
-      "governanceConfidence": 100,
-      "freedomIndex": 63.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Rome"
     },
     {
       "id": 24,
@@ -3035,18 +2785,7 @@
           77
         ]
       },
-      "timezone": "Europe/Brussels",
-      "homicideRateInv": 96.3,
-      "gpiScoreInv": 87,
-      "safetyIndex": 74.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 69,
-      "healthcareConfidence": 100,
-      "governanceIndex": 74.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 74.9,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Brussels"
     },
     {
       "id": 25,
@@ -3162,18 +2901,7 @@
           41
         ]
       },
-      "timezone": "Europe/Vienna",
-      "homicideRateInv": 98.8,
-      "gpiScoreInv": 93,
-      "safetyIndex": 86.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 78.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 71.2,
-      "governanceConfidence": 100,
-      "freedomIndex": 75.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Vienna"
     },
     {
       "id": 26,
@@ -3289,18 +3017,7 @@
           25
         ]
       },
-      "timezone": "Europe/Prague",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 91,
-      "safetyIndex": 86,
-      "safetyConfidence": 100,
-      "healthcareIndex": 71.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 64.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 67,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Prague"
     },
     {
       "id": 27,
@@ -3416,18 +3133,7 @@
           35
         ]
       },
-      "timezone": "Europe/Warsaw",
-      "homicideRateInv": 98.8,
-      "gpiScoreInv": 82,
-      "safetyIndex": 83.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 57.2,
-      "governanceConfidence": 100,
-      "freedomIndex": 60.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Warsaw"
     },
     {
       "id": 28,
@@ -3543,18 +3249,7 @@
           103
         ]
       },
-      "timezone": "Europe/Lisbon",
-      "homicideRateInv": 98.5,
-      "gpiScoreInv": 93,
-      "safetyIndex": 83.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 69.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 70.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 74.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Lisbon"
     },
     {
       "id": 29,
@@ -3670,18 +3365,7 @@
           69
         ]
       },
-      "timezone": "Europe/Athens",
-      "homicideRateInv": 98.5,
-      "gpiScoreInv": 81,
-      "safetyIndex": 72.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 71.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 53.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 61.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Athens"
     },
     {
       "id": 30,
@@ -3797,18 +3481,7 @@
           112
         ]
       },
-      "timezone": "Europe/Istanbul",
-      "homicideRateInv": 94.1,
-      "gpiScoreInv": 62,
-      "safetyIndex": 68.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 55.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 39.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 33.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Istanbul"
     },
     {
       "id": 31,
@@ -3924,18 +3597,7 @@
           5
         ]
       },
-      "timezone": "America/Mexico_City",
-      "homicideRateInv": 38.7,
-      "gpiScoreInv": 52,
-      "safetyIndex": 42.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 47,
-      "healthcareConfidence": 100,
-      "governanceIndex": 40.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 40.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Mexico_City"
     },
     {
       "id": 32,
@@ -4051,18 +3713,7 @@
           190
         ]
       },
-      "timezone": "America/Sao_Paulo",
-      "homicideRateInv": 45.6,
-      "gpiScoreInv": 66,
-      "safetyIndex": 47.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 52.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 48.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 53.8,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Sao_Paulo"
     },
     {
       "id": 33,
@@ -4178,18 +3829,7 @@
           138
         ]
       },
-      "timezone": "America/Sao_Paulo",
-      "homicideRateInv": 45.6,
-      "gpiScoreInv": 66,
-      "safetyIndex": 45.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 51.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 48.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 53.8,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Sao_Paulo"
     },
     {
       "id": 34,
@@ -4305,18 +3945,7 @@
           51
         ]
       },
-      "timezone": "America/New_York",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 68.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/New_York"
     },
     {
       "id": 35,
@@ -4432,18 +4061,7 @@
           79
         ]
       },
-      "timezone": "America/New_York",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 66.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 65,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/New_York"
     },
     {
       "id": 36,
@@ -4559,18 +4177,7 @@
           109
         ]
       },
-      "timezone": "America/New_York",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 72.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 68.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/New_York"
     },
     {
       "id": 37,
@@ -4686,18 +4293,7 @@
           140
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 67.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 38,
@@ -4813,18 +4409,7 @@
           15
         ]
       },
-      "timezone": "America/Denver",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 69.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 60.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Denver"
     },
     {
       "id": 39,
@@ -4940,18 +4525,7 @@
           52
         ]
       },
-      "timezone": "America/Chicago",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 70.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 59.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Chicago"
     },
     {
       "id": 40,
@@ -5067,18 +4641,7 @@
           176
         ]
       },
-      "timezone": "America/Vancouver",
-      "homicideRateInv": 95.6,
-      "gpiScoreInv": 91,
-      "safetyIndex": 80.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 78.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 79.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Vancouver"
     },
     {
       "id": 41,
@@ -5194,18 +4757,7 @@
           83
         ]
       },
-      "timezone": "America/Montreal",
-      "homicideRateInv": 95.6,
-      "gpiScoreInv": 91,
-      "safetyIndex": 83.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62,
-      "healthcareConfidence": 100,
-      "governanceIndex": 78.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 79.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Montreal"
     },
     {
       "id": 42,
@@ -5321,18 +4873,7 @@
           52
         ]
       },
-      "timezone": "Australia/Melbourne",
-      "homicideRateInv": 98.3,
-      "gpiScoreInv": 87,
-      "safetyIndex": 79.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 69.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 75.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 75.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Australia/Melbourne"
     },
     {
       "id": 43,
@@ -5448,18 +4989,7 @@
           111
         ]
       },
-      "timezone": "Australia/Brisbane",
-      "homicideRateInv": 98.3,
-      "gpiScoreInv": 87,
-      "safetyIndex": 81.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 68.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 75.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 75.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Australia/Brisbane"
     },
     {
       "id": 44,
@@ -5575,18 +5105,7 @@
           82
         ]
       },
-      "timezone": "Pacific/Auckland",
-      "homicideRateInv": 97.8,
-      "gpiScoreInv": 95,
-      "safetyIndex": 79.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 65.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 82.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 86.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Pacific/Auckland"
     },
     {
       "id": 45,
@@ -5702,18 +5221,7 @@
           10
         ]
       },
-      "timezone": "Asia/Bangkok",
-      "homicideRateInv": 93.6,
-      "gpiScoreInv": 75,
-      "safetyIndex": 76.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 52.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 45.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 46.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Bangkok"
     },
     {
       "id": 46,
@@ -5829,18 +5337,7 @@
           233
         ]
       },
-      "timezone": "Asia/Kuala_Lumpur",
-      "homicideRateInv": 95.3,
-      "gpiScoreInv": 86,
-      "safetyIndex": 72.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 49.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 56.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 57,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Kuala_Lumpur"
     },
     {
       "id": 47,
@@ -5956,18 +5453,7 @@
           48
         ]
       },
-      "timezone": "Asia/Ho_Chi_Minh",
-      "homicideRateInv": 96.8,
-      "gpiScoreInv": 79,
-      "safetyIndex": 75,
-      "safetyConfidence": 100,
-      "healthcareIndex": 44.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 41.3,
-      "governanceConfidence": 85,
-      "freedomIndex": 27.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Ho_Chi_Minh"
     },
     {
       "id": 48,
@@ -6083,18 +5569,7 @@
           15
         ]
       },
-      "timezone": "Asia/Bangkok",
-      "homicideRateInv": 96.8,
-      "gpiScoreInv": 79,
-      "safetyIndex": 79.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 44.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 41.3,
-      "governanceConfidence": 85,
-      "freedomIndex": 27.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Bangkok"
     },
     {
       "id": 49,
@@ -6210,18 +5685,7 @@
           14
         ]
       },
-      "timezone": "Asia/Kolkata",
-      "homicideRateInv": 93.4,
-      "gpiScoreInv": 67,
-      "safetyIndex": 67.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 32.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 42.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 47.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Kolkata"
     },
     {
       "id": 50,
@@ -6337,18 +5801,7 @@
           3
         ]
       },
-      "timezone": "Asia/Kolkata",
-      "homicideRateInv": 93.4,
-      "gpiScoreInv": 67,
-      "safetyIndex": 70.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 33.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 42.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 47.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Kolkata"
     },
     {
       "id": 51,
@@ -6464,18 +5917,7 @@
           5
         ]
       },
-      "timezone": "Asia/Kolkata",
-      "homicideRateInv": 93.4,
-      "gpiScoreInv": 67,
-      "safetyIndex": 66.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 32.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 42.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 47.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Kolkata"
     },
     {
       "id": 52,
@@ -6591,18 +6033,7 @@
           72
         ]
       },
-      "timezone": "Africa/Nairobi",
-      "homicideRateInv": 88.7,
-      "gpiScoreInv": 65,
-      "safetyIndex": 61.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 29.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.1,
-      "governanceConfidence": 85,
-      "freedomIndex": 46.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Africa/Nairobi"
     },
     {
       "id": 53,
@@ -6718,18 +6149,7 @@
           5
         ]
       },
-      "timezone": "Africa/Cairo",
-      "homicideRateInv": 94.9,
-      "gpiScoreInv": 71,
-      "safetyIndex": 70.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 32.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 35.6,
-      "governanceConfidence": 85,
-      "freedomIndex": 25.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Africa/Cairo"
     },
     {
       "id": 54,
@@ -6845,18 +6265,7 @@
           31
         ]
       },
-      "timezone": "Asia/Tehran",
-      "homicideRateInv": 94.6,
-      "gpiScoreInv": 63,
-      "safetyIndex": 65.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 45.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 28.5,
-      "governanceConfidence": 85,
-      "freedomIndex": 16.9,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Tehran"
     },
     {
       "id": 55,
@@ -6972,18 +6381,7 @@
           3
         ]
       },
-      "timezone": "Asia/Karachi",
-      "homicideRateInv": 91.4,
-      "gpiScoreInv": 56,
-      "safetyIndex": 60.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 24.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 33.1,
-      "governanceConfidence": 85,
-      "freedomIndex": 32,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Karachi"
     },
     {
       "id": 56,
@@ -7099,18 +6497,7 @@
           23
         ]
       },
-      "timezone": "Asia/Karachi",
-      "homicideRateInv": 91.4,
-      "gpiScoreInv": 56,
-      "safetyIndex": 68.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 25.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 33.1,
-      "governanceConfidence": 85,
-      "freedomIndex": 32,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Karachi"
     },
     {
       "id": 57,
@@ -7226,18 +6613,7 @@
           203
         ]
       },
-      "timezone": "Asia/Jakarta",
-      "homicideRateInv": 99.5,
-      "gpiScoreInv": 79,
-      "safetyIndex": 73.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 37,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 52.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Jakarta"
     },
     {
       "id": 58,
@@ -7353,18 +6729,7 @@
           42
         ]
       },
-      "timezone": "Asia/Manila",
-      "homicideRateInv": 90,
-      "gpiScoreInv": 68,
-      "safetyIndex": 63.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 32.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.2,
-      "governanceConfidence": 85,
-      "freedomIndex": 48.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Manila"
     },
     {
       "id": 59,
@@ -7480,18 +6845,7 @@
           17
         ]
       },
-      "timezone": "Asia/Seoul",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 82,
-      "safetyIndex": 84.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 73.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 72.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Seoul"
     },
     {
       "id": 60,
@@ -7607,18 +6961,7 @@
           21
         ]
       },
-      "timezone": "Asia/Seoul",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 82,
-      "safetyIndex": 88.6,
-      "safetyConfidence": 70,
-      "healthcareIndex": 72.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 72.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Seoul"
     },
     {
       "id": 61,
@@ -7734,18 +7077,7 @@
           64
         ]
       },
-      "timezone": "Asia/Taipei",
-      "homicideRateInv": null,
-      "gpiScoreInv": 82,
-      "safetyIndex": 84.2,
-      "safetyConfidence": 75,
-      "healthcareIndex": 61.2,
-      "healthcareConfidence": 85,
-      "governanceIndex": 70.3,
-      "governanceConfidence": 40,
-      "freedomIndex": 77.8,
-      "freedomConfidence": 100,
-      "securityConfidence": 67
+      "timezone": "Asia/Taipei"
     },
     {
       "id": 62,
@@ -7861,18 +7193,7 @@
           89
         ]
       },
-      "timezone": "America/Argentina/Buenos_Aires",
-      "homicideRateInv": 89.2,
-      "gpiScoreInv": 78,
-      "safetyIndex": 64.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 66.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 51.7,
-      "governanceConfidence": 100,
-      "freedomIndex": 56.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Argentina/Buenos_Aires"
     },
     {
       "id": 63,
@@ -7988,18 +7309,7 @@
           1
         ]
       },
-      "timezone": "America/Santiago",
-      "homicideRateInv": 89.2,
-      "gpiScoreInv": 80,
-      "safetyIndex": 65.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 56.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 65.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 72.9,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Santiago"
     },
     {
       "id": 64,
@@ -8115,18 +7425,7 @@
           48
         ]
       },
-      "timezone": "America/Bogota",
-      "homicideRateInv": 42.4,
-      "gpiScoreInv": 57,
-      "safetyIndex": 45.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 55.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 45.8,
-      "governanceConfidence": 85,
-      "freedomIndex": 53.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "America/Bogota"
     },
     {
       "id": 65,
@@ -8242,18 +7541,7 @@
           1
         ]
       },
-      "timezone": "America/Lima",
-      "homicideRateInv": 81.4,
-      "gpiScoreInv": 71,
-      "safetyIndex": 57.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 47.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 45,
-      "governanceConfidence": 85,
-      "freedomIndex": 50.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "America/Lima"
     },
     {
       "id": 67,
@@ -8369,18 +7657,7 @@
           110
         ]
       },
-      "timezone": "Africa/Johannesburg",
-      "homicideRateInv": 0,
-      "gpiScoreInv": 58,
-      "safetyIndex": 30.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 40.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 50.2,
-      "governanceConfidence": 100,
-      "freedomIndex": 59.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Africa/Johannesburg"
     },
     {
       "id": 68,
@@ -8496,18 +7773,7 @@
           17
         ]
       },
-      "timezone": "Africa/Johannesburg",
-      "homicideRateInv": 0,
-      "gpiScoreInv": 58,
-      "safetyIndex": 32.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 40.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 50.2,
-      "governanceConfidence": 100,
-      "freedomIndex": 59.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Africa/Johannesburg"
     },
     {
       "id": 69,
@@ -8623,18 +7889,7 @@
           8
         ]
       },
-      "timezone": "America/Mexico_City",
-      "homicideRateInv": 38.7,
-      "gpiScoreInv": 52,
-      "safetyIndex": 44.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 44.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 40.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 40.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Mexico_City"
     },
     {
       "id": 70,
@@ -8750,18 +8005,7 @@
           31
         ]
       },
-      "timezone": "America/Costa_Rica",
-      "homicideRateInv": 73,
-      "gpiScoreInv": 80,
-      "safetyIndex": 63.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 55.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 61.3,
-      "governanceConfidence": 85,
-      "freedomIndex": 70,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "America/Costa_Rica"
     },
     {
       "id": 71,
@@ -8877,18 +8121,7 @@
           144
         ]
       },
-      "timezone": "America/Panama",
-      "homicideRateInv": 77,
-      "gpiScoreInv": 77,
-      "safetyIndex": 67.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 49.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 49.2,
-      "governanceConfidence": 85,
-      "freedomIndex": 55.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "America/Panama"
     },
     {
       "id": 73,
@@ -9004,18 +8237,7 @@
           133
         ]
       },
-      "timezone": "America/Puerto_Rico",
-      "homicideRateInv": 72.5,
-      "gpiScoreInv": 64,
-      "safetyIndex": 57.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 55.8,
-      "healthcareConfidence": 85,
-      "governanceIndex": 57.1,
-      "governanceConfidence": 65,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 83
+      "timezone": "America/Puerto_Rico"
     },
     {
       "id": 75,
@@ -9131,18 +8353,7 @@
           9
         ]
       },
-      "timezone": "Asia/Dubai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 87,
-      "safetyIndex": 91.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 57.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 57,
-      "governanceConfidence": 100,
-      "freedomIndex": 39.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Dubai"
     },
     {
       "id": 76,
@@ -9258,18 +8469,7 @@
           12
         ]
       },
-      "timezone": "Asia/Qatar",
-      "homicideRateInv": 99.5,
-      "gpiScoreInv": 89,
-      "safetyIndex": 89.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 57,
-      "healthcareConfidence": 100,
-      "governanceIndex": 58.5,
-      "governanceConfidence": 85,
-      "freedomIndex": 39.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Qatar"
     },
     {
       "id": 77,
@@ -9385,18 +8585,7 @@
           13
         ]
       },
-      "timezone": "Asia/Bahrain",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 80,
-      "safetyIndex": 87,
-      "safetyConfidence": 70,
-      "healthcareIndex": 47.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.6,
-      "governanceConfidence": 65,
-      "freedomIndex": 27.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 78
+      "timezone": "Asia/Bahrain"
     },
     {
       "id": 78,
@@ -9512,18 +8701,7 @@
           14
         ]
       },
-      "timezone": "Asia/Riyadh",
-      "homicideRateInv": 96.8,
-      "gpiScoreInv": 77,
-      "safetyIndex": 83.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 56.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 41.2,
-      "governanceConfidence": 80,
-      "freedomIndex": 27.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 93
+      "timezone": "Asia/Riyadh"
     },
     {
       "id": 79,
@@ -9639,18 +8817,7 @@
           14
         ]
       },
-      "timezone": "Asia/Muscat",
-      "homicideRateInv": 99.8,
-      "gpiScoreInv": 86,
-      "safetyIndex": 87.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 54,
-      "healthcareConfidence": 100,
-      "governanceIndex": 50.5,
-      "governanceConfidence": 65,
-      "freedomIndex": 36.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 88
+      "timezone": "Asia/Muscat"
     },
     {
       "id": 80,
@@ -9766,18 +8933,7 @@
           156
         ]
       },
-      "timezone": "Asia/Beirut",
-      "homicideRateInv": 91.4,
-      "gpiScoreInv": 58,
-      "safetyIndex": 64.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 50.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 34.5,
-      "governanceConfidence": 85,
-      "freedomIndex": 38.6,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Beirut"
     },
     {
       "id": 81,
@@ -9893,18 +9049,7 @@
           40
         ]
       },
-      "timezone": "Asia/Amman",
-      "homicideRateInv": 97.3,
-      "gpiScoreInv": 75,
-      "safetyIndex": 76.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 48.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 37.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Amman"
     },
     {
       "id": 82,
@@ -10020,18 +9165,7 @@
           105
         ]
       },
-      "timezone": "Asia/Jerusalem",
-      "homicideRateInv": 96.1,
-      "gpiScoreInv": 56,
-      "safetyIndex": 75.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 64.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 61.7,
-      "governanceConfidence": 80,
-      "freedomIndex": 64.6,
-      "freedomConfidence": 100,
-      "securityConfidence": 93
+      "timezone": "Asia/Jerusalem"
     },
     {
       "id": 83,
@@ -10147,18 +9281,7 @@
           5
         ]
       },
-      "timezone": "Asia/Kolkata",
-      "homicideRateInv": 93.4,
-      "gpiScoreInv": 67,
-      "safetyIndex": 71,
-      "safetyConfidence": 100,
-      "healthcareIndex": 32.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 42.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 47.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Kolkata"
     },
     {
       "id": 84,
@@ -10274,18 +9397,7 @@
           6
         ]
       },
-      "timezone": "Asia/Kolkata",
-      "homicideRateInv": 93.4,
-      "gpiScoreInv": 67,
-      "safetyIndex": 71.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 32.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 42.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 47.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Kolkata"
     },
     {
       "id": 85,
@@ -10402,18 +9514,7 @@
           42
         ]
       },
-      "timezone": "Europe/Kyiv",
-      "homicideRateInv": 85.3,
-      "gpiScoreInv": 33,
-      "safetyIndex": 60.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 55.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 42.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 45.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Kyiv"
     },
     {
       "id": 86,
@@ -10529,18 +9630,7 @@
           43
         ]
       },
-      "timezone": "Europe/Bucharest",
-      "homicideRateInv": 97.8,
-      "gpiScoreInv": 84,
-      "safetyIndex": 81.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 54.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 57.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Bucharest"
     },
     {
       "id": 87,
@@ -10656,18 +9746,7 @@
           43
         ]
       },
-      "timezone": "Europe/Sofia",
-      "homicideRateInv": 98,
-      "gpiScoreInv": 85,
-      "safetyIndex": 78.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 47.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 51.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Sofia"
     },
     {
       "id": 88,
@@ -10783,18 +9862,7 @@
           64
         ]
       },
-      "timezone": "Europe/Zagreb",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 90,
-      "safetyIndex": 86.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 65.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 54.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 56.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Zagreb"
     },
     {
       "id": 89,
@@ -10910,18 +9978,7 @@
           54
         ]
       },
-      "timezone": "Europe/Belgrade",
-      "homicideRateInv": 98,
-      "gpiScoreInv": 77,
-      "safetyIndex": 78,
-      "safetyConfidence": 100,
-      "healthcareIndex": 55.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 43.8,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Belgrade"
     },
     {
       "id": 90,
@@ -11037,18 +10094,7 @@
           42
         ]
       },
-      "timezone": "Europe/Budapest",
-      "homicideRateInv": 98.5,
-      "gpiScoreInv": 86,
-      "safetyIndex": 81.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 48.2,
-      "governanceConfidence": 100,
-      "freedomIndex": 49.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Budapest"
     },
     {
       "id": 91,
@@ -11164,18 +10210,7 @@
           43
         ]
       },
-      "timezone": "Europe/Bratislava",
-      "homicideRateInv": 98,
-      "gpiScoreInv": 86,
-      "safetyIndex": 81.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 64.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 56.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 60.9,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Bratislava"
     },
     {
       "id": 92,
@@ -11291,18 +10326,7 @@
           91
         ]
       },
-      "timezone": "Europe/Ljubljana",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 92,
-      "safetyIndex": 88.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 67.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 62.2,
-      "governanceConfidence": 100,
-      "freedomIndex": 66.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Ljubljana"
     },
     {
       "id": 93,
@@ -11418,18 +10442,7 @@
           71
         ]
       },
-      "timezone": "Europe/Dublin",
-      "homicideRateInv": 98.3,
-      "gpiScoreInv": 93,
-      "safetyIndex": 77.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 66.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 77.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 82.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Dublin"
     },
     {
       "id": 94,
@@ -11545,18 +10558,7 @@
           72
         ]
       },
-      "timezone": "Europe/London",
-      "homicideRateInv": 98,
-      "gpiScoreInv": 84,
-      "safetyIndex": 77.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 70.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 75.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/London"
     },
     {
       "id": 95,
@@ -11672,18 +10674,7 @@
           101
         ]
       },
-      "timezone": "America/New_York",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 64.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/New_York"
     },
     {
       "id": 96,
@@ -11799,18 +10790,7 @@
           17
         ]
       },
-      "timezone": "America/Phoenix",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 68.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 58.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Phoenix"
     },
     {
       "id": 97,
@@ -11926,18 +10906,7 @@
           157
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 66.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 61.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 98,
@@ -12053,18 +11022,7 @@
           36
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 72,
-      "safetyConfidence": 100,
-      "healthcareIndex": 60.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 99,
@@ -12180,18 +11138,7 @@
           11
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 67.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 57.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 100,
@@ -12307,18 +11254,7 @@
           57
         ]
       },
-      "timezone": "America/New_York",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 70.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 60,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/New_York"
     },
     {
       "id": 101,
@@ -12434,18 +11370,7 @@
           28
         ]
       },
-      "timezone": "Asia/Shanghai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 78,
-      "safetyIndex": 82.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 59.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Shanghai"
     },
     {
       "id": 102,
@@ -12561,18 +11486,7 @@
           19
         ]
       },
-      "timezone": "Asia/Shanghai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 78,
-      "safetyIndex": 83.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 57.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Shanghai"
     },
     {
       "id": 103,
@@ -12688,18 +11602,7 @@
           5
         ]
       },
-      "timezone": "Asia/Shanghai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 78,
-      "safetyIndex": 86.8,
-      "safetyConfidence": 70,
-      "healthcareIndex": 60.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Shanghai"
     },
     {
       "id": 104,
@@ -12815,18 +11718,7 @@
           37
         ]
       },
-      "timezone": "Asia/Shanghai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 78,
-      "safetyIndex": 86.8,
-      "safetyConfidence": 70,
-      "healthcareIndex": 59.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Shanghai"
     },
     {
       "id": 105,
@@ -12942,18 +11834,7 @@
           20
         ]
       },
-      "timezone": "Asia/Shanghai",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 78,
-      "safetyIndex": 86.8,
-      "safetyConfidence": 70,
-      "healthcareIndex": 58.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 43.4,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Shanghai"
     },
     {
       "id": 106,
@@ -13069,18 +11950,7 @@
           52
         ]
       },
-      "timezone": "Asia/Tokyo",
-      "homicideRateInv": 100,
-      "gpiScoreInv": 92,
-      "safetyIndex": 85.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 77.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 73.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 73.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Tokyo"
     },
     {
       "id": 107,
@@ -13196,18 +12066,7 @@
           52
         ]
       },
-      "timezone": "Asia/Tokyo",
-      "homicideRateInv": 100,
-      "gpiScoreInv": 92,
-      "safetyIndex": 93.9,
-      "safetyConfidence": 70,
-      "healthcareIndex": 77.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 73.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 73.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Tokyo"
     },
     {
       "id": 108,
@@ -13323,18 +12182,7 @@
           15
         ]
       },
-      "timezone": "Asia/Seoul",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 82,
-      "safetyIndex": 88.6,
-      "safetyConfidence": 70,
-      "healthcareIndex": 72.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 72.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Seoul"
     },
     {
       "id": 109,
@@ -13450,18 +12298,7 @@
           36
         ]
       },
-      "timezone": "Asia/Phnom_Penh",
-      "homicideRateInv": 96.6,
-      "gpiScoreInv": 78,
-      "safetyIndex": 71.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 26.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 30.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 24.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Phnom_Penh"
     },
     {
       "id": 110,
@@ -13577,18 +12414,7 @@
           7
         ]
       },
-      "timezone": "Asia/Yangon",
-      "homicideRateInv": 94.9,
-      "gpiScoreInv": 43,
-      "safetyIndex": 64.1,
-      "safetyConfidence": 70,
-      "healthcareIndex": 22.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 22.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 16.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 85
+      "timezone": "Asia/Yangon"
     },
     {
       "id": 112,
@@ -13704,18 +12530,7 @@
           11
         ]
       },
-      "timezone": "Asia/Bangkok",
-      "homicideRateInv": 93.6,
-      "gpiScoreInv": 75,
-      "safetyIndex": 81.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 52.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 45.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 46.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Bangkok"
     },
     {
       "id": 114,
@@ -13831,18 +12646,7 @@
           7
         ]
       },
-      "timezone": "Asia/Dhaka",
-      "homicideRateInv": 94.4,
-      "gpiScoreInv": 73,
-      "safetyIndex": 64.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 24.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 33.4,
-      "governanceConfidence": 85,
-      "freedomIndex": 39,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Dhaka"
     },
     {
       "id": 115,
@@ -13958,18 +12762,7 @@
           168
         ]
       },
-      "timezone": "Asia/Colombo",
-      "homicideRateInv": 95.3,
-      "gpiScoreInv": 76,
-      "safetyIndex": 74.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 43.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 42.2,
-      "governanceConfidence": 85,
-      "freedomIndex": 45,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Colombo"
     },
     {
       "id": 116,
@@ -14085,18 +12878,7 @@
           7
         ]
       },
-      "timezone": "Asia/Kathmandu",
-      "homicideRateInv": 95.1,
-      "gpiScoreInv": 78,
-      "safetyIndex": 75.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 25.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 41.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 44.9,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Kathmandu"
     },
     {
       "id": 117,
@@ -14212,18 +12994,7 @@
           30
         ]
       },
-      "timezone": "Asia/Almaty",
-      "homicideRateInv": 91.2,
-      "gpiScoreInv": 76,
-      "safetyIndex": 70.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 58.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44,
-      "governanceConfidence": 85,
-      "freedomIndex": 30.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Almaty"
     },
     {
       "id": 118,
@@ -14339,18 +13110,7 @@
           47
         ]
       },
-      "timezone": "Asia/Tashkent",
-      "homicideRateInv": 96.3,
-      "gpiScoreInv": 76,
-      "safetyIndex": 80.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 46.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 38.9,
-      "governanceConfidence": 85,
-      "freedomIndex": 23.6,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Tashkent"
     },
     {
       "id": 119,
@@ -14466,18 +13226,7 @@
           18
         ]
       },
-      "timezone": "Asia/Baku",
-      "homicideRateInv": 96.8,
-      "gpiScoreInv": 72,
-      "safetyIndex": 77.4,
-      "safetyConfidence": 100,
-      "healthcareIndex": 56.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 32.6,
-      "governanceConfidence": 65,
-      "freedomIndex": 20.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 88
+      "timezone": "Asia/Baku"
     },
     {
       "id": 120,
@@ -14593,18 +13342,7 @@
           3
         ]
       },
-      "timezone": "Asia/Ulaanbaatar",
-      "homicideRateInv": 86,
-      "gpiScoreInv": 80,
-      "safetyIndex": 78.9,
-      "safetyConfidence": 70,
-      "healthcareIndex": 54.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 45.9,
-      "governanceConfidence": 85,
-      "freedomIndex": 53.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 85
+      "timezone": "Asia/Ulaanbaatar"
     },
     {
       "id": 121,
@@ -14720,18 +13458,7 @@
           41
         ]
       },
-      "timezone": "Europe/Stockholm",
-      "homicideRateInv": 97.8,
-      "gpiScoreInv": 90,
-      "safetyIndex": 79.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 72.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 85.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 88.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Stockholm"
     },
     {
       "id": 122,
@@ -14847,18 +13574,7 @@
           50
         ]
       },
-      "timezone": "Europe/Copenhagen",
-      "homicideRateInv": 98.5,
-      "gpiScoreInv": 92,
-      "safetyIndex": 87.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 67,
-      "healthcareConfidence": 100,
-      "governanceIndex": 83.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 91.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Copenhagen"
     },
     {
       "id": 123,
@@ -14974,18 +13690,7 @@
           46
         ]
       },
-      "timezone": "Europe/Helsinki",
-      "homicideRateInv": 96.6,
-      "gpiScoreInv": 91,
-      "safetyIndex": 87.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 67.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 87.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 90.2,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Helsinki"
     },
     {
       "id": 124,
@@ -15101,18 +13806,7 @@
           48
         ]
       },
-      "timezone": "Europe/Oslo",
-      "homicideRateInv": 99.3,
-      "gpiScoreInv": 89,
-      "safetyIndex": 84.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 72.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 84.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 91.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Oslo"
     },
     {
       "id": 125,
@@ -15228,18 +13922,7 @@
           84
         ]
       },
-      "timezone": "America/Chicago",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 65.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Chicago"
     },
     {
       "id": 126,
@@ -15355,18 +14038,7 @@
           84
         ]
       },
-      "timezone": "America/New_York",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 64.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 66.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/New_York"
     },
     {
       "id": 127,
@@ -15482,18 +14154,7 @@
           12
         ]
       },
-      "timezone": "America/Edmonton",
-      "homicideRateInv": 95.6,
-      "gpiScoreInv": 91,
-      "safetyIndex": 81.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.8,
-      "healthcareConfidence": 100,
-      "governanceIndex": 78.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 79.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Edmonton"
     },
     {
       "id": 128,
@@ -15609,18 +14270,7 @@
           8
         ]
       },
-      "timezone": "Australia/Perth",
-      "homicideRateInv": 98.3,
-      "gpiScoreInv": 87,
-      "safetyIndex": 80.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 68.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 76.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 76.8,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Australia/Perth"
     },
     {
       "id": 129,
@@ -15736,18 +14386,7 @@
           65
         ]
       },
-      "timezone": "America/Bogota",
-      "homicideRateInv": 42.4,
-      "gpiScoreInv": 57,
-      "safetyIndex": 49,
-      "safetyConfidence": 100,
-      "healthcareIndex": 54.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.5,
-      "governanceConfidence": 85,
-      "freedomIndex": 51.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "America/Bogota"
     },
     {
       "id": 130,
@@ -15863,18 +14502,7 @@
           18
         ]
       },
-      "timezone": "Asia/Tbilisi",
-      "homicideRateInv": 96.3,
-      "gpiScoreInv": 74,
-      "safetyIndex": 79.9,
-      "safetyConfidence": 100,
-      "healthcareIndex": 56.9,
-      "healthcareConfidence": 100,
-      "governanceIndex": 57,
-      "governanceConfidence": 85,
-      "freedomIndex": 53.6,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Tbilisi"
     },
     {
       "id": 131,
@@ -15990,18 +14618,7 @@
           25
         ]
       },
-      "timezone": "Africa/Lagos",
-      "homicideRateInv": 85.5,
-      "gpiScoreInv": 57,
-      "safetyIndex": 54.8,
-      "safetyConfidence": 100,
-      "healthcareIndex": 13.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 32.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 35.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Africa/Lagos"
     },
     {
       "id": 132,
@@ -16117,18 +14734,7 @@
           46
         ]
       },
-      "timezone": "Europe/Moscow",
-      "homicideRateInv": 82.6,
-      "gpiScoreInv": 47,
-      "safetyIndex": 66,
-      "safetyConfidence": 100,
-      "healthcareIndex": 65,
-      "healthcareConfidence": 100,
-      "governanceIndex": 33.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 23.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Moscow"
     },
     {
       "id": 133,
@@ -16244,18 +14850,7 @@
           59
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 77.3,
-      "safetyConfidence": 70,
-      "healthcareIndex": 63.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 134,
@@ -16371,18 +14966,7 @@
           49
         ]
       },
-      "timezone": "America/Los_Angeles",
-      "homicideRateInv": 84.8,
-      "gpiScoreInv": 64,
-      "safetyIndex": 73.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 69.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 67.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Los_Angeles"
     },
     {
       "id": 135,
@@ -16498,18 +15082,7 @@
           69
         ]
       },
-      "timezone": "America/Toronto",
-      "homicideRateInv": 95.6,
-      "gpiScoreInv": 91,
-      "safetyIndex": 83.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 62.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 78.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 79.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Toronto"
     },
     {
       "id": 136,
@@ -16625,18 +15198,7 @@
           72
         ]
       },
-      "timezone": "Europe/Luxembourg",
-      "homicideRateInv": 99.8,
-      "gpiScoreInv": 91,
-      "safetyIndex": 86.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 66.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 80.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 82.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Luxembourg"
     },
     {
       "id": 137,
@@ -16752,18 +15314,7 @@
           48
         ]
       },
-      "timezone": "Europe/Tallinn",
-      "homicideRateInv": 96.3,
-      "gpiScoreInv": 85,
-      "safetyIndex": 85.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 63.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 73.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 77.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Tallinn"
     },
     {
       "id": 138,
@@ -16879,18 +15430,7 @@
           51
         ]
       },
-      "timezone": "Asia/Tokyo",
-      "homicideRateInv": 100,
-      "gpiScoreInv": 92,
-      "safetyIndex": 93.9,
-      "safetyConfidence": 70,
-      "healthcareIndex": 80.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 71.7,
-      "governanceConfidence": 100,
-      "freedomIndex": 69.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Tokyo"
     },
     {
       "id": 139,
@@ -17006,18 +15546,7 @@
           53
         ]
       },
-      "timezone": "Asia/Tokyo",
-      "homicideRateInv": 100,
-      "gpiScoreInv": 92,
-      "safetyIndex": 93.9,
-      "safetyConfidence": 70,
-      "healthcareIndex": 80.2,
-      "healthcareConfidence": 100,
-      "governanceIndex": 71.7,
-      "governanceConfidence": 100,
-      "freedomIndex": 69.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Tokyo"
     },
     {
       "id": 140,
@@ -17133,18 +15662,7 @@
           276
         ]
       },
-      "timezone": "Asia/Makassar",
-      "homicideRateInv": 99.5,
-      "gpiScoreInv": 79,
-      "safetyIndex": 74.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 37,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.8,
-      "governanceConfidence": 100,
-      "freedomIndex": 52.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Asia/Makassar"
     },
     {
       "id": 141,
@@ -17260,18 +15778,7 @@
           218
         ]
       },
-      "timezone": "Asia/Ho_Chi_Minh",
-      "homicideRateInv": 96.8,
-      "gpiScoreInv": 79,
-      "safetyIndex": 85.7,
-      "safetyConfidence": 70,
-      "healthcareIndex": 44.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 41.3,
-      "governanceConfidence": 85,
-      "freedomIndex": 27.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 85
+      "timezone": "Asia/Ho_Chi_Minh"
     },
     {
       "id": 142,
@@ -17387,18 +15894,7 @@
           73
         ]
       },
-      "timezone": "America/Cancun",
-      "homicideRateInv": 38.7,
-      "gpiScoreInv": 52,
-      "safetyIndex": 46.9,
-      "safetyConfidence": 70,
-      "healthcareIndex": 47,
-      "healthcareConfidence": 100,
-      "governanceIndex": 40.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 40.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "America/Cancun"
     },
     {
       "id": 143,
@@ -17514,18 +16010,7 @@
           181
         ]
       },
-      "timezone": "Europe/Lisbon",
-      "homicideRateInv": 98.5,
-      "gpiScoreInv": 93,
-      "safetyIndex": 83.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 69.5,
-      "healthcareConfidence": 100,
-      "governanceIndex": 70.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 74.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Lisbon"
     },
     {
       "id": 144,
@@ -17641,18 +16126,7 @@
           48
         ]
       },
-      "timezone": "Europe/Madrid",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 85,
-      "safetyIndex": 80.3,
-      "safetyConfidence": 100,
-      "healthcareIndex": 67.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 66.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 69.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Madrid"
     },
     {
       "id": 146,
@@ -17768,18 +16242,7 @@
           99
         ]
       },
-      "timezone": "Europe/Zagreb",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 90,
-      "safetyIndex": 83.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 65.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 54.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 56.1,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Europe/Zagreb"
     },
     {
       "id": 147,
@@ -17895,18 +16358,7 @@
           82
         ]
       },
-      "timezone": "Asia/Bangkok",
-      "homicideRateInv": 93.6,
-      "gpiScoreInv": 75,
-      "safetyIndex": 82.4,
-      "safetyConfidence": 70,
-      "healthcareIndex": 52.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 45.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 46.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 85
+      "timezone": "Asia/Bangkok"
     },
     {
       "id": 148,
@@ -18022,18 +16474,7 @@
           91
         ]
       },
-      "timezone": "America/Montevideo",
-      "homicideRateInv": 73,
-      "gpiScoreInv": 80,
-      "safetyIndex": 66.2,
-      "safetyConfidence": 100,
-      "healthcareIndex": 64.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 68.9,
-      "governanceConfidence": 85,
-      "freedomIndex": 75,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "America/Montevideo"
     },
     {
       "id": 149,
@@ -18149,18 +16590,7 @@
           29
         ]
       },
-      "timezone": "Atlantic/Canary",
-      "homicideRateInv": 99,
-      "gpiScoreInv": 85,
-      "safetyIndex": 87.8,
-      "safetyConfidence": 70,
-      "healthcareIndex": 67.1,
-      "healthcareConfidence": 100,
-      "governanceIndex": 66.3,
-      "governanceConfidence": 100,
-      "freedomIndex": 69.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Atlantic/Canary"
     },
     {
       "id": 150,
@@ -18276,18 +16706,7 @@
           117
         ]
       },
-      "timezone": "Asia/Kuala_Lumpur",
-      "homicideRateInv": 95.3,
-      "gpiScoreInv": 86,
-      "safetyIndex": 81.1,
-      "safetyConfidence": 100,
-      "healthcareIndex": 49.6,
-      "healthcareConfidence": 100,
-      "governanceIndex": 56.7,
-      "governanceConfidence": 85,
-      "freedomIndex": 57,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Asia/Kuala_Lumpur"
     },
     {
       "id": 152,
@@ -18403,18 +16822,7 @@
           177
         ]
       },
-      "timezone": "America/Sao_Paulo",
-      "homicideRateInv": 45.6,
-      "gpiScoreInv": 66,
-      "safetyIndex": 54.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 52.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 48.6,
-      "governanceConfidence": 100,
-      "freedomIndex": 53.8,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Sao_Paulo"
     },
     {
       "id": 157,
@@ -18530,18 +16938,7 @@
           86
         ]
       },
-      "timezone": "America/Cancun",
-      "homicideRateInv": 38.7,
-      "gpiScoreInv": 52,
-      "safetyIndex": 46.5,
-      "safetyConfidence": 100,
-      "healthcareIndex": 47,
-      "healthcareConfidence": 100,
-      "governanceIndex": 40.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 40.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Cancun"
     },
     {
       "id": 158,
@@ -18657,18 +17054,7 @@
           23
         ]
       },
-      "timezone": "America/Mexico_City",
-      "homicideRateInv": 38.7,
-      "gpiScoreInv": 52,
-      "safetyIndex": 52.6,
-      "safetyConfidence": 100,
-      "healthcareIndex": 47,
-      "healthcareConfidence": 100,
-      "governanceIndex": 40.1,
-      "governanceConfidence": 100,
-      "freedomIndex": 40.3,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "America/Mexico_City"
     },
     {
       "id": 159,
@@ -18784,18 +17170,7 @@
           57
         ]
       },
-      "timezone": "Asia/Tokyo",
-      "homicideRateInv": 100,
-      "gpiScoreInv": 92,
-      "safetyIndex": 93.9,
-      "safetyConfidence": 70,
-      "healthcareIndex": 77.7,
-      "healthcareConfidence": 100,
-      "governanceIndex": 73.5,
-      "governanceConfidence": 100,
-      "freedomIndex": 73.5,
-      "freedomConfidence": 100,
-      "securityConfidence": 90
+      "timezone": "Asia/Tokyo"
     },
     {
       "id": 160,
@@ -18911,18 +17286,7 @@
           62
         ]
       },
-      "timezone": "Africa/Casablanca",
-      "homicideRateInv": 97.1,
-      "gpiScoreInv": 75,
-      "safetyIndex": 69,
-      "safetyConfidence": 100,
-      "healthcareIndex": 38.4,
-      "healthcareConfidence": 100,
-      "governanceIndex": 44.3,
-      "governanceConfidence": 85,
-      "freedomIndex": 42.7,
-      "freedomConfidence": 100,
-      "securityConfidence": 95
+      "timezone": "Africa/Casablanca"
     },
     {
       "id": 161,
@@ -19038,18 +17402,7 @@
           91
         ]
       },
-      "timezone": "Pacific/Auckland",
-      "homicideRateInv": 97.8,
-      "gpiScoreInv": 95,
-      "safetyIndex": 84.7,
-      "safetyConfidence": 100,
-      "healthcareIndex": 65.3,
-      "healthcareConfidence": 100,
-      "governanceIndex": 82.9,
-      "governanceConfidence": 100,
-      "freedomIndex": 86.4,
-      "freedomConfidence": 100,
-      "securityConfidence": 100
+      "timezone": "Pacific/Auckland"
     }
   ]
 }

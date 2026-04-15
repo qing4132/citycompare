@@ -197,10 +197,10 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
     type Sub = { label: string; val: number | null | undefined; range: string; field: string; inv?: boolean; fmt: (v: number) => string };
     const groups: { name: string; score: number; rank: number; all: number[]; conf: number; subs: Sub[] }[] = [
       { name: t("safetyShort"), score: city.safetyIndex, rank: rankHigher(allSafety, city.safetyIndex), all: allSafety, conf: city.safetyConfidence, subs: [
-        { label: `${t("safetyNumbeo")} (30%)`, val: city.numbeoSafetyIndex, range: "20–90", field: "numbeoSafetyIndex", fmt: v => String(Math.round(v)) },
-        { label: `${t("safetyHomicide")} (25%)`, val: city.homicideRate, range: "0.2–41", field: "homicideRate", inv: true, fmt: v => v.toFixed(1) },
-        { label: `${t("safetyGpi")} (20%)`, val: city.gpiScore, range: "1.2–3.7", field: "gpiScore", inv: true, fmt: v => v.toFixed(2) },
-        { label: `${t("safetyGallup")} (15%)`, val: city.gallupLawOrder, range: "45–97", field: "gallupLawOrder", fmt: v => String(Math.round(v)) },
+        { label: `${t("safetyHomicide")} (30%)`, val: city.homicideRate, range: "0.1–46", field: "homicideRate", inv: true, fmt: v => v.toFixed(1) },
+        { label: `${t("politicalStability")} (25%)`, val: city.politicalStability, range: "0–100", field: "politicalStability", fmt: v => v.toFixed(1) },
+        { label: `${t("ruleLaw")} (20%)`, val: city.ruleLawWGI, range: "0–100", field: "ruleLawWGI", fmt: v => v.toFixed(1) },
+        { label: `${t("controlOfCorruption")} (15%)`, val: city.controlOfCorruption, range: "0–100", field: "controlOfCorruption", fmt: v => v.toFixed(1) },
         { label: `${t("wpsIndex")} (10%)`, val: city.wpsIndex, range: "0.4–0.9", field: "wpsIndex", fmt: v => v.toFixed(2) },
       ]},
       { name: t("healthcareShort"), score: city.healthcareIndex, rank: rankHigher(allHealth, city.healthcareIndex), all: allHealth, conf: city.healthcareConfidence, subs: [
@@ -218,7 +218,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
         { label: `${t("mipexIndex")} (15%)`, val: city.mipexScore, range: "10–86", field: "mipexScore", fmt: v => String(Math.round(v)) },
       ]},
     ];
-    const allSubs = [city.numbeoSafetyIndex, city.homicideRate, city.gpiScore, city.gallupLawOrder, city.wpsIndex,
+    const allSubs = [city.homicideRate, city.politicalStability, city.ruleLawWGI, city.controlOfCorruption, city.wpsIndex,
       city.doctorsPerThousand, city.hospitalBedsPerThousand, city.uhcCoverageIndex, city.lifeExpectancy, city.outOfPocketPct,
       city.corruptionPerceptionIndex, city.govEffectiveness, city.wjpRuleLaw, city.pressFreedomScore, city.mipexScore];
     return (

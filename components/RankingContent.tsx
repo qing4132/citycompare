@@ -24,7 +24,7 @@ type Tab =
 
 type SubSort =
   | "savingsRate" | "bigMacPower" | "subWorkHours" | "yearsToHome"
-  | "numbeo" | "homicide" | "gpi" | "gallup"
+  | "homicide" | "polStab" | "rlWgi"
   | "doctors" | "beds" | "uhc" | "lifeExp"
   | "press" | "democracy" | "cpi"
   | null;
@@ -176,7 +176,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     return saved && validTab(saved) ? saved : "income";
   });
   const [subSort, setSubSort] = useState<SubSort>(() => {
-    if (urlSub && ["savingsRate", "bigMacPower", "subWorkHours", "yearsToHome", "numbeo", "homicide", "gpi", "gallup", "doctors", "beds", "uhc", "lifeExp", "press", "democracy", "cpi"].includes(urlSub)) return urlSub as SubSort;
+    if (urlSub && ["savingsRate", "bigMacPower", "subWorkHours", "yearsToHome", "homicide", "polStab", "rlWgi", "doctors", "beds", "uhc", "lifeExp", "press", "democracy", "cpi"].includes(urlSub)) return urlSub as SubSort;
     return null;
   });
 
@@ -288,8 +288,8 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
       safetyIndex: city.safetyIndex, safetyConf: city.safetyConfidence,
       healthcareIndex: city.healthcareIndex, healthcareConf: city.healthcareConfidence,
       governanceIndex: city.governanceIndex, governanceConf: city.governanceConfidence,
-      numbeoSafety: city.numbeoSafetyIndex, homicideInv: city.homicideRateInv,
-      gpiInv: city.gpiScoreInv, gallupLO: city.gallupLawOrder,
+      homicideInv: city.homicideRateInv,
+      politicalStability: city.politicalStability, ruleLawWGI: city.ruleLawWGI,
       doctors: city.doctorsPerThousand, beds: city.hospitalBedsPerThousand,
       uhc: city.uhcCoverageIndex, lifeExpectancy: city.lifeExpectancy,
       pressFreedom: city.pressFreedomScore, democracy: city.democracyIndex,
@@ -318,10 +318,9 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     freedom: rows.map(r => r.governanceIndex),
     savingsRate: rows.map(r => r.savingsRate),
     bigMac: nn(rows.map(r => r.bigMacPower)),
-    numbeo: nn(rows.map(r => r.numbeoSafety)),
     homicide: nn(rows.map(r => r.homicideInv)),
-    gpi: nn(rows.map(r => r.gpiInv)),
-    gallup: nn(rows.map(r => r.gallupLO)),
+    polStab: nn(rows.map(r => r.politicalStability)),
+    rlWgi: nn(rows.map(r => r.ruleLawWGI)),
     doctors: nn(rows.map(r => r.doctors)),
     beds: nn(rows.map(r => r.beds)),
     uhc: nn(rows.map(r => r.uhc)),
@@ -364,10 +363,9 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
           const by = isFinite(b.yearsToHome) ? b.yearsToHome : 999999;
           return ay - by;
         }
-        case "numbeo": return nullLast(a.numbeoSafety, b.numbeoSafety, false);
         case "homicide": return nullLast(a.homicideInv, b.homicideInv, false);
-        case "gpi": return nullLast(a.gpiInv, b.gpiInv, false);
-        case "gallup": return nullLast(a.gallupLO, b.gallupLO, false);
+        case "polStab": return nullLast(a.politicalStability, b.politicalStability, false);
+        case "rlWgi": return nullLast(a.ruleLawWGI, b.ruleLawWGI, false);
         case "doctors": return nullLast(a.doctors, b.doctors, false);
         case "beds": return nullLast(a.beds, b.beds, false);
         case "uhc": return nullLast(a.uhc, b.uhc, false);
@@ -463,10 +461,9 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
           case "bigMacPower": return r.bigMacPower !== null ? Math.round(r.bigMacPower * 10) : null;
           case "subWorkHours": return r.annualWorkHours;
           case "yearsToHome": return isFinite(r.yearsToHome) ? Math.round(r.yearsToHome * 10) : null;
-          case "numbeo": return r.numbeoSafety;
           case "homicide": return r.homicideInv;
-          case "gpi": return r.gpiInv;
-          case "gallup": return r.gallupLO;
+          case "polStab": return r.politicalStability;
+          case "rlWgi": return r.ruleLawWGI;
           case "doctors": return r.doctors !== null ? Math.round(r.doctors * 10) : null;
           case "beds": return r.beds !== null ? Math.round(r.beds * 10) : null;
           case "uhc": return r.uhc;
@@ -537,10 +534,9 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
         </>);
         case "safety": return (<>
           <SubTh sk={null} label={t("safetyIndex")} />
-          <SubTh sk="numbeo" label={t("safetyNumbeo")} weight="35%" />
           <SubTh sk="homicide" label={t("safetyHomicide")} weight="30%" />
-          <SubTh sk="gpi" label={t("safetyGpi")} weight="20%" />
-          <SubTh sk="gallup" label={t("safetyGallup")} weight="15%" />
+          <SubTh sk="polStab" label={t("politicalStability")} weight="25%" />
+          <SubTh sk="rlWgi" label={t("ruleLaw")} weight="20%" />
         </>);
         case "healthcare": return (<>
           <SubTh sk={null} label={t("healthcareIndex")} />
@@ -579,10 +575,9 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
         </>);
         case "safety": return (<>
           <TC val={r.safetyIndex} formatted={r.safetyIndex.toFixed(1)} vals={V.safety} higher={true} conf={r.safetyConf} active={sortKey === "safety"} />
-          <TC val={r.numbeoSafety} formatted={fmtN(r.numbeoSafety)} vals={V.numbeo} higher={true} active={sortKey === "numbeo"} />
           <TC val={r.homicideInv} formatted={fmtN(r.homicideInv)} vals={V.homicide} higher={true} active={sortKey === "homicide"} />
-          <TC val={r.gpiInv} formatted={fmtN(r.gpiInv)} vals={V.gpi} higher={true} active={sortKey === "gpi"} />
-          <TC val={r.gallupLO} formatted={fmtN(r.gallupLO)} vals={V.gallup} higher={true} active={sortKey === "gallup"} />
+          <TC val={r.politicalStability} formatted={fmtN(r.politicalStability)} vals={V.polStab} higher={true} active={sortKey === "polStab"} />
+          <TC val={r.ruleLawWGI} formatted={fmtN(r.ruleLawWGI)} vals={V.rlWgi} higher={true} active={sortKey === "rlWgi"} />
         </>);
         case "healthcare": return (<>
           <TC val={r.healthcareIndex} formatted={r.healthcareIndex.toFixed(1)} vals={V.hc} higher={true} conf={r.healthcareConf} active={sortKey === "healthcare"} />

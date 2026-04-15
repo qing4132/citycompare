@@ -1,8 +1,8 @@
-# WhichCity Phase 2 — 执行备忘
+# WhichCity — 新阶段执行备忘
 
-> **创建**: 2026-04-11
-> **权威来源**: `_archive/reports/phase2-strategy.md` + `REDESIGN.md`
-> **用法**: 老板说"完成 A1 和 B3"，执行者即可推进。每项完成后打 ✅ 并注明日期。
+> **创建**: 2026-04-15（数据合规清洗完成后）
+> **战略依据**: `_archive/reports/phase2-compliance-strategy-v2.md`
+> **原则**: 零污点 · 零付费 · 完全透明 · 100% 合规数据
 
 ---
 
@@ -15,282 +15,175 @@
 
 ---
 
-## A. 功能裁剪（删/改）
+## 0. 数据合规清洗 ✅
 
-> 原则：先做减法，再做加法。减掉噪音才能让信号露出来。
-
-### A1. 删除 Multi 复合排序模式
-- [ ] A1.1 删除 `RankingContent.tsx` 中 `composite` 状态及 `toggleComposite` 逻辑（~L247-295、L278-295）
-- [ ] A1.2 删除 `customTabs` Set 及相关 `compositeScores` 计算（~L247-275）
-- [ ] A1.3 删除 Multi 按钮 UI 及其 i18n key（`rankMulti` 相关）
-- [ ] A1.4 从 `lib/i18n.ts` 移除 Multi 相关的翻译键
-- [ ] A1.5 运行 `npx tsc --noEmit && npm test` 验证
-
-### A2. 删除 LINE 和 Reddit 分享按钮
-- [ ] A2.1 从 `NavBar.tsx` 删除 `shareToLINE()`（~L116）和 `shareToReddit()`（~L109）函数
-- [ ] A2.2 删除对应的 UI 按钮（~L202-250 区域中 LINE/Reddit 部分）
-- [ ] A2.3 从 `lib/i18n.ts` 移除相关翻译键（如有）
-- [ ] A2.4 验证：所有页面的分享面板仍显示 X/Facebook/WhatsApp/LinkedIn/Telegram/Copy
-
-### A3. 职业集整理已完成（当前 25 个）
-- [x] A3.1 **数据层**：`public/data/cities.json` 已移除 `domestic_worker` 和 `photographer`；每座城市当前保留 25 个 profession 键
-- [x] A3.2 **翻译层**：`lib/i18n.ts` 已移除 `domestic_worker`、`photographer`，`civil_servant` 已更名为"政府/NGO行政" / "Government/NGO Admin"
-- [x] A3.3 **默认值检查**：`useSettings.ts` 默认职业"软件工程师"无影响
-- [x] A3.4 `scripts/validate-data.mjs` 的 profession count 校验已对齐到 25
-- [x] A3.5 `npx tsc --noEmit && npm test` 验证通过
-
-### A4. 城市优化（120/31 隐藏机制）
-- [x] A4.1 151 城市中 31 城市标记 hidden，前端展示 120 城市 ✅ 2026-04-15
-- [x] A4.2 `loadCities()` 自动过滤 hidden，排名/评级基于 120 城重算 ✅ 2026-04-15
-- [x] A4.3 隐藏城市 URL 返回 404，sitemap/搜索/随机按钮均过滤 ✅ 2026-04-15
-- [x] A4.4 `HIDDEN_CITY_IDS` in constants.ts + `hidden` field in SOT ✅ 2026-04-15
-- [x] A4.5 文档: data/README.md 第2节 "城市隐藏机制" ✅ 2026-04-15
+- [x] 0.1 从 SOT 清除所有 Numbeo 数据（costModerate/costBudget/monthlyRent/housePrice → null）
+- [x] 0.2 移除 numbeoSafetyIndex / gpiScore(IEP) / gallupLawOrder(Gallup)
+- [x] 0.3 清除 Ookla internetSpeedMbps
+- [x] 0.4 从 WB API 获取安全指数新子指标（homicideRate/politicalStability/ruleLawWGI/controlOfCorruption）
+- [x] 0.5 安全指数公式重设计（30% homicideInv + 25% politicalStability + 20% ruleLawWGI + 15% controlOfCorruption + 10% WPS）
+- [x] 0.6 更新 types.ts / export.mjs / validate.mjs / compositeIndex.test.ts
+- [x] 0.7 更新 CityDetailContent / RankingContent / i18n (4 locale)
+- [x] 0.8 归档全部 Numbeo 相关脚本和数据文件至 _archive/
+- [x] 0.9 归档旧版文档（HANDOFF/REDESIGN/TODO/DATA_OPS 等）
+- [x] 0.10 tsc ✅ · 35/35 tests ✅ · export 0 errors ✅ · validate PASS ✅ · build ✅
 
 ---
 
-## B. 城市详情页重构（最大改动）
+## 1. 零成本数据替换（剩余）
 
-> 当前 `CityDetailContent.tsx` 884 行，需按新信息架构拆分重写。
-> 核心变化：建立 L1→L4 数据层级，让用户 3 秒看到安全/消费/收入。
+> 以下替换无需付费或合作，全部来自开放许可数据源
 
-### B1. Hero 区重构
-- [x] B1.1 基本保障评级从 Hero 右侧移到独立行（与税后年薪格式一致）✅ 2026-04-15
-- [x] B1.2 评级警告注释移到展开外层 ✅ 2026-04-15
-- [x] B1.3 城市描述替换为短 description（151 城 × 4 语言）✅ 2026-04-15
-- [x] B1.4 描述移到分割线上方 ✅ 2026-04-15
-- [x] B1.5 展开/收起文字统一为"展开明细/收起"（4 语言）✅ 2026-04-15
-- [ ] B1.6 安全指数提至 Hero 区最醒目位置
-- [ ] B1.7 英语水平从游牧板块移至 Hero 区
-- [ ] B1.8 确保 SSR 友好
+### 1.1 democracyIndex → V-Dem
+- [ ] 1.1.1 下载 V-Dem `v2x_libdem` 最新数据集 (CC BY-SA 4.0)
+- [ ] 1.1.2 编写脚本映射国家 → 城市，写入 SOT
+- [ ] 1.1.3 更新 export.mjs 自由指数的 democracyNorm 计算（V-Dem 范围 0-1 → ×100）
+- [ ] 1.1.4 更新 validate.mjs FREE_SUBS
+- [ ] 1.1.5 运行 tsc + test + export + validate
 
-### B2. L1 核心数据条（首屏 5 格一行）
-- [ ] B2.1 设计核心数据条组件：税后年收入 | 月消费 | 月租 | 年储蓄 | 医疗指数
-- [ ] B2.2 月消费排在年收入前面（440 > 370 票）
-- [ ] B2.3 每格显示数值 + 排名（如 `#4/N`）
-- [ ] B2.4 响应式：≥1080px 一行 5 格，768px 一行 3 格，<640px 一行 2 格
+### 1.2 internetSpeedMbps → M-Lab NDT
+- [ ] 1.2.1 从 M-Lab BigQuery 获取城市级固定宽带速度 (Apache 2.0 / CC0)
+- [ ] 1.2.2 编写脚本映射到 120 城市
+- [ ] 1.2.3 写入 SOT → export → validate
 
-### B3. L2 重要数据区
-- [ ] B3.1 紧凑一行展示：气候概要 + AQI + 网速 + 自由指数 + 工时 + 假期 + 直飞
-- [ ] B3.2 VPN 限制从游牧板块移至此区域（110 票跨界关注）
-- [ ] B3.3 视觉权重低于 L1（中等字号、低对比度）
-
-### B4. 财务详情区
-- [ ] B4.1 有效税率、房价/m²、购房年限、储蓄率等紧凑展示
-- [ ] B4.2 购房年限降级为房价卡内小字（从 Row1 平级降下来）
-- [ ] B4.3 时薪降级为工时卡内小字（从 Row2 平级降下来）
-
-### B5. 综合指数折叠（L4）
-- [x] B5.1 安全/医疗/治理的子指标（共 15 个）默认折叠 ✅ 2025-04
-- [x] B5.2 每个指数一行：显示总分 + 置信度 + ▸ 展开按钮 ✅ 2025-04
-- [x] B5.3 点击展开后显示各子指标权重和分值（税务明细风格布局） ✅ 2025-04
-- [ ] B5.4 生活压力指数从首屏大卡降级为折叠区域
-
-### B6. 游牧板块折叠
-- [ ] B6.1 整个 Nomad Section（当前 ~L683-939，~250 行）改为默认折叠
-- [ ] B6.2 折叠标题显示：签证名称 + 时长（一行摘要）
-- [ ] B6.3 展开后显示完整信息：签证详情、免签矩阵、时区重叠等
-- [ ] B6.4 英语水平已在 B1.2 移至 Hero，此处不再重复
-
-### B7. 气候图移至底部
-- [ ] B7.1 `ClimateChart` 组件从当前位置移至页面底部（相似城市下方）
-- [ ] B7.2 气候概要数据（类型/均温/降雨/日照）保留在 L2 区域紧凑展示
-
-### B8. 组件拆分
-- [ ] B8.1 从 `CityDetailContent.tsx` 拆出 `HeroSection.tsx`（B1）
-- [ ] B8.2 拆出 `CoreMetrics.tsx`（B2 核心数据条）
-- [ ] B8.3 拆出 `FinancialDetail.tsx`（B4 财务详情）
-- [ ] B8.4 拆出 `IndexCards.tsx`（B5 综合指数折叠）
-- [ ] B8.5 拆出 `NomadSection.tsx`（B6 游牧板块）
-- [ ] B8.6 主文件 `CityDetailContent.tsx` 降至 <300 行（组装器）
-- [ ] B8.7 每个子组件 <200 行
+### 1.3 annualWorkHours → ILO ILOSTAT
+- [ ] 1.3.1 从 ILO ILOSTAT API 获取各国年均工时 (CC BY 4.0)
+- [ ] 1.3.2 替换 OECD 来源数据
+- [ ] 1.3.3 写入 SOT → export → validate
 
 ---
 
-## C. 税制引擎可视化（杀手功能）
+## 2. 薪资系统重建
 
-> 81 国税制 + 外派方案是全产品最被低估的资产。当前只在 NavBar 里一个 toggle。
+> 当前 87% 薪资数据依赖 Numbeo 城市薪资作为锚点，需重建
 
-### C1. 城市详情页「税务计算器」区域
-- [x] C1.1 创建税务明细组件（集成在 CityDetailContent 内，可展开/收起）
-- [x] C1.2 展示当前职业 + 城市的完整税务分解：税前 → 各级税率 → 社保 → 扣除 → 税后
-- [x] C1.3 如有外派方案（expatNet），显示对比：标准 vs 外派税率（含详细条件说明）
-- [x] C1.4 读取 taxData.ts + taxUtils.ts 计算逻辑，渲染为可视化表格
-- [x] C1.5 支持用户在 NavBar 切换薪资倍率查看税务变化（7 档）
-- [x] C1.6 默认折叠，显示「点击展开税务明细」，展开后切换为「点击收起税务明细」
-- [x] C1.7 社保组件 62 项 × 4 语言本地化（SOCIAL_COMP_I18N）
-- [x] C1.8 缴费基数封顶标识（* + 脚注）
-- [x] C1.9 税务明细内币种统一使用代码（CNY/EUR）而非符号（¥/€）
-- [x] C1.10 千分位分隔符全语言启用
+### 2.1 第一阶段：国家级锚点
+- [ ] 2.1.1 从 ILO ILOSTAT 获取 ~100 国家平均工资 (CC BY 4.0)
+- [ ] 2.1.2 设计新的薪资计算管道（ILO 国家级 × 职业比率 × 城市溢价因子）
+- [ ] 2.1.3 保留现有 BLS 直接值（21 美国城市）不变
+- [ ] 2.1.4 保留现有政府统计局职业比率（80 国）不变
+- [ ] 2.1.5 重新计算所有非 BLS 城市薪资
+- [ ] 2.1.6 更新置信度标签
 
-### C2. 排行榜新增「税后收入」Tab
-- [ ] C2.1 在 `RankingContent.tsx` 的 Tab 类型中新增 `afterTaxIncome`
-- [ ] C2.2 按当前选择的职业+薪资倍率计算每城市税后年收入，排序展示
-- [ ] C2.3 添加 i18n 翻译键（4 种语言）
-- [ ] C2.4 此 Tab 放在「收入」附近位置
+### 2.2 第二阶段：Quality A/B 国家城市级数据
+- [ ] 2.2.1 日本 厚労省/doda 城市级数据
+- [ ] 2.2.2 加拿大 StatCan 城市级
+- [ ] 2.2.3 英国 ONS ASHE 地区级
+- [ ] 2.2.4 德国 Destatis 州级
+- [ ] 2.2.5 法国 INSEE 地区级
+- [ ] 2.2.6 韩国 KOSIS 城市级
+- [ ] 2.2.7 台湾 DGBAS
+- [ ] 2.2.8 澳洲 ABS 州级
+- [ ] 2.2.9 其他 Quality A/B 国家
 
-### C3. 排行榜 Tab 合并
-- [ ] C3.1 时薪（`hourlyWage`）合并入工时（`workhours`）Tab——工时表格新增时薪列
-- [ ] C3.2 购房年限（`housing`）合并入房价（`housePrice`）Tab——房价表格新增购房年限列
-- [ ] C3.3 生活压力（`lifePressure`）Tab 移至最后位置
-- [ ] C3.4 删除合并后多余的独立 Tab 入口
-- [ ] C3.5 更新 Tab 类型定义和 `TAB_I18N`
+### 2.3 验证（参考旧数据）
+- [ ] 2.3.1 与归档的 Numbeo 薪资数据对比，分析偏差分布（不使用，仅验证）
+- [ ] 2.3.2 确认新薪资数据合理性
 
 ---
 
-## D. 数据扩展
+## 3. 生活成本数据重建
 
-> 新增 3 个高价值数据维度 + 2 座新城市。
+> 从零开始，逐国从政府统计局获取。目标：120 城市全覆盖
 
-### D1. 新增数据字段
-- [ ] D1.1 **公共交通评分**：研究 Numbeo Traffic Index 数据，为 150 城市补充 `transitScore`（0-100）
-- [ ] D1.2 **自然灾害风险**：采用 World Risk Index 国家级数据，新增 `disasterRiskIndex` 字段
-- [ ] D1.3 **外国出生人口%**：联合国/世行数据，新增 `foreignBornPct` 字段
-- [ ] D1.4 更新 `lib/types.ts` City 接口添加新字段
-- [ ] D1.5 更新 `scripts/validate-data.mjs` 校验新字段范围
-- [ ] D1.6 城市详情页展示新数据（D1.1 放 L2 环境区，D1.2 放 L1/L2 安全附近，D1.3 放 L3）
+### 3.1 第一批：美国 20 城
+- [ ] 3.1.1 BLS Consumer Expenditure Survey (Public Domain) — 食品/交通/日用
+- [ ] 3.1.2 HUD Fair Market Rents (Public Domain) — 城市级租金
+- [ ] 3.1.3 Census ACS — 住房成本中位数
+- [ ] 3.1.4 组合为 costModerate / costBudget / monthlyRent
 
-### D2. 新增城市
-- [—] D2.1 ~~阿克拉（加纳）~~ → 改为 **卡萨布兰卡（摩洛哥）** ✅ 2025-04
-- [—] D2.2 ~~利雅得（沙特）~~ → 改为 **惠灵顿（新西兰）** ✅ 2025-04
-- [x] D2.3 每座新城市必须同步更新 7 个文件（DATA_OPS.md 清单） ✅ 2025-04
-  - cities.json / constants.ts / citySlug.ts / cityIntros.ts / cityLanguages.ts / i18n.ts / taxData.ts（如需新增国家税制）
-- [x] D2.4 安全指数按 5-sub 权重计算（30/25/20/15/10），置信度标签匹配 ✅ 2025-04
-- [x] D2.5 运行 `node scripts/validate-data.mjs` 验证 ✅ 2025-04
+### 3.2 第二批：EU 主要城市 (~20 城)
+- [ ] 3.2.1 Eurostat HICP 物价组件 (CC BY 4.0)
+- [ ] 3.2.2 各国租金数据（UK VOA, DE Mietspiegel, FR OLAP 等）
+- [ ] 3.2.3 标准化为 costModerate / monthlyRent
 
----
+### 3.3 第三批：日/韩/澳/加/台/港 (~15 城)
+- [ ] 3.3.1 日本 総務省 CPI + 住宅統計
+- [ ] 3.3.2 韩国 KOSIS CPI + 전월세
+- [ ] 3.3.3 澳洲 ABS CPI
+- [ ] 3.3.4 加拿大 StatCan CPI + CMHC 租金
+- [ ] 3.3.5 台湾主計總處
+- [ ] 3.3.6 香港統計處
 
-## E0. 数据合规 (新增 2026-04-15)
+### 3.4 第四批：其余国家 (~65 城)
+- [ ] 3.4.1 发达国家：逐国从统计局获取
+- [ ] 3.4.2 发展中国家：WB PPP 估算（明确标注为估算值 ± 精度范围）
 
-> 完整审计: `data/LICENSING.md` | 交接: `data/HANDOFF-LICENSING.md`
-
-### E0.1 立即可执行的零成本替代
-- [ ] E0.1.1 homicideRate → World Bank API `VC.IHR.PSRC.P5` (CC BY 4.0)
-- [ ] E0.1.2 gpiScore → World Bank `PV.EST` Political Stability (CC BY 4.0)
-- [ ] E0.1.3 gallupLawOrder → World Bank `RL.EST` Rule of Law (CC BY 4.0)
-- [ ] E0.1.4 internetSpeedMbps → M-Lab NDT BigQuery (CC0)
-- [ ] E0.1.5 democracyIndex → V-Dem `v2x_libdem` (CC BY-SA 4.0)
-- [ ] E0.1.6 安全指数公式重设计 (4 子指标, 全部 CC BY 4.0)
-- [ ] E0.1.7 更新 export.mjs 和测试
-
-### E0.2 决定整体合规方案
-- [ ] E0.2.1 选择方案: A(非商业) / B(保留基期88%) / C(零风险72%) / E(谈attribution)
-- [ ] E0.2.2 如需发邮件确认: Freedom House / RSF / MIPEX / WJP
-
-### E0.3 补齐缺失数据
-- [ ] E0.3.1 verify-numbeo-data.mjs SLUG_TO_ID 补充 ID 162-168
-- [ ] E0.3.2 采集 9 城市 costModerate (等 Numbeo 解封或用替代方案)
-- [ ] E0.3.3 哥斯达黎加圣何塞重新采集 (URL 已修正为 San-Jose-Costa-Rica)
+### 3.5 验证
+- [ ] 3.5.1 与归档的 Numbeo 成本数据对比偏差（不使用，仅验证拟合）
+- [ ] 3.5.2 探索基于政府数据的消费估算拟合算法
 
 ---
 
-## E. SEO 与增长
+## 4. MethodologyContent 页面重写
 
-### E1. Meta 优化
-- [ ] E1.1 城市详情页 `meta description` 包含具体数据数字（如"Software engineer after-tax income: $105K, monthly cost: $4,500, safety: 68/100"）
-- [ ] E1.2 对比页 `<title>` 包含 "vs" 关键词（如"New York vs London — Cost, Salary, Safety Comparison"）
-- [ ] E1.3 排行页 `<title>` 包含维度关键词（如"Safest Cities in the World 2026 Ranking"）
-- [ ] E1.4 审核所有 OG image 内容，确保包含核心数据数字而非通用设计
+> 当前页面仍引用旧数据源（Numbeo/UNODC/Gallup/Ookla），需要完全重写
 
-### E2. GA4 事件埋点
-- [ ] E2.1 审计当前 `lib/analytics.ts` 的 `trackEvent` 使用情况，列出已埋点事件
-- [ ] E2.2 新增关键事件埋点：
-  - 职业选择变更
-  - 排行榜 Tab 切换
-  - 城市详情页各折叠区展开/收起
-  - 对比页城市添加/移除
-  - 分享按钮点击（按平台）
-  - 税务计算器展开
-- [ ] E2.3 GA4 Dashboard 配置关键转化事件
-
-### E3. 错误监控
-- [ ] E3.1 接入 Sentry free tier（Next.js SDK）
-- [ ] E3.2 配置 source map 上传
-- [ ] E3.3 设置关键页面错误告警
+- [ ] 4.1 重写 zh locale 方法论内容（数据来源表 + 安全指数公式 + 声明）
+- [ ] 4.2 重写 en locale
+- [ ] 4.3 重写 ja locale
+- [ ] 4.4 重写 es locale
+- [ ] 4.5 增加"数据治理"板块：来源透明化 + 许可状态
 
 ---
 
-## F. 排行榜优化
+## 5. MEDIUM 风险数据源确认
 
-### F1. Tab 重排序
-- [ ] F1.1 新排序：安全 → 消费 → 租金 → 收入 → 税后收入 → 储蓄 → 医疗 → 自由 → 工时 → 假期 → 空气 → 网速 → 直飞 → 气候 → 房价 → 生活压力
-- [ ] F1.2 更新 `GROUPS` 数组和 Tab 渲染顺序
-- [ ] F1.3 安全作为默认 Tab（当前默认是 income）
+> 发邮件确认许可（尽职调查，不是谈合作）
 
-### F2. RankingContent 拆分
-- [ ] F2.1 当前 1087 行，删除 Multi 后预计 ~900 行
-- [ ] F2.2 拆出 `RankingTable.tsx`（通用排行表格）
-- [ ] F2.3 拆出 `RankingFilters.tsx`（气候筛选器等）
-- [ ] F2.4 主文件降至 <300 行
+- [ ] 5.1 RSF Press Freedom Index → 发邮件确认使用条款
+- [ ] 5.2 Freedom House FOTN → 发邮件确认非商业使用
+- [ ] 5.3 WJP Rule of Law → 发邮件确认
+- [ ] 5.4 MIPEX → 发邮件确认（EU Horizon 项目数据开放获取原则）
+- [ ] 5.5 Georgetown WPS → 发邮件确认
+- [ ] 5.6 根据回复调整：确认可用 → 保留；不可用 → 移除并重分配权重
 
 ---
 
-## G. 对比页/首页/NavBar 优化
+## 6. 前端 Phase 2 重构（继续）
 
-### G1. NavBar 设置精简
-- [ ] G1.1 考虑将职业/薪资倍率/消费模式/收入模式从 NavBar 设置面板移至首页或详情页（场景化嵌入）
-- [ ] G1.2 NavBar 设置仅保留：语言、货币、主题（低频设置）
-- [ ] G1.3 如实施 G1.1，需要在城市详情页/排行页顶部添加紧凑的身份选择条
+> 以下 Phase 2 工作不受数据清洗影响，正常继续
 
-### G2. 首页信息密度提升
-- [ ] G2.1 添加身份选择区（职业+收入水平+预算偏好）
-- [ ] G2.2 添加个性化 Top 5 推荐（基于当前身份计算储蓄率最高 5 城）
-- [ ] G2.3 技术约束：Top 5 依赖 localStorage，需客户端计算，注意 SSR/hydration
-- [ ] G2.4 保留搜索框，降低视觉中心地位
+### 6.1 功能裁剪
+- [ ] 6.1.1 删除 Multi 复合排序模式
+- [ ] 6.1.2 删除 LINE 和 Reddit 分享按钮
 
-### G3. 对比页优化
-- [ ] G3.1 默认展示精简为核心指标（财务+住房+4 指数+气候）
-- [ ] G3.2 工作/环境/Nomad 数据放入可展开区域
-- [ ] G3.3 Win-count 可考虑按组统计（"财务面 A 胜、生活面 B 胜"）
+### 6.2 城市详情页重构
+- [ ] 6.2.1 L1 核心数据条（首屏 5 格一行）
+- [ ] 6.2.2 L2 重要数据区
+- [ ] 6.2.3 财务详情区
+- [ ] 6.2.4 生活压力指数降级为折叠区域
+- [ ] 6.2.5 游牧板块折叠
+- [ ] 6.2.6 气候图移至底部
+- [ ] 6.2.7 组件拆分（CityDetailContent < 300 行）
 
----
-
-## H. i18n 与翻译
-
-> 所有 UI 变更需同步 4 种语言翻译。
-
-### H1. 新增翻译键
-- [x] H1.1 税务计算器相关翻译（taxBk* 9键 + expatTip/expatTipCPF + expatCond* 6键 + expatScheme* 6键 + salaryTier* 7键 + tapForDetails/tapToCollapse）
-- [x] H1.2 折叠/展开按钮文案（tapForDetails → tapToCollapse 状态切换）
-- [ ] H1.3 新 Tab「税后收入」翻译
-- [ ] H1.4 新数据字段（公共交通/灾害风险/外国人口）翻译
-- [x] H1.5 职业重命名「政府/NGO行政」4 种语言
-- [ ] H1.6 新城市名翻译（阿克拉、利雅得）
-
-### H2. 清理过时翻译
-- [ ] H2.1 删除 Multi 排序相关翻译键
-- [ ] H2.2 删除 LINE/Reddit 分享相关翻译键（如有）
-- [ ] H2.3 删除已移除职业的翻译键
+### 6.3 排行榜
+- [ ] 6.3.1 新增「税后收入」Tab
+- [ ] 6.3.2 时薪合并入工时 Tab
+- [ ] 6.3.3 购房年限合并入房价 Tab
+- [ ] 6.3.4 生活压力移至末尾
+- [ ] 6.3.5 暂时隐藏消费/租金/房价/购房年限 Tab（成本数据重建前）
 
 ---
 
-## 执行排期建议
+## 7. SEO 与推广准备
 
-| 阶段 | 包含任务 | 预期重点 |
-|------|---------|---------|
-| **Phase 2A** | A1-A4, B1-B8, H2 | 裁剪 + 详情页重构（最大工程量） |
-| **Phase 2B** | C1-C3, F1-F2, H1 | 税制引擎可视化 + 排行优化 |
-| **Phase 2C** | D1-D2, E1-E3 | 数据扩展 + SEO + 监控 |
-| **Phase 2D** | G1-G3 | 首页/NavBar/对比页优化 |
+> 合规完成后启动
 
-> Phase 2A 是基础，必须先完成。2B/2C 可并行。2D 视情况排期。
-
----
-
-## 不做清单（Phase 2 明确排除）
-
-- 用户账号/登录系统
-- 用户评论/UGC/社区功能
-- 移动 App
-- 新增语言（>4）
-- AI 推荐引擎
-- 城市数 >160 / 职业数 >25
-- 付费功能
-- i18n 改 JSON 资源文件（三阶段）
+- [ ] 7.1 Meta description 包含具体数据数字
+- [ ] 7.2 对比页 title 包含 "vs" 关键词
+- [ ] 7.3 排行页 title 包含维度关键词
+- [ ] 7.4 GA4 关键事件埋点
+- [ ] 7.5 Soft launch: Show HN（以税制引擎为 hook）
+- [ ] 7.6 日本 Twitter / note.com
+- [ ] 7.7 台湾 PTT / Dcard
+- [ ] 7.8 西语 SEO
 
 ---
 
-*老板指令格式示例：*
-- *"完成 A1 和 A2"* → 执行者删除 Multi 排序 + 删除 LINE/Reddit 分享
-- *"完成 B1 到 B4"* → 执行者重构详情页首屏
-- *"完成 C1"* → 执行者创建税务计算器组件
-- *"D2 跳过利雅得，只做阿克拉"* → 执行者标记 D2.2 为 `[—]`
+## 8. 文档重建
+
+- [ ] 8.1 创建新版 data/README.md（数据架构 + 清洁数据来源说明）
+- [ ] 8.2 创建 DATA_PROVENANCE.md（每个字段的来源、许可、更新日期）
+- [ ] 8.3 更新 README.md
+- [ ] 8.4 创建新版 HANDOFF.md（反映清洗后架构）

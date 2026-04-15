@@ -27,11 +27,11 @@ const SHOW_DIFF = process.argv.includes("--diff");
 // Composite index weights (authoritative definition)
 // ═══════════════════════════════════════════════════════════════
 const SAFETY_WEIGHTS = [
-  { field: "numbeoSafetyIndex", rawField: "numbeoSafetyIndex", weight: 30 },
-  { field: "homicideRateInv",   rawField: "homicideRate",       weight: 25 },
-  { field: "gpiScoreInv",       rawField: "gpiScore",           weight: 20 },
-  { field: "gallupLawOrder",    rawField: "gallupLawOrder",     weight: 15 },
-  { field: "wpsIndexNorm",      rawField: "wpsIndex",           weight: 10 },
+  { field: "homicideRateInv",     rawField: "homicideRate",         weight: 30 },
+  { field: "politicalStability",  rawField: "politicalStability",   weight: 25 },
+  { field: "ruleLawWGI",          rawField: "ruleLawWGI",           weight: 20 },
+  { field: "controlOfCorruption", rawField: "controlOfCorruption",  weight: 15 },
+  { field: "wpsIndexNorm",        rawField: "wpsIndex",             weight: 10 },
 ];
 
 const HEALTHCARE_WEIGHTS = [
@@ -101,7 +101,7 @@ const RAW_FIELDS = [
   "airQuality", "aqiSource",
   "doctorsPerThousand", "hospitalBedsPerThousand", "uhcCoverageIndex",
   "lifeExpectancy", "outOfPocketPct",
-  "numbeoSafetyIndex", "homicideRate", "gpiScore", "gallupLawOrder", "wpsIndex",
+  "homicideRate", "politicalStability", "ruleLawWGI", "controlOfCorruption", "wpsIndex",
   "safetyWarning",
   "pressFreedomScore", "democracyIndex", "corruptionPerceptionIndex",
   "govEffectiveness", "wjpRuleLaw", "internetFreedomScore", "mipexScore",
@@ -177,18 +177,14 @@ for (const src of cities) {
     ? roundTo1(100 - minMaxNorm(src.homicideRate, homicideMin, homicideMax))
     : null;
 
-  city.gpiScoreInv = src.gpiScore != null
-    ? Math.round(((5 - src.gpiScore) / 4) * 100)
-    : null;
-
-  // ── Safety Index ──
+  // ── Safety Index (new: all WB CC BY 4.0 sources) ──
   const wpsNorm = src.wpsIndex != null ? src.wpsIndex * 100 : null;
   const safetySubs = [
-    { val: src.numbeoSafetyIndex, weight: 30 },
-    { val: city.homicideRateInv,  weight: 25 },
-    { val: city.gpiScoreInv,      weight: 20 },
-    { val: src.gallupLawOrder,    weight: 15 },
-    { val: wpsNorm,               weight: 10 },
+    { val: city.homicideRateInv,     weight: 30 },
+    { val: src.politicalStability,   weight: 25 },
+    { val: src.ruleLawWGI,           weight: 20 },
+    { val: src.controlOfCorruption,  weight: 15 },
+    { val: wpsNorm,                  weight: 10 },
   ];
   city.safetyIndex = roundTo1(computeWeightedAvg(safetySubs));
   city.safetyConfidence = computeConfidence(src, SAFETY_WEIGHTS);

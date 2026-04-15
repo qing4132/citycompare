@@ -5,8 +5,8 @@ export interface City {
   continent: string;
   hidden?: boolean;
   averageIncome: number;
-  costModerate: number;
-  costBudget: number;
+  costModerate: number | null;
+  costBudget: number | null;
   bigMacPrice: number | null;
   currency: string;
   description: string;
@@ -19,12 +19,11 @@ export interface City {
   annualWorkHours: number | null;
   safetyIndex: number;
   safetyConfidence: number;  // weighted confidence 0-100 (sum of available sub-indicator weights)
-  numbeoSafetyIndex: number | null;    // Numbeo Safety Index (0-100)
-  homicideRateInv: number | null;      // UNODC homicide rate inverted (0-100)
-  homicideRate?: number | null;        // UNODC homicide rate per 100k (raw)
-  gpiScoreInv: number | null;          // GPI score inverted (0-100)
-  gpiScore?: number | null;            // GPI overall score (1-5, lower = more peaceful)
-  gallupLawOrder: number | null;       // Gallup Law & Order Index (0-100)
+  homicideRateInv: number | null;      // WB intentional homicides per 100k, inverted (0-100)
+  homicideRate?: number | null;        // WB intentional homicides per 100k (raw)
+  politicalStability: number | null;    // WB WGI Political Stability score (0-100)
+  ruleLawWGI: number | null;           // WB WGI Rule of Law score (0-100)
+  controlOfCorruption: number | null;   // WB WGI Control of Corruption score (0-100)
   wpsIndex: number | null;             // Georgetown WPS Index (0-1)
   safetyWarning?: "active_conflict" | "extreme_instability" | "data_blocked";
   // Healthcare Index (pre-computed)

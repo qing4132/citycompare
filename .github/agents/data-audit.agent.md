@@ -42,9 +42,10 @@ tools: [read, search, execute, edit, web, agent, todo]
 | L4 深度 | 子指标、游牧签证详情、免签矩阵、时区重叠 |
 
 ### 复合指数公式
-- **Safety Index**: 35% numbeoSafetyIndex + 30% homicideRateInv + 20% gpiScoreInv + 15% gallupLawOrder
-- **Healthcare Index**: 35% doctors + 25% beds + 25% UHC + 15% lifeExpectancy（需归一化）
-- **Freedom Index**: 35% pressFreedom + 35% democracyIndex + 30% corruptionPerception（需归一化）
+- **Safety Index**: 30% homicideRateInv + 25% politicalStability + 20% ruleLawWGI + 15% controlOfCorruption + 10% wpsIndex (全部 World Bank CC BY 4.0)
+- **Healthcare Index**: 25% doctors + 25% UHC + 20% beds + 15% lifeExpectancy + 15% outOfPocket(inv)
+- **Governance Index**: 25% CPI + 25% govEffectiveness + 20% wjpRuleLaw + 15% pressFreedom + 15% mipexScore
+- **Freedom Index**: 35% pressFreedom + 35% democracyIndex + 30% corruptionPerception
 - **Life Pressure**: 30% savingsRate + 25% bigMacPower + 25% workHours(inv) + 20% yearsToHome(inv)
 - 缺失子指标时权重按比例重分配，置信度: 全有=high, 缺1=medium, 缺2+=low
 

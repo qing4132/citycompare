@@ -76,10 +76,10 @@ for (const f of ["safetyConfidence", "healthcareConfidence", "governanceConfiden
 for (const c of cities) {
   const wpsNorm = c.wpsIndex != null ? c.wpsIndex * 100 : null;
   const subs = [
-    { val: c.numbeoSafetyIndex, w: 0.30 },
-    { val: c.homicideRateInv, w: 0.25 },
-    { val: c.gpiScoreInv, w: 0.20 },
-    { val: c.gallupLawOrder, w: 0.15 },
+    { val: c.homicideRateInv, w: 0.30 },
+    { val: c.politicalStability, w: 0.25 },
+    { val: c.ruleLawWGI, w: 0.20 },
+    { val: c.controlOfCorruption, w: 0.15 },
     { val: wpsNorm, w: 0.10 },
   ];
   const avail = subs.filter(s => s.val != null);
@@ -118,13 +118,10 @@ for (const c of cities) {
   if (c.homicideRate == null && c.homicideRateInv != null) {
     fail(`${c.name}(${c.id}): homicideRateInv without homicideRate`);
   }
-  if (c.gpiScore == null && c.gpiScoreInv != null) {
-    fail(`${c.name}(${c.id}): gpiScoreInv without gpiScore`);
-  }
 }
 
 // 1h. Confidence matches sub-indicator presence (numeric weights)
-const SAFETY_SUBS = [["numbeoSafetyIndex", 30], ["homicideRate", 25], ["gpiScore", 20], ["gallupLawOrder", 15], ["wpsIndex", 10]];
+const SAFETY_SUBS = [["homicideRate", 30], ["politicalStability", 25], ["ruleLawWGI", 20], ["controlOfCorruption", 15], ["wpsIndex", 10]];
 const HEALTH_SUBS = [["doctorsPerThousand", 25], ["hospitalBedsPerThousand", 20], ["uhcCoverageIndex", 25], ["lifeExpectancy", 15], ["outOfPocketPct", 15]];
 const GOV_SUBS = [["corruptionPerceptionIndex", 25], ["govEffectiveness", 25], ["wjpRuleLaw", 20], ["pressFreedomScore", 15], ["mipexScore", 15]];
 const FREE_SUBS = [["pressFreedomScore", 35], ["democracyIndex", 35], ["corruptionPerceptionIndex", 30]];
@@ -161,7 +158,8 @@ for (const c of cities) {
   }
   // Cost fields should be present but warn (not error) for new cities still being populated
   for (const f of ["costModerate", "costBudget"]) {
-    if (c[f] == null) warn(`${c.name}(${c.id}): ${f} is null`);
+    // Cost data cleared during compliance cleanup — nulls expected
+    // if (c[f] == null) warn(`${c.name}(${c.id}): ${f} is null`);
   }
 }
 
@@ -181,7 +179,7 @@ if (!EXPORT_ONLY && existsSync(SOURCE_PATH)) {
   const srcCities = sourceData.cities;
 
   // 2a. SOT should not contain computed fields
-  const COMPUTED = ["averageIncome", "homicideRateInv", "gpiScoreInv", "safetyIndex", "healthcareIndex",
+  const COMPUTED = ["averageIncome", "homicideRateInv", "safetyIndex", "healthcareIndex",
     "governanceIndex", "freedomIndex", "safetyConfidence", "healthcareConfidence",
     "governanceConfidence", "freedomConfidence", "securityConfidence"];
   for (const c of srcCities) {

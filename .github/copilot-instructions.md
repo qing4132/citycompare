@@ -2,11 +2,9 @@
 
 全球移居决策引擎（whichcity.run）— Next.js 15 + TypeScript + Tailwind CSS + Recharts
 
-> 产品方向与约束 → [REDESIGN.md](../REDESIGN.md)
-> 技术架构 → [HANDOFF.md](../HANDOFF.md)
-> 数据治理 → [data/README.md](../data/README.md)
-> 数据操作 → [data/HOWTO.md](../data/HOWTO.md)
-> 战略报告 → `_archive/reports/phase2-strategy.md`
+> 编码规范 → [RULES.md](../RULES.md)
+> 战略报告 → `_archive/reports/phase2-compliance-strategy-v2.md`
+> 历史文档 → `_archive/docs-phase1/`
 
 ## Product Positioning
 
@@ -20,10 +18,10 @@ Core competitive advantage: profession × 81-country tax engine × comprehensive
 - `components/` — Page components + NavBar + ClimateChart
 - `hooks/useSettings.ts` — global settings (profession, locale, theme, currency, etc.)
 - `lib/` — data loading, i18n, tax engine (81 countries), nomad i18n, types, constants
-- `data/` — **Single source of truth**: cities-source.json, field registry, export pipeline
+- `data/` — **Single source of truth**: cities-source.json, export pipeline
 - `public/data/` — Auto-generated frontend JSON (cities.json, exchange-rates.json, nomad data)
 - `__tests__/` — unit tests (Vitest): tax engine, composite index
-- `scripts/` — active maintenance scripts (rates, Numbeo, climate, timezone)
+- `scripts/` — active maintenance scripts (rates, climate, timezone, WB data)
 - `_archive/` — historical scripts, data sources, reports (reference only)
 
 ## Key Data

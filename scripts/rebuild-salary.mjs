@@ -1,19 +1,23 @@
 #!/usr/bin/env node
 /**
- * rebuild-salary.mjs — Multi-source salary rebuild with cross-validation
+ * rebuild-salary.mjs — Tiered salary estimation (no global correction)
  *
- * Three data sources fused:
- *   Source A: ILO PPP monthly earnings × government profession ratios (80 countries)
- *   Source B: ILO ISCO-08 major group ratios (164 countries)
- *   Source C: GNI per capita as fallback anchor (WB CC BY 4.0)
+ * Strategy: Use the BEST available source per city. Never blend.
  *
- * City premium factors applied from BLS patterns + editorial
+ * Tier 1: BLS OEWS direct (21 US cities) — Public Domain, city-level
+ * Tier 2: doda.jp direct (6 Japan cities) — Public survey, city-level
+ * Tier 3: ILO PPP × Gov Quality A ratios × city premium — nation-level
+ * Tier 4: ILO PPP × Gov Quality B ratios × city premium — nation-level
+ * Tier 5: ILO PPP × Gov Quality C/D ratios × city premium — nation-level
+ * Tier 6: ILO PPP × ISCO major group × sub-ratio × city premium — coarse
+ * Tier 7: GNI per capita fallback — last resort
  *
- * Cross-validation: compare Source A vs B, flag >30% deviation
- * Quality tiers: A/B (gov ratio) > ISCO ratio > GNI fallback
+ * NO global correction factor. ILO PPP values used as-is.
+ * The PPP denomination means values represent purchasing-power-equivalent
+ * dollars, not nominal USD — this is intentional and correct for
+ * cross-country comparison.
  *
- * Preserves: BLS (21 US cities, Public Domain), doda.jp (6 Japan cities)
- * License: ILO CC BY 4.0 + government public data + editorial premiums
+ * Validation runs independently (validate-salary-quality.mjs).
  */
 import { readFileSync, writeFileSync, readdirSync } from "fs";
 import { join, dirname } from "path";
@@ -52,7 +56,6 @@ const COUNTRY_TO_ILO = {
   "巴拿马":"Panama","厄瓜多尔":"Ecuador","多米尼加":"Dominican Republic","波多黎各":"Puerto Rico",
 };
 
-// Map government ratio country names to our Chinese country names
 const GOV_TO_ZH = {
   "Japan":"日本","China":"中国","Canada":"加拿大","Australia":"澳大利亚",
   "South Korea":"韩国","Hong Kong":"中国香港","Taiwan":"台湾","Czech Republic":"捷克",
@@ -78,33 +81,31 @@ const GOV_TO_ZH = {
   "Lebanon":"黎巴嫩","Jordan":"约旦","Uzbekistan":"乌兹别克斯坦","Cyprus":"塞浦路斯",
 };
 
-// ISCO fallback mapping (same as before)
 const PROF_TO_ISCO = {
-  "软件工程师": { isco: 2, sub: 1.15 }, "医生/医学博士": { isco: 2, sub: 1.40 },
-  "财务分析师": { isco: 2, sub: 1.05 }, "市场经理": { isco: 1, sub: 1.00 },
-  "平面设计师": { isco: 3, sub: 0.95 }, "数据科学家": { isco: 2, sub: 1.10 },
-  "销售经理": { isco: 1, sub: 1.10 }, "人力资源经理": { isco: 1, sub: 0.95 },
-  "教师": { isco: 2, sub: 0.75 }, "护士": { isco: 2, sub: 0.70 },
-  "律师": { isco: 2, sub: 1.30 }, "建筑师": { isco: 2, sub: 0.95 },
-  "厨师": { isco: 5, sub: 1.05 }, "记者": { isco: 2, sub: 0.80 },
-  "机械工程师": { isco: 2, sub: 1.00 }, "药剂师": { isco: 2, sub: 1.10 },
-  "会计师": { isco: 2, sub: 0.90 }, "产品经理": { isco: 1, sub: 1.00 },
-  "UI/UX设计师": { isco: 2, sub: 1.00 }, "大学教授": { isco: 2, sub: 1.00 },
-  "牙医": { isco: 2, sub: 1.20 }, "公交司机": { isco: 8, sub: 1.00 },
-  "电工": { isco: 7, sub: 1.00 }, "政府/NGO行政": { isco: 4, sub: 1.05 },
-  "数字游民": { isco: -1, sub: 0 },
+  "软件工程师":{isco:2,sub:1.15},"医生/医学博士":{isco:2,sub:1.40},
+  "财务分析师":{isco:2,sub:1.05},"市场经理":{isco:1,sub:1.00},
+  "平面设计师":{isco:3,sub:0.95},"数据科学家":{isco:2,sub:1.10},
+  "销售经理":{isco:1,sub:1.10},"人力资源经理":{isco:1,sub:0.95},
+  "教师":{isco:2,sub:0.75},"护士":{isco:2,sub:0.70},
+  "律师":{isco:2,sub:1.30},"建筑师":{isco:2,sub:0.95},
+  "厨师":{isco:5,sub:1.05},"记者":{isco:2,sub:0.80},
+  "机械工程师":{isco:2,sub:1.00},"药剂师":{isco:2,sub:1.10},
+  "会计师":{isco:2,sub:0.90},"产品经理":{isco:1,sub:1.00},
+  "UI/UX设计师":{isco:2,sub:1.00},"大学教授":{isco:2,sub:1.00},
+  "牙医":{isco:2,sub:1.20},"公交司机":{isco:8,sub:1.00},
+  "电工":{isco:7,sub:1.00},"政府/NGO行政":{isco:4,sub:1.05},
+  "数字游民":{isco:-1,sub:0},
 };
 
 const ISCO_LABELS = {
-  1: "Occupation (ISCO-08): 1. Managers", 2: "Occupation (ISCO-08): 2. Professionals",
-  3: "Occupation (ISCO-08): 3. Technicians and associate professionals",
-  4: "Occupation (ISCO-08): 4. Clerical support workers",
-  5: "Occupation (ISCO-08): 5. Service and sales workers",
-  7: "Occupation (ISCO-08): 7. Craft and related trades workers",
-  8: "Occupation (ISCO-08): 8. Plant and machine operators, and assemblers",
+  1:"Occupation (ISCO-08): 1. Managers",2:"Occupation (ISCO-08): 2. Professionals",
+  3:"Occupation (ISCO-08): 3. Technicians and associate professionals",
+  4:"Occupation (ISCO-08): 4. Clerical support workers",
+  5:"Occupation (ISCO-08): 5. Service and sales workers",
+  7:"Occupation (ISCO-08): 7. Craft and related trades workers",
+  8:"Occupation (ISCO-08): 8. Plant and machine operators, and assemblers",
 };
 
-// City premium factors (same as previous version)
 const CITY_PREMIUM = {
   "北京":1.35,"上海":1.40,"广州":1.20,"深圳":1.35,"成都":1.00,"杭州":1.15,"重庆":0.90,
   "香港":1.00,"新加坡":1.00,"卢森堡":1.00,
@@ -136,9 +137,6 @@ const CITY_PREMIUM = {
 };
 const DEFAULT_PREMIUM = 1.10;
 
-const BLS_COUNTRIES = new Set(["美国", "波多黎各"]);
-const DODA_COUNTRIES = new Set(["日本"]);
-
 function parseCSV(text) {
   const lines = text.split("\n").filter(l => l.trim());
   const rows = [];
@@ -151,38 +149,26 @@ function parseCSV(text) {
 }
 
 function main() {
-  console.log("═══ Rebuild Salaries (Multi-Source + Cross-Validation) ═══\n");
+  console.log("═══ Rebuild Salaries (Tiered, No Global Correction) ═══\n");
 
-  // ── Load all sources ──
-
-  // Source A: Government profession ratios (80 countries, 24 professions each)
-  const govData = JSON.parse(readFileSync(RATIOS_PATH, "utf-8"));
-  const govRatios = govData.countries; // { "Japan": { "软件工程师": 1.22, ... }, ... }
-  const govQuality = govData.dataQuality; // { "Japan": "A", ... }
-  // Build zh→gov lookup
-  const zhToGovKey = {};
-  for (const [en, zh] of Object.entries(GOV_TO_ZH)) {
-    if (govRatios[en]) zhToGovKey[zh] = en;
-  }
-
-  // Source B: ILO PPP monthly earnings
+  // Load ILO PPP earnings
   const earnFile = readdirSync(ILO_DIR).find(f => f.startsWith("ilo-earnings-by-currency"));
   const earnRows = parseCSV(readFileSync(join(ILO_DIR, earnFile), "utf-8"));
   const pppEarnings = {};
   for (let i = 1; i < earnRows.length; i++) {
-    const [country, , , sex, currency, year, val] = earnRows[i];
+    const [country,,, sex, currency, year, val] = earnRows[i];
     if (sex !== "Total" || !currency?.includes("PPP")) continue;
     const v = parseFloat(val), y = parseInt(year);
     if (isNaN(v)) continue;
     if (!pppEarnings[country] || y > pppEarnings[country].year) pppEarnings[country] = { monthly: v, year: y };
   }
 
-  // Source B2: ILO ISCO occupation ratios
+  // Load ILO ISCO ratios
   const occFile = readdirSync(ILO_DIR).find(f => f.startsWith("ilo-earnings-by-occupation"));
   const occRows = parseCSV(readFileSync(join(ILO_DIR, occFile), "utf-8"));
   const iscoData = {};
   for (let i = 1; i < occRows.length; i++) {
-    const [country, , , sex, occ, year, val] = occRows[i];
+    const [country,,, sex, occ, year, val] = occRows[i];
     if (sex !== "Total") continue;
     const v = parseFloat(val), y = parseInt(year);
     if (isNaN(v)) continue;
@@ -190,26 +176,27 @@ function main() {
     if (!iscoData[country][occ] || y > iscoData[country][occ].year) iscoData[country][occ] = { val: v, year: y };
   }
 
-  console.log(`Source A: Government ratios — ${Object.keys(govRatios).length} countries (${Object.values(govQuality).filter(q=>q==="A").length} Quality A)`);
-  console.log(`Source B: ILO PPP earnings — ${Object.keys(pppEarnings).length} countries`);
-  console.log(`Source B2: ILO ISCO ratios — ${Object.keys(iscoData).length} countries`);
-  console.log(`City premiums: ${Object.keys(CITY_PREMIUM).length} cities\n`);
+  // Load government ratios
+  const govData = JSON.parse(readFileSync(RATIOS_PATH, "utf-8"));
+  const govRatios = govData.countries;
+  const govQuality = govData.dataQuality;
+  const zhToGovKey = {};
+  for (const [en, zh] of Object.entries(GOV_TO_ZH)) { if (govRatios[en]) zhToGovKey[zh] = en; }
 
-  // ── Load SOT ──
+  console.log(`ILO PPP: ${Object.keys(pppEarnings).length} | ISCO: ${Object.keys(iscoData).length} | Gov ratios: ${Object.keys(govRatios).length}\n`);
+
   const sourceData = JSON.parse(readFileSync(SOURCE_PATH, "utf-8"));
   const cities = sourceData.cities;
+  const BLS = new Set(["美国", "波多黎各"]);
+  const DODA = new Set(["日本"]);
 
-  // BLS benchmark correction: ILO PPP earnings are systematically ~15% below
-  // actual city-level wages (validated against 21 US BLS cities, median ratio 1.60,
-  // conservative global adjustment 1.15 to avoid over-correction for non-US)
-  const BLS_CORRECTION = 1.15;
-
-  let stats = { bls: 0, doda: 0, govA: 0, govB: 0, iscoOnly: 0, gniFallback: 0, failed: 0 };
-  let crossValidation = [];
+  const tiers = { t1: 0, t2: 0, t3: 0, t4: 0, t5: 0, t6: 0, t7: 0, fail: 0 };
 
   for (const city of cities) {
-    if (BLS_COUNTRIES.has(city.country)) { stats.bls++; continue; }
-    if (DODA_COUNTRIES.has(city.country)) { stats.doda++; continue; }
+    // Tier 1: BLS
+    if (BLS.has(city.country)) { tiers.t1++; continue; }
+    // Tier 2: doda
+    if (DODA.has(city.country)) { tiers.t2++; continue; }
 
     const premium = CITY_PREMIUM[city.name] ?? DEFAULT_PREMIUM;
     const iloName = COUNTRY_TO_ILO[city.country];
@@ -218,17 +205,9 @@ function main() {
     const countryGovRatios = govKey ? govRatios[govKey] : null;
     const quality = govKey ? govQuality[govKey] : null;
 
-    // Get annual base from ILO
     let annualBase = countryEarnings ? countryEarnings.monthly * 12 : null;
 
-    // Fallback to GNI
-    if (!annualBase && city.gniPerCapita) {
-      annualBase = city.gniPerCapita;
-    }
-
-    if (!annualBase) { stats.failed++; continue; }
-
-    // ISCO data for this country
+    // ISCO data
     const countryISCO = iloName ? iscoData[iloName] : null;
     let iscoTotal = null;
     if (countryISCO) {
@@ -236,95 +215,57 @@ function main() {
         || countryISCO["Occupation (ISCO-88): Total"]?.val;
     }
 
-    let methodUsed = "isco";
+    // Determine tier
+    let tier;
+    if (annualBase && countryGovRatios && quality === "A") tier = "t3";
+    else if (annualBase && countryGovRatios && quality === "B") tier = "t4";
+    else if (annualBase && countryGovRatios) tier = "t5";
+    else if (annualBase && countryISCO && iscoTotal) tier = "t6";
+    else if (city.gniPerCapita) { annualBase = city.gniPerCapita; tier = "t7"; }
+    else { tiers.fail++; continue; }
+
+    tiers[tier]++;
 
     for (const [prof, mapping] of Object.entries(PROF_TO_ISCO)) {
       if (mapping.isco === -1) { city.professions[prof] = 85000; continue; }
 
-      let salaryA = null; // Government ratio method
-      let salaryB = null; // ISCO method
-
-      // Method A: Government profession ratio (best quality)
-      if (countryGovRatios && countryGovRatios[prof]) {
-        salaryA = annualBase * countryGovRatios[prof] * premium * BLS_CORRECTION;
-      }
-
-      // Method B: ISCO major group ratio
-      if (countryISCO && iscoTotal) {
+      let salary;
+      if (tier <= "t5" && countryGovRatios?.[prof]) {
+        // Tier 3/4/5: Use government profession ratio directly
+        salary = annualBase * countryGovRatios[prof] * premium;
+      } else if (tier === "t6" && countryISCO && iscoTotal) {
+        // Tier 6: Use ISCO major group
         const iscoLabel = ISCO_LABELS[mapping.isco];
         const iscoVal = countryISCO[iscoLabel]?.val;
         if (iscoVal && iscoTotal > 0) {
-          salaryB = annualBase * (iscoVal / iscoTotal) * mapping.sub * premium * BLS_CORRECTION;
-        }
-      }
-
-      // Fusion: prefer gov ratio (more precise), fallback to ISCO
-      let finalSalary;
-      if (salaryA && salaryB) {
-        // Cross-validate: if both available, check deviation
-        const deviation = Math.abs(salaryA - salaryB) / Math.max(salaryA, salaryB);
-        if (deviation > 0.5 && prof === "软件工程师") {
-          crossValidation.push({
-            city: city.name, prof, govVal: Math.round(salaryA), iscoVal: Math.round(salaryB),
-            dev: (deviation * 100).toFixed(0) + "%", quality: quality || "?"
-          });
-        }
-        // Use weighted average: gov ratio gets higher weight for quality A/B
-        if (quality === "A") {
-          finalSalary = salaryA * 0.85 + salaryB * 0.15; // Heavy gov weight
-        } else if (quality === "B") {
-          finalSalary = salaryA * 0.70 + salaryB * 0.30; // Moderate gov weight
+          salary = annualBase * (iscoVal / iscoTotal) * mapping.sub * premium;
         } else {
-          finalSalary = salaryA * 0.50 + salaryB * 0.50; // Equal weight for C/D
+          salary = annualBase * mapping.sub * premium;
         }
-        methodUsed = "fusion";
-      } else if (salaryA) {
-        finalSalary = salaryA;
-        methodUsed = "gov";
-      } else if (salaryB) {
-        finalSalary = salaryB;
-        methodUsed = "isco";
       } else {
-        // Last resort: base × sub × premium
-        finalSalary = annualBase * mapping.sub * premium * BLS_CORRECTION;
-        methodUsed = "base";
+        // Tier 7 or fallback
+        salary = annualBase * mapping.sub * premium;
       }
 
-      city.professions[prof] = Math.round(finalSalary);
-    }
-
-    if (countryGovRatios && (quality === "A" || quality === "B")) {
-      if (quality === "A") stats.govA++;
-      else stats.govB++;
-    } else if (countryISCO && iscoTotal) {
-      stats.iscoOnly++;
-    } else {
-      stats.gniFallback++;
+      city.professions[prof] = Math.round(salary);
     }
   }
 
   writeFileSync(SOURCE_PATH, JSON.stringify(sourceData, null, 2) + "\n", "utf-8");
 
   console.log("═══ Results ═══");
-  console.log(`  BLS kept: ${stats.bls}`);
-  console.log(`  doda.jp kept: ${stats.doda}`);
-  console.log(`  Gov ratio Quality A (best): ${stats.govA}`);
-  console.log(`  Gov ratio Quality B: ${stats.govB}`);
-  console.log(`  ISCO only: ${stats.iscoOnly}`);
-  console.log(`  GNI fallback: ${stats.gniFallback}`);
-  console.log(`  Failed: ${stats.failed}`);
-  console.log(`  Total: ${stats.bls + stats.doda + stats.govA + stats.govB + stats.iscoOnly + stats.gniFallback}/${cities.length}`);
-
-  if (crossValidation.length > 0) {
-    console.log(`\n═══ Cross-Validation Flags (SW >50% deviation) ═══`);
-    crossValidation.forEach(cv => console.log(`  ${cv.city}: gov=$${cv.govVal} isco=$${cv.iscoVal} dev=${cv.dev} quality=${cv.quality}`));
-  }
+  console.log(`  Tier 1 (BLS direct):        ${tiers.t1}`);
+  console.log(`  Tier 2 (doda direct):        ${tiers.t2}`);
+  console.log(`  Tier 3 (ILO × Gov A):        ${tiers.t3}`);
+  console.log(`  Tier 4 (ILO × Gov B):        ${tiers.t4}`);
+  console.log(`  Tier 5 (ILO × Gov C/D):      ${tiers.t5}`);
+  console.log(`  Tier 6 (ILO × ISCO):         ${tiers.t6}`);
+  console.log(`  Tier 7 (GNI fallback):        ${tiers.t7}`);
+  console.log(`  Failed:                       ${tiers.fail}`);
+  console.log(`  Total: ${Object.values(tiers).reduce((a,b)=>a+b, 0)}/${cities.length}`);
 
   console.log("\n═══ Same-Country Comparison ═══");
-  const pairs = [
-    ["北京","成都"],["上海","重庆"],["伦敦","曼彻斯特"],["慕尼黑","柏林"],
-    ["首尔","釜山"],["曼谷","清迈"],["孟买","加尔各答"],["圣保罗","累西腓"],
-  ];
+  const pairs = [["北京","成都"],["上海","重庆"],["伦敦","曼彻斯特"],["慕尼黑","柏林"],["首尔","釜山"],["曼谷","清迈"]];
   for (const [a, b] of pairs) {
     const ca = cities.find(c => c.name === a), cb = cities.find(c => c.name === b);
     if (!ca || !cb) continue;
@@ -332,7 +273,7 @@ function main() {
     console.log(`  ${a} vs ${b}: $${swA?.toLocaleString()} vs $${swB?.toLocaleString()} (${(swA/swB).toFixed(2)}x)`);
   }
 
-  console.log("\n═══ Global Samples ═══");
+  console.log("\n═══ Global Samples (PPP$) ═══");
   for (const name of ["纽约","伦敦","东京","新加坡","柏林","曼谷","首尔","台北","拉各斯","孟买"]) {
     const c = cities.find(x => x.name === name);
     if (!c) continue;
@@ -341,6 +282,8 @@ function main() {
     const med = Object.values(c.professions).sort((a,b)=>a-b)[12];
     console.log(`  ${name}: SW=$${sw?.toLocaleString()} nurse=$${nurse?.toLocaleString()} med=$${med?.toLocaleString()}`);
   }
+  console.log("\n  Note: Non-US/JP values are in PPP dollars (purchasing power equivalent).");
+  console.log("  PPP$ comparisons across countries reflect what money can BUY locally.");
   console.log("\n✅ Done");
 }
 

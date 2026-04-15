@@ -155,6 +155,128 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
   const langs = CITY_LANGUAGES[id] || [];
   const localizedLangs = langs.map(l => LANGUAGE_NAME_TRANSLATIONS[l]?.[locale] || l);
 
+  // ── Hero grade info (基本保障评级) ──
+  const heroGrade = (() => {
+    const shfSum = city.safetyIndex + city.healthcareIndex + city.governanceIndex;
+    const allShfSums = allCities.map(c => c.safetyIndex + c.healthcareIndex + c.governanceIndex);
+    const shfRank = rankHigher(allShfSums, shfSum);
+    const baseGrade = shfRank <= n * 0.25 ? "A" : shfRank <= n * 0.50 ? "B" : shfRank <= n * 0.75 ? "C" : "D";
+    const allGreen = tierHigh(allSafety, city.safetyIndex) === "good" && tierHigh(allHealth, city.healthcareIndex) === "good" && tierHigh(allGovernance, city.governanceIndex) === "good";
+    const grade = baseGrade === "A" && allGreen ? "S" : baseGrade;
+    const confLevel = (city.securityConfidence >= 90 ? "high" : city.securityConfidence >= 70 ? "medium" : "low") as "high" | "medium" | "low";
+    const hasSafetyWarn = !!city.safetyWarning;
+    const hasConfWarn = confLevel !== "high";
+    const hasWarn = hasSafetyWarn || hasConfWarn;
+    const warnAmberCls = darkMode ? "text-amber-400" : "text-amber-600";
+    const warnRedCls = darkMode ? "text-rose-400" : "text-rose-500";
+    const warnCls0 = hasSafetyWarn ? warnRedCls : warnAmberCls;
+    const gradeDisplay = hasWarn ? `* ${grade}` : grade;
+    const gradeCls = hasWarn ? warnCls0 : grade === "S" || grade === "A" ? (darkMode ? "text-green-400" : "text-green-600") : grade === "D" ? (darkMode ? "text-rose-400" : "text-rose-500") : headCls;
+    return { grade, gradeDisplay, gradeCls, hasSafetyWarn, confLevel, safetyWarning: city.safetyWarning, warnRedCls, warnAmberCls };
+  })();
+
+  // ── Hero expand content (基本保障子指标) ──
+  const heroShfContent = (() => {
+    const warnCls = darkMode ? "text-amber-400" : "text-amber-600";
+    const greenCls = darkMode ? "text-green-400" : "text-green-600";
+    const redCls = darkMode ? "text-rose-400" : "text-rose-500";
+    const cache: Record<string, number[]> = {};
+    const getSorted = (field: string) => cache[field] ??= allCities.map(c => (c as unknown as Record<string, unknown>)[field]).filter((v): v is number => typeof v === "number").sort((a, b) => a - b);
+    const judge = (val: number | null | undefined, field: string, higherBetter: boolean) => {
+      if (val == null) return null;
+      const s = getSorted(field);
+      if (s.length < 3) return null;
+      const pct = s.filter(v => v <= val).length / s.length;
+      return higherBetter ? (pct >= 0.7 ? "up" : pct <= 0.3 ? "down" : "mid") : (pct <= 0.3 ? "up" : pct >= 0.7 ? "down" : "mid");
+    };
+    const sym = (j: string | null) => {
+      if (j === "up") return <span className={`font-bold ${greenCls}`}>⬆︎</span>;
+      if (j === "down") return <span className={`font-bold ${redCls}`}>⬇︎</span>;
+      return <span className={headCls}>—</span>;
+    };
+    type Sub = { label: string; val: number | null | undefined; range: string; field: string; inv?: boolean; fmt: (v: number) => string };
+    const groups: { name: string; score: number; rank: number; all: number[]; conf: number; subs: Sub[] }[] = [
+      { name: t("safetyShort"), score: city.safetyIndex, rank: rankHigher(allSafety, city.safetyIndex), all: allSafety, conf: city.safetyConfidence, subs: [
+        { label: `${t("safetyNumbeo")} (30%)`, val: city.numbeoSafetyIndex, range: "20–90", field: "numbeoSafetyIndex", fmt: v => String(Math.round(v)) },
+        { label: `${t("safetyHomicide")} (25%)`, val: city.homicideRate, range: "0.2–41", field: "homicideRate", inv: true, fmt: v => v.toFixed(1) },
+        { label: `${t("safetyGpi")} (20%)`, val: city.gpiScore, range: "1.2–3.7", field: "gpiScore", inv: true, fmt: v => v.toFixed(2) },
+        { label: `${t("safetyGallup")} (15%)`, val: city.gallupLawOrder, range: "45–97", field: "gallupLawOrder", fmt: v => String(Math.round(v)) },
+        { label: `${t("wpsIndex")} (10%)`, val: city.wpsIndex, range: "0.4–0.9", field: "wpsIndex", fmt: v => v.toFixed(2) },
+      ]},
+      { name: t("healthcareShort"), score: city.healthcareIndex, rank: rankHigher(allHealth, city.healthcareIndex), all: allHealth, conf: city.healthcareConfidence, subs: [
+        { label: `${t("doctorsPerThousand")} (25%)`, val: city.doctorsPerThousand, range: "0.2–7.0", field: "doctorsPerThousand", fmt: v => v.toFixed(1) },
+        { label: `${t("hospitalBeds")} (20%)`, val: city.hospitalBedsPerThousand, range: "0.3–13", field: "hospitalBedsPerThousand", fmt: v => v.toFixed(1) },
+        { label: `${t("uhcCoverage")} (25%)`, val: city.uhcCoverageIndex, range: "40–92", field: "uhcCoverageIndex", fmt: v => String(Math.round(v)) },
+        { label: `${t("lifeExpectancy")} (15%)`, val: city.lifeExpectancy, range: "54–85", field: "lifeExpectancy", fmt: v => v.toFixed(1) },
+        { label: `${t("outOfPocket")} (15%)`, val: city.outOfPocketPct, range: "7–71%", field: "outOfPocketPct", inv: true, fmt: v => `${Math.round(v)}%` },
+      ]},
+      { name: t("governanceShort"), score: city.governanceIndex, rank: rankHigher(allGovernance, city.governanceIndex), all: allGovernance, conf: city.governanceConfidence, subs: [
+        { label: `${t("corruptionIdx")} (25%)`, val: city.corruptionPerceptionIndex, range: "22–90", field: "corruptionPerceptionIndex", fmt: v => String(Math.round(v)) },
+        { label: `${t("govEffect")} (25%)`, val: city.govEffectiveness, range: "21–96", field: "govEffectiveness", fmt: v => v.toFixed(1) },
+        { label: `${t("ruleLaw")} (20%)`, val: city.wjpRuleLaw, range: "0.3–0.9", field: "wjpRuleLaw", fmt: v => v.toFixed(2) },
+        { label: `${t("pressFreedom")} (15%)`, val: city.pressFreedomScore, range: "8–92", field: "pressFreedomScore", fmt: v => String(Math.round(v)) },
+        { label: `${t("mipexIndex")} (15%)`, val: city.mipexScore, range: "10–86", field: "mipexScore", fmt: v => String(Math.round(v)) },
+      ]},
+    ];
+    const allSubs = [city.numbeoSafetyIndex, city.homicideRate, city.gpiScore, city.gallupLawOrder, city.wpsIndex,
+      city.doctorsPerThousand, city.hospitalBedsPerThousand, city.uhcCoverageIndex, city.lifeExpectancy, city.outOfPocketPct,
+      city.corruptionPerceptionIndex, city.govEffectiveness, city.wjpRuleLaw, city.pressFreedomScore, city.mipexScore];
+    return (
+      <div>
+        <div className={`text-[13px] ${subCls} space-y-0.5`}>
+          {groups.map((g, gi) => {
+            const present = g.subs.filter(s => s.val != null).length;
+            const total = g.subs.length;
+            return (
+              <div key={gi}>
+                {gi > 0 && <div className={`border-t ${divider} my-1`} />}
+                <div className="flex justify-between font-bold">
+                  <span>{g.name}</span>
+                  <span className={cardValCls(tierHigh(g.all, g.score))}>{g.score.toFixed(1)}</span>
+                </div>
+                {g.subs.map(s => {
+                  const missing = s.val == null;
+                  const j = judge(s.val, s.field, !s.inv);
+                  return (
+                    <div key={s.field} className={`flex items-center py-0.5 pl-3 ${missing ? `opacity-40 ${warnCls}` : "opacity-60"}`}>
+                      <span className={`flex-1 min-w-0 truncate ${missing ? "line-through" : ""}`}>{s.label}</span>
+                      <span className="w-11 text-right shrink-0">{missing ? "" : s.fmt(s.val!)}</span>
+                      <span className="w-[50px] text-right text-[11px] shrink-0">{missing ? "" : s.range}</span>
+                      <span className="w-6 text-right shrink-0">{missing ? "" : sym(j)}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+        {allSubs.some(v => v == null) && (
+          <>
+            <div className={`border-t ${divider} mt-2`} />
+            {(heroGrade.hasSafetyWarn || heroGrade.confLevel !== "high") && (
+              <div className={`text-[13px] mt-1.5 opacity-60 ${heroGrade.hasSafetyWarn ? heroGrade.warnRedCls : heroGrade.warnAmberCls}`}>
+                * {heroGrade.hasSafetyWarn
+                  ? (heroGrade.safetyWarning === "active_conflict" ? t("safetyWarningConflict") : heroGrade.safetyWarning === "extreme_instability" ? t("safetyWarningInstability") : t("safetyWarningBlocked"))
+                  : heroGrade.confLevel === "medium" ? t("confMedium") : t("confLow")}
+              </div>
+            )}
+            <div className={`text-[13px] ${subCls} mt-1.5 opacity-60`}>† {t("shfWeightNote")}</div>
+          </>
+        )}
+        {!allSubs.some(v => v == null) && (heroGrade.hasSafetyWarn || heroGrade.confLevel !== "high") && (
+          <>
+            <div className={`border-t ${divider} mt-2`} />
+            <div className={`text-[13px] mt-1.5 opacity-60 ${heroGrade.hasSafetyWarn ? heroGrade.warnRedCls : heroGrade.warnAmberCls}`}>
+              * {heroGrade.hasSafetyWarn
+                ? (heroGrade.safetyWarning === "active_conflict" ? t("safetyWarningConflict") : heroGrade.safetyWarning === "extreme_instability" ? t("safetyWarningInstability") : t("safetyWarningBlocked"))
+                : heroGrade.confLevel === "medium" ? t("confMedium") : t("confLow")}
+            </div>
+          </>
+        )}
+      </div>
+    );
+  })();
+
   return (
     <div className={`min-h-screen transition-colors ${darkMode ? "bg-slate-950 text-slate-100" : "bg-white text-slate-900"}`}>
       <NavBar s={s} professionValue={activeProfession} professions={professions} compareHref={`/${locale}/compare/${slug}`} excludeSlug={slug} showShare
@@ -163,7 +285,9 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
       <div className="max-w-2xl mx-auto px-4 pt-6">
 
         {/* Profile header */}
-        <HeroSection ref={heroRef} city={city} cityName={cityName} countryName={countryName} flag={flag} slug={slug} locale={locale} darkMode={darkMode} t={t} />
+        <HeroSection ref={heroRef} city={city} cityName={cityName} countryName={countryName} flag={flag} slug={slug} locale={locale} darkMode={darkMode} t={t}
+          gradeInfo={heroGrade} shfOpen={shfOpen} onShfToggle={() => { setShfOpen(!shfOpen); setShfLabel(!shfOpen); }} shfLabel={shfLabel} shfExpandContent={heroShfContent}
+          englishLabel={nomadData?.english?.cityRating ? t(`nomadEnglish${nomadData.english.cityRating}`) : undefined} />
 
         {/* Row 1: Income (大) */}
         <div className={`py-3.5 border-b ${divider} cursor-pointer select-none active:${darkMode ? "bg-slate-900" : "bg-slate-50"}`} onClick={() => setIncomeOpen(!incomeOpen)}
@@ -262,134 +386,6 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
             })()}
           </div>
         </div>
-
-        {/* Row 2: Basic Security (综合评级) */}
-        {(() => {
-          const shfSum = city.safetyIndex + city.healthcareIndex + city.governanceIndex;
-          const allShfSums = allCities.map(c => c.safetyIndex + c.healthcareIndex + c.governanceIndex);
-          const shfRank = rankHigher(allShfSums, shfSum);
-          const baseGrade = shfRank <= n * 0.25 ? "A" : shfRank <= n * 0.50 ? "B" : shfRank <= n * 0.75 ? "C" : "D";
-          const allGreen = tierHigh(allSafety, city.safetyIndex) === "good" && tierHigh(allHealth, city.healthcareIndex) === "good" && tierHigh(allGovernance, city.governanceIndex) === "good";
-          const grade = baseGrade === "A" && allGreen ? "S" : baseGrade;
-          const confLevel = city.securityConfidence >= 90 ? "high" : city.securityConfidence >= 70 ? "medium" : "low";
-          const hasSafetyWarn = !!city.safetyWarning;
-          const hasConfWarn = confLevel !== "high";
-          const hasWarn = hasSafetyWarn || hasConfWarn;
-          const warnAmber = darkMode ? "text-amber-400" : "text-amber-600";
-          const warnRed = darkMode ? "text-rose-400" : "text-rose-500";
-          const warnCls0 = hasSafetyWarn ? warnRed : warnAmber;
-          const gradeDisplay = hasWarn ? `* ${grade}` : grade;
-          const gradeCls = hasWarn ? warnCls0 : grade === "S" || grade === "A" ? (darkMode ? "text-green-400" : "text-green-600") : grade === "D" ? (darkMode ? "text-rose-400" : "text-rose-500") : headCls;
-          return (
-        <div className={`py-3.5 border-b ${divider} cursor-pointer select-none active:${darkMode ? "bg-slate-900" : "bg-slate-50"}`} onClick={() => setShfOpen(!shfOpen)}
-          role="button" aria-expanded={shfOpen} tabIndex={0} onKeyDown={e => e.key === "Enter" && setShfOpen(!shfOpen)}>
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className={`text-[15px] font-extrabold ${headCls}`}>{t("basicSecurityTitle")}</span>
-            <span className={`ml-auto text-[14px] ${subCls}`}>{t(shfLabel ? "shfTapToCollapse" : "shfTapForDetails")}</span>
-          </div>
-          <div className="flex gap-4 mb-1">
-            <div>
-              <div className={`text-[45px] font-black leading-none ${gradeCls}`}>{gradeDisplay}</div>
-              {hasSafetyWarn && <div className={`text-[12px] mt-0.5 ${warnRed}`}>* {city.safetyWarning === "active_conflict" ? t("safetyWarningConflict") : city.safetyWarning === "extreme_instability" ? t("safetyWarningInstability") : t("safetyWarningBlocked")}</div>}
-              {!hasSafetyWarn && confLevel === "medium" && <div className={`text-[12px] mt-0.5 ${warnAmber}`}>* {t("confMedium")}</div>}
-              {!hasSafetyWarn && confLevel === "low" && <div className={`text-[12px] mt-0.5 ${warnAmber}`}>* {t("confLow")}</div>}
-            </div>
-          </div>
-          <div className={`overflow-hidden transition-all duration-300 ease-in-out ${shfOpen ? "max-h-[800px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
-            {(() => {
-              const warnCls = darkMode ? "text-amber-400" : "text-amber-600";
-              const greenCls = darkMode ? "text-green-400" : "text-green-600";
-              const redCls = darkMode ? "text-rose-400" : "text-rose-500";
-              const rowBdr = darkMode ? "border-slate-800" : "border-slate-50";
-
-              // Cache sorted values for percentile computation
-              const cache: Record<string, number[]> = {};
-              const getSorted = (field: string) => cache[field] ??= allCities.map(c => (c as unknown as Record<string, unknown>)[field]).filter((v): v is number => typeof v === "number").sort((a, b) => a - b);
-
-              // Judgment: percentile rank → ⬆ top 30% / ⬇ bottom 30% / — middle
-              const judge = (val: number | null | undefined, field: string, higherBetter: boolean) => {
-                if (val == null) return null;
-                const s = getSorted(field);
-                if (s.length < 3) return null;
-                const pct = s.filter(v => v <= val).length / s.length;
-                return higherBetter ? (pct >= 0.7 ? "up" : pct <= 0.3 ? "down" : "mid") : (pct <= 0.3 ? "up" : pct >= 0.7 ? "down" : "mid");
-              };
-              const sym = (j: string | null) => {
-                if (j === "up") return <span className={`font-bold ${greenCls}`}>⬆︎</span>;
-                if (j === "down") return <span className={`font-bold ${redCls}`}>⬇︎</span>;
-                return <span className={headCls}>—</span>;
-              };
-
-              type Sub = { label: string; val: number | null | undefined; range: string; field: string; inv?: boolean; fmt: (v: number) => string };
-              const groups: { name: string; score: number; rank: number; all: number[]; conf: number; subs: Sub[] }[] = [
-                { name: t("safetyShort"), score: city.safetyIndex, rank: rankHigher(allSafety, city.safetyIndex), all: allSafety, conf: city.safetyConfidence, subs: [
-                  { label: `${t("safetyNumbeo")} (30%)`, val: city.numbeoSafetyIndex, range: "20–90", field: "numbeoSafetyIndex", fmt: v => String(Math.round(v)) },
-                  { label: `${t("safetyHomicide")} (25%)`, val: city.homicideRate, range: "0.2–41", field: "homicideRate", inv: true, fmt: v => v.toFixed(1) },
-                  { label: `${t("safetyGpi")} (20%)`, val: city.gpiScore, range: "1.2–3.7", field: "gpiScore", inv: true, fmt: v => v.toFixed(2) },
-                  { label: `${t("safetyGallup")} (15%)`, val: city.gallupLawOrder, range: "45–97", field: "gallupLawOrder", fmt: v => String(Math.round(v)) },
-                  { label: `${t("wpsIndex")} (10%)`, val: city.wpsIndex, range: "0.4–0.9", field: "wpsIndex", fmt: v => v.toFixed(2) },
-                ]},
-                { name: t("healthcareShort"), score: city.healthcareIndex, rank: rankHigher(allHealth, city.healthcareIndex), all: allHealth, conf: city.healthcareConfidence, subs: [
-                  { label: `${t("doctorsPerThousand")} (25%)`, val: city.doctorsPerThousand, range: "0.2–7.0", field: "doctorsPerThousand", fmt: v => v.toFixed(1) },
-                  { label: `${t("hospitalBeds")} (20%)`, val: city.hospitalBedsPerThousand, range: "0.3–13", field: "hospitalBedsPerThousand", fmt: v => v.toFixed(1) },
-                  { label: `${t("uhcCoverage")} (25%)`, val: city.uhcCoverageIndex, range: "40–92", field: "uhcCoverageIndex", fmt: v => String(Math.round(v)) },
-                  { label: `${t("lifeExpectancy")} (15%)`, val: city.lifeExpectancy, range: "54–85", field: "lifeExpectancy", fmt: v => v.toFixed(1) },
-                  { label: `${t("outOfPocket")} (15%)`, val: city.outOfPocketPct, range: "7–71%", field: "outOfPocketPct", inv: true, fmt: v => `${Math.round(v)}%` },
-                ]},
-                { name: t("governanceShort"), score: city.governanceIndex, rank: rankHigher(allGovernance, city.governanceIndex), all: allGovernance, conf: city.governanceConfidence, subs: [
-                  { label: `${t("corruptionIdx")} (25%)`, val: city.corruptionPerceptionIndex, range: "22–90", field: "corruptionPerceptionIndex", fmt: v => String(Math.round(v)) },
-                  { label: `${t("govEffect")} (25%)`, val: city.govEffectiveness, range: "21–96", field: "govEffectiveness", fmt: v => v.toFixed(1) },
-                  { label: `${t("ruleLaw")} (20%)`, val: city.wjpRuleLaw, range: "0.3–0.9", field: "wjpRuleLaw", fmt: v => v.toFixed(2) },
-                  { label: `${t("pressFreedom")} (15%)`, val: city.pressFreedomScore, range: "8–92", field: "pressFreedomScore", fmt: v => String(Math.round(v)) },
-                  { label: `${t("mipexIndex")} (15%)`, val: city.mipexScore, range: "10–86", field: "mipexScore", fmt: v => String(Math.round(v)) },
-                ]},
-              ];
-
-              return (
-                <div className={`text-[13px] ${subCls} space-y-0.5`}>
-                  {groups.map((g, gi) => {
-                    const present = g.subs.filter(s => s.val != null).length;
-                    const total = g.subs.length;
-                    return (
-                      <div key={gi}>
-                        {gi > 0 && <div className={`border-t ${divider} my-1`} />}
-                        <div className="flex justify-between font-bold">
-                          <span>
-                            {g.name}
-                          </span>
-                          <span className={cardValCls(tierHigh(g.all, g.score))}>{g.score.toFixed(1)}</span>
-                        </div>
-                        {g.subs.map(s => {
-                          const missing = s.val == null;
-                          const j = judge(s.val, s.field, !s.inv);
-                          return (
-                            <div key={s.field} className={`flex items-center py-0.5 pl-3 ${missing ? `opacity-40 ${warnCls}` : "opacity-60"}`}>
-                              <span className={`flex-1 min-w-0 truncate ${missing ? "line-through" : ""}`}>{s.label}</span>
-                              <span className="w-11 text-right shrink-0">{missing ? "" : s.fmt(s.val!)}</span>
-                              <span className="w-[50px] text-right text-[11px] shrink-0">{missing ? "" : s.range}</span>
-                              <span className="w-6 text-right shrink-0">{missing ? "" : sym(j)}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-            })()}
-            {[city.numbeoSafetyIndex, city.homicideRate, city.gpiScore, city.gallupLawOrder, city.wpsIndex,
-              city.doctorsPerThousand, city.hospitalBedsPerThousand, city.uhcCoverageIndex, city.lifeExpectancy, city.outOfPocketPct,
-              city.corruptionPerceptionIndex, city.govEffectiveness, city.wjpRuleLaw, city.pressFreedomScore, city.mipexScore,
-            ].some(v => v == null) && (
-              <>
-                <div className={`border-t ${divider} mt-2`} />
-                <div className={`text-[13px] ${subCls} mt-1.5 opacity-60`}>† {t("shfWeightNote")}</div>
-              </>
-            )}
-          </div>
-        </div>
-          );
-        })()}
 
         {/* Row 3: Living Cost (L2) */}
         <div className={`py-3.5 border-b ${divider} cursor-pointer select-none active:${darkMode ? "bg-slate-900" : "bg-slate-50"}`} onClick={() => setCostOpen(!costOpen)}
@@ -527,6 +523,7 @@ export default function CityDetailContent({ city, slug, allCities, locale: urlLo
               { label: t("directFlights"), value: city.directFlightCities != null ? String(city.directFlightCities) : "—" },
               { label: t("nomadVPNLabel"), value: vpnLabel },
               ...(localizedLangs.length > 0 ? [{ label: t("officialLanguages"), value: localizedLangs.slice(0, 2).join(" · ") }] : []),
+              ...(nomadData?.english?.cityRating ? [{ label: t("nomadEnglish"), value: t(`nomadEnglish${nomadData.english.cityRating}`) }] : []),
             ].map(item => (
               <div key={item.label}>
                 <div className={`text-[20px] font-black ${headCls}`}>{item.value}</div>

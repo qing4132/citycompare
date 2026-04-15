@@ -4,6 +4,17 @@ import { CITY_INTROS } from "@/lib/cityIntros";
 import { CITY_LANGUAGES, LANGUAGE_NAME_TRANSLATIONS } from "@/lib/cityLanguages";
 import type { Locale } from "@/lib/types";
 
+interface GradeInfo {
+    grade: string;
+    gradeDisplay: string;
+    gradeCls: string;
+    hasSafetyWarn: boolean;
+    confLevel: "high" | "medium" | "low";
+    safetyWarning?: string;
+    warnRedCls: string;
+    warnAmberCls: string;
+}
+
 interface Props {
     city: City;
     cityName: string;
@@ -13,6 +24,12 @@ interface Props {
     locale: string;
     darkMode: boolean;
     t: (k: string) => string;
+    gradeInfo?: GradeInfo;
+    shfOpen?: boolean;
+    onShfToggle?: () => void;
+    shfLabel?: boolean;
+    shfExpandContent?: React.ReactNode;
+    englishLabel?: string;
 }
 
 function formatTz(tz: string, locale: string, now: Date): string {
@@ -26,7 +43,7 @@ function formatTz(tz: string, locale: string, now: Date): string {
 }
 
 /** Feed-style profile header */
-const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection({ city, cityName, countryName, flag, slug, locale, darkMode, t }, ref) {
+const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection({ city, cityName, countryName, flag, slug, locale, darkMode, t, gradeInfo, shfOpen, onShfToggle, shfLabel, shfExpandContent, englishLabel }, ref) {
     const headCls = darkMode ? "text-slate-100" : "text-slate-900";
     const subCls = darkMode ? "text-slate-400" : "text-slate-500";
     const divider = darkMode ? "border-slate-800" : "border-slate-100";
@@ -43,27 +60,56 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection({ cit
     const tzInfo = city.timezone ? formatTz(city.timezone, locale, now) : null;
 
     return (
+        <>
         <div className={`pb-4 border-b ${divider}`}>
 
-            <div ref={ref}>
-                <div className="flex items-baseline justify-between">
+            <div ref={ref} className="flex items-stretch gap-3">
+                <div className="flex-1 min-w-0">
                     <h1 className={`text-[24px] font-black ${headCls}`}>{flag} {cityName}</h1>
-                    {tzInfo && <span className={`text-[15px] font-semibold shrink-0 ${headCls}`}>{tzInfo}</span>}
-                </div>
                 {(() => {
                     const langs = CITY_LANGUAGES[city.id] || [];
                     const localized = langs.map(l => LANGUAGE_NAME_TRANSLATIONS[l]?.[locale as Locale] || l);
                     const show = localized.slice(0, 3);
                     const more = localized.length - 3;
-                    return show.length > 0 ? <p className={`text-[13px] ${subCls}`}>{show.join(" · ")}{more > 0 && ` +${more}`}</p> : null;
+                    const langStr = show.length > 0 ? show.join(" · ") + (more > 0 ? ` +${more}` : "") : "";
+                    const infoParts = [countryName, tzInfo].filter(Boolean);
+                    return (
+                        <>
+                            {infoParts.length > 0 && <p className={`text-[13px] ${subCls}`}>{infoParts.join("  ·  ")}</p>}
+                        </>
+                    );
                 })()}
+                </div>
+                {gradeInfo && (
+                    <div
+                        className="flex flex-col items-end justify-center cursor-pointer select-none"
+                        onClick={onShfToggle}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={e => e.key === "Enter" && onShfToggle?.()}
+                        title={t("basicSecurityTitle")}
+                    >
+                        <span className={`text-[45px] font-black leading-none ${gradeInfo.gradeCls}`}>
+                            {gradeInfo.gradeDisplay}
+                        </span>
+                        <span className={`text-[11px] mt-0.5 max-w-[90px] text-right leading-tight ${subCls}`}>
+                            {t("basicSecurityTitle")} {shfOpen ? "▲" : "▼"}
+                        </span>
+                    </div>
+                )}
             </div>
-            {CITY_INTROS[city.id] && (
-                <p className={`mt-3 text-[15px] leading-relaxed ${subCls}`}>
-                    {CITY_INTROS[city.id][locale] || CITY_INTROS[city.id].zh}
-                </p>
+            {gradeInfo && shfExpandContent && (
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${shfOpen ? "max-h-[800px] opacity-100 mt-3" : "max-h-0 opacity-0"}`}>
+                    {shfExpandContent}
+                </div>
             )}
         </div>
+        {CITY_INTROS[city.id] && (
+            <p className={`mt-3 text-[15px] leading-relaxed ${subCls}`}>
+                {CITY_INTROS[city.id][locale] || CITY_INTROS[city.id].zh}
+            </p>
+        )}
+        </>
     );
 });
 

@@ -1,0 +1,280 @@
+{
+  "source": "InsideAirbnb.com",
+  "license": "CC BY 4.0 / CC0",
+  "fetchDate": "2026-04-16",
+  "description": "Median nightly price for 'Entire home/apt' listings",
+  "totalCities": 54,
+  "citiesWithData": 30,
+  "data": {
+    "2": {
+      "medianNightly": 175,
+      "localCurrency": "GBP",
+      "listingCount": 42207,
+      "p25": 122,
+      "p75": 266,
+      "dataDate": "2025-09-14",
+      "url": "http://data.insideairbnb.com/united-kingdom/england/london/2025-09-14/visualisations/listings.csv"
+    },
+    "3": {
+      "medianNightly": 16875,
+      "localCurrency": "JPY",
+      "listingCount": 22004,
+      "p25": 11874,
+      "p75": 25858,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/japan/kantō/tokyo/2025-09-29/visualisations/listings.csv"
+    },
+    "13": {
+      "medianNightly": 177,
+      "localCurrency": "USD",
+      "listingCount": 6183,
+      "p25": 120,
+      "p75": 260,
+      "dataDate": "2025-09-22",
+      "url": "http://data.insideairbnb.com/united-states/il/chicago/2025-09-22/visualisations/listings.csv"
+    },
+    "15": {
+      "medianNightly": 248,
+      "localCurrency": "EUR",
+      "listingCount": 4522,
+      "p25": 186,
+      "p75": 338,
+      "dataDate": "2025-09-11",
+      "url": "http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2025-09-11/visualisations/listings.csv"
+    },
+    "16": {
+      "medianNightly": 148,
+      "localCurrency": "CHF",
+      "listingCount": 2010,
+      "p25": 111,
+      "p75": 211,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/switzerland/zürich/zurich/2025-09-29/visualisations/listings.csv"
+    },
+    "17": {
+      "medianNightly": 129,
+      "localCurrency": "CHF",
+      "listingCount": 1411,
+      "p25": 99,
+      "p75": 177,
+      "dataDate": "2025-09-28",
+      "url": "http://data.insideairbnb.com/switzerland/geneva/geneva/2025-09-28/visualisations/listings.csv"
+    },
+    "19": {
+      "medianNightly": 120,
+      "localCurrency": "EUR",
+      "listingCount": 6787,
+      "p25": 85,
+      "p75": 175,
+      "dataDate": "2025-09-23",
+      "url": "http://data.insideairbnb.com/germany/be/berlin/2025-09-23/visualisations/listings.csv"
+    },
+    "21": {
+      "medianNightly": 129,
+      "localCurrency": "EUR",
+      "listingCount": 13606,
+      "p25": 96,
+      "p75": 183,
+      "dataDate": "2025-09-14",
+      "url": "http://data.insideairbnb.com/spain/comunidad-de-madrid/madrid/2025-09-14/visualisations/listings.csv"
+    },
+    "22": {
+      "medianNightly": 130,
+      "localCurrency": "EUR",
+      "listingCount": 18275,
+      "p25": 94,
+      "p75": 197,
+      "dataDate": "2025-09-22",
+      "url": "http://data.insideairbnb.com/italy/lombardy/milan/2025-09-22/visualisations/listings.csv"
+    },
+    "23": {
+      "medianNightly": 141,
+      "localCurrency": "EUR",
+      "listingCount": 25779,
+      "p25": 100,
+      "p75": 208,
+      "dataDate": "2025-09-14",
+      "url": "http://data.insideairbnb.com/italy/lazio/rome/2025-09-14/visualisations/listings.csv"
+    },
+    "25": {
+      "medianNightly": 98,
+      "localCurrency": "EUR",
+      "listingCount": 9062,
+      "p25": 71,
+      "p75": 146,
+      "dataDate": "2025-09-14",
+      "url": "http://data.insideairbnb.com/austria/vienna/vienna/2025-09-14/visualisations/listings.csv"
+    },
+    "26": {
+      "medianNightly": 2263,
+      "localCurrency": "CZK",
+      "listingCount": 8117,
+      "p25": 1665,
+      "p75": 3311,
+      "dataDate": "2025-09-23",
+      "url": "http://data.insideairbnb.com/czech-republic/prague/prague/2025-09-23/visualisations/listings.csv"
+    },
+    "29": {
+      "medianNightly": 78,
+      "localCurrency": "EUR",
+      "listingCount": 13481,
+      "p25": 56,
+      "p75": 118,
+      "dataDate": "2025-09-26",
+      "url": "http://data.insideairbnb.com/greece/attica/athens/2025-09-26/visualisations/listings.csv"
+    },
+    "30": {
+      "medianNightly": 2923,
+      "localCurrency": "TRY",
+      "listingCount": 17945,
+      "p25": 2000,
+      "p75": 4574,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/turkey/marmara/istanbul/2025-09-29/visualisations/listings.csv"
+    },
+    "33": {
+      "medianNightly": 350,
+      "localCurrency": "BRL",
+      "listingCount": 31011,
+      "p25": 227,
+      "p75": 626,
+      "dataDate": "2025-09-26",
+      "url": "http://data.insideairbnb.com/brazil/rj/rio-de-janeiro/2025-09-26/visualisations/listings.csv"
+    },
+    "35": {
+      "medianNightly": 137,
+      "localCurrency": "USD",
+      "listingCount": 3688,
+      "p25": 102,
+      "p75": 202,
+      "dataDate": "2025-09-22",
+      "url": "http://data.insideairbnb.com/united-states/dc/washington-dc/2025-09-22/visualisations/listings.csv"
+    },
+    "37": {
+      "medianNightly": 161,
+      "localCurrency": "USD",
+      "listingCount": 5144,
+      "p25": 120,
+      "p75": 223,
+      "dataDate": "2025-09-25",
+      "url": "http://data.insideairbnb.com/united-states/wa/seattle/2025-09-25/visualisations/listings.csv"
+    },
+    "38": {
+      "medianNightly": 132,
+      "localCurrency": "USD",
+      "listingCount": 3652,
+      "p25": 97,
+      "p75": 199,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/united-states/co/denver/2025-09-29/visualisations/listings.csv"
+    },
+    "39": {
+      "medianNightly": 144,
+      "localCurrency": "USD",
+      "listingCount": 9040,
+      "p25": 97,
+      "p75": 240,
+      "dataDate": "2025-09-16",
+      "url": "http://data.insideairbnb.com/united-states/tx/austin/2025-09-16/visualisations/listings.csv"
+    },
+    "45": {
+      "medianNightly": 1500,
+      "localCurrency": "THB",
+      "listingCount": 16431,
+      "p25": 1044,
+      "p75": 2417,
+      "dataDate": "2025-09-26",
+      "url": "http://data.insideairbnb.com/thailand/central-thailand/bangkok/2025-09-26/visualisations/listings.csv"
+    },
+    "61": {
+      "medianNightly": 2360,
+      "localCurrency": "TWD",
+      "listingCount": 4123,
+      "p25": 1600,
+      "p75": 3502,
+      "dataDate": "2025-09-30",
+      "url": "http://data.insideairbnb.com/taiwan/northern-taiwan/taipei/2025-09-30/visualisations/listings.csv"
+    },
+    "68": {
+      "medianNightly": 1665,
+      "localCurrency": "ZAR",
+      "listingCount": 18934,
+      "p25": 1060,
+      "p75": 3300,
+      "dataDate": "2025-09-28",
+      "url": "http://data.insideairbnb.com/south-africa/wc/cape-town/2025-09-28/visualisations/listings.csv"
+    },
+    "90": {
+      "medianNightly": 21864,
+      "localCurrency": "HUF",
+      "listingCount": 10722,
+      "p25": 16199,
+      "p75": 32882,
+      "dataDate": "2025-09-25",
+      "url": "http://data.insideairbnb.com/hungary/közép-magyarország/budapest/2025-09-25/visualisations/listings.csv"
+    },
+    "93": {
+      "medianNightly": 207,
+      "localCurrency": "EUR",
+      "listingCount": 2936,
+      "p25": 144,
+      "p75": 300,
+      "dataDate": "2025-09-16",
+      "url": "http://data.insideairbnb.com/ireland/leinster/dublin/2025-09-16/visualisations/listings.csv"
+    },
+    "98": {
+      "medianNightly": 193,
+      "localCurrency": "USD",
+      "listingCount": 9765,
+      "p25": 129,
+      "p75": 317,
+      "dataDate": "2025-09-25",
+      "url": "http://data.insideairbnb.com/united-states/ca/san-diego/2025-09-25/visualisations/listings.csv"
+    },
+    "121": {
+      "medianNightly": 1385,
+      "localCurrency": "SEK",
+      "listingCount": 2530,
+      "p25": 900,
+      "p75": 2250,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/sweden/stockholms-län/stockholm/2025-09-29/visualisations/listings.csv"
+    },
+    "122": {
+      "medianNightly": 1250,
+      "localCurrency": "DKK",
+      "listingCount": 12271,
+      "p25": 954,
+      "p75": 1717,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/denmark/hovedstaden/copenhagen/2025-09-29/visualisations/listings.csv"
+    },
+    "124": {
+      "medianNightly": 1330,
+      "localCurrency": "NOK",
+      "listingCount": 7598,
+      "p25": 1015,
+      "p75": 1896,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/norway/oslo/oslo/2025-09-29/visualisations/listings.csv"
+    },
+    "135": {
+      "medianNightly": 140,
+      "localCurrency": "CAD",
+      "listingCount": 1484,
+      "p25": 103,
+      "p75": 207,
+      "dataDate": "2025-09-22",
+      "url": "http://data.insideairbnb.com/canada/on/ottawa/2025-09-22/visualisations/listings.csv"
+    },
+    "163": {
+      "medianNightly": 50,
+      "localCurrency": "EUR",
+      "listingCount": 2528,
+      "p25": 38,
+      "p75": 72,
+      "dataDate": "2025-09-29",
+      "url": "http://data.insideairbnb.com/latvia/riga/riga/2025-09-29/visualisations/listings.csv"
+    }
+  }
+}

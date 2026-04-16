@@ -34,11 +34,11 @@
         "政府/NGO行政": 110950,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4370,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2815,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -136,10 +136,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 2,
@@ -175,11 +172,11 @@
         "政府/NGO行政": 64334,
         "数字游民": 85000
       },
-      "costModerate": 4432,
+      "costModerate": 2908,
       "costBudget": null,
       "bigMacPrice": 5.15,
       "housePrice": 5772,
-      "monthlyRent": 1684,
+      "monthlyRent": 1606,
       "annualWorkHours": 1532,
       "paidLeaveDays": 28,
       "internetSpeedMbps": null,
@@ -277,10 +274,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 76,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.634,
-      "pressFreedomScore": 78.89,
-      "gdpGrowthRate": 0.27
+      "securityConfidence": 100
     },
     {
       "id": 3,
@@ -316,11 +310,11 @@
         "政府/NGO行政": 40867,
         "数字游民": 85000
       },
-      "costModerate": 3401,
+      "costModerate": 2985,
       "costBudget": null,
       "bigMacPrice": 3.03,
       "housePrice": 7200,
-      "monthlyRent": 1292,
+      "monthlyRent": 1620,
       "annualWorkHours": 1607,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -418,10 +412,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 74.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.44,
-      "pressFreedomScore": 63.14,
-      "gdpGrowthRate": 1.48
+      "securityConfidence": 100
     },
     {
       "id": 4,
@@ -457,11 +448,11 @@
         "政府/NGO行政": 22639,
         "数字游民": 85000
       },
-      "costModerate": 1341,
+      "costModerate": 1492,
       "costBudget": null,
       "bigMacPrice": 3.18,
       "housePrice": 2049,
-      "monthlyRent": 443,
+      "monthlyRent": 804,
       "annualWorkHours": 2170,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -559,10 +550,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.093,
-      "pressFreedomScore": 14.8,
-      "gdpGrowthRate": 5.41
+      "securityConfidence": 100
     },
     {
       "id": 5,
@@ -598,11 +586,11 @@
         "政府/NGO行政": 23477,
         "数字游民": 85000
       },
-      "costModerate": 1341,
+      "costModerate": 1526,
       "costBudget": null,
       "bigMacPrice": 3.25,
       "housePrice": 2049,
-      "monthlyRent": 443,
+      "monthlyRent": 824,
       "annualWorkHours": 2170,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -700,10 +688,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.093,
-      "pressFreedomScore": 14.8,
-      "gdpGrowthRate": 5.41
+      "securityConfidence": 100
     },
     {
       "id": 6,
@@ -739,11 +724,11 @@
         "政府/NGO行政": 57380,
         "数字游民": 85000
       },
-      "costModerate": 4643,
+      "costModerate": 3225,
       "costBudget": null,
       "bigMacPrice": 5.3,
       "housePrice": 7313,
-      "monthlyRent": 1764,
+      "monthlyRent": 1506,
       "annualWorkHours": 1694,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -841,10 +826,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.505,
-      "pressFreedomScore": 75.15,
-      "gdpGrowthRate": 3.58
+      "securityConfidence": 100
     },
     {
       "id": 7,
@@ -880,11 +862,11 @@
         "政府/NGO行政": 66294,
         "数字游民": 85000
       },
-      "costModerate": 5549,
+      "costModerate": 2530,
       "costBudget": null,
       "bigMacPrice": 5.3,
       "housePrice": 22425,
-      "monthlyRent": 2109,
+      "monthlyRent": 1448,
       "annualWorkHours": 2238,
       "paidLeaveDays": 7,
       "internetSpeedMbps": null,
@@ -982,10 +964,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 69.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.357,
-      "pressFreedomScore": 45.78,
-      "gdpGrowthRate": 1.82
+      "securityConfidence": 100
     },
     {
       "id": 8,
@@ -1021,11 +1000,11 @@
         "政府/NGO行政": 50194,
         "数字游民": 85000
       },
-      "costModerate": 4314,
+      "costModerate": 2651,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 5269,
-      "monthlyRent": 1639,
+      "monthlyRent": 1443,
       "annualWorkHours": 1511,
       "paidLeaveDays": 25,
       "internetSpeedMbps": null,
@@ -1123,10 +1102,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 74.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.967,
-      "pressFreedomScore": 76.62,
-      "gdpGrowthRate": 1.44
+      "securityConfidence": 100
     },
     {
       "id": 9,
@@ -1162,11 +1138,11 @@
         "政府/NGO行政": 62691,
         "数字游民": 85000
       },
-      "costModerate": 4355,
+      "costModerate": 2629,
       "costBudget": null,
       "bigMacPrice": 5.6,
       "housePrice": 6230,
-      "monthlyRent": 1655,
+      "monthlyRent": 1709,
       "annualWorkHours": 1686,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -1264,10 +1240,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.491,
-      "pressFreedomScore": 78.75,
-      "gdpGrowthRate": 1.53
+      "securityConfidence": 100
     },
     {
       "id": 10,
@@ -1303,11 +1276,11 @@
         "政府/NGO行政": 59924,
         "数字游民": 85000
       },
-      "costModerate": 5272,
+      "costModerate": 2309,
       "costBudget": null,
       "bigMacPrice": 2.83,
       "housePrice": 17121,
-      "monthlyRent": 2003,
+      "monthlyRent": 1308,
       "annualWorkHours": 2080,
       "paidLeaveDays": 7,
       "internetSpeedMbps": null,
@@ -1405,10 +1378,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 61.8,
       "freedomConfidence": 100,
-      "securityConfidence": 95,
-      "gpiScore": null,
-      "pressFreedomScore": 39.86,
-      "gdpGrowthRate": 3.22
+      "securityConfidence": 95
     },
     {
       "id": 11,
@@ -1444,11 +1414,11 @@
         "政府/NGO行政": 107470,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4163,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2682,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -1546,10 +1516,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 12,
@@ -1585,11 +1552,11 @@
         "政府/NGO行政": 128120,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4348,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2801,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -1687,10 +1654,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 13,
@@ -1726,11 +1690,11 @@
         "政府/NGO行政": 120140,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 3645,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2349,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -1828,10 +1792,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 14,
@@ -1867,11 +1828,11 @@
         "政府/NGO行政": 47794,
         "数字游民": 85000
       },
-      "costModerate": 3958,
+      "costModerate": 2073,
       "costBudget": null,
       "bigMacPrice": 4.15,
       "housePrice": 6014,
-      "monthlyRent": 1504,
+      "monthlyRent": 1159,
       "annualWorkHours": 2200,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -1969,10 +1930,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 53.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": 26.91,
-      "gdpGrowthRate": 4.3
+      "securityConfidence": 100
     },
     {
       "id": 15,
@@ -2008,11 +1966,11 @@
         "政府/NGO行政": 104814,
         "数字游民": 85000
       },
-      "costModerate": 5226,
+      "costModerate": 2814,
       "costBudget": null,
       "bigMacPrice": 5.15,
       "housePrice": 7294,
-      "monthlyRent": 1986,
+      "monthlyRent": 1546,
       "annualWorkHours": 1417,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -2110,10 +2068,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 82.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.491,
-      "pressFreedomScore": 88.64,
-      "gdpGrowthRate": -0.6
+      "securityConfidence": 100
     },
     {
       "id": 16,
@@ -2149,11 +2104,11 @@
         "政府/NGO行政": 71093,
         "数字游民": 85000
       },
-      "costModerate": 5302,
+      "costModerate": 3770,
       "costBudget": null,
       "bigMacPrice": 6.82,
       "housePrice": 11109,
-      "monthlyRent": 2015,
+      "monthlyRent": 2170,
       "annualWorkHours": 1533,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -2251,10 +2206,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 84.2,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.294,
-      "pressFreedomScore": 83.98,
-      "gdpGrowthRate": 0.68
+      "securityConfidence": 100
     },
     {
       "id": 17,
@@ -2290,11 +2242,11 @@
         "政府/NGO行政": 71093,
         "数字游民": 85000
       },
-      "costModerate": 5302,
+      "costModerate": 3770,
       "costBudget": null,
       "bigMacPrice": 6.82,
       "housePrice": 11109,
-      "monthlyRent": 2015,
+      "monthlyRent": 2170,
       "annualWorkHours": 1533,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -2392,10 +2344,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 84.2,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.294,
-      "pressFreedomScore": 83.98,
-      "gdpGrowthRate": 0.68
+      "securityConfidence": 100
     },
     {
       "id": 18,
@@ -2431,11 +2380,11 @@
         "政府/NGO行政": 92760,
         "数字游民": 85000
       },
-      "costModerate": 4809,
+      "costModerate": 2641,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 6427,
-      "monthlyRent": 1827,
+      "monthlyRent": 1436,
       "annualWorkHours": 1341,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -2533,10 +2482,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 81.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.533,
-      "pressFreedomScore": 83.85,
-      "gdpGrowthRate": -0.87
+      "securityConfidence": 100
     },
     {
       "id": 19,
@@ -2572,11 +2518,11 @@
         "政府/NGO行政": 77300,
         "数字游民": 85000
       },
-      "costModerate": 4809,
+      "costModerate": 2416,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 6427,
-      "monthlyRent": 1827,
+      "monthlyRent": 1313,
       "annualWorkHours": 1341,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -2674,10 +2620,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 81.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.533,
-      "pressFreedomScore": 83.85,
-      "gdpGrowthRate": -0.87
+      "securityConfidence": 100
     },
     {
       "id": 20,
@@ -2713,11 +2656,11 @@
         "政府/NGO行政": 74850,
         "数字游民": 85000
       },
-      "costModerate": 3787,
+      "costModerate": 2375,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 3914,
-      "monthlyRent": 1439,
+      "monthlyRent": 1270,
       "annualWorkHours": 1644,
       "paidLeaveDays": 22,
       "internetSpeedMbps": null,
@@ -2815,10 +2758,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 69.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.578,
-      "pressFreedomScore": 77.35,
-      "gdpGrowthRate": 2.46
+      "securityConfidence": 100
     },
     {
       "id": 21,
@@ -2854,11 +2794,11 @@
         "政府/NGO行政": 74850,
         "数字游民": 85000
       },
-      "costModerate": 3787,
+      "costModerate": 2375,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 3914,
-      "monthlyRent": 1439,
+      "monthlyRent": 1270,
       "annualWorkHours": 1644,
       "paidLeaveDays": 22,
       "internetSpeedMbps": null,
@@ -2956,10 +2896,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 69.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.578,
-      "pressFreedomScore": 77.35,
-      "gdpGrowthRate": 2.46
+      "securityConfidence": 100
     },
     {
       "id": 22,
@@ -2995,11 +2932,11 @@
         "政府/NGO行政": 80536,
         "数字游民": 85000
       },
-      "costModerate": 4082,
+      "costModerate": 2500,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 4502,
-      "monthlyRent": 1551,
+      "monthlyRent": 1348,
       "annualWorkHours": 1669,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -3097,10 +3034,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 67,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.662,
-      "pressFreedomScore": 68.01,
-      "gdpGrowthRate": 0.98
+      "securityConfidence": 100
     },
     {
       "id": 23,
@@ -3136,11 +3070,11 @@
         "政府/NGO行政": 73825,
         "数字游民": 85000
       },
-      "costModerate": 4082,
+      "costModerate": 2445,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 4502,
-      "monthlyRent": 1551,
+      "monthlyRent": 1318,
       "annualWorkHours": 1669,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -3238,10 +3172,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 67,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.662,
-      "pressFreedomScore": 68.01,
-      "gdpGrowthRate": 0.98
+      "securityConfidence": 100
     },
     {
       "id": 24,
@@ -3277,11 +3208,11 @@
         "政府/NGO行政": 114998,
         "数字游民": 85000
       },
-      "costModerate": 4882,
+      "costModerate": 2816,
       "costBudget": null,
       "bigMacPrice": 5.15,
       "housePrice": 6451,
-      "monthlyRent": 1855,
+      "monthlyRent": 1547,
       "annualWorkHours": 1577,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -3379,10 +3310,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 78.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.492,
-      "pressFreedomScore": 80.12,
-      "gdpGrowthRate": 1.71
+      "securityConfidence": 100
     },
     {
       "id": 25,
@@ -3418,11 +3346,11 @@
         "政府/NGO行政": 94695,
         "数字游民": 85000
       },
-      "costModerate": 4769,
+      "costModerate": 2744,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 6389,
-      "monthlyRent": 1812,
+      "monthlyRent": 1501,
       "annualWorkHours": 1442,
       "paidLeaveDays": 25,
       "internetSpeedMbps": null,
@@ -3520,10 +3448,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 76.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.294,
-      "pressFreedomScore": 78.12,
-      "gdpGrowthRate": -0.79
+      "securityConfidence": 100
     },
     {
       "id": 26,
@@ -3559,11 +3484,11 @@
         "政府/NGO行政": 56403,
         "数字游民": 85000
       },
-      "costModerate": 3381,
+      "costModerate": 2182,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 3449,
-      "monthlyRent": 1285,
+      "monthlyRent": 1151,
       "annualWorkHours": 1766,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -3661,10 +3586,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 69.1,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.435,
-      "pressFreedomScore": 83.96,
-      "gdpGrowthRate": 0.05
+      "securityConfidence": 100
     },
     {
       "id": 27,
@@ -3700,11 +3622,11 @@
         "政府/NGO行政": 46601,
         "数字游民": 85000
       },
-      "costModerate": 3508,
+      "costModerate": 1732,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 2519,
-      "monthlyRent": 1333,
+      "monthlyRent": 881,
       "annualWorkHours": 1803,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -3802,10 +3724,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 62.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.713,
-      "pressFreedomScore": 74.79,
-      "gdpGrowthRate": 0.25
+      "securityConfidence": 100
     },
     {
       "id": 28,
@@ -3841,11 +3760,11 @@
         "政府/NGO行政": 28785,
         "数字游民": 85000
       },
-      "costModerate": 3517,
+      "costModerate": 2229,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 3140,
-      "monthlyRent": 1336,
+      "monthlyRent": 1180,
       "annualWorkHours": 1649,
       "paidLeaveDays": 22,
       "internetSpeedMbps": null,
@@ -3943,10 +3862,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.371,
-      "pressFreedomScore": 84.26,
-      "gdpGrowthRate": 3.1
+      "securityConfidence": 100
     },
     {
       "id": 29,
@@ -3982,11 +3898,11 @@
         "政府/NGO行政": 49146,
         "数字游民": 85000
       },
-      "costModerate": 3385,
+      "costModerate": 2215,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 2652,
-      "monthlyRent": 1286,
+      "monthlyRent": 1171,
       "annualWorkHours": 1886,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -4084,10 +4000,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 61.1,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.764,
-      "pressFreedomScore": 55.37,
-      "gdpGrowthRate": 2.14
+      "securityConfidence": 100
     },
     {
       "id": 30,
@@ -4123,11 +4036,11 @@
         "政府/NGO行政": 30302,
         "数字游民": 85000
       },
-      "costModerate": 2745,
+      "costModerate": 1235,
       "costBudget": null,
       "bigMacPrice": 2.98,
       "housePrice": 1570,
-      "monthlyRent": 1043,
+      "monthlyRent": 595,
       "annualWorkHours": 1855,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -4225,10 +4138,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 37.1,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.852,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": 5.05
+      "securityConfidence": 100
     },
     {
       "id": 31,
@@ -4264,11 +4174,11 @@
         "政府/NGO行政": 11775,
         "数字游民": 85000
       },
-      "costModerate": 1866,
+      "costModerate": 941,
       "costBudget": null,
       "bigMacPrice": 2.98,
       "housePrice": 1928,
-      "monthlyRent": 616,
+      "monthlyRent": 544,
       "annualWorkHours": 2128,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -4366,10 +4276,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 42,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.636,
-      "pressFreedomScore": 45.55,
-      "gdpGrowthRate": 3.35
+      "securityConfidence": 100
     },
     {
       "id": 32,
@@ -4405,11 +4312,11 @@
         "政府/NGO行政": 17745,
         "数字游民": 85000
       },
-      "costModerate": 1617,
+      "costModerate": 1831,
       "costBudget": null,
       "bigMacPrice": 2.98,
       "housePrice": 1490,
-      "monthlyRent": 534,
+      "monthlyRent": 719,
       "annualWorkHours": 1776,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -4507,10 +4414,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 50.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.472,
-      "pressFreedomScore": 63.8,
-      "gdpGrowthRate": 3.24
+      "securityConfidence": 100
     },
     {
       "id": 33,
@@ -4546,11 +4450,11 @@
         "政府/NGO行政": 15615,
         "数字游民": 85000
       },
-      "costModerate": 1617,
+      "costModerate": 1583,
       "costBudget": null,
       "bigMacPrice": 2.98,
       "housePrice": 1490,
-      "monthlyRent": 534,
+      "monthlyRent": 644,
       "annualWorkHours": 1776,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -4648,10 +4552,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 50.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.472,
-      "pressFreedomScore": 63.8,
-      "gdpGrowthRate": 3.24
+      "securityConfidence": 100
     },
     {
       "id": 34,
@@ -4687,11 +4588,11 @@
         "政府/NGO行政": 97700,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4013,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2585,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -4789,10 +4690,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 35,
@@ -4828,11 +4726,11 @@
         "政府/NGO行政": 125820,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 3938,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2537,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -4930,10 +4828,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 36,
@@ -4969,11 +4864,11 @@
         "政府/NGO行政": 134580,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4006,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2581,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -5071,10 +4966,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 37,
@@ -5110,11 +5002,11 @@
         "政府/NGO行政": 129900,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4009,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2583,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -5212,10 +5104,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 38,
@@ -5252,11 +5141,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 6224,
+      "costModerate": 3774,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2431,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -5354,10 +5243,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 39,
@@ -5393,11 +5279,11 @@
         "政府/NGO行政": 102530,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 3588,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2312,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -5495,10 +5381,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 40,
@@ -5534,11 +5417,11 @@
         "政府/NGO行政": 62691,
         "数字游民": 85000
       },
-      "costModerate": 4355,
+      "costModerate": 2629,
       "costBudget": null,
       "bigMacPrice": 5.6,
       "housePrice": 6230,
-      "monthlyRent": 1655,
+      "monthlyRent": 1709,
       "annualWorkHours": 1686,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -5636,10 +5519,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.491,
-      "pressFreedomScore": 78.75,
-      "gdpGrowthRate": 1.53
+      "securityConfidence": 100
     },
     {
       "id": 41,
@@ -5675,11 +5555,11 @@
         "政府/NGO行政": 54514,
         "数字游民": 85000
       },
-      "costModerate": 4355,
+      "costModerate": 2414,
       "costBudget": null,
       "bigMacPrice": 5.6,
       "housePrice": 6230,
-      "monthlyRent": 1655,
+      "monthlyRent": 1554,
       "annualWorkHours": 1686,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -5777,10 +5657,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.491,
-      "pressFreedomScore": 78.75,
-      "gdpGrowthRate": 1.53
+      "securityConfidence": 100
     },
     {
       "id": 42,
@@ -5816,11 +5693,11 @@
         "政府/NGO行政": 52598,
         "数字游民": 85000
       },
-      "costModerate": 4643,
+      "costModerate": 3058,
       "costBudget": null,
       "bigMacPrice": 5.3,
       "housePrice": 7313,
-      "monthlyRent": 1764,
+      "monthlyRent": 1419,
       "annualWorkHours": 1694,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -5918,10 +5795,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.505,
-      "pressFreedomScore": 75.15,
-      "gdpGrowthRate": 3.58
+      "securityConfidence": 100
     },
     {
       "id": 43,
@@ -5957,11 +5831,11 @@
         "政府/NGO行政": 45425,
         "数字游民": 85000
       },
-      "costModerate": 4643,
+      "costModerate": 2797,
       "costBudget": null,
       "bigMacPrice": 5.3,
       "housePrice": 7313,
-      "monthlyRent": 1764,
+      "monthlyRent": 1285,
       "annualWorkHours": 1694,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -6059,10 +5933,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.505,
-      "pressFreedomScore": 75.15,
-      "gdpGrowthRate": 3.58
+      "securityConfidence": 100
     },
     {
       "id": 44,
@@ -6098,11 +5969,11 @@
         "政府/NGO行政": 59012,
         "数字游民": 85000
       },
-      "costModerate": 3867,
+      "costModerate": 3059,
       "costBudget": null,
       "bigMacPrice": 5.3,
       "housePrice": 5551,
-      "monthlyRent": 1469,
+      "monthlyRent": 1420,
       "annualWorkHours": 1752,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -6200,10 +6071,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 85.6,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.282,
-      "pressFreedomScore": 81.37,
-      "gdpGrowthRate": 1.39
+      "securityConfidence": 100
     },
     {
       "id": 45,
@@ -6239,11 +6107,11 @@
         "政府/NGO行政": 21264,
         "数字游民": 85000
       },
-      "costModerate": 1620,
+      "costModerate": 1088,
       "costBudget": null,
       "bigMacPrice": 4.38,
       "housePrice": 1065,
-      "monthlyRent": 535,
+      "monthlyRent": 385,
       "annualWorkHours": 2024,
       "paidLeaveDays": 6,
       "internetSpeedMbps": null,
@@ -6341,10 +6209,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 41.6,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 2.017,
-      "pressFreedomScore": 56.72,
-      "gdpGrowthRate": 2.02
+      "securityConfidence": 88
     },
     {
       "id": 46,
@@ -6380,11 +6245,11 @@
         "政府/NGO行政": 22167,
         "数字游民": 85000
       },
-      "costModerate": 2468,
+      "costModerate": 1546,
       "costBudget": null,
       "bigMacPrice": 3.73,
       "housePrice": 1748,
-      "monthlyRent": 814,
+      "monthlyRent": 836,
       "annualWorkHours": 2028,
       "paidLeaveDays": 8,
       "internetSpeedMbps": null,
@@ -6482,10 +6347,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 52.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.469,
-      "pressFreedomScore": 56.09,
-      "gdpGrowthRate": 3.54
+      "securityConfidence": 100
     },
     {
       "id": 47,
@@ -6521,11 +6383,11 @@
         "政府/NGO行政": 15528,
         "数字游民": 85000
       },
-      "costModerate": 900,
+      "costModerate": 1244,
       "costBudget": null,
       "bigMacPrice": 2.08,
       "housePrice": 599,
-      "monthlyRent": 252,
+      "monthlyRent": 656,
       "annualWorkHours": 2060,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -6623,10 +6485,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 39.8,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 1.721,
-      "pressFreedomScore": 19.74,
-      "gdpGrowthRate": null
+      "securityConfidence": 88
     },
     {
       "id": 48,
@@ -6662,11 +6521,11 @@
         "政府/NGO行政": 14234,
         "数字游民": 85000
       },
-      "costModerate": 900,
+      "costModerate": 1180,
       "costBudget": null,
       "bigMacPrice": 2.08,
       "housePrice": 599,
-      "monthlyRent": 252,
+      "monthlyRent": 619,
       "annualWorkHours": 2060,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -6764,10 +6623,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 39.8,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 1.721,
-      "pressFreedomScore": 19.74,
-      "gdpGrowthRate": null
+      "securityConfidence": 88
     },
     {
       "id": 49,
@@ -6803,11 +6659,11 @@
         "政府/NGO行政": 14685,
         "数字游民": 85000
       },
-      "costModerate": 697,
+      "costModerate": 1203,
       "costBudget": null,
       "bigMacPrice": 1.9,
       "housePrice": 353,
-      "monthlyRent": 195,
+      "monthlyRent": 632,
       "annualWorkHours": 2117,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -6905,10 +6761,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 47.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.229,
-      "pressFreedomScore": 32.96,
-      "gdpGrowthRate": 9.19
+      "securityConfidence": 100
     },
     {
       "id": 50,
@@ -6944,11 +6797,11 @@
         "政府/NGO行政": 15815,
         "数字游民": 85000
       },
-      "costModerate": 697,
+      "costModerate": 1258,
       "costBudget": null,
       "bigMacPrice": 1.9,
       "housePrice": 353,
-      "monthlyRent": 195,
+      "monthlyRent": 665,
       "annualWorkHours": 2117,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -7046,10 +6899,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 47.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.229,
-      "pressFreedomScore": 32.96,
-      "gdpGrowthRate": 9.19
+      "securityConfidence": 100
     },
     {
       "id": 51,
@@ -7085,11 +6935,11 @@
         "政府/NGO行政": 13556,
         "数字游民": 85000
       },
-      "costModerate": 697,
+      "costModerate": 1145,
       "costBudget": null,
       "bigMacPrice": 1.9,
       "housePrice": 353,
-      "monthlyRent": 195,
+      "monthlyRent": 598,
       "annualWorkHours": 2117,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -7187,10 +7037,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 47.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.229,
-      "pressFreedomScore": 32.96,
-      "gdpGrowthRate": 9.19
+      "securityConfidence": 100
     },
     {
       "id": 52,
@@ -7226,11 +7073,11 @@
         "政府/NGO行政": 4000,
         "数字游民": 85000
       },
-      "costModerate": 516,
+      "costModerate": 979,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 209,
-      "monthlyRent": 114,
+      "monthlyRent": 261,
       "annualWorkHours": 2100,
       "paidLeaveDays": 21,
       "internetSpeedMbps": null,
@@ -7328,10 +7175,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 42.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.392,
-      "pressFreedomScore": 49.41,
-      "gdpGrowthRate": 5.72
+      "securityConfidence": 100
     },
     {
       "id": 53,
@@ -7367,11 +7211,11 @@
         "政府/NGO行政": 9235,
         "数字游民": 85000
       },
-      "costModerate": 1568,
+      "costModerate": 1630,
       "costBudget": null,
       "bigMacPrice": 1.8,
       "housePrice": 468,
-      "monthlyRent": 439,
+      "monthlyRent": 461,
       "annualWorkHours": 2070,
       "paidLeaveDays": 21,
       "internetSpeedMbps": null,
@@ -7469,10 +7313,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 31.7,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 2.157,
-      "pressFreedomScore": 24.74,
-      "gdpGrowthRate": 3.76
+      "securityConfidence": 88
     },
     {
       "id": 54,
@@ -7509,11 +7350,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 1018,
+      "costModerate": 563,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 684,
-      "monthlyRent": 285,
+      "monthlyRent": 271,
       "annualWorkHours": 2024,
       "paidLeaveDays": 26,
       "internetSpeedMbps": null,
@@ -7611,10 +7452,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 27.3,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 2.75,
-      "pressFreedomScore": 16.22,
-      "gdpGrowthRate": 5.33
+      "securityConfidence": 88
     },
     {
       "id": 55,
@@ -7650,11 +7488,11 @@
         "政府/NGO行政": 4838,
         "数字游民": 85000
       },
-      "costModerate": 512,
+      "costModerate": 611,
       "costBudget": null,
       "bigMacPrice": 1.5,
       "housePrice": 143,
-      "monthlyRent": 113,
+      "monthlyRent": 297,
       "annualWorkHours": 2150,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -7753,10 +7591,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 32,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.797,
-      "pressFreedomScore": 29.62,
-      "gdpGrowthRate": -0.41
+      "securityConfidence": 100
     },
     {
       "id": 56,
@@ -7793,11 +7628,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 512,
+      "costModerate": 628,
       "costBudget": null,
       "bigMacPrice": 1.5,
       "housePrice": 143,
-      "monthlyRent": 113,
+      "monthlyRent": 306,
       "annualWorkHours": 2150,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -7896,10 +7731,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 32,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.797,
-      "pressFreedomScore": 29.62,
-      "gdpGrowthRate": -0.41
+      "securityConfidence": 100
     },
     {
       "id": 57,
@@ -7935,11 +7767,11 @@
         "政府/NGO行政": 7288,
         "数字游民": 85000
       },
-      "costModerate": 909,
+      "costModerate": 784,
       "costBudget": null,
       "bigMacPrice": 2.5,
       "housePrice": 655,
-      "monthlyRent": 255,
+      "monthlyRent": 392,
       "annualWorkHours": 1950,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -8037,10 +7869,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 46.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.786,
-      "pressFreedomScore": 44.13,
-      "gdpGrowthRate": 5.05
+      "securityConfidence": 100
     },
     {
       "id": 58,
@@ -8076,11 +7905,11 @@
         "政府/NGO行政": 11027,
         "数字游民": 85000
       },
-      "costModerate": 936,
+      "costModerate": 1010,
       "costBudget": null,
       "bigMacPrice": 2.28,
       "housePrice": 596,
-      "monthlyRent": 262,
+      "monthlyRent": 520,
       "annualWorkHours": 2000,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -8178,10 +8007,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 43.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.148,
-      "pressFreedomScore": 49.57,
-      "gdpGrowthRate": 5.52
+      "securityConfidence": 100
     },
     {
       "id": 59,
@@ -8217,11 +8043,11 @@
         "政府/NGO行政": 48234,
         "数字游民": 85000
       },
-      "costModerate": 3524,
+      "costModerate": 2023,
       "costBudget": null,
       "bigMacPrice": 4.02,
       "housePrice": 7350,
-      "monthlyRent": 1339,
+      "monthlyRent": 1128,
       "annualWorkHours": 1901,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -8319,10 +8145,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 67.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.736,
-      "pressFreedomScore": 64.06,
-      "gdpGrowthRate": 1.58
+      "securityConfidence": 100
     },
     {
       "id": 60,
@@ -8358,11 +8181,11 @@
         "政府/NGO行政": 34729,
         "数字游民": 85000
       },
-      "costModerate": 3524,
+      "costModerate": 1656,
       "costBudget": null,
       "bigMacPrice": 4.02,
       "housePrice": 7350,
-      "monthlyRent": 1339,
+      "monthlyRent": 903,
       "annualWorkHours": 1901,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -8460,10 +8283,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 67.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.736,
-      "pressFreedomScore": 64.06,
-      "gdpGrowthRate": 1.58
+      "securityConfidence": 100
     },
     {
       "id": 61,
@@ -8499,11 +8319,11 @@
         "政府/NGO行政": 26413,
         "数字游民": 85000
       },
-      "costModerate": 3513,
+      "costModerate": 1653,
       "costBudget": null,
       "bigMacPrice": 3.86,
       "housePrice": 7000,
-      "monthlyRent": 1159,
+      "monthlyRent": 683,
       "annualWorkHours": 2008,
       "paidLeaveDays": 7,
       "internetSpeedMbps": null,
@@ -8601,10 +8421,7 @@
       "governanceConfidence": 50,
       "freedomIndex": 68,
       "freedomConfidence": 45,
-      "securityConfidence": 45,
-      "gpiScore": 1.73,
-      "pressFreedomScore": 77.04,
-      "gdpGrowthRate": null
+      "securityConfidence": 45
     },
     {
       "id": 62,
@@ -8640,11 +8457,11 @@
         "政府/NGO行政": 16728,
         "数字游民": 85000
       },
-      "costModerate": 2173,
+      "costModerate": 1766,
       "costBudget": null,
       "bigMacPrice": 4.5,
       "housePrice": 2030,
-      "monthlyRent": 717,
+      "monthlyRent": 690,
       "annualWorkHours": 1820,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -8742,10 +8559,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 52.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.768,
-      "pressFreedomScore": 56.14,
-      "gdpGrowthRate": -1.86
+      "securityConfidence": 100
     },
     {
       "id": 63,
@@ -8781,11 +8595,11 @@
         "政府/NGO行政": 24696,
         "数字游民": 85000
       },
-      "costModerate": 2317,
+      "costModerate": 2240,
       "costBudget": null,
       "bigMacPrice": 4.5,
       "housePrice": 2363,
-      "monthlyRent": 765,
+      "monthlyRent": 900,
       "annualWorkHours": 1916,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -8883,10 +8697,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.899,
-      "pressFreedomScore": 62.25,
-      "gdpGrowthRate": 0.52
+      "securityConfidence": 100
     },
     {
       "id": 64,
@@ -8922,11 +8733,11 @@
         "政府/NGO行政": 14593,
         "数字游民": 85000
       },
-      "costModerate": 1721,
+      "costModerate": 1625,
       "costBudget": null,
       "bigMacPrice": 3.5,
       "housePrice": 1056,
-      "monthlyRent": 568,
+      "monthlyRent": 629,
       "annualWorkHours": 1964,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -9024,10 +8835,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 49.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.695,
-      "pressFreedomScore": 49.8,
-      "gdpGrowthRate": 0.71
+      "securityConfidence": 100
     },
     {
       "id": 65,
@@ -9063,11 +8871,11 @@
         "政府/NGO行政": 12379,
         "数字游民": 85000
       },
-      "costModerate": 1168,
+      "costModerate": 1470,
       "costBudget": null,
       "bigMacPrice": 3.5,
       "housePrice": 1000,
-      "monthlyRent": 327,
+      "monthlyRent": 563,
       "annualWorkHours": 2000,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -9165,10 +8973,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 48.1,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.073,
-      "pressFreedomScore": 42.88,
-      "gdpGrowthRate": -0.4
+      "securityConfidence": 100
     },
     {
       "id": 67,
@@ -9204,11 +9009,11 @@
         "政府/NGO行政": 13364,
         "数字游民": 85000
       },
-      "costModerate": 1134,
+      "costModerate": 2042,
       "costBudget": null,
       "bigMacPrice": 2.45,
       "housePrice": 815,
-      "monthlyRent": 318,
+      "monthlyRent": 593,
       "annualWorkHours": 1856,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -9306,10 +9111,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 56.2,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.347,
-      "pressFreedomScore": 75.71,
-      "gdpGrowthRate": 0.81
+      "securityConfidence": 100
     },
     {
       "id": 68,
@@ -9345,11 +9147,11 @@
         "政府/NGO行政": 12783,
         "数字游民": 85000
       },
-      "costModerate": 1134,
+      "costModerate": 1988,
       "costBudget": null,
       "bigMacPrice": 2.45,
       "housePrice": 815,
-      "monthlyRent": 318,
+      "monthlyRent": 575,
       "annualWorkHours": 1856,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -9447,10 +9249,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 56.2,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.347,
-      "pressFreedomScore": 75.71,
-      "gdpGrowthRate": 0.81
+      "securityConfidence": 100
     },
     {
       "id": 69,
@@ -9486,11 +9285,11 @@
         "政府/NGO行政": 9322,
         "数字游民": 85000
       },
-      "costModerate": 1866,
+      "costModerate": 816,
       "costBudget": null,
       "bigMacPrice": 2.98,
       "housePrice": 1928,
-      "monthlyRent": 616,
+      "monthlyRent": 464,
       "annualWorkHours": 2128,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -9588,10 +9387,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 42,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.636,
-      "pressFreedomScore": 45.55,
-      "gdpGrowthRate": 3.35
+      "securityConfidence": 100
     },
     {
       "id": 70,
@@ -9627,11 +9423,11 @@
         "政府/NGO行政": 21753,
         "数字游民": 85000
       },
-      "costModerate": 2139,
+      "costModerate": 1368,
       "costBudget": null,
       "bigMacPrice": 3.98,
       "housePrice": 2343,
-      "monthlyRent": 706,
+      "monthlyRent": 825,
       "annualWorkHours": 2026,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -9729,10 +9525,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 66,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.843,
-      "pressFreedomScore": 73.09,
-      "gdpGrowthRate": 5.11
+      "securityConfidence": 100
     },
     {
       "id": 71,
@@ -9768,11 +9561,11 @@
         "政府/NGO行政": 20521,
         "数字游民": 85000
       },
-      "costModerate": 2223,
+      "costModerate": 1321,
       "costBudget": null,
       "bigMacPrice": 2.98,
       "housePrice": 2101,
-      "monthlyRent": 845,
+      "monthlyRent": 793,
       "annualWorkHours": 1960,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -9870,10 +9663,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 52,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.006,
-      "pressFreedomScore": 66.75,
-      "gdpGrowthRate": 7.17
+      "securityConfidence": 100
     },
     {
       "id": 73,
@@ -9909,11 +9699,11 @@
         "政府/NGO行政": 66410,
         "数字游民": 85000
       },
-      "costModerate": 3748,
+      "costModerate": 2192,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 3017,
-      "monthlyRent": 1424,
+      "monthlyRent": 1395,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -10011,10 +9801,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 65.7,
       "freedomConfidence": 100,
-      "securityConfidence": 95,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 95
     },
     {
       "id": 75,
@@ -10050,11 +9837,11 @@
         "政府/NGO行政": 49966,
         "数字游民": 85000
       },
-      "costModerate": 3958,
+      "costModerate": 2130,
       "costBudget": null,
       "bigMacPrice": 4.15,
       "housePrice": 6014,
-      "monthlyRent": 1504,
+      "monthlyRent": 1195,
       "annualWorkHours": 2200,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -10152,10 +9939,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 53.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": 26.91,
-      "gdpGrowthRate": 4.3
+      "securityConfidence": 100
     },
     {
       "id": 76,
@@ -10191,11 +9975,11 @@
         "政府/NGO行政": 66939,
         "数字游民": 85000
       },
-      "costModerate": 3570,
+      "costModerate": 2545,
       "costBudget": null,
       "bigMacPrice": 4.5,
       "housePrice": 9017,
-      "monthlyRent": 1357,
+      "monthlyRent": 1458,
       "annualWorkHours": 2200,
       "paidLeaveDays": 21,
       "internetSpeedMbps": null,
@@ -10293,10 +10077,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 48.1,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.593,
-      "pressFreedomScore": 58.25,
-      "gdpGrowthRate": 1.54
+      "securityConfidence": 100
     },
     {
       "id": 77,
@@ -10333,11 +10114,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 3166,
+      "costModerate": 1502,
       "costBudget": null,
       "bigMacPrice": 3.98,
       "housePrice": 3277,
-      "monthlyRent": 1203,
+      "monthlyRent": 810,
       "annualWorkHours": 2150,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -10435,10 +10216,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 38.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.099,
-      "pressFreedomScore": 30.24,
-      "gdpGrowthRate": 3.88
+      "securityConfidence": 100
     },
     {
       "id": 78,
@@ -10474,11 +10252,11 @@
         "政府/NGO行政": 62015,
         "数字游民": 85000
       },
-      "costModerate": 4136,
+      "costModerate": 2318,
       "costBudget": null,
       "bigMacPrice": 4.5,
       "housePrice": 4157,
-      "monthlyRent": 1572,
+      "monthlyRent": 1313,
       "annualWorkHours": 2100,
       "paidLeaveDays": 21,
       "internetSpeedMbps": null,
@@ -10576,10 +10354,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 39.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.035,
-      "pressFreedomScore": 27.94,
-      "gdpGrowthRate": 0.54
+      "securityConfidence": 100
     },
     {
       "id": 79,
@@ -10616,11 +10391,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 2113,
+      "costModerate": 1272,
       "costBudget": null,
       "bigMacPrice": 3.98,
       "housePrice": 2277,
-      "monthlyRent": 803,
+      "monthlyRent": 673,
       "annualWorkHours": 2100,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -10718,10 +10493,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 46,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.738,
-      "pressFreedomScore": 42.29,
-      "gdpGrowthRate": 1.41
+      "securityConfidence": 100
     },
     {
       "id": 80,
@@ -10758,11 +10530,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 1554,
+      "costModerate": 1392,
       "costBudget": null,
       "bigMacPrice": 4.5,
       "housePrice": 493,
-      "monthlyRent": 435,
+      "monthlyRent": 744,
       "annualWorkHours": 1950,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -10861,10 +10633,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.674,
-      "pressFreedomScore": 42.62,
-      "gdpGrowthRate": -0.76
+      "securityConfidence": 100
     },
     {
       "id": 81,
@@ -10901,11 +10670,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 897,
+      "costModerate": 1088,
       "costBudget": null,
       "bigMacPrice": 3.98,
       "housePrice": 591,
-      "monthlyRent": 251,
+      "monthlyRent": 565,
       "annualWorkHours": 2050,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -11003,10 +10772,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 45.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.957,
-      "pressFreedomScore": 35.25,
-      "gdpGrowthRate": 2.88
+      "securityConfidence": 100
     },
     {
       "id": 82,
@@ -11042,11 +10808,11 @@
         "政府/NGO行政": 38874,
         "数字游民": 85000
       },
-      "costModerate": 3711,
+      "costModerate": 2144,
       "costBudget": null,
       "bigMacPrice": 4.5,
       "housePrice": 10582,
-      "monthlyRent": 1410,
+      "monthlyRent": 1204,
       "annualWorkHours": 1898,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -11144,10 +10910,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 62,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 3.108,
-      "pressFreedomScore": 51.06,
-      "gdpGrowthRate": 1.83
+      "securityConfidence": 100
     },
     {
       "id": 83,
@@ -11184,11 +10947,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 697,
+      "costModerate": 1086,
       "costBudget": null,
       "bigMacPrice": 1.9,
       "housePrice": 353,
-      "monthlyRent": 195,
+      "monthlyRent": 564,
       "annualWorkHours": 2117,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -11286,10 +11049,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 47.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.229,
-      "pressFreedomScore": 32.96,
-      "gdpGrowthRate": 9.19
+      "securityConfidence": 100
     },
     {
       "id": 84,
@@ -11326,11 +11086,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 697,
+      "costModerate": 1025,
       "costBudget": null,
       "bigMacPrice": 1.9,
       "housePrice": 353,
-      "monthlyRent": 195,
+      "monthlyRent": 529,
       "annualWorkHours": 2117,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -11428,10 +11188,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 47.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.229,
-      "pressFreedomScore": 32.96,
-      "gdpGrowthRate": 9.19
+      "securityConfidence": 100
     },
     {
       "id": 85,
@@ -11467,11 +11224,11 @@
         "政府/NGO行政": 14231,
         "数字游民": 85000
       },
-      "costModerate": 1628,
+      "costModerate": 1360,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 695,
-      "monthlyRent": 456,
+      "monthlyRent": 734,
       "annualWorkHours": 1750,
       "paidLeaveDays": 24,
       "internetSpeedMbps": null,
@@ -11570,10 +11327,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 46.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 3.434,
-      "pressFreedomScore": 63.93,
-      "gdpGrowthRate": 5.53
+      "securityConfidence": 100
     },
     {
       "id": 86,
@@ -11609,11 +11363,11 @@
         "政府/NGO行政": 45977,
         "数字游民": 85000
       },
-      "costModerate": 3479,
+      "costModerate": 1611,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 2053,
-      "monthlyRent": 1322,
+      "monthlyRent": 810,
       "annualWorkHours": 1838,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -11711,10 +11465,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 55.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.721,
-      "pressFreedomScore": 66.42,
-      "gdpGrowthRate": 2.26
+      "securityConfidence": 100
     },
     {
       "id": 87,
@@ -11750,11 +11501,11 @@
         "政府/NGO行政": 36414,
         "数字游民": 85000
       },
-      "costModerate": 2830,
+      "costModerate": 1634,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 1793,
-      "monthlyRent": 1075,
+      "monthlyRent": 823,
       "annualWorkHours": 1754,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -11852,10 +11603,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 53.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.61,
-      "pressFreedomScore": 60.78,
-      "gdpGrowthRate": 1.68
+      "securityConfidence": 100
     },
     {
       "id": 88,
@@ -11891,11 +11639,11 @@
         "政府/NGO行政": 54677,
         "数字游民": 85000
       },
-      "costModerate": 3478,
+      "costModerate": 1918,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 2596,
-      "monthlyRent": 1322,
+      "monthlyRent": 991,
       "annualWorkHours": 1715,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -11993,10 +11741,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 58.6,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.519,
-      "pressFreedomScore": 64.2,
-      "gdpGrowthRate": 3.76
+      "securityConfidence": 100
     },
     {
       "id": 89,
@@ -12032,11 +11777,11 @@
         "政府/NGO行政": 29400,
         "数字游民": 85000
       },
-      "costModerate": 2285,
+      "costModerate": 1689,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 1742,
-      "monthlyRent": 754,
+      "monthlyRent": 856,
       "annualWorkHours": 1780,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -12134,10 +11879,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 43.2,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.914,
-      "pressFreedomScore": 53.55,
-      "gdpGrowthRate": 3.75
+      "securityConfidence": 100
     },
     {
       "id": 90,
@@ -12173,11 +11915,11 @@
         "政府/NGO行政": 27340,
         "数字游民": 85000
       },
-      "costModerate": 3070,
+      "costModerate": 1788,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 2423,
-      "monthlyRent": 1167,
+      "monthlyRent": 914,
       "annualWorkHours": 1805,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -12275,10 +12017,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 49.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.5,
-      "pressFreedomScore": 62.82,
-      "gdpGrowthRate": -0.82
+      "securityConfidence": 100
     },
     {
       "id": 91,
@@ -12315,11 +12054,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 3374,
+      "costModerate": 2125,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 2749,
-      "monthlyRent": 1282,
+      "monthlyRent": 1117,
       "annualWorkHours": 1700,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -12417,10 +12156,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 64.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.609,
-      "pressFreedomScore": 71.93,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 92,
@@ -12457,11 +12193,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 3617,
+      "costModerate": 2276,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 3709,
-      "monthlyRent": 1374,
+      "monthlyRent": 1209,
       "annualWorkHours": 1624,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -12559,10 +12295,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 66.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.409,
-      "pressFreedomScore": 74.06,
-      "gdpGrowthRate": 2.38
+      "securityConfidence": 100
     },
     {
       "id": 93,
@@ -12598,11 +12331,11 @@
         "政府/NGO行政": 75419,
         "数字游民": 85000
       },
-      "costModerate": 4607,
+      "costModerate": 3172,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 9409,
-      "monthlyRent": 1751,
+      "monthlyRent": 1776,
       "annualWorkHours": 1656,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -12700,10 +12433,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 81.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.26,
-      "pressFreedomScore": 86.92,
-      "gdpGrowthRate": -2.54
+      "securityConfidence": 100
     },
     {
       "id": 94,
@@ -12740,11 +12470,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 4432,
+      "costModerate": 2675,
       "costBudget": null,
       "bigMacPrice": 5.15,
       "housePrice": 5772,
-      "monthlyRent": 1684,
+      "monthlyRent": 1477,
       "annualWorkHours": 1532,
       "paidLeaveDays": 28,
       "internetSpeedMbps": null,
@@ -12842,10 +12572,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 76,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.634,
-      "pressFreedomScore": 78.89,
-      "gdpGrowthRate": 0.27
+      "securityConfidence": 100
     },
     {
       "id": 95,
@@ -12882,11 +12609,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 6224,
+      "costModerate": 3456,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2227,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -12984,10 +12711,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 96,
@@ -13024,11 +12748,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 6224,
+      "costModerate": 3538,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2280,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -13126,10 +12850,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 97,
@@ -13166,11 +12887,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 6224,
+      "costModerate": 3785,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2438,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -13268,10 +12989,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 98,
@@ -13307,11 +13025,11 @@
         "政府/NGO行政": 102340,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4205,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2709,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -13409,10 +13127,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 99,
@@ -13449,11 +13164,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 6224,
+      "costModerate": 3478,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2241,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -13551,10 +13266,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 100,
@@ -13591,11 +13303,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 6224,
+      "costModerate": 3535,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2277,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -13693,10 +13405,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 101,
@@ -13732,11 +13441,11 @@
         "政府/NGO行政": 20123,
         "数字游民": 85000
       },
-      "costModerate": 1341,
+      "costModerate": 1389,
       "costBudget": null,
       "bigMacPrice": 3.25,
       "housePrice": 2049,
-      "monthlyRent": 443,
+      "monthlyRent": 742,
       "annualWorkHours": 2170,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -13834,10 +13543,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.093,
-      "pressFreedomScore": 14.8,
-      "gdpGrowthRate": 5.41
+      "securityConfidence": 100
     },
     {
       "id": 102,
@@ -13873,11 +13579,11 @@
         "政府/NGO行政": 22639,
         "数字游民": 85000
       },
-      "costModerate": 1341,
+      "costModerate": 1492,
       "costBudget": null,
       "bigMacPrice": 3.3,
       "housePrice": 2049,
-      "monthlyRent": 443,
+      "monthlyRent": 804,
       "annualWorkHours": 2170,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -13975,10 +13681,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.093,
-      "pressFreedomScore": 14.8,
-      "gdpGrowthRate": 5.41
+      "securityConfidence": 100
     },
     {
       "id": 103,
@@ -14014,11 +13717,11 @@
         "政府/NGO行政": 16769,
         "数字游民": 85000
       },
-      "costModerate": 1341,
+      "costModerate": 1243,
       "costBudget": null,
       "bigMacPrice": 3.15,
       "housePrice": 2049,
-      "monthlyRent": 443,
+      "monthlyRent": 655,
       "annualWorkHours": 2170,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -14116,10 +13819,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.093,
-      "pressFreedomScore": 14.8,
-      "gdpGrowthRate": 5.41
+      "securityConfidence": 100
     },
     {
       "id": 104,
@@ -14155,11 +13855,11 @@
         "政府/NGO行政": 19285,
         "数字游民": 85000
       },
-      "costModerate": 1341,
+      "costModerate": 1353,
       "costBudget": null,
       "bigMacPrice": 3.22,
       "housePrice": 2049,
-      "monthlyRent": 443,
+      "monthlyRent": 721,
       "annualWorkHours": 2170,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -14257,10 +13957,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.093,
-      "pressFreedomScore": 14.8,
-      "gdpGrowthRate": 5.41
+      "securityConfidence": 100
     },
     {
       "id": 105,
@@ -14297,11 +13994,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 1341,
+      "costModerate": 1165,
       "costBudget": null,
       "bigMacPrice": 3.12,
       "housePrice": 2049,
-      "monthlyRent": 443,
+      "monthlyRent": 610,
       "annualWorkHours": 2170,
       "paidLeaveDays": 5,
       "internetSpeedMbps": null,
@@ -14399,10 +14096,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 34.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.093,
-      "pressFreedomScore": 14.8,
-      "gdpGrowthRate": 5.41
+      "securityConfidence": 100
     },
     {
       "id": 106,
@@ -14438,11 +14132,11 @@
         "政府/NGO行政": 34328,
         "数字游民": 85000
       },
-      "costModerate": 3401,
+      "costModerate": 2736,
       "costBudget": null,
       "bigMacPrice": 3.03,
       "housePrice": 7200,
-      "monthlyRent": 1292,
+      "monthlyRent": 1484,
       "annualWorkHours": 1607,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -14540,10 +14234,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 74.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.44,
-      "pressFreedomScore": 63.14,
-      "gdpGrowthRate": 1.48
+      "securityConfidence": 100
     },
     {
       "id": 107,
@@ -14580,11 +14271,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 3401,
+      "costModerate": 2602,
       "costBudget": null,
       "bigMacPrice": 3.03,
       "housePrice": 7200,
-      "monthlyRent": 1292,
+      "monthlyRent": 1412,
       "annualWorkHours": 1607,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -14682,10 +14373,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 74.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.44,
-      "pressFreedomScore": 63.14,
-      "gdpGrowthRate": 1.48
+      "securityConfidence": 100
     },
     {
       "id": 109,
@@ -14722,11 +14410,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 457,
+      "costModerate": 893,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 255,
-      "monthlyRent": 101,
+      "monthlyRent": 454,
       "annualWorkHours": 2100,
       "paidLeaveDays": 18,
       "internetSpeedMbps": null,
@@ -14824,10 +14512,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 25.3,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 2.019,
-      "pressFreedomScore": 28.18,
-      "gdpGrowthRate": 5.01
+      "securityConfidence": 88
     },
     {
       "id": 110,
@@ -14864,11 +14549,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 315,
+      "costModerate": 633,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 121,
-      "monthlyRent": 69,
+      "monthlyRent": 309,
       "annualWorkHours": 2100,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -14967,10 +14652,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 21.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 3.045,
-      "pressFreedomScore": 25.32,
-      "gdpGrowthRate": 0.96
+      "securityConfidence": 100
     },
     {
       "id": 112,
@@ -15006,11 +14688,11 @@
         "政府/NGO行政": 12268,
         "数字游民": 85000
       },
-      "costModerate": 1620,
+      "costModerate": 1078,
       "costBudget": null,
       "bigMacPrice": 4.35,
       "housePrice": 1065,
-      "monthlyRent": 535,
+      "monthlyRent": 559,
       "annualWorkHours": 2024,
       "paidLeaveDays": 6,
       "internetSpeedMbps": null,
@@ -15108,10 +14790,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 41.6,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 2.017,
-      "pressFreedomScore": 56.72,
-      "gdpGrowthRate": 2.02
+      "securityConfidence": 88
     },
     {
       "id": 114,
@@ -15148,11 +14827,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 642,
+      "costModerate": 667,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 282,
-      "monthlyRent": 141,
+      "monthlyRent": 328,
       "annualWorkHours": 2200,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -15250,10 +14929,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 31.6,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 115,
@@ -15290,11 +14966,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 1035,
+      "costModerate": 741,
       "costBudget": null,
       "bigMacPrice": 3,
       "housePrice": 515,
-      "monthlyRent": 290,
+      "monthlyRent": 368,
       "annualWorkHours": 1980,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -15392,10 +15068,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 45.6,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.075,
-      "pressFreedomScore": 39.93,
-      "gdpGrowthRate": -2.33
+      "securityConfidence": 100
     },
     {
       "id": 116,
@@ -15432,11 +15105,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 471,
+      "costModerate": 801,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 147,
-      "monthlyRent": 104,
+      "monthlyRent": 402,
       "annualWorkHours": 2050,
       "paidLeaveDays": 13,
       "internetSpeedMbps": null,
@@ -15534,10 +15207,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 45.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": 55.2,
-      "gdpGrowthRate": 1.98
+      "securityConfidence": 100
     },
     {
       "id": 117,
@@ -15573,11 +15243,11 @@
         "政府/NGO行政": 24279,
         "数字游民": 85000
       },
-      "costModerate": 2256,
+      "costModerate": 1795,
       "costBudget": null,
       "bigMacPrice": 3.2,
       "housePrice": 1411,
-      "monthlyRent": 857,
+      "monthlyRent": 988,
       "annualWorkHours": 1900,
       "paidLeaveDays": 24,
       "internetSpeedMbps": null,
@@ -15675,10 +15345,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 41.2,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.875,
-      "pressFreedomScore": 39.34,
-      "gdpGrowthRate": 5.1
+      "securityConfidence": 100
     },
     {
       "id": 118,
@@ -15715,11 +15382,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 851,
+      "costModerate": 1237,
       "costBudget": null,
       "bigMacPrice": 2.5,
       "housePrice": 403,
-      "monthlyRent": 238,
+      "monthlyRent": 652,
       "annualWorkHours": 1950,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -15817,10 +15484,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 36.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.926,
-      "pressFreedomScore": 35.24,
-      "gdpGrowthRate": 6.29
+      "securityConfidence": 100
     },
     {
       "id": 119,
@@ -15857,11 +15521,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 1532,
+      "costModerate": 1434,
       "costBudget": null,
       "bigMacPrice": 3,
       "housePrice": 1100,
-      "monthlyRent": 506,
+      "monthlyRent": 769,
       "annualWorkHours": 1920,
       "paidLeaveDays": 21,
       "internetSpeedMbps": null,
@@ -15959,10 +15623,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 27.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.067,
-      "pressFreedomScore": 25.47,
-      "gdpGrowthRate": 1.35
+      "securityConfidence": 100
     },
     {
       "id": 120,
@@ -15999,11 +15660,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 1087,
+      "costModerate": 1344,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 717,
-      "monthlyRent": 304,
+      "monthlyRent": 715,
       "annualWorkHours": 1980,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -16101,10 +15762,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 48.2,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.719,
-      "pressFreedomScore": 52.57,
-      "gdpGrowthRate": 7.42
+      "securityConfidence": 100
     },
     {
       "id": 121,
@@ -16140,11 +15798,11 @@
         "政府/NGO行政": 62902,
         "数字游民": 85000
       },
-      "costModerate": 4520,
+      "costModerate": 2990,
       "costBudget": null,
       "bigMacPrice": 6.37,
       "housePrice": 6789,
-      "monthlyRent": 1718,
+      "monthlyRent": 1659,
       "annualWorkHours": 1474,
       "paidLeaveDays": 25,
       "internetSpeedMbps": null,
@@ -16242,10 +15900,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 84.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.709,
-      "pressFreedomScore": 88.13,
-      "gdpGrowthRate": -0.2
+      "securityConfidence": 100
     },
     {
       "id": 122,
@@ -16281,11 +15936,11 @@
         "政府/NGO行政": 76395,
         "数字游民": 85000
       },
-      "costModerate": 4768,
+      "costModerate": 3244,
       "costBudget": null,
       "bigMacPrice": 5.69,
       "housePrice": 8463,
-      "monthlyRent": 1812,
+      "monthlyRent": 1823,
       "annualWorkHours": 1380,
       "paidLeaveDays": 25,
       "internetSpeedMbps": null,
@@ -16383,10 +16038,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 90,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.393,
-      "pressFreedomScore": 86.93,
-      "gdpGrowthRate": 0.6
+      "securityConfidence": 100
     },
     {
       "id": 123,
@@ -16422,11 +16074,11 @@
         "政府/NGO行政": 86664,
         "数字游民": 85000
       },
-      "costModerate": 4417,
+      "costModerate": 2967,
       "costBudget": null,
       "bigMacPrice": 5.82,
       "housePrice": 6026,
-      "monthlyRent": 1678,
+      "monthlyRent": 1644,
       "annualWorkHours": 1518,
       "paidLeaveDays": 25,
       "internetSpeedMbps": null,
@@ -16524,10 +16176,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 88.1,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.42,
-      "pressFreedomScore": 87.18,
-      "gdpGrowthRate": -0.94
+      "securityConfidence": 100
     },
     {
       "id": 124,
@@ -16563,11 +16212,11 @@
         "政府/NGO行政": 79837,
         "数字游民": 85000
       },
-      "costModerate": 5557,
+      "costModerate": 3347,
       "costBudget": null,
       "bigMacPrice": 6.86,
       "housePrice": 11453,
-      "monthlyRent": 2112,
+      "monthlyRent": 1890,
       "annualWorkHours": 1427,
       "paidLeaveDays": 25,
       "internetSpeedMbps": null,
@@ -16665,10 +16314,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 87.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.644,
-      "pressFreedomScore": 92.31,
-      "gdpGrowthRate": 0.07
+      "securityConfidence": 100
     },
     {
       "id": 125,
@@ -16704,11 +16350,11 @@
         "政府/NGO行政": 98620,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 3399,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2190,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -16806,10 +16452,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 126,
@@ -16845,11 +16488,11 @@
         "政府/NGO行政": 101150,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 3806,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2452,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -16947,10 +16590,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 127,
@@ -16987,11 +16627,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 4355,
+      "costModerate": 2487,
       "costBudget": null,
       "bigMacPrice": 5.25,
       "housePrice": 6230,
-      "monthlyRent": 1655,
+      "monthlyRent": 1606,
       "annualWorkHours": 1689,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -17089,10 +16729,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.491,
-      "pressFreedomScore": 78.75,
-      "gdpGrowthRate": 1.53
+      "securityConfidence": 100
     },
     {
       "id": 128,
@@ -17129,11 +16766,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 4643,
+      "costModerate": 2885,
       "costBudget": null,
       "bigMacPrice": 5.48,
       "housePrice": 7313,
-      "monthlyRent": 1764,
+      "monthlyRent": 1330,
       "annualWorkHours": 1694,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -17231,10 +16868,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.505,
-      "pressFreedomScore": 75.15,
-      "gdpGrowthRate": 3.58
+      "securityConfidence": 100
     },
     {
       "id": 129,
@@ -17270,11 +16904,11 @@
         "政府/NGO行政": 11552,
         "数字游民": 85000
       },
-      "costModerate": 1721,
+      "costModerate": 1409,
       "costBudget": null,
       "bigMacPrice": 3.82,
       "housePrice": 1056,
-      "monthlyRent": 568,
+      "monthlyRent": 537,
       "annualWorkHours": 1964,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -17372,10 +17006,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 49.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.695,
-      "pressFreedomScore": 49.8,
-      "gdpGrowthRate": 0.71
+      "securityConfidence": 100
     },
     {
       "id": 130,
@@ -17411,11 +17042,11 @@
         "政府/NGO行政": 9408,
         "数字游民": 85000
       },
-      "costModerate": 2062,
+      "costModerate": 907,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 1217,
-      "monthlyRent": 680,
+      "monthlyRent": 467,
       "annualWorkHours": 1950,
       "paidLeaveDays": 24,
       "internetSpeedMbps": null,
@@ -17513,10 +17144,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 53.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.185,
-      "pressFreedomScore": 50.53,
-      "gdpGrowthRate": 7.83
+      "securityConfidence": 100
     },
     {
       "id": 131,
@@ -17553,11 +17181,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 477,
+      "costModerate": 985,
       "costBudget": null,
       "bigMacPrice": 2.45,
       "housePrice": 170,
-      "monthlyRent": 105,
+      "monthlyRent": 263,
       "annualWorkHours": 2120,
       "paidLeaveDays": 6,
       "internetSpeedMbps": null,
@@ -17656,10 +17284,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 35.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.869,
-      "pressFreedomScore": 46.81,
-      "gdpGrowthRate": 3.33
+      "securityConfidence": 100
     },
     {
       "id": 132,
@@ -17695,11 +17320,11 @@
         "政府/NGO行政": 31736,
         "数字游民": 85000
       },
-      "costModerate": 2817,
+      "costModerate": 1971,
       "costBudget": null,
       "bigMacPrice": 2.32,
       "housePrice": 1787,
-      "monthlyRent": 1070,
+      "monthlyRent": 1109,
       "annualWorkHours": 1974,
       "paidLeaveDays": 28,
       "internetSpeedMbps": null,
@@ -17797,10 +17422,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 29.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 3.441,
-      "pressFreedomScore": 24.57,
-      "gdpGrowthRate": 4.08
+      "securityConfidence": 100
     },
     {
       "id": 133,
@@ -17836,11 +17458,11 @@
         "政府/NGO行政": 141150,
         "数字游民": 85000
       },
-      "costModerate": 6224,
+      "costModerate": 4473,
       "costBudget": null,
       "bigMacPrice": 5.58,
       "housePrice": 9741,
-      "monthlyRent": 2365,
+      "monthlyRent": 2882,
       "annualWorkHours": 1811,
       "paidLeaveDays": 0,
       "internetSpeedMbps": null,
@@ -17938,10 +17560,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.443,
-      "pressFreedomScore": 65.49,
-      "gdpGrowthRate": 2.89
+      "securityConfidence": 100
     },
     {
       "id": 135,
@@ -17978,11 +17597,11 @@
         "数字游民": 85000
       },
       "hidden": true,
-      "costModerate": 4355,
+      "costModerate": 2266,
       "costBudget": null,
       "bigMacPrice": 5.25,
       "housePrice": 6230,
-      "monthlyRent": 1655,
+      "monthlyRent": 1052,
       "annualWorkHours": 1689,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -18080,10 +17699,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 79.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.491,
-      "pressFreedomScore": 78.75,
-      "gdpGrowthRate": 1.53
+      "securityConfidence": 100
     },
     {
       "id": 136,
@@ -18119,11 +17735,11 @@
         "政府/NGO行政": 128994,
         "数字游民": 85000
       },
-      "costModerate": 7144,
+      "costModerate": 3342,
       "costBudget": null,
       "bigMacPrice": 5.48,
       "housePrice": 9876,
-      "monthlyRent": 2715,
+      "monthlyRent": 1887,
       "annualWorkHours": 1506,
       "paidLeaveDays": 26,
       "internetSpeedMbps": null,
@@ -18221,10 +17837,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 82.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": 83.04,
-      "gdpGrowthRate": 0.1
+      "securityConfidence": 100
     },
     {
       "id": 137,
@@ -18260,11 +17873,11 @@
         "政府/NGO行政": 56340,
         "数字游民": 85000
       },
-      "costModerate": 3255,
+      "costModerate": 2389,
       "costBudget": null,
       "bigMacPrice": 4.85,
       "housePrice": 3369,
-      "monthlyRent": 1237,
+      "monthlyRent": 1279,
       "annualWorkHours": 1767,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -18362,10 +17975,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 78.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.559,
-      "pressFreedomScore": 89.46,
-      "gdpGrowthRate": -2.74
+      "securityConfidence": 100
     },
     {
       "id": 138,
@@ -18401,11 +18011,11 @@
         "政府/NGO行政": 29424,
         "数字游民": 85000
       },
-      "costModerate": 3401,
+      "costModerate": 2533,
       "costBudget": null,
       "bigMacPrice": 3.03,
       "housePrice": 7200,
-      "monthlyRent": 1292,
+      "monthlyRent": 1374,
       "annualWorkHours": 1607,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -18503,10 +18113,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 74.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.44,
-      "pressFreedomScore": 63.14,
-      "gdpGrowthRate": 1.48
+      "securityConfidence": 100
     },
     {
       "id": 140,
@@ -18542,11 +18149,11 @@
         "政府/NGO行政": 4665,
         "数字游民": 85000
       },
-      "costModerate": 909,
+      "costModerate": 597,
       "costBudget": null,
       "bigMacPrice": 2.5,
       "housePrice": 655,
-      "monthlyRent": 255,
+      "monthlyRent": 290,
       "annualWorkHours": 1950,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -18644,10 +18251,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 46.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.786,
-      "pressFreedomScore": 44.13,
-      "gdpGrowthRate": 5.05
+      "securityConfidence": 100
     },
     {
       "id": 141,
@@ -18683,11 +18287,11 @@
         "政府/NGO行政": 10352,
         "数字游民": 85000
       },
-      "costModerate": 900,
+      "costModerate": 972,
       "costBudget": null,
       "bigMacPrice": 2.08,
       "housePrice": 599,
-      "monthlyRent": 252,
+      "monthlyRent": 498,
       "annualWorkHours": 2060,
       "paidLeaveDays": 12,
       "internetSpeedMbps": null,
@@ -18785,10 +18389,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 39.8,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 1.721,
-      "pressFreedomScore": 19.74,
-      "gdpGrowthRate": null
+      "securityConfidence": 88
     },
     {
       "id": 143,
@@ -18824,11 +18425,11 @@
         "政府/NGO行政": 28785,
         "数字游民": 85000
       },
-      "costModerate": 3517,
+      "costModerate": 2229,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 3140,
-      "monthlyRent": 1336,
+      "monthlyRent": 1180,
       "annualWorkHours": 1649,
       "paidLeaveDays": 22,
       "internetSpeedMbps": null,
@@ -18926,10 +18527,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.371,
-      "pressFreedomScore": 84.26,
-      "gdpGrowthRate": 3.1
+      "securityConfidence": 100
     },
     {
       "id": 144,
@@ -18965,11 +18563,11 @@
         "政府/NGO行政": 71596,
         "数字游民": 85000
       },
-      "costModerate": 3787,
+      "costModerate": 2330,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 3914,
-      "monthlyRent": 1439,
+      "monthlyRent": 1246,
       "annualWorkHours": 1644,
       "paidLeaveDays": 22,
       "internetSpeedMbps": null,
@@ -19067,10 +18665,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 69.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.578,
-      "pressFreedomScore": 77.35,
-      "gdpGrowthRate": 2.46
+      "securityConfidence": 100
     },
     {
       "id": 146,
@@ -19106,11 +18701,11 @@
         "政府/NGO行政": 54677,
         "数字游民": 85000
       },
-      "costModerate": 3478,
+      "costModerate": 1918,
       "costBudget": null,
       "bigMacPrice": 3.52,
       "housePrice": 2596,
-      "monthlyRent": 1322,
+      "monthlyRent": 991,
       "annualWorkHours": 1715,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -19208,10 +18803,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 58.6,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.519,
-      "pressFreedomScore": 64.2,
-      "gdpGrowthRate": 3.76
+      "securityConfidence": 100
     },
     {
       "id": 147,
@@ -19247,11 +18839,11 @@
         "政府/NGO行政": 13086,
         "数字游民": 85000
       },
-      "costModerate": 1620,
+      "costModerate": 1121,
       "costBudget": null,
       "bigMacPrice": 4.38,
       "housePrice": 1065,
-      "monthlyRent": 535,
+      "monthlyRent": 584,
       "annualWorkHours": 2024,
       "paidLeaveDays": 6,
       "internetSpeedMbps": null,
@@ -19349,10 +18941,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 41.6,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 2.017,
-      "pressFreedomScore": 56.72,
-      "gdpGrowthRate": 2.02
+      "securityConfidence": 88
     },
     {
       "id": 148,
@@ -19388,11 +18977,11 @@
         "政府/NGO行政": 19439,
         "数字游民": 85000
       },
-      "costModerate": 2528,
+      "costModerate": 1936,
       "costBudget": null,
       "bigMacPrice": 5.5,
       "housePrice": 3248,
-      "monthlyRent": 834,
+      "monthlyRent": 765,
       "annualWorkHours": 1533,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -19490,10 +19079,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 75.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.784,
-      "pressFreedomScore": 65.18,
-      "gdpGrowthRate": 0.74
+      "securityConfidence": 100
     },
     {
       "id": 149,
@@ -19529,11 +19115,11 @@
         "政府/NGO行政": 71596,
         "数字游民": 85000
       },
-      "costModerate": 3787,
+      "costModerate": 2330,
       "costBudget": null,
       "bigMacPrice": 4.99,
       "housePrice": 3914,
-      "monthlyRent": 1439,
+      "monthlyRent": 1246,
       "annualWorkHours": 1644,
       "paidLeaveDays": 22,
       "internetSpeedMbps": null,
@@ -19631,10 +19217,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 69.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.578,
-      "pressFreedomScore": 77.35,
-      "gdpGrowthRate": 2.46
+      "securityConfidence": 100
     },
     {
       "id": 150,
@@ -19670,11 +19253,11 @@
         "政府/NGO行政": 22167,
         "数字游民": 85000
       },
-      "costModerate": 2468,
+      "costModerate": 1546,
       "costBudget": null,
       "bigMacPrice": 3.73,
       "housePrice": 1748,
-      "monthlyRent": 814,
+      "monthlyRent": 836,
       "annualWorkHours": 2028,
       "paidLeaveDays": 8,
       "internetSpeedMbps": null,
@@ -19772,10 +19355,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 52.8,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.469,
-      "pressFreedomScore": 56.09,
-      "gdpGrowthRate": 3.54
+      "securityConfidence": 100
     },
     {
       "id": 152,
@@ -19811,11 +19391,11 @@
         "政府/NGO行政": 15615,
         "数字游民": 85000
       },
-      "costModerate": 1617,
+      "costModerate": 1694,
       "costBudget": null,
       "bigMacPrice": 2.98,
       "housePrice": 1490,
-      "monthlyRent": 534,
+      "monthlyRent": 659,
       "annualWorkHours": 1776,
       "paidLeaveDays": 30,
       "internetSpeedMbps": null,
@@ -19913,10 +19493,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 50.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.472,
-      "pressFreedomScore": 63.8,
-      "gdpGrowthRate": 3.24
+      "securityConfidence": 100
     },
     {
       "id": 159,
@@ -19952,11 +19529,11 @@
         "政府/NGO行政": 31059,
         "数字游民": 85000
       },
-      "costModerate": 3401,
+      "costModerate": 2602,
       "costBudget": null,
       "bigMacPrice": 3.03,
       "housePrice": 7200,
-      "monthlyRent": 1292,
+      "monthlyRent": 1412,
       "annualWorkHours": 1607,
       "paidLeaveDays": 10,
       "internetSpeedMbps": null,
@@ -20054,10 +19631,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 74.7,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.44,
-      "pressFreedomScore": 63.14,
-      "gdpGrowthRate": 1.48
+      "securityConfidence": 100
     },
     {
       "id": 160,
@@ -20093,11 +19667,11 @@
         "政府/NGO行政": 4435,
         "数字游民": 85000
       },
-      "costModerate": 712,
+      "costModerate": 849,
       "costBudget": null,
       "bigMacPrice": 4.4,
       "housePrice": 512,
-      "monthlyRent": 199,
+      "monthlyRent": 223,
       "annualWorkHours": 2000,
       "paidLeaveDays": 18,
       "internetSpeedMbps": null,
@@ -20195,10 +19769,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 41.3,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 2.012,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": 3.66
+      "securityConfidence": 100
     },
     {
       "id": 161,
@@ -20234,11 +19805,11 @@
         "政府/NGO行政": 59012,
         "数字游民": 85000
       },
-      "costModerate": 3867,
+      "costModerate": 3059,
       "costBudget": null,
       "bigMacPrice": 5.3,
       "housePrice": 5551,
-      "monthlyRent": 1469,
+      "monthlyRent": 1420,
       "annualWorkHours": 1752,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -20336,10 +19907,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 85.6,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": 1.282,
-      "pressFreedomScore": 81.37,
-      "gdpGrowthRate": 1.39
+      "securityConfidence": 100
     },
     {
       "id": 162,
@@ -20375,11 +19943,11 @@
         "政府/NGO行政": 52798,
         "数字游民": 85000
       },
-      "costModerate": 3600,
+      "costModerate": 2032,
       "costBudget": null,
       "bigMacPrice": 4.8,
       "housePrice": 3168,
-      "monthlyRent": 1368,
+      "monthlyRent": 1060,
       "annualWorkHours": 1740,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -20477,10 +20045,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 70.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 163,
@@ -20516,11 +20081,11 @@
         "政府/NGO行政": 46584,
         "数字游民": 85000
       },
-      "costModerate": 3064,
+      "costModerate": 2072,
       "costBudget": null,
       "bigMacPrice": 4.7,
       "housePrice": 2524,
-      "monthlyRent": 1164,
+      "monthlyRent": 1084,
       "annualWorkHours": 1750,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -20618,10 +20183,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 68.9,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 164,
@@ -20657,11 +20219,11 @@
         "政府/NGO行政": 46617,
         "数字游民": 85000
       },
-      "costModerate": 4173,
+      "costModerate": 2410,
       "costBudget": null,
       "bigMacPrice": 4.5,
       "housePrice": 3835,
-      "monthlyRent": 1586,
+      "monthlyRent": 1292,
       "annualWorkHours": 1780,
       "paidLeaveDays": 20,
       "internetSpeedMbps": null,
@@ -20759,10 +20321,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 63,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 165,
@@ -20798,11 +20357,11 @@
         "政府/NGO行政": 14801,
         "数字游民": 85000
       },
-      "costModerate": 1910,
+      "costModerate": 1427,
       "costBudget": null,
       "bigMacPrice": 4.2,
       "housePrice": 1542,
-      "monthlyRent": 630,
+      "monthlyRent": 865,
       "annualWorkHours": 2000,
       "paidLeaveDays": 14,
       "internetSpeedMbps": null,
@@ -20900,10 +20459,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 45.6,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 166,
@@ -20939,11 +20495,11 @@
         "政府/NGO行政": 19975,
         "数字游民": 85000
       },
-      "costModerate": 1083,
+      "costModerate": 2046,
       "costBudget": null,
       "bigMacPrice": 4.1,
       "housePrice": 857,
-      "monthlyRent": 303,
+      "monthlyRent": 813,
       "annualWorkHours": 1900,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -21041,10 +20597,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 46.5,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 167,
@@ -21080,11 +20633,11 @@
         "政府/NGO行政": 6496,
         "数字游民": 85000
       },
-      "costModerate": 623,
+      "costModerate": 1282,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 231,
-      "monthlyRent": 137,
+      "monthlyRent": 353,
       "annualWorkHours": 2000,
       "paidLeaveDays": 15,
       "internetSpeedMbps": null,
@@ -21182,10 +20735,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 52.4,
       "freedomConfidence": 100,
-      "securityConfidence": 100,
-      "gpiScore": null,
-      "pressFreedomScore": null,
-      "gdpGrowthRate": null
+      "securityConfidence": 100
     },
     {
       "id": 168,
@@ -21221,11 +20771,11 @@
         "政府/NGO行政": 4379,
         "数字游民": 85000
       },
-      "costModerate": 247,
+      "costModerate": 1229,
       "costBudget": null,
       "bigMacPrice": null,
       "housePrice": 110,
-      "monthlyRent": 54,
+      "monthlyRent": 336,
       "annualWorkHours": 2100,
       "paidLeaveDays": 16,
       "internetSpeedMbps": null,
@@ -21324,10 +20874,7 @@
       "governanceConfidence": 100,
       "freedomIndex": 35.9,
       "freedomConfidence": 100,
-      "securityConfidence": 88,
-      "gpiScore": 2.688,
-      "pressFreedomScore": 36.92,
-      "gdpGrowthRate": 6.59
+      "securityConfidence": 88
     }
   ]
 }

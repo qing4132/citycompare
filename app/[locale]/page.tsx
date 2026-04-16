@@ -1,4 +1,4 @@
-import HomeContent from "@/components/HomeContent";
+import HomePage from "@/components/home/HomePage";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -6,5 +6,5 @@ interface Props {
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
-  return <HomeContent locale={locale} />;
+  return <HomePage locale={locale} />;
 }

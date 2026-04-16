@@ -151,14 +151,13 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
                 <div className="flex items-center justify-between gap-2 relative">
                     {/* Left: brand (+ nav links on non-detail pages) */}
                     <div className="flex items-center gap-3 min-w-0 z-10">
+                        {isCityDetail && (
+                            <button onClick={() => router.back()} className={`text-[18px] shrink-0 transition ${darkMode ? "text-blue-400 [@media(hover:hover)]:hover:text-blue-300" : "text-blue-600 [@media(hover:hover)]:hover:text-blue-500"}`} aria-label="Back">‹</button>
+                        )}
                         <Link href={`/${locale}`} className={`text-[18px] font-black tracking-tight shrink-0 ${darkMode ? "text-white" : "text-slate-900"}`}>WhichCity</Link>
                         {!isCityDetail && (
                             <>
                                 <Link href={`/${locale}/ranking`} className={linkCls("ranking", "amber")}>{t("navRanking")}</Link>
-                                <button onClick={randomCity} className={linkCls("", "emerald")}>
-                                    <span className="min-[420px]:hidden">{t("navRandomCityShort")}</span>
-                                    <span className="hidden min-[420px]:inline">{t("navRandomCity")}</span>
-                                </button>
                                 {activePage === "compare"
                                     ? <span className={linkCls("compare", "violet")}>{t("navCompare")}</span>
                                     : <Link href={compareTo} className={linkCls("compare", "violet")}>{t("navCompare")}</Link>
@@ -175,24 +174,51 @@ const NavBar = forwardRef<HTMLDivElement, NavBarProps>(function NavBar(
                         </div>
                     )}
 
-                    {/* Right: Share + Settings */}
-                    <div className={`flex items-center ${isCityDetail ? "gap-1" : "gap-2"} shrink-0`}>
-                        {showShare && (
-                            <button
-                                onClick={() => { setShareOpen(v => !v); setSettingsOpen(false); }}
-                                className={`${iconBtn} ${shareOpen ? (darkMode ? "!text-slate-100" : "!text-slate-900") : ""}`}
-                                title={t("shareLink")}
-                            >
-                                <svg className={isCityDetail ? "w-4 h-4" : "w-3.5 h-3.5"} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
-                            </button>
+                    {/* Right: actions */}
+                    <div className={`flex items-center ${isCityDetail ? "gap-2" : "gap-1"} shrink-0`}>
+                        {isCityDetail ? (
+                            <>
+                                <Link href={compareTo} className={`text-[12px] transition whitespace-nowrap ${darkMode ? "text-slate-400 [@media(hover:hover)]:hover:text-slate-200" : "text-slate-400 [@media(hover:hover)]:hover:text-slate-700"}`}>
+                                    ⇅ {t("navCompare")}
+                                </Link>
+                                <span className={`text-[12px] ${darkMode ? "text-slate-600" : "text-slate-300"}`}>·</span>
+                                <button
+                                    onClick={() => { setShareOpen(v => !v); setSettingsOpen(false); }}
+                                    className={`text-[12px] transition whitespace-nowrap ${shareOpen ? (darkMode ? "text-slate-100" : "text-slate-900") : (darkMode ? "text-slate-400 [@media(hover:hover)]:hover:text-slate-200" : "text-slate-400 [@media(hover:hover)]:hover:text-slate-700")}`}
+                                >
+                                    ↗ {t("shareLink")}
+                                </button>
+                                <button
+                                    onClick={() => { setSettingsOpen(v => !v); setShareOpen(false); }}
+                                    className={`${iconBtn} ${settingsOpen ? (darkMode ? "!text-slate-100" : "!text-slate-900") : ""}`}
+                                    title={t("settingsLabel")}
+                                >
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" /></svg>
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <button onClick={randomCity} className={iconBtn} title={t("navRandomCity")}>
+                                    <span className="text-[14px]">🎲</span>
+                                </button>
+                                {showShare && (
+                                    <button
+                                        onClick={() => { setShareOpen(v => !v); setSettingsOpen(false); }}
+                                        className={`${iconBtn} ${shareOpen ? (darkMode ? "!text-slate-100" : "!text-slate-900") : ""}`}
+                                        title={t("shareLink")}
+                                    >
+                                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                                    </button>
+                                )}
+                                <button
+                                    onClick={() => { setSettingsOpen(v => !v); setShareOpen(false); }}
+                                    className={`${iconBtn} ${settingsOpen ? (darkMode ? "!text-slate-100" : "!text-slate-900") : ""}`}
+                                    title={t("settingsLabel")}
+                                >
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" /></svg>
+                                </button>
+                            </>
                         )}
-                        <button
-                            onClick={() => { setSettingsOpen(v => !v); setShareOpen(false); }}
-                            className={`${iconBtn} ${settingsOpen ? (darkMode ? "!text-slate-100" : "!text-slate-900") : ""}`}
-                            title={t("settingsLabel")}
-                        >
-                            <svg className={isCityDetail ? "w-4 h-4" : "w-3.5 h-3.5"} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><circle cx="12" cy="12" r="3" /></svg>
-                        </button>
                     </div>
                 </div>
 

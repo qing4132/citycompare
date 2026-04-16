@@ -15,8 +15,8 @@ const CITY_LIST = Object.entries(CITY_SLUGS).map(([idStr, slug]) => {
   return { id, slug, flag: CITY_FLAG_EMOJIS[id] || "🏙️" };
 }).filter(c => !HIDDEN_CITY_IDS.has(c.id));
 
-const POPULAR_HOME = ["new-york", "london", "tokyo", "singapore", "paris", "sydney",
-  "berlin", "amsterdam", "dubai", "toronto", "zurich", "bangkok"]
+const POPULAR_HOME = ["tokyo", "new-york", "london", "singapore", "berlin", "dubai",
+  "bangkok", "sydney", "amsterdam", "toronto", "lisbon", "seoul"]
   .map(slug => CITY_LIST.find(c => c.slug === slug))
   .filter((c): c is NonNullable<typeof c> => c !== undefined);
 
@@ -26,15 +26,20 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
   const { locale, darkMode, t } = s;
 
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [focused, setFocused] = useState(false);
   const [hlIdx, setHlIdx] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const dropRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const timer = window.setTimeout(() => setDebouncedSearch(search), 100);
+    return () => window.clearTimeout(timer);
+  }, [search]);
+
   const results = useMemo(() => {
-    if (!search.trim()) return [];
-    const q = search.toLowerCase();
-    setHlIdx(-1);
+    if (!debouncedSearch.trim()) return [];
+    const q = debouncedSearch.toLowerCase();
     return CITY_LIST.filter(c => {
       const names = CITY_NAME_TRANSLATIONS[c.id];
       if (!names) return false;
@@ -47,7 +52,14 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
       }
       return false;
     });
-  }, [search]);
+  }, [debouncedSearch]);
+
+  useEffect(() => {
+    setHlIdx(-1);
+  }, [debouncedSearch, focused]);
+
+  const visibleResults = results.slice(0, 8);
+  const hasMoreResults = results.length > visibleResults.length;
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -84,11 +96,12 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
 
           {/* Hero */}
           <div className="text-center mb-8">
-            <h1 className={`text-3xl sm:text-4xl font-black tracking-tight mb-2 ${headCls}`}>
-              {t("appTitle")}
+            <div className={`text-sm font-black tracking-wide mb-2 ${darkMode ? "text-blue-400" : "text-blue-600"}`}>WHICHCITY</div>
+            <h1 className={`text-2xl sm:text-[32px] font-black tracking-tight leading-tight mb-3 whitespace-pre-line ${headCls}`}>
+              {t("homeHeadline")}
             </h1>
             <p className={`text-sm max-w-md mx-auto ${subCls}`}>
-              {t("appSubtitle")}
+              {t("homeSubline")}
             </p>
           </div>
 
@@ -99,28 +112,28 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
               onChange={e => setSearch(e.target.value)}
               onFocus={() => setFocused(true)}
               onKeyDown={e => {
-                if (!focused || !results.length) return;
-                if (e.key === "ArrowDown") { e.preventDefault(); setHlIdx(i => (i + 1) % results.length); }
-                else if (e.key === "ArrowUp") { e.preventDefault(); setHlIdx(i => (i - 1 + results.length) % results.length); }
-                else if (e.key === "Enter" && hlIdx >= 0 && hlIdx < results.length) {
+                if (!focused || !visibleResults.length) return;
+                if (e.key === "ArrowDown") { e.preventDefault(); setHlIdx(i => (i + 1) % visibleResults.length); }
+                else if (e.key === "ArrowUp") { e.preventDefault(); setHlIdx(i => (i - 1 + visibleResults.length) % visibleResults.length); }
+                else if (e.key === "Enter" && hlIdx >= 0 && hlIdx < visibleResults.length) {
                   e.preventDefault(); setSearch(""); setFocused(false);
-                  router.push(`/${locale}/city/${results[hlIdx].slug}`);
+                  router.push(`/${locale}/city/${visibleResults[hlIdx].slug}`);
                 }
                 else if (e.key === "Escape") { setFocused(false); }
               }}
               placeholder={t("homeSearchPlaceholder")}
-              className={`w-full px-4 py-3 rounded-xl text-sm border transition focus:outline-none ${darkMode
+              className={`w-full py-3.5 pl-11 pr-4 rounded-xl text-[15px] border-2 transition focus:outline-none shadow-sm ${darkMode
                 ? "bg-slate-800 border-slate-700 text-white placeholder-slate-500 focus:border-blue-500"
-                : "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500"
+                : "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-blue-500 shadow-[0_4px_12px_rgba(0,0,0,0.06)]"
               }`}
             />
-            <svg className={`absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 ${subCls}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
+            <svg className={`absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 ${subCls}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
 
             {focused && search.trim() && results.length > 0 && (
               <div ref={dropRef}
                 className={`absolute top-full mt-1 w-full rounded-xl shadow-lg border overflow-y-auto z-50 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}
                 style={{ maxHeight: "min(360px, 50vh)" }}>
-                {results.map((c, i) => (
+                {visibleResults.map((c, i) => (
                   <Link key={c.id} href={`/${locale}/city/${c.slug}`}
                     onClick={() => { trackEvent("search_city", { city_slug: c.slug }); setSearch(""); setFocused(false); }}
                     onMouseEnter={() => setHlIdx(i)}
@@ -131,6 +144,11 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
                     <span className={`text-xs ${subCls}`}>{getCountryName(c.id)}</span>
                   </Link>
                 ))}
+                {hasMoreResults && (
+                  <div className={`px-4 py-2 text-xs border-t ${darkMode ? "border-slate-700 text-slate-400" : "border-slate-100 text-slate-500"}`}>
+                    {t("homeMoreResults", { count: results.length - visibleResults.length })}
+                  </div>
+                )}
               </div>
             )}
             {focused && search.trim() && results.length === 0 && (
@@ -141,25 +159,25 @@ export default function HomeContent({ locale: urlLocale }: { locale: string }) {
             )}
           </div>
 
-          {/* Popular cities — vertical feed list */}
-          <div className={`text-xs font-semibold mb-3 ${subCls}`}>{t("homePopularCities")}</div>
-          <div>
-            {POPULAR_HOME.map(c => (
-              <Link key={c.id} href={`/${locale}/city/${c.slug}`}
-                className={`flex items-center gap-3 py-3 border-b transition ${divider} ${darkMode ? "hover:bg-slate-900" : "hover:bg-slate-50"}`}>
-                <span className="text-xl">{c.flag}</span>
-                <div className="flex-1 min-w-0">
-                  <div className={`text-sm font-bold ${headCls}`}>{getCityName(c.id)}</div>
-                  <div className={`text-xs ${subCls}`}>{getCountryName(c.id)}</div>
-                </div>
-                <svg className={`w-4 h-4 shrink-0 ${subCls}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="m9 5 7 7-7 7" /></svg>
-              </Link>
-            ))}
+          {/* Popular cities — pill cards grid */}
+          <div className={`border-t pt-6 mt-2 transition-all duration-200 ${divider} ${focused ? "opacity-0 pointer-events-none max-h-0 overflow-hidden -translate-y-2 pt-0 mt-0 border-transparent" : "opacity-100 max-h-[320px] translate-y-0"}`}>
+            <div className={`text-xs font-bold mb-4 text-center ${subCls}`}>{t("homePopularCities")}</div>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {POPULAR_HOME.map(c => (
+                <Link key={c.id} href={`/${locale}/city/${c.slug}`}
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold transition ${darkMode ? "bg-slate-800 hover:bg-slate-700 text-slate-200" : "bg-slate-100 hover:bg-slate-200 text-slate-800"}`}>
+                  <span>{c.flag}</span>
+                  <span>{getCityName(c.id)}</span>
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Stats */}
+          {/* Links per spec: "或 查看排行榜 · 方法论" */}
           <p className={`mt-6 text-xs text-center ${subCls}`}>
-            100+ {t("homeCities")} · 20+ {t("homeProfessions")} · {t("homeDataCoverage")}
+            <Link href={`/${locale}/ranking`} className="underline hover:text-blue-500">{t("ranking")}</Link>
+            {" · "}
+            <Link href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</Link>
           </p>
         </div>
       )}

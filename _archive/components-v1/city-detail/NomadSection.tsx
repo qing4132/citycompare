@@ -60,7 +60,7 @@ export default function NomadSection({ city, cityName, locale, darkMode, t, noma
     return (
         <div className={`py-3.5 border-b ${divider}`}>
             <button onClick={() => setOpen(o => !o)} className="w-full flex items-center gap-1.5 text-left">
-                <span className="text-[15px]">✈️</span>
+                <span className="text-[15px]">🌍</span>
                 <span className={`text-[15px] font-extrabold ${headCls}`}>{t("nomadSection")}</span>
                 {visa?.hasNomadVisa && <span className={`text-[13px] ${subCls}`}>· {visaName}{duration ? ` · ${duration}` : ""}</span>}
                 <span className={`text-[13px] ml-auto transition-transform ${open ? "rotate-90" : ""} ${subCls}`}>▶</span>

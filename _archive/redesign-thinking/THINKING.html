@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhichCity — 从零开始的产品思考</title>
+<style>
+  :root { --bg: #fafafa; --fg: #1a1a2e; --sub: #64748b; --accent: #2563eb; --border: #e2e8f0; --surface: #fff; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.8; max-width: 720px; margin: 0 auto; padding: 40px 24px 120px; }
+  h1 { font-size: 28px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.5px; }
+  h2 { font-size: 22px; font-weight: 900; margin-top: 56px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px solid var(--fg); }
+  h3 { font-size: 17px; font-weight: 800; margin-top: 32px; margin-bottom: 10px; color: var(--accent); }
+  p, li { font-size: 15px; margin-bottom: 10px; }
+  ul, ol { padding-left: 20px; }
+  strong { color: var(--fg); }
+  .dim { color: var(--sub); }
+  .highlight { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; margin: 20px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+  .highlight strong { color: #92400e; }
+  .green-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; margin: 20px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+  .green-box strong { color: #14532d; }
+  .red-box { background: #fef2f2; border-left: 4px solid #dc2626; padding: 14px 18px; margin: 20px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+  .red-box strong { color: #991b1b; }
+  .blue-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 14px 18px; margin: 20px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th { text-align: left; padding: 8px 10px; background: var(--fg); color: #fff; font-weight: 700; font-size: 12px; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  .tree { font-family: "SF Mono", Menlo, monospace; font-size: 13px; line-height: 1.9; background: #f8fafc; padding: 20px; border-radius: 10px; margin: 16px 0; white-space: pre; overflow-x: auto; }
+  .sketch { border: 2px solid var(--border); border-radius: 12px; padding: 20px; margin: 20px 0; background: var(--surface); font-size: 13px; }
+  .sketch-title { font-size: 11px; color: var(--sub); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<h1>WhichCity — 从零开始的产品思考</h1>
+<p class="dim">不是"改什么"，而是"到底要做什么"。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>一、用户到底在想什么</h2>
+
+<p>抛掉所有现有页面。只想一个人。</p>
+
+<p>他叫小张，28 岁，软件工程师，在北京。他周日晚上躺在床上刷手机，脑子里冒出一个念头：</p>
+
+<div class="highlight">
+  <strong>"如果我不在北京待了，去哪里比较好？"</strong>
+</div>
+
+<p>他打开 whichcity.run。从这一刻起，他的思维路径是：</p>
+
+<ol>
+  <li><strong>我有一个模糊的方向吗？</strong><br>
+    有 → 他心里已经有几个城市（东京？新加坡？）→ 他要<strong>评估</strong><br>
+    没有 → 他不知道去哪 → 他要<strong>发现</strong></li>
+  <li><strong>"评估"的核心问题是什么？</strong><br>
+    不是"安全指数是 87.8"。是：<br>
+    — 去了之后 <strong>每月能存多少钱？</strong><br>
+    — <strong>安不安全？</strong> 治安好不好、社会稳不稳<br>
+    — <strong>日子舒不舒服？</strong> 气候、语言、工时</li>
+  <li><strong>"发现"的核心问题是什么？</strong><br>
+    不是"按安全指数从高到低排"。是：<br>
+    — 以我的职业和收入，哪些城市 <strong>存钱最多？</strong><br>
+    — 哪些城市 <strong>又安全又便宜？</strong><br>
+    — 具体到"我"，不是泛泛的排名</li>
+</ol>
+
+<h3>关键洞察</h3>
+
+<div class="green-box">
+  <strong>用户不是来"看数据"的。他是来"做决定"的。</strong><br>
+  每一个像素都应该帮他更快地做出"去"或"不去"的判断。<br>
+  如果一块信息不能帮助决策，它就不应该出现在屏幕上。
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>二、产品到底需要什么</h2>
+
+<p>从小张的思维路径倒推，产品需要的<strong>能力</strong>是：</p>
+
+<table>
+  <tr><th>能力</th><th>小张的话</th><th>必要性</th></tr>
+  <tr><td>搜索一个城市</td><td>"我想看看东京"</td><td>🔴 没有这个产品不存在</td></tr>
+  <tr><td>评估一个城市</td><td>"东京适不适合我"</td><td>🔴 这是核心价值</td></tr>
+  <tr><td>发现好的城市</td><td>"有什么城市值得去"</td><td>🟡 重要，但可以很简单</td></tr>
+  <tr><td>对比两个城市</td><td>"东京和新加坡哪个好"</td><td>🟡 有用，但不是第一天需要</td></tr>
+  <tr><td>理解数据来源</td><td>"这数据靠谱吗"</td><td>⚪ 信任背书，可以很轻</td></tr>
+</table>
+
+<h3>现有五个页面的审判</h3>
+
+<table>
+  <tr><th>页面</th><th>判决</th><th>理由</th></tr>
+  <tr>
+    <td><strong>首页</strong></td>
+    <td>不应该单独存在</td>
+    <td>现在的首页就是一个搜索框+热门城市。这不是一个"页面"，这是城市页的入口状态。</td>
+  </tr>
+  <tr>
+    <td><strong>城市详情</strong></td>
+    <td>核心，保留</td>
+    <td>产品的全部价值在这里。但需要重新设计。</td>
+  </tr>
+  <tr>
+    <td><strong>排行榜</strong></td>
+    <td>改造为"发现"</td>
+    <td>现在是数据库表格式排行，应该变成"帮我找到适合我的城市"的工具。</td>
+  </tr>
+  <tr>
+    <td><strong>对比页</strong></td>
+    <td>延后</td>
+    <td>有价值但不是核心路径。第一版可以不做，用城市页上的"相似城市"覆盖。</td>
+  </tr>
+  <tr>
+    <td><strong>方法论</strong></td>
+    <td>降为 Footer 内容</td>
+    <td>一个独立页面太重了。数据来源和计算方式可以折叠在 Footer，或用 tooltip 附在每个数据点旁边。</td>
+  </tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>三、最小产品是什么</h2>
+
+<div class="green-box">
+  <strong>结论：WhichCity 只需要两个"视图"，甚至可以在一个页面上。</strong>
+</div>
+
+<h3>视图 A：搜索/发现（空状态）</h3>
+<p>用户还没选城市时看到的东西。</p>
+<div class="sketch">
+  <div class="sketch-title">空状态 — 搜索/发现</div>
+  <div style="text-align:center; padding:20px 0;">
+    <div style="font-size:14px; font-weight:900; color:var(--accent); margin-bottom:6px;">WHICHCITY</div>
+    <div style="font-size:22px; font-weight:900; margin-bottom:16px;">如果可以去任何地方，<br>你会选哪座城市？</div>
+    <div style="background:#f1f5f9; border-radius:10px; padding:12px 16px; max-width:400px; margin:0 auto; text-align:left; color:var(--sub);">🔍 输入城市名…</div>
+    <div style="margin-top:24px; font-size:13px; color:var(--sub);">或 <a href="#" style="color:var(--accent);">按存钱率看排名</a></div>
+  </div>
+</div>
+<p>就这么多。不需要热门城市网格、不需要 12 个 pill、不需要统计数字。<br>
+一个问句 + 一个搜索框 + 一个排行入口链接。</p>
+
+<h3>视图 B：城市评估（有内容状态）</h3>
+<p>用户选了城市后看到的东西。这是产品的全部价值。后面详细展开。</p>
+
+<h3>发现（排行）在哪？</h3>
+<p>两种路径：</p>
+<ul>
+  <li><strong>路径 1</strong>：搜索框下方的"按存钱率看排名"链接，跳到一个简单列表页。不是 16 个 tab 的数据库表格——而是<strong>一个有明确观点的排行</strong>："如果你是软件工程师，存钱最多的城市是这些。"</li>
+  <li><strong>路径 2</strong>：城市页底部的"相似城市"卡片，引导横向探索。</li>
+</ul>
+
+<h3>对比在哪？</h3>
+<p>第一版不做独立对比页。对比需求通过两种方式覆盖：</p>
+<ul>
+  <li>城市页上的"相似城市"区块已经给出差异数据</li>
+  <li>未来如果需要，可以做成城市页的"分屏模式"而不是独立页面</li>
+</ul>
+
+<h3>方法论在哪？</h3>
+<p>每个数据区块的 Footer 注明来源。展开详情面板里有计算说明。不需要独立页面。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>四、站点结构</h2>
+
+<div class="tree">whichcity.run
+├── /[locale]/                    ← 搜索/发现（空状态）
+├── /[locale]/city/[slug]         ← 城市评估（核心）
+└── /[locale]/ranking             ← 排行列表（发现入口，极简）
+
+共 3 个路由。不是 5 个。
+对比页和方法论页从第一版中移除。</div>
+
+<p>URL 保持兼容：</p>
+<ul>
+  <li><code>/zh/compare/*</code> → 301 到首页（或做简化版）</li>
+  <li><code>/zh/methodology</code> → 301 到首页带锚点</li>
+</ul>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>五、城市页的重新设计</h2>
+
+<p>这次不从"区块"开始，从<strong>用户的阅读节奏</strong>开始。</p>
+
+<h3>阅读节奏</h3>
+
+<p>用户打开东京的页面。他的眼睛会按这个顺序扫描：</p>
+
+<table>
+  <tr><th>时间</th><th>眼睛在哪</th><th>脑子在想</th><th>页面给什么</th></tr>
+  <tr>
+    <td>0-1 秒</td>
+    <td>最大的字</td>
+    <td>"对，是东京"</td>
+    <td>🇯🇵 东京 · 日本</td>
+  </tr>
+  <tr>
+    <td>1-3 秒</td>
+    <td>颜色最强的区域</td>
+    <td>"这地方怎么样？"</td>
+    <td>一张有颜色的卡片：<br>"安全 A · 月存 ¥8 万 · 医疗前 15%"</td>
+  </tr>
+  <tr>
+    <td>3-10 秒</td>
+    <td>卡片下方</td>
+    <td>"具体数字是？"</td>
+    <td>三个大数字：¥33万 / ¥25万 / ¥8万</td>
+  </tr>
+  <tr>
+    <td>10-30 秒</td>
+    <td>继续往下滚</td>
+    <td>"其他方面呢？"</td>
+    <td>安全横条 + 生活画像网格</td>
+  </tr>
+  <tr>
+    <td>30 秒+</td>
+    <td>感兴趣才看</td>
+    <td>"税怎么算的？子指标？"</td>
+    <td>折叠区</td>
+  </tr>
+  <tr>
+    <td>离开前</td>
+    <td>底部</td>
+    <td>"还有别的选择吗？"</td>
+    <td>相似城市卡片 → 横向探索</td>
+  </tr>
+</table>
+
+<h3>信息层级</h3>
+
+<div class="highlight">
+  <strong>核心原则：每下一屏，信息密度升高，情感浓度降低。</strong><br>
+  首屏 = 结论（情感驱动，颜色、大字）<br>
+  中段 = 证据（数字、图表）<br>
+  底部 = 细节（折叠区、来源标注）
+</div>
+
+<p><strong>始终可见</strong>（不折叠）的信息：</p>
+<ul>
+  <li>城市名 + 国旗 + 国家 + 一句话简介</li>
+  <li>结论卡片（评级 + 关键数字 + 标签）</li>
+  <li>收入 / 支出 / 结余 三个数字</li>
+  <li>安全评级 + 四根横条</li>
+  <li>生活网格（6-8 个事实）</li>
+  <li>相似城市</li>
+</ul>
+
+<p><strong>折叠</strong>的信息：</p>
+<ul>
+  <li>税务明细（累进税率拆分）</li>
+  <li>安全/医疗/治理子指标</li>
+  <li>月度气候图</li>
+  <li>数字游民信息</li>
+</ul>
+
+<p><strong>不展示</strong>的信息：</p>
+<ul>
+  <li>基尼系数、性别工资差距、高等教育率、净迁移 — 太学术</li>
+  <li>监管质量、宽带普及率 — 代理指标，不直观</li>
+  <li>所有 confidence 值 — 仅在低置信时出⚠️</li>
+</ul>
+
+<h3>结论卡片的再思考</h3>
+
+<p>上一版的结论卡片是自然语言段落。但用户扫描速度极快，段落需要"阅读"。</p>
+
+<p>新想法：<strong>结论卡片不写段落，用结构化的 key-value</strong>：</p>
+
+<div class="sketch">
+  <div class="sketch-title">结论卡片 · 方案 B — 结构化</div>
+  <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-size:11px; font-weight:700; color:#16a34a; text-transform:uppercase; letter-spacing:0.5px;">✦ WhichCity 评估</span>
+      <span style="font-size:24px; font-weight:900; color:#16a34a;">A</span>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px; font-size:13px;">
+      <div><span style="color:#64748b;">月存</span> <strong>¥8 万</strong></div>
+      <div><span style="color:#64748b;">安全</span> <strong style="color:#16a34a;">88</strong>/100</div>
+      <div><span style="color:#64748b;">医疗</span> <strong>前 15%</strong></div>
+      <div><span style="color:#64748b;">AQI</span> <strong style="color:#16a34a;">42</strong> 优</div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+      <span style="font-size:11px; padding:2px 8px; border-radius:6px; background:#dcfce7; color:#166534;">极低犯罪</span>
+      <span style="font-size:11px; padding:2px 8px; border-radius:6px; background:#dbeafe; color:#1e40af;">中等税负</span>
+      <span style="font-size:11px; padding:2px 8px; border-radius:6px; background:#fef3c7; color:#92400e;">英语弱</span>
+    </div>
+  </div>
+</div>
+
+<p>对比方案 A（段落式）：</p>
+<div class="sketch">
+  <div class="sketch-title">结论卡片 · 方案 A — 段落</div>
+  <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:16px;">
+    <div style="font-size:11px; font-weight:700; color:#16a34a; text-transform:uppercase; letter-spacing:0.5px;">✦ WhichCity 评估</div>
+    <div style="font-size:15px; font-weight:600; line-height:1.6; margin-top:6px;">
+      安全评级 <strong>A</strong>，治理与医疗均为全球前列。
+      软件工程师税后月入约 <strong>¥33万</strong>，
+      扣除生活成本后月结余约 <strong>¥8万</strong>。
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+      <span style="font-size:11px; padding:2px 8px; border-radius:6px; background:#dcfce7; color:#166534;">极低犯罪</span>
+      <span style="font-size:11px; padding:2px 8px; border-radius:6px; background:#dbeafe; color:#1e40af;">中等税负</span>
+      <span style="font-size:11px; padding:2px 8px; border-radius:6px; background:#fef3c7; color:#92400e;">英语弱</span>
+    </div>
+  </div>
+</div>
+
+<p><strong>我倾向方案 B</strong>：扫描速度更快，关键数字一眼看完，不需要"阅读"。但这个由你决定。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>六、排行页的重新设计</h2>
+
+<p>现有排行榜：16 个 tab、气候筛选、子指标排序 — 这是给数据分析师用的，不是给小张用的。</p>
+
+<p>小张想知道的是：<strong>"以我的情况，去哪最划算？"</strong></p>
+
+<h3>极简排行</h3>
+
+<p>只做一个排行：<strong>按你选的职业的月结余排序</strong>。这是最直觉的"划算"定义。</p>
+
+<div class="sketch">
+  <div class="sketch-title">排行页 · 极简</div>
+  <div style="text-align:center; margin-bottom:16px;">
+    <div style="font-size:18px; font-weight:900;">软件工程师，去哪存钱最多？</div>
+    <div style="font-size:12px; color:var(--sub); margin-top:4px;">基于税后收入减生活成本 · <a href="#" style="color:var(--accent);">换职业</a></div>
+  </div>
+  <table style="font-size:13px;">
+    <tr><th>#</th><th>城市</th><th style="text-align:right;">月结余</th><th style="text-align:right;">安全</th></tr>
+    <tr><td style="font-weight:700; color:#16a34a;">1</td><td>🇦🇪 迪拜</td><td style="text-align:right; font-weight:700;">$5,100</td><td style="text-align:right;">73</td></tr>
+    <tr><td style="font-weight:700; color:#16a34a;">2</td><td>🇸🇬 新加坡</td><td style="text-align:right; font-weight:700;">$4,060</td><td style="text-align:right;">91</td></tr>
+    <tr><td style="font-weight:700; color:#16a34a;">3</td><td>🇨🇭 苏黎世</td><td style="text-align:right; font-weight:700;">$3,800</td><td style="text-align:right;">89</td></tr>
+    <tr><td>4</td><td>🇺🇸 旧金山</td><td style="text-align:right;">$3,500</td><td style="text-align:right;">62</td></tr>
+    <tr><td>5</td><td>🇺🇸 西雅图</td><td style="text-align:right;">$3,400</td><td style="text-align:right;">65</td></tr>
+    <tr><td colspan="4" style="text-align:center; color:var(--sub);">… 点击任意行 → 城市详情</td></tr>
+  </table>
+</div>
+
+<p>辅助列不超过 2 个。默认只显示安全指数（因为"又赚钱又安全"是最常见的筛选心理）。</p>
+
+<p>如果将来需要更多维度（"最适合家庭"、"最佳气候"），可以用"视角"概念：</p>
+<ul>
+  <li>💰 存钱最多（默认）</li>
+  <li>🛡️ 最安全</li>
+  <li>☀️ 最佳气候</li>
+  <li>⚖️ 综合平衡</li>
+</ul>
+<p>但第一版只做"存钱最多"。一个排序做到极致。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>七、不做什么</h2>
+
+<p>明确说"不做"比"做什么"更重要。</p>
+
+<div class="red-box">
+  <strong>第一版不做的事情：</strong>
+  <ul style="margin-top:8px;">
+    <li><strong>对比页</strong> — 用"相似城市"替代</li>
+    <li><strong>独立方法论页</strong> — 折叠在数据来源里</li>
+    <li><strong>16 个排行维度</strong> — 只做月结余排行</li>
+    <li><strong>气候筛选</strong> — 城市页上有气候信息就够了</li>
+    <li><strong>子指标排序</strong> — 过度专业</li>
+    <li><strong>分享面板（8 个社交平台）</strong> — 一个"复制链接"就够</li>
+    <li><strong>设置面板里的消费档位</strong> — 默认适度消费，暂不提供选项</li>
+    <li><strong>收入模式切换（gross/net/expat）</strong> — 默认税后，暂不提供选项</li>
+  </ul>
+</div>
+
+<p>这些功能不是没价值，是<strong>此刻不是最重要的</strong>。等核心体验做到极致，再一个一个加回来。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>八、技术架构</h2>
+
+<h3>文件结构</h3>
+<div class="tree">redesign/
+├── THINKING.html       ← 这个文件（设计思考）
+├── city/
+│   └── CityPage.tsx    ← 城市页主组件
+├── home/
+│   └── HomePage.tsx    ← 首页（搜索 + 入口）
+├── ranking/
+│   └── RankingPage.tsx ← 排行（极简列表）
+├── shared/
+│   ├── Nav.tsx         ← 导航栏（< 50 行）
+│   ├── Footer.tsx      ← 页脚
+│   └── theme.css       ← CSS 变量（暗色模式的唯一来源）
+└── lib/
+    ├── grading.ts      ← 评级计算（S/A/B/C/D）
+    ├── insights.ts     ← insight 文案生成
+    └── format.ts       ← 数字格式化</div>
+
+<h3>暗色模式策略</h3>
+<p>一个 CSS 文件定义所有颜色变量。<code>.dark</code> class 覆盖。<br>
+组件里<strong>零</strong> <code>darkMode</code> 三元表达式。颜色全部用 <code>text-[--fg]</code> 或 CSS 变量。</p>
+
+<h3>数据流</h3>
+<p>组件不做计算。所有计算在 <code>redesign/lib/</code> 的纯函数里完成。<br>
+组件只接收计算好的数据，只做渲染。</p>
+
+<div class="blue-box">
+  <strong>数据流：</strong><br>
+  <code>page.tsx (服务端)</code> → 加载 City + 计算 → 传给 <code>CityPage.tsx (客户端)</code> → 纯渲染
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>九、下一步</h2>
+
+<ol>
+  <li>确认方向 — 你同意"两个半视图"的结构吗？结论卡片选 A 还是 B？</li>
+  <li>先写 <code>redesign/shared/theme.css</code> — CSS 变量系统</li>
+  <li>写城市页 <code>CityPage.tsx</code> — 接真实数据</li>
+  <li>挂载到 <code>/dev/[slug]</code> 路由预览</li>
+  <li>满意后替换现有组件</li>
+</ol>
+
+</body>
+</html>

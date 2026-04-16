@@ -331,7 +331,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
       <div className="sticky z-40 pt-2" style={{ top: navH }}>
         {/* Top cover: hides scrolled content in the pt-2 gap between nav and card */}
         <div className={`absolute inset-x-0 top-0 h-2 ${darkMode ? "bg-slate-950" : "bg-slate-50"}`} />
-        <div className="max-w-6xl mx-auto px-4 relative">
+        <div className="max-w-[1080px] mx-auto px-4 relative">
           {/* Gradient cover: opaque at top (hides content behind top corners), transparent at bottom (lets content peek through bottom corners) */}
           <div className={`absolute inset-0 bg-gradient-to-b ${darkMode ? "from-slate-950" : "from-slate-50"} to-transparent`} />
           <div className={`relative rounded-lg border px-4 py-3 flex items-center gap-2 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
@@ -419,7 +419,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-[1080px] mx-auto px-4">
         {/* ── Wins summary (standalone card) ── */}
         <div className={`rounded-lg overflow-hidden border mt-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-100"}`}>
           <div className="grid px-4 py-2" style={{ gridTemplateColumns: `repeat(${visibleSlots.length}, minmax(0, 1fr))` }}>
@@ -792,7 +792,7 @@ export default function CompareContent({ initialCities, initialSlugs, allCities,
 
       {/* Footer */}
       <footer className={`px-4 py-5 text-center text-xs ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
-        <div className={`max-w-5xl mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
+        <div className={`max-w-[1080px] mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
           <p>{t("dataSourcesDisclaimer")}</p>
           <p className="mt-1"><a href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</a> · <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">GitHub</a> · <a href="mailto:qing4132@users.noreply.github.com" className="underline hover:text-blue-500">{t("footerFeedback")}</a></p>
         </div>

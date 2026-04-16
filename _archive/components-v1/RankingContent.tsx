@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { City, CostTier, IncomeMode, ClimateType } from "@/lib/types";
 import { COUNTRY_TRANSLATIONS, CITY_NAME_TRANSLATIONS } from "@/lib/i18n";
 import { CITY_FLAG_EMOJIS } from "@/lib/constants";
@@ -33,8 +33,8 @@ type SubSort =
 
 const INDEX_TABS = new Set<Tab>(["lifePressure", "safety", "healthcare", "freedom"]);
 
-// Tabs hidden until their data sources are rebuilt (cost/rent/housePrice/speed all null)
-const HIDDEN_TABS = new Set<Tab>(["expense", "savings", "housePrice", "housing", "rent", "hourlyWage", "internet", "lifePressure"]);
+// Keep tabs backed by real data visible; internet speed remains hidden until data is restored.
+const HIDDEN_TABS = new Set<Tab>(["internet"]);
 
 const GROUPS: { labelKey: string; tabs: Tab[] }[] = [
   { labelKey: "rankGroup_income", tabs: ["income", "expense", "savings"] },
@@ -219,7 +219,6 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     return result;
   });
   const [climOpen, setClimOpen] = useState(false);
-  const [tabsExpanded, setTabsExpanded] = useState(false);
   const setTab = (t: Tab) => {
     setTabState(t);
     localStorage.setItem("rankingTab", t);
@@ -279,20 +278,21 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
   const rows = useMemo(() => cities.map((city, i) => {
     const income = allIncomes[i];
-    const cost = city[costField] as number;
-    const savings = income - cost * 12;
-    const yearsToHome = city.housePrice !== null && savings > 0 ? (city.housePrice * 70) / savings : Infinity;
-    const hourlyWage = city.annualWorkHours !== null && city.annualWorkHours > 0 ? income / city.annualWorkHours : 0;
-    const savingsRate = income > 0 ? Math.round((savings / income) * 100) : 0;
+    const costValue = city[costField];
+    const cost = typeof costValue === "number" ? costValue : null;
+    const savings = cost !== null ? income - cost * 12 : null;
+    const yearsToHome = city.housePrice !== null && savings !== null && savings > 0 ? (city.housePrice * 70) / savings : Infinity;
+    const hourlyWage = city.annualWorkHours !== null && city.annualWorkHours > 0 ? income / city.annualWorkHours : null;
+    const savingsRate = income > 0 && savings !== null ? Math.round((savings / income) * 100) : null;
     const bigMacPower = city.bigMacPrice !== null && city.bigMacPrice > 0 && city.annualWorkHours !== null && city.annualWorkHours > 0
       ? (income / city.annualWorkHours) / city.bigMacPrice : null;
-    const lp = computeLifePressure(city, cities, income, allIncomes, costField);
+    const lp = cost !== null ? computeLifePressure(city, cities, income, allIncomes, costField) : null;
     return {
       city, i, income, monthlyCost: cost, savings, yearsToHome, hourlyWage, savingsRate, bigMacPower,
       housePrice: city.housePrice, monthlyRent: city.monthlyRent,
       annualWorkHours: city.annualWorkHours, paidLeaveDays: city.paidLeaveDays,
       airQuality: city.airQuality, internetSpeedMbps: city.internetSpeedMbps, directFlightCities: city.directFlightCities,
-      lifePressure: lp.value, lifePressureConf: lp.confidence === "high" ? 100 : lp.confidence === "medium" ? 80 : 50,
+      lifePressure: lp?.value ?? null, lifePressureConf: lp ? (lp.confidence === "high" ? 100 : lp.confidence === "medium" ? 80 : 50) : null,
       safetyIndex: city.safetyIndex, safetyConf: city.safetyConfidence,
       healthcareIndex: city.healthcareIndex, healthcareConf: city.healthcareConfidence,
       governanceIndex: city.governanceIndex, governanceConf: city.governanceConfidence,
@@ -309,22 +309,22 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   const nn = (arr: (number | null)[]): number[] => arr.filter((v): v is number => v !== null);
   const V = useMemo(() => ({
     income: rows.map(r => r.income),
-    monthlyCost: rows.map(r => r.monthlyCost),
-    savings: rows.map(r => r.savings),
+    monthlyCost: nn(rows.map(r => r.monthlyCost)),
+    savings: nn(rows.map(r => r.savings)),
     housePrice: nn(rows.map(r => r.housePrice)),
     yearsToHome: rows.map(r => r.yearsToHome).filter(isFinite),
     monthlyRent: nn(rows.map(r => r.monthlyRent)),
     workHours: nn(rows.map(r => r.annualWorkHours)),
-    hourlyWage: rows.filter(r => r.hourlyWage > 0).map(r => r.hourlyWage),
+    hourlyWage: nn(rows.map(r => r.hourlyWage)),
     paidLeave: nn(rows.map(r => r.paidLeaveDays)),
     air: nn(rows.map(r => r.airQuality)),
     internet: nn(rows.map(r => r.internetSpeedMbps)),
     flights: nn(rows.map(r => r.directFlightCities)),
-    lp: rows.map(r => r.lifePressure),
+    lp: nn(rows.map(r => r.lifePressure)),
     safety: rows.map(r => r.safetyIndex),
     hc: rows.map(r => r.healthcareIndex),
     freedom: rows.map(r => r.governanceIndex),
-    savingsRate: rows.map(r => r.savingsRate),
+    savingsRate: nn(rows.map(r => r.savingsRate)),
     bigMac: nn(rows.map(r => r.bigMacPower)),
     homicide: nn(rows.map(r => r.homicideInv)),
     polStab: nn(rows.map(r => r.politicalStability)),
@@ -344,8 +344,8 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     return [...rows].sort((a, b) => {
       switch (key) {
         case "income": return b.income - a.income;
-        case "expense": return a.monthlyCost - b.monthlyCost;
-        case "savings": return b.savings - a.savings;
+        case "expense": return nullLast(a.monthlyCost, b.monthlyCost, true);
+        case "savings": return nullLast(a.savings, b.savings, false);
         case "housePrice": return nullLast(a.housePrice, b.housePrice, true);
         case "housing": {
           const ay = isFinite(a.yearsToHome) ? a.yearsToHome : 999999;
@@ -354,16 +354,16 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
         }
         case "rent": return nullLast(a.monthlyRent, b.monthlyRent, true);
         case "workhours": return nullLast(a.annualWorkHours, b.annualWorkHours, true);
-        case "hourlyWage": return b.hourlyWage - a.hourlyWage;
+        case "hourlyWage": return nullLast(a.hourlyWage, b.hourlyWage, false);
         case "vacation": return nullLast(a.paidLeaveDays, b.paidLeaveDays, false);
         case "air": return nullLast(a.airQuality, b.airQuality, true);
         case "internet": return nullLast(a.internetSpeedMbps, b.internetSpeedMbps, false);
         case "flights": return nullLast(a.directFlightCities, b.directFlightCities, false);
-        case "lifePressure": return a.lifePressure - b.lifePressure;
+        case "lifePressure": return nullLast(a.lifePressure, b.lifePressure, true);
         case "safety": return b.safetyIndex - a.safetyIndex;
         case "healthcare": return b.healthcareIndex - a.healthcareIndex;
         case "freedom": return b.governanceIndex - a.governanceIndex;
-        case "savingsRate": return b.savingsRate - a.savingsRate;
+        case "savingsRate": return nullLast(a.savingsRate, b.savingsRate, false);
         case "bigMacPower": return nullLast(a.bigMacPower, b.bigMacPower, false);
         case "subWorkHours": return nullLast(a.annualWorkHours, b.annualWorkHours, true);
         case "yearsToHome": {
@@ -435,6 +435,10 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   const activeGroup = tabGroupIdx(tab);
   const isIndex = INDEX_TABS.has(tab);
   const sortKey = subSort || tab;
+  const visibleTabs = VISIBLE_GROUPS.flatMap(group => group.tabs);
+  const orderedGroupTabs = !isIndex
+    ? [tab, ...VISIBLE_GROUPS[activeGroup].tabs.filter(groupTab => groupTab !== tab)]
+    : [];
 
   /* ── Compute display ranks (dense — ties get same rank) ── */
   const displayRanks = useMemo(() => {
@@ -456,12 +460,12 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
           case "housing": return isFinite(r.yearsToHome) ? Math.round(r.yearsToHome * 10) : null;
           case "rent": return r.monthlyRent;
           case "workhours": return r.annualWorkHours;
-          case "hourlyWage": return r.hourlyWage > 0 ? Math.round(r.hourlyWage * 100) : null;
+          case "hourlyWage": return r.hourlyWage !== null ? Math.round(r.hourlyWage * 100) : null;
           case "vacation": return r.paidLeaveDays;
           case "air": return r.airQuality;
           case "internet": return r.internetSpeedMbps;
           case "flights": return r.directFlightCities;
-          case "lifePressure": return Math.round(r.lifePressure * 10);
+          case "lifePressure": return r.lifePressure !== null ? Math.round(r.lifePressure * 10) : null;
           case "safety": return Math.round(r.safetyIndex * 10);
           case "healthcare": return Math.round(r.healthcareIndex * 10);
           case "freedom": return Math.round(r.governanceIndex * 10);
@@ -507,7 +511,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
   const SubTh = ({ sk, label, weight, className = "" }: { sk: SubSort; label: string; weight?: string; className?: string }) => {
     const isActive = sk === null ? (subSort === null) : (sortKey === sk);
     return (
-      <th className={`${thBase} cursor-pointer hover:underline ${isActive ? sortColBg : ""} ${className}`}
+      <th className={`${thBase} text-right cursor-pointer hover:underline ${isActive ? sortColBg : ""} ${className}`}
         onClick={() => sk === null ? setSubSort(null) : handleSubSort(sk)}>
         {label}{weight && <span className="opacity-50 ml-0.5">({weight})</span>}{sortArrow(sk === null ? tab : (sk as string))}
       </th>
@@ -516,17 +520,48 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
   /* ── Tier-colored cell ── */
   const TC = ({ val, formatted, vals, higher, conf, active }: {
-    val: number | null; formatted: string; vals: number[]; higher: boolean; conf?: number; active?: boolean;
+    val: number | null; formatted: string; vals: number[]; higher: boolean; conf?: number | null; active?: boolean;
   }) => {
     const bg = active ? sortColBg : "";
     if (val === null || (typeof val === "number" && !isFinite(val)))
-      return <td className={`${tdBase} ${bg} ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{formatted}</td>;
+      return <td className={`${tdBase} ${bg} text-right ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{formatted}</td>;
     const tier = higher ? tierHigh(vals, val) : tierLow(vals, val);
     return (
-      <td className={`${tdBase} ${bg} font-semibold ${tierCls(tier)}`}>
-        {formatted}{conf !== undefined && conf < 80 && <span className={`ml-1 text-xs font-normal ${darkMode ? "text-amber-400" : "text-amber-600"}`}>*</span>}
+      <td className={`${tdBase} ${bg} text-right font-semibold ${tierCls(tier)}`}>
+        {formatted}{conf !== null && conf !== undefined && conf < 80 && <span className={`ml-1 text-xs font-normal ${darkMode ? "text-amber-400" : "text-amber-600"}`}>*</span>}
       </td>
     );
+  };
+
+  const renderGroupCell = (groupTab: Tab, r: typeof rows[0]) => {
+    switch (groupTab) {
+      case "income":
+        return <TC val={r.income} formatted={formatCurrency(r.income)} vals={V.income} higher={true} active={sortKey === "income"} />;
+      case "expense":
+        return <TC val={r.monthlyCost} formatted={r.monthlyCost !== null ? formatCurrency(r.monthlyCost) : "\u2014"} vals={V.monthlyCost} higher={false} active={sortKey === "expense"} />;
+      case "savings":
+        return <TC val={r.savings} formatted={r.savings !== null ? formatCurrency(r.savings) : "\u2014"} vals={V.savings} higher={true} active={sortKey === "savings"} />;
+      case "housePrice":
+        return <TC val={r.housePrice} formatted={r.housePrice !== null ? `${formatCurrency(r.housePrice)}/m²` : "\u2014"} vals={V.housePrice} higher={false} active={sortKey === "housePrice"} />;
+      case "housing":
+        return <TC val={isFinite(r.yearsToHome) ? r.yearsToHome : null} formatted={isFinite(r.yearsToHome) ? `${r.yearsToHome.toFixed(1)} ${t("insightYears")}` : t("rankNoSavings")} vals={V.yearsToHome} higher={false} active={sortKey === "housing"} />;
+      case "rent":
+        return <TC val={r.monthlyRent} formatted={r.monthlyRent !== null ? formatCurrency(r.monthlyRent) : "\u2014"} vals={V.monthlyRent} higher={false} active={sortKey === "rent"} />;
+      case "workhours":
+        return <TC val={r.annualWorkHours} formatted={r.annualWorkHours !== null ? `${r.annualWorkHours} ${t("unitH")}` : "\u2014"} vals={V.workHours} higher={false} active={sortKey === "workhours"} />;
+      case "hourlyWage":
+        return <TC val={r.hourlyWage} formatted={r.hourlyWage !== null ? formatCurrency(Math.round(r.hourlyWage * 100) / 100) : "\u2014"} vals={V.hourlyWage} higher={true} active={sortKey === "hourlyWage"} />;
+      case "vacation":
+        return <TC val={r.paidLeaveDays} formatted={r.paidLeaveDays !== null ? `${r.paidLeaveDays} ${t("paidLeaveDaysUnit")}` : "\u2014"} vals={V.paidLeave} higher={true} active={sortKey === "vacation"} />;
+      case "air":
+        return <TC val={r.airQuality} formatted={r.airQuality !== null ? `AQI ${r.airQuality}` : "\u2014"} vals={V.air} higher={false} active={sortKey === "air"} />;
+      case "internet":
+        return <TC val={r.internetSpeedMbps} formatted={r.internetSpeedMbps !== null ? `${r.internetSpeedMbps} Mbps` : "\u2014"} vals={V.internet} higher={true} active={sortKey === "internet"} />;
+      case "flights":
+        return <TC val={r.directFlightCities} formatted={r.directFlightCities !== null ? `${r.directFlightCities} ${t("directFlightsUnit")}` : "\u2014"} vals={V.flights} higher={true} active={sortKey === "flights"} />;
+      default:
+        return null;
+    }
   };
 
   /* ── Column headers ── */
@@ -560,9 +595,8 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
         </>);
       }
     }
-    const group = VISIBLE_GROUPS[activeGroup];
-    return group.tabs.map(gTab => (
-      <th key={gTab} className={`${thBase} cursor-pointer hover:underline ${sortKey === gTab ? sortColBg : ""}`}
+    return orderedGroupTabs.map(gTab => (
+      <th key={gTab} className={`${thBase} text-right cursor-pointer hover:underline ${sortKey === gTab ? sortColBg : ""}`}
         onClick={() => handleTab(gTab)}>
         {t(TAB_I18N[gTab]).replace(/^[^\s]+\s/, "")}{sortArrow(gTab)}
       </th>
@@ -574,8 +608,8 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
     if (isIndex) {
       switch (tab) {
         case "lifePressure": return (<>
-          <TC val={r.lifePressure} formatted={r.lifePressure.toFixed(1)} vals={V.lp} higher={false} conf={r.lifePressureConf} active={sortKey === "lifePressure"} />
-          <TC val={r.savingsRate} formatted={`${r.savingsRate}%`} vals={V.savingsRate} higher={true} active={sortKey === "savingsRate"} />
+          <TC val={r.lifePressure} formatted={r.lifePressure !== null ? r.lifePressure.toFixed(1) : "\u2014"} vals={V.lp} higher={false} conf={r.lifePressureConf} active={sortKey === "lifePressure"} />
+          <TC val={r.savingsRate} formatted={r.savingsRate !== null ? `${r.savingsRate}%` : "\u2014"} vals={V.savingsRate} higher={true} active={sortKey === "savingsRate"} />
           <TC val={r.bigMacPower} formatted={r.bigMacPower !== null ? r.bigMacPower.toFixed(1) : "\u2014"} vals={V.bigMac} higher={true} active={sortKey === "bigMacPower"} />
           <TC val={r.annualWorkHours} formatted={r.annualWorkHours !== null ? `${r.annualWorkHours} ${t("unitH")}` : "\u2014"} vals={V.workHours} higher={false} active={sortKey === "subWorkHours"} />
           <TC val={isFinite(r.yearsToHome) ? r.yearsToHome : null} formatted={isFinite(r.yearsToHome) ? `${r.yearsToHome.toFixed(1)} ${t("insightYears")}` : "\u2014"} vals={V.yearsToHome} higher={false} active={sortKey === "yearsToHome"} />
@@ -600,28 +634,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
         </>);
       }
     }
-    const g = activeGroup;
-    if (g === 0) return (<>
-      <TC val={r.income} formatted={formatCurrency(r.income)} vals={V.income} higher={true} active={sortKey === "income"} />
-      <TC val={r.monthlyCost} formatted={formatCurrency(r.monthlyCost)} vals={V.monthlyCost} higher={false} active={sortKey === "expense"} />
-      <TC val={r.savings} formatted={formatCurrency(r.savings)} vals={V.savings} higher={true} active={sortKey === "savings"} />
-    </>);
-    if (g === 1) return (<>
-      <TC val={r.housePrice} formatted={r.housePrice !== null ? `${formatCurrency(r.housePrice)}/m\u00b2` : "\u2014"} vals={V.housePrice} higher={false} active={sortKey === "housePrice"} />
-      <TC val={isFinite(r.yearsToHome) ? r.yearsToHome : null} formatted={isFinite(r.yearsToHome) ? `${r.yearsToHome.toFixed(1)} ${t("insightYears")}` : t("rankNoSavings")} vals={V.yearsToHome} higher={false} active={sortKey === "housing"} />
-      <TC val={r.monthlyRent} formatted={r.monthlyRent !== null ? formatCurrency(r.monthlyRent) : "\u2014"} vals={V.monthlyRent} higher={false} active={sortKey === "rent"} />
-    </>);
-    if (g === 2) return (<>
-      <TC val={r.annualWorkHours} formatted={r.annualWorkHours !== null ? `${r.annualWorkHours} ${t("unitH")}` : "\u2014"} vals={V.workHours} higher={false} active={sortKey === "workhours"} />
-      <TC val={r.hourlyWage > 0 ? r.hourlyWage : null} formatted={r.hourlyWage > 0 ? formatCurrency(Math.round(r.hourlyWage * 100) / 100) : "\u2014"} vals={V.hourlyWage} higher={true} active={sortKey === "hourlyWage"} />
-      <TC val={r.paidLeaveDays} formatted={r.paidLeaveDays !== null ? `${r.paidLeaveDays} ${t("paidLeaveDaysUnit")}` : "\u2014"} vals={V.paidLeave} higher={true} active={sortKey === "vacation"} />
-    </>);
-    if (g === 3) return (<>
-      <TC val={r.airQuality} formatted={r.airQuality !== null ? `AQI ${r.airQuality}` : "\u2014"} vals={V.air} higher={false} active={sortKey === "air"} />
-      <TC val={r.internetSpeedMbps} formatted={r.internetSpeedMbps !== null ? `${r.internetSpeedMbps} Mbps` : "\u2014"} vals={V.internet} higher={true} active={sortKey === "internet"} />
-      <TC val={r.directFlightCities} formatted={r.directFlightCities !== null ? `${r.directFlightCities} ${t("directFlightsUnit")}` : "\u2014"} vals={V.flights} higher={true} active={sortKey === "flights"} />
-    </>);
-    return null;
+    return orderedGroupTabs.map(groupTab => <Fragment key={groupTab}>{renderGroupCell(groupTab, r)}</Fragment>);
   };
 
   /* ── JSX ── */
@@ -637,7 +650,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
       <NavBar s={s} activePage="ranking" professionValue={activeProfession} professions={professions} showShare />
 
-      <div className="max-w-6xl mx-auto px-4 pt-4 sm:pt-6">
+      <div className="max-w-[960px] mx-auto px-4 pt-4 sm:pt-6">
 
         {/* Header */}
         <div className="text-center mb-4">
@@ -649,64 +662,73 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
           </p>
         </div>
 
-        {/* Grouped tab selector */}
-        <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-x-2">
-          {/* Climate filter button */}
-          <button onClick={() => { setClimOpen(v => !v); setTabsExpanded(false); }}
-            className={`order-1 py-2 px-3 rounded-lg text-xs font-medium transition-colors flex items-center ${climOpen
-              ? (darkMode ? "bg-emerald-900/40 text-emerald-300 ring-1 ring-emerald-500/50" : "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200")
-              : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500")
-              }`}>
-            <span className="w-4 shrink-0" />
-            <span className="flex-1 min-w-0 truncate text-center">
-              {hasClimFilter
-                ? (() => {
-                  const parts: React.ReactNode[] = [];
-                  if (climTypeFilter.size > 0) {
-                    const suffix = t("climSuffix");
-                    const typeNames = CLIMATE_TYPES.filter(ct => climTypeFilter.has(ct)).map(ct => t(CLIMATE_TYPE_I18N[ct]));
-                    parts.push(<span key="types" className="font-bold text-emerald-500">{typeNames.join("/") + suffix}</span>);
-                  }
-                  CLIM_DIMS.forEach(dim => {
-                    const sel = climDimFilter[dim.key];
-                    if (!sel || sel.size === 0) return;
-                    const prefix = t(dim.labelKey);
-                    const tierNames = dim.tiers.filter((_, ti) => sel.has(ti as ClimTier)).map(tier => t(tier.labelKey));
-                    parts.push(<span key={dim.key} className="font-bold text-emerald-500">{prefix + tierNames.join("/")}</span>);
-                  });
-                  return parts.map((p, i) => <span key={i}>{i > 0 && <span className="opacity-40"> · </span>}{p}</span>);
-                })()
-                : <span className="text-emerald-500">{t("allClimates")}</span>}
-            </span>
-            <svg className="w-4 h-4 shrink-0 opacity-40 transition-transform" style={{ transform: climOpen ? "rotate(180deg)" : "" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+        <div className={`mb-4 border-b pb-3 ${darkMode ? "border-slate-800" : "border-slate-200"}`}>
+          <div className="flex flex-wrap gap-x-1 gap-y-2">
+            {visibleTabs.map(groupTab => {
+              const selected = tab === groupTab;
+              return (
+                <button
+                  key={groupTab}
+                  onClick={() => handleTab(groupTab)}
+                  className={`px-3 py-1.5 text-[13px] font-semibold transition ${selected
+                    ? (darkMode ? "border-b-2 border-blue-400 text-blue-300" : "border-b-2 border-blue-600 text-blue-600")
+                    : (darkMode ? "text-slate-500 hover:text-slate-200" : "text-slate-400 hover:text-slate-700")
+                    }`}
+                >
+                  {t(TAB_I18N[groupTab]).replace(/^[^\s]+\s/, "")}
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-          {/* Climate filter dropdown – between buttons on narrow, below both on wide */}
-          <div className="order-2 sm:order-3 sm:col-span-2 grid transition-[grid-template-rows] duration-300 ease-in-out" style={{ gridTemplateRows: climOpen ? "1fr" : "0fr" }}>
-            <div className="overflow-hidden">
-              <div className="space-y-2 pt-1.5">
-                <div className="flex justify-end gap-0.5 text-xs">
-                  <button onClick={clearClimFilter}
-                    className={`px-2 py-0.5 transition-colors ${hasClimFilter
-                      ? (darkMode ? "text-emerald-400 font-semibold" : "text-emerald-600 font-semibold")
-                      : (darkMode ? "text-slate-600" : "text-slate-400")
-                      }`}>
-                    {t("clear")}
-                  </button>
-                </div>
+        <div className="mb-4 flex flex-wrap gap-2 text-xs">
+          <span className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600"}`}>
+            {t("rankAllRegions")}
+          </span>
+          <button
+            onClick={() => setClimOpen(v => !v)}
+            className={`rounded-md px-3 py-1.5 transition ${climOpen || hasClimFilter
+              ? (darkMode ? "bg-emerald-900/40 text-emerald-300 ring-1 ring-emerald-500/40" : "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200")
+              : (darkMode ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600")
+              }`}
+          >
+            {t("rankClimateFilter")}{hasClimFilter ? ` · ${climTypeFilter.size + Object.values(climDimFilter).filter(set => set.size > 0).length}` : ""}
+          </button>
+          <span className={`rounded-md px-3 py-1.5 ${darkMode ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600"}`}>
+            👤 {s.getProfessionLabel(activeProfession)}
+          </span>
+        </div>
+
+        <div className="grid transition-[grid-template-rows] duration-300 ease-in-out" style={{ gridTemplateRows: climOpen ? "1fr" : "0fr" }}>
+          <div className="overflow-hidden">
+            <div className={`mb-4 rounded-xl border p-3 ${darkMode ? "border-slate-800 bg-slate-900/70" : "border-slate-200 bg-white"}`}>
+              <div className="mb-2 flex justify-end text-xs">
+                <button
+                  onClick={clearClimFilter}
+                  className={`${hasClimFilter
+                    ? (darkMode ? "text-emerald-400" : "text-emerald-600")
+                    : (darkMode ? "text-slate-600" : "text-slate-400")
+                    }`}
+                >
+                  {t("clear")}
+                </button>
+              </div>
+              <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <div className={`text-xs font-medium shrink-0 w-16 ml-1 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t("climType")}</div>
-                  <div className="grid grid-cols-3 sm:grid-cols-6 gap-1 flex-1">
+                  <div className={`w-16 shrink-0 text-xs font-medium ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t("climType")}</div>
+                  <div className="grid flex-1 grid-cols-3 gap-1 sm:grid-cols-6">
                     {CLIMATE_TYPES.map(ct => {
                       const sel = climTypeFilter.has(ct);
                       return (
-                        <button key={ct} onClick={() => toggleClimType(ct)}
-                          className={`py-1.5 rounded-lg font-medium text-xs transition text-center truncate ${sel
+                        <button
+                          key={ct}
+                          onClick={() => toggleClimType(ct)}
+                          className={`rounded-lg py-1.5 text-xs font-medium transition ${sel
                             ? "bg-emerald-500 text-white shadow-sm"
-                            : (darkMode ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600")
-                            }`}>
+                            : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-600")
+                            }`}
+                        >
                           {t(CLIMATE_TYPE_I18N[ct])}
                         </button>
                       );
@@ -715,16 +737,19 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
                 </div>
                 {CLIM_DIMS.map(dim => (
                   <div key={dim.key} className="flex items-center gap-2">
-                    <div className={`text-xs font-medium shrink-0 w-16 ml-1 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t(dim.labelKey)}</div>
-                    <div className="grid grid-cols-3 gap-1 flex-1">
+                    <div className={`w-16 shrink-0 text-xs font-medium ${darkMode ? "text-slate-400" : "text-slate-500"}`}>{t(dim.labelKey)}</div>
+                    <div className="grid flex-1 grid-cols-3 gap-1">
                       {dim.tiers.map((tier, ti) => {
                         const sel = climDimFilter[dim.key]?.has(ti as ClimTier);
                         return (
-                          <button key={ti} onClick={() => toggleClimDim(dim.key, ti as ClimTier)}
-                            className={`py-1.5 rounded-lg font-medium text-xs transition text-center truncate ${sel
+                          <button
+                            key={ti}
+                            onClick={() => toggleClimDim(dim.key, ti as ClimTier)}
+                            className={`rounded-lg py-1.5 text-xs font-medium transition ${sel
                               ? "bg-emerald-500 text-white shadow-sm"
-                              : (darkMode ? "bg-slate-700 text-slate-400" : "bg-slate-100 text-slate-600")
-                              }`}>
+                              : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-600")
+                              }`}
+                          >
                             {t(tier.labelKey)}
                           </button>
                         );
@@ -732,91 +757,6 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Tab selection button */}
-          <button onClick={() => { setTabsExpanded(v => !v); setClimOpen(false); }}
-            className={`order-3 sm:order-2 mt-2 sm:mt-0 py-2 px-3 rounded-lg text-xs font-medium transition-colors flex items-center ${tabsExpanded
-              ? (darkMode ? "bg-blue-900/40 text-blue-300 ring-1 ring-blue-500/50" : "bg-blue-50 text-blue-700 ring-1 ring-blue-200")
-              : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100 text-slate-500")
-              }`}>
-            <span className="w-4 shrink-0" />
-            <span className="flex-1 min-w-0 truncate text-center">
-              {INDEX_TABS.has(tab)
-                ? <span className="font-bold text-blue-500">{t(TAB_I18N[tab])}</span>
-                : VISIBLE_GROUPS[tabGroupIdx(tab)].tabs.map((gt, i) => (
-                  <span key={gt}>
-                    {i > 0 && <span className="opacity-40">/</span>}
-                    <span className={gt === tab ? "font-bold text-blue-500" : "opacity-60"}>{t(TAB_I18N[gt])}</span>
-                  </span>
-                ))}
-            </span>
-            <svg className="w-4 h-4 shrink-0 opacity-40 transition-transform" style={{ transform: tabsExpanded ? "rotate(180deg)" : "" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-
-          {/* Tab selection dropdown */}
-          <div className="order-4 sm:col-span-2 grid transition-[grid-template-rows] duration-300 ease-in-out" style={{ gridTemplateRows: tabsExpanded ? "1fr" : "0fr" }}>
-            <div className="overflow-hidden">
-              <div className="space-y-1.5 pt-1.5">
-                {/* Tab grids — non-index groups */}
-                {(() => {
-                  const nonIndex = VISIBLE_GROUPS.filter(g => !g.tabs.every(tb => INDEX_TABS.has(tb)));
-                  const indexGroup = VISIBLE_GROUPS.find(g => g.tabs.some(tb => INDEX_TABS.has(tb)));
-                  // Pair non-index groups into rows of 2
-                  const pairs: typeof nonIndex[] = [];
-                  for (let i = 0; i < nonIndex.length; i += 2) pairs.push(nonIndex.slice(i, i + 2));
-                  return (<>
-                    {pairs.map((pair, ri) => (
-                      <div key={ri} className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {pair.map(g => {
-                          const gi = VISIBLE_GROUPS.indexOf(g);
-                          return (
-                            <div key={g.labelKey} className={`grid grid-cols-${g.tabs.length} gap-1`}>
-                              {g.tabs.map(gTab => {
-                                const selected = tab === gTab;
-                                return (
-                                  <button key={gTab} onClick={() => handleTab(gTab)}
-                                    className={`py-2 rounded-lg font-medium text-xs transition text-center truncate ${selected
-                                      ? "bg-blue-600 text-white shadow-sm"
-                                      : gi === activeGroup
-                                        ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
-                                        : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600")
-                                      }`}>
-                                    {t(TAB_I18N[gTab])}
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ))}
-                    {/* Index group */}
-                    {indexGroup && (
-                      <div className={`grid grid-cols-${indexGroup.tabs.length} gap-1`}>
-                        {indexGroup.tabs.map(gTab => {
-                          const selected = tab === gTab;
-                          const idxGi = VISIBLE_GROUPS.indexOf(indexGroup);
-                          return (
-                            <button key={gTab} onClick={() => handleTab(gTab)}
-                              className={`py-2 rounded-lg font-medium text-xs transition text-center truncate ${selected
-                                ? "bg-blue-600 text-white shadow-sm"
-                                : idxGi === activeGroup
-                                  ? (darkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-700")
-                                  : (darkMode ? "bg-slate-800 text-slate-400" : "bg-slate-100/70 text-slate-600")
-                                }`}>
-                              {t(TAB_I18N[gTab])}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </>);
-                })()}
               </div>
             </div>
           </div>
@@ -840,18 +780,28 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
                 {filtered.map((r, idx) => {
                   const slug = CITY_SLUGS[r.city.id];
                   const rank = displayRanks[idx];
-                  const isTop3 = rank <= 3;
-                  const badge = rank === 1 ? "\ud83e\udd47" : rank === 2 ? "\ud83e\udd48" : rank === 3 ? "\ud83e\udd49" : `${rank}`;
+                  const isTopBand = idx < Math.ceil(filtered.length * 0.2);
+                  const rowHref = slug ? `/${locale}/city/${slug}` : null;
                   return (
                     <tr key={r.city.id}
+                      onClick={() => { if (rowHref) router.push(rowHref); }}
+                      onKeyDown={(event) => {
+                        if (!rowHref) return;
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          router.push(rowHref);
+                        }
+                      }}
+                      tabIndex={rowHref ? 0 : -1}
+                      role={rowHref ? "link" : undefined}
                       className={`${idx < filtered.length - 1 ? (darkMode ? "border-b border-slate-700/50" : "border-b border-slate-100") : ""
-                        } ${isTop3 ? (darkMode ? "bg-blue-900/10" : "bg-blue-50/50") : idx % 2 === 1 ? (darkMode ? "bg-slate-700/20" : "bg-slate-50/60") : ""
-                        } hover:${darkMode ? "bg-slate-700/30" : "bg-slate-50"} transition`}>
-                      <td className={`${tdBase} font-bold text-center ${darkMode ? "text-slate-300" : "text-slate-600"}`}>{badge}</td>
+                        } ${isTopBand ? (darkMode ? "bg-emerald-950/20" : "bg-emerald-50/60") : idx % 2 === 1 ? (darkMode ? "bg-slate-700/20" : "bg-slate-50/60") : ""
+                        } ${rowHref ? (darkMode ? "cursor-pointer hover:bg-slate-700/30" : "cursor-pointer hover:bg-slate-50") : ""} transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60`}>
+                      <td className={`${tdBase} text-center font-bold ${isTopBand ? (darkMode ? "text-emerald-400" : "text-emerald-600") : (darkMode ? "text-slate-300" : "text-slate-600")}`}>{rank}</td>
                       <td className={tdBase}>
                         <span className="mr-1.5">{CITY_FLAG_EMOJIS[r.city.id] || "\ud83c\udfd9\ufe0f"}</span>
                         {slug ? (
-                          <Link href={`/${locale}/city/${slug}`} className={`font-semibold hover:underline ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
+                          <Link href={`/${locale}/city/${slug}`} onClick={event => event.stopPropagation()} className={`font-semibold hover:underline ${darkMode ? "text-blue-400" : "text-blue-600"}`}>
                             {getCityLabel(r.city)}
                           </Link>
                         ) : (
@@ -870,7 +820,7 @@ export default function RankingContent({ cities, locale: urlLocale }: Props) {
 
       </div>
       <footer className={`px-4 py-5 text-center text-xs ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
-        <div className={`max-w-5xl mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
+        <div className={`max-w-[960px] mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
           <p>{t("dataSourcesDisclaimer")}</p>
           <p className="mt-1"><a href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</a> · <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">GitHub</a> · <a href="mailto:qing4132@users.noreply.github.com" className="underline hover:text-blue-500">{t("footerFeedback")}</a></p>
         </div>

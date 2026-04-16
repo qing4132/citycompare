@@ -63,7 +63,7 @@ export default function SimilarCities(props: Props) {
         const norm = (v: number[]) => v.map((val, d) => { const r = maxs[d] - mins[d]; return r > 0 ? (val - mins[d]) / r : 0.5; });
         const cur = norm(all[cityIdx]);
         return allCities.map((c, i) => ({ id: c.id, dist: i === cityIdx ? Infinity : Math.sqrt(norm(all[i]).reduce((s, v, d) => s + (v - cur[d]) ** 2, 0)) }))
-            .sort((a, b) => a.dist - b.dist).slice(0, 6).map(d => d.id);
+            .sort((a, b) => a.dist - b.dist).slice(0, 4).map(d => d.id);
     })();
 
     // Highlight diff computation
@@ -102,28 +102,21 @@ export default function SimilarCities(props: Props) {
     return (
         <div className={`py-3.5 border-b ${divider}`}>
             <div className="flex items-center gap-1.5 mb-3">
-                <span className="text-[15px]">🔗</span>
+                <span className="text-[15px]">🔄</span>
                 <span className={`text-[15px] font-extrabold ${headCls}`}>{t("similarCities")}</span>
             </div>
-            <div className="space-y-3">
+            <div className="flex gap-2.5 overflow-x-auto pb-1 -mx-4 px-4">
                 {simData.map(sc => (
-                    <div key={sc.otherId} className="flex items-center gap-3">
-                        <span className="text-[24px]">{CITY_FLAG_EMOJIS[sc.otherId] || "🏙️"}</span>
-                        <div className="flex-1 min-w-0">
-                            <Link href={`/${locale}/city/${sc.otherSlug}`} className={`text-[15px] font-bold hover:underline ${headCls}`}>{sc.otherName}</Link>
-                            <div className="flex flex-wrap gap-x-2 gap-y-0.5">
-                                {sc.highlights.map((h, i) => (
-                                    <span key={i} className={`text-[13px] ${h.adv ? (darkMode ? "text-green-400" : "text-green-600") : (darkMode ? "text-rose-400" : "text-rose-500")}`}>
-                                        {t(h.key)} {h.sign}{h.pct}%
-                                    </span>
-                                ))}
+                    <Link key={sc.otherId} href={`/${locale}/city/${sc.otherSlug}`}
+                        className={`flex-shrink-0 w-[120px] rounded-[10px] p-2.5 text-center transition ${darkMode ? "bg-slate-800 hover:bg-slate-700" : "bg-slate-50 hover:bg-slate-100"}`}>
+                        <div className="text-[24px]">{CITY_FLAG_EMOJIS[sc.otherId] || "🏙️"}</div>
+                        <div className={`text-[12px] font-bold mt-1 mb-0.5 truncate ${headCls}`}>{sc.otherName}</div>
+                        {sc.highlights.slice(0, 1).map((h, i) => (
+                            <div key={i} className={`text-[11px] font-semibold ${h.adv ? (darkMode ? "text-green-400" : "text-green-600") : (darkMode ? "text-rose-400" : "text-rose-500")}`}>
+                                {t(h.key)} {h.sign}{h.pct}%
                             </div>
-                        </div>
-                        <Link href={`/${locale}/compare/${[slug, sc.otherSlug].sort().join("-vs-")}`}
-                            className={`text-[13px] px-2 py-1 rounded shrink-0 ${darkMode ? "bg-slate-800 text-slate-300" : "bg-slate-100 text-slate-600"}`}>
-                            {t("compareCity")}
-                        </Link>
-                    </div>
+                        ))}
+                    </Link>
                 ))}
             </div>
         </div>

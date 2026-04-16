@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { onCLS, onINP, onLCP } from "web-vitals";
 
+declare function gtag(...args: any[]): void;
+
 function sendToGA(name: string, value: number) {
   if (typeof gtag === "function") {
     gtag("event", name, {

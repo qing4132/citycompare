@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>横条配色方案对比</title>
+<style>
+  :root { --bg: #fafafa; --fg: #0f172a; --sub: #64748b; --border: #e2e8f0; }
+  body { font-family: Inter, -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--fg); max-width: 820px; margin: 0 auto; padding: 24px; line-height: 1.6; }
+  h1 { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
+  .subtitle { color: var(--sub); font-size: 13px; margin-bottom: 32px; }
+  .scheme { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  .scheme-title { font-size: 14px; font-weight: 800; margin-bottom: 12px; }
+  .bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .bar-label { font-size: 11px; color: var(--sub); width: 50px; text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+  .bar-val { font-size: 11px; font-weight: 700; width: 36px; flex-shrink: 0; }
+  .grade { font-size: 36px; font-weight: 900; line-height: 1; margin-right: 16px; }
+  .grade-label { font-size: 10px; color: var(--sub); }
+  .flex-row { display: flex; gap: 16px; align-items: flex-start; }
+  .bars { flex: 1; }
+  .swatch-row { display: flex; gap: 4px; margin-top: 10px; }
+  .swatch { width: 60px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #fff; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .dark-card { background: #0f172a; color: #f1f5f9; border-color: #1e293b; }
+  .dark-card .bar-label { color: #94a3b8; }
+  .dark-card .bar-track { background: #334155; }
+  .dark-card .grade-label { color: #64748b; }
+</style>
+</head>
+<body>
+
+<h1>横条配色方案对比</h1>
+<p class="subtitle">虚构城市：安全 82 / 医疗 61 / 治理 38 / 人权 15 / 经济 55<br>四种颜色全部出现：绿(≥75) / 中上(50-74) / 中下(25-49) / 红(&lt;25)</p>
+
+<script>
+// Data: [label, value]
+const data = [["安全",82],["医疗",61],["治理",38],["人权",15],["经济",55]];
+
+const schemes = [
+  { name: "1 红→橙→黄→绿", colors: ["#dc2626","#ea580c","#ca8a04","#16a34a"], labels: ["红<25","橙25","黄50","绿75"], darkColors: ["#fb7185","#fb923c","#facc15","#4ade80"] },
+  { name: "2 红→琥珀→钢蓝→绿", colors: ["#dc2626","#d97706","#4b7fa8","#16a34a"], labels: ["红<25","琥珀25","钢蓝50","绿75"], darkColors: ["#fb7185","#fbbf24","#7cb8d4","#4ade80"] },
+  { name: "3 红→橙→青→绿", colors: ["#dc2626","#ea580c","#0d9488","#16a34a"], labels: ["红<25","橙25","青50","绿75"], darkColors: ["#fb7185","#fb923c","#2dd4bf","#4ade80"] },
+  { name: "4 红→琥珀→石板灰→绿", colors: ["#dc2626","#d97706","#64748b","#16a34a"], labels: ["红<25","琥珀25","石板50","绿75"], darkColors: ["#fb7185","#fbbf24","#94a3b8","#4ade80"] },
+  { name: "5 红→浅红→浅绿→深绿", colors: ["#dc2626","#e87a5a","#65a30d","#16a34a"], labels: ["深红<25","浅红25","浅绿50","深绿75"], darkColors: ["#fb7185","#fca5a5","#a3e635","#4ade80"] },
+  { name: "6 红→琥珀→蓝→绿", colors: ["#dc2626","#d97706","#2563eb","#16a34a"], labels: ["红<25","琥珀25","蓝50","绿75"], darkColors: ["#fb7185","#fbbf24","#60a5fa","#4ade80"] },
+];
+
+function getColor(val, colors) {
+  if (val >= 75) return colors[3];
+  if (val >= 50) return colors[2];
+  if (val >= 25) return colors[1];
+  return colors[0];
+}
+
+function renderScheme(s, dark) {
+  const c = dark ? s.darkColors : s.colors;
+  const gradeColor = c[1]; // C grade = second color
+  let html = `<div class="scheme ${dark ? 'dark-card' : ''}">`;
+  html += `<div class="scheme-title">${s.name}${dark ? ' (暗色)' : ''}</div>`;
+  html += `<div class="flex-row"><div><div class="grade" style="color:${gradeColor}">C</div><div class="grade-label">综合</div></div><div class="bars">`;
+  for (const [label, val] of data) {
+    const col = getColor(val, c);
+    html += `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar-track"><div class="bar-fill" style="width:${val}%;background:${col};"></div></div><span class="bar-val" style="color:${col};">${val}.0</span></div>`;
+  }
+  html += `</div></div>`;
+  if (!dark) {
+    html += `<div class="swatch-row">`;
+    for (let i = 0; i < 4; i++) html += `<div class="swatch" style="background:${c[i]};">${s.labels[i]}</div>`;
+    html += `</div>`;
+  }
+  html += `</div>`;
+  return html;
+}
+
+// Light mode
+let out = '';
+for (const s of schemes) out += renderScheme(s, false);
+
+// Dark mode comparison
+out += '<h2 style="margin-top:40px;font-size:16px;font-weight:800;border-bottom:2px solid #0f172a;padding-bottom:6px;">暗色模式对比</h2>';
+out += '<div class="grid2">';
+for (const s of schemes) out += renderScheme(s, true);
+out += '</div>';
+
+document.write(out);
+</script>
+
+</body>
+</html>

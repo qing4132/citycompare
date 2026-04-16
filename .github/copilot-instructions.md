@@ -14,20 +14,27 @@ Core competitive advantage: profession × 81-country tax engine × comprehensive
 
 ## Architecture
 
-- `app/[locale]/` — Next.js App Router pages (thin SSR wrappers)
-- `components/` — Page components + NavBar + ClimateChart
+- `app/[locale]/` — Next.js App Router pages (thin SSR wrappers, 3 active routes)
+- `components/city/` — City detail page (CityPage + 6 section components)
+- `components/home/` — Home page (search + entry)
+- `components/ranking/` — Ranking page (monthly surplus sorted)
+- `components/shared/` — Nav, Footer, ClimateChart, theme.css (CSS variables)
+- `components/lib/` — Index system (indices.ts), tag generation (grading.ts)
 - `hooks/useSettings.ts` — global settings (profession, locale, theme, currency, etc.)
 - `lib/` — data loading, i18n, tax engine (81 countries), nomad i18n, types, constants
 - `data/` — **Single source of truth**: cities-source.json, export pipeline
 - `public/data/` — Auto-generated frontend JSON (cities.json, exchange-rates.json, nomad data)
 - `__tests__/` — unit tests (Vitest): tax engine, composite index
 - `scripts/` — active maintenance scripts (rates, climate, timezone, WB data)
-- `_archive/` — historical scripts, data sources, reports (reference only)
+- `_archive/` — v1 components, design thinking docs, historical scripts
 
 ## Key Data
 
-- 150 cities, 25 professions, 81 country tax systems, 10 currencies, 4 locales
-- City type: ~50 fields (income, costs, housing, safety, healthcare, freedom, climate, etc.)
+- 120 visible cities (151 total), 25 professions, 81 country tax systems, 10 currencies, 4 locales
+- 5 weighted indices: Safety, Healthcare, Government, Human Rights, Economy
+- Each index = 4 sub-indicators, min-max normalized, weighted average
+- New data sources: GPI (peace), RSF (press freedom), GDP growth rate
+- City type: ~55 fields (income, costs, housing, safety, healthcare, governance, climate, etc.)
 - Composite indices: Life Pressure (client-computed), Safety/Healthcare/Governance (pre-computed, 5-sub each)
 - Nomad data: visa info, VPN, English level, timezone overlap, visa-free matrix
 

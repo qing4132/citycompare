@@ -2,6 +2,7 @@ import { forwardRef, useState, useEffect } from "react";
 import type { City } from "@/lib/types";
 import { CITY_INTROS } from "@/lib/cityIntros";
 import { CITY_LANGUAGES, LANGUAGE_NAME_TRANSLATIONS } from "@/lib/cityLanguages";
+import { getClimateLabel } from "@/lib/clientUtils";
 import type { Locale } from "@/lib/types";
 
 interface GradeInfo {
@@ -73,6 +74,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection({ cit
                     const more = localized.length - 3;
                     const langStr = show.length > 0 ? show.join(" · ") + (more > 0 ? ` +${more}` : "") : "";
                     const infoParts = [countryName, tzInfo].filter(Boolean);
+                    const climateLabel = city.climate ? getClimateLabel(city.climate.type, locale) : null;
+                    if (climateLabel) infoParts.push(climateLabel);
                     return (
                         <>
                             {infoParts.length > 0 && <p className={`text-[13px] ${subCls}`}>{infoParts.join("  ·  ")}</p>}

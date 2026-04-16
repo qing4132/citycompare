@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>城市详情页 · 重新设计</title>
+<style>
+/* ════════════════════════════════════════════════════════════
+   设计原则（从零开始思考）
+   ═══════════════════════════════════════════════════════════
+
+   用户打开这个页面时，脑子里只有一个问题：
+   "这个城市，我去了之后，日子过得怎么样？"
+
+   他们不需要看到 40 个数字。他们需要的是：
+   1. 三秒内知道这个城市安不安全、能不能赚到钱
+   2. 十秒内形成"值得考虑"或"不适合我"的判断
+   3. 想深挖时有通道，但不被迫面对所有细节
+
+   所以页面的结构不是"数据分类展示"，而是一个决策漏斗：
+   识别 → 定性 → 定量 → 细节 → 下一步
+
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 主题变量：一处定义，全局生效 ── */
+:root {
+  --bg: #ffffff;
+  --bg-page: #fafafa;
+  --fg: #0f172a;
+  --fg-secondary: #475569;
+  --fg-muted: #94a3b8;
+  --border: #e2e8f0;
+  --surface: #f8fafc;
+  --green: #16a34a;
+  --green-bg: #f0fdf4;
+  --green-border: #bbf7d0;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --bar-track: #f1f5f9;
+  --radius: 12px;
+  --max-w: 640px;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0f172a;
+  --bg-page: #020617;
+  --fg: #f1f5f9;
+  --fg-secondary: #94a3b8;
+  --fg-muted: #64748b;
+  --border: #1e293b;
+  --surface: #1e293b;
+  --green: #4ade80;
+  --green-bg: rgba(22,163,74,0.12);
+  --green-border: rgba(74,222,128,0.25);
+  --amber: #fbbf24;
+  --amber-bg: rgba(217,119,6,0.12);
+  --amber-border: rgba(251,191,36,0.25);
+  --red: #fb7185;
+  --red-bg: rgba(220,38,38,0.12);
+  --red-border: rgba(251,113,133,0.25);
+  --blue: #60a5fa;
+  --blue-bg: rgba(37,99,235,0.12);
+  --blue-border: rgba(96,165,250,0.25);
+  --bar-track: #334155;
+  color-scheme: dark;
+}
+
+/* ── 重置 ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: var(--bg-page);
+  color: var(--fg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 页面容器 ── */
+.page {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ── 区块分隔 ── */
+.section {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child { border-bottom: none; }
+
+/* ── 区块标题 ── */
+.section-title {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.section-title .emoji { font-size: 15px; }
+
+/* ── 导航栏 ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--fg);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+.nav-back {
+  font-size: 20px;
+  color: var(--blue);
+  text-decoration: none;
+  margin-right: 8px;
+}
+.nav-right {
+  font-size: 12px;
+  color: var(--fg-muted);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.nav-right a { color: var(--fg-muted); text-decoration: none; }
+.nav-right a:hover { color: var(--fg); }
+
+/* ══════════════════════════════════════════════════════════
+   ZONE 1: 身份 — "我在看什么城市？"
+   3 秒内完成识别。城市名、国家、时区、一句话定位。
+   ══════════════════════════════════════════════════════════ */
+.identity h1 {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.identity-meta {
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin-top: 2px;
+}
+.identity-intro {
+  font-size: 14px;
+  color: var(--fg-secondary);
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ZONE 2: 结论 — "一句话告诉我结论"
+   这是整个页面最重要的组件。
+   用户可能只看这一块就离开——所以它必须足够完整。
+   ══════════════════════════════════════════════════════════ */
+.verdict {
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 1px solid;
+  margin-top: 16px;
+}
+.verdict.green {
+  background: var(--green-bg);
+  border-color: var(--green-border);
+}
+.verdict.amber {
+  background: var(--amber-bg);
+  border-color: var(--amber-border);
+}
+.verdict.red {
+  background: var(--red-bg);
+  border-color: var(--red-border);
+}
+.verdict-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+.verdict.green .verdict-label { color: var(--green); }
+.verdict.amber .verdict-label { color: var(--amber); }
+.verdict.red .verdict-label { color: var(--red); }
+.verdict-text {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.verdict-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+/* ══════════════════════════════════════════════════════════
+   ZONE 3: 钱 — "我能活下去吗？"
+   三个数字，并排。这是用户最关心的东西。
+   收入 - 支出 = 结余。一眼看完。
+   ══════════════════════════════════════════════════════════ */
+.money-grid {
+  display: flex;
+  gap: 16px;
+}
+.money-item { flex: 1; }
+.money-num {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+.money-label {
+  font-size: 11px;
+  color: var(--fg-muted);
+  margin-top: 4px;
+}
+
+/* Insight box: 把数字翻译成人话 */
+.insight {
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--fg-secondary);
+  line-height: 1.6;
+}
+.insight strong { color: var(--fg); font-weight: 700; }
+
+/* 展开提示 */
+.expand-trigger {
+  font-size: 12px;
+  color: var(--fg-muted);
+  text-align: center;
+  padding: 8px 0 0;
+  cursor: pointer;
+  user-select: none;
+}
+.expand-trigger:hover { color: var(--blue); }
+
+/* ══════════════════════════════════════════════════════════
+   ZONE 4: 安全与社会 — "这个地方靠谱吗？"
+   一个字母评级 + 四根横条。简洁有力。
+   ══════════════════════════════════════════════════════════ */
+.safety-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.safety-grade {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+}
+.safety-grade-label {
+  font-size: 11px;
+  color: var(--fg-muted);
+  margin-top: 2px;
+}
+.bars { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.bar-row { display: flex; align-items: center; gap: 8px; }
+.bar-name {
+  font-size: 12px;
+  color: var(--fg-secondary);
+  width: 42px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bar-track);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.bar-val {
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ZONE 5: 生活画像 — "日常是什么感觉？"
+   紧凑的事实网格。不需要大数字，只需要快速扫描。
+   ══════════════════════════════════════════════════════════ */
+.life-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px 16px;
+}
+.life-item {}
+.life-val {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.life-label {
+  font-size: 11px;
+  color: var(--fg-muted);
+  margin-top: 1px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ZONE 6: 深入（折叠区）— "我想看细节"
+   税务、气候图、游民信息、子指标。
+   默认折叠，点击展开。
+   ══════════════════════════════════════════════════════════ */
+.collapse-panel {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.2s ease, margin 0.3s ease;
+}
+.collapse-panel.open {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 12px;
+}
+.kv-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.kv-row:last-child { border-bottom: none; }
+.kv-key { color: var(--fg-secondary); }
+.kv-val { font-weight: 600; color: var(--fg); }
+
+/* ══════════════════════════════════════════════════════════
+   ZONE 7: 相似城市 — "还有什么选择？"
+   横向滚动卡片。点击跳转。
+   ══════════════════════════════════════════════════════════ */
+.similar-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  scrollbar-width: none;
+}
+.similar-strip::-webkit-scrollbar { display: none; }
+.similar-card {
+  flex-shrink: 0;
+  width: 110px;
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--fg);
+  transition: transform 0.15s;
+}
+.similar-card:hover { transform: translateY(-2px); }
+.similar-flag { font-size: 24px; }
+.similar-name { font-size: 12px; font-weight: 700; margin-top: 4px; }
+.similar-diff { font-size: 11px; font-weight: 600; margin-top: 2px; }
+
+/* ══════════════════════════════════════════════════════════
+   Footer
+   ══════════════════════════════════════════════════════════ */
+.footer {
+  padding: 20px 0 40px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--fg-muted);
+  line-height: 1.7;
+}
+.footer a { color: var(--fg-muted); }
+
+/* ══════════════════════════════════════════════════════════
+   工具类
+   ══════════════════════════════════════════════════════════ */
+.c-green { color: var(--green); }
+.c-amber { color: var(--amber); }
+.c-red { color: var(--red); }
+.c-blue { color: var(--blue); }
+.c-muted { color: var(--fg-muted); }
+
+/* 暗色切换按钮 */
+.theme-toggle {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     导航栏 — 极简。品牌 + 返回 + 快捷操作。
+     ════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div style="display:flex; align-items:center;">
+      <a href="#" class="nav-back">‹</a>
+      <a href="#" class="nav-brand">WhichCity</a>
+    </div>
+    <div class="nav-right">
+      <a href="#">⇅ 对比</a>
+      <span style="opacity:0.3">·</span>
+      <a href="#">↗ 分享</a>
+      <span style="opacity:0.3">·</span>
+      <a href="#">⚙</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ═══════ ZONE 1: 身份 ═══════ -->
+  <div class="section identity">
+    <h1>🇯🇵 东京</h1>
+    <p class="identity-meta">日本 · UTC+9 · 15:42 · 温带</p>
+    <p class="identity-intro">
+      安全指数近 88，医疗和治理评分同样优秀。同级城市中租金偏低，但日常生活高度依赖日语。夏季高温高湿，AQI 42，四季分明。
+    </p>
+  </div>
+
+  <!-- ═══════ ZONE 2: 结论 ═══════ -->
+  <div class="verdict green">
+    <div class="verdict-label">✦ WhichCity 评估</div>
+    <div class="verdict-text">
+      安全评级 <strong>A</strong>，治理与医疗均为全球前列。<br>
+      软件工程师税后月入约 <strong>¥33万</strong>，
+      扣除生活成本后月结余约 <strong>¥8万</strong>。
+    </div>
+    <div class="verdict-tags">
+      <span class="tag tag-green">极低犯罪</span>
+      <span class="tag tag-green">顶级医疗</span>
+      <span class="tag tag-blue">中等税负</span>
+      <span class="tag tag-amber">英语弱</span>
+    </div>
+  </div>
+
+  <!-- ═══════ ZONE 3: 钱 ═══════ -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">💰</span> 收入与开支</div>
+    <div class="money-grid">
+      <div class="money-item">
+        <div class="money-num">¥33<span style="font-size:16px">万</span></div>
+        <div class="money-label">税后月收入</div>
+      </div>
+      <div class="money-item">
+        <div class="money-num c-amber">¥25<span style="font-size:16px">万</span></div>
+        <div class="money-label">月生活成本</div>
+      </div>
+      <div class="money-item">
+        <div class="money-num c-green">¥8<span style="font-size:16px">万</span></div>
+        <div class="money-label">月结余</div>
+      </div>
+    </div>
+    <div style="font-size:11px; color:var(--fg-muted); margin-top:6px;">
+      软件工程师 · 中位数薪资 · 适度消费
+    </div>
+    <div class="insight">
+      💡 存钱率约 <strong>24%</strong>，
+      买一套 60m² 的房子约需 <strong>8.2 年</strong>。
+      租金 <strong>$1,292</strong>/月在同级城市中偏低。
+    </div>
+    <div class="expand-trigger" onclick="toggle('tax-detail')">▾ 税务明细</div>
+    <div id="tax-detail" class="collapse-panel">
+      <div style="background:var(--surface); border-radius:10px; padding:12px;">
+        <div class="kv-row"><span class="kv-key">税前年薪</span><span class="kv-val">¥7,200,000</span></div>
+        <div class="kv-row"><span class="kv-key">所得税（累进）</span><span class="kv-val c-red">-¥527,000</span></div>
+        <div class="kv-row"><span class="kv-key">住民税 10%</span><span class="kv-val c-red">-¥672,000</span></div>
+        <div class="kv-row"><span class="kv-key">社保合计</span><span class="kv-val c-red">-¥1,087,000</span></div>
+        <div class="kv-row" style="border-top:2px solid var(--border); padding-top:8px; margin-top:4px;">
+          <span class="kv-key" style="font-weight:700; color:var(--fg);">税后年薪</span>
+          <span class="kv-val c-green">¥4,434,000</span>
+        </div>
+        <div class="kv-row"><span class="kv-key">有效税率</span><span class="kv-val">38.4%</span></div>
+        <div style="font-size:11px; color:var(--fg-muted); margin-top:8px;">
+          来源：日本国税庁 2025 年税率表
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ ZONE 4: 安全与社会 ═══════ -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🛡️</span> 安全与社会</div>
+    <div class="safety-layout">
+      <div>
+        <div class="safety-grade c-green">A</div>
+        <div class="safety-grade-label">综合评级</div>
+      </div>
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-name">治安</span>
+          <div class="bar-track"><div class="bar-fill" style="width:88%; background:var(--green);"></div></div>
+          <span class="bar-val c-green">88</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-name">医疗</span>
+          <div class="bar-track"><div class="bar-fill" style="width:78%; background:var(--green);"></div></div>
+          <span class="bar-val c-green">78</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-name">治理</span>
+          <div class="bar-track"><div class="bar-fill" style="width:83%; background:var(--green);"></div></div>
+          <span class="bar-val c-green">83</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-name">自由</span>
+          <div class="bar-track"><div class="bar-fill" style="width:75%; background:var(--blue);"></div></div>
+          <span class="bar-val c-blue">75</span>
+        </div>
+      </div>
+    </div>
+    <div class="insight">
+      🏥 每千人 <strong>2.7</strong> 名医生，
+      全民健康覆盖 <strong>83</strong>/100，
+      预期寿命 <strong>84.5</strong> 岁。
+      医疗水平全球前 15%。
+    </div>
+    <div class="expand-trigger" onclick="toggle('safety-detail')">▾ 子指标明细</div>
+    <div id="safety-detail" class="collapse-panel">
+      <div style="background:var(--surface); border-radius:10px; padding:12px;">
+        <div style="font-weight:700; font-size:13px; margin-bottom:4px;">🛡️ 安全</div>
+        <div class="kv-row"><span class="kv-key">凶杀率 (每10万人)</span><span class="kv-val c-green">0.23</span></div>
+        <div class="kv-row"><span class="kv-key">政治稳定 (WGI)</span><span class="kv-val">85.3</span></div>
+        <div class="kv-row"><span class="kv-key">法治 (WGI)</span><span class="kv-val">83.0</span></div>
+        <div class="kv-row"><span class="kv-key">腐败控制 (WGI)</span><span class="kv-val">75.3</span></div>
+        <div style="font-weight:700; font-size:13px; margin:12px 0 4px;">🏥 医疗</div>
+        <div class="kv-row"><span class="kv-key">医生密度 (千人)</span><span class="kv-val">2.7</span></div>
+        <div class="kv-row"><span class="kv-key">UHC 覆盖</span><span class="kv-val">83</span></div>
+        <div class="kv-row"><span class="kv-key">病床密度 (千人)</span><span class="kv-val">12.6</span></div>
+        <div class="kv-row"><span class="kv-key">预期寿命</span><span class="kv-val c-green">84.5</span></div>
+        <div class="kv-row"><span class="kv-key">医疗自付比</span><span class="kv-val">12.2%</span></div>
+        <div style="font-weight:700; font-size:13px; margin:12px 0 4px;">⚖️ 治理</div>
+        <div class="kv-row"><span class="kv-key">清廉指数 (CPI)</span><span class="kv-val">73</span></div>
+        <div class="kv-row"><span class="kv-key">政府效能 (WGI)</span><span class="kv-val">91.9</span></div>
+        <div style="font-size:11px; color:var(--fg-muted); margin-top:8px;">
+          来源：World Bank WGI · Transparency International CPI · WHO UHC
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ ZONE 5: 生活画像 ═══════ -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🌤️</span> 生活与环境</div>
+    <div class="life-grid">
+      <div class="life-item">
+        <div class="life-val">15.8°C</div>
+        <div class="life-label">年均温</div>
+      </div>
+      <div class="life-item">
+        <div class="life-val c-green">42</div>
+        <div class="life-label">AQI</div>
+      </div>
+      <div class="life-item">
+        <div class="life-val">1,607h</div>
+        <div class="life-label">年工时</div>
+      </div>
+      <div class="life-item">
+        <div class="life-val">10天</div>
+        <div class="life-label">带薪假期</div>
+      </div>
+      <div class="life-item">
+        <div class="life-val">165</div>
+        <div class="life-label">直飞城市</div>
+      </div>
+      <div class="life-item">
+        <div class="life-val">0.925</div>
+        <div class="life-label">HDI</div>
+      </div>
+    </div>
+    <div class="insight">
+      🗣️ 官方语言日语。日常英语水平<strong>中等偏低</strong>，
+      工作交流可能需要日语能力。
+    </div>
+  </div>
+
+  <!-- ═══════ ZONE 5b: 月度气候（占位） ═══════ -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">📊</span> 月度气候</div>
+    <div style="height:120px; background: linear-gradient(180deg, var(--amber-bg) 0%, var(--blue-bg) 60%, var(--surface) 100%); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--fg-muted); font-size:12px;">
+      [温度折线 + 降水柱状 · Recharts]
+    </div>
+    <div style="font-size:11px; color:var(--fg-muted); margin-top:6px; text-align:center;">
+      温带 · 年降水 1,530mm · 日照 1,890h · 湿度 63%
+    </div>
+  </div>
+
+  <!-- ═══════ ZONE 5c: 数字游民（折叠） ═══════ -->
+  <div class="section">
+    <div class="section-title" style="cursor:pointer;" onclick="toggle('nomad-panel')">
+      <span class="emoji">🌍</span> 数字游民
+      <span style="font-size:12px; color:var(--fg-muted); font-weight:400; margin-left:4px;">· 工作签证 (HSP) · 5 年</span>
+      <span style="margin-left:auto; font-size:13px; color:var(--fg-muted);">▶</span>
+    </div>
+    <div id="nomad-panel" class="collapse-panel">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 16px;">
+        <div class="kv-row"><span class="kv-key">签证类型</span><span class="kv-val">工作签证 (HSP)</span></div>
+        <div class="kv-row"><span class="kv-key">最长停留</span><span class="kv-val">5 年</span></div>
+        <div class="kv-row"><span class="kv-key">VPN 限制</span><span class="kv-val c-green">无限制</span></div>
+        <div class="kv-row"><span class="kv-key">英语水平</span><span class="kv-val c-amber">B (中等)</span></div>
+        <div class="kv-row"><span class="kv-key">GMT 重叠</span><span class="kv-val">1h</span></div>
+        <div class="kv-row"><span class="kv-key">远程工作签</span><span class="kv-val c-amber">无</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ ZONE 7: 相似城市 ═══════ -->
+  <div class="section">
+    <div class="section-title"><span class="emoji">🔄</span> 相似城市</div>
+    <div class="similar-strip">
+      <a class="similar-card" href="#">
+        <div class="similar-flag">🇰🇷</div>
+        <div class="similar-name">首尔</div>
+        <div class="similar-diff c-green">存钱率 +3%</div>
+      </a>
+      <a class="similar-card" href="#">
+        <div class="similar-flag">🇹🇼</div>
+        <div class="similar-name">台北</div>
+        <div class="similar-diff c-green">成本 -22%</div>
+      </a>
+      <a class="similar-card" href="#">
+        <div class="similar-flag">🇸🇬</div>
+        <div class="similar-name">新加坡</div>
+        <div class="similar-diff c-blue">收入 +35%</div>
+      </a>
+      <a class="similar-card" href="#">
+        <div class="similar-flag">🇩🇪</div>
+        <div class="similar-name">慕尼黑</div>
+        <div class="similar-diff c-muted">安全 ≈</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════ Footer ═══════ -->
+  <div class="footer">
+    数据来源：World Bank · ILO · UNDP · 各国统计局<br>
+    <a href="#">方法论</a> · <a href="#">GitHub</a> · <a href="#">反馈</a><br>
+    <span style="opacity:0.7">数据仅供参考，不构成移居建议</span>
+  </div>
+
+</div>
+
+<!-- 暗色模式切换 -->
+<button class="theme-toggle" onclick="document.documentElement.classList.toggle('dark'); this.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';">🌙</button>
+
+<script>
+function toggle(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhichCity — 第二轮思考</title>
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a2e; --sub:#64748b; --accent:#2563eb; --border:#e2e8f0; --surface:#fff; --green:#16a34a; --amber:#d97706; --red:#dc2626; }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:Inter,-apple-system,system-ui,sans-serif; background:var(--bg); color:var(--fg); line-height:1.8; max-width:720px; margin:0 auto; padding:40px 24px 120px; }
+  h1 { font-size:28px; font-weight:900; margin-bottom:8px; letter-spacing:-0.5px; }
+  h2 { font-size:22px; font-weight:900; margin-top:56px; margin-bottom:16px; padding-bottom:8px; border-bottom:3px solid var(--fg); }
+  h3 { font-size:17px; font-weight:800; margin-top:32px; margin-bottom:10px; color:var(--accent); }
+  h4 { font-size:15px; font-weight:700; margin-top:20px; margin-bottom:8px; }
+  p,li { font-size:15px; margin-bottom:10px; }
+  ul,ol { padding-left:20px; }
+  strong { color:var(--fg); }
+  .dim { color:var(--sub); }
+  .box { padding:14px 18px; margin:20px 0; border-radius:0 8px 8px 0; font-size:14px; line-height:1.7; }
+  .box-yellow { background:#fffbeb; border-left:4px solid #f59e0b; }
+  .box-yellow strong { color:#92400e; }
+  .box-green { background:#f0fdf4; border-left:4px solid #16a34a; }
+  .box-green strong { color:#14532d; }
+  .box-red { background:#fef2f2; border-left:4px solid #dc2626; }
+  .box-red strong { color:#991b1b; }
+  .box-blue { background:#eff6ff; border-left:4px solid #2563eb; }
+  .box-blue strong { color:#1e40af; }
+  code { background:#f1f5f9; padding:2px 6px; border-radius:4px; font-size:13px; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+  th { text-align:left; padding:8px 10px; background:var(--fg); color:#fff; font-weight:700; font-size:12px; }
+  td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  hr { border:none; border-top:1px solid var(--border); margin:32px 0; }
+
+  /* Mock frames */
+  .phone { width:375px; border:3px solid #27272a; border-radius:36px; overflow:hidden; background:#fff; margin:24px auto; box-shadow:0 20px 40px -10px rgba(0,0,0,0.12); }
+  .phone-screen { padding:0; }
+  .phone-status { height:50px; background:#fff; display:flex; align-items:flex-end; justify-content:center; padding-bottom:4px; font-size:12px; font-weight:600; }
+
+  /* Inside phone styles */
+  .m-nav { display:flex; align-items:center; padding:10px 16px; border-bottom:1px solid #f1f5f9; font-size:14px; }
+  .m-nav .brand { font-weight:900; font-size:15px; }
+  .m-nav .back { font-size:18px; color:#2563eb; margin-right:6px; }
+  .m-nav .right { margin-left:auto; font-size:12px; color:#94a3b8; display:flex; gap:8px; }
+  .m-section { padding:16px; border-bottom:1px solid #f1f5f9; }
+  .m-divider { border-bottom:1px solid #f1f5f9; }
+</style>
+</head>
+<body>
+
+<h1>WhichCity — 第二轮思考</h1>
+<p class="dim">回应你的三个问题。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>一、关于结论卡片</h2>
+
+<p>你提了两个精准的问题：</p>
+<ol>
+  <li>它和下方数据重复 → 浪费空间 + "凑数"感</li>
+  <li>AI 味太重 → "玩具"感</li>
+</ol>
+
+<h3>问题的根源</h3>
+
+<p>结论卡片试图做的是"用一句话总结这个城市"。但这在根本上就有矛盾：</p>
+
+<div class="box box-yellow">
+  <strong>一个城市不能被一句话总结。</strong><br>
+  "安全 A，月存 ¥8 万"——这不是结论，这只是把两个数字串成一句话。<br>
+  用户扫一眼三个大数字 + 四根横条就知道的事情，不需要一段话来"翻译"。
+</div>
+
+<h3>三个方案</h3>
+
+<h4>方案 1：删掉卡片，直接进入数据</h4>
+<p>城市名 + 简介 → 直接接三个大数字。没有中间层。最干净。</p>
+<p><strong>风险</strong>：首屏太"冷"，没有情感抓手。用户落地后看到城市名+一堆数字，感受像数据库。</p>
+
+<h4>方案 2：保留"品牌区"，但换内容</h4>
+<p>你说得对，"WhichCity 评估"这个概念有品牌价值。问题不是品牌区本身，是里面装的内容。</p>
+
+<p>如果品牌区不装"AI总结段落"，装什么？</p>
+
+<div class="box box-green">
+  <strong>装标签。只装标签。</strong><br><br>
+  标签是结论卡片里唯一<strong>不和下方重复</strong>的东西。<br>
+  "极低犯罪"、"英语弱"、"高税负"——这些是对数据的<strong>定性判断</strong>，用户扫一眼就获得"这城市大概是什么性格"的感觉，但不会在下面的数字区块里逐字重复。<br><br>
+  而且标签天然适合扫描，不需要"阅读"。
+</div>
+
+<p>视觉上：不用渐变背景、不用大边框。就是一行小标签，紧跟在城市简介下面，几乎不占空间。不需要"卡片"形态——它只是城市简介的一部分。</p>
+
+<h4>方案 3：把"安全评级字母"提到城市名旁边</h4>
+<p>不用单独的卡片区域。直接在城市名旁边放一个字母徽章：</p>
+<p><code>🇯🇵 东京 <span style="background:#dcfce7; color:#166534; padding:1px 6px; border-radius:4px; font-size:12px; font-weight:700;">A</span></code></p>
+<p>这样安全评级在 0.5 秒内就被注意到，不需要任何额外的卡片空间。</p>
+
+<h3>我的建议</h3>
+
+<p><strong>方案 2 + 3 组合</strong>：评级字母贴在城市名旁边，标签行跟在简介下面。没有独立的"结论卡片"。</p>
+
+<p>安全警告城市（基辅、拉各斯）是特殊情况 —— 这些城市需要一个红色警告条（因为这是关乎人身安全的信息），但这不是"结论卡片"，这是"安全警告"。它只在 <code>safetyWarning</code> 存在时出现。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>二、城市详情页的完整重设计</h2>
+
+<h3>2.1 数据重新分组</h3>
+
+<p>现有分组是按"数据类型"分的：钱 / 安全 / 生活。这是程序员的分类方式，不是用户的思考方式。</p>
+
+<p>用户的思考是按<strong>决策因素</strong>来的：</p>
+
+<table>
+  <tr><th>用户在想</th><th>需要看到</th><th>模块名</th></tr>
+  <tr>
+    <td>"活得起吗？"</td>
+    <td>收入、支出、结余、租金、购房年限</td>
+    <td><strong>💰 经济</strong></td>
+  </tr>
+  <tr>
+    <td>"安全吗？社会靠谱吗？"</td>
+    <td>安全指数、治理、腐败、政治稳定</td>
+    <td><strong>🛡️ 安全与治理</strong></td>
+  </tr>
+  <tr>
+    <td>"健康吗？舒服吗？"</td>
+    <td>医疗水平、AQI、气候、工时、假期</td>
+    <td><strong>🌤️ 健康与生活</strong></td>
+  </tr>
+  <tr>
+    <td>"能融入吗？方便吗？"</td>
+    <td>语言、英语水平、直飞、签证、VPN、时区</td>
+    <td><strong>🔗 语言与连接</strong></td>
+  </tr>
+</table>
+
+<p>关键变化：</p>
+<ul>
+  <li><strong>"数字游民"被拆散了</strong> — 英语水平、VPN、签证信息融入"语言与连接"模块。不再有一个单独的"游民"区块（大部分用户不认为自己是"数字游民"，但他们关心签证和语言）</li>
+  <li><strong>医疗从"安全"分出来</strong> — 医疗和 AQI、气候放在一起，因为用户想的是"在这个城市生活，我的身体会怎么样"</li>
+  <li><strong>治理和安全合并</strong> — 腐败、政治稳定、法治——这些都在回答"这个社会值得信赖吗"</li>
+</ul>
+
+<h3>2.2 完整页面结构</h3>
+
+<div class="phone">
+<div class="phone-screen">
+  <div class="phone-status">9:41</div>
+
+  <!-- Nav -->
+  <div class="m-nav">
+    <span class="back">‹</span>
+    <span class="brand">WhichCity</span>
+    <div class="right">
+      <span>软件工程师 ▾</span>
+      <span>⚙</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="m-section">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="font-size:24px; font-weight:900;">🇯🇵 东京</div>
+      <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:6px; font-size:12px; font-weight:700;">A</span>
+    </div>
+    <div style="font-size:12px; color:#94a3b8; margin-top:2px;">日本 · UTC+9 · 15:42</div>
+    <p style="font-size:13px; color:#64748b; line-height:1.6; margin-top:8px;">
+      亚洲经济引擎，薪资竞争力强。生活成本相对欧美城市较低。公共交通发达，生活便利度高。
+    </p>
+    <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+      <span style="font-size:11px; padding:2px 7px; border-radius:5px; background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">极低犯罪</span>
+      <span style="font-size:11px; padding:2px 7px; border-radius:5px; background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">顶级医疗</span>
+      <span style="font-size:11px; padding:2px 7px; border-radius:5px; background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe;">中等税负</span>
+      <span style="font-size:11px; padding:2px 7px; border-radius:5px; background:#fffbeb; color:#92400e; border:1px solid #fde68a;">日语环境</span>
+    </div>
+  </div>
+
+  <!-- 💰 MONEY -->
+  <div class="m-section">
+    <div style="font-size:13px; font-weight:800; margin-bottom:8px;">💰 经济</div>
+    <div style="display:flex; gap:12px;">
+      <div style="flex:1;">
+        <div style="font-size:26px; font-weight:900; line-height:1; letter-spacing:-0.5px;">¥33<span style="font-size:15px">万</span></div>
+        <div style="font-size:11px; color:#94a3b8; margin-top:3px;">税后月入</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:26px; font-weight:900; line-height:1; color:#d97706; letter-spacing:-0.5px;">¥25<span style="font-size:15px">万</span></div>
+        <div style="font-size:11px; color:#94a3b8; margin-top:3px;">月支出</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:26px; font-weight:900; line-height:1; color:#16a34a; letter-spacing:-0.5px;">¥8<span style="font-size:15px">万</span></div>
+        <div style="font-size:11px; color:#94a3b8; margin-top:3px;">月结余</div>
+      </div>
+    </div>
+    <div style="background:#f8fafc; border-radius:8px; padding:8px 10px; margin-top:10px; font-size:12px; color:#475569; line-height:1.5;">
+      💡 存钱率 <strong style="color:#0f172a;">24%</strong>，
+      买房(60m²)约 <strong style="color:#0f172a;">8.2 年</strong>，
+      租金 <strong style="color:#0f172a;">$1,292</strong>/月
+    </div>
+    <div style="font-size:11px; color:#94a3b8; text-align:center; padding-top:6px; cursor:pointer;">▾ 税务明细</div>
+  </div>
+
+  <!-- 🛡️ SAFETY & GOVERNANCE -->
+  <div class="m-section">
+    <div style="font-size:13px; font-weight:800; margin-bottom:8px;">🛡️ 安全与治理</div>
+    <div style="display:flex; gap:16px; align-items:flex-start;">
+      <div>
+        <div style="font-size:38px; font-weight:900; line-height:1; color:#16a34a;">A</div>
+        <div style="font-size:10px; color:#94a3b8; margin-top:2px;">综合</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:11px; color:#64748b; width:32px; text-align:right;">治安</span>
+          <div style="flex:1; height:5px; background:#f1f5f9; border-radius:3px; overflow:hidden;"><div style="width:88%; height:100%; background:#16a34a; border-radius:3px;"></div></div>
+          <span style="font-size:11px; font-weight:700; color:#16a34a; width:24px;">88</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:11px; color:#64748b; width:32px; text-align:right;">治理</span>
+          <div style="flex:1; height:5px; background:#f1f5f9; border-radius:3px; overflow:hidden;"><div style="width:83%; height:100%; background:#16a34a; border-radius:3px;"></div></div>
+          <span style="font-size:11px; font-weight:700; color:#16a34a; width:24px;">83</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:11px; color:#64748b; width:32px; text-align:right;">自由</span>
+          <div style="flex:1; height:5px; background:#f1f5f9; border-radius:3px; overflow:hidden;"><div style="width:75%; height:100%; background:#2563eb; border-radius:3px;"></div></div>
+          <span style="font-size:11px; font-weight:700; color:#2563eb; width:24px;">75</span>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:11px; color:#94a3b8; text-align:center; padding-top:6px; cursor:pointer;">▾ 子指标明细</div>
+  </div>
+
+  <!-- 🌤️ HEALTH & LIFE -->
+  <div class="m-section">
+    <div style="font-size:13px; font-weight:800; margin-bottom:8px;">🌤️ 健康与生活</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px 12px;">
+      <div>
+        <div style="font-size:17px; font-weight:800;">78</div>
+        <div style="font-size:10px; color:#94a3b8;">医疗指数</div>
+      </div>
+      <div>
+        <div style="font-size:17px; font-weight:800; color:#16a34a;">42</div>
+        <div style="font-size:10px; color:#94a3b8;">AQI</div>
+      </div>
+      <div>
+        <div style="font-size:17px; font-weight:800;">15.8°C</div>
+        <div style="font-size:10px; color:#94a3b8;">年均温</div>
+      </div>
+      <div>
+        <div style="font-size:17px; font-weight:800;">1,607h</div>
+        <div style="font-size:10px; color:#94a3b8;">年工时</div>
+      </div>
+      <div>
+        <div style="font-size:17px; font-weight:800;">10天</div>
+        <div style="font-size:10px; color:#94a3b8;">带薪假期</div>
+      </div>
+      <div>
+        <div style="font-size:17px; font-weight:800;">0.925</div>
+        <div style="font-size:10px; color:#94a3b8;">HDI</div>
+      </div>
+    </div>
+    <div style="background:#f8fafc; border-radius:8px; padding:8px 10px; margin-top:10px; font-size:12px; color:#475569; line-height:1.5;">
+      🏥 每千人 <strong style="color:#0f172a;">2.7</strong> 名医生，
+      覆盖指数 <strong style="color:#0f172a;">83</strong>/100，
+      寿命 <strong style="color:#0f172a;">84.5</strong> 岁
+    </div>
+    <div style="font-size:11px; color:#94a3b8; text-align:center; padding-top:6px; cursor:pointer;">▾ 月度气候</div>
+  </div>
+
+  <!-- 🔗 LANGUAGE & CONNECTIVITY -->
+  <div class="m-section">
+    <div style="font-size:13px; font-weight:800; margin-bottom:8px;">🔗 语言与连接</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 16px; font-size:13px;">
+      <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="color:#64748b;">语言</span>
+        <span style="font-weight:600;">日语</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="color:#64748b;">英语水平</span>
+        <span style="font-weight:600; color:#d97706;">B 中等</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="color:#64748b;">直飞城市</span>
+        <span style="font-weight:600;">165</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px solid #f1f5f9;">
+        <span style="color:#64748b;">VPN</span>
+        <span style="font-weight:600; color:#16a34a;">无限制</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding:5px 0;">
+        <span style="color:#64748b;">签证</span>
+        <span style="font-weight:600;">工作签 (HSP)</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding:5px 0;">
+        <span style="color:#64748b;">GMT 重叠</span>
+        <span style="font-weight:600;">1h</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔄 SIMILAR -->
+  <div class="m-section" style="border-bottom:none;">
+    <div style="font-size:13px; font-weight:800; margin-bottom:8px;">🔄 相似城市</div>
+    <div style="display:flex; gap:8px; overflow-x:auto; margin:0 -16px; padding:0 16px;">
+      <div style="flex-shrink:0; width:100px; background:#f8fafc; border-radius:10px; padding:10px 6px; text-align:center;">
+        <div style="font-size:22px;">🇰🇷</div>
+        <div style="font-size:11px; font-weight:700; margin-top:3px;">首尔</div>
+        <div style="font-size:10px; font-weight:600; color:#16a34a; margin-top:1px;">存钱率 +3%</div>
+      </div>
+      <div style="flex-shrink:0; width:100px; background:#f8fafc; border-radius:10px; padding:10px 6px; text-align:center;">
+        <div style="font-size:22px;">🇹🇼</div>
+        <div style="font-size:11px; font-weight:700; margin-top:3px;">台北</div>
+        <div style="font-size:10px; font-weight:600; color:#16a34a; margin-top:1px;">成本 -22%</div>
+      </div>
+      <div style="flex-shrink:0; width:100px; background:#f8fafc; border-radius:10px; padding:10px 6px; text-align:center;">
+        <div style="font-size:22px;">🇸🇬</div>
+        <div style="font-size:11px; font-weight:700; margin-top:3px;">新加坡</div>
+        <div style="font-size:10px; font-weight:600; color:#2563eb; margin-top:1px;">收入 +35%</div>
+      </div>
+      <div style="flex-shrink:0; width:100px; background:#f8fafc; border-radius:10px; padding:10px 6px; text-align:center;">
+        <div style="font-size:22px;">🇩🇪</div>
+        <div style="font-size:11px; font-weight:700; margin-top:3px;">慕尼黑</div>
+        <div style="font-size:10px; font-weight:600; color:#94a3b8; margin-top:1px;">安全 ≈</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="padding:16px; text-align:center; font-size:10px; color:#94a3b8; line-height:1.6; border-top:1px solid #f1f5f9;">
+    World Bank · ILO · UNDP · 各国统计局<br>
+    <a href="#" style="color:#94a3b8;">方法论</a> · <a href="#" style="color:#94a3b8;">GitHub</a><br>
+    数据仅供参考，不构成移居建议
+  </div>
+
+</div>
+</div>
+
+<p style="text-align:center; font-size:12px; color:var(--sub); margin-top:8px;">↑ 东京 · 正常城市 · 375px 宽</p>
+
+<hr>
+
+<h3>安全警告城市（基辅）</h3>
+
+<p>只有 <code>safetyWarning</code> 存在时才出现红色警告条。这不是"结论卡片"，这是安全必需信息。</p>
+
+<div class="phone" style="width:375px;">
+<div class="phone-screen">
+  <div class="phone-status">9:41</div>
+  <div class="m-nav">
+    <span class="back">‹</span>
+    <span class="brand">WhichCity</span>
+    <div class="right"><span>⚙</span></div>
+  </div>
+  <div class="m-section">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="font-size:24px; font-weight:900;">🇺🇦 基辅</div>
+      <span style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:6px; font-size:12px; font-weight:700;">⚠</span>
+    </div>
+    <div style="font-size:12px; color:#94a3b8; margin-top:2px;">乌克兰 · UTC+2</div>
+  </div>
+  <!-- Warning banner -->
+  <div style="background:#fef2f2; border-left:4px solid #dc2626; padding:10px 16px; margin:0; font-size:13px; color:#7f1d1d; line-height:1.5;">
+    <strong>⚠ 活跃武装冲突</strong> — 该城市处于活跃冲突区。请关注最新局势后再做任何决策。
+  </div>
+  <div class="m-section">
+    <div style="font-size:13px; font-weight:800; margin-bottom:8px;">💰 经济</div>
+    <div style="font-size:12px; color:#94a3b8;">（数据区块正常显示）</div>
+  </div>
+</div>
+</div>
+<p style="text-align:center; font-size:12px; color:var(--sub); margin-top:8px;">↑ 基辅 · 安全警告城市</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>三、关键设计决策逐条说明</h2>
+
+<h3>3.1 导航栏 — 职业选择内联</h3>
+
+<p>用户最关心的"设置"只有一个：<strong>职业</strong>。它直接影响所有收入数据。</p>
+
+<p>所以职业选择器不应该藏在设置面板里。它直接放在导航栏上，显示当前职业名。点击下拉切换。用户零学习成本，看到就懂。</p>
+
+<p>其他设置（语言、货币、主题）藏在 ⚙ 里。这些都是"设一次就忘"的东西。</p>
+
+<h3>3.2 颜色策略 — 克制</h3>
+
+<table>
+  <tr><th>颜色</th><th>使用场景</th><th>判断标准</th></tr>
+  <tr><td style="color:#16a34a;">绿色</td><td>明确好的数值</td><td>安全 ≥70, AQI ≤50, 存钱率 ≥30%</td></tr>
+  <tr><td style="color:#d97706;">琥珀</td><td>需要注意</td><td>月支出（提醒这是"花掉的钱"）、英语 B/C、AQI 51-100</td></tr>
+  <tr><td style="color:#dc2626;">红色</td><td>仅安全警告</td><td>safetyWarning 存在时</td></tr>
+  <tr><td style="color:#2563eb;">蓝色</td><td>中性偏正面</td><td>安全 50-69、自由指数</td></tr>
+  <tr><td style="color:#0f172a;">黑色</td><td>默认</td><td>所有无需判断的数值</td></tr>
+</table>
+
+<p><strong>原则：大部分数值是黑色的。</strong> 只有需要用户"注意"或"安心"时才上色。如果一个页面上 70% 的数字都有颜色，那颜色就失去了信号价值。</p>
+
+<h3>3.3 西语/长文本策略</h3>
+
+<p>问题对比：</p>
+<table>
+  <tr><th>中文</th><th>西语</th><th>长度比</th></tr>
+  <tr><td>安全与社会保障</td><td>Seguridad y Protección Social</td><td>1:4</td></tr>
+  <tr><td>税后月收入</td><td>Ingreso Mensual Neto</td><td>1:3</td></tr>
+  <tr><td>月结余</td><td>Excedente Mensual</td><td>1:5</td></tr>
+</table>
+
+<p>解法：</p>
+<ul>
+  <li><strong>标签文字用最短形式</strong> — "月入"而非"税后月收入"，"Net"而非"Net Monthly Income"，"Excedente"而非"Excedente Mensual"</li>
+  <li><strong>数字标签在数字下方，不在旁边</strong> — 垂直排列永远比水平排列对长文本友好</li>
+  <li><strong>section 标题不含长描述</strong> — 用 emoji + 2-3 个短词（"💰 经济"、"💰 Economía"）</li>
+  <li><strong>永远用 flex-wrap</strong> — 标签行超长时自动换行，不截断</li>
+</ul>
+
+<h3>3.4 数字游民模块 → 拆散重组</h3>
+
+<div class="box box-blue">
+  <strong>"数字游民"这个概念本身是问题。</strong><br><br>
+  大部分用户不自我认同为"数字游民"。但他们关心语言、签证、VPN。<br>
+  把这些信息放在一个叫"数字游民"的折叠区里，等于让多数用户跳过了他们需要的信息。<br><br>
+  拆散后融入"🔗 语言与连接"模块：语言、英语水平、直飞、VPN、签证类型、时区重叠。<br>
+  所有人都能看到，不需要"我是游民"这个心智前提。
+</div>
+
+<h3>3.5 Insight 文案 — 保留但精简</h3>
+
+<p>Insight box（浅色背景的一句话解读）保留，因为它做的事情和数字不同：<strong>它回答"so what"</strong>。</p>
+
+<p>"医疗指数 78"——so what？<br>
+"每千人 2.7 名医生，覆盖指数 83/100，寿命 84.5 岁"——哦，这意味着医疗很好。</p>
+
+<p>但每个模块最多一条 insight。不做多行多段。</p>
+
+<h3>3.6 折叠区策略</h3>
+
+<table>
+  <tr><th>默认折叠</th><th>理由</th></tr>
+  <tr><td>税务明细</td><td>90% 用户不看。只有真想移的人才关心累进税率</td></tr>
+  <tr><td>安全/治理子指标</td><td>综合分 + 横条已经够用。凶杀率、WGI 具体值是专业数据</td></tr>
+  <tr><td>月度气候图</td><td>年均温和气候类型已经给出概况。月度数据是深入补充</td></tr>
+</table>
+
+<p><strong>不折叠</strong>的东西：经济三数字、安全横条、生活网格、语言与连接、相似城市 — 这些是决策核心信息，始终可见。</p>
+
+<h3>3.7 页面间视觉一致性</h3>
+
+<p>三个页面用同一套 CSS 变量、同一个 NavBar、同一种间距节奏。</p>
+
+<table>
+  <tr><th>页面</th><th>配色风格</th></tr>
+  <tr><td>首页（搜索）</td><td>几乎无色。白底 + 搜索框 + 灰色文字</td></tr>
+  <tr><td>排行列表</td><td>无色。数字排行，只有 top 3 的排名数字是绿色</td></tr>
+  <tr><td>城市页</td><td>少量语义色。标签、bar fill、个别数字。白底主导</td></tr>
+</table>
+
+<p>三个页面看起来像<strong>同一款产品的三个视图</strong>，而不是三个不同风格的页面。</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h2>四、总结</h2>
+
+<div class="box box-green">
+  <strong>核心改动清单：</strong>
+  <ol style="margin-top:8px;">
+    <li>结论卡片 → <strong>删除</strong>。评级字母贴在城市名旁、标签行跟在简介后。安全警告是单独的红色条（仅特殊城市）。</li>
+    <li>数据分组 → 从"钱/安全/生活"改为<strong>"经济/安全与治理/健康与生活/语言与连接"</strong>。</li>
+    <li>数字游民 → <strong>拆散融入</strong>"语言与连接"模块。</li>
+    <li>安全区块 → <strong>医疗分离出去</strong>，安全和治理合并。横条从 4 根变 3 根（治安、治理、自由）。</li>
+    <li>导航 → 职业选择器<strong>内联在导航栏</strong>，其他设置藏在 ⚙。</li>
+    <li>配色 → <strong>克制</strong>。大部分数字是黑色。只在明确好/坏时上色。</li>
+    <li>西语兼容 → 标签用最短形式，垂直排列，flex-wrap。</li>
+    <li>三个页面 → 同一套 CSS 变量，统一视觉语言。</li>
+  </ol>
+</div>
+
+</body>
+</html>

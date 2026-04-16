@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* ── WhichCity theme variables ── */
+@import "../components/shared/theme.css";
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,96 +13,9 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #f8fafc;
-  /* slate-50 */
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: #020617;
-    /* slate-950 */
-    color-scheme: dark;
-  }
-}
-
-/* JS class overrides (higher specificity than bare html) */
-html.dark {
-  background-color: #020617;
-  /* slate-950 */
-  color-scheme: dark;
-}
-
-html.light {
-  background-color: #f8fafc;
-  /* slate-50 */
-  color-scheme: light;
 }
 
 body {
-  background-color: #f8fafc;
-  /* slate-50 */
-  color: #0f172a;
-  /* slate-900 */
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #020617;
-    /* slate-950 */
-    color: #f1f5f9;
-    /* slate-100 */
-  }
-}
-
-html.dark body {
-  background-color: #020617;
-  /* slate-950 */
-  color: #f1f5f9;
-  /* slate-100 */
-}
-
-html.light body {
-  background-color: #f8fafc;
-  /* slate-50 */
-  color: #0f172a;
-  /* slate-900 */
-}
-
-/* ── Theme flash prevention ──
-   Full-viewport overlay covers incorrectly-themed Tailwind content
-   until the inline script adds .dark and React adds .theme-ready. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  pointer-events: none;
-  background-color: #f8fafc;
-}
-
-@media (prefers-color-scheme: dark) {
-  body::before {
-    background-color: #020617;
-  }
-}
-
-html.dark body::before {
-  background-color: #020617;
-}
-
-html.light body::before {
-  background-color: #f8fafc;
-}
-
-html.theme-ready body::before {
-  display: none;
-}
-
-/* Block all transitions during initial hydration so the
-   overlay removal and class reconciliation are instant. */
-html:not(.theme-ready) *,
-html:not(.theme-ready) *::before,
-html:not(.theme-ready) *::after {
-  transition: none !important;
+  background-color: var(--bg-page);
+  color: var(--fg);
 }

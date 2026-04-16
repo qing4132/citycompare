@@ -14,7 +14,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
 
   if (!s.ready) return (
     <div className={darkMode ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"}>
-      <NavBar s={s} />
+      <NavBar s={s} showShare />
     </div>
   );
 
@@ -947,9 +947,9 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
 
   return (
     <div className={`min-h-screen transition-colors ${bg}`}>
-      <NavBar s={s} />
+      <NavBar s={s} showShare />
 
-      <div className="max-w-4xl mx-auto px-4 pt-8">
+      <div className="max-w-2xl mx-auto px-4 pt-8">
         <h1 className={`text-2xl font-bold mb-6 ${headCls}`}>{title}</h1>
 
         {/* Table of Contents */}
@@ -968,7 +968,7 @@ export default function MethodologyContent({ locale: urlLocale }: { locale: stri
 
       {/* Footer */}
       <footer className={`px-4 py-5 text-center text-xs ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
-        <div className={`max-w-5xl mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
+        <div className={`max-w-2xl mx-auto border-t pt-4 ${darkMode ? "border-slate-700" : "border-slate-200"}`}>
           <p>{t("dataSourcesDisclaimer")}</p>
           <p className="mt-1"><a href={`/${locale}/methodology`} className="underline hover:text-blue-500">{t("navMethodology")}</a> · <a href="https://github.com/qing4132/whichcity/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">GitHub</a> · <a href="mailto:qing4132@users.noreply.github.com" className="underline hover:text-blue-500">{t("footerFeedback")}</a></p>
         </div>

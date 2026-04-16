@@ -6,7 +6,7 @@ import { loadCities, getCityById, getCityEnName, getCountryEnName, getCityLocale
 import { getNomadCityData, loadVisaMatrix } from "@/lib/nomadData";
 import { LOCALES } from "@/lib/i18nRouting";
 import { TRANSLATIONS } from "@/lib/i18n";
-import CityDetailContent from "@/components/CityDetailContent";
+import CityPageContent from "@/components/city/CityPage";
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function CityPage({ params }: Props) {
+export default async function CityRoute({ params }: Props) {
   const { locale, slug } = await params;
   const id = SLUG_TO_ID[slug];
   if (!id) notFound();
@@ -62,7 +62,7 @@ export default async function CityPage({ params }: Props) {
 
   // Load all cities for detail page (rankings, similarity, etc.)
   const allCities = loadCities();
-  const nomadData = getNomadCityData(id);
+  const nomadData = getNomadCityData(id) ?? null;
   const visaMatrix = loadVisaMatrix();
 
   const jsonLd = [
@@ -96,7 +96,7 @@ export default async function CityPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <CityDetailContent city={city} slug={slug} allCities={allCities} locale={locale} nomadData={nomadData} visaMatrix={visaMatrix} />
+      <CityPageContent city={city} slug={slug} allCities={allCities} locale={locale} nomadData={nomadData} visaMatrix={visaMatrix} />
     </>
   );
 }

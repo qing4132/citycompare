@@ -4,7 +4,7 @@ import { loadCities } from "@/lib/dataLoader";
 import { LOCALES } from "@/lib/i18nRouting";
 import { TRANSLATIONS } from "@/lib/i18n";
 import type { Locale } from "@/lib/types";
-import RankingContent from "@/components/RankingContent";
+import RankingPageContent from "@/components/ranking/RankingPage";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -26,8 +26,8 @@ interface Props {
   params: Promise<{ locale: string }>;
 }
 
-export default async function RankingPage({ params }: Props) {
+export default async function RankingRoute({ params }: Props) {
   const { locale } = await params;
   const cities = loadCities();
-  return <Suspense><RankingContent cities={cities} locale={locale} /></Suspense>;
+  return <Suspense><RankingPageContent cities={cities} locale={locale} /></Suspense>;
 }

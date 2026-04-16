@@ -128,7 +128,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 2,
@@ -255,7 +258,10 @@
       "minimumWagePPP": 2902,
       "weeklyHoursEmp": 35.1,
       "earningsGini": 0.314,
-      "genderWageGap": 13.4
+      "genderWageGap": 13.4,
+      "gpiScore": 1.634,
+      "pressFreedomScore": 78.89,
+      "gdpGrowthRate": 0.27
     },
     {
       "id": 3,
@@ -382,7 +388,10 @@
       "minimumWagePPP": 1839,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.44,
+      "pressFreedomScore": 63.14,
+      "gdpGrowthRate": 1.48
     },
     {
       "id": 4,
@@ -509,7 +518,10 @@
       "minimumWagePPP": 544,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.093,
+      "pressFreedomScore": 14.8,
+      "gdpGrowthRate": 5.41
     },
     {
       "id": 5,
@@ -636,7 +648,10 @@
       "minimumWagePPP": 544,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.093,
+      "pressFreedomScore": 14.8,
+      "gdpGrowthRate": 5.41
     },
     {
       "id": 6,
@@ -763,7 +778,10 @@
       "minimumWagePPP": 2819,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.505,
+      "pressFreedomScore": 75.15,
+      "gdpGrowthRate": 3.58
     },
     {
       "id": 7,
@@ -890,7 +908,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": 31.2
+      "genderWageGap": 31.2,
+      "gpiScore": 1.357,
+      "pressFreedomScore": 45.78,
+      "gdpGrowthRate": 1.82
     },
     {
       "id": 8,
@@ -1017,7 +1038,10 @@
       "minimumWagePPP": 2379,
       "weeklyHoursEmp": 34.6,
       "earningsGini": 0.308,
-      "genderWageGap": 5.4
+      "genderWageGap": 5.4,
+      "gpiScore": 1.967,
+      "pressFreedomScore": 76.62,
+      "gdpGrowthRate": 1.44
     },
     {
       "id": 9,
@@ -1144,7 +1168,10 @@
       "minimumWagePPP": 2324,
       "weeklyHoursEmp": 34.7,
       "earningsGini": 0.329,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.491,
+      "pressFreedomScore": 78.75,
+      "gdpGrowthRate": 1.53
     },
     {
       "id": 10,
@@ -1271,7 +1298,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": null,
+      "pressFreedomScore": 39.86,
+      "gdpGrowthRate": 3.22
     },
     {
       "id": 11,
@@ -1398,7 +1428,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 12,
@@ -1525,7 +1558,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 13,
@@ -1652,7 +1688,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 14,
@@ -1779,7 +1818,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 50.9,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": null,
+      "pressFreedomScore": 26.91,
+      "gdpGrowthRate": 4.3
     },
     {
       "id": 15,
@@ -1906,7 +1948,10 @@
       "minimumWagePPP": 2736,
       "weeklyHoursEmp": 29.5,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.491,
+      "pressFreedomScore": 88.64,
+      "gdpGrowthRate": -0.6
     },
     {
       "id": 16,
@@ -2033,7 +2078,10 @@
       "minimumWagePPP": 3804,
       "weeklyHoursEmp": 35.3,
       "earningsGini": 0.351,
-      "genderWageGap": 13.3
+      "genderWageGap": 13.3,
+      "gpiScore": 1.294,
+      "pressFreedomScore": 83.98,
+      "gdpGrowthRate": 0.68
     },
     {
       "id": 17,
@@ -2160,7 +2208,10 @@
       "minimumWagePPP": 3804,
       "weeklyHoursEmp": 35.3,
       "earningsGini": 0.351,
-      "genderWageGap": 13.3
+      "genderWageGap": 13.3,
+      "gpiScore": 1.294,
+      "pressFreedomScore": 83.98,
+      "gdpGrowthRate": 0.68
     },
     {
       "id": 18,
@@ -2287,7 +2338,10 @@
       "minimumWagePPP": 2922,
       "weeklyHoursEmp": 32.9,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.533,
+      "pressFreedomScore": 83.85,
+      "gdpGrowthRate": -0.87
     },
     {
       "id": 19,
@@ -2414,7 +2468,10 @@
       "minimumWagePPP": 2922,
       "weeklyHoursEmp": 32.9,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.533,
+      "pressFreedomScore": 83.85,
+      "gdpGrowthRate": -0.87
     },
     {
       "id": 20,
@@ -2541,7 +2598,10 @@
       "minimumWagePPP": 2117,
       "weeklyHoursEmp": 35.1,
       "earningsGini": null,
-      "genderWageGap": 5.9
+      "genderWageGap": 5.9,
+      "gpiScore": 1.578,
+      "pressFreedomScore": 77.35,
+      "gdpGrowthRate": 2.46
     },
     {
       "id": 21,
@@ -2668,7 +2728,10 @@
       "minimumWagePPP": 2117,
       "weeklyHoursEmp": 35.1,
       "earningsGini": null,
-      "genderWageGap": 5.9
+      "genderWageGap": 5.9,
+      "gpiScore": 1.578,
+      "pressFreedomScore": 77.35,
+      "gdpGrowthRate": 2.46
     },
     {
       "id": 22,
@@ -2795,7 +2858,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 35,
       "earningsGini": 0.282,
-      "genderWageGap": -2.5
+      "genderWageGap": -2.5,
+      "gpiScore": 1.662,
+      "pressFreedomScore": 68.01,
+      "gdpGrowthRate": 0.98
     },
     {
       "id": 23,
@@ -2922,7 +2988,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 35,
       "earningsGini": 0.282,
-      "genderWageGap": -2.5
+      "genderWageGap": -2.5,
+      "gpiScore": 1.662,
+      "pressFreedomScore": 68.01,
+      "gdpGrowthRate": 0.98
     },
     {
       "id": 24,
@@ -3049,7 +3118,10 @@
       "minimumWagePPP": 2603,
       "weeklyHoursEmp": 33.5,
       "earningsGini": null,
-      "genderWageGap": 26.4
+      "genderWageGap": 26.4,
+      "gpiScore": 1.492,
+      "pressFreedomScore": 80.12,
+      "gdpGrowthRate": 1.71
     },
     {
       "id": 25,
@@ -3176,7 +3248,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 32.6,
       "earningsGini": null,
-      "genderWageGap": 20.4
+      "genderWageGap": 20.4,
+      "gpiScore": 1.294,
+      "pressFreedomScore": 78.12,
+      "gdpGrowthRate": -0.79
     },
     {
       "id": 26,
@@ -3303,7 +3378,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 37.4,
       "earningsGini": null,
-      "genderWageGap": 14.9
+      "genderWageGap": 14.9,
+      "gpiScore": 1.435,
+      "pressFreedomScore": 83.96,
+      "gdpGrowthRate": 0.05
     },
     {
       "id": 27,
@@ -3430,7 +3508,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 38,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.713,
+      "pressFreedomScore": 74.79,
+      "gdpGrowthRate": 0.25
     },
     {
       "id": 28,
@@ -3557,7 +3638,10 @@
       "minimumWagePPP": 1670,
       "weeklyHoursEmp": 36.8,
       "earningsGini": 0.288,
-      "genderWageGap": 7.7
+      "genderWageGap": 7.7,
+      "gpiScore": 1.371,
+      "pressFreedomScore": 84.26,
+      "gdpGrowthRate": 3.1
     },
     {
       "id": 29,
@@ -3684,7 +3768,10 @@
       "minimumWagePPP": 1690,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.266,
-      "genderWageGap": 3.5
+      "genderWageGap": 3.5,
+      "gpiScore": 1.764,
+      "pressFreedomScore": 55.37,
+      "gdpGrowthRate": 2.14
     },
     {
       "id": 30,
@@ -3811,7 +3898,10 @@
       "minimumWagePPP": 1772,
       "weeklyHoursEmp": 43.9,
       "earningsGini": 0.413,
-      "genderWageGap": 5.9
+      "genderWageGap": 5.9,
+      "gpiScore": 2.852,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": 5.05
     },
     {
       "id": 31,
@@ -3938,7 +4028,10 @@
       "minimumWagePPP": 599,
       "weeklyHoursEmp": 43.9,
       "earningsGini": 0.349,
-      "genderWageGap": 0.1
+      "genderWageGap": 0.1,
+      "gpiScore": 2.636,
+      "pressFreedomScore": 45.55,
+      "gdpGrowthRate": 3.35
     },
     {
       "id": 32,
@@ -4065,7 +4158,10 @@
       "minimumWagePPP": 559,
       "weeklyHoursEmp": 39.4,
       "earningsGini": 0.458,
-      "genderWageGap": 10
+      "genderWageGap": 10,
+      "gpiScore": 2.472,
+      "pressFreedomScore": 63.8,
+      "gdpGrowthRate": 3.24
     },
     {
       "id": 33,
@@ -4192,7 +4288,10 @@
       "minimumWagePPP": 559,
       "weeklyHoursEmp": 39.4,
       "earningsGini": 0.458,
-      "genderWageGap": 10
+      "genderWageGap": 10,
+      "gpiScore": 2.472,
+      "pressFreedomScore": 63.8,
+      "gdpGrowthRate": 3.24
     },
     {
       "id": 34,
@@ -4319,7 +4418,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 35,
@@ -4446,7 +4548,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 36,
@@ -4573,7 +4678,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 37,
@@ -4700,7 +4808,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 38,
@@ -4828,7 +4939,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 39,
@@ -4955,7 +5069,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 40,
@@ -5082,7 +5199,10 @@
       "minimumWagePPP": 2324,
       "weeklyHoursEmp": 34.7,
       "earningsGini": 0.329,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.491,
+      "pressFreedomScore": 78.75,
+      "gdpGrowthRate": 1.53
     },
     {
       "id": 41,
@@ -5209,7 +5329,10 @@
       "minimumWagePPP": 2324,
       "weeklyHoursEmp": 34.7,
       "earningsGini": 0.329,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.491,
+      "pressFreedomScore": 78.75,
+      "gdpGrowthRate": 1.53
     },
     {
       "id": 42,
@@ -5336,7 +5459,10 @@
       "minimumWagePPP": 2819,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.505,
+      "pressFreedomScore": 75.15,
+      "gdpGrowthRate": 3.58
     },
     {
       "id": 43,
@@ -5463,7 +5589,10 @@
       "minimumWagePPP": 2819,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.505,
+      "pressFreedomScore": 75.15,
+      "gdpGrowthRate": 3.58
     },
     {
       "id": 44,
@@ -5590,7 +5719,10 @@
       "minimumWagePPP": 2673,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.282,
+      "pressFreedomScore": 81.37,
+      "gdpGrowthRate": 1.39
     },
     {
       "id": 45,
@@ -5717,7 +5849,10 @@
       "minimumWagePPP": 822,
       "weeklyHoursEmp": 44.7,
       "earningsGini": 0.365,
-      "genderWageGap": -3.6
+      "genderWageGap": -3.6,
+      "gpiScore": 2.017,
+      "pressFreedomScore": 56.72,
+      "gdpGrowthRate": 2.02
     },
     {
       "id": 46,
@@ -5844,7 +5979,10 @@
       "minimumWagePPP": 1035,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": 0
+      "genderWageGap": 0,
+      "gpiScore": 1.469,
+      "pressFreedomScore": 56.09,
+      "gdpGrowthRate": 3.54
     },
     {
       "id": 47,
@@ -5971,7 +6109,10 @@
       "minimumWagePPP": 693,
       "weeklyHoursEmp": 45.8,
       "earningsGini": 0.248,
-      "genderWageGap": 8.7
+      "genderWageGap": 8.7,
+      "gpiScore": 1.721,
+      "pressFreedomScore": 19.74,
+      "gdpGrowthRate": null
     },
     {
       "id": 48,
@@ -6098,7 +6239,10 @@
       "minimumWagePPP": 693,
       "weeklyHoursEmp": 45.8,
       "earningsGini": 0.248,
-      "genderWageGap": 8.7
+      "genderWageGap": 8.7,
+      "gpiScore": 1.721,
+      "pressFreedomScore": 19.74,
+      "gdpGrowthRate": null
     },
     {
       "id": 49,
@@ -6225,7 +6369,10 @@
       "minimumWagePPP": 233,
       "weeklyHoursEmp": 56.2,
       "earningsGini": 0.422,
-      "genderWageGap": 22
+      "genderWageGap": 22,
+      "gpiScore": 2.229,
+      "pressFreedomScore": 32.96,
+      "gdpGrowthRate": 9.19
     },
     {
       "id": 50,
@@ -6352,7 +6499,10 @@
       "minimumWagePPP": 233,
       "weeklyHoursEmp": 56.2,
       "earningsGini": 0.422,
-      "genderWageGap": 22
+      "genderWageGap": 22,
+      "gpiScore": 2.229,
+      "pressFreedomScore": 32.96,
+      "gdpGrowthRate": 9.19
     },
     {
       "id": 51,
@@ -6479,7 +6629,10 @@
       "minimumWagePPP": 233,
       "weeklyHoursEmp": 56.2,
       "earningsGini": 0.422,
-      "genderWageGap": 22
+      "genderWageGap": 22,
+      "gpiScore": 2.229,
+      "pressFreedomScore": 32.96,
+      "gdpGrowthRate": 9.19
     },
     {
       "id": 52,
@@ -6606,7 +6759,10 @@
       "minimumWagePPP": 361,
       "weeklyHoursEmp": 45.4,
       "earningsGini": 0.775,
-      "genderWageGap": 8.1
+      "genderWageGap": 8.1,
+      "gpiScore": 2.392,
+      "pressFreedomScore": 49.41,
+      "gdpGrowthRate": 5.72
     },
     {
       "id": 53,
@@ -6733,7 +6889,10 @@
       "minimumWagePPP": 863,
       "weeklyHoursEmp": 45.9,
       "earningsGini": 0.407,
-      "genderWageGap": 5.4
+      "genderWageGap": 5.4,
+      "gpiScore": 2.157,
+      "pressFreedomScore": 24.74,
+      "gdpGrowthRate": 3.76
     },
     {
       "id": 54,
@@ -6861,7 +7020,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.75,
+      "pressFreedomScore": 16.22,
+      "gdpGrowthRate": 5.33
     },
     {
       "id": 55,
@@ -6989,7 +7151,10 @@
       "minimumWagePPP": 570,
       "weeklyHoursEmp": 48.9,
       "earningsGini": 0.262,
-      "genderWageGap": -3.1
+      "genderWageGap": -3.1,
+      "gpiScore": 2.797,
+      "pressFreedomScore": 29.62,
+      "gdpGrowthRate": -0.41
     },
     {
       "id": 56,
@@ -7118,7 +7283,10 @@
       "minimumWagePPP": 570,
       "weeklyHoursEmp": 48.9,
       "earningsGini": 0.262,
-      "genderWageGap": -3.1
+      "genderWageGap": -3.1,
+      "gpiScore": 2.797,
+      "pressFreedomScore": 29.62,
+      "gdpGrowthRate": -0.41
     },
     {
       "id": 57,
@@ -7245,7 +7413,10 @@
       "minimumWagePPP": 993,
       "weeklyHoursEmp": 41.9,
       "earningsGini": 0.409,
-      "genderWageGap": 13.5
+      "genderWageGap": 13.5,
+      "gpiScore": 1.786,
+      "pressFreedomScore": 44.13,
+      "gdpGrowthRate": 5.05
     },
     {
       "id": 58,
@@ -7372,7 +7543,10 @@
       "minimumWagePPP": 400,
       "weeklyHoursEmp": 41.7,
       "earningsGini": 0.392,
-      "genderWageGap": -12.7
+      "genderWageGap": -12.7,
+      "gpiScore": 2.148,
+      "pressFreedomScore": 49.57,
+      "gdpGrowthRate": 5.52
     },
     {
       "id": 59,
@@ -7499,7 +7673,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.736,
+      "pressFreedomScore": 64.06,
+      "gdpGrowthRate": 1.58
     },
     {
       "id": 60,
@@ -7626,7 +7803,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.736,
+      "pressFreedomScore": 64.06,
+      "gdpGrowthRate": 1.58
     },
     {
       "id": 61,
@@ -7753,7 +7933,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.73,
+      "pressFreedomScore": 77.04,
+      "gdpGrowthRate": null
     },
     {
       "id": 62,
@@ -7880,7 +8063,10 @@
       "minimumWagePPP": 568,
       "weeklyHoursEmp": 36.7,
       "earningsGini": 0.42,
-      "genderWageGap": 5.9
+      "genderWageGap": 5.9,
+      "gpiScore": 1.768,
+      "pressFreedomScore": 56.14,
+      "gdpGrowthRate": -1.86
     },
     {
       "id": 63,
@@ -8007,7 +8193,10 @@
       "minimumWagePPP": 1076,
       "weeklyHoursEmp": 40.6,
       "earningsGini": 0.415,
-      "genderWageGap": 16.3
+      "genderWageGap": 16.3,
+      "gpiScore": 1.899,
+      "pressFreedomScore": 62.25,
+      "gdpGrowthRate": 0.52
     },
     {
       "id": 64,
@@ -8134,7 +8323,10 @@
       "minimumWagePPP": 843,
       "weeklyHoursEmp": 45.1,
       "earningsGini": 0.356,
-      "genderWageGap": -4.6
+      "genderWageGap": -4.6,
+      "gpiScore": 2.695,
+      "pressFreedomScore": 49.8,
+      "gdpGrowthRate": 0.71
     },
     {
       "id": 65,
@@ -8261,7 +8453,10 @@
       "minimumWagePPP": 526,
       "weeklyHoursEmp": 42,
       "earningsGini": 0.391,
-      "genderWageGap": 8.1
+      "genderWageGap": 8.1,
+      "gpiScore": 2.073,
+      "pressFreedomScore": 42.88,
+      "gdpGrowthRate": -0.4
     },
     {
       "id": 67,
@@ -8388,7 +8583,10 @@
       "minimumWagePPP": 620,
       "weeklyHoursEmp": 42.4,
       "earningsGini": 0.685,
-      "genderWageGap": 9.5
+      "genderWageGap": 9.5,
+      "gpiScore": 2.347,
+      "pressFreedomScore": 75.71,
+      "gdpGrowthRate": 0.81
     },
     {
       "id": 68,
@@ -8515,7 +8713,10 @@
       "minimumWagePPP": 620,
       "weeklyHoursEmp": 42.4,
       "earningsGini": 0.685,
-      "genderWageGap": 9.5
+      "genderWageGap": 9.5,
+      "gpiScore": 2.347,
+      "pressFreedomScore": 75.71,
+      "gdpGrowthRate": 0.81
     },
     {
       "id": 69,
@@ -8642,7 +8843,10 @@
       "minimumWagePPP": 599,
       "weeklyHoursEmp": 43.9,
       "earningsGini": 0.349,
-      "genderWageGap": 0.1
+      "genderWageGap": 0.1,
+      "gpiScore": 2.636,
+      "pressFreedomScore": 45.55,
+      "gdpGrowthRate": 3.35
     },
     {
       "id": 70,
@@ -8769,7 +8973,10 @@
       "minimumWagePPP": 1093,
       "weeklyHoursEmp": 44.6,
       "earningsGini": 0.352,
-      "genderWageGap": -11.4
+      "genderWageGap": -11.4,
+      "gpiScore": 1.843,
+      "pressFreedomScore": 73.09,
+      "gdpGrowthRate": 5.11
     },
     {
       "id": 71,
@@ -8896,7 +9103,10 @@
       "minimumWagePPP": 943,
       "weeklyHoursEmp": 41.5,
       "earningsGini": 0.42,
-      "genderWageGap": -11.8
+      "genderWageGap": -11.8,
+      "gpiScore": 2.006,
+      "pressFreedomScore": 66.75,
+      "gdpGrowthRate": 7.17
     },
     {
       "id": 73,
@@ -9023,7 +9233,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 36,
       "earningsGini": 0.44,
-      "genderWageGap": 7.5
+      "genderWageGap": 7.5,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 75,
@@ -9150,7 +9363,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 50.9,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": null,
+      "pressFreedomScore": 26.91,
+      "gdpGrowthRate": 4.3
     },
     {
       "id": 76,
@@ -9277,7 +9493,10 @@
       "minimumWagePPP": 363,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.593,
+      "pressFreedomScore": 58.25,
+      "gdpGrowthRate": 1.54
     },
     {
       "id": 77,
@@ -9405,7 +9624,10 @@
       "minimumWagePPP": 1590,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.099,
+      "pressFreedomScore": 30.24,
+      "gdpGrowthRate": 3.88
     },
     {
       "id": 78,
@@ -9532,7 +9754,10 @@
       "minimumWagePPP": 2125,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.035,
+      "pressFreedomScore": 27.94,
+      "gdpGrowthRate": 0.54
     },
     {
       "id": 79,
@@ -9660,7 +9885,10 @@
       "minimumWagePPP": 1757,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.738,
+      "pressFreedomScore": 42.29,
+      "gdpGrowthRate": 1.41
     },
     {
       "id": 80,
@@ -9789,7 +10017,10 @@
       "minimumWagePPP": 344,
       "weeklyHoursEmp": 47.8,
       "earningsGini": 0.426,
-      "genderWageGap": -35.8
+      "genderWageGap": -35.8,
+      "gpiScore": 2.674,
+      "pressFreedomScore": 42.62,
+      "gdpGrowthRate": -0.76
     },
     {
       "id": 81,
@@ -9917,7 +10148,10 @@
       "minimumWagePPP": 809,
       "weeklyHoursEmp": 48.4,
       "earningsGini": 0.299,
-      "genderWageGap": 0
+      "genderWageGap": 0,
+      "gpiScore": 1.957,
+      "pressFreedomScore": 35.25,
+      "gdpGrowthRate": 2.88
     },
     {
       "id": 82,
@@ -10044,7 +10278,10 @@
       "minimumWagePPP": 1630,
       "weeklyHoursEmp": 38,
       "earningsGini": null,
-      "genderWageGap": 18.8
+      "genderWageGap": 18.8,
+      "gpiScore": 3.108,
+      "pressFreedomScore": 51.06,
+      "gdpGrowthRate": 1.83
     },
     {
       "id": 83,
@@ -10172,7 +10409,10 @@
       "minimumWagePPP": 233,
       "weeklyHoursEmp": 56.2,
       "earningsGini": 0.422,
-      "genderWageGap": 22
+      "genderWageGap": 22,
+      "gpiScore": 2.229,
+      "pressFreedomScore": 32.96,
+      "gdpGrowthRate": 9.19
     },
     {
       "id": 84,
@@ -10300,7 +10540,10 @@
       "minimumWagePPP": 233,
       "weeklyHoursEmp": 56.2,
       "earningsGini": 0.422,
-      "genderWageGap": 22
+      "genderWageGap": 22,
+      "gpiScore": 2.229,
+      "pressFreedomScore": 32.96,
+      "gdpGrowthRate": 9.19
     },
     {
       "id": 85,
@@ -10428,7 +10671,10 @@
       "minimumWagePPP": 674,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": 20.3
+      "genderWageGap": 20.3,
+      "gpiScore": 3.434,
+      "pressFreedomScore": 63.93,
+      "gdpGrowthRate": 5.53
     },
     {
       "id": 86,
@@ -10555,7 +10801,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 39,
       "earningsGini": null,
-      "genderWageGap": 1.3
+      "genderWageGap": 1.3,
+      "gpiScore": 1.721,
+      "pressFreedomScore": 66.42,
+      "gdpGrowthRate": 2.26
     },
     {
       "id": 87,
@@ -10682,7 +10931,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 38.9,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.61,
+      "pressFreedomScore": 60.78,
+      "gdpGrowthRate": 1.68
     },
     {
       "id": 88,
@@ -10809,7 +11061,10 @@
       "minimumWagePPP": 1878,
       "weeklyHoursEmp": 37.5,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.519,
+      "pressFreedomScore": 64.2,
+      "gdpGrowthRate": 3.76
     },
     {
       "id": 89,
@@ -10936,7 +11191,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 40.2,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.914,
+      "pressFreedomScore": 53.55,
+      "gdpGrowthRate": 3.75
     },
     {
       "id": 90,
@@ -11063,7 +11321,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 37.1,
       "earningsGini": null,
-      "genderWageGap": 17.6
+      "genderWageGap": 17.6,
+      "gpiScore": 1.5,
+      "pressFreedomScore": 62.82,
+      "gdpGrowthRate": -0.82
     },
     {
       "id": 91,
@@ -11191,7 +11452,10 @@
       "minimumWagePPP": 1275,
       "weeklyHoursEmp": 36.9,
       "earningsGini": null,
-      "genderWageGap": 15.5
+      "genderWageGap": 15.5,
+      "gpiScore": 1.609,
+      "pressFreedomScore": 71.93,
+      "gdpGrowthRate": null
     },
     {
       "id": 92,
@@ -11319,7 +11583,10 @@
       "minimumWagePPP": 2060,
       "weeklyHoursEmp": 37.3,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.409,
+      "pressFreedomScore": 74.06,
+      "gdpGrowthRate": 2.38
     },
     {
       "id": 93,
@@ -11446,7 +11713,10 @@
       "minimumWagePPP": 2365,
       "weeklyHoursEmp": 33.5,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.26,
+      "pressFreedomScore": 86.92,
+      "gdpGrowthRate": -2.54
     },
     {
       "id": 94,
@@ -11574,7 +11844,10 @@
       "minimumWagePPP": 2902,
       "weeklyHoursEmp": 35.1,
       "earningsGini": 0.314,
-      "genderWageGap": 13.4
+      "genderWageGap": 13.4,
+      "gpiScore": 1.634,
+      "pressFreedomScore": 78.89,
+      "gdpGrowthRate": 0.27
     },
     {
       "id": 95,
@@ -11702,7 +11975,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 96,
@@ -11830,7 +12106,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 97,
@@ -11958,7 +12237,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 98,
@@ -12085,7 +12367,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 99,
@@ -12213,7 +12498,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 100,
@@ -12341,7 +12629,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 101,
@@ -12468,7 +12759,10 @@
       "minimumWagePPP": 544,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.093,
+      "pressFreedomScore": 14.8,
+      "gdpGrowthRate": 5.41
     },
     {
       "id": 102,
@@ -12595,7 +12889,10 @@
       "minimumWagePPP": 544,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.093,
+      "pressFreedomScore": 14.8,
+      "gdpGrowthRate": 5.41
     },
     {
       "id": 103,
@@ -12722,7 +13019,10 @@
       "minimumWagePPP": 544,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.093,
+      "pressFreedomScore": 14.8,
+      "gdpGrowthRate": 5.41
     },
     {
       "id": 104,
@@ -12849,7 +13149,10 @@
       "minimumWagePPP": 544,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.093,
+      "pressFreedomScore": 14.8,
+      "gdpGrowthRate": 5.41
     },
     {
       "id": 105,
@@ -12977,7 +13280,10 @@
       "minimumWagePPP": 544,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.093,
+      "pressFreedomScore": 14.8,
+      "gdpGrowthRate": 5.41
     },
     {
       "id": 106,
@@ -13104,7 +13410,10 @@
       "minimumWagePPP": 1839,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.44,
+      "pressFreedomScore": 63.14,
+      "gdpGrowthRate": 1.48
     },
     {
       "id": 107,
@@ -13232,7 +13541,10 @@
       "minimumWagePPP": 1839,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.44,
+      "pressFreedomScore": 63.14,
+      "gdpGrowthRate": 1.48
     },
     {
       "id": 109,
@@ -13360,7 +13672,10 @@
       "minimumWagePPP": 0,
       "weeklyHoursEmp": 49.7,
       "earningsGini": 0.286,
-      "genderWageGap": 11.1
+      "genderWageGap": 11.1,
+      "gpiScore": 2.019,
+      "pressFreedomScore": 28.18,
+      "gdpGrowthRate": 5.01
     },
     {
       "id": 110,
@@ -13489,7 +13804,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 44.7,
       "earningsGini": 0.443,
-      "genderWageGap": 7.2
+      "genderWageGap": 7.2,
+      "gpiScore": 3.045,
+      "pressFreedomScore": 25.32,
+      "gdpGrowthRate": 0.96
     },
     {
       "id": 112,
@@ -13616,7 +13934,10 @@
       "minimumWagePPP": 822,
       "weeklyHoursEmp": 44.7,
       "earningsGini": 0.365,
-      "genderWageGap": -3.6
+      "genderWageGap": -3.6,
+      "gpiScore": 2.017,
+      "pressFreedomScore": 56.72,
+      "gdpGrowthRate": 2.02
     },
     {
       "id": 114,
@@ -13744,7 +14065,10 @@
       "minimumWagePPP": 379,
       "weeklyHoursEmp": 50.9,
       "earningsGini": 0.32,
-      "genderWageGap": 14.5
+      "genderWageGap": 14.5,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 115,
@@ -13872,7 +14196,10 @@
       "minimumWagePPP": 200,
       "weeklyHoursEmp": 45.2,
       "earningsGini": 0.376,
-      "genderWageGap": 4.8
+      "genderWageGap": 4.8,
+      "gpiScore": 2.075,
+      "pressFreedomScore": 39.93,
+      "gdpGrowthRate": -2.33
     },
     {
       "id": 116,
@@ -14000,7 +14327,10 @@
       "minimumWagePPP": 490,
       "weeklyHoursEmp": 43.6,
       "earningsGini": 0.376,
-      "genderWageGap": 16.1
+      "genderWageGap": 16.1,
+      "gpiScore": null,
+      "pressFreedomScore": 55.2,
+      "gdpGrowthRate": 1.98
     },
     {
       "id": 117,
@@ -14127,7 +14457,10 @@
       "minimumWagePPP": 483,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.875,
+      "pressFreedomScore": 39.34,
+      "gdpGrowthRate": 5.1
     },
     {
       "id": 118,
@@ -14255,7 +14588,10 @@
       "minimumWagePPP": 311,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": 27.3
+      "genderWageGap": 27.3,
+      "gpiScore": 1.926,
+      "pressFreedomScore": 35.24,
+      "gdpGrowthRate": 6.29
     },
     {
       "id": 119,
@@ -14383,7 +14719,10 @@
       "minimumWagePPP": 654,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.067,
+      "pressFreedomScore": 25.47,
+      "gdpGrowthRate": 1.35
     },
     {
       "id": 120,
@@ -14511,7 +14850,10 @@
       "minimumWagePPP": 591,
       "weeklyHoursEmp": 44.8,
       "earningsGini": 0.259,
-      "genderWageGap": 11.9
+      "genderWageGap": 11.9,
+      "gpiScore": 1.719,
+      "pressFreedomScore": 52.57,
+      "gdpGrowthRate": 7.42
     },
     {
       "id": 121,
@@ -14638,7 +14980,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 34.5,
       "earningsGini": null,
-      "genderWageGap": 9.9
+      "genderWageGap": 9.9,
+      "gpiScore": 1.709,
+      "pressFreedomScore": 88.13,
+      "gdpGrowthRate": -0.2
     },
     {
       "id": 122,
@@ -14765,7 +15110,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 32.1,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.393,
+      "pressFreedomScore": 86.93,
+      "gdpGrowthRate": 0.6
     },
     {
       "id": 123,
@@ -14892,7 +15240,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 33.7,
       "earningsGini": null,
-      "genderWageGap": 16.8
+      "genderWageGap": 16.8,
+      "gpiScore": 1.42,
+      "pressFreedomScore": 87.18,
+      "gdpGrowthRate": -0.94
     },
     {
       "id": 124,
@@ -15019,7 +15370,10 @@
       "minimumWagePPP": null,
       "weeklyHoursEmp": 32.5,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.644,
+      "pressFreedomScore": 92.31,
+      "gdpGrowthRate": 0.07
     },
     {
       "id": 125,
@@ -15146,7 +15500,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 126,
@@ -15273,7 +15630,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 127,
@@ -15401,7 +15761,10 @@
       "minimumWagePPP": 2324,
       "weeklyHoursEmp": 34.7,
       "earningsGini": 0.329,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.491,
+      "pressFreedomScore": 78.75,
+      "gdpGrowthRate": 1.53
     },
     {
       "id": 128,
@@ -15529,7 +15892,10 @@
       "minimumWagePPP": 2819,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.505,
+      "pressFreedomScore": 75.15,
+      "gdpGrowthRate": 3.58
     },
     {
       "id": 129,
@@ -15656,7 +16022,10 @@
       "minimumWagePPP": 843,
       "weeklyHoursEmp": 45.1,
       "earningsGini": 0.356,
-      "genderWageGap": -4.6
+      "genderWageGap": -4.6,
+      "gpiScore": 2.695,
+      "pressFreedomScore": 49.8,
+      "gdpGrowthRate": 0.71
     },
     {
       "id": 130,
@@ -15783,7 +16152,10 @@
       "minimumWagePPP": 19,
       "weeklyHoursEmp": 41.4,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.185,
+      "pressFreedomScore": 50.53,
+      "gdpGrowthRate": 7.83
     },
     {
       "id": 131,
@@ -15912,7 +16284,10 @@
       "minimumWagePPP": 245,
       "weeklyHoursEmp": 40.3,
       "earningsGini": 0.504,
-      "genderWageGap": 26.7
+      "genderWageGap": 26.7,
+      "gpiScore": 2.869,
+      "pressFreedomScore": 46.81,
+      "gdpGrowthRate": 3.33
     },
     {
       "id": 132,
@@ -16039,7 +16414,10 @@
       "minimumWagePPP": 662,
       "weeklyHoursEmp": 39.4,
       "earningsGini": null,
-      "genderWageGap": 23.7
+      "genderWageGap": 23.7,
+      "gpiScore": 3.441,
+      "pressFreedomScore": 24.57,
+      "gdpGrowthRate": 4.08
     },
     {
       "id": 133,
@@ -16166,7 +16544,10 @@
       "minimumWagePPP": 1257,
       "weeklyHoursEmp": 37.8,
       "earningsGini": 0.474,
-      "genderWageGap": 19.2
+      "genderWageGap": 19.2,
+      "gpiScore": 2.443,
+      "pressFreedomScore": 65.49,
+      "gdpGrowthRate": 2.89
     },
     {
       "id": 135,
@@ -16294,7 +16675,10 @@
       "minimumWagePPP": 2324,
       "weeklyHoursEmp": 34.7,
       "earningsGini": 0.329,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.491,
+      "pressFreedomScore": 78.75,
+      "gdpGrowthRate": 1.53
     },
     {
       "id": 136,
@@ -16421,7 +16805,10 @@
       "minimumWagePPP": 2905,
       "weeklyHoursEmp": 35.3,
       "earningsGini": null,
-      "genderWageGap": 38.3
+      "genderWageGap": 38.3,
+      "gpiScore": null,
+      "pressFreedomScore": 83.04,
+      "gdpGrowthRate": 0.1
     },
     {
       "id": 137,
@@ -16548,7 +16935,10 @@
       "minimumWagePPP": 1180,
       "weeklyHoursEmp": 36.1,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.559,
+      "pressFreedomScore": 89.46,
+      "gdpGrowthRate": -2.74
     },
     {
       "id": 138,
@@ -16675,7 +17065,10 @@
       "minimumWagePPP": 1839,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.44,
+      "pressFreedomScore": 63.14,
+      "gdpGrowthRate": 1.48
     },
     {
       "id": 140,
@@ -16802,7 +17195,10 @@
       "minimumWagePPP": 993,
       "weeklyHoursEmp": 41.9,
       "earningsGini": 0.409,
-      "genderWageGap": 13.5
+      "genderWageGap": 13.5,
+      "gpiScore": 1.786,
+      "pressFreedomScore": 44.13,
+      "gdpGrowthRate": 5.05
     },
     {
       "id": 141,
@@ -16929,7 +17325,10 @@
       "minimumWagePPP": 693,
       "weeklyHoursEmp": 45.8,
       "earningsGini": 0.248,
-      "genderWageGap": 8.7
+      "genderWageGap": 8.7,
+      "gpiScore": 1.721,
+      "pressFreedomScore": 19.74,
+      "gdpGrowthRate": null
     },
     {
       "id": 143,
@@ -17056,7 +17455,10 @@
       "minimumWagePPP": 1670,
       "weeklyHoursEmp": 36.8,
       "earningsGini": 0.288,
-      "genderWageGap": 7.7
+      "genderWageGap": 7.7,
+      "gpiScore": 1.371,
+      "pressFreedomScore": 84.26,
+      "gdpGrowthRate": 3.1
     },
     {
       "id": 144,
@@ -17183,7 +17585,10 @@
       "minimumWagePPP": 2117,
       "weeklyHoursEmp": 35.1,
       "earningsGini": null,
-      "genderWageGap": 5.9
+      "genderWageGap": 5.9,
+      "gpiScore": 1.578,
+      "pressFreedomScore": 77.35,
+      "gdpGrowthRate": 2.46
     },
     {
       "id": 146,
@@ -17310,7 +17715,10 @@
       "minimumWagePPP": 1878,
       "weeklyHoursEmp": 37.5,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.519,
+      "pressFreedomScore": 64.2,
+      "gdpGrowthRate": 3.76
     },
     {
       "id": 147,
@@ -17437,7 +17845,10 @@
       "minimumWagePPP": 822,
       "weeklyHoursEmp": 44.7,
       "earningsGini": 0.365,
-      "genderWageGap": -3.6
+      "genderWageGap": -3.6,
+      "gpiScore": 2.017,
+      "pressFreedomScore": 56.72,
+      "gdpGrowthRate": 2.02
     },
     {
       "id": 148,
@@ -17564,7 +17975,10 @@
       "minimumWagePPP": 63,
       "weeklyHoursEmp": 37.6,
       "earningsGini": 0.37,
-      "genderWageGap": 0.9
+      "genderWageGap": 0.9,
+      "gpiScore": 1.784,
+      "pressFreedomScore": 65.18,
+      "gdpGrowthRate": 0.74
     },
     {
       "id": 149,
@@ -17691,7 +18105,10 @@
       "minimumWagePPP": 2117,
       "weeklyHoursEmp": 35.1,
       "earningsGini": null,
-      "genderWageGap": 5.9
+      "genderWageGap": 5.9,
+      "gpiScore": 1.578,
+      "pressFreedomScore": 77.35,
+      "gdpGrowthRate": 2.46
     },
     {
       "id": 150,
@@ -17818,7 +18235,10 @@
       "minimumWagePPP": 1035,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": 0
+      "genderWageGap": 0,
+      "gpiScore": 1.469,
+      "pressFreedomScore": 56.09,
+      "gdpGrowthRate": 3.54
     },
     {
       "id": 152,
@@ -17945,7 +18365,10 @@
       "minimumWagePPP": 559,
       "weeklyHoursEmp": 39.4,
       "earningsGini": 0.458,
-      "genderWageGap": 10
+      "genderWageGap": 10,
+      "gpiScore": 2.472,
+      "pressFreedomScore": 63.8,
+      "gdpGrowthRate": 3.24
     },
     {
       "id": 159,
@@ -18072,7 +18495,10 @@
       "minimumWagePPP": 1839,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.44,
+      "pressFreedomScore": 63.14,
+      "gdpGrowthRate": 1.48
     },
     {
       "id": 160,
@@ -18199,7 +18625,10 @@
       "minimumWagePPP": 773,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 2.012,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": 3.66
     },
     {
       "id": 161,
@@ -18326,7 +18755,10 @@
       "minimumWagePPP": 2673,
       "weeklyHoursEmp": null,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": 1.282,
+      "pressFreedomScore": 81.37,
+      "gdpGrowthRate": 1.39
     },
     {
       "id": 162,
@@ -18453,7 +18885,10 @@
       "minimumWagePPP": 1821,
       "weeklyHoursEmp": 38.3,
       "earningsGini": null,
-      "genderWageGap": 12.5
+      "genderWageGap": 12.5,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 163,
@@ -18580,7 +19015,10 @@
       "minimumWagePPP": 1258,
       "weeklyHoursEmp": 38.1,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 164,
@@ -18707,7 +19145,10 @@
       "minimumWagePPP": 1619,
       "weeklyHoursEmp": 37.9,
       "earningsGini": null,
-      "genderWageGap": null
+      "genderWageGap": null,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 165,
@@ -18834,7 +19275,10 @@
       "minimumWagePPP": 826,
       "weeklyHoursEmp": 41.6,
       "earningsGini": 0.392,
-      "genderWageGap": 2.5
+      "genderWageGap": 2.5,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 166,
@@ -18961,7 +19405,10 @@
       "minimumWagePPP": 87,
       "weeklyHoursEmp": 37.2,
       "earningsGini": 0.322,
-      "genderWageGap": -9.1
+      "genderWageGap": -9.1,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 167,
@@ -19088,7 +19535,10 @@
       "minimumWagePPP": 100,
       "weeklyHoursEmp": 39.8,
       "earningsGini": 0.542,
-      "genderWageGap": 19.3
+      "genderWageGap": 19.3,
+      "gpiScore": null,
+      "pressFreedomScore": null,
+      "gdpGrowthRate": null
     },
     {
       "id": 168,
@@ -19216,7 +19666,10 @@
       "minimumWagePPP": 75,
       "weeklyHoursEmp": 43.7,
       "earningsGini": 0.505,
-      "genderWageGap": 21.1
+      "genderWageGap": 21.1,
+      "gpiScore": 2.688,
+      "pressFreedomScore": 36.92,
+      "gdpGrowthRate": 6.59
     }
   ]
 }

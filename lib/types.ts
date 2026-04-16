@@ -64,6 +64,10 @@ export interface City {
   weeklyHoursEmp: number | null;         // ILO mean weekly hours per employee (Sex=Total)
   earningsGini: number | null;           // ILO Gini index of hourly earnings (0-1)
   genderWageGap: number | null;          // ILO gender wage gap total (%)
+  // New indices (Phase 2)
+  gpiScore?: number | null;               // Global Peace Index overall score (1-5, lower=more peaceful)
+  pressFreedomScore?: number | null;      // RSF Press Freedom Index (0-100, higher=more free)
+  gdpGrowthRate?: number | null;          // Annual real GDP growth rate (%)
   timezone?: string;
   climate?: ClimateInfo;
 }

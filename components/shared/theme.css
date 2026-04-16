@@ -1,0 +1,98 @@
+/*
+ * WhichCity — Single source of truth for all colors.
+ * Components use these variables directly. Zero darkMode ternaries.
+ *
+ * Usage in Tailwind: text-[var(--fg)], bg-[var(--surface)], border-[var(--border)], etc.
+ * Usage in CSS modules: var(--fg), var(--surface), etc.
+ */
+
+:root {
+  /* ── Surfaces ── */
+  --bg-page: #fafafa;
+  --bg: #ffffff;
+  --surface: #f8fafc;
+
+  /* ── Text ── */
+  --fg: #0f172a;
+  --fg-secondary: #475569;
+  --fg-muted: #94a3b8;
+
+  /* ── Borders ── */
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+
+  /* ── Semantic: only used where data has clear good/bad valence ── */
+  --green: #16a34a;
+  --green-bg: #f0fdf4;
+  --green-border: #bbf7d0;
+  --lime: #65a30d;
+  --orange: #ea580c;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --orange: #e87a5a;
+  --yellow: #65a30d;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+
+  /* ── Components ── */
+  --bar-track: #f1f5f9;
+  --tag-green-bg: #f0fdf4;
+  --tag-green-fg: #166534;
+  --tag-green-border: #bbf7d0;
+  --tag-amber-bg: #fffbeb;
+  --tag-amber-fg: #92400e;
+  --tag-amber-border: #fde68a;
+  --tag-red-bg: #fef2f2;
+  --tag-red-fg: #991b1b;
+  --tag-red-border: #fecaca;
+  --tag-blue-bg: #eff6ff;
+  --tag-blue-fg: #1e40af;
+  --tag-blue-border: #bfdbfe;
+}
+
+.dark {
+  --bg-page: #020617;
+  --bg: #0f172a;
+  --surface: #1e293b;
+
+  --fg: #f1f5f9;
+  --fg-secondary: #94a3b8;
+  --fg-muted: #64748b;
+
+  --border: #1e293b;
+  --border-light: #1e293b;
+
+  --green: #4ade80;
+  --green-bg: rgba(22,163,74,0.12);
+  --green-border: rgba(74,222,128,0.2);
+  --yellow: #a3e635;
+  --orange: #fca5a5;
+  --amber: #fbbf24;
+  --amber-bg: rgba(217,119,6,0.12);
+  --amber-border: rgba(251,191,36,0.2);
+  --red: #fb7185;
+  --red-bg: rgba(220,38,38,0.12);
+  --red-border: rgba(251,113,133,0.2);
+  --blue: #60a5fa;
+  --blue-bg: rgba(37,99,235,0.12);
+  --blue-border: rgba(96,165,250,0.2);
+
+  --bar-track: #334155;
+  --tag-green-bg: rgba(22,163,74,0.15);
+  --tag-green-fg: #86efac;
+  --tag-green-border: rgba(74,222,128,0.25);
+  --tag-amber-bg: rgba(217,119,6,0.15);
+  --tag-amber-fg: #fde68a;
+  --tag-amber-border: rgba(251,191,36,0.25);
+  --tag-red-bg: rgba(220,38,38,0.15);
+  --tag-red-fg: #fca5a5;
+  --tag-red-border: rgba(251,113,133,0.25);
+  --tag-blue-bg: rgba(37,99,235,0.15);
+  --tag-blue-fg: #93c5fd;
+  --tag-blue-border: rgba(96,165,250,0.25);
+}

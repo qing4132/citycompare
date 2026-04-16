@@ -1,12 +1,4 @@
-import type { Metadata } from "next";
-import { loadCities } from "@/lib/dataLoader";
-import { loadNomadData } from "@/lib/nomadData";
-import CompareContent from "@/components/CompareContent";
-
-export const metadata: Metadata = {
-  title: "City Comparison Tool — Compare Cities Side by Side",
-  description: "Compare cities by income, cost of living, housing, safety, healthcare and more.",
-};
+import { redirect } from "next/navigation";
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -14,7 +6,5 @@ interface Props {
 
 export default async function CompareIndexPage({ params }: Props) {
   const { locale } = await params;
-  const allCities = loadCities();
-  const nomadDataMap = loadNomadData();
-  return <CompareContent initialCities={[]} initialSlugs={[]} allCities={allCities} locale={locale} nomadDataMap={nomadDataMap} />;
+  redirect(`/${locale}`);
 }

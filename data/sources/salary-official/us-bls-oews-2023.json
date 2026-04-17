@@ -1,0 +1,213 @@
+{
+  "generatedAt": "2026-04-17T05:35:26.921Z",
+  "source": {
+    "name": "BLS Occupational Employment and Wage Statistics (OEWS)",
+    "releaseDate": "2024-04-03",
+    "dataPeriod": "May 2023",
+    "url": "https://www.bls.gov/oes/special-requests/oesm23nat.zip",
+    "retrievalMirror": "https://web.archive.org/web/20250101084331/https://www.bls.gov/oes/special-requests/oesm23nat.zip",
+    "file": "national_M2023_dl.xlsx",
+    "field": "A_MEDIAN (Annual median wage, USD, full-time equivalent, pre-tax)"
+  },
+  "geography": "United States (national)",
+  "note": "Used as authoritative gross-salary anchor for US cost-of-living / salary calibration. Runtime city salary values remain derived from profession modeling; this file is for offline validation only.",
+  "coverage": "21/25 professions mapped to SOC codes with authoritative median wages",
+  "records": {
+    "软件工程师": {
+      "soc": "15-1252",
+      "blsTitle": "Software Developers",
+      "oGroup": "detailed",
+      "aMedianUSD": 132270,
+      "monthlyGrossUSD": 11023,
+      "note": null
+    },
+    "医生/医学博士": {
+      "soc": "29-1229",
+      "blsTitle": "Physicians, All Other",
+      "oGroup": "detailed",
+      "aMedianUSD": 236000,
+      "monthlyGrossUSD": 19667,
+      "note": "broad physician minor group; individual specialties in 29-1210 range"
+    },
+    "财务分析师": {
+      "soc": "13-2051",
+      "blsTitle": "Financial and Investment Analysts",
+      "oGroup": "detailed",
+      "aMedianUSD": 99010,
+      "monthlyGrossUSD": 8251,
+      "note": null
+    },
+    "市场经理": {
+      "soc": "11-2021",
+      "blsTitle": "Marketing Managers",
+      "oGroup": "detailed",
+      "aMedianUSD": 157620,
+      "monthlyGrossUSD": 13135,
+      "note": null
+    },
+    "平面设计师": {
+      "soc": "27-1024",
+      "blsTitle": "Graphic Designers",
+      "oGroup": "detailed",
+      "aMedianUSD": 58910,
+      "monthlyGrossUSD": 4909,
+      "note": null
+    },
+    "数据科学家": {
+      "soc": "15-2051",
+      "blsTitle": "Data Scientists",
+      "oGroup": "detailed",
+      "aMedianUSD": 108020,
+      "monthlyGrossUSD": 9002,
+      "note": null
+    },
+    "销售经理": {
+      "soc": "11-2022",
+      "blsTitle": "Sales Managers",
+      "oGroup": "detailed",
+      "aMedianUSD": 135160,
+      "monthlyGrossUSD": 11263,
+      "note": null
+    },
+    "人力资源经理": {
+      "soc": "11-3121",
+      "blsTitle": "Human Resources Managers",
+      "oGroup": "detailed",
+      "aMedianUSD": 136350,
+      "monthlyGrossUSD": 11363,
+      "note": null
+    },
+    "教师": {
+      "soc": "25-2031",
+      "blsTitle": "Secondary School Teachers, Except Special and Career/Technical Education",
+      "oGroup": "detailed",
+      "aMedianUSD": 65220,
+      "monthlyGrossUSD": 5435,
+      "note": null
+    },
+    "护士": {
+      "soc": "29-1141",
+      "blsTitle": "Registered Nurses",
+      "oGroup": "detailed",
+      "aMedianUSD": 86070,
+      "monthlyGrossUSD": 7173,
+      "note": null
+    },
+    "律师": {
+      "soc": "23-1011",
+      "blsTitle": "Lawyers",
+      "oGroup": "detailed",
+      "aMedianUSD": 145760,
+      "monthlyGrossUSD": 12147,
+      "note": null
+    },
+    "建筑师": {
+      "soc": "17-1011",
+      "blsTitle": "Architects, Except Landscape and Naval",
+      "oGroup": "detailed",
+      "aMedianUSD": 93310,
+      "monthlyGrossUSD": 7776,
+      "note": null
+    },
+    "厨师": {
+      "soc": "35-1011",
+      "blsTitle": "Chefs and Head Cooks",
+      "oGroup": "detailed",
+      "aMedianUSD": 58920,
+      "monthlyGrossUSD": 4910,
+      "note": null
+    },
+    "记者": {
+      "soc": "27-3023",
+      "blsTitle": "News Analysts, Reporters, and Journalists",
+      "oGroup": "detailed",
+      "aMedianUSD": 57500,
+      "monthlyGrossUSD": 4792,
+      "note": null
+    },
+    "机械工程师": {
+      "soc": "17-2141",
+      "blsTitle": "Mechanical Engineers",
+      "oGroup": "detailed",
+      "aMedianUSD": 99510,
+      "monthlyGrossUSD": 8293,
+      "note": null
+    },
+    "药剂师": {
+      "soc": "29-1051",
+      "blsTitle": "Pharmacists",
+      "oGroup": "detailed",
+      "aMedianUSD": 136030,
+      "monthlyGrossUSD": 11336,
+      "note": null
+    },
+    "会计师": {
+      "soc": "13-2011",
+      "blsTitle": "Accountants and Auditors",
+      "oGroup": "detailed",
+      "aMedianUSD": 79880,
+      "monthlyGrossUSD": 6657,
+      "note": null
+    },
+    "UI/UX设计师": {
+      "soc": "15-1255",
+      "blsTitle": "Web and Digital Interface Designers",
+      "oGroup": "detailed",
+      "aMedianUSD": 98540,
+      "monthlyGrossUSD": 8212,
+      "note": null
+    },
+    "大学教授": {
+      "soc": "25-1099",
+      "source": null,
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "SOC code not found in XLSX (may be suppressed #)"
+    },
+    "牙医": {
+      "soc": "29-1021",
+      "blsTitle": "Dentists, General",
+      "oGroup": "detailed",
+      "aMedianUSD": 166300,
+      "monthlyGrossUSD": 13858,
+      "note": null
+    },
+    "公交司机": {
+      "soc": "53-3052",
+      "blsTitle": "Bus Drivers, Transit and Intercity",
+      "oGroup": "detailed",
+      "aMedianUSD": 60170,
+      "monthlyGrossUSD": 5014,
+      "note": null
+    },
+    "电工": {
+      "soc": "47-2111",
+      "blsTitle": "Electricians",
+      "oGroup": "detailed",
+      "aMedianUSD": 61590,
+      "monthlyGrossUSD": 5133,
+      "note": null
+    },
+    "产品经理": {
+      "soc": null,
+      "source": null,
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "No exact SOC 2018 code for \"product manager\"; BLS does not publish product manager wages separately"
+    },
+    "政府/NGO行政": {
+      "soc": null,
+      "source": null,
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "Too broad; spans 11-xxxx / 43-xxxx categories"
+    },
+    "数字游民": {
+      "soc": null,
+      "source": null,
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "Not a BLS occupation"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "generatedAt": "2026-04-17T05:36:17.988Z",
+  "description": "Cross-validation of WhichCity runtime US city salaries against BLS OEWS 2023 national medians. Used to verify profession-level plausibility without feeding BLS data into runtime.",
+  "blsSource": {
+    "name": "BLS Occupational Employment and Wage Statistics (OEWS)",
+    "releaseDate": "2024-04-03",
+    "dataPeriod": "May 2023",
+    "url": "https://www.bls.gov/oes/special-requests/oesm23nat.zip",
+    "retrievalMirror": "https://web.archive.org/web/20250101084331/https://www.bls.gov/oes/special-requests/oesm23nat.zip",
+    "file": "national_M2023_dl.xlsx",
+    "field": "A_MEDIAN (Annual median wage, USD, full-time equivalent, pre-tax)"
+  },
+  "cityResults": [
+    {
+      "id": 1,
+      "name": "纽约",
+      "n": 21,
+      "mean": 1.234417715532457,
+      "median": 1.2245407121796326
+    },
+    {
+      "id": 11,
+      "name": "洛杉矶",
+      "n": 21,
+      "mean": 1.1696889827191699,
+      "median": 1.1504351046102574
+    },
+    {
+      "id": 12,
+      "name": "旧金山",
+      "n": 21,
+      "mean": 1.4430521860542396,
+      "median": 1.3498017361483228
+    },
+    {
+      "id": 13,
+      "name": "芝加哥",
+      "n": 21,
+      "mean": 1.0735743978095358,
+      "median": 1.0427698574338085
+    },
+    {
+      "id": 34,
+      "name": "迈阿密",
+      "n": 21,
+      "mean": 0.9386559021583034,
+      "median": 0.9574790425209575
+    },
+    {
+      "id": 35,
+      "name": "华盛顿",
+      "n": 21,
+      "mean": 1.185382844669429,
+      "median": 1.1827582200534448
+    },
+    {
+      "id": 36,
+      "name": "波士顿",
+      "n": 21,
+      "mean": 1.2133060513854161,
+      "median": 1.2215823735603406
+    },
+    {
+      "id": 37,
+      "name": "西雅图",
+      "n": 21,
+      "mean": 1.2707180556914093,
+      "median": 1.2724032586558045
+    },
+    {
+      "id": 38,
+      "name": "丹佛",
+      "n": 21,
+      "mean": 1.0747106450156574,
+      "median": 1.1107426389307606
+    },
+    {
+      "id": 39,
+      "name": "奥斯汀",
+      "n": 21,
+      "mean": 0.9989915819164059,
+      "median": 1.0143965948923386
+    },
+    {
+      "id": 95,
+      "name": "亚特兰大",
+      "n": 21,
+      "mean": 1.0478892477215145,
+      "median": 1.0095060261415718
+    },
+    {
+      "id": 96,
+      "name": "凤凰城",
+      "n": 21,
+      "mean": 0.9650150107007256,
+      "median": 0.9722551050606688
+    },
+    {
+      "id": 97,
+      "name": "波特兰",
+      "n": 21,
+      "mean": 1.1316971042464399,
+      "median": 1.085041914958085
+    },
+    {
+      "id": 98,
+      "name": "圣地亚哥",
+      "n": 21,
+      "mean": 1.164786677359142,
+      "median": 1.1692921405533865
+    },
+    {
+      "id": 99,
+      "name": "拉斯维加斯",
+      "n": 21,
+      "mean": 0.8985897229415378,
+      "median": 0.963968107942349
+    },
+    {
+      "id": 100,
+      "name": "坦帕",
+      "n": 21,
+      "mean": 0.8978832876999437,
+      "median": 0.9357559030972095
+    },
+    {
+      "id": 125,
+      "name": "休斯顿",
+      "n": 21,
+      "mean": 0.9729033040321047,
+      "median": 0.9672639298404778
+    },
+    {
+      "id": 126,
+      "name": "费城",
+      "n": 21,
+      "mean": 1.0198431624331032,
+      "median": 1.0268314742236961
+    },
+    {
+      "id": 133,
+      "name": "圣何塞(美国)",
+      "n": 21,
+      "mean": 1.4138918667219205,
+      "median": 1.4501966755487883
+    }
+  ],
+  "overallUSGrossVsBLS": {
+    "min": 0.9357559030972095,
+    "median": 1.085041914958085,
+    "max": 1.4501966755487883
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-04-17T06:44:28.028Z",
+  "source": {
+    "name": "BLS Occupational Employment and Wage Statistics (OEWS)",
+    "geography": "San Jose–Sunnyvale–Santa Clara, CA MSA (code 41940)",
+    "releaseDate": "2024-04-03",
+    "dataPeriod": "May 2023",
+    "url": "https://www.bls.gov/oes/special-requests/oesm23ma.zip",
+    "retrievalMirror": "https://web.archive.org/web/20250101132353/https://www.bls.gov/oes/special-requests/oesm23ma.zip",
+    "file": "MSA_M2023_dl.xlsx",
+    "field": "A_MEDIAN (Annual median wage, USD, full-time equivalent, pre-tax)"
+  },
+  "note": "Used as authoritative Silicon Valley wage anchor for city 133 (圣何塞/硅谷）. Offline validation only.",
+  "coverage": "19/25 professions with SOC mapping present in MSA data",
+  "records": {
+    "软件工程师": {
+      "soc": "15-1252",
+      "blsTitle": "Software Developers",
+      "oGroup": "detailed",
+      "aMedianUSD": 199100,
+      "monthlyGrossUSD": 16592,
+      "note": null
+    },
+    "医生/医学博士": {
+      "soc": "29-1229",
+      "blsTitle": "Physicians, All Other",
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "Suppressed in MSA 41940"
+    },
+    "财务分析师": {
+      "soc": "13-2051",
+      "blsTitle": "Financial and Investment Analysts",
+      "oGroup": "detailed",
+      "aMedianUSD": 129310,
+      "monthlyGrossUSD": 10776,
+      "note": null
+    },
+    "市场经理": {
+      "soc": "11-2021",
+      "blsTitle": "Marketing Managers",
+      "oGroup": "detailed",
+      "aMedianUSD": 217300,
+      "monthlyGrossUSD": 18108,
+      "note": null
+    },
+    "平面设计师": {
+      "soc": "27-1024",
+      "blsTitle": "Graphic Designers",
+      "oGroup": "detailed",
+      "aMedianUSD": 96260,
+      "monthlyGrossUSD": 8022,
+      "note": null
+    },
+    "数据科学家": {
+      "soc": "15-2051",
+      "blsTitle": "Data Scientists",
+      "oGroup": "detailed",
+      "aMedianUSD": 171800,
+      "monthlyGrossUSD": 14317,
+      "note": null
+    },
+    "销售经理": {
+      "soc": "11-2022",
+      "blsTitle": "Sales Managers",
+      "oGroup": "detailed",
+      "aMedianUSD": 209810,
+      "monthlyGrossUSD": 17484,
+      "note": null
+    },
+    "人力资源经理": {
+      "soc": "11-3121",
+      "blsTitle": "Human Resources Managers",
+      "oGroup": "detailed",
+      "aMedianUSD": 212030,
+      "monthlyGrossUSD": 17669,
+      "note": null
+    },
+    "教师": {
+      "soc": "25-2031",
+      "blsTitle": "Secondary School Teachers, Except Special and Career/Technical Education",
+      "oGroup": "detailed",
+      "aMedianUSD": 102460,
+      "monthlyGrossUSD": 8538,
+      "note": null
+    },
+    "护士": {
+      "soc": "29-1141",
+      "blsTitle": "Registered Nurses",
+      "oGroup": "detailed",
+      "aMedianUSD": 179210,
+      "monthlyGrossUSD": 14934,
+      "note": null
+    },
+    "律师": {
+      "soc": "23-1011",
+      "blsTitle": "Lawyers",
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "Suppressed in MSA 41940"
+    },
+    "建筑师": {
+      "soc": "17-1011",
+      "blsTitle": "Architects, Except Landscape and Naval",
+      "oGroup": "detailed",
+      "aMedianUSD": 126280,
+      "monthlyGrossUSD": 10523,
+      "note": null
+    },
+    "厨师": {
+      "soc": "35-1011",
+      "blsTitle": "Chefs and Head Cooks",
+      "oGroup": "detailed",
+      "aMedianUSD": 61840,
+      "monthlyGrossUSD": 5153,
+      "note": null
+    },
+    "记者": {
+      "soc": "27-3023",
+      "blsTitle": "News Analysts, Reporters, and Journalists",
+      "oGroup": "detailed",
+      "aMedianUSD": 80180,
+      "monthlyGrossUSD": 6682,
+      "note": null
+    },
+    "机械工程师": {
+      "soc": "17-2141",
+      "blsTitle": "Mechanical Engineers",
+      "oGroup": "detailed",
+      "aMedianUSD": 153520,
+      "monthlyGrossUSD": 12793,
+      "note": null
+    },
+    "药剂师": {
+      "soc": "29-1051",
+      "blsTitle": "Pharmacists",
+      "oGroup": "detailed",
+      "aMedianUSD": 190570,
+      "monthlyGrossUSD": 15881,
+      "note": null
+    },
+    "会计师": {
+      "soc": "13-2011",
+      "blsTitle": "Accountants and Auditors",
+      "oGroup": "detailed",
+      "aMedianUSD": 113980,
+      "monthlyGrossUSD": 9498,
+      "note": null
+    },
+    "UI/UX设计师": {
+      "soc": "15-1255",
+      "blsTitle": "Web and Digital Interface Designers",
+      "oGroup": "detailed",
+      "aMedianUSD": 173650,
+      "monthlyGrossUSD": 14471,
+      "note": null
+    },
+    "大学教授": {
+      "soc": "25-1099",
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "Suppressed in MSA 41940"
+    },
+    "牙医": {
+      "soc": "29-1021",
+      "blsTitle": "Dentists, General",
+      "oGroup": "detailed",
+      "aMedianUSD": 206850,
+      "monthlyGrossUSD": 17238,
+      "note": null
+    },
+    "公交司机": {
+      "soc": "53-3052",
+      "blsTitle": "Bus Drivers, Transit and Intercity",
+      "oGroup": "detailed",
+      "aMedianUSD": 88590,
+      "monthlyGrossUSD": 7383,
+      "note": null
+    },
+    "电工": {
+      "soc": "47-2111",
+      "blsTitle": "Electricians",
+      "oGroup": "detailed",
+      "aMedianUSD": 98970,
+      "monthlyGrossUSD": 8248,
+      "note": null
+    },
+    "产品经理": {
+      "soc": null,
+      "source": null,
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "No exact SOC 2018 code for \"product manager\"; BLS does not publish product manager wages separately"
+    },
+    "政府/NGO行政": {
+      "soc": null,
+      "source": null,
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "Too broad; spans 11-xxxx / 43-xxxx categories"
+    },
+    "数字游民": {
+      "soc": null,
+      "source": null,
+      "aMedianUSD": null,
+      "monthlyGrossUSD": null,
+      "note": "Not a BLS occupation"
+    }
+  }
+}

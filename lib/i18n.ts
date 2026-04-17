@@ -973,7 +973,7 @@ export const CITY_NAME_TRANSLATIONS: Record<number, Record<Locale, string>> = {
   130: { zh: "第比利斯", en: "Tbilisi", ja: "トビリシ", es: "Tiflis" },
   131: { zh: "拉各斯", en: "Lagos", ja: "ラゴス", es: "Lagos" },
   132: { zh: "莫斯科", en: "Moscow", ja: "モスクワ", es: "Moscú" },
-  133: { zh: "圣何塞", en: "San Jose", ja: "サンノゼ", es: "San José" },
+  133: { zh: "硅谷（圣何塞）", en: "Silicon Valley (San Jose)", ja: "シリコンバレー（サンノゼ）", es: "Silicon Valley (San José)" },
   135: { zh: "渥太华", en: "Ottawa", ja: "オタワ", es: "Ottawa" },
   136: { zh: "卢森堡市", en: "Luxembourg City", ja: "ルクセンブルク市", es: "Ciudad de Luxemburgo" },
   137: { zh: "塔林", en: "Tallinn", ja: "タリン", es: "Tallin" },
